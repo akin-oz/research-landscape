@@ -8,13 +8,13 @@
 
 - Publish entity definitions, relationship model, metadata specification, stable identifiers, evidence model, JSON schemas, and Markdown linting. Publish an evidence-bounded Turkey advisor search without claiming universal numeric scoring. **Released.**
 
-## v0.2.0 — Automation Framework
+## v0.2.0 — Research Relationship Management
+
+- Add a Markdown-first, evidence-driven relationship layer for preparation, contact, meeting, follow-up, application, and long-term mentorship records. **Released.**
+
+## v0.3.0 — Automation Framework
 
 - Add reproducible validation, source ingestion, score generation, and freshness monitoring.
-
-## v0.3.0 — Turkey pilot
-
-- Publish a small, consent- and evidence-reviewed pilot with coverage and limitations clearly stated.
 
 ## v0.4.0 — Advisor Scoring Engine
 

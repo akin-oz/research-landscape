@@ -4,6 +4,25 @@ All notable changes are documented here. This project follows the principles of 
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-07-11
+
+### Added
+
+- Research Relationship Management (RRM): a Markdown-first, Git-based layer for preparing, documenting, and improving research-related interactions without introducing a CRM, database, or web application.
+- Reusable relationship templates for timelines, contact logs, meeting preparation and notes, action items, follow-ups, reading progress, research ideas, application plans, and research-focused email drafts.
+- Explicit relationship philosophy, privacy boundaries, lifecycle statuses, archive policy, and automation-readiness rules.
+- Prepared, uncontacted relationship records for Adem Tekin, Sadettin Yavuz Uğurlu, and Hande Toffoli. The records link to existing due diligence and intentionally contain no fabricated interaction or application facts.
+- Deep due-diligence dossiers for the narrowed three-advisor shortlist, including publication audits, reading plans, meeting preparation, risk analysis, decision gates, and first-contact guidance.
+
+### Changed
+
+- The repository README and Turkey index now link the due-diligence and RRM layers.
+
+### Notes
+
+- RRM interaction records are not public research evidence, relationship-quality scores, admissions predictions, or networking profiles.
+- Automation may validate structure and dates in the future, but must not infer intent, send messages, scrape contact data, or turn interactions into evidence automatically.
+
 ## [0.1.0] - 2026-07-11
 
 ### Added
