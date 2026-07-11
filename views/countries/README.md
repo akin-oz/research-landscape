@@ -29,3 +29,8 @@ Examples of valid future selectors are `region = Europe`, `region = Asia`, `coun
 ## What this view does not do
 
 It does not rank countries, infer visa outcomes, treat a national label as a research-quality signal, or make a claim about language barriers, cost, funding, or mentoring. Those may be evidence-backed, applicant-specific inputs to a personal accessibility view only. The existing Turkey material remains where it is during this architecture phase and can later be linked from a country facet.
+
+## Reference compatibility
+
+The [AiiDA reference implementation](../../docs/reference-implementation.md)
+validates the country traversal through [Paul Scherrer Institute](../../entities/organizations/paul-scherrer-institute.md) → [Switzerland](../../entities/countries/switzerland.md). These links document a canonical path, not a manually maintained country-view result.

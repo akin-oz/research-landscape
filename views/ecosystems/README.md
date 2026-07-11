@@ -19,7 +19,7 @@ flowchart LR
   C --> PI
 ```
 
-Materials Project, AiiDA, Materials Cloud, NOMAD, AFLOW, Open Catalyst Project, ASE, pymatgen, Quantum ESPRESSO, and LAMMPS are examples of names that can become ecosystem or software nodes when their connection type is documented. The existing [global ecosystem comparison](../../reports/global-ecosystems.md) and [source register](../../reports/global-sources.md) remain the current evidence trail.
+The reviewed [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) is the reference canonical ecosystem node. Materials Project, Materials Cloud, NOMAD, AFLOW, Open Catalyst Project, ASE, pymatgen, Quantum ESPRESSO, and LAMMPS remain examples that need their connection types documented before matching canonical records are created. Existing comparison and source-register material retains its separate, report-scoped evidence role.
 
 ## View rules
 

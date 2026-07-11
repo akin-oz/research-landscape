@@ -8,7 +8,7 @@ This document specifies the proposed vNext YAML frontmatter profile for Markdown
 - Relationship fields use stable IDs with `_id` or `_ids` suffixes. Never put a duplicated entity object or a display name in a relationship field.
 - Scalar facts belong in the entity that owns them. Views may calculate reverse links but must not duplicate entity metadata.
 - Omit an unknown relationship. Use an explicit controlled `unknown` value only where a field's semantics require a reviewed answer.
-- Dates use ISO 8601 calendar dates (`YYYY-MM-DD`), URLs are canonical public URLs where available, and IDs use the project stable-ID format.
+- Dates use ISO 8601 calendar dates (`YYYY-MM-DD`) quoted in YAML so they remain strings for JSON Schema validation; URLs are canonical public URLs where available, and IDs use the project stable-ID format.
 
 ## Required common fields
 
@@ -131,15 +131,15 @@ volatile_assertions:
     status: open
     target_id: PROJECT-EXAMPLE-001
     url: https://example.edu/openings/example
-    checked_at: 2026-07-11
-    review_by: 2026-08-11
+    checked_at: "2026-07-11"
+    review_by: "2026-08-11"
     source_ids: [SOURCE-EXAMPLE-OPENING]
     confidence: high
   - subject: github-activity
     status: active
     threshold: "at least one maintainer-authored repository event in the prior 90 days"
-    checked_at: 2026-07-11
-    review_by: 2026-08-11
+    checked_at: "2026-07-11"
+    review_by: "2026-08-11"
     source_ids: [SOURCE-EXAMPLE-GITHUB]
     confidence: medium
 ```
@@ -157,9 +157,9 @@ entity_type: principal-investigator
 id: PI-EXAMPLE-001
 name: Example Researcher
 status: draft
-created_at: 2026-07-11
-updated_at: 2026-07-11
-last_review: 2026-07-11
+created_at: "2026-07-11"
+updated_at: "2026-07-11"
+last_review: "2026-07-11"
 confidence: unassessed
 source_ids: []
 

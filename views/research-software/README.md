@@ -29,6 +29,6 @@ The final node represents an evidence-backed navigation aid, not an assertion th
 
 ## Examples and facets
 
-Useful software facets are license, language, repository URL, release activity, documentation, governance, research area, ecosystem, maintainer group, and host institution. The existing repository provides evidence trails for AiiDA, Materials Project, Materials Cloud, NOMAD, AFLOW, ASE, pymatgen, Quantum ESPRESSO, and LAMMPS; no new software records are created by this view architecture.
+Useful software facets are license, language, repository URL, release activity, documentation, governance, research area, ecosystem, maintainer group, and host institution. The reviewed [aiida-core](../../entities/research-software/aiida-core.md) record is the reference canonical software node; its view reachability is documented in the [reference implementation](../../docs/reference-implementation.md). Materials Project, Materials Cloud, NOMAD, AFLOW, ASE, pymatgen, Quantum ESPRESSO, and LAMMPS remain evidence trails until matching canonical records are created.
 
 An "Open Source" filter requires evidence of a public license and relevant project practice, not simply a public repository. A "GitHub Active" filter must have a dated activity definition and never be used as a proxy for research quality or a person's availability.

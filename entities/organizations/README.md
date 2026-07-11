@@ -1,3 +1,3 @@
 # Organizations
 
-This directory is reserved for canonical Organization entity records. No existing organization content has been migrated in this architecture-only phase.
+This directory is the canonical home for Organization records. The first reviewed vNext record is [Paul Scherrer Institute](paul-scherrer-institute.md); no existing organization content was moved to create it.

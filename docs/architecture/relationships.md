@@ -27,9 +27,9 @@ id: PI-EXAMPLE-001
 entity_type: principal-investigator
 name: Example Principal Investigator
 status: draft
-created_at: 2026-07-11
-updated_at: 2026-07-11
-last_review: 2026-07-11
+created_at: "2026-07-11"
+updated_at: "2026-07-11"
+last_review: "2026-07-11"
 confidence: unassessed
 
 # Canonical relation endpoints, not copied objects.
@@ -48,7 +48,7 @@ relationship_assertions:
   - predicate: develops
     target_id: SW-EXAMPLE
     role: lead-maintainer
-    start_date: 2023-01-01
+    start_date: "2023-01-01"
     end_date: null
     source_ids: [SRC-EXAMPLE-002]
     confidence: high
@@ -91,6 +91,7 @@ The following relationships complete the first-class entity model.
 | --- | --- | --- | --- | --- |
 | Department | `belongs_to` | University | many-to-one at a point in time | `faculty_id` remains optional because institutions differ. |
 | Research Group | `belongs_to` | Department or Organization | many-to-one at a point in time | Keep the university relationship if publicly known; do not infer it from a country. |
+| Research Group | `develops` | Research Software | many-to-many | Use only when a public group, project, or governance source credits group-level development or stewardship. It does not make every group member an individual maintainer. |
 | Organization | `located_in` | Country | many-to-one or many-to-many | Use a dated relationship for multi-site organizations. |
 | Principal Investigator | `affiliated_with` | University, Department, or Organization | many-to-many over time | Broader than group membership; aligns with current `affiliation_ids`. |
 | Principal Investigator | `leads` | Research Group or Project | many-to-many over time | Use role-qualified evidence; not every group member is a leader. |
@@ -127,6 +128,7 @@ flowchart LR
   RG -->|belongs_to| U
   U -->|located_in| C
   PI -->|develops| SW
+  RG -->|develops| SW
   PI -->|works_on| RA
   PI <-->|collaborates_with| ORG
   PI -->|speaks_at| CONF

@@ -36,4 +36,4 @@ facets:
 - Present source coverage and last-review information alongside any derived result.
 - Do not infer current supervision, openings, language, funding access, or mentorship from geography.
 
-The current Materials Project, AiiDA, Materials Cloud, NOMAD, AFLOW, ASE, Quantum ESPRESSO, and LAMMPS material in the repository is a useful discovery trail. Its source register and dossiers remain the evidence boundary until matching canonical entities are created.
+The [AiiDA reference implementation](../../docs/reference-implementation.md) now supplies reviewed canonical entities for one software-ecosystem chain, including [AiiDA Ecosystem](../../entities/ecosystems/aiida.md). Materials Project, Materials Cloud, NOMAD, AFLOW, ASE, Quantum ESPRESSO, and LAMMPS material remain useful discovery trails until matching canonical entities are created; their source registers and dossiers retain their existing evidence boundaries.

@@ -29,3 +29,8 @@ Hierarchical areas can be resolved through a documented `parent_id` relationship
 - Treat a missing research-area relation as unknown until a contributor adds sourced metadata. It is not proof of absence.
 
 This view is the preferred starting point for combinations such as "Materials Informatics + Python" or "AI + Scientific Software," which can then be narrowed with the personal filtering contract.
+
+## Reference compatibility
+
+The [AiiDA reference implementation](../../docs/reference-implementation.md)
+demonstrates an evidence-bearing area traversal from [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) to [Computational Materials Science](../../entities/research-areas/computational-materials-science.md). It is a canonical-link example, not a generated membership list.

@@ -10,11 +10,11 @@ entity_type: advisor
 id: TR-AKU-CSE-ADV-001
 name: Example Name
 status: draft
-created_at: 2026-07-11
-updated_at: 2026-07-11
+created_at: "2026-07-11"
+updated_at: "2026-07-11"
 ```
 
-Dates use `YYYY-MM-DD`; IDs follow the [stable identifier specification](../data-model/stable-identifiers.md). `aliases`, `external_ids`, `source_ids`, `confidence`, `evidence_window`, and `notes` are optional common fields. Entity documents must not include unrecognized top-level fields.
+Dates use quoted `YYYY-MM-DD` strings in YAML so they satisfy the JSON Schema string format; IDs follow the [stable identifier specification](../data-model/stable-identifiers.md). `aliases`, `external_ids`, `source_ids`, `confidence`, `evidence_window`, and `notes` are optional common fields. Entity documents must not include unrecognized top-level fields.
 
 ## Entity extensions
 
@@ -37,8 +37,8 @@ entity_type: department
 id: TR-AKU-CSE-DEPT
 name: Computer Engineering
 status: draft
-created_at: 2026-07-11
-updated_at: 2026-07-11
+created_at: "2026-07-11"
+updated_at: "2026-07-11"
 university_id: TR-AKU-UNI
 faculty_id: TR-AKU-ENG-FAC
 source_ids: []

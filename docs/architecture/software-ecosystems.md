@@ -45,6 +45,7 @@ The model keeps one fact in one canonical entity record. Relationship fields hol
 | Chain edge | Entity records involved | Relationship-ID field(s) | Evidence to record |
 | --- | --- | --- | --- |
 | Software → Maintainers | Research Software; Principal Investigator or Organization | `maintainer_ids` | Project governance, `CODEOWNERS`, official team page, release authority, or maintainer declaration. |
+| Software → Developing Group | Research Software; Research Group | `software_ids` plus a typed `develops` assertion on the group | Official group, project, repository-governance, or release source that credits group-level development; do not infer individual maintainer roles. |
 | Maintainers → Research Groups | Principal Investigator; Research Group | `research_group_ids` | Current official group roster or public affiliation. |
 | Research Groups → Universities | Research Group; University or Organization | `institution_id` (and, during v1 compatibility, `organization_id` / `department_id`) | Group or host-institution page. |
 | Universities → Communities | University/Organization; Organization or Research Ecosystem | `community_ids`, `ecosystem_ids` | Formal membership, consortium, event, or governance evidence. |
