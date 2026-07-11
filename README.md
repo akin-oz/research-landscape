@@ -34,8 +34,9 @@ The framework connects schema-validated entities and relationships to sourced ob
 | `docs/data-model/` | Entity, relationship, and stable-ID contracts |
 | `methodology/metrics/` | Definitions and collection rules for each metric |
 | `scoring/` | Calculation contracts and default weight guidance |
-| `countries/` | Future geographical report hierarchy; contains no findings yet |
+| `countries/` | Country-specific evidence reports, comparisons, and future geographical coverage |
 | `reports/` | Future published reports and comparisons |
+| `relationships/` | Markdown-first Research Relationship Management records, templates, and lifecycle guidance |
 | `templates/` | Report and comparison starting points |
 | `.github/` | Contribution forms and validation automation |
 
@@ -57,7 +58,7 @@ The long-term goal is a maintained, machine-readable public knowledge base that 
 
 ## Status
 
-The core knowledge model is published. The repository includes an evidence-bounded Turkey advisor search and an Akdeniz University pilot; both are compatibility analyses for a declared applicant profile, not university or prestige rankings. Start with the [Turkey shortlist](countries/turkey/top-advisors-turkey.md).
+The core knowledge model is published. The repository includes an evidence-bounded Turkey advisor search, an Akdeniz University pilot, and an evidence-first due-diligence comparison of its narrowed three-advisor shortlist; these are compatibility analyses for a declared applicant profile, not university or prestige rankings. The [Research Relationship Management module](relationships/README.md) carries those evidence-backed findings into transparent, applicant-owned relationship records. Start with the [Turkey shortlist](countries/turkey/top-advisors-turkey.md) or the [advisor due-diligence dossiers](advisor-due-diligence/README.md).
 
 ## License and citation
 
