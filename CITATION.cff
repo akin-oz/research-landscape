@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this framework, please cite it."
 title: "Research Landscape"
 type: software
-version: 0.0.1
+version: 0.1.0
 date-released: 2026-07-11
 license: MIT
 authors:

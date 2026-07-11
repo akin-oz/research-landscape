@@ -57,7 +57,7 @@ The long-term goal is a maintained, machine-readable public knowledge base that 
 
 ## Status
 
-Infrastructure only. No university, department, lab, or advisor reports have been published.
+The core knowledge model is published. The repository includes an evidence-bounded Turkey advisor search and an Akdeniz University pilot; both are compatibility analyses for a declared applicant profile, not university or prestige rankings. Start with the [Turkey shortlist](countries/turkey/top-advisors-turkey.md).
 
 ## License and citation
 

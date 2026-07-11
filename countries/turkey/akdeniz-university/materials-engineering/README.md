@@ -1,3 +1,3 @@
-# Materials Engineering
+# Materials Science and Engineering
 
-Reserved namespace only. No department report or evaluation has been published.
+The pilot's current-faculty advisor dossiers are in [faculty/](faculty/). The current roster was reconciled against the Engineering Faculty directory before recommendations were made.
