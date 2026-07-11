@@ -4,9 +4,14 @@ All notable changes are documented here. This project follows the principles of 
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-07-11
+## [0.0.1] - 2026-07-11
 
 ### Added
 
-- Initial governance, methodology, metric, scoring, and reporting infrastructure.
-- Empty geographic and report namespaces for future reviewed content.
+- Initial repository architecture and documentation framework.
+- Research methodology, scoring philosophy, and roadmap.
+- Community guidelines, contribution documentation, licensing, and open-source infrastructure.
+
+### Notes
+
+This release establishes the project's engineering and methodological foundations. No university data, advisor evaluations, department reports, or scoring results are included.

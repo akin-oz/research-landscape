@@ -1,4 +1,4 @@
-# Academic Advisor Analysis
+# Research Landscape
 
 An open, evidence-based framework for evaluating the fit between graduate applicants and academic research environments.
 
