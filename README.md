@@ -1,1 +1,62 @@
-# research-landscape
+# Academic Advisor Analysis
+
+An open, evidence-based framework for evaluating the fit between graduate applicants and academic research environments.
+
+> This repository does not rank researchers by prestige. It evaluates compatibility between applicants and research environments.
+
+## Mission
+
+Make advisor, lab, department, program, and university research easier to assess using traceable evidence, explicit uncertainty, and reproducible scoring. The project is designed as public research infrastructure—not a collection of opinions or promotional profiles.
+
+## Motivation
+
+Applicants often make high-stakes decisions from incomplete information and reputation signals. Evidence is scattered across publications, institutional pages, grants, repositories, and alumni records. This repository provides a common method for collecting that evidence, recording its limits, and comparing environments against an applicant's declared priorities.
+
+## Project philosophy
+
+- **Evidence before assertion.** Claims have sources, access dates, and confidence labels.
+- **Compatibility, not prestige.** Scores are profiles that can be reweighted for a use case; they are not league tables.
+- **Transparent uncertainty.** Missing or conflicting data is visible and never silently converted into a negative judgment.
+- **Reproducible by default.** Inputs, transformations, scoring versions, and report revisions are reviewable in Git.
+- **Respectful and fair.** Reports describe public, relevant evidence; they avoid personal speculation and harmful inferences.
+
+## Methodology
+
+The framework separates four layers: sourced observations, normalized metrics, dimension scores, and a use-case-specific compatibility calculation. Reports must preserve evidence links and confidence at every layer. Read the [methodology](docs/methodology.md), [scoring model](docs/scoring-model.md), and [research process](docs/research-process.md) before contributing.
+
+## Repository structure
+
+| Location | Purpose |
+| --- | --- |
+| `docs/` | Governance, method, quality, and ethical guidance |
+| `framework/` | Reusable entity-report templates |
+| `methodology/metrics/` | Definitions and collection rules for each metric |
+| `scoring/` | Calculation contracts and default weight guidance |
+| `countries/` | Future geographical report hierarchy; contains no findings yet |
+| `reports/` | Future published reports and comparisons |
+| `templates/` | Report and comparison starting points |
+| `.github/` | Contribution forms and validation automation |
+
+## Scoring principles
+
+Scores are bounded, explainable indicators—not truth claims. A report includes the scoring-model version, evidence window, coverage, confidence, and sensitivity to alternative weights. Default weights express a general research-applicant baseline and are never a universal definition of “best.” See [weights](scoring/weights.md).
+
+## Roadmap
+
+The project begins with repository infrastructure (`v0.1`), moves through method validation and a clearly labeled Turkey pilot, then adds automation and wider geographic coverage. The complete plan is in [ROADMAP.md](ROADMAP.md).
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md), the [quality guidelines](docs/quality-guidelines.md), and [ethics policy](docs/ethics.md). Contributions should improve evidence, method, or tooling; they must not add unsourced reputational claims.
+
+## Future vision
+
+The long-term goal is a maintained, machine-readable public knowledge base that can support thousands of advisors across hundreds of universities, with human review and automated data-refresh workflows. See [architecture](docs/architecture.md).
+
+## Status
+
+Infrastructure only. No university, department, lab, or advisor reports have been published.
+
+## License and citation
+
+Released under the [MIT License](LICENSE). Cite this project using [CITATION.cff](CITATION.cff).
