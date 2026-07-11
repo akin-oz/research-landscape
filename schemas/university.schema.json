@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/university.schema.json",
+  "title": "University frontmatter",
+  "allOf": [
+    { "$ref": "common.schema.json" },
+    { "properties": { "entity_type": { "const": "university" }, "country_id": { "$ref": "common.schema.json#/$defs/id" }, "ror": { "type": "string", "pattern": "^https://ror.org/0[0-9a-z]{8}$" }, "website": { "type": "string", "format": "uri" } }, "required": ["entity_type", "country_id"] }
+  ],
+  "unevaluatedProperties": false
+}

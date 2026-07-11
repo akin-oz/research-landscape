@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/publication.schema.json",
+  "title": "Publication frontmatter",
+  "allOf": [
+    { "$ref": "common.schema.json" },
+    { "properties": { "entity_type": { "const": "publication" }, "title": { "type": "string", "minLength": 1 }, "publication_date": { "type": "string", "format": "date" }, "publication_type": { "enum": ["article", "conference-paper", "preprint", "book", "chapter", "thesis", "dataset", "software", "other"] }, "doi": { "type": "string", "pattern": "^10\\.[0-9]{4,9}/.+" }, "author_ids": { "$ref": "common.schema.json#/$defs/idArray" }, "research_area_ids": { "$ref": "common.schema.json#/$defs/idArray" } }, "required": ["entity_type", "title", "publication_date", "publication_type"] }
+  ],
+  "unevaluatedProperties": false
+}

@@ -6,7 +6,7 @@
 
 ## v0.1.0 — Knowledge Model
 
-- Publish entity definitions, relationship model, metadata specification, stable identifiers, evidence model, JSON schemas, and Markdown linting.
+- Publish entity definitions, relationship model, metadata specification, stable identifiers, evidence model, JSON schemas, and Markdown linting. **Completed in repository; release pending.**
 
 ## v0.2.0 — Automation Framework
 

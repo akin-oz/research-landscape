@@ -6,7 +6,7 @@ An open, evidence-based framework for evaluating the fit between graduate applic
 
 ## Mission
 
-Make advisor, lab, department, program, and university research easier to assess using traceable evidence, explicit uncertainty, and reproducible scoring. The project is designed as public research infrastructure—not a collection of opinions or promotional profiles.
+Make advisor, lab, department, program, and university research easier to assess using traceable evidence, explicit uncertainty, and reproducible scoring. The project is designed as a document-backed knowledge graph—not a collection of opinions or promotional profiles.
 
 ## Motivation
 
@@ -22,14 +22,16 @@ Applicants often make high-stakes decisions from incomplete information and repu
 
 ## Methodology
 
-The framework separates four layers: sourced observations, normalized metrics, dimension scores, and a use-case-specific compatibility calculation. Reports must preserve evidence links and confidence at every layer. Read the [methodology](docs/methodology.md), [scoring model](docs/scoring-model.md), and [research process](docs/research-process.md) before contributing.
+The framework connects schema-validated entities and relationships to sourced observations, normalized metrics, dimension scores, and a use-case-specific compatibility calculation. Reports are views over this structured knowledge model and preserve evidence links and confidence at every layer. Read the [entity model](docs/data-model/entity-model.md), [frontmatter specification](docs/specifications/frontmatter.md), [methodology](docs/methodology.md), and [scoring model](docs/scoring-model.md) before contributing.
 
 ## Repository structure
 
 | Location | Purpose |
 | --- | --- |
 | `docs/` | Governance, method, quality, and ethical guidance |
-| `framework/` | Reusable entity-report templates |
+| `framework/` | Reusable entity-report templates with standardized metadata |
+| `schemas/` | Versioned JSON Schemas for entity frontmatter |
+| `docs/data-model/` | Entity, relationship, and stable-ID contracts |
 | `methodology/metrics/` | Definitions and collection rules for each metric |
 | `scoring/` | Calculation contracts and default weight guidance |
 | `countries/` | Future geographical report hierarchy; contains no findings yet |
@@ -39,11 +41,11 @@ The framework separates four layers: sourced observations, normalized metrics, d
 
 ## Scoring principles
 
-Scores are bounded, explainable indicators—not truth claims. A report includes the scoring-model version, evidence window, coverage, confidence, and sensitivity to alternative weights. Default weights express a general research-applicant baseline and are never a universal definition of “best.” See [weights](scoring/weights.md).
+Scores are bounded, explainable indicators—not truth claims. A report includes the scoring-model version, evidence window, coverage, confidence, and sensitivity to alternative weights. Default weights express a general research-applicant baseline and are never a universal definition of “best.” See [v1 weights](scoring/v1/weights.md).
 
 ## Roadmap
 
-The project begins with repository infrastructure (`v0.1`), moves through method validation and a clearly labeled Turkey pilot, then adds automation and wider geographic coverage. The complete plan is in [ROADMAP.md](ROADMAP.md).
+The project begins with repository infrastructure (`v0.0.1`), then the knowledge model (`v0.1.0`), automation, and a clearly labeled Turkey pilot. The complete plan is in [ROADMAP.md](ROADMAP.md).
 
 ## Contributing
 

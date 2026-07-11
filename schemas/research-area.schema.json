@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/research-area.schema.json",
+  "title": "Research area frontmatter",
+  "allOf": [{ "$ref": "common.schema.json" }, { "properties": { "entity_type": { "const": "research-area" }, "label": { "type": "string", "minLength": 1 }, "parent_id": { "$ref": "common.schema.json#/$defs/id" } }, "required": ["entity_type", "label"] }],
+  "unevaluatedProperties": false
+}

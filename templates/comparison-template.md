@@ -1,9 +1,11 @@
 ---
 title: ""
+entity_ids: []
 comparison_scope: ""
 scoring_model: ""
 applicant_weight_profile: ""
-last_reviewed: ""
+created_at: ""
+updated_at: ""
 ---
 
 # [Comparison title]

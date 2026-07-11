@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/funding-project.schema.json",
+  "title": "Funding project frontmatter",
+  "allOf": [{ "$ref": "common.schema.json" }, { "properties": { "entity_type": { "const": "funding-project" }, "title": { "type": "string", "minLength": 1 }, "funder_name": { "type": "string", "minLength": 1 }, "start_date": { "type": "string", "format": "date" }, "end_date": { "type": "string", "format": "date" }, "award_id": { "type": "string" }, "participant_ids": { "$ref": "common.schema.json#/$defs/idArray" } }, "required": ["entity_type", "title", "funder_name", "start_date"] }],
+  "unevaluatedProperties": false
+}

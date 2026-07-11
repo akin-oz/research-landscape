@@ -1,12 +1,14 @@
 ---
+schema_version: 1
 entity_type: university
-entity_id: ""
-display_name: ""
-country_code: ""
-report_status: draft
+id: ""
+name: ""
+status: draft
+created_at: ""
+updated_at: ""
+country_id: ""
 evidence_window: ""
-scoring_model: ""
-last_reviewed: ""
+confidence: unassessed
 ---
 
 # University report: [Name]

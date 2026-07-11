@@ -1,16 +1,19 @@
 ---
+schema_version: 1
 entity_type: advisor
-entity_id: ""
-display_name: ""
-affiliations: []
-report_status: draft
+id: ""
+name: ""
+status: draft
+created_at: ""
+updated_at: ""
+affiliation_ids: []
+group_ids: []
 evidence_window: ""
-scoring_model: ""
-last_reviewed: ""
+confidence: unassessed
 conflicts_of_interest: []
 ---
 
-# Advisor report: [Name]
+# Advisor entity: [Name]
 
 ## Scope and applicant context
 

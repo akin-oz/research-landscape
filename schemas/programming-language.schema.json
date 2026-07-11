@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/programming-language.schema.json",
+  "title": "Programming language frontmatter",
+  "allOf": [{ "$ref": "common.schema.json" }, { "properties": { "entity_type": { "const": "programming-language" }, "label": { "type": "string", "minLength": 1 }, "website": { "type": "string", "format": "uri" } }, "required": ["entity_type", "label"] }],
+  "unevaluatedProperties": false
+}

@@ -1,11 +1,12 @@
 ---
 title: ""
-entity_type: ""
-entity_id: ""
+entity_ids: []
+report_type: assessment
 status: draft
 evidence_window: ""
 scoring_model: ""
-last_reviewed: ""
+created_at: ""
+updated_at: ""
 ---
 
 # [Report title]

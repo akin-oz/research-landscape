@@ -12,3 +12,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Confirm Markdown files are present
         run: test -n "$(find . -name '*.md' -not -path './.git/*' -print -quit)"
+      - name: Validate JSON Schema syntax
+        run: node --input-type=module -e "import { readdir, readFile } from 'node:fs/promises'; for (const file of await readdir('schemas')) if (file.endsWith('.json')) JSON.parse(await readFile('schemas/' + file, 'utf8'));"

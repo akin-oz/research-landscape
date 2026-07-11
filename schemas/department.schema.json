@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/department.schema.json",
+  "title": "Department frontmatter",
+  "allOf": [
+    { "$ref": "common.schema.json" },
+    { "properties": { "entity_type": { "const": "department" }, "university_id": { "$ref": "common.schema.json#/$defs/id" }, "faculty_id": { "$ref": "common.schema.json#/$defs/id" }, "website": { "type": "string", "format": "uri" } }, "required": ["entity_type", "university_id"] }
+  ],
+  "unevaluatedProperties": false
+}

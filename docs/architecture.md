@@ -6,12 +6,13 @@ Academic choices deserve inspectable evidence. This repository stores human-read
 
 ## Layers
 
-1. **Evidence:** source URL, retrieval date, excerpt or extracted value, scope, and confidence.
-2. **Metrics:** normalized observations defined in `methodology/metrics/`.
-3. **Scores:** dimension calculations and weights under `scoring/`.
-4. **Reports:** rendered, versioned assessments under `reports/` or a geographical namespace.
+1. **Knowledge model:** entity Markdown documents with schema-validated YAML frontmatter and stable IDs.
+2. **Evidence:** source URL, retrieval date, excerpt or extracted value, scope, and confidence.
+3. **Metrics:** normalized observations defined in `methodology/metrics/`.
+4. **Scores:** versioned dimension calculations and weights under `scoring/`.
+5. **Reports:** rendered, versioned assessments under `reports/` or a geographical namespace.
 
-Evidence flows upward; a score must be traceable back to its inputs. Templates keep entity types separate while allowing a department or university report to link to constituent reports.
+Entity relationships and evidence flow upward; a score must be traceable back to its inputs. See the [entity model](data-model/entity-model.md), [relationship model](data-model/relationships.md), and [frontmatter specification](specifications/frontmatter.md).
 
 ## Report generation
 

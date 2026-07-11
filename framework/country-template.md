@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 entity_type: country
+id: ""
+name: ""
+status: draft
+created_at: ""
+updated_at: ""
 country_code: ""
-display_name: ""
-report_status: draft
 evidence_window: ""
-last_reviewed: ""
+confidence: unassessed
 ---
 
 # Country context: [Name]

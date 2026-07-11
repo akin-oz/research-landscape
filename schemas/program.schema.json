@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/program.schema.json",
+  "title": "Graduate program frontmatter",
+  "allOf": [
+    { "$ref": "common.schema.json" },
+    { "properties": { "entity_type": { "const": "program" }, "university_id": { "$ref": "common.schema.json#/$defs/id" }, "department_id": { "$ref": "common.schema.json#/$defs/id" }, "degree_level": { "enum": ["masters", "doctorate", "professional-doctorate", "other"] }, "url": { "type": "string", "format": "uri" } }, "required": ["entity_type", "university_id", "degree_level"] }
+  ],
+  "unevaluatedProperties": false
+}

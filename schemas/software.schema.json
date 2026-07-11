@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/software.schema.json",
+  "title": "Software frontmatter",
+  "allOf": [{ "$ref": "common.schema.json" }, { "properties": { "entity_type": { "const": "software" }, "repository_url": { "type": "string", "format": "uri" }, "license": { "type": "string" }, "language_ids": { "$ref": "common.schema.json#/$defs/idArray" } }, "required": ["entity_type"] }],
+  "unevaluatedProperties": false
+}

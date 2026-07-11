@@ -1,12 +1,15 @@
 ---
+schema_version: 1
 entity_type: lab
-entity_id: ""
-parent_department_id: ""
-display_name: ""
-report_status: draft
+id: ""
+name: ""
+status: draft
+created_at: ""
+updated_at: ""
+organization_id: ""
+department_id: ""
 evidence_window: ""
-scoring_model: ""
-last_reviewed: ""
+confidence: unassessed
 ---
 
 # Lab report: [Name]

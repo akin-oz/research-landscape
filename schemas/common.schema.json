@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/common.schema.json",
+  "title": "Research Landscape common entity metadata",
+  "type": "object",
+  "properties": {
+    "schema_version": { "const": 1 },
+    "entity_type": { "type": "string" },
+    "id": { "type": "string", "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "reviewed", "published", "retired"] },
+    "created_at": { "type": "string", "format": "date" },
+    "updated_at": { "type": "string", "format": "date" },
+    "aliases": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "external_ids": { "type": "object", "additionalProperties": { "type": "string" } },
+    "source_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true },
+    "confidence": { "enum": ["high", "medium", "low", "unassessed"] },
+    "evidence_window": { "type": "string" },
+    "conflicts_of_interest": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" }
+  },
+  "required": ["schema_version", "entity_type", "id", "name", "status", "created_at", "updated_at"],
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*$" },
+    "idArray": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true }
+  }
+}

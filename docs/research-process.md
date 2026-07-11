@@ -1,7 +1,7 @@
 # Research process
 
-1. Define the entity, intended applicant profile, and evidence window.
-2. Create a report from the appropriate template and collect sources in an evidence table.
+1. Define the entity, assign a stable ID, and declare the evidence window.
+2. Create an entity record from the appropriate template, validate its frontmatter, and collect sources in an evidence table.
 3. Extract facts faithfully; label confidence and gaps.
 4. Normalize facts using the metric definitions.
 5. Compute only supported scores, recording formulas and model version.

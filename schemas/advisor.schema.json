@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/advisor.schema.json",
+  "title": "Advisor frontmatter",
+  "allOf": [
+    { "$ref": "common.schema.json" },
+    { "properties": { "entity_type": { "const": "advisor" }, "affiliation_ids": { "$ref": "common.schema.json#/$defs/idArray" }, "group_ids": { "$ref": "common.schema.json#/$defs/idArray" }, "orcid": { "type": "string", "pattern": "^https://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9X]{4}$" }, "research_area_ids": { "$ref": "common.schema.json#/$defs/idArray" } }, "required": ["entity_type", "affiliation_ids"] }
+  ],
+  "unevaluatedProperties": false
+}

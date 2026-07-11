@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/country.schema.json",
+  "title": "Country frontmatter",
+  "allOf": [
+    { "$ref": "common.schema.json" },
+    { "properties": { "entity_type": { "const": "country" }, "country_code": { "type": "string", "pattern": "^[A-Z]{2}$" }, "iso_numeric": { "type": "string", "pattern": "^[0-9]{3}$" }, "region": { "type": "string" } }, "required": ["entity_type", "country_code"] }
+  ],
+  "unevaluatedProperties": false
+}

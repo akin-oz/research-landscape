@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/dataset.schema.json",
+  "title": "Dataset frontmatter",
+  "allOf": [{ "$ref": "common.schema.json" }, { "properties": { "entity_type": { "const": "dataset" }, "doi": { "type": "string", "pattern": "^10\\.[0-9]{4,9}/.+" }, "repository_url": { "type": "string", "format": "uri" }, "license": { "type": "string" } }, "required": ["entity_type"] }],
+  "unevaluatedProperties": false
+}

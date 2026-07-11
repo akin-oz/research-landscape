@@ -1,30 +1,24 @@
 ---
 schema_version: 1
-entity_type: department
+entity_type: program
 id: ""
 name: ""
 status: draft
 created_at: ""
 updated_at: ""
 university_id: ""
-faculty_id: ""
-evidence_window: ""
+department_id: ""
+degree_level: masters
 confidence: unassessed
 ---
 
-# Department report: [Name]
+# Graduate program entity: [Name]
 
 ## Scope
 
 ## Evidence
 
 | Observation | Source | Accessed | Confidence | Notes |
-| --- | --- | --- | --- | --- |
-|  |  |  |  |  |
-
-## Environment metrics and scores
-
-| Dimension | Score / status | Coverage | Evidence | Confidence |
 | --- | --- | --- | --- | --- |
 |  |  |  |  |  |
 

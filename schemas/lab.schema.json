@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/lab.schema.json",
+  "title": "Research group (lab) frontmatter",
+  "allOf": [
+    { "$ref": "common.schema.json" },
+    { "properties": { "entity_type": { "const": "lab" }, "organization_id": { "$ref": "common.schema.json#/$defs/id" }, "department_id": { "$ref": "common.schema.json#/$defs/id" }, "website": { "type": "string", "format": "uri" }, "research_area_ids": { "$ref": "common.schema.json#/$defs/idArray" } }, "required": ["entity_type", "organization_id"] }
+  ],
+  "unevaluatedProperties": false
+}
