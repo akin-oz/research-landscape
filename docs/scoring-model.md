@@ -1,5 +1,7 @@
 # Scoring model
 
+> **Compatibility note:** This document remains the v1 scoring contract. The vNext [scoring architecture](scoring.md) separates global, personal, and accessibility scores; accessibility is personal-only and never affects a global result. No existing score formula changes in this architecture phase.
+
 The model describes fit as a vector of dimension scores, each on a 0–100 scale where sufficient evidence exists. It does not create a universal ranking. Scoring contracts are immutable by major version under [`scoring/`](../scoring/); reports record the exact model reference. Applicants may supply weights to calculate a compatibility score:
 
 `compatibility = Σ(weightᵢ × dimension scoreᵢ) / Σ(weightᵢ for available dimensions)`

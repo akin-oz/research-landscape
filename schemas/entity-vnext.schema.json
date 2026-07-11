@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-landscape.org/schemas/entity-vnext.schema.json",
+  "title": "Research Landscape entity vNext architecture contract",
+  "description": "A forward-looking metadata contract for entity-oriented records under entities/. It is not applied to legacy records during the architecture-only phase.",
+  "type": "object",
+  "properties": {
+    "schema_version": { "const": 2 },
+    "entity_type": {
+      "enum": [
+        "principal-investigator",
+        "research-group",
+        "university",
+        "department",
+        "country",
+        "research-ecosystem",
+        "research-software",
+        "research-area",
+        "conference",
+        "funding-program",
+        "project",
+        "publication",
+        "organization"
+      ]
+    },
+    "id": { "$ref": "#/$defs/id" },
+    "name": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "reviewed", "published", "retired"] },
+    "created_at": { "type": "string", "format": "date" },
+    "updated_at": { "type": "string", "format": "date" },
+    "last_review": { "type": "string", "format": "date" },
+    "confidence": { "enum": ["high", "medium", "low", "unassessed"] },
+    "country_id": { "$ref": "#/$defs/id" },
+    "country_code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "region": { "type": "string" },
+    "city": { "type": "string" },
+    "institution_id": { "$ref": "#/$defs/id" },
+    "institution_ids": { "$ref": "#/$defs/idArray" },
+    "organization_id": { "$ref": "#/$defs/id" },
+    "organization_ids": { "$ref": "#/$defs/idArray" },
+    "department_id": { "$ref": "#/$defs/id" },
+    "research_group_ids": { "$ref": "#/$defs/idArray" },
+    "principal_investigator_ids": { "$ref": "#/$defs/idArray" },
+    "career_stage": {
+      "enum": [
+        "early-career",
+        "mid-career",
+        "senior",
+        "emeritus",
+        "not-applicable",
+        "unknown"
+      ]
+    },
+    "research_area_ids": { "$ref": "#/$defs/idArray" },
+    "software_ids": { "$ref": "#/$defs/idArray" },
+    "programming_language_ids": { "$ref": "#/$defs/idArray" },
+    "ecosystem_ids": { "$ref": "#/$defs/idArray" },
+    "community_ids": { "$ref": "#/$defs/idArray" },
+    "funding_program_ids": { "$ref": "#/$defs/idArray" },
+    "project_ids": { "$ref": "#/$defs/idArray" },
+    "conference_ids": { "$ref": "#/$defs/idArray" },
+    "publication_ids": { "$ref": "#/$defs/idArray" },
+    "maintainer_ids": { "$ref": "#/$defs/idArray" },
+    "contributor_ids": { "$ref": "#/$defs/idArray" },
+    "open_source": { "$ref": "#/$defs/openSourceState" },
+    "github": { "type": "string", "format": "uri" },
+    "repository_url": { "type": "string", "format": "uri" },
+    "license": { "type": "string" },
+    "orcid": {
+      "type": "string",
+      "pattern": "^https://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9X]{4}$"
+    },
+    "google_scholar": { "type": "string", "format": "uri" },
+    "website": { "type": "string", "format": "uri" },
+    "accepting_msc": { "$ref": "#/$defs/availabilityState" },
+    "accepting_phd": { "$ref": "#/$defs/availabilityState" },
+    "international_students": { "$ref": "#/$defs/availabilityState" },
+    "instruction_language_codes": { "$ref": "#/$defs/languageCodeArray" },
+    "working_language_codes": { "$ref": "#/$defs/languageCodeArray" },
+    "remote_collaboration": { "$ref": "#/$defs/availabilityState" },
+    "industry_collaboration": { "$ref": "#/$defs/availabilityState" },
+    "volatile_assertions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/volatileAssertion" },
+      "uniqueItems": true
+    },
+    "affiliation_ids": { "$ref": "#/$defs/nonEmptyIdArray" },
+    "university_id": { "$ref": "#/$defs/id" },
+    "faculty_id": { "$ref": "#/$defs/id" },
+    "ror": { "type": "string", "pattern": "^https://ror.org/0[0-9a-z]{8}$" },
+    "ecosystem_kind": { "type": "string" },
+    "conference_kind": { "type": "string" },
+    "event_start_date": { "type": "string", "format": "date" },
+    "series_id": { "$ref": "#/$defs/id" },
+    "host_organization_id": { "$ref": "#/$defs/id" },
+    "funder_organization_id": { "$ref": "#/$defs/id" },
+    "funding_program_kind": { "type": "string" },
+    "title": { "type": "string", "minLength": 1 },
+    "project_status": { "type": "string" },
+    "start_date": { "type": "string", "format": "date" },
+    "end_date": { "type": ["string", "null"], "format": "date" },
+    "participant_ids": { "$ref": "#/$defs/nonEmptyIdArray" },
+    "publication_date": { "type": "string", "format": "date" },
+    "publication_type": {
+      "enum": ["article", "conference-paper", "preprint", "book", "chapter", "thesis", "dataset", "software", "other"]
+    },
+    "organization_kind": { "type": "string" },
+    "label": { "type": "string", "minLength": 1 },
+    "parent_id": { "$ref": "#/$defs/id" },
+    "evidence_window": { "type": "string" },
+    "notes": { "type": "string" },
+    "aliases": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "external_ids": { "type": "object", "additionalProperties": { "type": "string" } },
+    "source_ids": { "$ref": "#/$defs/idArray" },
+    "relationship_assertions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/relationship" },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "entity_type",
+    "id",
+    "name",
+    "status",
+    "created_at",
+    "updated_at",
+    "last_review",
+    "confidence"
+  ],
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "enum": ["reviewed", "published"] } } },
+      "then": {
+        "required": ["source_ids"],
+        "properties": { "source_ids": { "$ref": "#/$defs/nonEmptyIdArray" } }
+      }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "principal-investigator" } } },
+      "then": { "required": ["affiliation_ids"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "research-group" } } },
+      "then": { "required": ["organization_id"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "university" } } },
+      "then": { "required": ["country_id"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "department" } } },
+      "then": { "required": ["university_id"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "country" } } },
+      "then": { "required": ["country_code"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "research-ecosystem" } } },
+      "then": { "required": ["ecosystem_kind", "website"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "research-software" } } },
+      "then": { "anyOf": [{ "required": ["repository_url"] }, { "required": ["website"] }] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "research-area" } } },
+      "then": { "required": ["label"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "conference" } } },
+      "then": { "required": ["conference_kind", "website"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "funding-program" } } },
+      "then": { "required": ["funder_organization_id", "funding_program_kind", "website"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "project" } } },
+      "then": {
+        "allOf": [
+          { "required": ["title", "project_status", "start_date"] },
+          { "anyOf": [{ "required": ["host_organization_id"] }, { "required": ["participant_ids"] }] }
+        ]
+      }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "publication" } } },
+      "then": { "required": ["title", "publication_date", "publication_type"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "organization" } } },
+      "then": { "required": ["organization_kind"] }
+    }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*$" },
+    "idArray": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/id" },
+      "uniqueItems": true
+    },
+    "nonEmptyIdArray": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/id" },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "languageCodeArray": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$" },
+      "uniqueItems": true
+    },
+    "availabilityState": { "enum": ["yes", "no", "unknown", "not-applicable"] },
+    "openSourceState": { "enum": ["yes", "no", "mixed", "unknown", "not-applicable"] },
+    "volatileAssertion": {
+      "type": "object",
+      "properties": {
+        "subject": {
+          "enum": [
+            "open-position",
+            "github-activity",
+            "accepting-msc",
+            "accepting-phd",
+            "international-students",
+            "remote-collaboration",
+            "industry-collaboration"
+          ]
+        },
+        "status": { "enum": ["open", "closed", "active", "inactive", "yes", "no", "unknown"] },
+        "target_id": { "$ref": "#/$defs/id" },
+        "url": { "type": "string", "format": "uri" },
+        "threshold": { "type": "string" },
+        "scope": { "type": "string" },
+        "checked_at": { "type": "string", "format": "date" },
+        "review_by": { "type": "string", "format": "date" },
+        "source_ids": { "$ref": "#/$defs/nonEmptyIdArray" },
+        "confidence": { "enum": ["high", "medium", "low", "unassessed"] },
+        "notes": { "type": "string" }
+      },
+      "required": ["subject", "status", "checked_at", "review_by", "source_ids", "confidence"],
+      "additionalProperties": false
+    },
+    "relationship": {
+      "type": "object",
+      "properties": {
+        "predicate": {
+          "enum": [
+            "belongs_to",
+            "located_in",
+            "develops",
+            "maintains",
+            "maintained_by",
+            "developed_by",
+            "uses",
+            "works_on",
+            "researches",
+            "is_about",
+            "collaborates_with",
+            "speaks_at",
+            "used_by",
+            "funded_by",
+            "contributes_to",
+            "hosts",
+            "organizes",
+            "authors",
+            "participates_in",
+            "includes",
+            "supports",
+            "leads",
+            "offers",
+            "administers",
+            "affiliated_with",
+            "connects",
+            "funds",
+            "involves",
+            "produces",
+            "authored_by",
+            "addresses",
+            "describes",
+            "covers",
+            "hosted_by",
+            "broader_than"
+          ]
+        },
+        "target_id": { "$ref": "#/$defs/id" },
+        "role": { "type": "string" },
+        "start_date": { "type": "string", "format": "date" },
+        "end_date": { "type": ["string", "null"], "format": "date" },
+        "source_ids": { "$ref": "#/$defs/nonEmptyIdArray" },
+        "confidence": { "enum": ["high", "medium", "low", "unassessed"] },
+        "evidence_window": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["predicate", "target_id", "source_ids", "confidence"],
+      "additionalProperties": false
+    }
+  }
+}

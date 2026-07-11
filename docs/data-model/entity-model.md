@@ -1,5 +1,7 @@
 # Entity model
 
+> **Compatibility note:** This is the v1 entity model for existing records. The vNext target is the entity-oriented [architecture entity model](../architecture/entity-model.md), where countries are contextual/filter entities rather than hierarchy roots. No current files are moved or renamed by that target architecture.
+
 Research Landscape models public research environments as named entities connected by stable identifiers. An entity document is a human-readable Markdown record with YAML frontmatter validated by its JSON Schema. An entity's `id`, `entity_type`, `name`, `status`, `created_at`, and `updated_at` are required everywhere; relationships are ID references, never embedded copies of another entity's attributes.
 
 ## Common fields
@@ -19,7 +21,7 @@ Research Landscape models public research environments as named entities connect
 
 | Entity | Purpose | Required domain fields | Optional fields and principal relationships |
 | --- | --- | --- | --- |
-| Country | National context and hierarchy root. | `country_code` | `iso_numeric`, `region`; contains universities. |
+| Country | National context for existing location-oriented records. In vNext, a contextual/filter entity rather than the hierarchy root. | `country_code` | `iso_numeric`, `region`; may relate to universities. |
 | University | Degree-granting or research institution. | `country_id` | `ror`, `website`; contains faculties and programs. |
 | Faculty | University academic subdivision. | `university_id` | `website`; contains departments. |
 | Department | Academic unit. | `university_id` | `faculty_id`, `website`; contains groups and programs. |

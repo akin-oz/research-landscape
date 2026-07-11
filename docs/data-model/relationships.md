@@ -1,5 +1,7 @@
 # Relationship model
 
+> **Compatibility note:** This is the v1 relationship model for existing records, including their location-oriented containment paths. The vNext target is the typed, entity-oriented [architecture relationship model](../architecture/relationships.md). This documentation change does not migrate any records.
+
 Relationships are directional, typed assertions between stable IDs. Their evidence belongs in the source document or a future relation record; an ID reference alone means “asserted by this document at its stated confidence,” not an immutable fact. Use the narrowest accurate predicate and record time bounds when relevant.
 
 ## Canonical predicates

@@ -12,22 +12,17 @@
 
 - Add a Markdown-first, evidence-driven relationship layer for preparation, contact, meeting, follow-up, application, and long-term mentorship records. **Released.**
 
-## v0.3.0 — Automation Framework
+## vNext — Entity Architecture
 
-- Add reproducible validation, source ingestion, score generation, and freshness monitoring.
+- Establish the entity-oriented repository structure, standardized vNext metadata, typed relationships, reusable views, and architecture documentation without migrating existing content.
 
-## v0.4.0 — Advisor Scoring Engine
+## Future phases
 
-- Add a reviewed, transparent scoring engine and compatibility-profile tooling.
+1. **Knowledge Graph Layer** — validate vNext entities and relationship assertions, build stable-ID indexes, and preserve evidence/freshness semantics.
+2. **Software Ecosystem Mapping** — map research software to maintainers, groups, institutions, communities, funding, contributors, and evidence-bounded career paths.
+3. **Global PI Network** — incrementally create and review canonical Principal Investigator, affiliation, research-area, software, and collaboration records.
+4. **Research Group Intelligence** — add group-level research, software, funding, team, mentorship-evidence, and opportunity records without conflating unknowns with negatives.
+5. **Automated Views** — generate deterministic Markdown views from canonical entity metadata while preserving view definitions, evidence policies, and unknown values.
+6. **Recommendation Engine** — calculate versioned personal-fit and accessibility outputs from declared profiles; never turn them into prestige rankings or global scores.
 
-## v0.5.0 — Europe expansion
-
-- Extend the validated workflow to additional countries with regional-source guidance.
-
-## v1.0.0 — Public stable release
-
-- Release stable schemas, reviewed reports, documentation, and governance process.
-
-## Future
-
-- Global coverage, multilingual documentation, API/data exports, and community-maintained source adapters.
+Each future phase is an incremental, reviewable migration from canonical entities outward. Existing location-oriented records remain valid until their source-backed entity equivalents are introduced.
