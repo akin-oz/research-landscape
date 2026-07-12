@@ -143,6 +143,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY) | high | 2/2 documented criteria |
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, AI capability, or research-quality ranking.

@@ -667,6 +667,16 @@ def signal(label: str, assertion: dict[str, Any], owner: Record) -> dict[str, An
     }
 
 
+def metadata_signal(label: str, owner: Record) -> dict[str, Any]:
+    """Render record-level metadata evidence without inventing an edge."""
+    sources = ", ".join(as_ids(owner.metadata.get("source_ids", []))) or "no-source-id"
+    return {
+        "label": label,
+        "sources": sources,
+        "confidence": owner.metadata.get("confidence", "unassessed"),
+    }
+
+
 def recommendation_candidates(query: dict[str, Any], records: dict[str, Record]) -> list[dict[str, Any]]:
     kind = query.get("kind")
     candidates: list[dict[str, Any]] = []
@@ -754,6 +764,14 @@ def recommendation_candidates(query: dict[str, Any], records: dict[str, Record])
                 for area_assertion in matching_assertions(target, "works_on", area_ids):
                     signals.append(signal(f"connects `{target.id}`", connection, ecosystem))
                     signals.append(signal(f"`{target.id}` works on `{area_assertion['target_id']}`", area_assertion, target))
+            for inclusion in matching_assertions(ecosystem, "includes"):
+                software = records.get(inclusion["target_id"])
+                if not software or software.entity_type != "research-software":
+                    continue
+                matched_areas = set(as_ids(software.metadata.get("research_area_ids", []))) & area_ids
+                for area_id in sorted(matched_areas):
+                    signals.append(signal(f"includes `{software.id}`", inclusion, ecosystem))
+                    signals.append(metadata_signal(f"`{software.id}` is classified in `{area_id}`", software))
             if signals:
                 candidates.append({"record": ecosystem, "signals": signals, "criteria": 2})
     else:

@@ -75,6 +75,15 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         pi_candidates = rl.recommendation_candidates(queries["principal-investigators-ai-for-materials"], records)
         self.assertEqual(["PI-ANUBHAV-JAIN"], [candidate["record"].id for candidate in pi_candidates])
+        ecosystem_candidates = rl.recommendation_candidates(queries["ecosystems-ai-for-materials"], records)
+        self.assertEqual(
+            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT"],
+            sorted(candidate["record"].id for candidate in ecosystem_candidates),
+        )
+        fair_chem = next(candidate for candidate in ecosystem_candidates if candidate["record"].id == "ECO-FAIR-CHEM")
+        self.assertEqual(2, fair_chem["criteria"])
+        self.assertTrue(any("includes `SW-FAIRCHEM`" == item["label"] for item in fair_chem["signals"]))
+        self.assertTrue(any("classified in `AREA-AI-FOR-MATERIALS`" in item["label"] for item in fair_chem["signals"]))
 
     def test_source_identifier_must_be_in_the_evidence_table(self) -> None:
         record = rl.Record(

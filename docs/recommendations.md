@@ -17,7 +17,9 @@ with documented target-area work, software-oriented environments, and
 ecosystems connected to a target area. Results are ordered by the count of
 matching evidence signals, then stable name/ID. A multi-hop university result
 shows both the documented host relationship and the group's direct area
-evidence; it is never a university-strength or ecosystem-completeness ranking.
+evidence. An ecosystem result may similarly show a sourced `includes` relation
+and a software record's evidence-backed area classification. Neither traversal
+is a university-strength or ecosystem-completeness ranking.
 This is a reproducible discovery priority, never a claim of research quality,
 prestige, mentorship, availability, or applicant fit.
 
