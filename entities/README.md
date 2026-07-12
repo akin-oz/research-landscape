@@ -31,3 +31,5 @@ The NCCR MARVEL funding cluster adds the [Swiss National Science Foundation](org
 The NoMaD Laboratory project cluster adds the [Max Planck Society](organizations/max-planck-society.md) and [The Novel Materials Discovery Laboratory](projects/nomad-laboratory-coe.md), while reusing Germany, Computational Materials Science, and the historical [NOMAD](research-software/nomad.md) software connection.
 
 The Northwestern MSE department cluster adds the [Department of Materials Science and Engineering](departments/northwestern-materials-science-engineering.md) as administrative context for the existing [Wolverton Research Group](research-groups/wolverton-research-group.md), while preserving Northwestern University as that group's direct host.
+
+The Horizon 2020 funding cluster adds the [European Commission](organizations/european-commission.md) and [Horizon 2020 — Research Infrastructures](funding/horizon-2020-research-infrastructures.md), while connecting them to the existing completed [NoMaD Laboratory project](projects/nomad-laboratory-coe.md).

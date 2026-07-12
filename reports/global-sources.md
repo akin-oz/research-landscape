@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S66 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S68 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -74,6 +74,8 @@
 | S64 | [Northwestern Materials Science & Engineering](https://www.mccormick.northwestern.edu/materials-science/) | Department identity within Northwestern University. | High for Department identity and University context; not a complete faculty or group roster. |
 | S65 | [Northwestern MSE: Materials Theory, Computation, & Design](https://www.mccormick.northwestern.edu/materials-science/research/areas-of-research/materials-theory-computation-design.html) | Department-level computational and theoretical materials-science research context and Chris Wolverton faculty listing. | High for Department research-area and faculty context; not an exhaustive group-membership statement. |
 | S66 | [Northwestern Engineering: Chris Wolverton](https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/wolverton-chris.html) | Wolverton's Materials Science and Engineering appointment and linked Wolverton Research Group site. | High for bounded administrative context; not a second direct group host. |
+| S67 | [European Commission: About](https://commission.europa.eu/about_en) | European Commission identity, executive role, and management of EU funding programmes. | High for funder-organization context; not evidence for an individual award decision. |
+| S68 | [European Commission: Horizon 2020](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en) | Horizon 2020 as the EU research and innovation funding programme for 2014–2020, now succeeded by Horizon Europe. | High for programme identity and duration; CORDIS supplies project-specific funding evidence. |
 
 ## Evidence protocol for new claims
 

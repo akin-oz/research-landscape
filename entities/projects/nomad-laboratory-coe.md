@@ -16,6 +16,8 @@ project_status: completed
 start_date: "2015-11-01"
 end_date: "2018-10-31"
 host_organization_id: ORG-MPG
+funding_program_ids:
+  - FUND-H2020-RESEARCH-INFRASTRUCTURES
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
 software_ids:
