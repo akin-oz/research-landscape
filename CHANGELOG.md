@@ -6,7 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
-- An AI for Materials controlled research area with direct, evidence-bounded group and PI links, plus FAIR Chemistry/FAIRChem and UC Berkeley/CEDER/Gerbrand Ceder vertical slices.
+- An AI for Materials controlled research area with direct, evidence-bounded group and PI links, plus FAIR Chemistry/FAIRChem and UC Berkeley/CEDER/Gerbrand Ceder/CHGNet vertical slices.
 - New explainable discovery paths for AI-for-Materials groups, PIs, ecosystems, and direct-host universities; PIs with licensed open-source software development evidence; and universities directly hosting documented Computational Materials Science groups.
 - A `recommend --list` catalog for public query IDs, aliases, titles, and unavailable-dimension status, plus `recommend --query` interactive lookup.
 - A reproducible review-freshness audit based on canonical `last_review` dates and declared volatile-assertion deadlines.
