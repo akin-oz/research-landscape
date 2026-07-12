@@ -81,13 +81,14 @@ matching direct `belongs_to` assertions, changed-document local links,
 whitespace, schema JSON parsing, and the ADR 0006 University/Organization
 positive and negative branch cases.
 
-Quality Gate 4 can now deepen the global PI and research-group network from
-these evidence-bearing ecosystem entry points. It should add one independently
-reviewed PI/group/institutional cohort at a time, with direct evidence for
-current affiliation, research scope, host identity, software role, funding or
-project context where applicable, and explicit mentorship/opportunity
-boundaries. It must not turn QG3's public contribution surfaces into claims
-about individual supervision, hiring, admissions, or career outcomes.
+Quality Gate 4 can now deepen canonical Research Group intelligence from these
+evidence-bearing ecosystem entry points. It should review one group at a time,
+with direct evidence for research themes, software ecosystem participation,
+open-source activity, people/role roster where publicly listed, infrastructure,
+projects, funding, collaborations, publication patterns, and any actual
+mentorship or career-outcome evidence. Missing categories must remain unknown;
+QG3's public contribution surfaces must not be turned into claims about
+individual supervision, hiring, admissions, or career outcomes.
 
 ## Known limitations carried forward
 

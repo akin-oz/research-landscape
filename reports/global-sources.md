@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S111 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S115 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -119,6 +119,10 @@
 | S109 | [Scientific Data: Materials Cloud](https://www.nature.com/articles/s41597-020-00637-5) | Peer-reviewed 8 September 2020 platform paper, DOI, authors including Nicola Marzari and Giovanni Pizzi, and platform architecture/scope. | High for the historical technical reference; not proof of current roles, capabilities, or funding. |
 | S110 | [Materials Cloud](https://www.materialscloud.org/) | Current platform purpose and Learn/Work/Discover/Explore/Archive user journey. | High for public platform surfaces; hosted services and access may change. |
 | S111 | [Materials Cloud policies](https://www.materialscloud.org/policies) | Archive depositor scope and contributor license choices. | High for policy context; not a guarantee that a submission will be accepted. |
+| S112 | [Persson Group people](https://perssongroup.lbl.gov/people.html) | Public group role categories, current profile descriptions, and selected alumni destinations. | High for the displayed role categories and biographies; not a complete employment roster, placement statistic, or basis for bulk person records. |
+| S113 | [Persson Group publications](https://perssongroup.lbl.gov/publications.html) | Chronological group publication surface, including current materials, computational, and data-driven work. | High for listed publications; not a productivity, quality, or attribution metric. |
+| S114 | [Persson Group open positions and projects](https://perssongroup.lbl.gov/open_positions.html) | Dated 2024 undergraduate Materials Project intern role, task/skill context, one-to-one guidance statement, and displayed postdoc/staff status. | High for the stated dated role; not a current-opening, group-wide mentoring, or supervision-capacity claim. |
+| S115 | [Persson Group news](https://perssongroup.lbl.gov/blog/) | Dated group-member awards and professional recognition. | High for listed historical announcements; not a group quality or career-outcome rating. |
 
 ## Evidence protocol for new claims
 
