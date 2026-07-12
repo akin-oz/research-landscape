@@ -1605,6 +1605,61 @@ def discover_ecosystems(
     return 0
 
 
+DISCOVERY_CATALOG_TYPES = (
+    ("Research areas", "research-area"),
+    ("Countries", "country"),
+    ("Research software", "research-software"),
+    ("Programming languages", "programming-language"),
+)
+
+
+def discovery_catalog(records: dict[str, Record]) -> str:
+    """Render public, reviewed IDs accepted by the discovery commands."""
+    lines = [
+        "# Discovery filter catalog", "",
+        "Use these reviewed canonical IDs with `discover-groups`, `discover-pis`, `discover-universities`, and `discover-ecosystems`. The catalog contains no private profile, score, ranking, availability, or fit data.",
+        "",
+    ]
+    for title, entity_type in DISCOVERY_CATALOG_TYPES:
+        records_for_type = sorted(
+            (record for record in records.values() if record.entity_type == entity_type and eligible(record)),
+            key=lambda record: (record.metadata["name"].casefold(), record.id),
+        )
+        lines.extend([f"## {title}", "", "| Name | Canonical ID |", "| --- | --- |"])
+        for record in records_for_type:
+            lines.append(f"| {record.metadata['name']} | `{record.id}` |")
+        if not records_for_type:
+            lines.append("| — | No reviewed canonical records currently available. |")
+        lines.append("")
+    lines.extend([
+        "## Boundary", "",
+        "An ID identifies an evidence-backed graph node. Its presence in this catalog does not establish quality, prominence, openness beyond its own documented metadata, current availability, admissions, funding, mentorship, or applicant fit.", "",
+    ])
+    return "\n".join(lines)
+
+
+def catalog(
+    root: Path,
+    check: bool,
+    query_id: str | None,
+    list_queries: bool,
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+    as_of: str | None,
+) -> int:
+    if check or query_id or list_queries or area_id or country_id or software_id or language_id or as_of:
+        print("ERROR: catalog accepts no options")
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    print(discovery_catalog(records))
+    return 0
+
+
 def write_or_check(path: Path, content: str, check: bool, drift: list[str]) -> None:
     if check:
         if not path.exists() or path.read_text(encoding="utf-8") != content:
@@ -1806,7 +1861,7 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
@@ -1824,6 +1879,11 @@ def main() -> int:
         return 1 if results.errors else 0
     if args.command == "recommend":
         return recommend(root, args.check, args.query, args.list_queries)
+    if args.command == "catalog":
+        return catalog(
+            root, args.check, args.query, args.list_queries,
+            args.area, args.country, args.software, args.language, args.as_of,
+        )
     if args.command == "discover-groups":
         return discover_groups(
             root, args.area, args.country, args.software, args.language,

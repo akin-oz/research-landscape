@@ -87,3 +87,9 @@ supervision capacity. `discover-universities` uses only direct-host group paths
 and does not compare institutions. `discover-ecosystems` exposes only explicit
 connection or inclusion paths; it does not determine which ecosystem dominates
 a field.
+
+List valid public filter IDs first when needed:
+
+```bash
+python3 scripts/research_landscape.py catalog
+```

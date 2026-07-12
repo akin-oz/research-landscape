@@ -18,6 +18,7 @@ All notable changes are documented here. This project follows the principles of 
 - Extended Hacking Materials' bounded mentorship-process evidence with a separately surfaced professional-development observation for documented research-writing and presentation guidance; it remains historical process evidence, not a quality or outcome signal.
 - New explainable discovery paths for AI-for-Materials groups, PIs, ecosystems, and direct-host universities; PIs with licensed open-source software development evidence; and universities directly hosting documented Computational Materials Science groups.
 - A `recommend --list` catalog for public query IDs, aliases, titles, and unavailable-dimension status, plus `recommend --query` interactive lookup.
+- A public `catalog` command for reviewed Research Area, Country, Research Software, and Programming Language IDs accepted by interactive discovery commands.
 - An interactive `discover-groups` command for deterministic AND filtering of reviewed research groups by canonical area, country, software, and programming-language IDs, with every matching path and source ID shown.
 - An interactive `discover-pis` command applying the same evidence-first filters to reviewed Principal Investigators, with country matches limited to documented public affiliation paths.
 - An interactive `discover-universities` command exposing documented country and direct-host group paths for academic-environment discovery without comparing institutions.

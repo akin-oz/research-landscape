@@ -295,6 +295,17 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(["ECO-FAIR-CHEM"], [candidate["record"].id for candidate in software_candidates])
         self.assertEqual(2, software_candidates[0]["criteria"])
 
+    def test_discovery_catalog_lists_public_filter_ids(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        catalog = rl.discovery_catalog(records)
+        self.assertIn("## Research areas", catalog)
+        self.assertIn("`AREA-MACHINE-LEARNED-POTENTIALS`", catalog)
+        self.assertIn("`COUNTRY-GB`", catalog)
+        self.assertIn("`SW-MATGL`", catalog)
+        self.assertIn("`PROGRAMMING-LANGUAGE-PYTHON`", catalog)
+        self.assertIn("contains no private profile", catalog)
+
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

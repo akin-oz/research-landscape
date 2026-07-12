@@ -18,6 +18,7 @@ python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
 python3 scripts/research_landscape.py recommend --list
 python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
+python3 scripts/research_landscape.py catalog
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-pis --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
@@ -57,6 +58,11 @@ evidence.
 aliases, and available/unavailable status. It reads no private profile or
 shortlist data. `recommend --query <id-or-alias>` renders one listed query for
 interactive discovery; neither form writes generated output.
+
+`catalog` lists the reviewed canonical Research Area, Country, Research
+Software, and Programming Language IDs accepted by the interactive discovery
+commands. It is public, deterministic, and non-generated; it contains no
+private preferences or ranking data.
 
 `discover-groups` is an interactive, non-generated AND filter over reviewed
 Research Groups. It accepts one or more canonical `--area`, `--country`,

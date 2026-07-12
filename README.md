@@ -23,6 +23,7 @@ Applicants often make high-stakes decisions from incomplete information and repu
 ## Start here
 
 - Explore the current canonical graph through the generated [global view](views/generated/global.md), [software view](views/generated/research-software.md), [ecosystem view](views/generated/ecosystems.md), and [evidence recommendations](reports/generated/evidence-recommendations.md).
+- Run `python3 scripts/research_landscape.py catalog` to list reviewed public IDs for interactive discovery filters without reading canonical frontmatter.
 - Use `python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US` for an interactive, source-explainable group filter; see [automation](docs/automation.md) for the supported IDs and evidence paths.
 - Use `python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON` for the corresponding source-explainable PI filter; it is discovery, not an availability or mentorship claim.
 - Use `python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-MATERIALS --country COUNTRY-US` to inspect direct-host university paths without treating them as a ranking.
