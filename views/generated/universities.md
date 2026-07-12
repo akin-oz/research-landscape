@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de -->
+<!-- input-fingerprint: e8076760805419440c94de6f42aaaa80aaba66ddd1efb222702b18be16a72a11 -->
 # Universities view
 
 **Definition:** `universities`
-**Input fingerprint:** `6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de`
+**Input fingerprint:** `e8076760805419440c94de6f42aaaa80aaba66ddd1efb222702b18be16a72a11`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Duke University](../../entities/universities/duke-university.md)
@@ -61,6 +61,13 @@
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) | `UNIVERSITY-UC-BERKELEY` | university | high | 2026-07-12 | COUNTRY-US |
+
+## [University of Cambridge](../../entities/universities/university-of-cambridge.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) | `PI-GABOR-CSANYI` | principal-investigator | high | 2026-07-12 | COUNTRY-GB |
+| [University of Cambridge](../../entities/universities/university-of-cambridge.md) | `UNIVERSITY-CAMBRIDGE` | university | high | 2026-07-12 | COUNTRY-GB |
 
 ## Boundary
 

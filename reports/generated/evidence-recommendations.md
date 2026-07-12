@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 69fb36bdabcbf35a2515aadb2d3e52717b349e982009425b85ea892391178fb3 -->
+<!-- input-fingerprint: 907837e5e9e499817482597145fc0f0a2abba5e154154ebb895248c9da7ddbfd -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `69fb36bdabcbf35a2515aadb2d3e52717b349e982009425b85ea892391178fb3`
+**Input fingerprint:** `907837e5e9e499817482597145fc0f0a2abba5e154154ebb895248c9da7ddbfd`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -222,6 +222,18 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 **Limitations:** Membership reflects an explicit artificial-intelligence-and-materials relation, not a researcher ranking, model-quality claim, or availability signal.
 
+## Principal Investigators with documented Machine-Learned Potentials for Materials work
+
+**Query ID:** `principal-investigators-machine-learned-potentials`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) (`PI-GABOR-CSANYI`) | works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CAMBRIDGE-CSANYI-PROFILE) | high | 1/1 documented criteria |
+
+**Limitations:** Membership reflects an explicit machine-learned-potential relation, not a researcher ranking, individual model-performance claim, maintenance role, or availability signal.
+
 ## Principal Investigators with documented development links to licensed open-source software
 
 **Query ID:** `principal-investigators-open-software`
@@ -230,6 +242,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) (`PI-GABOR-CSANYI`) | develops licensed open-source `SW-MACE` (sources: SRC-MACE-REPOSITORY) | high | 1/1 documented criteria |
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | develops licensed open-source `SW-PYMATGEN` (sources: SRC-NUS-ONG-PROFILE, SRC-PYMATGEN-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** A documented development relationship is not a measure of open-science values, software quality, current maintenance activity, hiring, or mentorship.

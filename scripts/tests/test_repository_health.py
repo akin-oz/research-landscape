@@ -56,7 +56,10 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], model_errors)
         queries = {query["query_id"]: query for query in model["queries"]}
         pi_candidates = rl.recommendation_candidates(queries["principal-investigators-open-software"], records)
-        self.assertEqual(["PI-SHYUE-PING-ONG"], [candidate["record"].id for candidate in pi_candidates])
+        self.assertEqual(
+            ["PI-GABOR-CSANYI", "PI-SHYUE-PING-ONG"],
+            sorted(candidate["record"].id for candidate in pi_candidates),
+        )
         university_candidates = rl.recommendation_candidates(queries["universities-hosting-computational-materials-groups"], records)
         self.assertGreaterEqual(len(university_candidates), 1)
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in university_candidates))
@@ -280,6 +283,14 @@ class RepositoryHealthTests(unittest.TestCase):
                 records, "AREA-MACHINE-LEARNED-POTENTIALS", None, None, None
             )],
         )
+        pi_candidates = rl.recommendation_candidates(
+            queries["principal-investigators-machine-learned-potentials"], records
+        )
+        self.assertEqual(["PI-GABOR-CSANYI"], [candidate["record"].id for candidate in pi_candidates])
+        mace_developer = rl.discovery_pi_candidates(records, None, None, "SW-MACE", None)
+        self.assertEqual(["PI-GABOR-CSANYI"], [candidate["record"].id for candidate in mace_developer])
+        development = rl.matching_assertions(records["PI-GABOR-CSANYI"], "develops", {"SW-MACE"})
+        self.assertEqual("group-attributed-development", development[0]["role"])
 
     def test_recommendation_catalog_lists_available_and_unavailable_queries(self) -> None:
         records, results = rl.validate(ROOT)

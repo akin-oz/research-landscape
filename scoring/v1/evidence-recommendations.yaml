@@ -103,6 +103,13 @@ queries:
     area_id: AREA-AI-FOR-MATERIALS
     limitations: "Membership reflects an explicit artificial-intelligence-and-materials relation, not a researcher ranking, model-quality claim, or availability signal."
 
+  - query_id: principal-investigators-machine-learned-potentials
+    aliases: [machine-learning-potentials-principal-investigators, ml-potential-pis]
+    kind: principal-investigators-by-area
+    title: Principal Investigators with documented Machine-Learned Potentials for Materials work
+    area_id: AREA-MACHINE-LEARNED-POTENTIALS
+    limitations: "Membership reflects an explicit machine-learned-potential relation, not a researcher ranking, individual model-performance claim, maintenance role, or availability signal."
+
   - query_id: principal-investigators-open-software
     aliases: [pis-with-open-source-software]
     kind: principal-investigators-with-open-source-software

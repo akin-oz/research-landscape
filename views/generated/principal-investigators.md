@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de -->
+<!-- input-fingerprint: e8076760805419440c94de6f42aaaa80aaba66ddd1efb222702b18be16a72a11 -->
 # Principal Investigators view
 
 **Definition:** `principal-investigators`
-**Input fingerprint:** `6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de`
+**Input fingerprint:** `e8076760805419440c94de6f42aaaa80aaba66ddd1efb222702b18be16a72a11`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -13,6 +13,7 @@
 | [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) | `PI-CLAUDIA-DRAXL` | principal-investigator | high | 2026-07-12 | COUNTRY-DE |
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Giovanni Pizzi](../../entities/principal-investigators/giovanni-pizzi.md) | `PI-GIOVANNI-PIZZI` | principal-investigator | high | 2026-07-11 | COUNTRY-CH |
+| [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) | `PI-GABOR-CSANYI` | principal-investigator | high | 2026-07-12 | COUNTRY-GB |
 | [Kristin A. Persson](../../entities/principal-investigators/kristin-persson.md) | `PI-KRISTIN-PERSSON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) | `PI-NICOLA-MARZARI` | principal-investigator | high | 2026-07-12 | COUNTRY-CH |
 | [Ryo Yoshida](../../entities/principal-investigators/ryo-yoshida.md) | `PI-RYO-YOSHIDA` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |

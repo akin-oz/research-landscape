@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de -->
+<!-- input-fingerprint: e8076760805419440c94de6f42aaaa80aaba66ddd1efb222702b18be16a72a11 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de`
+**Input fingerprint:** `e8076760805419440c94de6f42aaaa80aaba66ddd1efb222702b18be16a72a11`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -48,9 +48,11 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
+| [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) | `PI-GABOR-CSANYI` | principal-investigator | high | 2026-07-12 | COUNTRY-GB |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
+| [MACE](../../entities/research-software/mace.md) | `SW-MACE` | research-software | high | 2026-07-12 | — |
 
 ## [Materials Informatics](../../entities/research-areas/materials-informatics.md)
 

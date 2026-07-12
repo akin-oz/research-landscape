@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de -->
+<!-- input-fingerprint: e8076760805419440c94de6f42aaaa80aaba66ddd1efb222702b18be16a72a11 -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de`
+**Input fingerprint:** `e8076760805419440c94de6f42aaaa80aaba66ddd1efb222702b18be16a72a11`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)
@@ -53,6 +53,13 @@
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) | `RG-THEOS` | research-group | high | 2026-07-12 | COUNTRY-CH |
 | [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) | `RG-PSI-MSD` | research-group | high | 2026-07-12 | COUNTRY-CH |
 | [EPFL](../../entities/universities/epfl.md) | `UNIVERSITY-EPFL` | university | high | 2026-07-12 | COUNTRY-CH |
+
+## [United Kingdom](../../entities/countries/united-kingdom.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) | `PI-GABOR-CSANYI` | principal-investigator | high | 2026-07-12 | COUNTRY-GB |
+| [University of Cambridge](../../entities/universities/university-of-cambridge.md) | `UNIVERSITY-CAMBRIDGE` | university | high | 2026-07-12 | COUNTRY-GB |
 
 ## [United States](../../entities/countries/united-states.md)
 
