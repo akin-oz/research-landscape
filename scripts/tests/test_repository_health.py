@@ -216,10 +216,21 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(["ORG-SANDIA-NATIONAL-LABORATORIES"], ecosystem.metadata["organization_ids"])
         self.assertEqual([], ecosystem.metadata.get("principal_investigator_ids", []))
         candidates = rl.discovery_software_candidates(
-            records, "AREA-COMPUTATIONAL-MATERIALS-SCIENCE", "PROGRAMMING-LANGUAGE-CPP", "ECO-LAMMPS"
+            records, "AREA-COMPUTATIONAL-MATERIALS-SCIENCE", "PROGRAMMING-LANGUAGE-CPP", "ECO-LAMMPS", "yes"
         )
         self.assertEqual(["SW-LAMMPS"], [candidate["record"].id for candidate in candidates])
-        self.assertEqual(3, candidates[0]["criteria"])
+        self.assertEqual(4, candidates[0]["criteria"])
+        self.assertTrue(any("open-source state `yes`" in item["label"] for item in candidates[0]["signals"]))
+        rendered = rl.render_software_discovery(
+            records,
+            "AREA-COMPUTATIONAL-MATERIALS-SCIENCE",
+            "PROGRAMMING-LANGUAGE-CPP",
+            "ECO-LAMMPS",
+            ROOT / "reports/generated/evidence-recommendations.md",
+            "yes",
+        )
+        self.assertIn("open-source state `yes`", rendered)
+        self.assertIn("4/4 documented criteria", rendered)
 
     def test_ceder_chgnet_development_path_is_sourced(self) -> None:
         records, results = rl.validate(ROOT)

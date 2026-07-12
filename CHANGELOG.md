@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A controlled `discover-software --open-source` facet that AND-filters the software record's directly evidenced `open_source` state alongside area, implementation language, and ecosystem paths.
 - A bounded LAMMPS ecosystem slice with distinct software, Sandia National Laboratories, and ecosystem records; it surfaces documented C++ implementation and public GitHub contribution paths without inventing a developer or maintainer roster.
 - A bounded Quantum ESPRESSO ecosystem slice with distinct software, Foundation, and ecosystem records; its documented Foundation representative links to Stefano Baroni and Nicola Marzari avoid inferring current maintenance, governance, or contribution-frequency roles.
 - A directly source-bounded Materials Informatics classification for RadonPy, based on RIKEN's published “polymer informatics” article listing; the record explicitly avoids generalizing that classification beyond the documented software context.

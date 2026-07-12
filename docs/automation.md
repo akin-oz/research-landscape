@@ -30,7 +30,7 @@ python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-M
 python3 scripts/research_landscape.py discover-universities --area AREA-MACHINE-LEARNED-POTENTIALS --ecosystem ECO-MATML
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS --software SW-FAIRCHEM
-python3 scripts/research_landscape.py discover-software --area AREA-MACHINE-LEARNED-POTENTIALS --language PROGRAMMING-LANGUAGE-PYTHON --ecosystem ECO-MATML
+python3 scripts/research_landscape.py discover-software --area AREA-MACHINE-LEARNED-POTENTIALS --language PROGRAMMING-LANGUAGE-PYTHON --ecosystem ECO-MATML --open-source yes
 python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 ```
 
@@ -111,11 +111,13 @@ not assess ecosystem dominance, completeness, performance, or fit.
 
 `discover-software` is an interactive, non-generated AND filter over reviewed
 Research Software. It accepts canonical `--area`, `--language`, and
-`--ecosystem` IDs. An area match follows the software record's sourced direct
+`--ecosystem` IDs plus a controlled `--open-source` state (`yes`, `no`,
+`mixed`, `unknown`, or `not-applicable`). An area match follows the software record's sourced direct
 classification, a language match follows its sourced `implemented_in`
-assertion, and an ecosystem match follows the ecosystem's sourced `includes`
-assertion. The command is alphabetically ordered and does not assess software
-quality, performance, adoption, maintenance, support, or fit.
+assertion, an ecosystem match follows the ecosystem's sourced `includes`
+assertion, and an openness match reads only the software record's sourced
+`open_source` state. The command is alphabetically ordered and does not assess
+software quality, performance, adoption, maintenance, support, or fit.
 
 Its lifecycle column is an evidence observation, not a health score: a software
 record may expose `active`, `archived`, `superseded`, or `unknown` only with its

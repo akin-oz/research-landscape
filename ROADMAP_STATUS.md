@@ -23,7 +23,7 @@ Materialyze/MatGL/MatML, Quantum ESPRESSO/Foundation, LAMMPS/Sandia, and M3GNet
 publication-provenance slices; accepted
 Programming Language and bounded mentorship-process evidence contracts;
 explicit recommendation-query, interactive software, and ecosystem-path
-discovery; review-freshness auditing; and stricter Evidence-table provenance
+discovery, including a controlled open-source software facet; review-freshness auditing; and stricter Evidence-table provenance
 validation. These are ongoing improvements, not a retroactive change to the
 v0.3.0 release conclusion; see [CHANGELOG.md](CHANGELOG.md) for the untagged
 work.
