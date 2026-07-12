@@ -21,6 +21,15 @@ open_source: "yes"
 website: https://fair-chem.github.io/
 repository_url: https://github.com/facebookresearch/fairchem
 license: MIT
+programming_language_ids:
+  - PROGRAMMING-LANGUAGE-PYTHON
+relationship_assertions:
+  - predicate: implemented_in
+    target_id: PROGRAMMING-LANGUAGE-PYTHON
+    source_ids: [SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The official documentation identifies Python 3.10+ and pip installation, while the project repository identifies Python as its dominant implementation language. This does not classify every model, checkpoint, or contributor as Python-based.
 ---
 
 # FAIRChem
@@ -47,4 +56,5 @@ or chemistry domain has the same license, maturity, performance, or access
 conditions. In particular, model/checkpoint licenses and gated-model access
 can vary by application area. Public code and contribution surfaces do not
 establish a contributor role, review entitlement, support guarantee, opening,
-mentorship, admission, or applicant fit.
+mentorship, admission, or applicant fit. The Python relation applies to the
+reviewed software implementation, not every model, checkpoint, or contributor.

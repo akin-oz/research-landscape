@@ -17,6 +17,7 @@ flowchart LR
   AREA["AREA-AI-FOR-MATERIALS\nAI for Materials"]
   ECO["ECO-FAIR-CHEM\nFAIR Chemistry"] -->|"includes"| SW["SW-FAIRCHEM\nFAIRChem"]
   SW -->|"research_area_ids"| AREA
+  SW -->|"implemented_in"| PY["PROGRAMMING-LANGUAGE-PYTHON\nPython"]
 ```
 
 ## Evidence and boundaries
@@ -27,15 +28,16 @@ flowchart LR
 | Software | The official central repository identifies `fairchem` as the software surface for data, models, demos, and applications. | No package/module, model, dataset, or checkpoint is separately modeled in this slice. |
 | Open source | The repository states that `fairchem` is MIT licensed. | Model and checkpoint terms may vary; no blanket license is inferred. |
 | AI-for-Materials relation | Documentation directly names ML models for materials science and related applications. | The relation does not claim every AI-for-Materials method or group uses FAIRChem. |
+| Programming language | The official documentation identifies Python 3.10+ and pip installation; the central repository reports Python as its dominant implementation language. | This applies to the reviewed software implementation, not every model, checkpoint, or contributor. |
 | Open Catalyst context | Documentation preserves legacy Open Catalyst model/dataset context. | No separate project, dataset, person, institution, or funder node is created without a dedicated slice. |
 
 ## Deliberate omissions
 
 - No team-member, contributor, Meta/CMU, host, publication, model, dataset,
   benchmark, funding, or partner relation is inferred.
-- No additional programming-language entity is created in this slice; any
-  software-language relation must use the accepted ADR 0007 contract.
-  for controlled language discovery.
+- The later language-coverage increment applies the accepted ADR 0007 contract
+  to `SW-FAIRCHEM → implemented_in → PROGRAMMING-LANGUAGE-PYTHON`; no further
+  language, model, or contributor node is inferred.
 - No claim is made about model quality, support, access, review, employment,
   mentorship, openings, admissions, or personal fit.
 

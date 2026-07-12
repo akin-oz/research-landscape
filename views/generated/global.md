@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 3a2759dbbc649a568c5fa4ef959825e65f2b8eb66cd31a0bf7822aeedc8f078a -->
+<!-- input-fingerprint: 2740782cd49db0efdb318be30525f72f8b99b4b4a6d32588775817cb75e6d293 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `3a2759dbbc649a568c5fa4ef959825e65f2b8eb66cd31a0bf7822aeedc8f078a`
+**Input fingerprint:** `2740782cd49db0efdb318be30525f72f8b99b4b4a6d32588775817cb75e6d293`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |

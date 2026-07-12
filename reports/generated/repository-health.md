@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 3a2759dbbc649a568c5fa4ef959825e65f2b8eb66cd31a0bf7822aeedc8f078a -->
+<!-- input-fingerprint: 2740782cd49db0efdb318be30525f72f8b99b4b4a6d32588775817cb75e6d293 -->
 # Repository health report
 
-**Input fingerprint:** `3a2759dbbc649a568c5fa4ef959825e65f2b8eb66cd31a0bf7822aeedc8f078a`
+**Input fingerprint:** `2740782cd49db0efdb318be30525f72f8b99b4b4a6d32588775817cb75e6d293`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
 - Canonical v2 entities: **84**
-- Typed relationship assertions: **149**
+- Typed relationship assertions: **151**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -48,7 +48,7 @@
 | --- | ---: |
 | Reviewed/published records with source IDs | 84/84 |
 | Reviewed/published records with last-review dates | 84/84 |
-| Typed relationships with source IDs | 149/149 |
+| Typed relationships with source IDs | 151/151 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
 | Entities with an inbound or outbound graph connection | 84/84 |
 | Broken local Markdown links | 0 |
@@ -81,7 +81,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | describes | 5 |
 | develops | 10 |
 | funds | 1 |
-| implemented_in | 8 |
+| implemented_in | 10 |
 | includes | 8 |
 | involves | 1 |
 | leads | 11 |

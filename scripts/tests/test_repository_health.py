@@ -340,6 +340,13 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         self.assertIn("# Research-software discovery", rendered)
         self.assertIn("3/3 documented criteria", rendered)
+        ml_python_candidates = rl.discovery_software_candidates(
+            records, "AREA-MACHINE-LEARNED-POTENTIALS", "PROGRAMMING-LANGUAGE-PYTHON", None
+        )
+        self.assertEqual(
+            ["SW-CHGNET", "SW-FAIRCHEM", "SW-MACE", "SW-MATGL"],
+            sorted(candidate["record"].id for candidate in ml_python_candidates),
+        )
 
     def test_discovery_catalog_lists_public_filter_ids(self) -> None:
         records, results = rl.validate(ROOT)

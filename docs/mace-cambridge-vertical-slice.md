@@ -19,6 +19,7 @@ flowchart LR
   PI -->|"works_on"| A["AREA-MACHINE-LEARNED-POTENTIALS"]
   PI -->|"develops (group-attributed)"| SW["SW-MACE\nMACE"]
   SW -->|"classified in"| A
+  SW -->|"implemented_in"| PY["PROGRAMMING-LANGUAGE-PYTHON\nPython"]
 ```
 
 ## Evidence and boundaries
@@ -28,6 +29,7 @@ flowchart LR
 | PI affiliation and topic | Cambridge's public profile identifies Csányi as a Professor of Molecular Modelling and describes ML interatomic-potential work. | It does not establish availability, supervision capacity, or every research activity. |
 | University and country | Cambridge's public contact page locates the University in Cambridge, United Kingdom; ISO supplies `GB`. | Geography is a filter, not a quality or mobility conclusion. |
 | Research software | MACE’s project-owned repository and documentation describe ML interatomic potentials and the MIT-licensed code. | No performance, complete-model, support, or contributor-roster claim is made. |
+| Programming language | The project-owned repository documents Python ≥3.9, pip installation, and Python entry points for the reviewed reference implementation. | This is not a statement about the separately named JAX implementation, group-wide practice, or individual skills. |
 | Development relation | The repository credits the group of Gábor Csányi and named contributors for the reference implementation. | The relation is group-attributed; it is not an individual coding, maintenance, governance, or release-role assertion. |
 
 ## Deliberate omissions

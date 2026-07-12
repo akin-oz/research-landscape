@@ -17,6 +17,15 @@ open_source: "yes"
 website: https://mace-docs.readthedocs.io/
 repository_url: https://github.com/ACEsuit/mace
 license: MIT
+programming_language_ids:
+  - PROGRAMMING-LANGUAGE-PYTHON
+relationship_assertions:
+  - predicate: implemented_in
+    target_id: PROGRAMMING-LANGUAGE-PYTHON
+    source_ids: [SRC-MACE-REPOSITORY]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The project-owned repository documents Python >= 3.9, pip installation, and Python entry points for the MACE reference implementation. This does not classify the separately named JAX implementation or establish a group-wide language policy or individual skill.
 ---
 
 # MACE
@@ -37,6 +46,9 @@ evidence recorded on the PI node.
 ## Boundary and limitations
 
 This record does not represent every MACE checkpoint, foundation model,
-dataset, dependency, application, user, contributor, or organisation. It does
-not assert model performance, support availability, review entitlement,
-employment, mentorship, admissions, or applicant fit.
+dataset, dependency, application, user, contributor, or organisation. The
+Python relation is limited to the reviewed reference implementation; it does
+not classify the separately named JAX implementation, establish a group-wide
+language policy, or identify an individual's skill. The record does not assert
+model performance, support availability, review entitlement, employment,
+mentorship, admissions, or applicant fit.
