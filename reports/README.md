@@ -1,3 +1,9 @@
 # Reports
 
-Published, reviewed reports will live here or in the country hierarchy. This directory intentionally contains no reports yet.
+Reviewed global research-intelligence reports live here. They are compatibility analyses for a declared software-engineering-to-computational-materials profile, not institutional, national or prestige rankings.
+
+- [Global source register](global-sources.md) — primary-source evidence roots and collection protocol.
+- [Global ecosystems](global-ecosystems.md) — compares connected research/software ecosystems rather than countries.
+- [Global discovery slate: 100 PIs and technical research leaders](top-100-principal-investigators.md) — a non-ranked, revalidation-aware research queue.
+- [Personal roadmap](personal-roadmap.md) — a 12-month path toward credible computational-materials research contribution.
+- [Special report entry points](special-reports.md) — 50 groups, four 25-lists, and evidence-limited 10-lists. Individual files named for each requested report link to this canonical material.

@@ -36,6 +36,9 @@ The framework connects schema-validated entities and relationships to sourced ob
 | `scoring/` | Calculation contracts and default weight guidance |
 | `countries/` | Country-specific evidence reports, comparisons, and future geographical coverage |
 | `reports/` | Future published reports and comparisons |
+| `ecosystems/` | Ecosystem-level records; avoids treating countries as research-quality proxies |
+| `research-groups/` | Group-level dossiers and discovery queue |
+| `principal-investigators/` and `research-leaders/` | PI index and evidence-backed leader dossiers |
 | `relationships/` | Markdown-first Research Relationship Management records, templates, and lifecycle guidance |
 | `templates/` | Report and comparison starting points |
 | `.github/` | Contribution forms and validation automation |
@@ -55,6 +58,10 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md), the [quality guidelines](docs/qu
 ## Future vision
 
 The long-term goal is a maintained, machine-readable public knowledge base that can support thousands of advisors across hundreds of universities, with human review and automated data-refresh workflows. See [architecture](docs/architecture.md).
+
+## Global computational-materials intelligence
+
+The repository now includes an evidence-bounded global starting point for a senior software engineer moving into computational materials science: [ecosystem comparison](reports/global-ecosystems.md), [100-person non-ranked discovery slate](reports/top-100-principal-investigators.md), [anchor dossiers](principal-investigators/README.md), [special shortlists](reports/special-reports.md), [source register](reports/global-sources.md), [career roadmap](reports/personal-roadmap.md), and a profile-specific [scorecard](scoring/v1/computational-materials-career-fit.md). The discovery slate is explicitly separated from verified dossiers so that current roles and openings are never fabricated.
 
 ## Status
 
