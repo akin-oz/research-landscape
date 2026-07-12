@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 87bc229f7da8946d7300631b6604f1868938d784e95ca642ae9aeb821b14af9b -->
+<!-- input-fingerprint: 904a6067823d10193ba1b5c7aede0c4588d28a2e54e519e860bbd4800c6eb486 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `87bc229f7da8946d7300631b6604f1868938d784e95ca642ae9aeb821b14af9b`
+**Input fingerprint:** `904a6067823d10193ba1b5c7aede0c4588d28a2e54e519e860bbd4800c6eb486`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -222,6 +222,19 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) (`UNIVERSITY-UC-BERKELEY`) | hosts `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE) | high | 2/2 documented criteria |
 
 **Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
+
+## Universities directly hosting research groups with documented AI for Materials work
+
+**Query ID:** `universities-hosting-ai-for-materials-groups`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [National University of Singapore](../../entities/universities/national-university-of-singapore.md) (`UNIVERSITY-NUS`) | hosts `RG-MATERIALYZE-AI` (sources: SRC-NUS-ONG-PROFILE, SRC-MATERIALYZE-TEAM); `RG-MATERIALYZE-AI` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-NUS-ONG-PROFILE) | high | 2/2 documented criteria |
+| [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) (`UNIVERSITY-UC-BERKELEY`) | hosts `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION) | high | 2/2 documented criteria |
+
+**Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, AI capability, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
 
 ## Python-heavy research groups
 

@@ -53,7 +53,7 @@
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
-| Recommendation queries (available/unavailable) | 16 (14/2) |
+| Recommendation queries (available/unavailable) | 17 (15/2) |
 
 ## Relationship predicates
 

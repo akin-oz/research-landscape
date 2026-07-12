@@ -102,6 +102,13 @@ queries:
     area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
     limitations: "This is a sourced host-and-area discovery path, not a measure of university strength, ecosystem completeness, degree quality, funding, opportunities, or admissions fit."
 
+  - query_id: universities-hosting-ai-for-materials-groups
+    aliases: [universities-with-ai-for-materials-groups]
+    kind: universities-hosting-groups-by-area
+    title: Universities directly hosting research groups with documented AI for Materials work
+    area_id: AREA-AI-FOR-MATERIALS
+    limitations: "This is a sourced host-and-area discovery path, not a measure of university strength, AI capability, ecosystem completeness, degree quality, funding, opportunities, or admissions fit."
+
   - query_id: python-heavy-research-groups
     aliases: [best-python-centric-research-groups]
     status: unavailable

@@ -61,6 +61,11 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertGreaterEqual(len(university_candidates), 1)
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in university_candidates))
         self.assertTrue(all(len(candidate["signals"]) >= 2 for candidate in university_candidates))
+        ai_university_candidates = rl.recommendation_candidates(queries["universities-hosting-ai-for-materials-groups"], records)
+        self.assertEqual(
+            ["UNIVERSITY-NUS", "UNIVERSITY-UC-BERKELEY"],
+            sorted(candidate["record"].id for candidate in ai_university_candidates),
+        )
 
     def test_ai_for_materials_slice_uses_explicit_area_evidence(self) -> None:
         records, results = rl.validate(ROOT)
