@@ -58,7 +58,7 @@ Scores are bounded, explainable indicators—not truth claims. A report includes
 
 ## Roadmap
 
-The project begins with repository infrastructure (`v0.0.1`), then the knowledge model (`v0.1.0`), automation, and a clearly labeled Turkey pilot. The complete plan is in [ROADMAP.md](ROADMAP.md).
+The v0.3.0 knowledge-graph execution release is complete for its reviewed canonical cohort. Read the [final implementation review](FINAL_IMPLEMENTATION_REVIEW.md), [roadmap status](ROADMAP_STATUS.md), and the continuing [ROADMAP.md](ROADMAP.md) for its evidence and limits.
 
 ## Contributing
 
@@ -74,7 +74,7 @@ The repository now includes an evidence-bounded global starting point for a seni
 
 ## Status
 
-The core knowledge model, deterministic views, validation tooling, and explainable evidence recommendations are published. The current canonical cohort is intentionally bounded; generated reports display its coverage and limitations rather than claiming a complete global map. The repository also includes an evidence-bounded Turkey advisor search, an Akdeniz University pilot, and an evidence-first due-diligence comparison of its narrowed three-advisor shortlist; these are compatibility analyses for a declared applicant profile, not university or prestige rankings. The [Research Relationship Management module](relationships/README.md) carries those evidence-backed findings into transparent, applicant-owned relationship records. Start with the [Turkey shortlist](countries/turkey/top-advisors-turkey.md) or the [advisor due-diligence dossiers](advisor-due-diligence/README.md).
+The v0.3.0 execution phase has passed its current-cohort integrity review: the core knowledge model, deterministic views, validation tooling, and explainable evidence recommendations are published. The canonical cohort is intentionally bounded; generated reports display coverage and limitations rather than claiming a complete global map. The repository also includes an evidence-bounded Turkey advisor search, an Akdeniz University pilot, and an evidence-first due-diligence comparison of its narrowed three-advisor shortlist; these are compatibility analyses for a declared applicant profile, not university or prestige rankings. The [Research Relationship Management module](relationships/README.md) carries those evidence-backed findings into transparent, applicant-owned relationship records. Start with the [Turkey shortlist](countries/turkey/top-advisors-turkey.md) or the [advisor due-diligence dossiers](advisor-due-diligence/README.md).
 
 ## License and citation
 

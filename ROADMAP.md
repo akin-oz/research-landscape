@@ -12,17 +12,18 @@
 
 - Add a Markdown-first, evidence-driven relationship layer for preparation, contact, meeting, follow-up, application, and long-term mentorship records. **Released.**
 
-## vNext — Entity Architecture
+## v0.3.0 — Knowledge Graph Execution
 
-- Establish the entity-oriented repository structure, standardized vNext metadata, typed relationships, reusable views, and architecture documentation without migrating existing content.
+- Establish the entity-oriented repository structure, standardized v2 metadata, typed relationships, reusable deterministic views, and architecture documentation.
+- Validate canonical entities and relationship assertions, build stable-ID projections, and preserve evidence/review semantics.
+- Publish Software Ecosystem Mapping and Research Group Intelligence for the current evidence-bounded cohort.
+- Add automated views, health reporting, explainable evidence-discovery recommendations, regression tests, CI drift checks, and community contribution workflows. **Released.**
 
-## Future phases
+## Ongoing phases
 
-1. **Knowledge Graph Layer** — validate vNext entities and relationship assertions, build stable-ID indexes, and preserve evidence/freshness semantics.
-2. **Software Ecosystem Mapping** — map research software to maintainers, groups, institutions, communities, funding, contributors, and evidence-bounded career paths.
-3. **Global PI Network** — incrementally create and review canonical Principal Investigator, affiliation, research-area, software, and collaboration records.
-4. **Research Group Intelligence** — add group-level research, software, funding, team, mentorship-evidence, and opportunity records without conflating unknowns with negatives.
-5. **Automated Views** — generate deterministic Markdown views from canonical entity metadata while preserving view definitions, evidence policies, and unknown values.
-6. **Recommendation Engine** — calculate versioned personal-fit and accessibility outputs from declared profiles; never turn them into prestige rankings or global scores.
+1. **Evidence-bounded graph expansion** — incrementally create and review canonical Principal Investigator, affiliation, research-area, software, collaboration, and group records.
+2. **Source and freshness governance** — establish an approved source/freshness policy and, if justified, a first-class provenance graph without weakening record-local evidence.
+3. **Ethical mentorship and outcome evidence** — define aggregate, comparable evidence contracts before publishing comparative mentorship or outcome queries.
+4. **Recommendation maturation** — extend only declared, reviewable evidence-discovery contracts; never turn them into prestige rankings, admissions predictions, or opaque global scores.
 
-Each future phase is an incremental, reviewable migration from canonical entities outward. Existing location-oriented records remain valid until their source-backed entity equivalents are introduced.
+Each phase remains an incremental, reviewable migration from canonical entities outward. Existing location-oriented records remain valid until their source-backed entity equivalents are introduced.

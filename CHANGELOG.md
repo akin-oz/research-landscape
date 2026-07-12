@@ -4,6 +4,27 @@ All notable changes are documented here. This project follows the principles of 
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-07-12
+
+### Added
+
+- The first production-quality knowledge-graph execution cohort: 67 reviewed v2 canonical entities and 116 evidence-bearing typed relationship assertions.
+- Software Ecosystem Mapping and Research Group Intelligence coverage for the reviewed cohort, including direct-host integrity checks.
+- Declarative deterministic views: 13 definitions, 10 generated public indexes, and 3 deliberately private contracts.
+- Repository validation, migration checks, generated health reporting, deterministic recommendation generation, regression tests, and CI drift checks.
+- Explainable evidence-discovery queries that expose predicates, targets, source identifiers, confidence, coverage, limitations, and explicitly unavailable dimensions.
+- Contributor onboarding, entity-authoring, review-process, automation, recommendation, quality, migration, and architecture-status guidance.
+- Final implementation review and release documentation for the complete QG1–QG10 execution phase.
+
+### Changed
+
+- The roadmap now records the completed v0.3.0 execution release and focuses forward work on evidence-bounded expansion, source/freshness governance, and ethical mentorship evidence.
+
+### Notes
+
+- This release is an integrity-reviewed canonical cohort, not a global census, prestige ranking, admissions prediction, or mentorship ranking.
+- Language and comparable mentorship dimensions remain unavailable until governed evidence contracts exist.
+
 ## [0.2.0] - 2026-07-11
 
 ### Added
