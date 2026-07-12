@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 6a39d1a809f3fd49df192f3a44df895f6a7d11060ff769e0f680a19d7b9db9f0 -->
+<!-- input-fingerprint: e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81 -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `6a39d1a809f3fd49df192f3a44df895f6a7d11060ff769e0f680a19d7b9db9f0`
+**Input fingerprint:** `e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)
@@ -61,14 +61,17 @@
 | [Lawrence Berkeley National Laboratory](../../entities/organizations/lawrence-berkeley-national-laboratory.md) | `ORG-LBNL` | organization | high | 2026-07-12 | COUNTRY-US |
 | [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) | `PI-ANUBHAV-JAIN` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) | `PI-CHRIS-WOLVERTON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
+| [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Kristin A. Persson](../../entities/principal-investigators/kristin-persson.md) | `PI-KRISTIN-PERSSON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) | `PI-STEFANO-CURTAROLO` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Hacking Materials](../../entities/research-groups/hacking-materials.md) | `RG-HACKING-MATERIALS` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Persson Group](../../entities/research-groups/persson-group.md) | `RG-PERSSON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Duke University](../../entities/universities/duke-university.md) | `UNIVERSITY-DUKE` | university | high | 2026-07-12 | COUNTRY-US |
 | [Northwestern University](../../entities/universities/northwestern-university.md) | `UNIVERSITY-NORTHWESTERN` | university | high | 2026-07-12 | COUNTRY-US |
+| [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) | `UNIVERSITY-UC-BERKELEY` | university | high | 2026-07-12 | COUNTRY-US |
 
 ## Boundary
 

@@ -1,13 +1,14 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 6a39d1a809f3fd49df192f3a44df895f6a7d11060ff769e0f680a19d7b9db9f0 -->
+<!-- input-fingerprint: e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81 -->
 # Research Groups view
 
 **Definition:** `research-groups`
-**Input fingerprint:** `6a39d1a809f3fd49df192f3a44df895f6a7d11060ff769e0f680a19d7b9db9f0`
+**Input fingerprint:** `e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |
 | [Computational Materials Science Research Team](../../entities/research-groups/riken-computational-materials-science-team.md) | `RG-RIKEN-COMPUTATIONAL-MATERIALS-SCIENCE` | research-group | high | 2026-07-12 | COUNTRY-JP |
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |

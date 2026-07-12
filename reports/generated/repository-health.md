@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 6a39d1a809f3fd49df192f3a44df895f6a7d11060ff769e0f680a19d7b9db9f0 -->
+<!-- input-fingerprint: e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81 -->
 # Repository health report
 
-**Input fingerprint:** `6a39d1a809f3fd49df192f3a44df895f6a7d11060ff769e0f680a19d7b9db9f0`
+**Input fingerprint:** `e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **70**
-- Typed relationship assertions: **120**
+- Canonical v2 entities: **73**
+- Typed relationship assertions: **129**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -21,35 +21,35 @@
 | department | 1 |
 | funding-program | 2 |
 | organization | 7 |
-| principal-investigator | 10 |
+| principal-investigator | 11 |
 | project | 1 |
 | publication | 7 |
 | research-area | 3 |
 | research-ecosystem | 8 |
-| research-group | 11 |
+| research-group | 12 |
 | research-software | 7 |
-| university | 6 |
+| university | 7 |
 
 ## Confidence coverage
 
 | Confidence | Count |
 | --- | ---: |
-| high | 70 |
+| high | 73 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **70**
+- Canonical v2 records in approved entity directories: **73**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 70/70 |
-| Reviewed/published records with last-review dates | 70/70 |
-| Typed relationships with source IDs | 120/120 |
-| Reviewed groups with exactly one direct-host field | 11/11 |
-| Entities with an inbound or outbound graph connection | 70/70 |
+| Reviewed/published records with source IDs | 73/73 |
+| Reviewed/published records with last-review dates | 73/73 |
+| Typed relationships with source IDs | 129/129 |
+| Reviewed groups with exactly one direct-host field | 12/12 |
+| Entities with an inbound or outbound graph connection | 73/73 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
@@ -60,19 +60,19 @@
 | Predicate | Count |
 | --- | ---: |
 | administers | 2 |
-| affiliated_with | 11 |
+| affiliated_with | 12 |
 | authored_by | 8 |
-| belongs_to | 13 |
-| connects | 18 |
+| belongs_to | 14 |
+| connects | 19 |
 | covers | 1 |
 | describes | 5 |
 | develops | 7 |
 | funds | 1 |
 | includes | 7 |
 | involves | 1 |
-| leads | 10 |
-| located_in | 12 |
-| works_on | 24 |
+| leads | 11 |
+| located_in | 13 |
+| works_on | 28 |
 
 ## Findings
 

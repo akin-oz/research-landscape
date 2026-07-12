@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: c7d269285c5572b5c2cf76a0e93d1ae4e7549653db270f7f0999643209a2cdf9 -->
+<!-- input-fingerprint: 87bc229f7da8946d7300631b6604f1868938d784e95ca642ae9aeb821b14af9b -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `c7d269285c5572b5c2cf76a0e93d1ae4e7549653db270f7f0999643209a2cdf9`
+**Input fingerprint:** `87bc229f7da8946d7300631b6604f1868938d784e95ca642ae9aeb821b14af9b`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -35,6 +35,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) (`RG-CEDER-GROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE) | high | 1/1 documented criteria |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 1/1 documented criteria |
 | [Computational Materials Science Research Team](../../entities/research-groups/riken-computational-materials-science-team.md) (`RG-RIKEN-COMPUTATIONAL-MATERIALS-SCIENCE`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-RIKEN-CMS-TEAM) | high | 1/1 documented criteria |
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CURTAROLO-GROUP-JOBS) | high | 1/1 documented criteria |
@@ -68,6 +69,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) (`RG-CEDER-GROUP`) | works on `AREA-AI-FOR-MATERIALS` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION) | high | 1/1 documented criteria |
 | [Hacking Materials](../../entities/research-groups/hacking-materials.md) (`RG-HACKING-MATERIALS`) | works on `AREA-AI-FOR-MATERIALS` (sources: SRC-HACKING-MATERIALS-GROUP) | high | 1/1 documented criteria |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | works on `AREA-AI-FOR-MATERIALS` (sources: SRC-NUS-ONG-PROFILE) | high | 1/1 documented criteria |
 
@@ -113,9 +115,9 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PERSSON-GROUP-RESEARCH); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE) | high | 2/2 documented criteria |
 | [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) (`ECO-AIIDA`) | connects `RG-PSI-MSD` (sources: SRC-AIIDA-TEAM); `RG-PSI-MSD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) (`ECO-MATERIALS-CLOUD`) | connects `PI-NICOLA-MARZARI` (sources: SRC-MATERIALS-CLOUD-TEAM); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
-| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 2/2 documented criteria |
 | [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 documented criteria |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
 | [FAIRmat](../../entities/ecosystems/fairmat.md) (`ECO-FAIRMAT`) | connects `PI-CLAUDIA-DRAXL` (sources: SRC-FAIRMAT-TEAM); `PI-CLAUDIA-DRAXL` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 2/2 documented criteria |
@@ -143,8 +145,8 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION) | high | 2/2 documented criteria |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY) | high | 2/2 documented criteria |
-| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, AI capability, or research-quality ranking.
 
@@ -159,6 +161,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) (`PI-ANUBHAV-JAIN`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP) | high | 1/1 documented criteria |
 | [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) (`PI-CHRIS-WOLVERTON`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-NU-WOLVERTON-FACULTY) | high | 1/1 documented criteria |
 | [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) (`PI-CLAUDIA-DRAXL`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 1/1 documented criteria |
+| [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) (`PI-GERBRAND-CEDER`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-UC-BERKELEY-MSE-CEDER) | high | 1/1 documented criteria |
 | [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) (`PI-NICOLA-MARZARI`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
 | [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) (`PI-SEIJI-YUNOKI`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-RIKEN-CMS-TEAM) | high | 1/1 documented criteria |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) (`PI-STEFANO-CURTAROLO`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 1/1 documented criteria |
@@ -187,6 +190,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) (`PI-ANUBHAV-JAIN`) | works on `AREA-AI-FOR-MATERIALS` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP) | high | 1/1 documented criteria |
+| [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) (`PI-GERBRAND-CEDER`) | works on `AREA-AI-FOR-MATERIALS` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-UC-BERKELEY-MSE-CEDER) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit artificial-intelligence-and-materials relation, not a researcher ranking, model-quality claim, or availability signal.
 
@@ -215,6 +219,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Humboldt-Universität zu Berlin](../../entities/universities/humboldt-university-berlin.md) (`UNIVERSITY-HU-BERLIN`) | hosts `RG-SOLGROUP` (sources: SRC-SOLGROUP-HOME); `RG-SOLGROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 2/2 documented criteria |
 | [Northwestern University](../../entities/universities/northwestern-university.md) (`UNIVERSITY-NORTHWESTERN`) | hosts `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 documented criteria |
 | [Technical University of Denmark](../../entities/universities/technical-university-of-denmark.md) (`UNIVERSITY-DTU`) | hosts `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-OVERVIEW); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
+| [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) (`UNIVERSITY-UC-BERKELEY`) | hosts `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE) | high | 2/2 documented criteria |
 
 **Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
 

@@ -70,11 +70,14 @@ class RepositoryHealthTests(unittest.TestCase):
         queries = {query["query_id"]: query for query in model["queries"]}
         group_candidates = rl.recommendation_candidates(queries["groups-ai-for-materials"], records)
         self.assertEqual(
-            ["RG-HACKING-MATERIALS", "RG-MATERIALYZE-AI"],
+            ["RG-CEDER-GROUP", "RG-HACKING-MATERIALS", "RG-MATERIALYZE-AI"],
             sorted(candidate["record"].id for candidate in group_candidates),
         )
         pi_candidates = rl.recommendation_candidates(queries["principal-investigators-ai-for-materials"], records)
-        self.assertEqual(["PI-ANUBHAV-JAIN"], [candidate["record"].id for candidate in pi_candidates])
+        self.assertEqual(
+            ["PI-ANUBHAV-JAIN", "PI-GERBRAND-CEDER"],
+            sorted(candidate["record"].id for candidate in pi_candidates),
+        )
         ecosystem_candidates = rl.recommendation_candidates(queries["ecosystems-ai-for-materials"], records)
         self.assertEqual(
             ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT"],
@@ -84,6 +87,8 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(2, fair_chem["criteria"])
         self.assertTrue(any("includes `SW-FAIRCHEM`" == item["label"] for item in fair_chem["signals"]))
         self.assertTrue(any("classified in `AREA-AI-FOR-MATERIALS`" in item["label"] for item in fair_chem["signals"]))
+        materials_project = next(candidate for candidate in ecosystem_candidates if candidate["record"].id == "ECO-MATERIALS-PROJECT")
+        self.assertTrue(any("connects `RG-CEDER-GROUP`" == item["label"] for item in materials_project["signals"]))
 
     def test_source_identifier_must_be_in_the_evidence_table(self) -> None:
         record = rl.Record(

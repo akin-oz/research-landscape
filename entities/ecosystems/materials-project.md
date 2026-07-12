@@ -19,6 +19,7 @@ source_ids:
   - SRC-LBNL-PERSSON-NEWS-2026
   - SRC-NUS-ONG-PROFILE
   - SRC-LBNL-JAIN-PROFILE
+  - SRC-UC-BERKELEY-CEDER-PROFILE
 ecosystem_kind: materials data and software ecosystem
 website: https://materialsproject.org/
 software_ids:
@@ -58,6 +59,13 @@ relationship_assertions:
     evidence_window: 2026-07
     notes: The group describes using and expanding Materials Project database and analysis capabilities.
   - predicate: connects
+    target_id: RG-CEDER-GROUP
+    role: contributor
+    source_ids: [SRC-UC-BERKELEY-CEDER-PROFILE]
+    confidence: high
+    evidence_window: 2026-07
+    notes: UC Berkeley describes the CEDER Group as contributing extensively to Materials Project; this does not establish exclusive ownership, a complete contributor roster, or individual software maintenance.
+  - predicate: connects
     target_id: ORG-LBNL
     source_ids: [SRC-MP-LBNL-PROGRAM]
     confidence: high
@@ -93,6 +101,7 @@ unsupported canonical entities.
 | `SRC-LBNL-PERSSON-NEWS-2026` | [Berkeley Lab, 8 May 2026: Kristin Persson elected to the American Academy of Arts and Sciences](https://newscenter.lbl.gov/2026/05/08/berkeley-labs-kristin-persson-elected-to-the-american-academy-of-arts-and-sciences/) identifies Persson as Materials Project's founder and director. Accessed 2026-07-12. |
 | `SRC-NUS-ONG-PROFILE` | [NUS Materials Science and Engineering: Shyue Ping Ong](https://cde.nus.edu.sg/mse/staff/shyue-ping-ong/) identifies Ong as a core contributor to Materials Project. Accessed 2026-07-12. |
 | `SRC-LBNL-JAIN-PROFILE` | [Berkeley Lab Energy Technologies Area: Anubhav Jain](https://eta.lbl.gov/people/anubhav-jain) identifies Jain as Associate Director of Berkeley Lab's Materials Project program. Accessed 2026-07-12. |
+| `SRC-UC-BERKELEY-CEDER-PROFILE` | [UC Berkeley Research: Gerbrand Ceder](https://vcresearch.berkeley.edu/faculty/gerbrand-ceder) states that the CEDER Group contributes extensively to Materials Project. It does not identify a complete contributor roster, individual role, software-maintenance responsibility, or ownership. Accessed 2026-07-12. |
 
 ## Boundary and limitations
 

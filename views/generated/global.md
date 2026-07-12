@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 6a39d1a809f3fd49df192f3a44df895f6a7d11060ff769e0f680a19d7b9db9f0 -->
+<!-- input-fingerprint: e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `6a39d1a809f3fd49df192f3a44df895f6a7d11060ff769e0f680a19d7b9db9f0`
+**Input fingerprint:** `e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -11,6 +11,7 @@
 | [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) | `PI-ANUBHAV-JAIN` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) | `PI-CHRIS-WOLVERTON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) | `PI-CLAUDIA-DRAXL` | principal-investigator | high | 2026-07-12 | COUNTRY-DE |
+| [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Giovanni Pizzi](../../entities/principal-investigators/giovanni-pizzi.md) | `PI-GIOVANNI-PIZZI` | principal-investigator | high | 2026-07-11 | COUNTRY-CH |
 | [Kristin A. Persson](../../entities/principal-investigators/kristin-persson.md) | `PI-KRISTIN-PERSSON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) | `PI-NICOLA-MARZARI` | principal-investigator | high | 2026-07-12 | COUNTRY-CH |
@@ -26,6 +27,7 @@
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) | `ECO-MATERIALS-CLOUD` | research-ecosystem | high | 2026-07-12 | — |
 | [Materials Project](../../entities/ecosystems/materials-project.md) | `ECO-MATERIALS-PROJECT` | research-ecosystem | high | 2026-07-12 | — |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) | `ECO-OQMD` | research-ecosystem | high | 2026-07-12 | — |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |
 | [Computational Materials Science Research Team](../../entities/research-groups/riken-computational-materials-science-team.md) | `RG-RIKEN-COMPUTATIONAL-MATERIALS-SCIENCE` | research-group | high | 2026-07-12 | COUNTRY-JP |
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
@@ -50,6 +52,7 @@
 | [National University of Singapore](../../entities/universities/national-university-of-singapore.md) | `UNIVERSITY-NUS` | university | high | 2026-07-12 | COUNTRY-SG |
 | [Northwestern University](../../entities/universities/northwestern-university.md) | `UNIVERSITY-NORTHWESTERN` | university | high | 2026-07-12 | COUNTRY-US |
 | [Technical University of Denmark](../../entities/universities/technical-university-of-denmark.md) | `UNIVERSITY-DTU` | university | high | 2026-07-12 | COUNTRY-DK |
+| [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) | `UNIVERSITY-UC-BERKELEY` | university | high | 2026-07-12 | COUNTRY-US |
 ## Boundary
 
 Membership and ordering come only from the declared view definition and canonical frontmatter/relationships. A missing connection is unknown; this output does not claim openings, mentorship, funding availability, language, or personal fit.
