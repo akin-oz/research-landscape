@@ -7,7 +7,7 @@ Research software is a navigation surface for the whole research landscape, not 
 The central traversal is:
 
 ```text
-Software → Maintainers → Research Groups → Universities → Communities → Funding → Contributors → Typical Career Paths
+Software → Maintainers → Research Groups → Direct Hosts → Communities → Funding → Contributors → Typical Career Paths
 ```
 
 The arrows express evidence-backed relationships, not a universal hierarchy or a required one-to-one path. A project can have maintainers outside an academic group; a community can span institutions and funders; and a contributor can participate without being a maintainer. Missing information is omitted rather than inferred.
@@ -17,7 +17,7 @@ flowchart LR
   SW[Research Software]
   M[Maintainers]
   G[Research Groups]
-  U[Universities]
+  U[Direct Hosts: Universities / Organizations]
   C[Communities]
   F[Funding Programs and Projects]
   K[Contributors]
@@ -47,8 +47,8 @@ The model keeps one fact in one canonical entity record. Relationship fields hol
 | Software → Maintainers | Research Software; Principal Investigator or Organization | `maintainer_ids` | Project governance, `CODEOWNERS`, official team page, release authority, or maintainer declaration. |
 | Software → Developing Group | Research Software; Research Group | `software_ids` plus a typed `develops` assertion on the group | Official group, project, repository-governance, or release source that credits group-level development; do not infer individual maintainer roles. |
 | Maintainers → Research Groups | Principal Investigator; Research Group | `research_group_ids` | Current official group roster or public affiliation. |
-| Research Groups → Universities | Research Group; University or Organization | `institution_id` (and, during v1 compatibility, `organization_id` / `department_id`) | Group or host-institution page. |
-| Universities → Communities | University/Organization; Organization or Research Ecosystem | `community_ids`, `ecosystem_ids` | Formal membership, consortium, event, or governance evidence. |
+| Research Groups → Direct Hosts | Research Group; University or Organization | Exactly one direct-host field for a reviewed/published group: `institution_id` for a University or `organization_id` for a non-university Organization. `department_id` is separate administrative context. | Group or host-institution page. |
+| Direct Hosts → Communities | University/Organization; Organization or Research Ecosystem | `community_ids`, `ecosystem_ids` | Formal membership, consortium, event, or governance evidence. |
 | Communities → Funding | Organization/Research Ecosystem; Funding Program; Project | `funding_program_ids`, `project_ids` | Funder award record, grant acknowledgement, or programme documentation. |
 | Funding → Contributors | Funding Program/Project; Principal Investigator, Research Group, or Organization | `contributor_ids`, `participant_ids` | Award participants, funded role, or project team evidence. |
 | Contributors → Career Paths | Contributor-role evidence; derived view | no canonical career-path ID in this phase | Public role history and an explicitly documented derivation method. |

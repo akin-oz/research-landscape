@@ -38,12 +38,12 @@ last_review: "2026-07-11"
 confidence: unassessed
 source_ids: []
 
-# Normalized location and host context.
+# Normalized location and affiliation context.
 country_id: COUNTRY-US
 city: Berkeley
-institution_id: ORGANIZATION-LBNL
 department_id: DEPARTMENT-LBNL-ETA
 affiliation_ids: [ORGANIZATION-LBNL]
+organization_ids: [ORGANIZATION-LBNL]
 research_group_ids: [RESEARCH-GROUP-MATERIALS-PROJECT]
 
 career_stage: senior
@@ -74,7 +74,7 @@ This example is a target design, not a claim that the shown values are current o
 | Group | Fields | Rule |
 | --- | --- | --- |
 | Identity, lifecycle, and review | `schema_version`, `id`, `entity_type`, `name`, `status`, `created_at`, `updated_at`, `last_review`, `confidence` | Required on every vNext entity. |
-| Location and host context | `country_id`, `city`, `institution_id`, `institution_ids`, `organization_ids`, `department_id`, `research_group_ids` | Stable IDs are canonical. Views resolve human-readable country, institution, department, and group names from those IDs. |
+| Location and host context | `country_id`, `city`, `institution_id`, `institution_ids`, `organization_id`, `organization_ids`, `department_id`, `research_group_ids` | Stable IDs are canonical. Views resolve human-readable country, institution, department, and group names from those IDs. |
 | Discovery and fit | `career_stage`, `research_area_ids`, `software_ids`, `programming_language_ids`, `open_source`, `accepting_msc`, `accepting_phd`, `international_students`, `working_language_codes`, `remote_collaboration`, `industry_collaboration` | Use controlled values and evidence; do not infer availability, language, or collaboration from a title or website. |
 | Public identifiers and links | `github`, `orcid`, `google_scholar`, `website`, plus `external_ids` | Public identifiers aid reconciliation but never replace the internal stable ID. |
 | Evidence and relationships | `source_ids`, `relationship_assertions` | `source_ids` are required for reviewed/published records; `relationship_assertions` carries typed, optionally dated assertions. `confidence` measures evidence quality, not an entity's quality or rank. |
@@ -117,9 +117,17 @@ All entries below require the common identity and lifecycle metadata. The [canon
 
 **Purpose.** A named lab, center, or durable research unit with a public research identity. It can have multiple leaders and members over time.
 
-**Required metadata.** At least one of `institution_id` or `organization_ids`; add `department_id` when it is the immediate host. `principal_investigator_ids`, `research_area_ids`, and `website` are included when evidenced.
+**Required metadata.** A reviewed or published group has exactly one direct
+host: `institution_id` resolving to a University, or `organization_id`
+resolving to a non-university Organization. `department_id` may add evidenced
+administrative context but cannot replace or duplicate the direct host.
+`principal_investigator_ids`, `research_area_ids`, and `website` are included
+when evidenced.
 
-**Relationships.** Belongs to a university, department, or other organization; includes principal investigators; uses research software; works on research areas; participates in ecosystems and projects; and produces publications.
+**Relationships.** Belongs to its one direct University or Organization host;
+may additionally identify an evidenced Department context; includes principal
+investigators; uses research software; works on research areas; participates in
+ecosystems and projects; and produces publications.
 
 **Example.** `GRP-MATERIALS-PROJECT` in `entities/research-groups/materials-project.md` is one group record even when it appears in several software or country views.
 
@@ -237,7 +245,10 @@ Do not create both a University and a generic Organization record merely to desc
 
 ## Entity graph
 
-The graph below shows the central navigation paths. Edge labels are defined precisely in the [relationship model](relationships.md).
+The graph below shows the central navigation paths. A Research Group has one
+direct host: the University and Organization paths are alternatives, not
+concurrent direct-host claims. Edge labels are defined precisely in the
+[relationship model](relationships.md).
 
 ```mermaid
 flowchart LR
@@ -256,7 +267,9 @@ flowchart LR
   O[Organization]
 
   PI -->|belongs_to| RG
-  RG -->|belongs_to| D
+  RG -->|belongs_to (direct host)| U
+  RG -->|belongs_to (direct host)| O
+  RG -->|belongs_to (administrative context)| D
   D -->|belongs_to| U
   U -->|located_in| C
   PI -->|develops| S
@@ -282,7 +295,7 @@ This proposal deliberately does not rewrite the current model. The following bri
 | vNext concept | Current schema/model term | Architecture decision now |
 | --- | --- | --- |
 | Principal Investigator | `advisor` | Treat as the successor concept; do not rename existing `advisor` records in this change. |
-| Research Group | `lab` | Treat as the successor concept; preserve current `organization_id` and `department_id` semantics. |
+| Research Group | `lab` | Treat as the successor concept; preserve v1 fields until an evidence-reviewed migration selects the one vNext direct host by target type. |
 | Project and Funding Program | `funding-project` | Split the conceptual program from individual project only when versioned schemas and evidence support it. |
 | University, Department, Country, Research Area, Research Software, Publication | Same or closely matching current terms | Reuse current stable-ID and evidence conventions; extend only through a versioned schema proposal. |
 | Faculty, graduate program, programming language, dataset | Existing supporting entities | Keep them available as satellites; they are not removed by this 13-entity core. |

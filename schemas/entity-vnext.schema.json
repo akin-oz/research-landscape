@@ -142,8 +142,28 @@
       "then": { "required": ["affiliation_ids"] }
     },
     {
-      "if": { "properties": { "entity_type": { "const": "research-group" } } },
-      "then": { "required": ["organization_id"] }
+      "if": {
+        "properties": { "entity_type": { "const": "research-group" } },
+        "required": ["entity_type"]
+      },
+      "then": {
+        "not": { "required": ["institution_id", "organization_id"] }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entity_type": { "const": "research-group" },
+          "status": { "enum": ["reviewed", "published"] }
+        },
+        "required": ["entity_type", "status"]
+      },
+      "then": {
+        "oneOf": [
+          { "required": ["institution_id"] },
+          { "required": ["organization_id"] }
+        ]
+      }
     },
     {
       "if": { "properties": { "entity_type": { "const": "university" } } },

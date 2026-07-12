@@ -77,7 +77,7 @@ The first eight predicates implement the required cross-cutting links. The table
 | Subject | Predicate | Object | Inverse display label | Typical cardinality | Evidence notes |
 | --- | --- | --- | --- | --- | --- |
 | Principal Investigator | `belongs_to` | Research Group | `has_member` | many-to-many over time | Use for documented group membership or leadership; qualify leadership with `role`. |
-| Research Group | `belongs_to` | University | `hosts` | many-to-one at a point in time, many-to-many historically | A department may be the immediate host; retain that link separately. |
+| Research Group | `belongs_to` | University or Organization | `hosts` | one direct current host; many-to-many historically | A reviewed or published group selects exactly one direct host through `institution_id` (University) or `organization_id` (Organization). A dated historical assertion may record a former host. |
 | University | `located_in` | Country | `has_university` | many-to-one | Country is context and a filter, not an ownership namespace. |
 | Principal Investigator | `develops` | Research Software | `developed_by` | many-to-many | Use only for public development, maintenance, authorship, or credited stewardship evidence. |
 | Principal Investigator | `works_on` | Research Area | `worked_on_by` | many-to-many | A public topic statement, project, or scholarly output can support the claim. |
@@ -90,7 +90,7 @@ The following relationships complete the first-class entity model.
 | Subject | Predicate | Object | Typical cardinality | Notes |
 | --- | --- | --- | --- | --- |
 | Department | `belongs_to` | University | many-to-one at a point in time | `faculty_id` remains optional because institutions differ. |
-| Research Group | `belongs_to` | Department or Organization | many-to-one at a point in time | Keep the university relationship if publicly known; do not infer it from a country. |
+| Research Group | `belongs_to` | Department | many-to-one at a point in time | An evidenced Department may be retained as administrative context. It does not replace or duplicate the group's one direct University or Organization host. |
 | Research Group | `develops` | Research Software | many-to-many | Use only when a public group, project, or governance source credits group-level development or stewardship. It does not make every group member an individual maintainer. |
 | Organization | `located_in` | Country | many-to-one or many-to-many | Use a dated relationship for multi-site organizations. |
 | Principal Investigator | `affiliated_with` | University, Department, or Organization | many-to-many over time | Broader than group membership; aligns with current `affiliation_ids`. |
@@ -118,14 +118,15 @@ flowchart LR
   PI[Principal Investigator]
   RG[Research Group]
   U[University]
+  ORG[Organization]
   C[Country]
   SW[Research Software]
   RA[Research Area]
-  ORG[Organization]
   CONF[Conference]
 
   PI -->|belongs_to| RG
-  RG -->|belongs_to| U
+  RG -->|belongs_to (one direct host)| U
+  RG -->|belongs_to (one direct host)| ORG
   U -->|located_in| C
   PI -->|develops| SW
   RG -->|develops| SW
@@ -135,11 +136,16 @@ flowchart LR
   SW -->|used_by| RG
 ```
 
-The diagram deliberately keeps `belongs_to` separate from `affiliated_with`, `leads`, and `hosts`. A person can be affiliated with a university without belonging to a particular group; a group can be hosted by a department even when a university is the institutional context.
+The two Research Group host arrows are alternatives: a reviewed or published
+group has one direct University or Organization host. The diagram deliberately
+keeps `belongs_to` separate from `affiliated_with` and `leads`. A person can be
+affiliated with a university without belonging to a particular group; a
+Department can provide administrative context without becoming a second direct
+host.
 
 ## Ecosystem and software navigation path
 
-Research ecosystems are central navigation nodes because they make the chain from software to real research environments inspectable: software, maintainers, groups, universities, communities, funding, contributors, and career-relevant activity all retain separate identities.
+Research ecosystems are central navigation nodes because they make the chain from software to real research environments inspectable: software, maintainers, groups, their direct University or Organization hosts, communities, funding, contributors, and career-relevant activity all retain separate identities.
 
 ```mermaid
 flowchart TB
@@ -157,7 +163,8 @@ flowchart TB
   ECO -->|includes| SW
   PI -->|develops| SW
   SW -->|used_by| RG
-  RG -->|belongs_to| U
+  RG -->|belongs_to (one direct host)| U
+  RG -->|belongs_to (one direct host)| ORG
   ECO -->|connects| PI
   ECO -->|connects| RG
   ECO -->|connects| ORG

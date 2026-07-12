@@ -54,7 +54,7 @@ This table is the normative source for the vNext entity-specific requirement rul
 | `entity_type` | Required vNext metadata | Notes |
 | --- | --- | --- |
 | `principal-investigator` | `affiliation_ids` | Non-empty documented affiliations; group membership, current acceptance, and career stage remain separately evidenced. |
-| `research-group` | `organization_id` | Immediate accountable host; `department_id` and `institution_id` are added when publicly known. |
+| `research-group` | For `reviewed` and `published` records, exactly one of `institution_id` or `organization_id` | The sole direct host. `institution_id` resolves to a University; `organization_id` resolves to a non-university Organization. `department_id` is optional administrative context, not a substitute or second host. |
 | `university` | `country_id` | Country is a location/filter relationship, not a directory parent. |
 | `department` | `university_id` | `faculty_id` is optional because structures vary. |
 | `country` | `country_code` | ISO 3166-1 alpha-2; `region` is optional controlled context. |
@@ -76,11 +76,11 @@ The names below replace ambiguous text fields such as `country`, `institution`, 
 | `country_id` | Location-bearing entities | ID of the canonical Country record. A country is a filter and location endpoint, not a parent directory requirement. |
 | `country_code`, `region` | Country entities | ISO 3166-1 alpha-2 code and a controlled regional classification. Other entities resolve location through `country_id` or documented relationships. |
 | `city` | Location-bearing entities | Human-readable city or locality. Use the public preferred form; omit if unavailable. |
-| `institution_id` | Principal investigators, groups, departments, projects, software, organizations | ID of the accountable university or host organization where a singular direct host is known. |
-| `institution_ids` | Ecosystems, conferences, funding programmes, and other multi-host entities | IDs of participating universities or host institutions where the relationship is evidenced. Use `institution_id` instead when a singular direct host is known. |
-| `organization_id` | Research groups and other entities with one direct non-university host | ID of the accountable host organization. Use the plural `organization_ids` for additional evidenced affiliations or collaborators without duplicating `organization_id`. |
-| `organization_ids` | Any applicable entity | IDs of other accountable or collaborating organizations; do not use this to restate `institution_id`. |
-| `department_id` | Principal investigators, groups, programmes, projects | ID of the directly associated Department. |
+| `institution_id` | Research groups and other applicable single-host entities | ID of an accountable University. For a Research Group, it is the one direct host when the host is a University and is mutually exclusive with `organization_id`. |
+| `institution_ids` | Ecosystems, conferences, funding programmes, and other multi-host entities | IDs of participating Universities where the relationship is evidenced. Use `institution_id` only where the entity-specific rule permits a singular direct University host. |
+| `organization_id` | Research groups and other entities with one direct non-university host | ID of the accountable non-university Organization. For a Research Group, it is the one direct host when the host is an Organization and is mutually exclusive with `institution_id`. |
+| `organization_ids` | Any applicable entity | IDs of additional accountable or collaborating Organizations. They cannot satisfy or restate a Research Group's direct-host field. |
+| `department_id` | Principal investigators, groups, programmes, projects | ID of the directly associated Department. For a Research Group, it is optional administrative context and cannot substitute for its direct host. |
 | `research_group_ids` | Principal investigators, software, projects, publications | IDs of associated Research Groups. Many-to-many and time-sensitive. |
 | `principal_investigator_ids` | Groups, projects, software, funding programmes, publications | IDs of related Principal Investigators, with the role explained in the body or a typed relationship record. |
 | `research_area_ids` | Any topical entity | IDs of controlled Research Area records. |
@@ -207,7 +207,7 @@ The existing [common schema](../../schemas/common.schema.json) and entity schema
 | `software` | `research-software` | Preserve `software` on v1 records; map deliberately. |
 | `funding-project` | `project` plus `funding-program` relationships | Do not split an existing record without an explicit migration and evidence review. |
 | `country_id`, `department_id`, `research_area_ids`, `language_ids` | Same normalized relationship concept | Retain established v1 fields where they exist; map `language_ids` to `programming_language_ids` only with a type-compatible target. |
-| `organization_id` on `lab` | `institution_id` / `organization_ids` | Retain `organization_id` for v1 validation. vNext distinguishes the direct host from other organizations. |
+| `organization_id` on `lab` | `institution_id` **or** `organization_id` | Retain `organization_id` for v1 validation. During an evidence-reviewed vNext migration, select exactly one direct host by canonical target type; use `department_id` or plural fields only for separate documented context. |
 | `affiliation_ids`, `group_ids` on `advisor` | `institution_id` / `organization_ids`, `research_group_ids` | Retain v1 plural fields until a migration can preserve role, time, and evidence. |
 | `repository_url` | `github` and/or repository-specific metadata | `github` is a web-presence pointer; it must not replace a non-GitHub `repository_url`. |
 | `updated_at` and optional `confidence` | Same fields plus `last_review` | Existing v1 values stay valid. Backfill `last_review` only after an actual review. |
@@ -216,4 +216,13 @@ No aliases are silently dual-written in canonical data. A migration should eithe
 
 ## Validation expectations for vNext
 
-The architecture schema now checks YAML shape, controlled values and date formats. A later Knowledge Graph Layer should add target-ID existence and relation-type compatibility checks in CI. Validation must not make claims from a missing field, manufacture inverse links, rank entities, or treat `confidence` as a quality score. Semantic checks that require judgment—including source reliability, role interpretation, and availability wording—remain editorial review responsibilities.
+The architecture schema checks YAML shape, controlled values, date formats, and
+the reviewed/published Research Group direct-host cardinality. Canonical review
+must additionally resolve `institution_id` to a University and
+`organization_id` to a non-university Organization; JSON Schema cannot perform
+that cross-record check. A later Knowledge Graph Layer should automate target-ID
+existence and relation-type compatibility checks in CI. Validation must not make
+claims from a missing field, manufacture inverse links, rank entities, or treat
+`confidence` as a quality score. Semantic checks that require judgment—including
+source reliability, role interpretation, and availability wording—remain
+editorial review responsibilities.

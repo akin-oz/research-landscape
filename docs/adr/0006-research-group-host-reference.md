@@ -1,12 +1,12 @@
 # ADR 0006: Resolve the vNext host reference for university-based research groups
 
-- **Status:** Proposed — approval required before university-hosted group migration
+- **Status:** Accepted — 2026-07-12
 - **Date:** 2026-07-12
 
 ## Context
 
-The vNext schema requires every `research-group` record to have
-`organization_id`. The metadata contract describes that field as the direct
+At proposal time, the vNext schema required every `research-group` record to
+have `organization_id`. The metadata contract describes that field as the direct
 non-university host, while `institution_id` represents a university host. The
 relationship model also permits a Research Group to `belongs_to` a University
 or an Organization.
@@ -23,37 +23,40 @@ workaround would therefore violate canonical ownership.
 
 ## Decision
 
-No schema workaround is selected in this ADR.
+Option 1, **Either host field**, is accepted.
 
-Quality Gate 1 must not create university-hosted Research Group records until
-an approved decision reconciles the schema, metadata semantics, and
-relationship model. Contributors must not point `organization_id` at a
-University merely to satisfy validation and must not duplicate a University as
-an Organization.
+For a reviewed or published vNext `research-group`, exactly one direct host is
+required:
 
-## Options requiring approval
+- `institution_id` when the direct host resolves to a canonical University;
+- `organization_id` when the direct host resolves to a canonical non-university
+  Organization.
 
-1. **Either host field.** Make `organization_id` or `institution_id` the
-   required direct-host reference for `research-group`, with a precise
-   cardinality and validation rule.
-2. **Broaden `organization_id`.** Allow it to resolve to a University, then
-   revise the metadata semantics and migration guidance consistently.
-3. **Introduce a versioned host abstraction.** Define a new normalized host
-   reference only if the additional concept is justified against the simplicity
-   and 50,000-entity scale constraints.
+`department_id` may record an evidenced administrative context, but it is not
+a substitute for the direct host. `organization_ids` may record additional
+evidenced organizations, but cannot satisfy or repeat the direct-host field.
+A draft group may omit its host while evidence is incomplete, but it must not
+declare both direct-host fields.
 
-Any approved option must preserve existing v2 records, define target-type
-validation, and provide a deliberate migration path for future university-hosted
-groups.
+The vNext JSON Schema enforces the field cardinality. Before a group is marked
+reviewed or published, canonical review must also verify that the selected ID
+resolves to exactly one canonical entity of the required type and that the
+group's evidence-bearing direct `belongs_to` assertion, when present, names the
+same ID. This is a cross-record semantic check; JSON Schema cannot establish
+it from one record alone.
+
+Contributors must not point `organization_id` at a University merely to satisfy
+validation and must not duplicate a University as an Organization.
 
 ## Consequences
 
 - The PSI AiiDA reference slice remains valid because its host is an
   Organization.
-- Candidate groups at university hosts remain in legacy discovery material
-  until this contract is approved; no duplicate institutional entity is added.
-- Future graph validation must enforce the approved host-type rule instead of
-  validating ID shape alone.
+- Candidate groups at university hosts can enter QG1 once their evidence and
+  direct-host identity are reviewed; no duplicate institutional entity is
+  added.
+- A later graph validator can automate the cross-record host-type check, but
+  the canonical review rule applies before that automation exists.
 
 ## References
 
