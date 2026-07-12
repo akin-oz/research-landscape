@@ -21,3 +21,5 @@ The THEOS cluster adds [Nicola Marzari](principal-investigators/nicola-marzari.m
 The FAIRmat cluster adds [Claudia Draxl](principal-investigators/claudia-draxl.md), [SOLgroup](research-groups/solgroup.md), [Humboldt-Universität zu Berlin](universities/humboldt-university-berlin.md), [Germany](countries/germany.md), [NOMAD](research-software/nomad.md), and [FAIRmat](ecosystems/fairmat.md), while reusing Computational Materials Science.
 
 The RIKEN Computational Materials Science cluster adds [Seiji Yunoki](principal-investigators/seiji-yunoki.md), the [Computational Materials Science Research Team](research-groups/riken-computational-materials-science-team.md), [RIKEN Center for Computational Science](organizations/riken-center-for-computational-science.md), and [Japan](countries/japan.md), while reusing Computational Materials Science.
+
+The RIKEN Polymeromics cluster adds [Ryo Yoshida](principal-investigators/ryo-yoshida.md), the [Polymeromics Team](research-groups/riken-polymeromics-team.md), [RIKEN TRIP Headquarters](organizations/riken-trip-headquarters.md), and [RadonPy](research-software/radonpy.md), while reusing Japan and Materials Informatics.

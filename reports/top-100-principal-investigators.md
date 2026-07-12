@@ -1,7 +1,7 @@
 # Global discovery slate: 100 principal investigators and technical research leaders
 
 **This is not a ranking.** It is a deliberately international discovery slate for the declared software-engineering-to-computational-materials profile. Order is alphabetical within ecosystem clusters, not merit order.  
-**Last reviewed:** 2026-07-11; Anubhav Jain, Nicola Marzari, Claudia Draxl, Seiji Yunoki, and Shyue Ping Ong anchor rows revalidated 2026-07-12.
+**Last reviewed:** 2026-07-11; Anubhav Jain, Nicola Marzari, Claudia Draxl, Seiji Yunoki, Ryo Yoshida, and Shyue Ping Ong anchor rows revalidated 2026-07-12.
 **Important evidence boundary:** `Anchor` means a current first-party source in [the source register](global-sources.md) directly supports a software/infrastructure or group claim. `Discovery` means a well-known candidate was selected from a project/community trail but their current role, recruitment status and lab evidence must be revalidated before use. Do not treat `Discovery` records as a claim of a current opening or a mentorship assessment.
 
 ## Anchor cohort — begin here

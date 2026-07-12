@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S36, and S38–S50 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S52 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -58,6 +58,8 @@
 | S48 | [RIKEN Center for Computational Science](https://www.riken.jp/en/research/labs/r-ccs/index.html) | Current R-CCS identity, objectives, Computational Materials Science Research Team listing, and Kobe contact context. | High for the organization and team host; not evidence of every Yunoki affiliation. |
 | S49 | [RIKEN: Seiji Yunoki](https://www.r-ccs.riken.jp/labs/cms/people-post-en/seiji-yunoki/) | Current R-CCS Computational Materials Science Research Team affiliation and Team Principal title. | High for the listed R-CCS role; additional cross-RIKEN roles require separate modeling. |
 | S50 | [RIKEN Center for Computational Science: Access](https://www.r-ccs.riken.jp/access/) | Kobe campus address in Hyogo, Japan. | High for R-CCS geographic normalization. |
+| S51 | [RIKEN TRIP Headquarters](https://www.riken.jp/en/research/labs/trip/index.html) | Current TRIP organization, Polymeromics Team and Ryo Yoshida listing, and Wako, Japan contact context. | High for the direct organization host and team listing; not evidence of every RIKEN affiliation. |
+| S52 | [RadonPy/RadonPy](https://github.com/RadonPy/RadonPy) | Current open-source Python repository for automated polymer physical-property calculations and BSD-3-Clause license. | High for public software attributes; does not provide an exhaustive individual maintainer roster. |
 
 ## Evidence protocol for new claims
 
