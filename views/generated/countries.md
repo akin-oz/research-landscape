@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875 -->
+<!-- input-fingerprint: f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875`
+**Input fingerprint:** `f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)
@@ -77,6 +77,7 @@
 | [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) | `PI-ANUBHAV-JAIN` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) | `PI-AXEL-KOHLMEYER` | principal-investigator | high | 2026-07-13 | COUNTRY-US |
 | [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) | `PI-CHRIS-WOLVERTON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
+| [Ellad Tadmor](../../entities/principal-investigators/ellad-tadmor.md) | `PI-ELLAD-TADMOR` | principal-investigator | high | 2026-07-13 | COUNTRY-US |
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Kristin A. Persson](../../entities/principal-investigators/kristin-persson.md) | `PI-KRISTIN-PERSSON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) | `PI-STEFANO-CURTAROLO` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
@@ -89,6 +90,7 @@
 | [Northwestern University](../../entities/universities/northwestern-university.md) | `UNIVERSITY-NORTHWESTERN` | university | high | 2026-07-12 | COUNTRY-US |
 | [Temple University](../../entities/universities/temple-university.md) | `UNIVERSITY-TEMPLE` | university | high | 2026-07-13 | COUNTRY-US |
 | [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) | `UNIVERSITY-UC-BERKELEY` | university | high | 2026-07-12 | COUNTRY-US |
+| [University of Minnesota](../../entities/universities/university-of-minnesota.md) | `UNIVERSITY-UMN` | university | high | 2026-07-13 | COUNTRY-US |
 
 ## Boundary
 

@@ -30,6 +30,8 @@ The Quantum ESPRESSO cluster adds [Quantum ESPRESSO](research-software/quantum-e
 
 The LAMMPS cluster adds [LAMMPS](research-software/lammps.md), the [LAMMPS Ecosystem](ecosystems/lammps.md), and [Sandia National Laboratories](organizations/sandia-national-laboratories.md), while reusing the United States, Computational Materials Science, and C++ records.
 
+The OpenKIM cluster adds [KIM API](research-software/kim-api.md), the [OpenKIM Ecosystem](ecosystems/openkim.md), [Ellad Tadmor](principal-investigators/ellad-tadmor.md), and [University of Minnesota](universities/university-of-minnesota.md), while reusing the United States, Computational Materials Science, and C++ records. Tadmor's ecosystem relation is explicitly historical founding-director context rather than a current software-development claim.
+
 The Temple–Kohlmeyer–LAMMPS extension adds [Axel Kohlmeyer](principal-investigators/axel-kohlmeyer.md) and [Temple University](universities/temple-university.md), while reusing the LAMMPS, United States, and Computational Materials Science records.
 
 The Scientific Software Engineering area extension adds the controlled [Scientific Software Engineering](research-areas/scientific-software-engineering.md) record and directly classifies the existing Materials Software and Data Group, Hacking Materials, THEOS, and Axel Kohlmeyer records without duplicating their software or host facts.

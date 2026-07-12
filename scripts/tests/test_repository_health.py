@@ -74,7 +74,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["language"].id: item for item in rl.programming_language_coverage(records)}
         self.assertEqual(
-            {"software": 2, "groups": 1, "principal_investigators": 1, "universities": 1, "ecosystems": 2},
+            {"software": 3, "groups": 1, "principal_investigators": 1, "universities": 1, "ecosystems": 3},
             {key: coverage["PROGRAMMING-LANGUAGE-CPP"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -258,6 +258,32 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         self.assertIn("open-source state `yes`", rendered)
         self.assertIn("4/4 documented criteria", rendered)
+
+    def test_openkim_slice_keeps_historical_director_context_bounded(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software = records["SW-KIM-API"]
+        ecosystem = records["ECO-OPENKIM"]
+        tadmor = records["PI-ELLAD-TADMOR"]
+        self.assertEqual("yes", software.metadata["open_source"])
+        self.assertEqual("LGPL-2.1-or-later", software.metadata["license"])
+        self.assertEqual(["PROGRAMMING-LANGUAGE-CPP"], software.metadata["programming_language_ids"])
+        self.assertEqual(["UNIVERSITY-UMN"], tadmor.metadata["affiliation_ids"])
+        self.assertEqual([], rl.matching_assertions(tadmor, "develops"))
+        director = rl.matching_assertions(ecosystem, "connects", {tadmor.id})
+        self.assertEqual(1, len(director))
+        self.assertEqual("founding-director", director[0]["role"])
+        ecosystem_candidates = rl.discovery_ecosystem_candidates(records, None, software.id)
+        self.assertEqual(["ECO-OPENKIM"], [candidate["record"].id for candidate in ecosystem_candidates])
+        software_candidates = rl.discovery_software_candidates(
+            records,
+            "AREA-COMPUTATIONAL-MATERIALS-SCIENCE",
+            "PROGRAMMING-LANGUAGE-CPP",
+            "ECO-OPENKIM",
+            "yes",
+        )
+        self.assertEqual(["SW-KIM-API"], [candidate["record"].id for candidate in software_candidates])
+        self.assertEqual(4, software_candidates[0]["criteria"])
 
     def test_ceder_chgnet_development_path_is_sourced(self) -> None:
         records, results = rl.validate(ROOT)

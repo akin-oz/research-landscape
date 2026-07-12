@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875 -->
+<!-- input-fingerprint: f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875`
+**Input fingerprint:** `f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/ecosystems/aflow.md)
@@ -67,6 +67,12 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) | `ECO-OQMD` | research-ecosystem | high | 2026-07-12 | — |
+
+## [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) | `ECO-OPENKIM` | research-ecosystem | high | 2026-07-13 | — |
 
 ## [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md)
 

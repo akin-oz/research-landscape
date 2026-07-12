@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875 -->
+<!-- input-fingerprint: f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d -->
 # Universities view
 
 **Definition:** `universities`
-**Input fingerprint:** `574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875`
+**Input fingerprint:** `f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Duke University](../../entities/universities/duke-university.md)
@@ -82,6 +82,13 @@
 | --- | --- | --- | --- | --- | --- |
 | [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) | `PI-GABOR-CSANYI` | principal-investigator | high | 2026-07-12 | COUNTRY-GB |
 | [University of Cambridge](../../entities/universities/university-of-cambridge.md) | `UNIVERSITY-CAMBRIDGE` | university | high | 2026-07-12 | COUNTRY-GB |
+
+## [University of Minnesota](../../entities/universities/university-of-minnesota.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Ellad Tadmor](../../entities/principal-investigators/ellad-tadmor.md) | `PI-ELLAD-TADMOR` | principal-investigator | high | 2026-07-13 | COUNTRY-US |
+| [University of Minnesota](../../entities/universities/university-of-minnesota.md) | `UNIVERSITY-UMN` | university | high | 2026-07-13 | COUNTRY-US |
 
 ## Boundary
 

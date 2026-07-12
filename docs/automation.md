@@ -31,7 +31,8 @@ python3 scripts/research_landscape.py discover-universities --area AREA-MACHINE-
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS --software SW-FAIRCHEM
 python3 scripts/research_landscape.py discover-software --area AREA-MACHINE-LEARNED-POTENTIALS --language PROGRAMMING-LANGUAGE-PYTHON --ecosystem ECO-MATML --open-source yes
-python3 scripts/research_landscape.py freshness --as-of 2026-07-12
+python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-CPP --ecosystem ECO-OPENKIM --open-source yes
+python3 scripts/research_landscape.py freshness --as-of 2026-07-13
 ```
 
 `validate` checks v2 schema/frontmatter, IDs, reference fields, relationship
