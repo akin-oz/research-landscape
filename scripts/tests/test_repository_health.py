@@ -124,6 +124,16 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(1, len(includes))
         self.assertEqual(["SRC-FAIRCHEM-DOCUMENTATION", "SRC-FAIRCHEM-REPOSITORY"], includes[0]["source_ids"])
 
+    def test_recommendation_catalog_lists_available_and_unavailable_queries(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        catalog = rl.recommendation_catalog(model)
+        self.assertIn("`groups-ai-for-materials` | available", catalog)
+        self.assertIn("`python-heavy-research-groups` | unavailable", catalog)
+        self.assertIn("No private profiles", catalog)
+
 
 if __name__ == "__main__":
     unittest.main()

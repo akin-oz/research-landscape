@@ -29,6 +29,8 @@ Verify that committed generated output is current without writing files:
 python3 scripts/research_landscape.py generate --check
 python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
+python3 scripts/research_landscape.py recommend --list
+python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
 python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 python3 -m unittest discover -s scripts/tests
 ```

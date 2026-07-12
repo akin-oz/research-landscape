@@ -853,6 +853,23 @@ def recommendation_report(root: Path, records: dict[str, Record], model: dict[st
     return "\n".join(lines)
 
 
+def recommendation_catalog(model: dict[str, Any]) -> str:
+    """Render a deterministic index of public evidence-discovery questions."""
+    lines = [
+        "# Evidence recommendation query catalog", "",
+        "Use `python3 scripts/research_landscape.py recommend --query <query-id-or-alias>` to render one query. Available results are evidence-discovery outputs, not rankings; unavailable queries name their missing evidence contract.",
+        "",
+        "| Query ID | Status | Title | Aliases |",
+        "| --- | --- | --- | --- |",
+    ]
+    for query in model["queries"]:
+        status = "unavailable" if query.get("status") == "unavailable" else "available"
+        aliases = ", ".join(f"`{alias}`" for alias in query.get("aliases", [])) or "—"
+        lines.append(f"| `{query['query_id']}` | {status} | {query['title']} | {aliases} |")
+    lines.extend(["", "No private profiles, preferences, or shortlist data are read by this command.", ""])
+    return "\n".join(lines)
+
+
 def write_or_check(path: Path, content: str, check: bool, drift: list[str]) -> None:
     if check:
         if not path.exists() or path.read_text(encoding="utf-8") != content:
@@ -897,7 +914,7 @@ def generate(root: Path, check: bool) -> int:
     return 0
 
 
-def recommend(root: Path, check: bool, query_id: str | None) -> int:
+def recommend(root: Path, check: bool, query_id: str | None, list_queries: bool = False) -> int:
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
@@ -907,6 +924,12 @@ def recommend(root: Path, check: bool, query_id: str | None) -> int:
         for error in model_errors:
             print(f"ERROR: {error}")
         return 1
+    if list_queries:
+        if check or query_id:
+            print("ERROR: --list cannot be combined with --check or --query")
+            return 1
+        print(recommendation_catalog(model))
+        return 0
     fingerprint = recommendation_fingerprint(root)
     if query_id:
         matching = [query for query in model["queries"] if query["query_id"] == query_id or query_id in query.get("aliases", [])]
@@ -1052,6 +1075,7 @@ def main() -> int:
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
+    parser.add_argument("--list", action="store_true", dest="list_queries", help="list public recommendation query IDs and aliases")
     parser.add_argument("--as-of", help="ISO date for a reproducible freshness audit (defaults to today)")
     args = parser.parse_args()
     root = args.root.resolve()
@@ -1060,7 +1084,7 @@ def main() -> int:
         print_results(root, records, results)
         return 1 if results.errors else 0
     if args.command == "recommend":
-        return recommend(root, args.check, args.query)
+        return recommend(root, args.check, args.query, args.list_queries)
     if args.command == "freshness":
         try:
             as_of = dt.date.fromisoformat(args.as_of) if args.as_of else dt.date.today()

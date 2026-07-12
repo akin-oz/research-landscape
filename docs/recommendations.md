@@ -50,9 +50,13 @@ or public recommendation.
 Run:
 
 ```bash
+python3 scripts/research_landscape.py recommend --list
+python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
 python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
 ```
 
-Correct facts at their canonical entity, rerun the command, and review the
-generated diff. Do not edit generated recommendations manually.
+`--list` displays every public query ID, alias, title, and availability status;
+it does not read private preferences. Correct facts at their canonical entity,
+rerun the command, and review the generated diff. Do not edit generated
+recommendations manually.

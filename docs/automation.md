@@ -16,6 +16,8 @@ python3 scripts/research_landscape.py generate
 python3 scripts/research_landscape.py generate --check
 python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
+python3 scripts/research_landscape.py recommend --list
+python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
 python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 ```
 
@@ -34,9 +36,14 @@ output is missing or stale.
 
 `recommend` validates the corpus and the versioned public recommendation model,
 then derives evidence-discovery results in `reports/generated/`. It exposes
-direct matching signals, confidence, coverage, and unavailable dimensions; it
-does not rank prestige, calculate private accessibility, or infer missing
+documented matching signals, confidence, coverage, and unavailable dimensions;
+it does not rank prestige, calculate private accessibility, or infer missing
 evidence.
+
+`recommend --list` renders a deterministic catalog of public query IDs, titles,
+aliases, and available/unavailable status. It reads no private profile or
+shortlist data. `recommend --query <id-or-alias>` renders one listed query for
+interactive discovery; neither form writes generated output.
 
 `freshness` produces a non-generated, reproducible maintenance audit from
 review dates and declared volatile-assertion deadlines. Pass `--as-of` for a
