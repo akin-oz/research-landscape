@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S70 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S76 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -78,6 +78,12 @@
 | S68 | [European Commission: Horizon 2020](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en) | Horizon 2020 as the EU research and innovation funding programme for 2014–2020, now succeeded by Horizon Europe. | High for programme identity and duration; CORDIS supplies project-specific funding evidence. |
 | S69 | [FAIRmat Events: Eighth FAIRmat Users Meeting](https://events.fairmat-nfdi.eu/event/50/) | Completed June 2026 Berlin meeting, FAIRmat/NOMAD scope, and practical research-data-management sessions. | High for event identity and scope; not an attendance, speaker, or institution-host roster. |
 | S70 | [FAIRmat: Eighth FAIRmat Users Meeting](https://www.fair-di.eu/fairmat/events-fairmat) | FAIRmat event listing confirming the 2026 Users Meeting's dates, Berlin location, and FAIRmat/NOMAD focus. | High for event corroboration; not proof of all participant affiliations or future events. |
+| S71 | [AiiDA documentation: Introduction](https://aiida.readthedocs.io/projects/aiida-core/en/stable/intro/index.html) | Current AiiDA purpose, workflow/provenance features, high-throughput engine, and computational-science scope. | High for current documented software capabilities; not a maintainer, funding, or career-outcome roster. |
+| S72 | [The AiiDA ecosystem](https://aiida.net/ecosystem/) | Ecosystem composition, plugin-driven architecture, and upstream core-to-plugin-to-compute-to-sharing user journey. | High for product and ecosystem context; not proof that every component is a current canonical entity. |
+| S73 | [AiiDA plugin registry](https://aiida.net/plugin-registry/) | Community plugin categories and discovery surface for code, data, scheduler, transport, and workflow extensions. | High for extension context; dynamic package counts and individual plugins require separate review. |
+| S74 | [aiidateam/aiida-core](https://github.com/aiidateam/aiida-core) | Project-owned source, MIT license, public contribution surfaces, and workflow/provenance/HPC/plugin feature summary. | High for public software and contribution path; not an exhaustive current maintainer roster. |
+| S75 | [AiiDA acknowledgements](https://www.aiida.net/sections/acknowledgements.html) | AiiDA's declared supporting or historical-support context, including NCCR MARVEL, PSI, and EPFL. | High for bounded support context; not proof of an exclusive or current award. |
+| S76 | [Scientific Data: AiiDA 1.0](https://www.nature.com/articles/s41597-020-00638-4) | Key 2020 AiiDA technical publication, authors including Giovanni Pizzi, DOI, and architecture/provenance/plugin scope. | High for the citable historical reference; not proof of current software or individual roles. |
 
 ## Evidence protocol for new claims
 

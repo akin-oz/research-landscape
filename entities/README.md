@@ -35,3 +35,5 @@ The Northwestern MSE department cluster adds the [Department of Materials Scienc
 The Horizon 2020 funding cluster adds the [European Commission](organizations/european-commission.md) and [Horizon 2020 — Research Infrastructures](funding/horizon-2020-research-infrastructures.md), while connecting them to the existing completed [NoMaD Laboratory project](projects/nomad-laboratory-coe.md).
 
 The FAIRmat users-meeting cluster adds the [Eighth FAIRmat Users Meeting](conferences/fairmat-users-meeting-2026.md), while connecting it to the existing FAIRmat ecosystem, Computational Materials Science area, and Germany location endpoint.
+
+The AiiDA ecosystem-intelligence cluster adds the [AiiDA 1.0 publication](publications/aiida-1-0.md), enriches the [AiiDA Ecosystem](ecosystems/aiida.md) and [aiida-core](research-software/aiida-core.md) with source-backed architecture, community, contribution, user-journey, and NCCR MARVEL support context, and reuses the existing PSI, THEOS, Giovanni Pizzi, and Materials Cloud records.
