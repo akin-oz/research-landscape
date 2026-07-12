@@ -11,6 +11,8 @@ confidence: high
 source_ids:
   - SRC-ASE-DOCUMENTATION
   - SRC-DTU-CAMD-RESEARCH
+  - SRC-ASE-DEVELOPMENT
+  - SRC-ASE-CONTACT
 ecosystem_kind: atomistic simulation software ecosystem
 website: https://wiki.fysik.dtu.dk/ase/ecosystem.html
 software_ids:
@@ -37,12 +39,20 @@ The ASE ecosystem is represented separately from the ASE software artifact.
 It connects the documented atomistic-simulation tooling to the CAMD group
 without claiming that the recorded group exhausts the broader ecosystem.
 
+The upstream project documents a public development and support surface around
+the software—GitLab, merge requests, mailing list, Matrix chat, and a community
+forum. These participation channels add ecosystem context without becoming
+claims that CAMD, DTU, or any individual controls every contribution or support
+interaction.
+
 ## Evidence
 
 | Source ID | Evidence |
 | --- | --- |
 | `SRC-ASE-DOCUMENTATION` | [Atomic Simulation Environment documentation](https://wiki.fysik.dtu.dk/ase/index.html) describes ASE as Python tools and modules for atomistic simulations and links an ASE ecosystem page. Accessed 2026-07-12. |
 | `SRC-DTU-CAMD-RESEARCH` | [DTU Physics: Atomic-scale Materials Design](https://physics.dtu.dk/research/sections/camd/research/atomic-scale-materials-design) identifies CAMD's development of ASE. Accessed 2026-07-12. |
+| `SRC-ASE-DEVELOPMENT` | [ASE documentation: Development](https://wiki.fysik.dtu.dk/ase/development/development.html) documents contribution, GitLab, code review, coding conventions, testing, and release-development guidance. Accessed 2026-07-12. |
+| `SRC-ASE-CONTACT` | [ASE documentation: Contact](https://wiki.fysik.dtu.dk/ase/contact.html) documents the mailing list, Matrix chat, community forum, and public GitLab issues/merge requests. Accessed 2026-07-12. |
 
 ## Boundary and limitations
 

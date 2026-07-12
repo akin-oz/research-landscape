@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S93 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S100 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -101,6 +101,13 @@
 | S91 | [AFLOW documentation: AFLUX Search API](https://aflow.org/documentation/) | Property-based AFLOW database search/download queries and JSON response behavior. | High for public API user path; dynamic data and endpoint availability require separate review. |
 | S92 | [Duke Scholars: aflow++](https://scholars.duke.edu/individual/pub1557308) | Peer-reviewed 25 January 2023 aflow++ paper, DOI, author list including Stefano Curtarolo, and framework subject. | High for the historical technical reference; not proof of current roles or capabilities. |
 | S93 | [AFLOW Schools](https://aflow.org/aflow-school/) | Dated AFLOW School and bootcamp learning materials covering database/API, symmetry, structural analysis, thermodynamics, and machine-learning interfaces. | High for historical learning context; no current course, schedule, or mentoring inference. |
+| S94 | [ase/ase](https://gitlab.com/ase/ase) | Public ASE source, Python/atomistic-simulation identity, dependency, and installation context. | High for public software source; not an exhaustive maintainer, governance, or contribution record. |
+| S95 | [ASE documentation: Calculators](https://wiki.fysik.dtu.dk/ase/ase/calculators/calculators.html) | ASE's documented `Atoms`/calculator interface for energies, forces, stresses, and external-code configuration. | High for technical workflow context; not a compatibility or result-quality guarantee for every external code. |
+| S96 | [ASE documentation: Command line tool](https://wiki.fysik.dtu.dk/ase/cmdline.html) | ASE CLI user paths for structures, calculations, databases, conversion, tests, and GUI. | High for documented user path; CLI stability and external-code behavior remain upstream concerns. |
+| S97 | [ASE documentation: Development](https://wiki.fysik.dtu.dk/ase/development/development.html) | ASE contribution, GitLab, review, coding, testing, documentation, and release-development guidance. | High for public contribution process; not a promise of review, acceptance, or mentoring. |
+| S98 | [ASE documentation: Contact](https://wiki.fysik.dtu.dk/ase/contact.html) | ASE mailing-list, Matrix, forum, public GitLab issue, and merge-request contact surfaces. | High for public communication routes; not an individual support or response-time commitment. |
+| S99 | [Warwick Research Archive: The Atomic Simulation Environment](https://wrap.warwick.ac.uk/id/eprint/87141/) | Peer-reviewed 21 March 2017 ASE paper, DOI, and Python-library subject. | High for the historical technical reference; not proof of current authorship, roles, capabilities, or funding. |
+| S100 | [ASE documentation: Development proposal for calculators](https://wiki.fysik.dtu.dk/ase/development/proposals/calculators.html) | Calculator-interface design and testing expectations. | High for design guidance; proposal status and implementation coverage must be assessed separately. |
 
 ## Evidence protocol for new claims
 

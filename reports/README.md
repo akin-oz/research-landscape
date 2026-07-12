@@ -13,3 +13,4 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [Materials Project ecosystem-intelligence review](materials-project-ecosystem-intelligence-vertical-slice-review.md) — second QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
 - [NOMAD ecosystem-intelligence review](nomad-ecosystem-intelligence-vertical-slice-review.md) — third QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
 - [AFLOW ecosystem-intelligence review](aflow-ecosystem-intelligence-vertical-slice-review.md) — fourth QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
+- [ASE ecosystem-intelligence review](ase-ecosystem-intelligence-vertical-slice-review.md) — fifth QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
