@@ -4,6 +4,24 @@ All notable changes are documented here. This project follows the principles of 
 
 ## [Unreleased]
 
+### Added
+
+- An AI for Materials controlled research area with direct, evidence-bounded group and PI links, plus FAIR Chemistry and FAIRChem as a distinct ecosystem/software vertical slice.
+- New explainable discovery paths for AI-for-Materials groups, PIs, and ecosystems; PIs with licensed open-source software development evidence; and universities directly hosting documented Computational Materials Science groups.
+- A `recommend --list` catalog for public query IDs, aliases, titles, and unavailable-dimension status, plus `recommend --query` interactive lookup.
+- A reproducible review-freshness audit based on canonical `last_review` dates and declared volatile-assertion deadlines.
+- ADR 0007 (Programming Language entity contract) and ADR 0008 (public mentorship-process evidence contract), both proposed and intentionally not implemented pending explicit approval.
+
+### Changed
+
+- Evidence validation now resolves `SRC-*` claims only from unique `## Evidence` table rows and requires a public URL plus a valid ISO access date for each source.
+- Ecosystem-by-area recommendations now display both sourced ecosystem-to-entity paths and sourced ecosystem-to-software-to-area paths.
+
+### Notes
+
+- This work is post-v0.3 and is not part of the `v0.3.0` release tag.
+- Programming-language and mentorship queries remain unavailable until their proposed architecture contracts are approved and evidence-coverage gates are met.
+
 ## [0.3.0] - 2026-07-12
 
 ### Added

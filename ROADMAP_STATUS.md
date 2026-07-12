@@ -14,6 +14,16 @@ The execution-phase Quality Gates are complete for the current canonical cohort:
 See [FINAL_IMPLEMENTATION_REVIEW.md](FINAL_IMPLEMENTATION_REVIEW.md) for the
 evidence and limits of this status.
 
+## Post-v0.3 progress
+
+The current `main` branch extends the released cohort to 70 canonical entities
+and 120 evidence-bearing typed relationships. It adds AI-for-Materials and
+FAIR Chemistry/FAIRChem vertical slices, explicit recommendation-query
+discovery, review-freshness auditing, and stricter Evidence-table provenance
+validation. These are ongoing improvements, not a retroactive change to the
+v0.3.0 release conclusion; see [CHANGELOG.md](CHANGELOG.md) for the untagged
+work.
+
 ## Ongoing roadmap
 
 The release does not close the long-term knowledge mission. Next work is
