@@ -13,6 +13,7 @@ All notable changes are documented here. This project follows the principles of 
 - A named MatML ecosystem node with a single sourced MatGL inclusion, making its documented software-ecosystem context discoverable without inferring unreviewed components or contributors.
 - A source-bounded M3GNet publication relation that exposes Shyue Ping Ong's Machine-Learned Potentials for Materials work without inferring an individual MatGL maintenance role.
 - A distinct archived M3GNet software record, linked to its paper and Python implementation path, preserving the repository's replacement-by-MatGL boundary without conflating the two artifacts.
+- A source-backed software-lifecycle contract, initially surfacing M3GNet's archived state in interactive software discovery while leaving all unobserved lifecycle states explicitly undocumented.
 - A controlled C++ programming-language entity and sourced implementation paths for AFLOW (C++), NOMAD, RadonPy, MACE, and FAIRChem (Python), with explicit implementation-only boundaries.
 - Accepted and implemented ADR 0007: a controlled Python programming-language entity, sourced Research Software `implemented_in` assertions, and an evidence-discovery path for groups with documented development links to Python software.
 - Extended the CEDER/CHGNet vertical slice with a sourced Python implementation link, exposing its already documented group-development path in the Python discovery query.

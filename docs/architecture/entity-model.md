@@ -178,6 +178,11 @@ ecosystems and projects; and produces publications.
 
 **Required metadata.** At least one of `repository_url` or `website`; `license` when publicly stated. `programming_language_ids` and `ecosystem_ids` are recorded when evidenced.
 
+**Lifecycle.** `software_lifecycle` is optional and may be recorded only with
+record-local `lifecycle_source_ids`. It expresses a bounded public observation
+such as `archived` or `superseded`; its absence is unknown, not evidence that a
+software artifact is active, maintained, supported, or recommended.
+
 **Relationships.** Is developed or maintained by principal investigators, organizations, or groups; is used by research groups; is implemented in programming languages; supports research areas; appears in publications and projects; and may anchor a research ecosystem.
 
 **Example.** `SW-PYMATGEN` in `entities/research-software/pymatgen.md` can link maintainers and users separately, avoiding an unsupported assumption that every user is a maintainer.

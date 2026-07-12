@@ -15,6 +15,9 @@ repository_url: https://github.com/materialyzeai/m3gnet
 website: https://github.com/materialyzeai/m3gnet
 license: BSD-3-Clause
 open_source: "yes"
+software_lifecycle: archived
+lifecycle_source_ids:
+  - SRC-M3GNET-REPOSITORY
 research_area_ids:
   - AREA-MACHINE-LEARNED-POTENTIALS
 programming_language_ids:

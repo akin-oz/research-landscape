@@ -252,6 +252,11 @@ def validate_graph(root: Path, records: dict[str, Record], results: Results) -> 
         for source_id in as_ids(record.metadata.get("source_ids", [])):
             if source_id not in source_keys:
                 results.error(f"{record.path.relative_to(root)}: source {source_id} missing from Evidence table")
+        for source_id in as_ids(record.metadata.get("lifecycle_source_ids", [])):
+            if source_id not in source_keys:
+                results.error(
+                    f"{record.path.relative_to(root)}: lifecycle source {source_id} missing from Evidence table"
+                )
         for field, expected_types in REFERENCE_TYPES.items():
             for target_id in as_ids(record.metadata.get(field, [])):
                 target = records.get(target_id)
@@ -1781,22 +1786,25 @@ def render_software_discovery(
         "# Research-software discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking or software-quality assessment.", "",
         "**AND filters:** " + "; ".join(f"{name} `{value}`" for name, value in filters) + ".", "",
-        "| Research software | Documented matching evidence | Confidence | Coverage |",
-        "| --- | --- | --- | --- |",
+        "| Research software | Lifecycle observation | Documented matching evidence | Confidence | Coverage |",
+        "| --- | --- | --- | --- | --- |",
     ]
     total_criteria = len(filters)
     for candidate in candidates:
         signals = candidate["signals"]
         rendered_signals = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in signals)
         confidence = lowest_confidence([item["confidence"] for item in signals])
+        lifecycle = candidate["record"].metadata.get("software_lifecycle")
+        lifecycle_sources = ", ".join(as_ids(candidate["record"].metadata.get("lifecycle_source_ids", [])))
+        lifecycle_observation = f"{lifecycle} (sources: {lifecycle_sources})" if lifecycle else "not documented"
         lines.append(
-            f"| {canonical_link(candidate['record'], output_path)} (`{candidate['record'].id}`) | {rendered_signals} | {confidence} | {candidate['criteria']}/{total_criteria} documented criteria |"
+            f"| {canonical_link(candidate['record'], output_path)} (`{candidate['record'].id}`) | {lifecycle_observation} | {rendered_signals} | {confidence} | {candidate['criteria']}/{total_criteria} documented criteria |"
         )
     if not candidates:
-        lines.append("| — | No reviewed canonical research software matches every requested evidence criterion. | unavailable | 0 criteria |")
+        lines.append("| — | — | No reviewed canonical research software matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and contain only reviewed software with every requested evidence criterion. Area classification is backed by the software record's local evidence; language and ecosystem matches use sourced `implemented_in` and `includes` assertions. This does not rank software, establish technical superiority, support, maintenance activity, adoption, funding, openings, mentorship, or applicant fit.", "",
+        "Results are alphabetically ordered and contain only reviewed software with every requested evidence criterion. Lifecycle is shown only when the software record has its own cited lifecycle observation; “not documented” does not mean active or inactive. Area classification is backed by the software record's local evidence; language and ecosystem matches use sourced `implemented_in` and `includes` assertions. This does not rank software, establish technical superiority, support, maintenance activity, adoption, funding, openings, mentorship, or applicant fit.", "",
     ])
     return "\n".join(lines)
 

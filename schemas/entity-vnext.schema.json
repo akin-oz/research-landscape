@@ -67,6 +67,8 @@
     "github": { "type": "string", "format": "uri" },
     "repository_url": { "type": "string", "format": "uri" },
     "license": { "type": "string" },
+    "software_lifecycle": { "enum": ["active", "archived", "superseded", "unknown"] },
+    "lifecycle_source_ids": { "$ref": "#/$defs/nonEmptyIdArray" },
     "orcid": {
       "type": "string",
       "pattern": "^https://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9X]{4}$"
@@ -142,6 +144,17 @@
         "required": ["source_ids"],
         "properties": { "source_ids": { "$ref": "#/$defs/nonEmptyIdArray" } }
       }
+    },
+    {
+      "if": { "required": ["software_lifecycle"] },
+      "then": {
+        "required": ["lifecycle_source_ids"],
+        "properties": { "entity_type": { "const": "research-software" } }
+      }
+    },
+    {
+      "if": { "required": ["lifecycle_source_ids"] },
+      "then": { "required": ["software_lifecycle"] }
     },
     {
       "if": { "properties": { "entity_type": { "const": "principal-investigator" } } },

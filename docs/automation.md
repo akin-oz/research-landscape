@@ -117,6 +117,11 @@ assertion, and an ecosystem match follows the ecosystem's sourced `includes`
 assertion. The command is alphabetically ordered and does not assess software
 quality, performance, adoption, maintenance, support, or fit.
 
+Its lifecycle column is an evidence observation, not a health score: a software
+record may expose `active`, `archived`, `superseded`, or `unknown` only with its
+own record-local lifecycle source IDs. `not documented` is deliberately not
+interpreted as active or inactive.
+
 `freshness` produces a non-generated, reproducible maintenance audit from
 review dates and declared volatile-assertion deadlines. Pass `--as-of` for a
 repeatable result; without it, the command uses the local current date. Its

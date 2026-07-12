@@ -379,6 +379,7 @@ class RepositoryHealthTests(unittest.TestCase):
             ROOT / "reports/generated/evidence-recommendations.md",
         )
         self.assertIn("# Research-software discovery", rendered)
+        self.assertIn("not documented", rendered)
         self.assertIn("3/3 documented criteria", rendered)
         ml_python_candidates = rl.discovery_software_candidates(
             records, "AREA-MACHINE-LEARNED-POTENTIALS", "PROGRAMMING-LANGUAGE-PYTHON", None
@@ -387,6 +388,12 @@ class RepositoryHealthTests(unittest.TestCase):
             ["SW-CHGNET", "SW-FAIRCHEM", "SW-M3GNET", "SW-MACE", "SW-MATGL"],
             sorted(candidate["record"].id for candidate in ml_python_candidates),
         )
+        ml_python_rendered = rl.render_software_discovery(
+            records, "AREA-MACHINE-LEARNED-POTENTIALS", "PROGRAMMING-LANGUAGE-PYTHON", None,
+            ROOT / "reports/generated/evidence-recommendations.md",
+        )
+        self.assertIn("archived (sources: SRC-M3GNET-REPOSITORY)", ml_python_rendered)
+        self.assertIn("not documented", ml_python_rendered)
 
     def test_discovery_catalog_lists_public_filter_ids(self) -> None:
         records, results = rl.validate(ROOT)
@@ -464,6 +471,8 @@ class RepositoryHealthTests(unittest.TestCase):
             ["SW-M3GNET"],
             [assertion["target_id"] for assertion in rl.matching_assertions(publication, "describes")],
         )
+        self.assertEqual("archived", records["SW-M3GNET"].metadata["software_lifecycle"])
+        self.assertEqual(["SRC-M3GNET-REPOSITORY"], records["SW-M3GNET"].metadata["lifecycle_source_ids"])
         self.assertIn("PUB-M3GNET-2022", records["PI-SHYUE-PING-ONG"].metadata["publication_ids"])
         research_area_view = rl.render_view(
             next(view for view in rl.yaml.safe_load((ROOT / "views/definitions.yaml").read_text(encoding="utf-8"))["views"] if view["view_id"] == "research-areas"),
