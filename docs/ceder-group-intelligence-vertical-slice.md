@@ -20,6 +20,7 @@ flowchart LR
   RG -->|"belongs_to"| U
   RG -->|"works_on"| CMS["AREA-COMPUTATIONAL-MATERIALS-SCIENCE"]
   RG -->|"works_on"| AI["AREA-AI-FOR-MATERIALS"]
+  RG -->|"works_on"| MLP["AREA-MACHINE-LEARNED-POTENTIALS"]
   RG -->|"develops"| SW["SW-CHGNET\nCHGNet"]
   ECO["ECO-MATERIALS-PROJECT\nMaterials Project"] -->|"connects (contributor)"| RG
 ```
@@ -31,6 +32,7 @@ flowchart LR
 | Direct host and PI | UC Berkeley identifies the group within its Materials Science and Engineering context and identifies Ceder as a professor. | LBNL is not added as a second group host. |
 | Computational materials | UC Berkeley describes computational/high-throughput materials work. | No complete methods, project, publication, or facility inventory is created. |
 | AI for Materials | UC Berkeley and CEDER sources describe AI/ML and autonomous materials experimentation. | This is not an AI capability, model-quality, or autonomous-lab performance score. |
+| Machine-learned potentials | A CEDER Group source says the group developed CHGNet, a universal machine-learning potential. | No model-performance, complete atomistic-modelling, or individual-role claim is made. |
 | Research software | A CEDER Group source states that the group developed CHGNet; its public repository/package evidence supports the separate BSD-3-Clause software record and a sourced Python implementation link. | No individual maintainer, release-owner, dependency, benchmark, group-wide working-language, or support claim is made. |
 | Materials Project | UC Berkeley states that the group contributes extensively to Materials Project. | The edge does not establish exclusive ownership, every contributor, or individual software maintenance. |
 

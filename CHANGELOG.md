@@ -7,6 +7,7 @@ All notable changes are documented here. This project follows the principles of 
 ### Added
 
 - An AI for Materials controlled research area with direct, evidence-bounded group and PI links, plus FAIR Chemistry/FAIRChem and UC Berkeley/CEDER/Gerbrand Ceder/CHGNet vertical slices.
+- A controlled Machine-Learned Potentials for Materials area with directly supported CHGNet, FAIRChem, and CEDER Group connections plus explainable group, ecosystem, and direct-host university discovery paths.
 - Accepted and implemented ADR 0007: a controlled Python programming-language entity, sourced Research Software `implemented_in` assertions, and an evidence-discovery path for groups with documented development links to Python software.
 - Extended the CEDER/CHGNet vertical slice with a sourced Python implementation link, exposing its already documented group-development path in the Python discovery query.
 - Accepted and implemented ADR 0008: a bounded public mentorship-process evidence field, two independently reviewed category slices, and a non-comparative discovery query that retains source limitations.

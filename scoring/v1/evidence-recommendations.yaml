@@ -34,6 +34,13 @@ queries:
     area_id: AREA-AI-FOR-MATERIALS
     limitations: "Membership reflects an explicit artificial-intelligence-and-materials relation, not exhaustive AI capability, model quality, hiring, or research quality."
 
+  - query_id: groups-machine-learned-potentials
+    aliases: [machine-learning-potentials-groups, ml-potential-groups]
+    kind: groups-by-area
+    title: Research groups with documented Machine-Learned Potentials for Materials work
+    area_id: AREA-MACHINE-LEARNED-POTENTIALS
+    limitations: "Membership reflects an explicit machine-learned-potential relation, not model accuracy, complete atomistic-modelling coverage, software quality, hiring, or research quality."
+
   - query_id: groups-open-software
     aliases: [open-science-groups]
     kind: groups-with-open-source-software
@@ -67,6 +74,13 @@ queries:
     title: Research ecosystems connected to AI for Materials entities
     area_id: AREA-AI-FOR-MATERIALS
     limitations: "A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, AI capability, or research-quality ranking."
+
+  - query_id: ecosystems-machine-learned-potentials
+    aliases: [machine-learning-potentials-ecosystems, ml-potential-ecosystems]
+    kind: ecosystems-connected-to-area
+    title: Research ecosystems connected to Machine-Learned Potentials for Materials entities
+    area_id: AREA-MACHINE-LEARNED-POTENTIALS
+    limitations: "A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, model performance, funding, or research-quality ranking."
 
   - query_id: principal-investigators-computational-materials
     aliases: [best-pis-for-computational-materials]
@@ -108,6 +122,13 @@ queries:
     title: Universities directly hosting research groups with documented AI for Materials work
     area_id: AREA-AI-FOR-MATERIALS
     limitations: "This is a sourced host-and-area discovery path, not a measure of university strength, AI capability, ecosystem completeness, degree quality, funding, opportunities, or admissions fit."
+
+  - query_id: universities-hosting-machine-learned-potential-groups
+    aliases: [universities-with-machine-learning-potential-groups, ml-potential-universities]
+    kind: universities-hosting-groups-by-area
+    title: Universities directly hosting research groups with documented Machine-Learned Potentials for Materials work
+    area_id: AREA-MACHINE-LEARNED-POTENTIALS
+    limitations: "This is a sourced host-and-area discovery path, not a measure of university strength, model performance, ecosystem completeness, degree quality, funding, opportunities, or admissions fit."
 
   - query_id: python-heavy-research-groups
     aliases: [best-python-centric-research-groups]

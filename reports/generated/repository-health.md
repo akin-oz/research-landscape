@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 256bba6f6ebd88c93940102f6c9c0e1a7334392e8cd4a86426d22da14d01290a -->
+<!-- input-fingerprint: 6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de -->
 # Repository health report
 
-**Input fingerprint:** `256bba6f6ebd88c93940102f6c9c0e1a7334392e8cd4a86426d22da14d01290a`
+**Input fingerprint:** `6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **75**
-- Typed relationship assertions: **134**
+- Canonical v2 entities: **76**
+- Typed relationship assertions: **135**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -25,7 +25,7 @@
 | programming-language | 1 |
 | project | 1 |
 | publication | 7 |
-| research-area | 3 |
+| research-area | 4 |
 | research-ecosystem | 8 |
 | research-group | 12 |
 | research-software | 8 |
@@ -35,26 +35,26 @@
 
 | Confidence | Count |
 | --- | ---: |
-| high | 75 |
+| high | 76 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **75**
+- Canonical v2 records in approved entity directories: **76**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 75/75 |
-| Reviewed/published records with last-review dates | 75/75 |
-| Typed relationships with source IDs | 134/134 |
+| Reviewed/published records with source IDs | 76/76 |
+| Reviewed/published records with last-review dates | 76/76 |
+| Typed relationships with source IDs | 135/135 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
-| Entities with an inbound or outbound graph connection | 75/75 |
+| Entities with an inbound or outbound graph connection | 76/76 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
-| Recommendation queries (available/unavailable) | 18 (17/1) |
+| Recommendation queries (available/unavailable) | 21 (20/1) |
 
 ## Relationship predicates
 
@@ -74,7 +74,7 @@
 | involves | 1 |
 | leads | 11 |
 | located_in | 13 |
-| works_on | 28 |
+| works_on | 29 |
 
 ## Findings
 

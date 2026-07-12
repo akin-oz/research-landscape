@@ -15,6 +15,7 @@ source_ids:
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
   - AREA-AI-FOR-MATERIALS
+  - AREA-MACHINE-LEARNED-POTENTIALS
 open_source: "yes"
 programming_language_ids:
   - PROGRAMMING-LANGUAGE-PYTHON

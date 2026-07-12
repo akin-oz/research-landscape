@@ -11,8 +11,10 @@ confidence: high
 source_ids:
   - SRC-FAIRCHEM-DOCUMENTATION
   - SRC-FAIRCHEM-REPOSITORY
+  - SRC-FAIRCHEM-INTRODUCTION
 research_area_ids:
   - AREA-AI-FOR-MATERIALS
+  - AREA-MACHINE-LEARNED-POTENTIALS
 ecosystem_ids:
   - ECO-FAIR-CHEM
 open_source: "yes"
@@ -35,6 +37,7 @@ or application into a separate software entity.
 | Source ID | Evidence |
 | --- | --- |
 | `SRC-FAIRCHEM-DOCUMENTATION` | [FAIR Chemistry Documentation](https://fair-chem.github.io/) describes FAIRChem as machine-learning models for materials science and quantum chemistry, including materials and heterogeneous-catalysis applications, and links its public source repository. Accessed 2026-07-12. |
+| `SRC-FAIRCHEM-INTRODUCTION` | [FAIR Chemistry: GNNs for Chemistry](https://fair-chem.github.io/intro/) describes graph-based machine-learned potentials for atomistic simulation and materials-property applications. Accessed 2026-07-12. |
 | `SRC-FAIRCHEM-REPOSITORY` | [facebookresearch/fairchem](https://github.com/facebookresearch/fairchem) identifies `fairchem` as FAIR Chemistry's centralized repository for data, models, demos, and application efforts for materials science and quantum chemistry, and states that the code is available under the MIT License. Accessed 2026-07-12. |
 
 ## Boundary and limitations

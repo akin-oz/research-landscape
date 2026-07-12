@@ -257,6 +257,30 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         self.assertEqual(["UNIVERSITY-UC-BERKELEY"], [candidate["record"].id for candidate in chgnet_universities])
 
+    def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        queries = {query["query_id"]: query for query in model["queries"]}
+        group_candidates = rl.recommendation_candidates(queries["groups-machine-learned-potentials"], records)
+        self.assertEqual(["RG-CEDER-GROUP"], [candidate["record"].id for candidate in group_candidates])
+        ecosystem_candidates = rl.recommendation_candidates(queries["ecosystems-machine-learned-potentials"], records)
+        self.assertEqual(
+            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT"],
+            sorted(candidate["record"].id for candidate in ecosystem_candidates),
+        )
+        university_candidates = rl.recommendation_candidates(
+            queries["universities-hosting-machine-learned-potential-groups"], records
+        )
+        self.assertEqual(["UNIVERSITY-UC-BERKELEY"], [candidate["record"].id for candidate in university_candidates])
+        self.assertEqual(
+            ["RG-CEDER-GROUP"],
+            [candidate["record"].id for candidate in rl.discovery_group_candidates(
+                records, "AREA-MACHINE-LEARNED-POTENTIALS", None, None, None
+            )],
+        )
+
     def test_recommendation_catalog_lists_available_and_unavailable_queries(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

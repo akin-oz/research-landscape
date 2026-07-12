@@ -16,6 +16,7 @@ institution_id: UNIVERSITY-UC-BERKELEY
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
   - AREA-AI-FOR-MATERIALS
+  - AREA-MACHINE-LEARNED-POTENTIALS
 software_ids:
   - SW-CHGNET
 website: https://ceder.berkeley.edu/
@@ -35,6 +36,12 @@ relationship_assertions:
     source_ids: [SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-MACHINE-LEARNED-POTENTIALS
+    source_ids: [SRC-CEDER-GROUP-CHGNET]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The group states it developed CHGNet, a universal machine-learning potential; this does not establish model performance, every group member's role, or a complete atomistic-modelling portfolio.
   - predicate: develops
     target_id: SW-CHGNET
     source_ids: [SRC-CEDER-GROUP-CHGNET]
@@ -50,7 +57,7 @@ The Computational and Experimental Design of Emerging Materials Research Group
 Berkeley material describes computational and experimental materials design,
 high-throughput computation, Materials Project contribution, machine learning,
 and AI-driven autonomous materials work. Those source-backed themes support
-the two controlled area links without turning every method, project, facility,
+the three controlled area links without turning every method, project, facility,
 publication, or collaboration into a canonical record.
 
 ## Evidence

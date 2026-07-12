@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: bbf13fb57ac29184fe68216ff72efe7b685656af22abe5b9e791584e393329f6 -->
+<!-- input-fingerprint: 69fb36bdabcbf35a2515aadb2d3e52717b349e982009425b85ea892391178fb3 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `bbf13fb57ac29184fe68216ff72efe7b685656af22abe5b9e791584e393329f6`
+**Input fingerprint:** `69fb36bdabcbf35a2515aadb2d3e52717b349e982009425b85ea892391178fb3`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -75,6 +75,18 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | works on `AREA-AI-FOR-MATERIALS` (sources: SRC-NUS-ONG-PROFILE) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit artificial-intelligence-and-materials relation, not exhaustive AI capability, model quality, hiring, or research quality.
+
+## Research groups with documented Machine-Learned Potentials for Materials work
+
+**Query ID:** `groups-machine-learned-potentials`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) (`RG-CEDER-GROUP`) | works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CEDER-GROUP-CHGNET) | high | 1/1 documented criteria |
+
+**Limitations:** Membership reflects an explicit machine-learned-potential relation, not model accuracy, complete atomistic-modelling coverage, software quality, hiring, or research quality.
 
 ## Research groups with documented development links to licensed open-source software
 
@@ -149,9 +161,22 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION) | high | 2/2 documented criteria |
-| [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY) | high | 2/2 documented criteria |
+| [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, AI capability, or research-quality ranking.
+
+## Research ecosystems connected to Machine-Learned Potentials for Materials entities
+
+**Query ID:** `ecosystems-machine-learned-potentials`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
+| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CEDER-GROUP-CHGNET) | high | 2/2 documented criteria |
+
+**Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, model performance, funding, or research-quality ranking.
 
 ## Principal Investigators with documented Computational Materials Science work
 
@@ -238,6 +263,18 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) (`UNIVERSITY-UC-BERKELEY`) | hosts `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION) | high | 2/2 documented criteria |
 
 **Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, AI capability, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
+
+## Universities directly hosting research groups with documented Machine-Learned Potentials for Materials work
+
+**Query ID:** `universities-hosting-machine-learned-potential-groups`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) (`UNIVERSITY-UC-BERKELEY`) | hosts `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CEDER-GROUP-CHGNET) | high | 2/2 documented criteria |
+
+**Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, model performance, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
 
 ## Research groups with documented development links to Python software
 

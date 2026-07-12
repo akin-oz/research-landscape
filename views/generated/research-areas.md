@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 256bba6f6ebd88c93940102f6c9c0e1a7334392e8cd4a86426d22da14d01290a -->
+<!-- input-fingerprint: 6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `256bba6f6ebd88c93940102f6c9c0e1a7334392e8cd4a86426d22da14d01290a`
+**Input fingerprint:** `6a70f6d06a7b5e28c3125190ea3c3b751753d46cc70044b99f5a4bbeb096e7de`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -43,6 +43,14 @@
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-12 | COUNTRY-DE |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
+
+## [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
+| [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
 
 ## [Materials Informatics](../../entities/research-areas/materials-informatics.md)
 
