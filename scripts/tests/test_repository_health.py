@@ -92,6 +92,27 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("source SRC-TEST missing from Evidence table", results.errors[0])
         self.assertEqual([], rl.evidence_table_source_ids(record.body))
 
+    def test_evidence_rows_require_a_public_url_and_valid_access_date(self) -> None:
+        record = rl.Record(
+            path=ROOT / "entities/research-areas/test.md",
+            metadata={
+                "id": "AREA-TEST",
+                "entity_type": "research-area",
+                "source_ids": ["SRC-TEST"],
+                "relationship_assertions": [],
+            },
+            body=(
+                "## Evidence\n\n"
+                "| Source ID | Evidence |\n"
+                "| --- | --- |\n"
+                "| `SRC-TEST` | A source without a locator. Accessed 2026-99-99. |\n"
+            ),
+        )
+        results = rl.Results([], [])
+        rl.validate_graph(ROOT, {record.id: record}, results)
+        self.assertTrue(any("Evidence source SRC-TEST missing public URL" in error for error in results.errors))
+        self.assertTrue(any("Evidence source SRC-TEST has invalid access date" in error for error in results.errors))
+
 
 if __name__ == "__main__":
     unittest.main()

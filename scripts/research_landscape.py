@@ -112,7 +112,9 @@ RECOMMENDATION_KINDS = {
 
 LINK_PATTERN = re.compile(r"\]\(([^)]+)\)")
 EVIDENCE_SECTION_PATTERN = re.compile(r"^## Evidence\s*$([\s\S]*?)(?=^## |\Z)", re.MULTILINE)
-EVIDENCE_SOURCE_ROW_PATTERN = re.compile(r"^\|\s*`(SRC-[A-Z0-9-]+)`\s*\|", re.MULTILINE)
+EVIDENCE_SOURCE_ROW_PATTERN = re.compile(r"^\|\s*`(SRC-[A-Z0-9-]+)`\s*\|\s*(.*?)\s*\|\s*$", re.MULTILINE)
+PUBLIC_LOCATOR_PATTERN = re.compile(r"https?://")
+ACCESS_DATE_PATTERN = re.compile(r"\bAccessed\s+(\d{4}-\d{2}-\d{2})\b", re.IGNORECASE)
 
 # These intervals implement docs/freshness-policy.md. They classify maintenance
 # attention only; they do not downgrade source quality or entity confidence.
@@ -202,8 +204,8 @@ def as_ids(value: Any) -> list[str]:
     return []
 
 
-def evidence_table_source_ids(body: str) -> list[str]:
-    """Return source IDs from the record's dedicated Evidence-table rows.
+def evidence_table_sources(body: str) -> list[tuple[str, str]]:
+    """Return source IDs and evidence text from dedicated Evidence-table rows.
 
     Source identifiers mentioned in narrative, limitations, or code examples do
     not resolve a claim. The table is the canonical local citation registry.
@@ -214,12 +216,34 @@ def evidence_table_source_ids(body: str) -> list[str]:
     return EVIDENCE_SOURCE_ROW_PATTERN.findall(section.group(1))
 
 
+def evidence_table_source_ids(body: str) -> list[str]:
+    return [source_id for source_id, _ in evidence_table_sources(body)]
+
+
 def validate_graph(root: Path, records: dict[str, Record], results: Results) -> None:
     for record in records.values():
-        evidence_source_ids = evidence_table_source_ids(record.body)
+        evidence_sources = evidence_table_sources(record.body)
+        evidence_source_ids = [source_id for source_id, _ in evidence_sources]
         source_keys = set(evidence_source_ids)
         if len(evidence_source_ids) != len(source_keys):
             results.error(f"{record.path.relative_to(root)}: duplicate source ID in Evidence table")
+        for source_id, evidence in evidence_sources:
+            if not PUBLIC_LOCATOR_PATTERN.search(evidence):
+                results.error(
+                    f"{record.path.relative_to(root)}: Evidence source {source_id} missing public URL"
+                )
+            access_date = ACCESS_DATE_PATTERN.search(evidence)
+            if access_date is None:
+                results.error(
+                    f"{record.path.relative_to(root)}: Evidence source {source_id} missing access date"
+                )
+            else:
+                try:
+                    dt.date.fromisoformat(access_date.group(1))
+                except ValueError:
+                    results.error(
+                        f"{record.path.relative_to(root)}: Evidence source {source_id} has invalid access date"
+                    )
         for source_id in as_ids(record.metadata.get("source_ids", [])):
             if source_id not in source_keys:
                 results.error(f"{record.path.relative_to(root)}: source {source_id} missing from Evidence table")
