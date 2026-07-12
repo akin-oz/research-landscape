@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S63 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S66 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -71,6 +71,9 @@
 | S61 | [European Commission CORDIS: The Novel Materials Discovery Laboratory](https://cordis.europa.eu/project/id/676580) | NoMaD grant 676580 identity, completed 2015–2018 dates, coordinator, and computational-materials data-infrastructure scope. | High for project identity and dated coordination; not a current NOMAD maintenance or governance record. |
 | S62 | [NOMAD CoE: Our Story](https://www.nomad-coe.eu/nomad-coe/connections-nomad-coe/our-story-nomad-coe) | Historical account of the 2015–2018 H2020 NOMAD Laboratory CoE substantially extending NOMAD. | High for historical project context; not a complete partner or current service roster. |
 | S63 | [Max Planck Society: Organisational structure](https://www.mpg.de/183267/organisation) | Max Planck Society identity, independent research-organization status, and registered Berlin seat. | High for organization identity; not a complete institute or project inventory. |
+| S64 | [Northwestern Materials Science & Engineering](https://www.mccormick.northwestern.edu/materials-science/) | Department identity within Northwestern University. | High for Department identity and University context; not a complete faculty or group roster. |
+| S65 | [Northwestern MSE: Materials Theory, Computation, & Design](https://www.mccormick.northwestern.edu/materials-science/research/areas-of-research/materials-theory-computation-design.html) | Department-level computational and theoretical materials-science research context and Chris Wolverton faculty listing. | High for Department research-area and faculty context; not an exhaustive group-membership statement. |
+| S66 | [Northwestern Engineering: Chris Wolverton](https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/wolverton-chris.html) | Wolverton's Materials Science and Engineering appointment and linked Wolverton Research Group site. | High for bounded administrative context; not a second direct group host. |
 
 ## Evidence protocol for new claims
 

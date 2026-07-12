@@ -29,3 +29,5 @@ The ASE cluster adds [Atomic Simulation Environment](research-software/ase.md), 
 The NCCR MARVEL funding cluster adds the [Swiss National Science Foundation](organizations/swiss-national-science-foundation.md) and [NCCR MARVEL](funding/nccr-marvel.md), while adding only an evidence-bounded historical funding-program connection to the existing [Materials Cloud](ecosystems/materials-cloud.md) and reusing Switzerland.
 
 The NoMaD Laboratory project cluster adds the [Max Planck Society](organizations/max-planck-society.md) and [The Novel Materials Discovery Laboratory](projects/nomad-laboratory-coe.md), while reusing Germany, Computational Materials Science, and the historical [NOMAD](research-software/nomad.md) software connection.
+
+The Northwestern MSE department cluster adds the [Department of Materials Science and Engineering](departments/northwestern-materials-science-engineering.md) as administrative context for the existing [Wolverton Research Group](research-groups/wolverton-research-group.md), while preserving Northwestern University as that group's direct host.
