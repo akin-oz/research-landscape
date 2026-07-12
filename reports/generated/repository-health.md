@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: b68a00d41a8ffc2a1cd616e80635791ca0f58e966c4eb277ad38b1a59a3d28c7 -->
+<!-- input-fingerprint: c9fcefbd0541e3ea9bc3d310c4e66df15dc3026088ee878e72416f4283074ee0 -->
 # Repository health report
 
-**Input fingerprint:** `b68a00d41a8ffc2a1cd616e80635791ca0f58e966c4eb277ad38b1a59a3d28c7`
+**Input fingerprint:** `c9fcefbd0541e3ea9bc3d310c4e66df15dc3026088ee878e72416f4283074ee0`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
 - Canonical v2 entities: **81**
-- Typed relationship assertions: **142**
+- Typed relationship assertions: **143**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -48,7 +48,7 @@
 | --- | ---: |
 | Reviewed/published records with source IDs | 81/81 |
 | Reviewed/published records with last-review dates | 81/81 |
-| Typed relationships with source IDs | 142/142 |
+| Typed relationships with source IDs | 143/143 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
 | Entities with an inbound or outbound graph connection | 81/81 |
 | Broken local Markdown links | 0 |
@@ -64,7 +64,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 3 | 2 | 2 |
 | [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 7 | 1 | 6 | 7 |
-| [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 1 | 4 | 2 | 2 |
+| [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 4 | 2 | 2 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 1 | 1 | 1 |
 
 ## Relationship predicates
@@ -85,7 +85,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | involves | 1 |
 | leads | 11 |
 | located_in | 14 |
-| works_on | 31 |
+| works_on | 32 |
 
 ## Findings
 

@@ -28,13 +28,16 @@ flowchart LR
   RG -->|"works_on"| AREA["AREA-MATERIALS-INFORMATICS\nMaterials Informatics"]
   RG -->|"works_on"| MLP["AREA-MACHINE-LEARNED-POTENTIALS"]
   RG -->|"develops"| MATGL["SW-MATGL\nMatGL"]
+  PI -->|"works_on"| MLP
   PI -->|"develops"| SW["SW-PYMATGEN\npymatgen"]
   ECO["ECO-MATERIALS-PROJECT\nMaterials Project Ecosystem"] -->|"connects"| PI
   ECO -->|"includes"| SW
 ```
 
 The existing PI-level pymatgen relation remains deliberately distinct from a
-group-wide maintenance claim. A later repository-backed review promotes MatGL
+group-wide maintenance claim. A public M3GNet publication supports the PI's
+Machine-Learned Potentials for Materials topic relation, not an individual
+MatGL role. A later repository-backed review promotes MatGL
 to the single supported group-level software path because the lab presents it
 as one of its open-source codes and its repository records a Materialyze.AI
 collaboration. MatCalc, projects, contributors, and funders remain omitted.
@@ -43,7 +46,7 @@ collaboration. MatCalc, projects, contributors, and funders remain omitted.
 
 | Required group dimension | Canonical evidence in this slice | Boundary |
 | --- | --- | --- |
-| Research themes | NUS and group pages describe materials informatics, theory, data, AI, batteries, alloys, semiconductors, and theory/experiment/AI integration. | This is public lab scope, not a complete project inventory or every member's research. |
+| Research themes | NUS and group pages describe materials informatics, theory, data, AI, batteries, alloys, semiconductors, and theory/experiment/AI integration; an M3GNet publication supports Ong's ML-potential topic relation. | This is public lab scope, not a complete project inventory or every member's research. |
 | Scientific software maturity | The home page presents software frameworks for simulation/lab automation and linked public open-source codes; MatGL is separately reviewed as a canonical group-level software relation. | No maturity score, service-level claim, exclusive ownership, or individual maintainer roster is inferred. |
 | Programming stack | The home page identifies pymatgen and MatCalc as Python libraries. | This is a public software-surface statement, not a universal group language policy or a new Language entity. |
 | Software ecosystem participation | Existing PI → pymatgen → Materials Project relations remain the canonical graph path; the reviewed group → MatGL path supplies a separate software connection. | Group-wide pymatgen development, Materials Project governance, and ownership are not inferred. |
@@ -80,7 +83,8 @@ that any candidate will receive mentoring, admission, support, or an offer.
   created from the dynamic public pages.
 - No group-wide claim of pymatgen or Materials Project maintenance, ownership,
   governance, Python policy, licensing, CI, or software quality is made; the
-  MatGL relation is limited to documented group-level collaboration/development.
+  MatGL relation is limited to documented group-level collaboration/development,
+  and the M3GNet publication does not establish an individual MatGL role.
 - No funding, collaboration, industry partner, facility, experimental
   capability, publication-quality, alumni, or career-outcome claim is inferred.
 - No ranking, admissions advice, mentorship rating, or applicant-fit score is

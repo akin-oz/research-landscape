@@ -19,7 +19,7 @@ group-wide claims.
 
 | Claim family | Primary evidence used | Review result |
 | --- | --- | --- |
-| Group identity and research scope | NUS faculty profile and Materialyze.AI home page | Supports the NUS-hosted materials-informatics group and stated theory/data/AI/translation pillars; not a complete project inventory. |
+| Group identity and research scope | NUS faculty profile, Materialyze.AI home page, and public M3GNet publication | Supports the NUS-hosted materials-informatics group and stated theory/data/AI/translation pillars; the publication supports a bounded PI ML-potential topic relation, not a complete project inventory or individual software role. |
 | Software and open-science context | Materialyze.AI home page, MatGL repository, and Join Us post | Supports public open data/API/software context, a bounded group-level MatGL collaboration/development relation, and an advertised contribution surface; not exclusive maintenance, individual roles, or quality metrics. |
 | People boundary | Materialyze.AI Team page | Supports visible research-fellow, postdoctoral, and graduate-student role categories, but mixes NUS/UCSD context and is not a normalized current NUS roster. |
 | Application and mentorship boundary | Dated Materialyze.AI Join Us post | Supports a public stated application, onboarding, and mentorship process; not live capacity, an admission decision, funding, or outcome evidence. |
@@ -64,6 +64,6 @@ It checked schema shape and dates, unique IDs, relationship target/type
 compatibility, record-local source resolution, direct-host target type and
 matching `belongs_to` assertion, exact-one host cardinality, changed-document
 local links, whitespace, and ADR 0006's University/Organization positive and
-negative branch cases. The corpus contains 81 v2 entities and 142 relationship
+negative branch cases. The corpus contains 81 v2 entities and 143 relationship
 assertions. The extension uses the established generated-view and validation
 contracts; it introduces no new architecture boundary.

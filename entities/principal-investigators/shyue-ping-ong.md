@@ -12,12 +12,14 @@ source_ids:
   - SRC-NUS-ONG-PROFILE
   - SRC-MATERIALYZE-TEAM
   - SRC-PYMATGEN-TEAM
+  - SRC-M3GNET-PUBLICATION
 affiliation_ids:
   - UNIVERSITY-NUS
 research_group_ids:
   - RG-MATERIALYZE-AI
 research_area_ids:
   - AREA-MATERIALS-INFORMATICS
+  - AREA-MACHINE-LEARNED-POTENTIALS
 website: https://www.materialyze.ai/
 relationship_assertions:
   - predicate: affiliated_with
@@ -42,6 +44,12 @@ relationship_assertions:
     source_ids: [SRC-NUS-ONG-PROFILE]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-MACHINE-LEARNED-POTENTIALS
+    source_ids: [SRC-M3GNET-PUBLICATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The public M3GNet publication identifies Ong as an author and describes a universal graph deep-learning interatomic potential. It supports a topical relation, not a MatGL maintenance, governance, or individual software-role claim.
 ---
 
 # Shyue Ping Ong
@@ -57,6 +65,7 @@ connection, and documented pymatgen stewardship.
 | `SRC-NUS-ONG-PROFILE` | [NUS Materials Science and Engineering: Shyue Ping Ong](https://cde.nus.edu.sg/mse/staff/shyue-ping-ong/) identifies him as a Provost's Chair Professor at NUS, leader of Materialyze.AI, founder and lead developer of pymatgen, and a core contributor to Materials Project. Accessed 2026-07-12. |
 | `SRC-MATERIALYZE-TEAM` | [Materialyze.AI: Team](https://www.materialyze.ai/team) records his 2026– NUS appointment and 2013–2025 UC San Diego appointments. Accessed 2026-07-12. |
 | `SRC-PYMATGEN-TEAM` | [pymatgen: Development Team](https://pymatgen.org/team.html) lists Shyue Ping Ong as a lead developer. The page's UCSD affiliation text is not used for the current affiliation; the NUS sources above supply that evidence. Accessed 2026-07-12. |
+| `SRC-M3GNET-PUBLICATION` | [Materialyze.AI: A universal graph deep learning interatomic potential for the periodic table](https://www.materialyze.ai/publications/10.1038%2Fs43588-022-00349-3) identifies Shyue Ping Ong as an author and describes M3GNet as a universal graph-neural-network interatomic potential for materials. It supports a research-topic relation, not a current MatGL maintainer, governance, or individual contribution claim. Accessed 2026-07-12. |
 
 ## Boundary and limitations
 

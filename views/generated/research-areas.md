@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: b68a00d41a8ffc2a1cd616e80635791ca0f58e966c4eb277ad38b1a59a3d28c7 -->
+<!-- input-fingerprint: c9fcefbd0541e3ea9bc3d310c4e66df15dc3026088ee878e72416f4283074ee0 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `b68a00d41a8ffc2a1cd616e80635791ca0f58e966c4eb277ad38b1a59a3d28c7`
+**Input fingerprint:** `c9fcefbd0541e3ea9bc3d310c4e66df15dc3026088ee878e72416f4283074ee0`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -50,6 +50,7 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) | `PI-GABOR-CSANYI` | principal-investigator | high | 2026-07-12 | COUNTRY-GB |
+| [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) | `PI-SHYUE-PING-ONG` | principal-investigator | high | 2026-07-12 | COUNTRY-SG |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) | `RG-MATERIALYZE-AI` | research-group | high | 2026-07-12 | COUNTRY-SG |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |

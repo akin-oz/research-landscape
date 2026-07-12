@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: c7ff916c68e205f5c09cacf42a21ac26bfdfb301bd85025b8932674548af7f04 -->
+<!-- input-fingerprint: 41e029c7f794a6df81a5359dc0f3fa4fb0fd740df2a15c0b9ffe623379d82e26 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `c7ff916c68e205f5c09cacf42a21ac26bfdfb301bd85025b8932674548af7f04`
+**Input fingerprint:** `41e029c7f794a6df81a5359dc0f3fa4fb0fd740df2a15c0b9ffe623379d82e26`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -177,8 +177,8 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-SHYUE-PING-ONG` (sources: SRC-NUS-ONG-PROFILE); `PI-SHYUE-PING-ONG` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-M3GNET-PUBLICATION); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CEDER-GROUP-CHGNET) | high | 2/2 documented criteria |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
-| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CEDER-GROUP-CHGNET) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, model performance, funding, or research-quality ranking.
 
@@ -235,6 +235,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) (`PI-GABOR-CSANYI`) | works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CAMBRIDGE-CSANYI-PROFILE) | high | 1/1 documented criteria |
+| [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-M3GNET-PUBLICATION) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit machine-learned-potential relation, not a researcher ranking, individual model-performance claim, maintenance role, or availability signal.
 

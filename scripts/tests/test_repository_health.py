@@ -54,7 +54,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["area"].id: item for item in rl.research_area_coverage(records)}
         self.assertEqual(
-            {"groups": 2, "principal_investigators": 1, "software": 4, "universities": 2, "ecosystems": 2},
+            {"groups": 2, "principal_investigators": 2, "software": 4, "universities": 2, "ecosystems": 2},
             {key: coverage["AREA-MACHINE-LEARNED-POTENTIALS"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -311,7 +311,10 @@ class RepositoryHealthTests(unittest.TestCase):
         pi_candidates = rl.recommendation_candidates(
             queries["principal-investigators-machine-learned-potentials"], records
         )
-        self.assertEqual(["PI-GABOR-CSANYI"], [candidate["record"].id for candidate in pi_candidates])
+        self.assertEqual(
+            ["PI-GABOR-CSANYI", "PI-SHYUE-PING-ONG"],
+            sorted(candidate["record"].id for candidate in pi_candidates),
+        )
         mace_developer = rl.discovery_pi_candidates(records, None, None, "SW-MACE", None)
         self.assertEqual(["PI-GABOR-CSANYI"], [candidate["record"].id for candidate in mace_developer])
         development = rl.matching_assertions(records["PI-GABOR-CSANYI"], "develops", {"SW-MACE"})

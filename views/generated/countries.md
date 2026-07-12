@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: b68a00d41a8ffc2a1cd616e80635791ca0f58e966c4eb277ad38b1a59a3d28c7 -->
+<!-- input-fingerprint: c9fcefbd0541e3ea9bc3d310c4e66df15dc3026088ee878e72416f4283074ee0 -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `b68a00d41a8ffc2a1cd616e80635791ca0f58e966c4eb277ad38b1a59a3d28c7`
+**Input fingerprint:** `c9fcefbd0541e3ea9bc3d310c4e66df15dc3026088ee878e72416f4283074ee0`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)

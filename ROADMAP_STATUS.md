@@ -17,7 +17,7 @@ evidence and limits of this status.
 ## Post-v0.3 progress
 
 The current `main` branch extends the released cohort to 81 canonical entities
-and 142 evidence-bearing typed relationships. It adds AI-for-Materials,
+and 143 evidence-bearing typed relationships. It adds AI-for-Materials,
 FAIR Chemistry/FAIRChem, UC Berkeley/CEDER/CHGNet vertical slices, the accepted
 Programming Language and bounded mentorship-process evidence contracts,
 explicit recommendation-query discovery, review-freshness auditing, and
