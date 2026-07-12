@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S134 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S137 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -142,6 +142,9 @@
 | S132 | [DTU CAMD software](https://physics.dtu.dk/research/sections/camd/about/software) | CAMPOS collection, Python interfaces, shared ASE tools, GNU GPL licensing, and public development-participation surface. | High for the stated software collection; not a group-wide language policy or individual maintenance roster. |
 | S133 | [DTU Atomic-scale Materials Design](https://physics.dtu.dk/research/sections/camd/research/Atomic-scale-Materials-Design) | ASE/GPAW development, low-dimensional-material databases, ML screening, global optimization, and DFT uncertainty work. | High for stated sub-group research scope; not a complete project/software inventory. |
 | S134 | [DTU Computational Quantum Materials](https://physics.dtu.dk/research/sections/camd/research/Computational-Quantum-Materials) | Sub-group research, open codes/databases, BSc/MSc project routes, and the named VILLUM-funded project. | High for stated sub-group context; not a CAMD-wide grant ledger, capacity, or complete project catalog. |
+| S135 | [Materialyze.AI home](https://www.materialyze.ai/) | The group's stated theory/data/AI/translation/community pillars, first-principles and molecular-dynamics context, data/AI/software surface, applications, and open-science framing. | High for stated group scope; not a complete project, funding, software-maintainer, or performance record. |
+| S136 | [Materialyze.AI Team](https://www.materialyze.ai/team) | Visible research-fellow, postdoctoral, and graduate-student role categories, plus PI biography. | High for displayed public material; the page mixes NUS and UCSD context and is not a complete current NUS roster, headcount, or employment record. |
+| S137 | [Materialyze.AI Join the Team](https://www.materialyze.ai/post/join-our-team-at-materialyze-ai-lab) | Dated public applicant process, Theory & AI and Experimental Materials & AI work, stated contribution surface, onboarding, and mentorship description. | High for the displayed dated process; not a current vacancy, admission, funding, supervision, response-time, or outcome guarantee. |
 
 ## Evidence protocol for new claims
 

@@ -63,3 +63,5 @@ The fifth Research Group Intelligence cluster enriches [THEOS](research-groups/t
 The sixth Research Group Intelligence cluster enriches [SOLgroup](research-groups/solgroup.md) with evidence-bounded research programs, `exciting`/CELL development, open-source context, people/archive, publication, student-topic, and GraFOx-partnership context while preserving its existing Humboldt, FAIRmat, NOMAD, and Claudia Draxl records.
 
 The seventh Research Group Intelligence cluster enriches [DTU CAMD](research-groups/dtu-camd.md) with evidence-bounded section leadership, CAMPOS/ASE software, Python-interface/GPL context, technical programs, sub-group project routes, and limited funding context while preserving its existing DTU and ASE records.
+
+The eighth Research Group Intelligence cluster enriches [Materialyze.AI Lab](research-groups/materialyze-ai-lab.md) with evidence-bounded theory/data/AI themes, public software and open-science context, role categories, and a dated applicant/onboarding surface while preserving the distinct PI-level pymatgen and Materials Project records.
