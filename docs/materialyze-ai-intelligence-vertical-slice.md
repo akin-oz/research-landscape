@@ -8,7 +8,7 @@ This Quality Gate 4 slice deepens the existing Materialyze.AI Lab record with
 first-party group and NUS evidence. It records the lab's stated research
 pillars, theory/data/AI methods, open-science and software surface, visible
 role categories, and a dated public applicant/onboarding description. It does
-not create a second lab, a person roster, a software catalog, a project
+not create a second lab, a person roster, a broad software catalog, a project
 catalog, or an opportunity feed.
 
 Materialyze.AI frames its work around integration of theory, experiment, and
@@ -26,24 +26,27 @@ flowchart LR
   PI["PI-SHYUE-PING-ONG\nShyue Ping Ong"] -->|"leads"| RG["RG-MATERIALYZE-AI\nMaterialyze.AI Lab"]
   RG -->|"belongs_to"| UNI["UNIVERSITY-NUS\nNational University of Singapore"]
   RG -->|"works_on"| AREA["AREA-MATERIALS-INFORMATICS\nMaterials Informatics"]
+  RG -->|"works_on"| MLP["AREA-MACHINE-LEARNED-POTENTIALS"]
+  RG -->|"develops"| MATGL["SW-MATGL\nMatGL"]
   PI -->|"develops"| SW["SW-PYMATGEN\npymatgen"]
   ECO["ECO-MATERIALS-PROJECT\nMaterials Project Ecosystem"] -->|"connects"| PI
   ECO -->|"includes"| SW
 ```
 
 The existing PI-level pymatgen relation remains deliberately distinct from a
-group-wide maintenance claim. The group page's public software portfolio is
-captured as group context only; it does not create unreviewed MatGL, MatCalc,
-project, contributor, or funder nodes.
+group-wide maintenance claim. A later repository-backed review promotes MatGL
+to the single supported group-level software path because the lab presents it
+as one of its open-source codes and its repository records a Materialyze.AI
+collaboration. MatCalc, projects, contributors, and funders remain omitted.
 
 ## QG4 coverage matrix
 
 | Required group dimension | Canonical evidence in this slice | Boundary |
 | --- | --- | --- |
 | Research themes | NUS and group pages describe materials informatics, theory, data, AI, batteries, alloys, semiconductors, and theory/experiment/AI integration. | This is public lab scope, not a complete project inventory or every member's research. |
-| Scientific software maturity | The home page presents software frameworks for simulation/lab automation and linked public open-source codes. | No maturity score, service-level claim, exclusive ownership, or individual maintainer roster is inferred. |
+| Scientific software maturity | The home page presents software frameworks for simulation/lab automation and linked public open-source codes; MatGL is separately reviewed as a canonical group-level software relation. | No maturity score, service-level claim, exclusive ownership, or individual maintainer roster is inferred. |
 | Programming stack | The home page identifies pymatgen and MatCalc as Python libraries. | This is a public software-surface statement, not a universal group language policy or a new Language entity. |
-| Software ecosystem participation | Existing PI → pymatgen → Materials Project relations remain the canonical graph path; the lab page documents related public software context. | Group-wide pymatgen development, Materials Project governance, and ownership are not inferred. |
+| Software ecosystem participation | Existing PI → pymatgen → Materials Project relations remain the canonical graph path; the reviewed group → MatGL path supplies a separate software connection. | Group-wide pymatgen development, Materials Project governance, and ownership are not inferred. |
 | Open-source activity | The lab describes open data, open APIs, and open-source software, and its Join Us post names contributions to open-source software, benchmarks, and datasets. | Neither statement proves a particular individual's contributions, license, review outcome, or all projects' openness. |
 | Students, postdocs, and staff | The Team page displays research-fellow, postdoctoral, and graduate-student role categories. | It mixes NUS and UCSD context and is not normalized into people entities, a current NUS roster, or headcount. |
 | Funding | The reviewed pages do not establish a group-level, current funding record. | No grant, award, budget, capacity, or funding relation is inferred. |
@@ -76,7 +79,8 @@ that any candidate will receive mentoring, admission, support, or an offer.
   project assignment, salary, visa, role availability, or application result is
   created from the dynamic public pages.
 - No group-wide claim of pymatgen or Materials Project maintenance, ownership,
-  governance, Python policy, licensing, CI, or software quality is made.
+  governance, Python policy, licensing, CI, or software quality is made; the
+  MatGL relation is limited to documented group-level collaboration/development.
 - No funding, collaboration, industry partner, facility, experimental
   capability, publication-quality, alumni, or career-outcome claim is inferred.
 - No ranking, admissions advice, mentorship rating, or applicant-fit score is
@@ -89,8 +93,8 @@ evidence-led traversals without copied facts:
 
 | View family | Traversal |
 | --- | --- |
-| Research group | `RG-MATERIALYZE-AI` → NUS direct host and Materials Informatics area. |
-| Research software/ecosystem | Materialyze.AI context → PI-level pymatgen stewardship → Materials Project ecosystem. |
+| Research group | `RG-MATERIALYZE-AI` → NUS direct host, Materials Informatics, and Machine-Learned Potentials for Materials. |
+| Research software/ecosystem | Materialyze.AI context → group-level MatGL collaboration/development and PI-level pymatgen stewardship → Materials Project ecosystem. |
 | Research and contribution diligence | Public theory/data/AI, open-source, benchmark, and dataset contribution surfaces. |
 | Opportunity and mentorship diligence | Dated public post → stated application/onboarding process, with live status explicitly excluded. |
 

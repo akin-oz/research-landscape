@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 907837e5e9e499817482597145fc0f0a2abba5e154154ebb895248c9da7ddbfd -->
+<!-- input-fingerprint: c7ff916c68e205f5c09cacf42a21ac26bfdfb301bd85025b8932674548af7f04 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `907837e5e9e499817482597145fc0f0a2abba5e154154ebb895248c9da7ddbfd`
+**Input fingerprint:** `c7ff916c68e205f5c09cacf42a21ac26bfdfb301bd85025b8932674548af7f04`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -24,6 +24,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW) | high | 1/1 documented criteria |
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
 | [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 1/1 documented criteria |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | develops `SW-MATGL` (sources: SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY) | high | 1/1 documented criteria |
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** A documented group-to-software edge is not a software-quality, hiring, or mentorship claim.
@@ -85,6 +86,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) (`RG-CEDER-GROUP`) | works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CEDER-GROUP-CHGNET) | high | 1/1 documented criteria |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit machine-learned-potential relation, not model accuracy, complete atomistic-modelling coverage, software quality, hiring, or research quality.
 
@@ -101,6 +103,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops licensed open-source `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW) | high | 1/1 documented criteria |
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
 | [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 1/1 documented criteria |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | develops licensed open-source `SW-MATGL` (sources: SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY) | high | 1/1 documented criteria |
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops licensed open-source `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** A licensed software connection is not a group-wide open-science or governance score.
@@ -118,6 +121,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CURTAROLO-GROUP-JOBS) | high | 2/2 documented criteria |
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
 | [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 2/2 documented criteria |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | develops `SW-MATGL` (sources: SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY); works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 2/2 documented criteria |
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM); works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 2/2 documented criteria |
 
 **Limitations:** This is an evidence-match discovery query, not a claim about hiring, seniority recognition, supervision, or admissions.
@@ -285,6 +289,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [National University of Singapore](../../entities/universities/national-university-of-singapore.md) (`UNIVERSITY-NUS`) | hosts `RG-MATERIALYZE-AI` (sources: SRC-NUS-ONG-PROFILE, SRC-MATERIALYZE-TEAM); `RG-MATERIALYZE-AI` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY) | high | 2/2 documented criteria |
 | [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) (`UNIVERSITY-UC-BERKELEY`) | hosts `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CEDER-GROUP-CHGNET) | high | 2/2 documented criteria |
 
 **Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, model performance, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
@@ -301,6 +306,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH); `SW-ASE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-ASE-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH); `SW-AIIDA-CORE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-AIIDA-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); `SW-AIIDA-CORE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-AIIDA-DOCUMENTATION) | high | 2/2 documented criteria |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | develops `SW-MATGL` (sources: SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY); `SW-MATGL` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-MATGL-REPOSITORY) | high | 2/2 documented criteria |
 
 **Limitations:** This exposes only a group’s sourced development link to software with a documented Python implementation. It does not establish a group-wide working language, individual proficiency, training requirement, hiring criterion, or applicant fit.
 

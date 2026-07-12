@@ -13,10 +13,14 @@ source_ids:
   - SRC-MATERIALYZE-TEAM
   - SRC-MATERIALYZE-HOME
   - SRC-MATERIALYZE-JOIN-US
+  - SRC-MATGL-REPOSITORY
 institution_id: UNIVERSITY-NUS
 research_area_ids:
   - AREA-MATERIALS-INFORMATICS
   - AREA-AI-FOR-MATERIALS
+  - AREA-MACHINE-LEARNED-POTENTIALS
+software_ids:
+  - SW-MATGL
 website: https://www.materialyze.ai/
 relationship_assertions:
   - predicate: belongs_to
@@ -34,6 +38,18 @@ relationship_assertions:
     source_ids: [SRC-NUS-ONG-PROFILE]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-MACHINE-LEARNED-POTENTIALS
+    source_ids: [SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The group publicly presents MatGL as one of its open-source codes and the repository records a Materialyze.AI collaboration; this does not establish every group member's role, model performance, or a complete potential portfolio.
+  - predicate: develops
+    target_id: SW-MATGL
+    source_ids: [SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY]
+    confidence: high
+    evidence_window: 2026-07
+    notes: "The relation is group-level: Materialyze.AI presents MatGL as one of its open-source codes and the repository identifies a Materialyze.AI collaboration. It does not establish individual authorship, maintenance, governance, or release roles."
 mentorship_process_evidence:
   - category: supervision-process
     source_ids: [SRC-MATERIALYZE-JOIN-US]
@@ -66,7 +82,8 @@ or a guarantee of supervision, funding, admission, or response time.
 | --- | --- |
 | `SRC-NUS-ONG-PROFILE` | [NUS Materials Science and Engineering: Shyue Ping Ong](https://cde.nus.edu.sg/mse/staff/shyue-ping-ong/) identifies him as an NUS professor who leads the Materialyze.AI lab, a materials informatics research group integrating materials science with data science and artificial intelligence. Accessed 2026-07-12. |
 | `SRC-MATERIALYZE-TEAM` | [Materialyze.AI: Team](https://www.materialyze.ai/team) identifies Shyue Ping Ong as an NUS professor and records his 2026– NUS appointment. Accessed 2026-07-12. |
-| `SRC-MATERIALYZE-HOME` | [Materialyze.AI: Home](https://www.materialyze.ai/) describes the lab's theory, data, learning, translation, and community pillars; first-principles/phenomenological theory, AI-ready data, physics-informed AI, batteries/aerospace alloys/semiconductors, open data/APIs/software, and linked public software. It supplies group-level public research and software context, not a complete software-maintainer roster, project inventory, funding ledger, or performance claim. Accessed 2026-07-12. |
+| `SRC-MATERIALYZE-HOME` | [Materialyze.AI: Home](https://www.materialyze.ai/) describes the lab's theory, data, learning, translation, and community pillars; first-principles/phenomenological theory, AI-ready data, physics-informed AI, batteries/aerospace alloys/semiconductors, open data/APIs/software, and linked public software. Its software section presents MatGL as one of the lab's open-source codes and describes foundation-potential architectures. It supplies group-level public research and software context, not a complete software-maintainer roster, project inventory, funding ledger, or performance claim. Accessed 2026-07-12. |
+| `SRC-MATGL-REPOSITORY` | [materialyzeai/matgl](https://github.com/materialyzeai/matgl) identifies MatGL as a materials-science graph deep-learning library and describes its first version as a Materialyze.AI and Intel Labs collaboration. It supports a group-level software relation only; it does not identify individual authorship, maintenance, governance, or a complete contributor roster. Accessed 2026-07-12. |
 | `SRC-MATERIALYZE-JOIN-US` | [Materialyze.AI: Join the Team](https://www.materialyze.ai/post/join-our-team-at-materialyze-ai-lab), posted 2025-10-10 and displayed as updated 2026-02-06, describes a public postdoctoral/PhD application route, Theory & AI and Experimental Materials & AI work, contribution to open-source software/benchmarks/datasets, and stated onboarding and mentorship. It is a dated public process description, not a current vacancy, admissions decision, funding assurance, supervision capacity, or outcome guarantee. Accessed 2026-07-12. |
 
 ## Boundary and limitations

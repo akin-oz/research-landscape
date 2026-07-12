@@ -166,7 +166,7 @@ class RepositoryHealthTests(unittest.TestCase):
         queries = {query["query_id"]: query for query in model["queries"]}
         python_candidates = rl.recommendation_candidates(queries["python-heavy-research-groups"], records)
         self.assertEqual(
-            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-PSI-MSD", "RG-THEOS"],
+            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-MATERIALYZE-AI", "RG-PSI-MSD", "RG-THEOS"],
             sorted(candidate["record"].id for candidate in python_candidates),
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in python_candidates))
@@ -209,7 +209,7 @@ class RepositoryHealthTests(unittest.TestCase):
             records, None, None, None, "PROGRAMMING-LANGUAGE-PYTHON"
         )
         self.assertEqual(
-            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-PSI-MSD", "RG-THEOS"],
+            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-MATERIALYZE-AI", "RG-PSI-MSD", "RG-THEOS"],
             sorted(candidate["record"].id for candidate in python_groups),
         )
         us_ai_groups = rl.discovery_group_candidates(
@@ -267,7 +267,10 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], model_errors)
         queries = {query["query_id"]: query for query in model["queries"]}
         group_candidates = rl.recommendation_candidates(queries["groups-machine-learned-potentials"], records)
-        self.assertEqual(["RG-CEDER-GROUP"], [candidate["record"].id for candidate in group_candidates])
+        self.assertEqual(
+            ["RG-CEDER-GROUP", "RG-MATERIALYZE-AI"],
+            sorted(candidate["record"].id for candidate in group_candidates),
+        )
         ecosystem_candidates = rl.recommendation_candidates(queries["ecosystems-machine-learned-potentials"], records)
         self.assertEqual(
             ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT"],
@@ -276,13 +279,21 @@ class RepositoryHealthTests(unittest.TestCase):
         university_candidates = rl.recommendation_candidates(
             queries["universities-hosting-machine-learned-potential-groups"], records
         )
-        self.assertEqual(["UNIVERSITY-UC-BERKELEY"], [candidate["record"].id for candidate in university_candidates])
         self.assertEqual(
-            ["RG-CEDER-GROUP"],
-            [candidate["record"].id for candidate in rl.discovery_group_candidates(
-                records, "AREA-MACHINE-LEARNED-POTENTIALS", None, None, None
-            )],
+            ["UNIVERSITY-NUS", "UNIVERSITY-UC-BERKELEY"],
+            sorted(candidate["record"].id for candidate in university_candidates),
         )
+        self.assertEqual(
+            ["RG-CEDER-GROUP", "RG-MATERIALYZE-AI"],
+            sorted(candidate["record"].id for candidate in rl.discovery_group_candidates(
+                records, "AREA-MACHINE-LEARNED-POTENTIALS", None, None, None
+            )),
+        )
+        python_groups = rl.discovery_group_candidates(
+            records, None, None, None, "PROGRAMMING-LANGUAGE-PYTHON"
+        )
+        matgl_group = next(candidate for candidate in python_groups if candidate["record"].id == "RG-MATERIALYZE-AI")
+        self.assertTrue(any("SW-MATGL" in item["label"] for item in matgl_group["signals"]))
         pi_candidates = rl.recommendation_candidates(
             queries["principal-investigators-machine-learned-potentials"], records
         )
