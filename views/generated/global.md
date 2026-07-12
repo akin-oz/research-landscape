@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 3c2f0e0798ea585fdf0e27071fd1d509f160ce9836ac3c5ba02c0e18be784563 -->
+<!-- input-fingerprint: 5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `3c2f0e0798ea585fdf0e27071fd1d509f160ce9836ac3c5ba02c0e18be784563`
+**Input fingerprint:** `5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -27,6 +27,7 @@
 | [FAIRmat](../../entities/ecosystems/fairmat.md) | `ECO-FAIRMAT` | research-ecosystem | high | 2026-07-12 | — |
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) | `ECO-MATERIALS-CLOUD` | research-ecosystem | high | 2026-07-12 | — |
 | [Materials Project](../../entities/ecosystems/materials-project.md) | `ECO-MATERIALS-PROJECT` | research-ecosystem | high | 2026-07-12 | — |
+| [MatML Ecosystem](../../entities/ecosystems/matml.md) | `ECO-MATML` | research-ecosystem | high | 2026-07-12 | — |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) | `ECO-OQMD` | research-ecosystem | high | 2026-07-12 | — |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |

@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 189944e72445f29a080063a3eab9d199e15d11771561a12300c8cf5888ae3044 -->
+<!-- input-fingerprint: a8ddf4d14e7415f777fdf0db6480333fc4e98e19155940f9a272dc34dff57be1 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `189944e72445f29a080063a3eab9d199e15d11771561a12300c8cf5888ae3044`
+**Input fingerprint:** `a8ddf4d14e7415f777fdf0db6480333fc4e98e19155940f9a272dc34dff57be1`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -153,6 +153,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-SHYUE-PING-ONG` (sources: SRC-NUS-ONG-PROFILE); `PI-SHYUE-PING-ONG` works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 2/2 documented criteria |
+| [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-MATERIALS-INFORMATICS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking.
 
@@ -166,6 +167,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | --- | --- | --- | --- |
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION) | high | 2/2 documented criteria |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
+| [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, AI capability, or research-quality ranking.
 
@@ -179,6 +181,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | --- | --- | --- | --- |
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-SHYUE-PING-ONG` (sources: SRC-NUS-ONG-PROFILE); `PI-SHYUE-PING-ONG` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-M3GNET-PUBLICATION); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CEDER-GROUP-CHGNET) | high | 2/2 documented criteria |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
+| [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, model performance, funding, or research-quality ranking.
 

@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 3c2f0e0798ea585fdf0e27071fd1d509f160ce9836ac3c5ba02c0e18be784563 -->
+<!-- input-fingerprint: 5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `3c2f0e0798ea585fdf0e27071fd1d509f160ce9836ac3c5ba02c0e18be784563`
+**Input fingerprint:** `5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/research-software/aflow.md)
@@ -60,6 +60,7 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
+| [MatML Ecosystem](../../entities/ecosystems/matml.md) | `ECO-MATML` | research-ecosystem | high | 2026-07-12 | — |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) | `RG-MATERIALYZE-AI` | research-group | high | 2026-07-12 | COUNTRY-SG |
 | [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |
 

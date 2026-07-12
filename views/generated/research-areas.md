@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 3c2f0e0798ea585fdf0e27071fd1d509f160ce9836ac3c5ba02c0e18be784563 -->
+<!-- input-fingerprint: 5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `3c2f0e0798ea585fdf0e27071fd1d509f160ce9836ac3c5ba02c0e18be784563`
+**Input fingerprint:** `5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)

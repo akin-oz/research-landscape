@@ -10,6 +10,7 @@ All notable changes are documented here. This project follows the principles of 
 - A controlled Machine-Learned Potentials for Materials area with directly supported CHGNet, FAIRChem, and CEDER Group connections plus explainable group, ecosystem, and direct-host university discovery paths.
 - A MACE/University of Cambridge vertical slice with canonical United Kingdom, University, PI, and software nodes; the MACE relation is explicitly limited to group-attributed development evidence.
 - A reviewed MatGL/Materialyze.AI software path with a bounded NUS-hosted group-development relation and Python implementation evidence, expanding Machine-Learned Potentials discovery without asserting individual roles.
+- A named MatML ecosystem node with a single sourced MatGL inclusion, making its documented software-ecosystem context discoverable without inferring unreviewed components or contributors.
 - A source-bounded M3GNet publication relation that exposes Shyue Ping Ong's Machine-Learned Potentials for Materials work without inferring an individual MatGL maintenance role.
 - Accepted and implemented ADR 0007: a controlled Python programming-language entity, sourced Research Software `implemented_in` assertions, and an evidence-discovery path for groups with documented development links to Python software.
 - Extended the CEDER/CHGNet vertical slice with a sourced Python implementation link, exposing its already documented group-development path in the Python discovery query.

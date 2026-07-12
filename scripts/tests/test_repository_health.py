@@ -54,7 +54,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["area"].id: item for item in rl.research_area_coverage(records)}
         self.assertEqual(
-            {"groups": 2, "principal_investigators": 2, "software": 4, "universities": 2, "ecosystems": 2},
+            {"groups": 2, "principal_investigators": 2, "software": 4, "universities": 2, "ecosystems": 3},
             {key: coverage["AREA-MACHINE-LEARNED-POTENTIALS"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -102,7 +102,7 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         ecosystem_candidates = rl.recommendation_candidates(queries["ecosystems-ai-for-materials"], records)
         self.assertEqual(
-            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT"],
+            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT", "ECO-MATML"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         fair_chem = next(candidate for candidate in ecosystem_candidates if candidate["record"].id == "ECO-FAIR-CHEM")
@@ -284,7 +284,7 @@ class RepositoryHealthTests(unittest.TestCase):
             records, "AREA-MACHINE-LEARNED-POTENTIALS", None
         )
         self.assertEqual(
-            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT"],
+            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT", "ECO-MATML"],
             sorted(candidate["record"].id for candidate in area_candidates),
         )
         fair_chem = next(candidate for candidate in area_candidates if candidate["record"].id == "ECO-FAIR-CHEM")
@@ -308,7 +308,7 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         ecosystem_candidates = rl.recommendation_candidates(queries["ecosystems-machine-learned-potentials"], records)
         self.assertEqual(
-            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT"],
+            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT", "ECO-MATML"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         university_candidates = rl.recommendation_candidates(

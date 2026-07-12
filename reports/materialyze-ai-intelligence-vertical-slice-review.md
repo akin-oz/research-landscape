@@ -33,9 +33,9 @@ source-register keys and are not used as canonical citation identifiers.
 
 | Check | Result |
 | --- | --- |
-| Canonical ownership | Group facts remain in `RG-MATERIALYZE-AI`; one separately reviewed `SW-MATGL` software entity replaces an ambiguous portfolio reference. No duplicate lab, roster, project catalog, or opportunity feed is introduced. |
+| Canonical ownership | Group facts remain in `RG-MATERIALYZE-AI`; separately reviewed `SW-MATGL` and `ECO-MATML` records replace ambiguous portfolio/ecosystem references. No duplicate lab, roster, project catalog, or opportunity feed is introduced. |
 | Direct-host rule | Existing `institution_id: UNIVERSITY-NUS` and matching `belongs_to` assertion remain unchanged and valid. |
-| Software boundary | Existing PI-level `develops → SW-PYMATGEN` remains separate. The group-level `develops → SW-MATGL` relation is supported by the lab's own software page and the repository's Materialyze.AI collaboration statement; neither establishes individual maintenance, ownership, or governance. |
+| Software boundary | Existing PI-level `develops → SW-PYMATGEN` remains separate. The group-level `develops → SW-MATGL` relation is supported by the lab's own software page and the repository's Materialyze.AI collaboration statement; neither establishes individual maintenance, ownership, or governance. The named MatML ecosystem currently includes only reviewed MatGL; its other named components remain omitted. |
 | Cross-site boundary | The public Team page's UCSD references are not converted into a current NUS affiliation, collaboration, or person graph. |
 | Opportunity boundary | The public Join Us post is date- and source-bounded; it is not treated as a live vacancy, admissions guarantee, funding promise, or supervision-capacity statement. |
 | Missing-evidence boundary | Funding, complete roster, project, partner, publication, mentoring-outcome, and career gaps remain explicit rather than inferred. |
@@ -64,6 +64,6 @@ It checked schema shape and dates, unique IDs, relationship target/type
 compatibility, record-local source resolution, direct-host target type and
 matching `belongs_to` assertion, exact-one host cardinality, changed-document
 local links, whitespace, and ADR 0006's University/Organization positive and
-negative branch cases. The corpus contains 81 v2 entities and 143 relationship
+negative branch cases. The corpus contains 82 v2 entities and 144 relationship
 assertions. The extension uses the established generated-view and validation
 contracts; it introduces no new architecture boundary.

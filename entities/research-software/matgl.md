@@ -15,6 +15,8 @@ research_area_ids:
   - AREA-MATERIALS-INFORMATICS
   - AREA-AI-FOR-MATERIALS
   - AREA-MACHINE-LEARNED-POTENTIALS
+ecosystem_ids:
+  - ECO-MATML
 open_source: "yes"
 programming_language_ids:
   - PROGRAMMING-LANGUAGE-PYTHON

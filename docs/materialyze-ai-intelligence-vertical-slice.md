@@ -28,6 +28,7 @@ flowchart LR
   RG -->|"works_on"| AREA["AREA-MATERIALS-INFORMATICS\nMaterials Informatics"]
   RG -->|"works_on"| MLP["AREA-MACHINE-LEARNED-POTENTIALS"]
   RG -->|"develops"| MATGL["SW-MATGL\nMatGL"]
+  MATML["ECO-MATML\nMatML Ecosystem"] -->|"includes"| MATGL
   PI -->|"works_on"| MLP
   PI -->|"develops"| SW["SW-PYMATGEN\npymatgen"]
   ECO["ECO-MATERIALS-PROJECT\nMaterials Project Ecosystem"] -->|"connects"| PI
@@ -98,7 +99,7 @@ evidence-led traversals without copied facts:
 | View family | Traversal |
 | --- | --- |
 | Research group | `RG-MATERIALYZE-AI` → NUS direct host, Materials Informatics, and Machine-Learned Potentials for Materials. |
-| Research software/ecosystem | Materialyze.AI context → group-level MatGL collaboration/development and PI-level pymatgen stewardship → Materials Project ecosystem. |
+| Research software/ecosystem | Materialyze.AI context → group-level MatGL collaboration/development → MatML ecosystem; PI-level pymatgen stewardship → Materials Project ecosystem. |
 | Research and contribution diligence | Public theory/data/AI, open-source, benchmark, and dataset contribution surfaces. |
 | Opportunity and mentorship diligence | Dated public post → stated application/onboarding process, with live status explicitly excluded. |
 
