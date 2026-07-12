@@ -10,6 +10,10 @@ last_review: "2026-07-12"
 confidence: high
 source_ids:
   - SRC-MP-LBNL-PROGRAM
+  - SRC-MP-DOCUMENTATION
+  - SRC-MP-DATA-WORKFLOWS
+  - SRC-MP-DATA-BUILDERS
+  - SRC-MP-API-GETTING-STARTED
   - SRC-PERSSON-GROUP-RESEARCH
   - SRC-PERSSON-GROUP-SOFTWARE
   - SRC-LBNL-PERSSON-NEWS-2026
@@ -68,11 +72,22 @@ single software package. The ecosystem connects its documented public platform,
 one distinct software artifact, an evidenced group and leader, and its Berkeley
 Lab context without treating that limited set as a complete roster.
 
+Its public documentation describes a data-production path in which automated
+high-throughput workflows generate task data, builders transform it into
+purpose-specific data collections, and the API exposes documented query routes.
+This gives the ecosystem a bounded architecture description without turning its
+internal packages, databases, workflow definitions, or API endpoints into
+unsupported canonical entities.
+
 ## Evidence
 
 | Source ID | Evidence |
 | --- | --- |
 | `SRC-MP-LBNL-PROGRAM` | [Berkeley Lab Materials Sciences Division: Materials Project](https://materialssciences.lbl.gov/research/research-programs/materials-project/) describes Materials Project's goal of accelerating materials discovery through advanced scientific computing and design tools. Accessed 2026-07-12. |
+| `SRC-MP-DOCUMENTATION` | [Materials Project documentation: Introduction](https://docs.materialsproject.org/) describes the Department of Energy-origin effort to pre-compute material properties and make the data publicly available to accelerate discovery. It also directs documentation improvements through a public forum and GitHub review path. Accessed 2026-07-12. |
+| `SRC-MP-DATA-WORKFLOWS` | [Materials Project documentation: Data Workflows](https://docs.materialsproject.org/data-production/data-workflows) describes automated high-throughput `atomate` workflows, standardized pymatgen input sets, task-data parsing, MongoDB storage, and downstream builders. Accessed 2026-07-12. |
+| `SRC-MP-DATA-BUILDERS` | [Materials Project documentation: Data Builders](https://docs.materialsproject.org/data-production/data-builders) describes builders that transform input collections into new collections and the documented `emmet` model/API relationship. Accessed 2026-07-12. |
+| `SRC-MP-API-GETTING-STARTED` | [Materials Project documentation: API getting started](https://docs.materialsproject.org/downloading-data/using-the-api/getting-started) documents the `mp-api` Python client, account API-key requirement, `MPRester`, and available data endpoints. Accessed 2026-07-12. |
 | `SRC-PERSSON-GROUP-RESEARCH` | [Persson Group research](https://perssongroup.lbl.gov/research/) describes Materials Project as a multi-institution, multinational effort and says the group uses and expands its database and analysis capabilities. Accessed 2026-07-12. |
 | `SRC-PERSSON-GROUP-SOFTWARE` | [Persson Group software](https://perssongroup.lbl.gov/software.html) lists Pymatgen among code used by Materials Project. Accessed 2026-07-12. |
 | `SRC-LBNL-PERSSON-NEWS-2026` | [Berkeley Lab, 8 May 2026: Kristin Persson elected to the American Academy of Arts and Sciences](https://newscenter.lbl.gov/2026/05/08/berkeley-labs-kristin-persson-elected-to-the-american-academy-of-arts-and-sciences/) identifies Persson as Materials Project's founder and director. Accessed 2026-07-12. |
@@ -85,4 +100,8 @@ This record does not claim that Lawrence Berkeley National Laboratory is the
 ecosystem's exclusive owner or that the linked entities exhaust Materials
 Project's collaborators, software, or host institutions. It distinguishes
 [pymatgen](../research-software/pymatgen.md) as a software artifact rather than
-equating the full platform with one library.
+equating the full platform with one library. The documentation's Department of
+Energy origin is not converted into a current funding relationship: no reviewed
+funding-programme identity and direct award evidence support one. The public
+architecture does not establish the current deployment, availability, ownership,
+or governance of every underlying package, workflow, database, or endpoint.

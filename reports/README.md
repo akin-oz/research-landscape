@@ -10,3 +10,4 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [Quality Gate 1 canonical knowledge review](quality-gate-1-canonical-knowledge-review.md) — published vertical-slice coverage, the reusable migration pattern, and the evidence-bounded handoff to graph completion.
 - [Quality Gate 2 entity graph review](quality-gate-2-entity-graph-review.md) — reviewed cross-entity coverage, relationship integrity, and the handoff to software-ecosystem intelligence.
 - [AiiDA ecosystem-intelligence review](aiida-ecosystem-intelligence-vertical-slice-review.md) — first QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
+- [Materials Project ecosystem-intelligence review](materials-project-ecosystem-intelligence-vertical-slice-review.md) — second QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.

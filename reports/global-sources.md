@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S76 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S82 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -84,6 +84,12 @@
 | S74 | [aiidateam/aiida-core](https://github.com/aiidateam/aiida-core) | Project-owned source, MIT license, public contribution surfaces, and workflow/provenance/HPC/plugin feature summary. | High for public software and contribution path; not an exhaustive current maintainer roster. |
 | S75 | [AiiDA acknowledgements](https://www.aiida.net/sections/acknowledgements.html) | AiiDA's declared supporting or historical-support context, including NCCR MARVEL, PSI, and EPFL. | High for bounded support context; not proof of an exclusive or current award. |
 | S76 | [Scientific Data: AiiDA 1.0](https://www.nature.com/articles/s41597-020-00638-4) | Key 2020 AiiDA technical publication, authors including Giovanni Pizzi, DOI, and architecture/provenance/plugin scope. | High for the citable historical reference; not proof of current software or individual roles. |
+| S77 | [Materials Project documentation: Introduction](https://docs.materialsproject.org/) | Public Materials Project purpose, DOE-origin context, public-data intent, documentation forum, and GitHub documentation-improvement route. | High for documented platform purpose and public documentation route; not current funding or governance evidence. |
+| S78 | [Materials Project documentation: Data Workflows](https://docs.materialsproject.org/data-production/data-workflows) | Automated high-throughput workflow, task-data, pymatgen input, and data-collection architecture. | High for documented data-production architecture; not a complete deployment or software ownership graph. |
+| S79 | [Materials Project documentation: Data Builders](https://docs.materialsproject.org/data-production/data-builders) | Builder, document-model, collection, and API relationship in the documented data pipeline. | High for documented architecture; dynamic implementation and service availability require separate review. |
+| S80 | [Materials Project documentation: API getting started](https://docs.materialsproject.org/downloading-data/using-the-api/getting-started) | `mp-api`, `MPRester`, account/API-key path, and documented endpoint use. | High for upstream user journey; access and endpoints can change. |
+| S81 | [materialsproject/pymatgen](https://github.com/materialsproject/pymatgen) | Public pymatgen source, installation, examples, issue/PR/forum/discussion contribution routes, project relationship, and citation. | High for public software and contribution surfaces; not an exhaustive maintainer or governance roster. |
+| S82 | [UC Berkeley eScholarship: Python Materials Genomics (pymatgen)](https://escholarship.org/uc/item/30v0j6cc) | Peer-reviewed 1 February 2013 pymatgen paper, DOI, author list, and library subject. | High for the historical technical reference; not proof of current roles or capabilities. |
 
 ## Evidence protocol for new claims
 

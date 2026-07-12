@@ -37,3 +37,5 @@ The Horizon 2020 funding cluster adds the [European Commission](organizations/eu
 The FAIRmat users-meeting cluster adds the [Eighth FAIRmat Users Meeting](conferences/fairmat-users-meeting-2026.md), while connecting it to the existing FAIRmat ecosystem, Computational Materials Science area, and Germany location endpoint.
 
 The AiiDA ecosystem-intelligence cluster adds the [AiiDA 1.0 publication](publications/aiida-1-0.md), enriches the [AiiDA Ecosystem](ecosystems/aiida.md) and [aiida-core](research-software/aiida-core.md) with source-backed architecture, community, contribution, user-journey, and NCCR MARVEL support context, and reuses the existing PSI, THEOS, Giovanni Pizzi, and Materials Cloud records.
+
+The Materials Project ecosystem-intelligence cluster adds the [2013 pymatgen publication](publications/pymatgen-2013.md), enriches the [Materials Project](ecosystems/materials-project.md) and [pymatgen](research-software/pymatgen.md) with source-backed data-production architecture, API user-journey, and public contribution context, and reuses the existing LBNL, Persson Group, Kristin Persson, Shyue Ping Ong, and Anubhav Jain records.
