@@ -29,7 +29,7 @@ flowchart LR
 | Open source | The repository states that `fairchem` is MIT licensed. | Model and checkpoint terms may vary; no blanket license is inferred. |
 | AI-for-Materials relation | Documentation directly names ML models for materials science and related applications. | The relation does not claim every AI-for-Materials method or group uses FAIRChem. |
 | Programming language | The official documentation identifies Python 3.10+ and pip installation; the central repository reports Python as its dominant implementation language. | This applies to the reviewed software implementation, not every model, checkpoint, or contributor. |
-| Open Catalyst context | Documentation preserves legacy Open Catalyst model/dataset context. | No separate project, dataset, person, institution, or funder node is created without a dedicated slice. |
+| Open Catalyst context | The separate [Open Catalyst Project slice](open-catalyst-project-vertical-slice.md) now owns the historical project, dataset, challenge, and documented code-migration context. | The FAIRChem record does not claim ownership of the project or that all FAIRChem scope belongs to Open Catalyst Project. |
 
 ## Deliberate omissions
 

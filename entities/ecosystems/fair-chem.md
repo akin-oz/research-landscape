@@ -5,8 +5,8 @@ id: ECO-FAIR-CHEM
 name: FAIR Chemistry
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-FAIRCHEM-DOCUMENTATION
@@ -33,11 +33,11 @@ and material/catalyst application domains. It provides a clear discovery route
 for AI-for-Materials software without manufacturing a people, funder, host, or
 complete collaborator graph.
 
-The documentation also carries historical Open Catalyst Project context: it
-documents legacy models trained on Open Catalyst datasets and recommends newer
-FAIRChem workflows for new projects. That context is not promoted into a
-separate Open Catalyst entity, dataset entity, or current institutional role
-without a dedicated evidence-bounded slice.
+Open Catalyst Project's separately reviewed ecosystem record now owns its
+historical project, dataset, challenge, and code-migration context. This record
+remains the distinct current FAIRChem software-ecosystem surface; it does not
+absorb Open Catalyst Project's independently bounded history or imply that all
+FAIRChem scope belongs to that project.
 
 ## Evidence
 

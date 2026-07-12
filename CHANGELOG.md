@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A distinct Open Catalyst Project ecosystem record with its official, time-bounded code migration to FAIRChem; AI-for-Materials and machine-learned-potential discovery now exposes that route without conflating legacy OCP and current FAIRChem ownership or maintenance.
 - A bounded OpenKIM/University of Minnesota vertical slice with distinct KIM API, ecosystem, PI, and University records; it documents C++ and LGPL-2.1-or-later software evidence while retaining Ellad Tadmor's founding-director context as historical rather than a current development claim.
 - A controlled Scientific Software Engineering area with direct group and PI evidence, plus deterministic group, PI, ecosystem, and direct-host university discovery queries that remain non-comparative.
 - A Temple University/Axel Kohlmeyer extension to the LAMMPS ecosystem, with independently sourced research-faculty affiliation and core-developer/co-maintainer evidence that avoids making supervision, ownership, or complete-maintainer claims.

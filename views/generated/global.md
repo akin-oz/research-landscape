@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d -->
+<!-- input-fingerprint: ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d`
+**Input fingerprint:** `ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -26,12 +26,13 @@
 | [AFLOW](../../entities/ecosystems/aflow.md) | `ECO-AFLOW` | research-ecosystem | high | 2026-07-12 | — |
 | [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) | `ECO-AIIDA` | research-ecosystem | high | 2026-07-12 | — |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) | `ECO-ASE` | research-ecosystem | high | 2026-07-12 | — |
-| [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) | `ECO-FAIR-CHEM` | research-ecosystem | high | 2026-07-12 | — |
+| [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) | `ECO-FAIR-CHEM` | research-ecosystem | high | 2026-07-13 | — |
 | [FAIRmat](../../entities/ecosystems/fairmat.md) | `ECO-FAIRMAT` | research-ecosystem | high | 2026-07-12 | — |
 | [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) | `ECO-LAMMPS` | research-ecosystem | high | 2026-07-12 | — |
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) | `ECO-MATERIALS-CLOUD` | research-ecosystem | high | 2026-07-12 | — |
 | [Materials Project](../../entities/ecosystems/materials-project.md) | `ECO-MATERIALS-PROJECT` | research-ecosystem | high | 2026-07-12 | — |
 | [MatML Ecosystem](../../entities/ecosystems/matml.md) | `ECO-MATML` | research-ecosystem | high | 2026-07-12 | — |
+| [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md) | `ECO-OPEN-CATALYST-PROJECT` | research-ecosystem | high | 2026-07-13 | — |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) | `ECO-OQMD` | research-ecosystem | high | 2026-07-12 | — |
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) | `ECO-OPENKIM` | research-ecosystem | high | 2026-07-13 | — |
 | [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) | `ECO-QUANTUM-ESPRESSO` | research-ecosystem | high | 2026-07-12 | — |

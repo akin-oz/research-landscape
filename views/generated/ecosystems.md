@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d -->
+<!-- input-fingerprint: ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5 -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `f546e2375babd55f2cc7584749b2f5d934828bcc6b2f757380d12b9b5299ba4d`
+**Input fingerprint:** `ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/ecosystems/aflow.md)
@@ -28,7 +28,7 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
-| [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) | `ECO-FAIR-CHEM` | research-ecosystem | high | 2026-07-12 | — |
+| [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) | `ECO-FAIR-CHEM` | research-ecosystem | high | 2026-07-13 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
 
 ## [FAIRmat](../../entities/ecosystems/fairmat.md)
@@ -61,6 +61,12 @@
 | --- | --- | --- | --- | --- | --- |
 | [MatML Ecosystem](../../entities/ecosystems/matml.md) | `ECO-MATML` | research-ecosystem | high | 2026-07-12 | — |
 | [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |
+
+## [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md) | `ECO-OPEN-CATALYST-PROJECT` | research-ecosystem | high | 2026-07-13 | — |
 
 ## [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md)
 
