@@ -113,6 +113,17 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertTrue(any("Evidence source SRC-TEST missing public URL" in error for error in results.errors))
         self.assertTrue(any("Evidence source SRC-TEST has invalid access date" in error for error in results.errors))
 
+    def test_fairchem_slice_has_one_sourced_ecosystem_software_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software = records["SW-FAIRCHEM"]
+        ecosystem = records["ECO-FAIR-CHEM"]
+        self.assertIn("AREA-AI-FOR-MATERIALS", software.metadata["research_area_ids"])
+        self.assertEqual(["ECO-FAIR-CHEM"], software.metadata["ecosystem_ids"])
+        includes = rl.matching_assertions(ecosystem, "includes", {software.id})
+        self.assertEqual(1, len(includes))
+        self.assertEqual(["SRC-FAIRCHEM-DOCUMENTATION", "SRC-FAIRCHEM-REPOSITORY"], includes[0]["source_ids"])
+
 
 if __name__ == "__main__":
     unittest.main()
