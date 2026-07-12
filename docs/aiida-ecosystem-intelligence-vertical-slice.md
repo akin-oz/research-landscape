@@ -25,6 +25,7 @@ flowchart LR
   ECO -->|"connects"| FUND["FUND-NCCR-MARVEL\nNCCR MARVEL"]
   RG -->|"develops"| SW
   PI -->|"develops (development-team member)"| SW
+  NM["PI-NICOLA-MARZARI\nNicola Marzari"] -->|"develops (development-team member)"| SW
   PUB["PUB-AIIDA-1-0\nAiiDA 1.0 (2020)"] -->|"describes"| SW
   PUB -->|"authored_by"| PI["PI-GIOVANNI-PIZZI\nGiovanni Pizzi"]
 ```
@@ -36,7 +37,7 @@ flowchart LR
 | Purpose and scientific scope | `SW-AIIDA-CORE` documents computational-science workflow automation, management, sharing, reproducibility, and provenance. | Does not make AiiDA a universal solution for every discipline or workflow. |
 | Architecture | Canonical software and ecosystem records describe the workflow engine, provenance graph, ORM/storage, plugins, compute interfaces, and sharing routes. | Detailed upstream implementation remains in upstream docs, not duplicated here. |
 | Programming language | Sources identify AiiDA as Python infrastructure. | No `programming_language_ids` value is added: the vNext Language entity contract is still absent. |
-| Maintainers and core contributors | The AiiDA Team page lists Pizzi in the development team, supporting a bounded `PI-GIOVANNI-PIZZI → develops → SW-AIIDA-CORE` role; the AiiDA 1.0 publication also records Pizzi as an author. | Neither source is converted into an exhaustive current maintainer roster, an individual maintenance assignment, review authority, or contribution-frequency claim. |
+| Maintainers and core contributors | The AiiDA Team page lists Pizzi and Marzari in the development team, supporting bounded `develops → SW-AIIDA-CORE` roles; the AiiDA 1.0 publication also records Pizzi as an author. | Neither source is converted into an exhaustive current maintainer roster, an individual maintenance assignment, review authority, or contribution-frequency claim. |
 | Institutions and groups | PSI/MSD and THEOS are existing separate canonical records with evidence-bearing ecosystem links. | Bosch and other partners remain unmodeled until their own identity and relationship review. |
 | Key publication | `PUB-AIIDA-1-0` has DOI, date, software description, and one reviewed author relation. | Other authors are not created merely to populate the record. |
 | Funding | `ECO-AIIDA → connects → FUND-NCCR-MARVEL` is supported by AiiDA acknowledgements. | It is not proof of exclusive or current funding. |
@@ -74,7 +75,7 @@ future traversals without copied facts:
 
 | View family | Traversal |
 | --- | --- |
-| Research software | `SW-AIIDA-CORE` ← `develops` ← `RG-PSI-MSD` and `PI-GIOVANNI-PIZZI` (development-team member); `PUB-AIIDA-1-0` → `describes` → software. |
+| Research software | `SW-AIIDA-CORE` ← `develops` ← `RG-PSI-MSD`, `PI-GIOVANNI-PIZZI`, and `PI-NICOLA-MARZARI` (development-team members); `PUB-AIIDA-1-0` → `describes` → software. |
 | Research ecosystem | `ECO-AIIDA` → `includes` → software; → `connects` → groups, PI, organization, and funding programme. |
 | Funding | `ECO-AIIDA` → `connects` → `FUND-NCCR-MARVEL` → funder organization. |
 | Publication | `PUB-AIIDA-1-0` → `authored_by` → `PI-GIOVANNI-PIZZI`; → `describes` → `SW-AIIDA-CORE`. |

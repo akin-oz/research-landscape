@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: a26a5658aa1a6711383b26b80983ecf0bac0b141134cce3a3c159ca22d9d0508 -->
+<!-- input-fingerprint: 85006b73406ee43be4f8bf26061a72d5ebf00a8a4b57a52e81fb6891e804e0fc -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `a26a5658aa1a6711383b26b80983ecf0bac0b141134cce3a3c159ca22d9d0508`
+**Input fingerprint:** `85006b73406ee43be4f8bf26061a72d5ebf00a8a4b57a52e81fb6891e804e0fc`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -252,6 +252,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | --- | --- | --- | --- |
 | [Giovanni Pizzi](../../entities/principal-investigators/giovanni-pizzi.md) (`PI-GIOVANNI-PIZZI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM) | high | 1/1 documented criteria |
 | [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) (`PI-GABOR-CSANYI`) | develops licensed open-source `SW-MACE` (sources: SRC-MACE-REPOSITORY) | high | 1/1 documented criteria |
+| [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) (`PI-NICOLA-MARZARI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM) | high | 1/1 documented criteria |
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | develops licensed open-source `SW-PYMATGEN` (sources: SRC-NUS-ONG-PROFILE, SRC-PYMATGEN-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** A documented development relationship is not a measure of open-science values, software quality, current maintenance activity, hiring, or mentorship.

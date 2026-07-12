@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: cbdd657d5032e1562f7ea6338ffea16997b46a89a8d93b0e21b9985f8d729858 -->
+<!-- input-fingerprint: 0cb6dc6938b957448a4c061daa3908879f30c36c2a87392656ae1edd75869821 -->
 # Repository health report
 
-**Input fingerprint:** `cbdd657d5032e1562f7ea6338ffea16997b46a89a8d93b0e21b9985f8d729858`
+**Input fingerprint:** `0cb6dc6938b957448a4c061daa3908879f30c36c2a87392656ae1edd75869821`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
 - Canonical v2 entities: **85**
-- Typed relationship assertions: **154**
+- Typed relationship assertions: **155**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -48,7 +48,7 @@
 | --- | ---: |
 | Reviewed/published records with source IDs | 85/85 |
 | Reviewed/published records with last-review dates | 85/85 |
-| Typed relationships with source IDs | 154/154 |
+| Typed relationships with source IDs | 155/155 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
 | Entities with an inbound or outbound graph connection | 85/85 |
 | Broken local Markdown links | 0 |
@@ -74,7 +74,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | Programming language | Research Software | Research Groups | Principal Investigators | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [C++](../../entities/programming-languages/cpp.md) | 1 | 1 | 0 | 1 | 1 |
-| [Python](../../entities/programming-languages/python.md) | 10 | 6 | 3 | 4 | 7 |
+| [Python](../../entities/programming-languages/python.md) | 10 | 6 | 4 | 4 | 7 |
 
 ## Relationship predicates
 
@@ -88,7 +88,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | connects | 19 |
 | covers | 1 |
 | describes | 6 |
-| develops | 11 |
+| develops | 12 |
 | funds | 1 |
 | implemented_in | 11 |
 | includes | 8 |

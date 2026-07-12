@@ -74,7 +74,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"software": 10, "groups": 6, "principal_investigators": 3, "universities": 4, "ecosystems": 7},
+            {"software": 10, "groups": 6, "principal_investigators": 4, "universities": 4, "ecosystems": 7},
             {key: coverage["PROGRAMMING-LANGUAGE-PYTHON"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -91,7 +91,7 @@ class RepositoryHealthTests(unittest.TestCase):
         queries = {query["query_id"]: query for query in model["queries"]}
         pi_candidates = rl.recommendation_candidates(queries["principal-investigators-open-software"], records)
         self.assertEqual(
-            ["PI-GABOR-CSANYI", "PI-GIOVANNI-PIZZI", "PI-SHYUE-PING-ONG"],
+            ["PI-GABOR-CSANYI", "PI-GIOVANNI-PIZZI", "PI-NICOLA-MARZARI", "PI-SHYUE-PING-ONG"],
             sorted(candidate["record"].id for candidate in pi_candidates),
         )
         university_candidates = rl.recommendation_candidates(queries["universities-hosting-computational-materials-groups"], records)
@@ -293,8 +293,11 @@ class RepositoryHealthTests(unittest.TestCase):
         aiida_developer = rl.discovery_pi_candidates(
             records, None, None, "SW-AIIDA-CORE", "PROGRAMMING-LANGUAGE-PYTHON"
         )
-        self.assertEqual(["PI-GIOVANNI-PIZZI"], [candidate["record"].id for candidate in aiida_developer])
-        self.assertEqual(2, aiida_developer[0]["criteria"])
+        self.assertEqual(
+            ["PI-GIOVANNI-PIZZI", "PI-NICOLA-MARZARI"],
+            sorted(candidate["record"].id for candidate in aiida_developer),
+        )
+        self.assertTrue(all(candidate["criteria"] == 2 for candidate in aiida_developer))
         us_ai_pis = rl.discovery_pi_candidates(
             records, "AREA-AI-FOR-MATERIALS", "COUNTRY-US", None, None
         )

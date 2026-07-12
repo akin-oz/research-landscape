@@ -14,6 +14,7 @@ source_ids:
   - SRC-PSI-LMS-GROUPS
   - SRC-THEOS-RESEARCH
   - SRC-EPFL-MARZARI-2026-TRANSITION
+  - SRC-AIIDA-DEVELOPMENT-TEAM
 affiliation_ids:
   - UNIVERSITY-EPFL
   - ORG-PSI
@@ -44,6 +45,13 @@ relationship_assertions:
     source_ids: [SRC-THEOS-RESEARCH]
     confidence: high
     evidence_window: 2026-07
+  - predicate: develops
+    target_id: SW-AIIDA-CORE
+    role: development-team-member
+    source_ids: [SRC-AIIDA-DEVELOPMENT-TEAM]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The official AiiDA Team page lists Marzari in the AiiDA Development team. This does not establish exclusive ownership, a current maintainer assignment, code-review authority, or a guarantee of ongoing contribution.
 ---
 
 # Nicola Marzari
@@ -62,11 +70,13 @@ EPFL announcement identifies a Cambridge appointment beginning in September
 | `SRC-PSI-LMS-GROUPS` | [PSI Laboratory for Materials Simulations: Research Groups](https://www.psi.ch/en/lms/groups) identifies Prof. Nicola Marzari as head of the Laboratory for Materials Simulations. Accessed 2026-07-12. |
 | `SRC-THEOS-RESEARCH` | [THEOS: Research overview](https://www.epfl.ch/labs/theos/page-89530-en-html/) describes the laboratory's computational modelling, first-principles simulation, and high-throughput materials design work. Accessed 2026-07-12. |
 | `SRC-EPFL-MARZARI-2026-TRANSITION` | [EPFL, 6 November 2025: Nicola Marzari receives David Adler Award](https://actu.epfl.ch/news/nicola-marzari-receives-david-adler-award) identifies a Cambridge professorship that will begin full time in September 2026. It is used only to define the current-state boundary of this July 2026 record. Accessed 2026-07-12. |
+| `SRC-AIIDA-DEVELOPMENT-TEAM` | [AiiDA Team](https://aiida.net/team/) lists Nicola Marzari in “The AiiDA Development team” as Chair of Theory and Simulation of Materials at EPFL, Director of NCCR MARVEL, and Head of LMS at PSI. It supports a bounded software-development-team role, not an exhaustive maintainer roster or current contribution-frequency claim. Accessed 2026-07-12. |
 
 ## Boundary and limitations
 
 This record does not model a future Cambridge appointment as current
 affiliation, create an NCCR MARVEL funding/programme node from the listed
-directorship, or infer individual ownership or maintenance of every THEOS
-infrastructure contribution. It makes no claim about openings, supervision,
-mentoring, admissions, funding, language, or applicant fit.
+directorship, or infer individual ownership, maintenance assignment, or
+contribution frequency for every THEOS infrastructure contribution. It makes no
+claim about openings, supervision, mentoring, admissions, funding, language, or
+applicant fit.
