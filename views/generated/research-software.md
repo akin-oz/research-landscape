@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b -->
+<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b`
+**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/research-software/aflow.md)
@@ -90,6 +90,13 @@
 | [Python Materials Genomics (pymatgen): A robust, open-source Python library for materials analysis](../../entities/publications/pymatgen-2013.md) | `PUB-PYMATGEN-2013` | publication | high | 2026-07-12 | — |
 | [Materials Project](../../entities/ecosystems/materials-project.md) | `ECO-MATERIALS-PROJECT` | research-ecosystem | high | 2026-07-12 | — |
 | [pymatgen](../../entities/research-software/pymatgen.md) | `SW-PYMATGEN` | research-software | high | 2026-07-12 | — |
+
+## [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) | `ECO-QUANTUM-ESPRESSO` | research-ecosystem | high | 2026-07-12 | — |
+| [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-12 | — |
 
 ## [RadonPy](../../entities/research-software/radonpy.md)
 

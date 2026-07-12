@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b -->
+<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b`
+**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -31,6 +31,7 @@
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) | `PI-NICOLA-MARZARI` | principal-investigator | high | 2026-07-12 | COUNTRY-CH |
 | [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) | `PI-SEIJI-YUNOKI` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-12 | COUNTRY-IT |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) | `PI-STEFANO-CURTAROLO` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [The Novel Materials Discovery Laboratory](../../entities/projects/nomad-laboratory-coe.md) | `PROJ-NOMAD-LABORATORY-COE` | project | high | 2026-07-12 | — |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
@@ -44,6 +45,7 @@
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-12 | COUNTRY-DE |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
+| [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-12 | — |
 
 ## [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md)
 

@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b -->
+<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
 # Principal Investigators view
 
 **Definition:** `principal-investigators`
-**Input fingerprint:** `fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b`
+**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -19,6 +19,7 @@
 | [Ryo Yoshida](../../entities/principal-investigators/ryo-yoshida.md) | `PI-RYO-YOSHIDA` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
 | [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) | `PI-SEIJI-YUNOKI` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) | `PI-SHYUE-PING-ONG` | principal-investigator | high | 2026-07-12 | COUNTRY-SG |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-12 | COUNTRY-IT |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) | `PI-STEFANO-CURTAROLO` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 ## Boundary
 

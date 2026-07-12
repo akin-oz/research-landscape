@@ -186,6 +186,25 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(1, len(includes))
         self.assertEqual(["SRC-FAIRCHEM-DOCUMENTATION", "SRC-FAIRCHEM-REPOSITORY"], includes[0]["source_ids"])
 
+    def test_quantum_espresso_slice_keeps_foundation_and_historical_roles_bounded(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        ecosystem = records["ECO-QUANTUM-ESPRESSO"]
+        software = records["SW-QUANTUM-ESPRESSO"]
+        baroni = records["PI-STEFANO-BARONI"]
+        self.assertEqual("yes", software.metadata["open_source"])
+        self.assertEqual("GPL-2.0-or-later", software.metadata["license"])
+        self.assertEqual(["AREA-COMPUTATIONAL-MATERIALS-SCIENCE"], software.metadata["research_area_ids"])
+        self.assertEqual(["ORG-QUANTUM-ESPRESSO-FOUNDATION"], ecosystem.metadata["organization_ids"])
+        self.assertEqual(
+            ["SW-QUANTUM-ESPRESSO"],
+            [assertion["target_id"] for assertion in rl.matching_assertions(ecosystem, "includes")],
+        )
+        self.assertEqual(["UNIVERSITY-SISSA"], baroni.metadata["affiliation_ids"])
+        self.assertEqual([], rl.matching_assertions(baroni, "develops"))
+        candidates = rl.discovery_ecosystem_candidates(records, None, "SW-QUANTUM-ESPRESSO")
+        self.assertEqual(["ECO-QUANTUM-ESPRESSO"], [candidate["record"].id for candidate in candidates])
+
     def test_ceder_chgnet_development_path_is_sourced(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

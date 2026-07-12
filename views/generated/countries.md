@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b -->
+<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b`
+**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)
@@ -22,6 +22,13 @@
 | [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) | `PI-CLAUDIA-DRAXL` | principal-investigator | high | 2026-07-12 | COUNTRY-DE |
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-12 | COUNTRY-DE |
 | [Humboldt-Universität zu Berlin](../../entities/universities/humboldt-university-berlin.md) | `UNIVERSITY-HU-BERLIN` | university | high | 2026-07-12 | COUNTRY-DE |
+
+## [Italy](../../entities/countries/italy.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-12 | COUNTRY-IT |
+| [Scuola Internazionale Superiore di Studi Avanzati (SISSA)](../../entities/universities/sissa.md) | `UNIVERSITY-SISSA` | university | high | 2026-07-12 | COUNTRY-IT |
 
 ## [Japan](../../entities/countries/japan.md)
 

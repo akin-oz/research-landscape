@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b -->
+<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b`
+**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -19,6 +19,7 @@
 | [Ryo Yoshida](../../entities/principal-investigators/ryo-yoshida.md) | `PI-RYO-YOSHIDA` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
 | [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) | `PI-SEIJI-YUNOKI` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) | `PI-SHYUE-PING-ONG` | principal-investigator | high | 2026-07-12 | COUNTRY-SG |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-12 | COUNTRY-IT |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) | `PI-STEFANO-CURTAROLO` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [AFLOW](../../entities/ecosystems/aflow.md) | `ECO-AFLOW` | research-ecosystem | high | 2026-07-12 | — |
 | [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) | `ECO-AIIDA` | research-ecosystem | high | 2026-07-12 | — |
@@ -29,6 +30,7 @@
 | [Materials Project](../../entities/ecosystems/materials-project.md) | `ECO-MATERIALS-PROJECT` | research-ecosystem | high | 2026-07-12 | — |
 | [MatML Ecosystem](../../entities/ecosystems/matml.md) | `ECO-MATML` | research-ecosystem | high | 2026-07-12 | — |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) | `ECO-OQMD` | research-ecosystem | high | 2026-07-12 | — |
+| [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) | `ECO-QUANTUM-ESPRESSO` | research-ecosystem | high | 2026-07-12 | — |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |
 | [Computational Materials Science Research Team](../../entities/research-groups/riken-computational-materials-science-team.md) | `RG-RIKEN-COMPUTATIONAL-MATERIALS-SCIENCE` | research-group | high | 2026-07-12 | COUNTRY-JP |
@@ -51,12 +53,14 @@
 | [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |
 | [NOMAD](../../entities/research-software/nomad.md) | `SW-NOMAD` | research-software | high | 2026-07-12 | — |
 | [pymatgen](../../entities/research-software/pymatgen.md) | `SW-PYMATGEN` | research-software | high | 2026-07-12 | — |
+| [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-12 | — |
 | [RadonPy](../../entities/research-software/radonpy.md) | `SW-RADONPY` | research-software | high | 2026-07-12 | — |
 | [Duke University](../../entities/universities/duke-university.md) | `UNIVERSITY-DUKE` | university | high | 2026-07-12 | COUNTRY-US |
 | [EPFL](../../entities/universities/epfl.md) | `UNIVERSITY-EPFL` | university | high | 2026-07-12 | COUNTRY-CH |
 | [Humboldt-Universität zu Berlin](../../entities/universities/humboldt-university-berlin.md) | `UNIVERSITY-HU-BERLIN` | university | high | 2026-07-12 | COUNTRY-DE |
 | [National University of Singapore](../../entities/universities/national-university-of-singapore.md) | `UNIVERSITY-NUS` | university | high | 2026-07-12 | COUNTRY-SG |
 | [Northwestern University](../../entities/universities/northwestern-university.md) | `UNIVERSITY-NORTHWESTERN` | university | high | 2026-07-12 | COUNTRY-US |
+| [Scuola Internazionale Superiore di Studi Avanzati (SISSA)](../../entities/universities/sissa.md) | `UNIVERSITY-SISSA` | university | high | 2026-07-12 | COUNTRY-IT |
 | [Technical University of Denmark](../../entities/universities/technical-university-of-denmark.md) | `UNIVERSITY-DTU` | university | high | 2026-07-12 | COUNTRY-DK |
 | [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) | `UNIVERSITY-UC-BERKELEY` | university | high | 2026-07-12 | COUNTRY-US |
 | [University of Cambridge](../../entities/universities/university-of-cambridge.md) | `UNIVERSITY-CAMBRIDGE` | university | high | 2026-07-12 | COUNTRY-GB |

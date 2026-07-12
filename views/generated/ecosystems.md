@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b -->
+<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b`
+**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/ecosystems/aflow.md)
@@ -61,6 +61,12 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) | `ECO-OQMD` | research-ecosystem | high | 2026-07-12 | — |
+
+## [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) | `ECO-QUANTUM-ESPRESSO` | research-ecosystem | high | 2026-07-12 | — |
 
 ## Boundary
 

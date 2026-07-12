@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: ee39014da8aa675dd141ccfaa2f41ff3d144f4363ae1225857f170aceff579e0 -->
+<!-- input-fingerprint: a66da23afddd0e14bb73e8e798b3def6b5b231c1c57b70944c94efa2b41b93db -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `ee39014da8aa675dd141ccfaa2f41ff3d144f4363ae1225857f170aceff579e0`
+**Input fingerprint:** `a66da23afddd0e14bb73e8e798b3def6b5b231c1c57b70944c94efa2b41b93db`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -135,6 +135,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PERSSON-GROUP-RESEARCH); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE) | high | 2/2 documented criteria |
+| [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) (`ECO-QUANTUM-ESPRESSO`) | connects `PI-NICOLA-MARZARI` (sources: SRC-QEF-ABOUT); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); connects `PI-STEFANO-BARONI` (sources: SRC-QEF-ABOUT, SRC-SISSA-BARONI-CV); `PI-STEFANO-BARONI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SISSA-BARONI-CV); includes `SW-QUANTUM-ESPRESSO` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY); `SW-QUANTUM-ESPRESSO` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY, SRC-QE-USER-GUIDE) | high | 2/2 documented criteria |
 | [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) (`ECO-AIIDA`) | connects `RG-PSI-MSD` (sources: SRC-AIIDA-TEAM); `RG-PSI-MSD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) (`ECO-MATERIALS-CLOUD`) | connects `PI-NICOLA-MARZARI` (sources: SRC-MATERIALS-CLOUD-TEAM); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
 | [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 documented criteria |
@@ -199,6 +200,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) (`PI-GERBRAND-CEDER`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-UC-BERKELEY-MSE-CEDER) | high | 1/1 documented criteria |
 | [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) (`PI-NICOLA-MARZARI`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
 | [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) (`PI-SEIJI-YUNOKI`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-RIKEN-CMS-TEAM) | high | 1/1 documented criteria |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) (`PI-STEFANO-BARONI`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SISSA-BARONI-CV) | high | 1/1 documented criteria |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) (`PI-STEFANO-CURTAROLO`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit area relation, not a researcher ranking or availability signal.
