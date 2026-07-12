@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S88 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S93 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -96,6 +96,11 @@
 | S86 | [Journal of Open Source Software: NOMAD](https://joss.theoj.org/papers/10.21105/joss.05388) | Peer-reviewed 15 October 2023 NOMAD technical paper, DOI, author list including Claudia Draxl, and distributed-platform subject. | High for the historical technical reference; not proof of current roles or capabilities. |
 | S87 | [FAIRmat: Consortium](https://www.fairmat-nfdi.eu/fairmat/about-fairmat/consortium-fairmat) | FAIRmat's NFDI consortium context, operation/further development of the NOMAD Laboratory, and extension to experimental/sample-synthesis data. | High for stated FAIRmat–NOMAD and NFDI context; insufficient alone for a canonical funding-programme edge. |
 | S88 | [NOMAD: How to cite NOMAD](https://nomad-lab.eu/nomad-lab/cite.html) | Project-maintained citation page that identifies the JOSS paper as NOMAD's main publication and lists related references. | High for project citation guidance; JOSS is retained as the bibliographic source of record. |
+| S89 | [AFLOW documentation: Overview](https://aflow.org/aflow-documentation/index.html) | AFLOW framework purpose, source linkage, and project contributor listing including Stefano Curtarolo. | High for documented framework and bounded contributor context; not a complete maintainer or governance roster. |
+| S90 | [AFLOW: install and documentation](https://aflow.org/install-aflow/) | Source-installation, generated-code-documentation, and technical-publication routes for AFLOW. | High for public learning and citation surfaces; not a support, acceptance, or outcome commitment. |
+| S91 | [AFLOW documentation: AFLUX Search API](https://aflow.org/documentation/) | Property-based AFLOW database search/download queries and JSON response behavior. | High for public API user path; dynamic data and endpoint availability require separate review. |
+| S92 | [Duke Scholars: aflow++](https://scholars.duke.edu/individual/pub1557308) | Peer-reviewed 25 January 2023 aflow++ paper, DOI, author list including Stefano Curtarolo, and framework subject. | High for the historical technical reference; not proof of current roles or capabilities. |
+| S93 | [AFLOW Schools](https://aflow.org/aflow-school/) | Dated AFLOW School and bootcamp learning materials covering database/API, symmetry, structural analysis, thermodynamics, and machine-learning interfaces. | High for historical learning context; no current course, schedule, or mentoring inference. |
 
 ## Evidence protocol for new claims
 
