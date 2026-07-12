@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20 -->
+<!-- input-fingerprint: d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20`
+**Input fingerprint:** `d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -26,6 +26,7 @@
 | [Eighth FAIRmat Users Meeting](../../entities/conferences/fairmat-users-meeting-2026.md) | `CONF-FAIRMAT-USERS-MEETING-2026` | conference | high | 2026-07-12 | COUNTRY-DE |
 | [Department of Materials Science and Engineering](../../entities/departments/northwestern-materials-science-engineering.md) | `DEPARTMENT-NORTHWESTERN-MSE` | department | high | 2026-07-12 | COUNTRY-US |
 | [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) | `PI-ANUBHAV-JAIN` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
+| [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) | `PI-AXEL-KOHLMEYER` | principal-investigator | high | 2026-07-13 | COUNTRY-US |
 | [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) | `PI-CHRIS-WOLVERTON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) | `PI-CLAUDIA-DRAXL` | principal-investigator | high | 2026-07-12 | COUNTRY-DE |
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |

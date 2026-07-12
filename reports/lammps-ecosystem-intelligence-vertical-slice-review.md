@@ -26,7 +26,7 @@ complete developer or governance graph.
 | Ecosystem software inclusion | `ECO-LAMMPS → includes → SW-LAMMPS` is sourced by official documentation and central public repository. |
 | Original-development context | `ECO-LAMMPS → connects → ORG-SANDIA-NATIONAL-LABORATORIES` uses only original-development language and explicitly excludes exclusive-current-role claims. |
 | C++ implementation | `SW-LAMMPS → implemented_in → PROGRAMMING-LANGUAGE-CPP` is backed by the repository's primary-language declaration and C++ developer documentation. |
-| No person graph | Public developer/team material is not converted into unsupported PI, maintainer, employment, or contribution-frequency records. |
+| Person graph boundary | Only the independently reviewed Temple–Kohlmeyer record is now connected; all other public developer/team material remains outside the graph until separately reviewed. |
 
 ## Deliberate non-claims
 

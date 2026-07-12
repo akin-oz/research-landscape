@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20 -->
+<!-- input-fingerprint: d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20`
+**Input fingerprint:** `d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/research-software/aflow.md)
@@ -55,6 +55,7 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
+| [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) | `PI-AXEL-KOHLMEYER` | principal-investigator | high | 2026-07-13 | COUNTRY-US |
 | [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) | `ECO-LAMMPS` | research-ecosystem | high | 2026-07-12 | — |
 | [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |
 

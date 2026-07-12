@@ -41,7 +41,7 @@ class RepositoryHealthTests(unittest.TestCase):
     def test_freshness_audit_is_reproducible_and_non_scoring(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
-        audit = rl.freshness_audit(records, dt.date(2026, 7, 12))
+        audit = rl.freshness_audit(records, dt.date(2026, 7, 13))
         reviewed = [record for record in records.values() if record.metadata.get("status") in {"reviewed", "published"}]
         self.assertEqual(len(reviewed), audit["reviewed_records"])
         self.assertEqual(len(reviewed), len(audit["buckets"]["current"]))
@@ -74,7 +74,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["language"].id: item for item in rl.programming_language_coverage(records)}
         self.assertEqual(
-            {"software": 2, "groups": 1, "principal_investigators": 0, "universities": 1, "ecosystems": 2},
+            {"software": 2, "groups": 1, "principal_investigators": 1, "universities": 1, "ecosystems": 2},
             {key: coverage["PROGRAMMING-LANGUAGE-CPP"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -97,7 +97,7 @@ class RepositoryHealthTests(unittest.TestCase):
         queries = {query["query_id"]: query for query in model["queries"]}
         pi_candidates = rl.recommendation_candidates(queries["principal-investigators-open-software"], records)
         self.assertEqual(
-            ["PI-GABOR-CSANYI", "PI-GIOVANNI-PIZZI", "PI-NICOLA-MARZARI", "PI-SHYUE-PING-ONG"],
+            ["PI-AXEL-KOHLMEYER", "PI-GABOR-CSANYI", "PI-GIOVANNI-PIZZI", "PI-NICOLA-MARZARI", "PI-SHYUE-PING-ONG"],
             sorted(candidate["record"].id for candidate in pi_candidates),
         )
         university_candidates = rl.recommendation_candidates(queries["universities-hosting-computational-materials-groups"], records)
@@ -205,7 +205,7 @@ class RepositoryHealthTests(unittest.TestCase):
         candidates = rl.discovery_ecosystem_candidates(records, None, "SW-QUANTUM-ESPRESSO")
         self.assertEqual(["ECO-QUANTUM-ESPRESSO"], [candidate["record"].id for candidate in candidates])
 
-    def test_lammps_slice_exposes_cplusplus_without_a_person_roster(self) -> None:
+    def test_lammps_slice_exposes_cplusplus_with_one_bounded_person_path(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
         software = records["SW-LAMMPS"]
@@ -214,7 +214,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual("GPL-2.0-only", software.metadata["license"])
         self.assertEqual(["PROGRAMMING-LANGUAGE-CPP"], software.metadata["programming_language_ids"])
         self.assertEqual(["ORG-SANDIA-NATIONAL-LABORATORIES"], ecosystem.metadata["organization_ids"])
-        self.assertEqual([], ecosystem.metadata.get("principal_investigator_ids", []))
+        self.assertEqual(["PI-AXEL-KOHLMEYER"], ecosystem.metadata["principal_investigator_ids"])
         candidates = rl.discovery_software_candidates(
             records, "AREA-COMPUTATIONAL-MATERIALS-SCIENCE", "PROGRAMMING-LANGUAGE-CPP", "ECO-LAMMPS", "yes"
         )

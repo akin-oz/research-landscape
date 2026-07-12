@@ -30,6 +30,8 @@ The Quantum ESPRESSO cluster adds [Quantum ESPRESSO](research-software/quantum-e
 
 The LAMMPS cluster adds [LAMMPS](research-software/lammps.md), the [LAMMPS Ecosystem](ecosystems/lammps.md), and [Sandia National Laboratories](organizations/sandia-national-laboratories.md), while reusing the United States, Computational Materials Science, and C++ records.
 
+The Temple–Kohlmeyer–LAMMPS extension adds [Axel Kohlmeyer](principal-investigators/axel-kohlmeyer.md) and [Temple University](universities/temple-university.md), while reusing the LAMMPS, United States, and Computational Materials Science records.
+
 The NCCR MARVEL funding cluster adds the [Swiss National Science Foundation](organizations/swiss-national-science-foundation.md) and [NCCR MARVEL](funding/nccr-marvel.md), while adding only an evidence-bounded historical funding-program connection to the existing [Materials Cloud](ecosystems/materials-cloud.md) and reusing Switzerland.
 
 The NoMaD Laboratory project cluster adds the [Max Planck Society](organizations/max-planck-society.md) and [The Novel Materials Discovery Laboratory](projects/nomad-laboratory-coe.md), while reusing Germany, Computational Materials Science, and the historical [NOMAD](research-software/nomad.md) software connection.

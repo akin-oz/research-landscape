@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20 -->
+<!-- input-fingerprint: d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9 -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20`
+**Input fingerprint:** `d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)
@@ -75,6 +75,7 @@
 | [Lawrence Berkeley National Laboratory](../../entities/organizations/lawrence-berkeley-national-laboratory.md) | `ORG-LBNL` | organization | high | 2026-07-12 | COUNTRY-US |
 | [Sandia National Laboratories](../../entities/organizations/sandia-national-laboratories.md) | `ORG-SANDIA-NATIONAL-LABORATORIES` | organization | high | 2026-07-12 | COUNTRY-US |
 | [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) | `PI-ANUBHAV-JAIN` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
+| [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) | `PI-AXEL-KOHLMEYER` | principal-investigator | high | 2026-07-13 | COUNTRY-US |
 | [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) | `PI-CHRIS-WOLVERTON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Kristin A. Persson](../../entities/principal-investigators/kristin-persson.md) | `PI-KRISTIN-PERSSON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
@@ -86,6 +87,7 @@
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Duke University](../../entities/universities/duke-university.md) | `UNIVERSITY-DUKE` | university | high | 2026-07-12 | COUNTRY-US |
 | [Northwestern University](../../entities/universities/northwestern-university.md) | `UNIVERSITY-NORTHWESTERN` | university | high | 2026-07-12 | COUNTRY-US |
+| [Temple University](../../entities/universities/temple-university.md) | `UNIVERSITY-TEMPLE` | university | high | 2026-07-13 | COUNTRY-US |
 | [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) | `UNIVERSITY-UC-BERKELEY` | university | high | 2026-07-12 | COUNTRY-US |
 
 ## Boundary

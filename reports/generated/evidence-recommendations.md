@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 63e8fdc4ec971ec3cf324524da8b68fd6fac2e161cac4c168458be407306128f -->
+<!-- input-fingerprint: dea395fbdb48603ff686e720f6f8d1f400ed057a8cb4f0b292dc1fd09133f506 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `63e8fdc4ec971ec3cf324524da8b68fd6fac2e161cac4c168458be407306128f`
+**Input fingerprint:** `dea395fbdb48603ff686e720f6f8d1f400ed057a8cb4f0b292dc1fd09133f506`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -137,11 +137,11 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PERSSON-GROUP-RESEARCH); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE) | high | 2/2 documented criteria |
 | [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) (`ECO-QUANTUM-ESPRESSO`) | connects `PI-NICOLA-MARZARI` (sources: SRC-QEF-ABOUT); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); connects `PI-STEFANO-BARONI` (sources: SRC-QEF-ABOUT, SRC-SISSA-BARONI-CV); `PI-STEFANO-BARONI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SISSA-BARONI-CV); includes `SW-QUANTUM-ESPRESSO` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY); `SW-QUANTUM-ESPRESSO` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY, SRC-QE-USER-GUIDE) | high | 2/2 documented criteria |
 | [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) (`ECO-AIIDA`) | connects `RG-PSI-MSD` (sources: SRC-AIIDA-TEAM); `RG-PSI-MSD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
+| [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) (`ECO-LAMMPS`) | connects `PI-AXEL-KOHLMEYER` (sources: SRC-LAMMPS-AUTHORS, SRC-TEMPLE-KOHLMEYER); `PI-AXEL-KOHLMEYER` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-TEMPLE-KOHLMEYER, SRC-LAMMPS-AUTHORS); includes `SW-LAMMPS` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY); `SW-LAMMPS` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY, SRC-LAMMPS-DEVELOPERS) | high | 2/2 documented criteria |
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) (`ECO-MATERIALS-CLOUD`) | connects `PI-NICOLA-MARZARI` (sources: SRC-MATERIALS-CLOUD-TEAM); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
 | [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 documented criteria |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
 | [FAIRmat](../../entities/ecosystems/fairmat.md) (`ECO-FAIRMAT`) | connects `PI-CLAUDIA-DRAXL` (sources: SRC-FAIRMAT-TEAM); `PI-CLAUDIA-DRAXL` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 2/2 documented criteria |
-| [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) (`ECO-LAMMPS`) | includes `SW-LAMMPS` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY); `SW-LAMMPS` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY, SRC-LAMMPS-DEVELOPERS) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking.
@@ -196,6 +196,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) (`PI-ANUBHAV-JAIN`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP) | high | 1/1 documented criteria |
+| [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) (`PI-AXEL-KOHLMEYER`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-TEMPLE-KOHLMEYER, SRC-LAMMPS-AUTHORS) | high | 1/1 documented criteria |
 | [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) (`PI-CHRIS-WOLVERTON`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-NU-WOLVERTON-FACULTY) | high | 1/1 documented criteria |
 | [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) (`PI-CLAUDIA-DRAXL`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 1/1 documented criteria |
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) (`PI-GERBRAND-CEDER`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-UC-BERKELEY-MSE-CEDER) | high | 1/1 documented criteria |
@@ -253,6 +254,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) (`PI-AXEL-KOHLMEYER`) | develops licensed open-source `SW-LAMMPS` (sources: SRC-TEMPLE-KOHLMEYER, SRC-LAMMPS-AUTHORS) | high | 1/1 documented criteria |
 | [Giovanni Pizzi](../../entities/principal-investigators/giovanni-pizzi.md) (`PI-GIOVANNI-PIZZI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM) | high | 1/1 documented criteria |
 | [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) (`PI-GABOR-CSANYI`) | develops licensed open-source `SW-MACE` (sources: SRC-MACE-REPOSITORY) | high | 1/1 documented criteria |
 | [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) (`PI-NICOLA-MARZARI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM) | high | 1/1 documented criteria |

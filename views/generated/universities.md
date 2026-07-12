@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20 -->
+<!-- input-fingerprint: d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9 -->
 # Universities view
 
 **Definition:** `universities`
-**Input fingerprint:** `639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20`
+**Input fingerprint:** `d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Duke University](../../entities/universities/duke-university.md)
@@ -60,6 +60,13 @@
 | --- | --- | --- | --- | --- | --- |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |
 | [Technical University of Denmark](../../entities/universities/technical-university-of-denmark.md) | `UNIVERSITY-DTU` | university | high | 2026-07-12 | COUNTRY-DK |
+
+## [Temple University](../../entities/universities/temple-university.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) | `PI-AXEL-KOHLMEYER` | principal-investigator | high | 2026-07-13 | COUNTRY-US |
+| [Temple University](../../entities/universities/temple-university.md) | `UNIVERSITY-TEMPLE` | university | high | 2026-07-13 | COUNTRY-US |
 
 ## [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md)
 
