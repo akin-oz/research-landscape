@@ -13,6 +13,13 @@ queries:
     title: Research groups with documented software development
     limitations: "A documented group-to-software edge is not a software-quality, hiring, or mentorship claim."
 
+  - query_id: groups-scientific-software-engineering
+    aliases: [scientific-software-engineering-groups]
+    kind: groups-by-area
+    title: Research groups with documented Scientific Software Engineering work
+    area_id: AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
+    limitations: "Membership reflects explicit scientific-software development, engineering, maintenance, or infrastructure-contribution evidence; it is not a software-quality, hiring, or mentorship claim."
+
   - query_id: groups-computational-materials
     aliases: [best-computational-materials-groups]
     kind: groups-by-area
@@ -61,6 +68,13 @@ queries:
     area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
     limitations: "A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking."
 
+  - query_id: ecosystems-scientific-software-engineering
+    aliases: [scientific-software-engineering-ecosystems]
+    kind: ecosystems-connected-to-area
+    title: Research ecosystems connected to Scientific Software Engineering entities
+    area_id: AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
+    limitations: "A connection proves only the displayed development or infrastructure path; it is not an ecosystem-completeness, software-quality, or research-quality ranking."
+
   - query_id: ecosystems-materials-informatics
     aliases: [best-ecosystems-for-materials-informatics]
     kind: ecosystems-connected-to-area
@@ -88,6 +102,13 @@ queries:
     title: Principal Investigators with documented Computational Materials Science work
     area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
     limitations: "Membership reflects an explicit area relation, not a researcher ranking or availability signal."
+
+  - query_id: principal-investigators-scientific-software-engineering
+    aliases: [scientific-software-engineering-principal-investigators]
+    kind: principal-investigators-by-area
+    title: Principal Investigators with documented Scientific Software Engineering work
+    area_id: AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
+    limitations: "Membership reflects explicit scientific-software development or engineering evidence, not a researcher ranking, current maintenance assignment, or availability signal."
 
   - query_id: principal-investigators-materials-informatics
     aliases: [best-pis-for-materials-informatics]
@@ -122,6 +143,13 @@ queries:
     title: Universities directly hosting research groups with documented Computational Materials Science work
     area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
     limitations: "This is a sourced host-and-area discovery path, not a measure of university strength, ecosystem completeness, degree quality, funding, opportunities, or admissions fit."
+
+  - query_id: universities-hosting-scientific-software-engineering-groups
+    aliases: [universities-with-scientific-software-engineering-groups]
+    kind: universities-hosting-groups-by-area
+    title: Universities directly hosting Scientific Software Engineering groups
+    area_id: AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
+    limitations: "This is a sourced direct-host-and-area discovery path, not a measure of university strength, software maturity, degree quality, funding, opportunities, or admissions fit."
 
   - query_id: universities-hosting-ai-for-materials-groups
     aliases: [universities-with-ai-for-materials-groups]

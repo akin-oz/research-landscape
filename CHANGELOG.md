@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A controlled Scientific Software Engineering area with direct group and PI evidence, plus deterministic group, PI, ecosystem, and direct-host university discovery queries that remain non-comparative.
 - A Temple University/Axel Kohlmeyer extension to the LAMMPS ecosystem, with independently sourced research-faculty affiliation and core-developer/co-maintainer evidence that avoids making supervision, ownership, or complete-maintainer claims.
 - A controlled `discover-software --open-source` facet that AND-filters the software record's directly evidenced `open_source` state alongside area, implementation language, and ecosystem paths.
 - A bounded LAMMPS ecosystem slice with distinct software, Sandia National Laboratories, and ecosystem records; it surfaces documented C++ implementation and public GitHub contribution paths without inventing a developer or maintainer roster.

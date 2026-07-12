@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9 -->
+<!-- input-fingerprint: 574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875 -->
 # Universities view
 
 **Definition:** `universities`
-**Input fingerprint:** `d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9`
+**Input fingerprint:** `574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Duke University](../../entities/universities/duke-university.md)
@@ -19,7 +19,7 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) | `PI-NICOLA-MARZARI` | principal-investigator | high | 2026-07-12 | COUNTRY-CH |
-| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) | `RG-THEOS` | research-group | high | 2026-07-12 | COUNTRY-CH |
+| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) | `RG-THEOS` | research-group | high | 2026-07-13 | COUNTRY-CH |
 | [EPFL](../../entities/universities/epfl.md) | `UNIVERSITY-EPFL` | university | high | 2026-07-12 | COUNTRY-CH |
 
 ## [Humboldt-Universität zu Berlin](../../entities/universities/humboldt-university-berlin.md)

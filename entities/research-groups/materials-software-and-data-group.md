@@ -5,8 +5,8 @@ id: RG-PSI-MSD
 name: Materials Software and Data Group
 status: reviewed
 created_at: "2026-07-11"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-PSI-MSD-GROUP
@@ -14,6 +14,7 @@ source_ids:
 organization_id: ORG-PSI
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
 software_ids:
   - SW-AIIDA-CORE
 website: https://www.psi.ch/en/lms/msd-group
@@ -34,6 +35,12 @@ relationship_assertions:
     source_ids: [SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026]
     confidence: high
     evidence_window: 2026-02 to 2026-07
+  - predicate: works_on
+    target_id: AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
+    source_ids: [SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026]
+    confidence: high
+    evidence_window: 2026-02 to 2026-07
+    notes: PSI describes advanced simulation software/algorithms and group-led AiiDA-engine development. This supports a scientific-software-engineering connection, not a claim that every group activity or member is a software engineer.
 ---
 
 # Materials Software and Data Group

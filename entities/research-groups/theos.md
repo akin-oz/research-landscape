@@ -5,8 +5,8 @@ id: RG-THEOS
 name: Laboratory of Theory and Simulation of Materials (THEOS)
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-EPFL-MARZARI-PROFILE
@@ -16,6 +16,7 @@ source_ids:
 institution_id: UNIVERSITY-EPFL
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
 software_ids:
   - SW-AIIDA-CORE
 website: https://www.epfl.ch/labs/theos/
@@ -30,6 +31,12 @@ relationship_assertions:
     source_ids: [SRC-THEOS-RESEARCH]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
+    source_ids: [SRC-THEOS-RESEARCH]
+    confidence: high
+    evidence_window: 2026-07
+    notes: THEOS describes a shared contribution to open-source electronic-structure and materials-informatics infrastructure. This supports a research-infrastructure contribution, not exclusive ownership or an individual engineering role.
   - predicate: develops
     target_id: SW-AIIDA-CORE
     source_ids: [SRC-THEOS-RESEARCH]

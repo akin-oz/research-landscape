@@ -15,6 +15,7 @@ affiliation_ids:
   - UNIVERSITY-TEMPLE
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
 website: https://cst.temple.edu/directory/axel-kohlmeyer
 relationship_assertions:
   - predicate: affiliated_with
@@ -28,6 +29,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: Temple documents scientific-software and molecular-dynamics simulation research; the LAMMPS authors page documents materials-science expertise. This is a bounded Computational Materials Science connection, not a complete research profile.
+  - predicate: works_on
+    target_id: AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
+    source_ids: [SRC-TEMPLE-KOHLMEYER]
+    confidence: high
+    evidence_window: 2026-07
+    notes: Temple explicitly describes scientific-software development and engineering as a research interest. This does not claim an exhaustive engineering profile, group-wide practice, or applicant fit.
   - predicate: develops
     target_id: SW-LAMMPS
     role: core-developer-and-co-maintainer

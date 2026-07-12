@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9 -->
+<!-- input-fingerprint: 574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `d21d3f8f8f67f99893af2084a4abe3690b43cd45076edbc8d1fa3d68ab0df3c9`
+**Input fingerprint:** `574749e3592fa5945884a439dfc4e62f417bf7070bfe914da33f0315ec464875`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/research-software/aflow.md)
@@ -24,8 +24,8 @@
 | [AiiDA 1.0, a scalable computational infrastructure for automated reproducible workflows and data provenance](../../entities/publications/aiida-1-0.md) | `PUB-AIIDA-1-0` | publication | high | 2026-07-12 | — |
 | [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) | `ECO-AIIDA` | research-ecosystem | high | 2026-07-12 | — |
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) | `ECO-MATERIALS-CLOUD` | research-ecosystem | high | 2026-07-12 | — |
-| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) | `RG-THEOS` | research-group | high | 2026-07-12 | COUNTRY-CH |
-| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) | `RG-PSI-MSD` | research-group | high | 2026-07-12 | COUNTRY-CH |
+| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) | `RG-THEOS` | research-group | high | 2026-07-13 | COUNTRY-CH |
+| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) | `RG-PSI-MSD` | research-group | high | 2026-07-13 | COUNTRY-CH |
 | [aiida-core](../../entities/research-software/aiida-core.md) | `SW-AIIDA-CORE` | research-software | high | 2026-07-12 | — |
 
 ## [Atomic Simulation Environment (ASE)](../../entities/research-software/ase.md)

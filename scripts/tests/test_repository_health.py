@@ -138,6 +138,33 @@ class RepositoryHealthTests(unittest.TestCase):
         materials_project = next(candidate for candidate in ecosystem_candidates if candidate["record"].id == "ECO-MATERIALS-PROJECT")
         self.assertTrue(any("connects `RG-CEDER-GROUP`" == item["label"] for item in materials_project["signals"]))
 
+    def test_scientific_software_engineering_area_is_directly_queryable(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        queries = {query["query_id"]: query for query in model["queries"]}
+        group_candidates = rl.recommendation_candidates(queries["groups-scientific-software-engineering"], records)
+        self.assertEqual(
+            ["RG-HACKING-MATERIALS", "RG-PSI-MSD", "RG-THEOS"],
+            sorted(candidate["record"].id for candidate in group_candidates),
+        )
+        pi_candidates = rl.recommendation_candidates(
+            queries["principal-investigators-scientific-software-engineering"], records
+        )
+        self.assertEqual(["PI-AXEL-KOHLMEYER"], [candidate["record"].id for candidate in pi_candidates])
+        ecosystem_candidates = rl.recommendation_candidates(
+            queries["ecosystems-scientific-software-engineering"], records
+        )
+        self.assertEqual(
+            ["ECO-AIIDA", "ECO-LAMMPS", "ECO-MATERIALS-CLOUD"],
+            sorted(candidate["record"].id for candidate in ecosystem_candidates),
+        )
+        university_candidates = rl.recommendation_candidates(
+            queries["universities-hosting-scientific-software-engineering-groups"], records
+        )
+        self.assertEqual(["UNIVERSITY-EPFL"], [candidate["record"].id for candidate in university_candidates])
+
     def test_source_identifier_must_be_in_the_evidence_table(self) -> None:
         record = rl.Record(
             path=ROOT / "entities/research-areas/test.md",

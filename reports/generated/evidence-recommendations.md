@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: dea395fbdb48603ff686e720f6f8d1f400ed057a8cb4f0b292dc1fd09133f506 -->
+<!-- input-fingerprint: daba76035b575c2aee92b7f4db12cfc6f11fd5276a561efc7698f972ef5e038c -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `dea395fbdb48603ff686e720f6f8d1f400ed057a8cb4f0b292dc1fd09133f506`
+**Input fingerprint:** `daba76035b575c2aee92b7f4db12cfc6f11fd5276a561efc7698f972ef5e038c`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -28,6 +28,20 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** A documented group-to-software edge is not a software-quality, hiring, or mentorship claim.
+
+## Research groups with documented Scientific Software Engineering work
+
+**Query ID:** `groups-scientific-software-engineering`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Hacking Materials](../../entities/research-groups/hacking-materials.md) (`RG-HACKING-MATERIALS`) | works on `AREA-SCIENTIFIC-SOFTWARE-ENGINEERING` (sources: SRC-HACKING-MATERIALS-GROUP, SRC-HACKING-MATERIALS-AMSET) | high | 1/1 documented criteria |
+| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | works on `AREA-SCIENTIFIC-SOFTWARE-ENGINEERING` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
+| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | works on `AREA-SCIENTIFIC-SOFTWARE-ENGINEERING` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 1/1 documented criteria |
+
+**Limitations:** Membership reflects explicit scientific-software development, engineering, maintenance, or infrastructure-contribution evidence; it is not a software-quality, hiring, or mentorship claim.
 
 ## Research groups with documented Computational Materials Science work
 
@@ -146,6 +160,20 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 **Limitations:** A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking.
 
+## Research ecosystems connected to Scientific Software Engineering entities
+
+**Query ID:** `ecosystems-scientific-software-engineering`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) (`ECO-AIIDA`) | connects `RG-PSI-MSD` (sources: SRC-AIIDA-TEAM); `RG-PSI-MSD` works on `AREA-SCIENTIFIC-SOFTWARE-ENGINEERING` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-SCIENTIFIC-SOFTWARE-ENGINEERING` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
+| [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) (`ECO-LAMMPS`) | connects `PI-AXEL-KOHLMEYER` (sources: SRC-LAMMPS-AUTHORS, SRC-TEMPLE-KOHLMEYER); `PI-AXEL-KOHLMEYER` works on `AREA-SCIENTIFIC-SOFTWARE-ENGINEERING` (sources: SRC-TEMPLE-KOHLMEYER) | high | 2/2 documented criteria |
+| [Materials Cloud](../../entities/ecosystems/materials-cloud.md) (`ECO-MATERIALS-CLOUD`) | connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-SCIENTIFIC-SOFTWARE-ENGINEERING` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
+
+**Limitations:** A connection proves only the displayed development or infrastructure path; it is not an ecosystem-completeness, software-quality, or research-quality ranking.
+
 ## Research ecosystems connected to Materials Informatics entities
 
 **Query ID:** `ecosystems-materials-informatics`
@@ -206,6 +234,18 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) (`PI-STEFANO-CURTAROLO`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit area relation, not a researcher ranking or availability signal.
+
+## Principal Investigators with documented Scientific Software Engineering work
+
+**Query ID:** `principal-investigators-scientific-software-engineering`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) (`PI-AXEL-KOHLMEYER`) | works on `AREA-SCIENTIFIC-SOFTWARE-ENGINEERING` (sources: SRC-TEMPLE-KOHLMEYER) | high | 1/1 documented criteria |
+
+**Limitations:** Membership reflects explicit scientific-software development or engineering evidence, not a researcher ranking, current maintenance assignment, or availability signal.
 
 ## Principal Investigators with documented Materials Informatics work
 
@@ -278,6 +318,18 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) (`UNIVERSITY-UC-BERKELEY`) | hosts `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE) | high | 2/2 documented criteria |
 
 **Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
+
+## Universities directly hosting Scientific Software Engineering groups
+
+**Query ID:** `universities-hosting-scientific-software-engineering-groups`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [EPFL](../../entities/universities/epfl.md) (`UNIVERSITY-EPFL`) | hosts `RG-THEOS` (sources: SRC-EPFL-MARZARI-PROFILE); `RG-THEOS` works on `AREA-SCIENTIFIC-SOFTWARE-ENGINEERING` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
+
+**Limitations:** This is a sourced direct-host-and-area discovery path, not a measure of university strength, software maturity, degree quality, funding, opportunities, or admissions fit.
 
 ## Universities directly hosting research groups with documented AI for Materials work
 

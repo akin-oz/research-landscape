@@ -5,8 +5,8 @@ id: RG-HACKING-MATERIALS
 name: Hacking Materials
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-HACKING-MATERIALS-GROUP
@@ -17,6 +17,7 @@ organization_id: ORG-LBNL
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
   - AREA-AI-FOR-MATERIALS
+  - AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
 website: https://hackingmaterials.lbl.gov/
 relationship_assertions:
   - predicate: belongs_to
@@ -34,6 +35,12 @@ relationship_assertions:
     source_ids: [SRC-HACKING-MATERIALS-GROUP]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-SCIENTIFIC-SOFTWARE-ENGINEERING
+    source_ids: [SRC-HACKING-MATERIALS-GROUP, SRC-HACKING-MATERIALS-AMSET]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The group's public material describes community data/software infrastructure and the AMSET page identifies group-led development. This does not establish a group-wide engineering role, software-quality score, or every member's contribution.
 mentorship_process_evidence:
   - category: onboarding-training
     source_ids: [SRC-HACKING-MATERIALS-HANDBOOK]

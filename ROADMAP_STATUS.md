@@ -16,11 +16,11 @@ evidence and limits of this status.
 
 ## Post-v0.3 progress
 
-The current `main` branch extends the released cohort to 96 canonical entities
-and 171 evidence-bearing typed relationships. It adds AI-for-Materials,
+The current `main` branch extends the released cohort to 97 canonical entities
+and 175 evidence-bearing typed relationships. It adds AI-for-Materials,
 FAIR Chemistry/FAIRChem, UC Berkeley/CEDER/CHGNet, MACE/Cambridge,
-Materialyze/MatGL/MatML, Quantum ESPRESSO/Foundation, LAMMPS/Sandia, and M3GNet
-publication-provenance slices; accepted
+Materialyze/MatGL/MatML, Quantum ESPRESSO/Foundation, LAMMPS/Sandia,
+Scientific Software Engineering, and M3GNet publication-provenance slices; accepted
 Programming Language and bounded mentorship-process evidence contracts;
 explicit recommendation-query, interactive software, and ecosystem-path
 discovery, including a controlled open-source software facet; review-freshness auditing; and stricter Evidence-table provenance
