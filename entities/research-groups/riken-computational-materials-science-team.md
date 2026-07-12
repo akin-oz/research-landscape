@@ -35,6 +35,16 @@ research-group node in this slice. Its current public description supports a
 Computational Materials Science connection through numerical methods and
 simulations for quantum systems.
 
+The team's public R-CCS page identifies quantum Monte Carlo, tensor-network
+methods, quantum algorithms, and classical supercomputer simulations as core
+method-development areas. It also presents a named Team Principal, a visible
+core-member display spanning senior-research-scientist, postdoctoral,
+technical, and visiting-scientist roles, a selected-paper list, annual-report
+links, and a generic RIKEN job-search link. These are group discovery signals,
+not a complete employment record, a software-maintainer roster, a current
+vacancy, a degree route, a funding ledger, or a mentorship/career-outcome
+record.
+
 ## Evidence
 
 | Source ID | Evidence |
@@ -44,6 +54,7 @@ simulations for quantum systems.
 
 ## Boundary and limitations
 
-This record does not enumerate personnel, turn the team’s reference to software
-applications into a named software-maintainer claim, or infer a graduate route,
-funding, openings, mentoring, admissions, language, or applicant fit.
+This record does not turn its displayed people list into a complete employment
+roster, turn the team’s reference to software applications into a named
+software-maintainer claim, or infer a graduate route, funding, live openings,
+mentoring quality, admissions, language, applicant fit, or career outcome.
