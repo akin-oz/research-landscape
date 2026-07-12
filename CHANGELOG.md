@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A directly source-bounded Materials Informatics classification for RadonPy, based on RIKEN's published “polymer informatics” article listing; the record explicitly avoids generalizing that classification beyond the documented software context.
 - An AI for Materials controlled research area with direct, evidence-bounded group and PI links, plus FAIR Chemistry/FAIRChem and UC Berkeley/CEDER/Gerbrand Ceder/CHGNet vertical slices.
 - A controlled Machine-Learned Potentials for Materials area with directly supported CHGNet, FAIRChem, and CEDER Group connections plus explainable group, ecosystem, and direct-host university discovery paths.
 - A MACE/University of Cambridge vertical slice with canonical United Kingdom, University, PI, and software nodes; the MACE relation is explicitly limited to group-attributed development evidence.

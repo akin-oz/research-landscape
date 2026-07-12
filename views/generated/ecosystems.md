@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 0cb6dc6938b957448a4c061daa3908879f30c36c2a87392656ae1edd75869821 -->
+<!-- input-fingerprint: fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `0cb6dc6938b957448a4c061daa3908879f30c36c2a87392656ae1edd75869821`
+**Input fingerprint:** `fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/ecosystems/aflow.md)

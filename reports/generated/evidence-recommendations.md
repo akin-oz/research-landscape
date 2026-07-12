@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 85006b73406ee43be4f8bf26061a72d5ebf00a8a4b57a52e81fb6891e804e0fc -->
+<!-- input-fingerprint: ee39014da8aa675dd141ccfaa2f41ff3d144f4363ae1225857f170aceff579e0 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `85006b73406ee43be4f8bf26061a72d5ebf00a8a4b57a52e81fb6891e804e0fc`
+**Input fingerprint:** `ee39014da8aa675dd141ccfaa2f41ff3d144f4363ae1225857f170aceff579e0`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary

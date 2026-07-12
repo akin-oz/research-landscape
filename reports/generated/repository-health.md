@@ -1,8 +1,8 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 0cb6dc6938b957448a4c061daa3908879f30c36c2a87392656ae1edd75869821 -->
+<!-- input-fingerprint: fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b -->
 # Repository health report
 
-**Input fingerprint:** `0cb6dc6938b957448a4c061daa3908879f30c36c2a87392656ae1edd75869821`
+**Input fingerprint:** `fad881118edace1646a4719a99016de4f9c43f62799a1edf19b5de3055db749b`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
@@ -65,7 +65,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 3 | 2 | 3 |
 | [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 7 | 1 | 6 | 7 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 5 | 2 | 3 |
-| [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 1 | 1 | 2 |
+| [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 2 |
 
 ## Programming-language discovery coverage
 

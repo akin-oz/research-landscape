@@ -54,6 +54,12 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["area"].id: item for item in rl.research_area_coverage(records)}
         self.assertEqual(
+            {"groups": 2, "principal_investigators": 2, "software": 2, "universities": 1, "ecosystems": 2},
+            {key: coverage["AREA-MATERIALS-INFORMATICS"][key] for key in (
+                "groups", "principal_investigators", "software", "universities", "ecosystems"
+            )},
+        )
+        self.assertEqual(
             {"groups": 2, "principal_investigators": 2, "software": 5, "universities": 2, "ecosystems": 3},
             {key: coverage["AREA-MACHINE-LEARNED-POTENTIALS"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
