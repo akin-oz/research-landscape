@@ -18,6 +18,8 @@ conflicts_of_interest: []
 **Evidence basis:** [Persson Group research](https://perssongroup.lbl.gov/research/), [software](https://perssongroup.lbl.gov/software.html), and [Materials Project](https://materialssciences.lbl.gov/research/research-programs/materials-project/) (S01–S03).  
 **Confidence:** high for research/software fit; unavailable for individual supervision, current openings and admissions eligibility.
 
+**Canonical public-fact record:** [Kristin A. Persson](../../entities/principal-investigators/kristin-persson.md) is the separate vNext entity for reusable, current public affiliation and group-leadership facts. This dossier remains the dated applicant-oriented analysis.
+
 ## Candidate fit
 
 This is an unusually direct environment for a senior engineer because the public research programme joins computational materials questions with production-facing Python libraries, workflow automation, APIs and shared data. **Inference (high confidence):** a well-engineered Materials Atlas contribution that is interoperable with `pymatgen`/Materials Project concepts would be legible here. It is not evidence that the group is recruiting or will supervise a particular degree.
