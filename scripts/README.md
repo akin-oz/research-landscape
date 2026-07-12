@@ -29,6 +29,7 @@ Verify that committed generated output is current without writing files:
 python3 scripts/research_landscape.py generate --check
 python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
+python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 python3 -m unittest discover -s scripts/tests
 ```
 
@@ -41,3 +42,8 @@ and relationship integrity, record-local source IDs, ADR 0006 group hosts,
 local Markdown links, duplicate-name signals, and orphan-entity signals. It
 also produces quality metrics by entity type, confidence, and predicate. Do not
 put credentials or unreviewed scraping logic in this directory.
+
+`freshness` is a read-only, non-generated maintenance audit. It classifies
+human review dates and explicit volatile-claim deadlines under the repository's
+[freshness policy](../docs/freshness-policy.md); it does not change confidence
+or make research-quality judgments.

@@ -16,6 +16,7 @@ python3 scripts/research_landscape.py generate
 python3 scripts/research_landscape.py generate --check
 python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
+python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 ```
 
 `validate` checks v2 schema/frontmatter, IDs, reference fields, relationship
@@ -34,6 +35,12 @@ then derives evidence-discovery results in `reports/generated/`. It exposes
 direct matching signals, confidence, coverage, and unavailable dimensions; it
 does not rank prestige, calculate private accessibility, or infer missing
 evidence.
+
+`freshness` produces a non-generated, reproducible maintenance audit from
+review dates and declared volatile-assertion deadlines. Pass `--as-of` for a
+repeatable result; without it, the command uses the local current date. Its
+thresholds and repair boundaries are defined in the [review freshness
+policy](freshness-policy.md).
 
 ## Generated-output boundary
 

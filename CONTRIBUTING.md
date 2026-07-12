@@ -8,7 +8,7 @@ Thank you for improving the evidence base. Start with [onboarding](docs/onboardi
 2. Find the canonical owner before writing. Use the applicable entity/template contract; do not write reusable findings directly into a report, view, or generated index.
 3. Record stable source URLs, publication/access dates, exact supported facts, limitations, and a confidence level.
 4. Keep observations separate from interpretation, scoring, and personal decision support.
-5. Run `validate`, regenerate affected output, run `generate --check` and `recommend --check`, then submit a focused pull request using the provided template.
+5. Run `validate`, regenerate affected output, run `generate --check` and `recommend --check`, and use the [freshness audit](docs/freshness-policy.md) when review dates or volatile claims are in scope; then submit a focused pull request using the provided template.
 
 ## Requirements
 

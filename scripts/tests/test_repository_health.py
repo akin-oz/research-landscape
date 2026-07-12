@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import datetime as dt
 import sys
 import unittest
 from pathlib import Path
@@ -36,6 +37,16 @@ class RepositoryHealthTests(unittest.TestCase):
 
     def test_committed_recommendations_are_current(self) -> None:
         self.assertEqual(0, rl.recommend(ROOT, check=True, query_id=None))
+
+    def test_freshness_audit_is_reproducible_and_non_scoring(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        audit = rl.freshness_audit(records, dt.date(2026, 7, 12))
+        self.assertEqual(67, audit["reviewed_records"])
+        self.assertEqual(67, len(audit["buckets"]["current"]))
+        self.assertEqual([], audit["buckets"]["attention"])
+        self.assertEqual([], audit["buckets"]["stale"])
+        self.assertIn("does not measure research quality", rl.render_freshness_audit(audit))
 
 
 if __name__ == "__main__":

@@ -8,6 +8,7 @@ and health reports are reproducible projections, never canonical facts.
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import hashlib
 import json
 import os
@@ -110,6 +111,12 @@ RECOMMENDATION_KINDS = {
 
 SOURCE_PATTERN = re.compile(r"`(SRC-[A-Z0-9-]+)`")
 LINK_PATTERN = re.compile(r"\]\(([^)]+)\)")
+
+# These intervals implement docs/freshness-policy.md. They classify maintenance
+# attention only; they do not downgrade source quality or entity confidence.
+REVIEW_CURRENT_DAYS = 180
+REVIEW_STALE_DAYS = 365
+VOLATILE_DUE_SOON_DAYS = 30
 
 
 @dataclass(frozen=True)
@@ -864,12 +871,119 @@ def print_results(root: Path, records: dict[str, Record], results: Results) -> N
         print(f"WARNING: {warning}")
 
 
+def parse_date(value: Any, field: str, record: Record) -> dt.date:
+    """Parse a schema-validated ISO date with context for standalone audits."""
+    try:
+        return dt.date.fromisoformat(str(value))
+    except ValueError as exc:
+        raise ValueError(f"{record.path}: invalid {field} date {value!r}") from exc
+
+
+def freshness_audit(records: dict[str, Record], as_of: dt.date) -> dict[str, Any]:
+    """Classify review currency without mutating canonical facts.
+
+    The audit is intentionally parameterized by an explicit date so an issue,
+    CI job, or maintainer can reproduce a result. It is not a generated report:
+    freshness changes with time even when canonical inputs do not.
+    """
+    buckets: dict[str, list[dict[str, Any]]] = {
+        "current": [], "attention": [], "stale": [], "future_review_date": [],
+        "volatile_overdue": [], "volatile_due_soon": [],
+    }
+    reviewed = [
+        record for record in records.values()
+        if record.metadata.get("status") in {"reviewed", "published"}
+    ]
+    for record in sorted(reviewed, key=lambda item: (item.metadata["last_review"], item.id)):
+        review_date = parse_date(record.metadata["last_review"], "last_review", record)
+        age = (as_of - review_date).days
+        item = {"id": record.id, "name": record.metadata["name"], "last_review": review_date.isoformat(), "age_days": age}
+        if age < 0:
+            buckets["future_review_date"].append(item)
+        elif age <= REVIEW_CURRENT_DAYS:
+            buckets["current"].append(item)
+        elif age <= REVIEW_STALE_DAYS:
+            buckets["attention"].append(item)
+        else:
+            buckets["stale"].append(item)
+        for assertion in record.metadata.get("volatile_assertions", []) or []:
+            review_by = parse_date(assertion["review_by"], "volatile_assertions.review_by", record)
+            volatile_item = {
+                "id": record.id,
+                "name": record.metadata["name"],
+                "subject": assertion["subject"],
+                "review_by": review_by.isoformat(),
+                "days_until_review": (review_by - as_of).days,
+            }
+            if review_by < as_of:
+                buckets["volatile_overdue"].append(volatile_item)
+            elif review_by <= as_of + dt.timedelta(days=VOLATILE_DUE_SOON_DAYS):
+                buckets["volatile_due_soon"].append(volatile_item)
+    return {"as_of": as_of.isoformat(), "reviewed_records": len(reviewed), "buckets": buckets}
+
+
+def render_freshness_audit(audit: dict[str, Any]) -> str:
+    """Render a concise, copyable maintenance audit rather than a score."""
+    buckets = audit["buckets"]
+    lines = [
+        "# Review freshness audit", "",
+        f"**As of:** `{audit['as_of']}`", "",
+        "This is a maintenance signal based on human review dates and declared volatile-assertion review deadlines. It does not measure research quality, source truth, prestige, or fit.",
+        "",
+        "## Reviewed-record currency", "",
+        "| Status | Rule | Records |",
+        "| --- | --- | ---: |",
+        f"| Current | reviewed within {REVIEW_CURRENT_DAYS} days | {len(buckets['current'])} |",
+        f"| Attention | reviewed {REVIEW_CURRENT_DAYS + 1}–{REVIEW_STALE_DAYS} days ago | {len(buckets['attention'])} |",
+        f"| Stale | reviewed more than {REVIEW_STALE_DAYS} days ago | {len(buckets['stale'])} |",
+        f"| Invalid future date | `last_review` is after the audit date | {len(buckets['future_review_date'])} |",
+        "",
+        "## Volatile assertions", "",
+        "| Status | Rule | Assertions |",
+        "| --- | --- | ---: |",
+        f"| Overdue | `review_by` before audit date | {len(buckets['volatile_overdue'])} |",
+        f"| Due soon | `review_by` within {VOLATILE_DUE_SOON_DAYS} days | {len(buckets['volatile_due_soon'])} |",
+        "",
+    ]
+    sections = [
+        ("Records needing attention", "attention", "id", "last_review", "age_days"),
+        ("Stale records", "stale", "id", "last_review", "age_days"),
+        ("Records with future review dates", "future_review_date", "id", "last_review", "age_days"),
+        ("Overdue volatile assertions", "volatile_overdue", "id", "subject", "review_by"),
+        ("Volatile assertions due soon", "volatile_due_soon", "id", "subject", "review_by"),
+    ]
+    for title, bucket, first, second, third in sections:
+        items = buckets[bucket]
+        if not items:
+            continue
+        lines.extend([f"## {title}", "", f"| Entity | {second.replace('_', ' ')} | {third.replace('_', ' ')} |", "| --- | --- | --- |"])
+        for item in items:
+            lines.append(f"| `{item[first]}` | {item[second]} | {item[third]} |")
+        lines.append("")
+    lines.extend([
+        "## Action boundary", "",
+        "Review the cited public sources and update only evidence that can be verified. Do not treat age alone as disproof, delete a claim automatically, or infer a negative conclusion from a missing update.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def freshness(root: Path, as_of: dt.date) -> int:
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    print(render_freshness_audit(freshness_audit(records, as_of)))
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
+    parser.add_argument("--as-of", help="ISO date for a reproducible freshness audit (defaults to today)")
     args = parser.parse_args()
     root = args.root.resolve()
     if args.command == "validate":
@@ -878,6 +992,13 @@ def main() -> int:
         return 1 if results.errors else 0
     if args.command == "recommend":
         return recommend(root, args.check, args.query)
+    if args.command == "freshness":
+        try:
+            as_of = dt.date.fromisoformat(args.as_of) if args.as_of else dt.date.today()
+        except ValueError:
+            print(f"ERROR: --as-of must be an ISO date (YYYY-MM-DD), got {args.as_of!r}")
+            return 2
+        return freshness(root, as_of)
     return generate(root, args.check)
 
 
