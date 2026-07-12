@@ -241,6 +241,22 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertTrue(any("affiliated with `UNIVERSITY-UC-BERKELEY`" in signal["label"] for signal in ceder_signals))
         self.assertTrue(any("located in `COUNTRY-US`" in signal["label"] for signal in ceder_signals))
 
+    def test_dynamic_university_discovery_uses_direct_host_paths(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        us_ai_universities = rl.discovery_university_candidates(
+            records, "AREA-AI-FOR-MATERIALS", "COUNTRY-US", None, None
+        )
+        self.assertEqual(["UNIVERSITY-UC-BERKELEY"], [candidate["record"].id for candidate in us_ai_universities])
+        self.assertEqual(2, us_ai_universities[0]["criteria"])
+        signals = us_ai_universities[0]["signals"]
+        self.assertTrue(any("directly hosts `RG-CEDER-GROUP`" in signal["label"] for signal in signals))
+        self.assertTrue(any("`RG-CEDER-GROUP`: works on `AREA-AI-FOR-MATERIALS`" in signal["label"] for signal in signals))
+        chgnet_universities = rl.discovery_university_candidates(
+            records, None, None, "SW-CHGNET", "PROGRAMMING-LANGUAGE-PYTHON"
+        )
+        self.assertEqual(["UNIVERSITY-UC-BERKELEY"], [candidate["record"].id for candidate in chgnet_universities])
+
     def test_recommendation_catalog_lists_available_and_unavailable_queries(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

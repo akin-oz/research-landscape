@@ -14,6 +14,7 @@ All notable changes are documented here. This project follows the principles of 
 - A `recommend --list` catalog for public query IDs, aliases, titles, and unavailable-dimension status, plus `recommend --query` interactive lookup.
 - An interactive `discover-groups` command for deterministic AND filtering of reviewed research groups by canonical area, country, software, and programming-language IDs, with every matching path and source ID shown.
 - An interactive `discover-pis` command applying the same evidence-first filters to reviewed Principal Investigators, with country matches limited to documented public affiliation paths.
+- An interactive `discover-universities` command exposing documented country and direct-host group paths for academic-environment discovery without comparing institutions.
 - A reproducible review-freshness audit based on canonical `last_review` dates and declared volatile-assertion deadlines.
 
 ### Changed

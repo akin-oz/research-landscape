@@ -1266,6 +1266,151 @@ def discover_pis(
     return 0
 
 
+def university_country_signals(university: Record, country_id: str) -> list[dict[str, Any]]:
+    """Return direct University-to-Country evidence; no inferred geography."""
+    location_assertions = matching_assertions(university, "located_in", {country_id})
+    if location_assertions:
+        return [
+            signal(f"is located in `{country_id}`", assertion, university)
+            for assertion in location_assertions
+        ]
+    if country_id in as_ids(university.metadata.get("country_id", [])):
+        return [metadata_signal(f"is classified in `{country_id}`", university)]
+    return []
+
+
+def directly_hosted_group_signals(group: Record, university_id: str) -> list[dict[str, Any]]:
+    """Return only the group edge that satisfies the reviewed direct-host field."""
+    if group.metadata.get("institution_id") != university_id:
+        return []
+    return [
+        signal(f"directly hosts `{group.id}`", assertion, group)
+        for assertion in matching_assertions(group, "belongs_to", {university_id})
+    ]
+
+
+def discovery_university_candidates(
+    records: dict[str, Record],
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+) -> list[dict[str, Any]]:
+    """Find universities through explicit, direct-host group evidence paths."""
+    group_filters_present = any((area_id, software_id, language_id))
+    eligible_groups = discovery_group_candidates(records, area_id, None, software_id, language_id)
+    if not group_filters_present:
+        eligible_groups = [
+            {"record": group, "signals": [], "criteria": 0}
+            for group in records.values()
+            if group.entity_type == "research-group" and eligible(group)
+        ]
+    candidates = []
+    for university in records.values():
+        if university.entity_type != "university" or not eligible(university):
+            continue
+        signals = []
+        criteria = 0
+        if country_id:
+            country_signals = university_country_signals(university, country_id)
+            if not country_signals:
+                continue
+            signals.extend(country_signals)
+            criteria += 1
+        hosted = []
+        for group_candidate in eligible_groups:
+            group = group_candidate["record"]
+            host_signals = directly_hosted_group_signals(group, university.id)
+            if not host_signals:
+                continue
+            hosted.append((group, host_signals, group_candidate["signals"]))
+        if not hosted:
+            continue
+        if group_filters_present:
+            criteria += sum(bool(value) for value in (area_id, software_id, language_id))
+        for group, host_signals, group_signals in hosted:
+            signals.extend(host_signals)
+            for item in group_signals:
+                signals.append({**item, "label": f"`{group.id}`: {item['label']}"})
+        candidates.append({"record": university, "signals": deduplicate_signals(signals), "criteria": criteria})
+    return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
+
+
+def render_university_discovery(
+    records: dict[str, Record],
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+    output_path: Path,
+) -> str:
+    filters = [(name, value) for name, value in (
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id),
+    ) if value]
+    if not filters:
+        raise ValueError("provide at least one of --area, --country, --software, or --language")
+    candidates = discovery_university_candidates(records, area_id, country_id, software_id, language_id)
+    lines = [
+        "# University environment discovery", "",
+        "**Status:** deterministic evidence-discovery result, not a ranking or university-strength assessment.", "",
+        "**AND filters:** " + "; ".join(f"{name} `{value}`" for name, value in filters) + ".", "",
+        "| University | Documented matching evidence | Confidence | Coverage |",
+        "| --- | --- | --- | --- |",
+    ]
+    total_criteria = len(filters)
+    for candidate in candidates:
+        signals = candidate["signals"]
+        rendered_signals = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in signals)
+        confidence = lowest_confidence([item["confidence"] for item in signals])
+        lines.append(
+            f"| {canonical_link(candidate['record'], output_path)} (`{candidate['record'].id}`) | {rendered_signals} | {confidence} | {candidate['criteria']}/{total_criteria} documented criteria |"
+        )
+    if not candidates:
+        lines.append("| — | No reviewed canonical University has a directly hosted group path matching every requested criterion. | unavailable | 0 criteria |")
+    lines.extend([
+        "", "## Boundary", "",
+        "Results are alphabetically ordered and use only a University's documented country and the ADR 0006 direct-host paths of reviewed groups. Signals name the hosted group that supplied area, software, or language evidence; different signals may come from different directly hosted groups. This does not rank universities or establish ecosystem completeness, degree quality, funding, admissions, mentorship, or applicant fit.", "",
+    ])
+    return "\n".join(lines)
+
+
+def discover_universities(
+    root: Path,
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+    check: bool,
+    query_id: str | None,
+    list_queries: bool,
+    as_of: str | None,
+) -> int:
+    if check or query_id or list_queries or as_of:
+        print("ERROR: discover-universities accepts only --area, --country, --software, and --language")
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id}
+    for name, value in filters.items():
+        if not value:
+            continue
+        target = records.get(value)
+        if target is None or target.entity_type != DISCOVERY_FILTER_TYPES[name]:
+            print(f"ERROR: --{name} must reference a canonical {DISCOVERY_FILTER_TYPES[name]} ID, got {value!r}")
+            return 2
+    try:
+        print(render_university_discovery(
+            records, area_id, country_id, software_id, language_id,
+            root / "reports/generated/evidence-recommendations.md",
+        ))
+    except ValueError as exc:
+        print(f"ERROR: {exc}")
+        return 2
+    return 0
+
+
 def write_or_check(path: Path, content: str, check: bool, drift: list[str]) -> None:
     if check:
         if not path.exists() or path.read_text(encoding="utf-8") != content:
@@ -1467,7 +1612,7 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "discover-groups", "discover-pis", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "discover-groups", "discover-pis", "discover-universities", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
@@ -1492,6 +1637,11 @@ def main() -> int:
         )
     if args.command == "discover-pis":
         return discover_pis(
+            root, args.area, args.country, args.software, args.language,
+            args.check, args.query, args.list_queries, args.as_of,
+        )
+    if args.command == "discover-universities":
+        return discover_universities(
             root, args.area, args.country, args.software, args.language,
             args.check, args.query, args.list_queries, args.as_of,
         )

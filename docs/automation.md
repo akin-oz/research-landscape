@@ -22,6 +22,7 @@ python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIA
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-pis --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
+python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 ```
 
@@ -61,6 +62,12 @@ does not rank or infer fit.
 Country evidence follows an explicitly documented public `affiliated_with` path
 to a University, Department, or Organization and then its documented country;
 it does not infer employment, current availability, or supervision capacity.
+
+`discover-universities` finds reviewed Universities through their documented
+country and the ADR 0006 direct-host paths of reviewed Research Groups. Area,
+software, and language signals name the hosted group that supplied them. The
+result is an evidence-discovery view of documented paths, not a comparison of
+university strength, degree quality, ecosystem completeness, or admissions.
 
 `freshness` produces a non-generated, reproducible maintenance audit from
 review dates and declared volatile-assertion deadlines. Pass `--as-of` for a

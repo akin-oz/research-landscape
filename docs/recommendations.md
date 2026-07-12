@@ -76,9 +76,11 @@ filter command:
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --software SW-CHGNET --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
+python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 ```
 
 All supplied filters are required. The command exposes each documented path;
 it does not produce a score or rank. `discover-pis` follows documented public
 affiliation paths for country filters and does not assert availability or
-supervision capacity.
+supervision capacity. `discover-universities` uses only direct-host group paths
+and does not compare institutions.
