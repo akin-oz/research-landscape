@@ -69,3 +69,5 @@ The eighth Research Group Intelligence cluster enriches [Materialyze.AI Lab](res
 The ninth Research Group Intelligence cluster enriches the [RIKEN Polymeromics Team](research-groups/riken-polymeromics-team.md) with evidence-bounded polymer data, automated MD/first-principles, foundation-model, Sim2Real, autonomous-discovery, people, and selected-publication context while preserving the shared RadonPy relationship and RIKEN TRIP direct host.
 
 The tenth Research Group Intelligence cluster enriches the [RIKEN Computational Materials Science Research Team](research-groups/riken-computational-materials-science-team.md) with evidence-bounded numerical-method, quantum/HPC, people, representative-publication, and report-navigation context while preserving its R-CCS direct host and avoiding unsupported software or opportunity records.
+
+The eleventh Research Group Intelligence cluster enriches the [PSI Materials Software and Data Group](research-groups/materials-software-and-data-group.md) with evidence-bounded software/data, open-science, people, publication, and project-navigation context while preserving its shared AiiDA relationship and PSI direct host.

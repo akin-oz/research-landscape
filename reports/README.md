@@ -27,3 +27,4 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [Materialyze.AI intelligence review](materialyze-ai-intelligence-vertical-slice-review.md) — eighth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [RIKEN Polymeromics intelligence review](riken-polymeromics-intelligence-vertical-slice-review.md) — ninth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [RIKEN Computational Materials Science intelligence review](riken-computational-materials-science-intelligence-vertical-slice-review.md) — tenth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
+- [PSI MSD intelligence review](psi-msd-intelligence-vertical-slice-review.md) — eleventh QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
