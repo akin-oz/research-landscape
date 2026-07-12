@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S52 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S56 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -60,6 +60,10 @@
 | S50 | [RIKEN Center for Computational Science: Access](https://www.r-ccs.riken.jp/access/) | Kobe campus address in Hyogo, Japan. | High for R-CCS geographic normalization. |
 | S51 | [RIKEN TRIP Headquarters](https://www.riken.jp/en/research/labs/trip/index.html) | Current TRIP organization, Polymeromics Team and Ryo Yoshida listing, and Wako, Japan contact context. | High for the direct organization host and team listing; not evidence of every RIKEN affiliation. |
 | S52 | [RadonPy/RadonPy](https://github.com/RadonPy/RadonPy) | Current open-source Python repository for automated polymer physical-property calculations and BSD-3-Clause license. | High for public software attributes; does not provide an exhaustive individual maintainer roster. |
+| S53 | [ASE documentation](https://wiki.fysik.dtu.dk/ase/index.html) | ASE atomistic-simulation software, Python tooling, GNU LGPL license, and ecosystem documentation. | High for software scope and license; not an exhaustive maintainer record. |
+| S54 | [DTU Physics: Atomic-scale Materials Design](https://physics.dtu.dk/research/sections/camd/research/atomic-scale-materials-design) | CAMD computational-materials scope and group-level development of ASE and GPAW. | High for documented group work; not evidence of exclusive development or individual maintenance. |
+| S55 | [DTU Physics: CAMD](https://physics.dtu.dk/research/sections/camd) | CAMD's current DTU Physics group identity. | High for group host context. |
+| S56 | [DTU Organization](https://dtu.dk/english/about/organization) | DTU's university identity and department-based research structure. | High for University identity; contact source is separately used for location. |
 
 ## Evidence protocol for new claims
 

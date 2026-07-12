@@ -23,3 +23,5 @@ The FAIRmat cluster adds [Claudia Draxl](principal-investigators/claudia-draxl.m
 The RIKEN Computational Materials Science cluster adds [Seiji Yunoki](principal-investigators/seiji-yunoki.md), the [Computational Materials Science Research Team](research-groups/riken-computational-materials-science-team.md), [RIKEN Center for Computational Science](organizations/riken-center-for-computational-science.md), and [Japan](countries/japan.md), while reusing Computational Materials Science.
 
 The RIKEN Polymeromics cluster adds [Ryo Yoshida](principal-investigators/ryo-yoshida.md), the [Polymeromics Team](research-groups/riken-polymeromics-team.md), [RIKEN TRIP Headquarters](organizations/riken-trip-headquarters.md), and [RadonPy](research-software/radonpy.md), while reusing Japan and Materials Informatics.
+
+The ASE cluster adds [Atomic Simulation Environment](research-software/ase.md), the [ASE Ecosystem](ecosystems/ase.md), [Computational Atomic-scale Materials Design](research-groups/dtu-camd.md), [Technical University of Denmark](universities/technical-university-of-denmark.md), and [Denmark](countries/denmark.md), while reusing Computational Materials Science.
