@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: d23e3a486b7eb345e36a4831410f8e9749e9f22bcc24411ce42be6765a666796 -->
+<!-- input-fingerprint: bbf13fb57ac29184fe68216ff72efe7b685656af22abe5b9e791584e393329f6 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `d23e3a486b7eb345e36a4831410f8e9749e9f22bcc24411ce42be6765a666796`
+**Input fingerprint:** `bbf13fb57ac29184fe68216ff72efe7b685656af22abe5b9e791584e393329f6`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -247,6 +247,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) (`RG-CEDER-GROUP`) | develops `SW-CHGNET` (sources: SRC-CEDER-GROUP-CHGNET); `SW-CHGNET` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-CHGNET-REPOSITORY) | high | 2/2 documented criteria |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH); `SW-ASE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-ASE-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH); `SW-AIIDA-CORE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-AIIDA-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); `SW-AIIDA-CORE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-AIIDA-DOCUMENTATION) | high | 2/2 documented criteria |

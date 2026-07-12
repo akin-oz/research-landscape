@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 25c5992e1feceeda585fd8ff96ee8327720e75ac2660e7b6375987c8f327320d -->
+<!-- input-fingerprint: 256bba6f6ebd88c93940102f6c9c0e1a7334392e8cd4a86426d22da14d01290a -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `25c5992e1feceeda585fd8ff96ee8327720e75ac2660e7b6375987c8f327320d`
+**Input fingerprint:** `256bba6f6ebd88c93940102f6c9c0e1a7334392e8cd4a86426d22da14d01290a`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/research-software/aflow.md)

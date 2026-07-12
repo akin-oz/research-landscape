@@ -163,10 +163,12 @@ class RepositoryHealthTests(unittest.TestCase):
         queries = {query["query_id"]: query for query in model["queries"]}
         python_candidates = rl.recommendation_candidates(queries["python-heavy-research-groups"], records)
         self.assertEqual(
-            ["RG-DTU-CAMD", "RG-PSI-MSD", "RG-THEOS"],
+            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-PSI-MSD", "RG-THEOS"],
             sorted(candidate["record"].id for candidate in python_candidates),
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in python_candidates))
+        ceder = next(candidate for candidate in python_candidates if candidate["record"].id == "RG-CEDER-GROUP")
+        self.assertTrue(any("SW-CHGNET" in item["label"] for item in ceder["signals"]))
         mentorship_candidates = rl.recommendation_candidates(
             queries["entities-with-documented-mentorship-process-evidence"], records
         )

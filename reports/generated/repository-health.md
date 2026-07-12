@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 25c5992e1feceeda585fd8ff96ee8327720e75ac2660e7b6375987c8f327320d -->
+<!-- input-fingerprint: 256bba6f6ebd88c93940102f6c9c0e1a7334392e8cd4a86426d22da14d01290a -->
 # Repository health report
 
-**Input fingerprint:** `25c5992e1feceeda585fd8ff96ee8327720e75ac2660e7b6375987c8f327320d`
+**Input fingerprint:** `256bba6f6ebd88c93940102f6c9c0e1a7334392e8cd4a86426d22da14d01290a`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
 - Canonical v2 entities: **75**
-- Typed relationship assertions: **133**
+- Typed relationship assertions: **134**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -48,7 +48,7 @@
 | --- | ---: |
 | Reviewed/published records with source IDs | 75/75 |
 | Reviewed/published records with last-review dates | 75/75 |
-| Typed relationships with source IDs | 133/133 |
+| Typed relationships with source IDs | 134/134 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
 | Entities with an inbound or outbound graph connection | 75/75 |
 | Broken local Markdown links | 0 |
@@ -69,7 +69,7 @@
 | describes | 5 |
 | develops | 8 |
 | funds | 1 |
-| implemented_in | 3 |
+| implemented_in | 4 |
 | includes | 7 |
 | involves | 1 |
 | leads | 11 |
