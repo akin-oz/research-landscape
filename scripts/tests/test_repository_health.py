@@ -76,6 +76,22 @@ class RepositoryHealthTests(unittest.TestCase):
         pi_candidates = rl.recommendation_candidates(queries["principal-investigators-ai-for-materials"], records)
         self.assertEqual(["PI-ANUBHAV-JAIN"], [candidate["record"].id for candidate in pi_candidates])
 
+    def test_source_identifier_must_be_in_the_evidence_table(self) -> None:
+        record = rl.Record(
+            path=ROOT / "entities/research-areas/test.md",
+            metadata={
+                "id": "AREA-TEST",
+                "entity_type": "research-area",
+                "source_ids": ["SRC-TEST"],
+                "relationship_assertions": [],
+            },
+            body="Narrative mention: `SRC-TEST`.\n",
+        )
+        results = rl.Results([], [])
+        rl.validate_graph(ROOT, {record.id: record}, results)
+        self.assertIn("source SRC-TEST missing from Evidence table", results.errors[0])
+        self.assertEqual([], rl.evidence_table_source_ids(record.body))
+
 
 if __name__ == "__main__":
     unittest.main()

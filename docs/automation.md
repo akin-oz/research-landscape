@@ -20,8 +20,10 @@ python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 ```
 
 `validate` checks v2 schema/frontmatter, IDs, reference fields, relationship
-endpoint types, record-local evidence keys, ADR 0006 direct-host integrity,
-local Markdown links, possible duplicate names, and orphan signals.
+endpoint types, record-local evidence keys resolved specifically from each
+record's `## Evidence` table (including duplicate-key detection), ADR 0006
+direct-host integrity, local Markdown links, possible duplicate names, and
+orphan signals.
 
 `generate` first validates the corpus, then derives public views from
 [`views/definitions.yaml`](../views/definitions.yaml) and the generated

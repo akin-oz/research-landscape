@@ -43,7 +43,8 @@ relationship_assertions:
 ---
 ```
 
-Every `SRC-*` value must resolve in that record's `## Evidence` table. It is a
+Every `SRC-*` value must resolve in a unique row of that record's `## Evidence`
+table; a prose mention elsewhere in the file does not resolve it. It is a
 record-local citation key, not a global source entity. Keep the source statement
 narrow: say exactly what the page supports and what it does not establish.
 

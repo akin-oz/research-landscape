@@ -110,8 +110,9 @@ RECOMMENDATION_KINDS = {
     "universities-hosting-groups-by-area",
 }
 
-SOURCE_PATTERN = re.compile(r"`(SRC-[A-Z0-9-]+)`")
 LINK_PATTERN = re.compile(r"\]\(([^)]+)\)")
+EVIDENCE_SECTION_PATTERN = re.compile(r"^## Evidence\s*$([\s\S]*?)(?=^## |\Z)", re.MULTILINE)
+EVIDENCE_SOURCE_ROW_PATTERN = re.compile(r"^\|\s*`(SRC-[A-Z0-9-]+)`\s*\|", re.MULTILINE)
 
 # These intervals implement docs/freshness-policy.md. They classify maintenance
 # attention only; they do not downgrade source quality or entity confidence.
@@ -201,9 +202,24 @@ def as_ids(value: Any) -> list[str]:
     return []
 
 
+def evidence_table_source_ids(body: str) -> list[str]:
+    """Return source IDs from the record's dedicated Evidence-table rows.
+
+    Source identifiers mentioned in narrative, limitations, or code examples do
+    not resolve a claim. The table is the canonical local citation registry.
+    """
+    section = EVIDENCE_SECTION_PATTERN.search(body)
+    if section is None:
+        return []
+    return EVIDENCE_SOURCE_ROW_PATTERN.findall(section.group(1))
+
+
 def validate_graph(root: Path, records: dict[str, Record], results: Results) -> None:
     for record in records.values():
-        source_keys = set(SOURCE_PATTERN.findall(record.body))
+        evidence_source_ids = evidence_table_source_ids(record.body)
+        source_keys = set(evidence_source_ids)
+        if len(evidence_source_ids) != len(source_keys):
+            results.error(f"{record.path.relative_to(root)}: duplicate source ID in Evidence table")
         for source_id in as_ids(record.metadata.get("source_ids", [])):
             if source_id not in source_keys:
                 results.error(f"{record.path.relative_to(root)}: source {source_id} missing from Evidence table")
