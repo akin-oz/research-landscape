@@ -12,6 +12,7 @@ All notable changes are documented here. This project follows the principles of 
 - Accepted and implemented ADR 0008: a bounded public mentorship-process evidence field, two independently reviewed category slices, and a non-comparative discovery query that retains source limitations.
 - New explainable discovery paths for AI-for-Materials groups, PIs, ecosystems, and direct-host universities; PIs with licensed open-source software development evidence; and universities directly hosting documented Computational Materials Science groups.
 - A `recommend --list` catalog for public query IDs, aliases, titles, and unavailable-dimension status, plus `recommend --query` interactive lookup.
+- An interactive `discover-groups` command for deterministic AND filtering of reviewed research groups by canonical area, country, software, and programming-language IDs, with every matching path and source ID shown.
 - A reproducible review-freshness audit based on canonical `last_review` dates and declared volatile-assertion deadlines.
 
 ### Changed

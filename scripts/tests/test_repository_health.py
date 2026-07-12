@@ -199,6 +199,28 @@ class RepositoryHealthTests(unittest.TestCase):
         rl.validate_graph(ROOT, {language.id: language, software.id: software}, results)
         self.assertTrue(any("requires matching implemented_in assertion" in error for error in results.errors))
 
+    def test_dynamic_group_discovery_is_explainable_and_anded(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        python_groups = rl.discovery_group_candidates(
+            records, None, None, None, "PROGRAMMING-LANGUAGE-PYTHON"
+        )
+        self.assertEqual(
+            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-PSI-MSD", "RG-THEOS"],
+            sorted(candidate["record"].id for candidate in python_groups),
+        )
+        us_ai_groups = rl.discovery_group_candidates(
+            records, "AREA-AI-FOR-MATERIALS", "COUNTRY-US", None, None
+        )
+        self.assertEqual(
+            ["RG-CEDER-GROUP", "RG-HACKING-MATERIALS"],
+            sorted(candidate["record"].id for candidate in us_ai_groups),
+        )
+        self.assertTrue(all(candidate["criteria"] == 2 for candidate in us_ai_groups))
+        ceder_signals = next(candidate for candidate in us_ai_groups if candidate["record"].id == "RG-CEDER-GROUP")["signals"]
+        self.assertTrue(any("direct host `UNIVERSITY-UC-BERKELEY`" in signal["label"] for signal in ceder_signals))
+        self.assertTrue(any("located in `COUNTRY-US`" in signal["label"] for signal in ceder_signals))
+
     def test_recommendation_catalog_lists_available_and_unavailable_queries(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

@@ -956,6 +956,172 @@ def recommendation_catalog(model: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+DISCOVERY_FILTER_TYPES = {
+    "area": "research-area",
+    "country": "country",
+    "software": "research-software",
+    "language": "programming-language",
+}
+
+
+def direct_host_country_signals(group: Record, country_id: str, records: dict[str, Record]) -> list[dict[str, Any]]:
+    """Return the documented group-to-country path required for a group filter.
+
+    The country filter deliberately follows the ADR 0006 direct host. It does
+    not guess a group's location from a name, nearby institution, or topic.
+    """
+    signals = []
+    direct_host_ids = set(as_ids(group.metadata.get("institution_id", []))) | set(
+        as_ids(group.metadata.get("organization_id", []))
+    )
+    for host_assertion in matching_assertions(group, "belongs_to"):
+        host = records.get(host_assertion.get("target_id"))
+        if host is None or host.id not in direct_host_ids or country_id not in resolved_countries(host, records):
+            continue
+        signals.append(signal(f"belongs to direct host `{host.id}`", host_assertion, group))
+        location_assertions = matching_assertions(host, "located_in", {country_id})
+        if location_assertions:
+            signals.extend(
+                signal(f"`{host.id}` is located in `{country_id}`", assertion, host)
+                for assertion in location_assertions
+            )
+        elif country_id in as_ids(host.metadata.get("country_id", [])):
+            signals.append(metadata_signal(f"`{host.id}` is classified in `{country_id}`", host))
+    return signals
+
+
+def deduplicate_signals(signals: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    unique = {}
+    for item in signals:
+        unique[(item["label"], item["sources"], item["confidence"])] = item
+    return list(unique.values())
+
+
+def discovery_group_candidates(
+    records: dict[str, Record],
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+) -> list[dict[str, Any]]:
+    """Apply ANDed, source-explainable filters to reviewed research groups."""
+    candidates = []
+    for group in records.values():
+        if group.entity_type != "research-group" or not eligible(group):
+            continue
+        signals = []
+        criteria = 0
+        developments = matching_assertions(group, "develops")
+        if area_id:
+            area_signals = [signal(f"works on `{area_id}`", assertion, group) for assertion in matching_assertions(group, "works_on", {area_id})]
+            if not area_signals:
+                continue
+            signals.extend(area_signals)
+            criteria += 1
+        if country_id:
+            country_signals = direct_host_country_signals(group, country_id, records)
+            if not country_signals:
+                continue
+            signals.extend(country_signals)
+            criteria += 1
+        if software_id:
+            developments = [assertion for assertion in developments if assertion.get("target_id") == software_id]
+            if not developments:
+                continue
+            signals.extend(signal(f"develops `{software_id}`", assertion, group) for assertion in developments)
+            criteria += 1
+        if language_id:
+            language_signals = []
+            for development in developments:
+                software = records.get(development.get("target_id"))
+                if software is None or software.entity_type != "research-software":
+                    continue
+                for implementation in matching_assertions(software, "implemented_in", {language_id}):
+                    language_signals.append(signal(f"develops `{software.id}`", development, group))
+                    language_signals.append(signal(f"`{software.id}` is implemented in `{language_id}`", implementation, software))
+            if not language_signals:
+                continue
+            signals.extend(language_signals)
+            criteria += 1
+        candidates.append({"record": group, "signals": deduplicate_signals(signals), "criteria": criteria})
+    return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
+
+
+def render_group_discovery(
+    records: dict[str, Record],
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+    output_path: Path,
+) -> str:
+    filters = [(name, value) for name, value in (
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id),
+    ) if value]
+    if not filters:
+        raise ValueError("provide at least one of --area, --country, --software, or --language")
+    candidates = discovery_group_candidates(records, area_id, country_id, software_id, language_id)
+    lines = [
+        "# Research-group discovery", "",
+        "**Status:** deterministic evidence-discovery result, not a ranking.", "",
+        "**AND filters:** " + "; ".join(f"{name} `{value}`" for name, value in filters) + ".", "",
+        "| Research group | Documented matching evidence | Confidence | Coverage |",
+        "| --- | --- | --- | --- |",
+    ]
+    total_criteria = len(filters)
+    for candidate in candidates:
+        signals = candidate["signals"]
+        rendered_signals = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in signals)
+        confidence = lowest_confidence([item["confidence"] for item in signals])
+        lines.append(
+            f"| {canonical_link(candidate['record'], output_path)} (`{candidate['record'].id}`) | {rendered_signals} | {confidence} | {candidate['criteria']}/{total_criteria} documented criteria |"
+        )
+    if not candidates:
+        lines.append("| — | No reviewed canonical research group matches every requested evidence criterion. | unavailable | 0 criteria |")
+    lines.extend([
+        "", "## Boundary", "",
+        "Results are alphabetically ordered and contain only reviewed groups with every requested source-backed criterion. A country match follows the group’s documented direct host; a language match follows a documented group-development edge and a software `implemented_in` assertion. This does not rank groups or establish openings, group-wide working language, individual skill, mentorship quality, funding, admissions, or applicant fit.", "",
+    ])
+    return "\n".join(lines)
+
+
+def discover_groups(
+    root: Path,
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+    check: bool,
+    query_id: str | None,
+    list_queries: bool,
+    as_of: str | None,
+) -> int:
+    if check or query_id or list_queries or as_of:
+        print("ERROR: discover-groups accepts only --area, --country, --software, and --language")
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id}
+    for name, value in filters.items():
+        if not value:
+            continue
+        target = records.get(value)
+        if target is None or target.entity_type != DISCOVERY_FILTER_TYPES[name]:
+            print(f"ERROR: --{name} must reference a canonical {DISCOVERY_FILTER_TYPES[name]} ID, got {value!r}")
+            return 2
+    try:
+        print(render_group_discovery(
+            records, area_id, country_id, software_id, language_id,
+            root / "reports/generated/evidence-recommendations.md",
+        ))
+    except ValueError as exc:
+        print(f"ERROR: {exc}")
+        return 2
+    return 0
+
+
 def write_or_check(path: Path, content: str, check: bool, drift: list[str]) -> None:
     if check:
         if not path.exists() or path.read_text(encoding="utf-8") != content:
@@ -1157,11 +1323,15 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "discover-groups", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
     parser.add_argument("--list", action="store_true", dest="list_queries", help="list public recommendation query IDs and aliases")
+    parser.add_argument("--area", help="canonical Research Area ID for discover-groups")
+    parser.add_argument("--country", help="canonical Country ID for discover-groups")
+    parser.add_argument("--software", help="canonical Research Software ID for discover-groups")
+    parser.add_argument("--language", help="canonical Programming Language ID for discover-groups")
     parser.add_argument("--as-of", help="ISO date for a reproducible freshness audit (defaults to today)")
     args = parser.parse_args()
     root = args.root.resolve()
@@ -1171,6 +1341,11 @@ def main() -> int:
         return 1 if results.errors else 0
     if args.command == "recommend":
         return recommend(root, args.check, args.query, args.list_queries)
+    if args.command == "discover-groups":
+        return discover_groups(
+            root, args.area, args.country, args.software, args.language,
+            args.check, args.query, args.list_queries, args.as_of,
+        )
     if args.command == "freshness":
         try:
             as_of = dt.date.fromisoformat(args.as_of) if args.as_of else dt.date.today()

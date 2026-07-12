@@ -23,6 +23,7 @@ Applicants often make high-stakes decisions from incomplete information and repu
 ## Start here
 
 - Explore the current canonical graph through the generated [global view](views/generated/global.md), [software view](views/generated/research-software.md), [ecosystem view](views/generated/ecosystems.md), and [evidence recommendations](reports/generated/evidence-recommendations.md).
+- Use `python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US` for an interactive, source-explainable group filter; see [automation](docs/automation.md) for the supported IDs and evidence paths.
 - Read [onboarding](docs/onboarding.md) to contribute, [entity authoring](docs/entity-authoring.md) before changing canonical knowledge, and [review process](docs/review-process.md) before opening a pull request.
 - Inspect the generated [repository-health report](reports/generated/repository-health.md) for current coverage and structural limits.
 

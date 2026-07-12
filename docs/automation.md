@@ -18,6 +18,8 @@ python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
 python3 scripts/research_landscape.py recommend --list
 python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
+python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
+python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 ```
 
@@ -44,6 +46,14 @@ evidence.
 aliases, and available/unavailable status. It reads no private profile or
 shortlist data. `recommend --query <id-or-alias>` renders one listed query for
 interactive discovery; neither form writes generated output.
+
+`discover-groups` is an interactive, non-generated AND filter over reviewed
+Research Groups. It accepts one or more canonical `--area`, `--country`,
+`--software`, and `--language` IDs. The command shows the source-backed path
+that satisfied each criterion: country follows the group's ADR 0006 direct
+host, and language follows a documented group-development edge through a
+Research Software `implemented_in` assertion. It is alphabetically ordered and
+does not rank or infer fit.
 
 `freshness` produces a non-generated, reproducible maintenance audit from
 review dates and declared volatile-assertion deadlines. Pass `--as-of` for a

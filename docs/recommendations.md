@@ -68,3 +68,14 @@ python3 scripts/research_landscape.py recommend --check
 it does not read private preferences. Correct facts at their canonical entity,
 rerun the command, and review the generated diff. Do not edit generated
 recommendations manually.
+
+For ad hoc group discovery, use the same canonical IDs with the non-generated
+filter command:
+
+```bash
+python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
+python3 scripts/research_landscape.py discover-groups --software SW-CHGNET --language PROGRAMMING-LANGUAGE-PYTHON
+```
+
+All supplied filters are required. The command exposes each documented path;
+it does not produce a score or rank.
