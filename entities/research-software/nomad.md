@@ -20,6 +20,15 @@ github: https://github.com/nomad-coe/nomad
 repository_url: https://github.com/nomad-coe/nomad
 website: https://nomad-lab.eu/
 license: Apache-2.0
+programming_language_ids:
+  - PROGRAMMING-LANGUAGE-PYTHON
+relationship_assertions:
+  - predicate: implemented_in
+    target_id: PROGRAMMING-LANGUAGE-PYTHON
+    source_ids: [SRC-NOMAD-REPOSITORY]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The project-owned repository exposes NOMAD as a Python package and identifies Python as a repository implementation language. This does not assert that every component, plugin, or contributor uses Python.
 ---
 
 # NOMAD
@@ -49,7 +58,8 @@ nodes or promises about access, review, or acceptance.
 
 This record does not claim that all FAIRmat participants maintain NOMAD, that
 the listed repository is the only development venue, or that current release
-activity proves research quality, availability, or applicant fit. Public issues,
-GitLab access, plugins, Oasis deployment, API, and documentation routes do not
-establish contributor status, review rights, acceptance, mentoring, employment,
-security posture, or a current governance roster.
+activity proves research quality, availability, or applicant fit. The Python
+relation does not make every component, plugin, or contributor Python-based.
+Public issues, GitLab access, plugins, Oasis deployment, API, and documentation
+routes do not establish contributor status, review rights, acceptance,
+mentoring, employment, security posture, or a current governance roster.

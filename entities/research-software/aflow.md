@@ -18,6 +18,15 @@ repository_url: https://github.com/aflow-org/aflow
 website: https://aflow.org/
 license: GPL-3.0
 open_source: "yes"
+programming_language_ids:
+  - PROGRAMMING-LANGUAGE-CPP
+relationship_assertions:
+  - predicate: implemented_in
+    target_id: PROGRAMMING-LANGUAGE-CPP
+    source_ids: [SRC-AFLOW-2023-PUBLICATION]
+    confidence: high
+    evidence_window: 2023-01
+    notes: The reviewed technical publication identifies aflow++ as a C++ framework. This records the framework implementation language, not a group-wide language policy or individual skill.
 ---
 
 # AFLOW framework
@@ -47,7 +56,9 @@ acceptance guarantees.
 
 The GPL-3.0 value applies to this software repository, not automatically to
 the AFLOW web ecosystem, its databases, interfaces, or every related artifact.
-The record makes no current-activity, release-quality, exclusive-maintenance,
-or individual-maintainer claim. Installation, documentation, API, and citation
-routes do not establish a personal support obligation, contribution acceptance,
-review right, mentoring relationship, or current governance roster.
+The C++ relation describes the reviewed framework, not a group-wide language
+policy or an individual skill. The record makes no current-activity,
+release-quality, exclusive-maintenance, or individual-maintainer claim.
+Installation, documentation, API, and citation routes do not establish a
+personal support obligation, contribution acceptance, review right, mentoring
+relationship, or current governance roster.

@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: eb2ae9f1dea33773eea03cbc72f30fa86c03439144ff718388f516f48a135648 -->
+<!-- input-fingerprint: c69be408e5fa8f7f2b48eef9de4c88ecd067890ff61af94d20850af3c030dd69 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `eb2ae9f1dea33773eea03cbc72f30fa86c03439144ff718388f516f48a135648`
+**Input fingerprint:** `c69be408e5fa8f7f2b48eef9de4c88ecd067890ff61af94d20850af3c030dd69`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -311,6 +311,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH); `SW-AIIDA-CORE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-AIIDA-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); `SW-AIIDA-CORE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-AIIDA-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | develops `SW-MATGL` (sources: SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY); `SW-MATGL` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-MATGL-REPOSITORY) | high | 2/2 documented criteria |
+| [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM); `SW-RADONPY` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-RADONPY-REPOSITORY) | high | 2/2 documented criteria |
 
 **Limitations:** This exposes only a group’s sourced development link to software with a documented Python implementation. It does not establish a group-wide working language, individual proficiency, training requirement, hiring criterion, or applicant fit.
 

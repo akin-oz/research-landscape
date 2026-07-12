@@ -37,7 +37,7 @@ flowchart LR
 | --- | --- | --- |
 | Purpose and scientific scope | NOMAD documentation and the JOSS paper describe research-data management for materials science, including storage, processing, discovery, analysis, sharing, and reuse routes. | This does not prove every data domain, service, dataset, or user outcome. |
 | Architecture | Documentation describes a container-oriented app/worker split, API, GUI, documentation, parsing/normalization, processing, storage, search, and supporting services. | Components and dependencies remain upstream technical context, not speculative canonical entities or deployment/security claims. |
-| Programming language | Documentation describes a Python backend, while the JOSS record supplies the citable technical reference. | No `programming_language_ids` value is added: the vNext Language entity contract is absent. |
+| Programming language | Documentation and the project repository describe a Python implementation surface; the later language-coverage increment records `SW-NOMAD → implemented_in → PROGRAMMING-LANGUAGE-PYTHON`. | This does not make every component, plugin, or contributor Python-based. |
 | Maintainers and core contributors | The JOSS author list supports a historical Claudia Draxl authorship relation; contribution docs describe public GitHub and account-gated GitLab paths. | Neither establishes a complete current maintainer, core-contributor, review, or governance roster. |
 | Institutions and groups | Existing FAIRmat, Claudia Draxl, SOLgroup, HU Berlin, historic project, Horizon 2020, and event records stay separately evidenced. | FAIRmat’s operation and further development of NOMAD is not reframed as exclusive ownership or universal participant maintenance. |
 | Key publication | `PUB-NOMAD-JOSS-2023` has a date, DOI, one reviewed author relation, and a direct software description. | The other paper authors are not created merely to complete the author list. |
@@ -58,10 +58,10 @@ guarantee of access, compatibility, acceptance, or support.
 
 ## Deliberate omissions
 
-- No Programming Language, Community, API endpoint, dependency, parser,
-  normalizer, database, workflow, plugin, Oasis, GitLab account, or detailed
-  Maintainer node is created without a canonical entity and relationship
-  contract.
+- No Community, API endpoint, dependency, parser, normalizer, database,
+  workflow, plugin, Oasis, GitLab account, or detailed Maintainer node is
+  created without a canonical entity and relationship contract. Python is
+  separately canonicalized only for the supported NOMAD implementation path.
 - No complete publication author list, current maintainer roster, contributor
   list, review role, or employment claim is inferred from an article or public
   contribution guidance.
@@ -76,7 +76,7 @@ future traversals without copied facts:
 
 | View family | Traversal |
 | --- | --- |
-| Research software | `SW-NOMAD` ← `includes` ← `ECO-FAIRMAT`; `PUB-NOMAD-JOSS-2023` → `describes` → software. |
+| Research software | `SW-NOMAD` ← `includes` ← `ECO-FAIRMAT`; `PUB-NOMAD-JOSS-2023` → `describes` → software; `SW-NOMAD` → `implemented_in` → Python. |
 | Research ecosystem | `ECO-FAIRMAT` → `includes` → software; → `connects` → PI and dated community event. |
 | Funding and project | `FUND-H2020-RESEARCH-INFRASTRUCTURES` → `funds` → `PROJ-NOMAD-LABORATORY-COE` → `develops` → software. |
 | Publication | `PUB-NOMAD-JOSS-2023` → `authored_by` → `PI-CLAUDIA-DRAXL`; → `describes` → software. |

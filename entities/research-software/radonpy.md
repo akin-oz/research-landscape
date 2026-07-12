@@ -16,6 +16,15 @@ github: https://github.com/RadonPy/RadonPy
 repository_url: https://github.com/RadonPy/RadonPy
 website: https://github.com/RadonPy/RadonPy
 license: BSD-3-Clause
+programming_language_ids:
+  - PROGRAMMING-LANGUAGE-PYTHON
+relationship_assertions:
+  - predicate: implemented_in
+    target_id: PROGRAMMING-LANGUAGE-PYTHON
+    source_ids: [SRC-RADONPY-REPOSITORY]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The project-owned repository describes RadonPy as a Python library. This records the software implementation language, not a group-wide language policy or an individual skill.
 ---
 
 # RadonPy
@@ -37,4 +46,5 @@ roster.
 This record does not claim that RIKEN or the Polymeromics Team exclusively owns
 or maintains RadonPy, that every team member is a maintainer, or that repository
 activity establishes a particular opening, mentoring environment, or applicant
-fit.
+fit. The Python relation does not make Python a team-wide requirement or claim
+that every team member uses it.

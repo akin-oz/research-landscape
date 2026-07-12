@@ -180,7 +180,7 @@ class RepositoryHealthTests(unittest.TestCase):
         queries = {query["query_id"]: query for query in model["queries"]}
         python_candidates = rl.recommendation_candidates(queries["python-heavy-research-groups"], records)
         self.assertEqual(
-            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-MATERIALYZE-AI", "RG-PSI-MSD", "RG-THEOS"],
+            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-MATERIALYZE-AI", "RG-PSI-MSD", "RG-RIKEN-POLYMEROMICS", "RG-THEOS"],
             sorted(candidate["record"].id for candidate in python_candidates),
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in python_candidates))
@@ -198,6 +198,27 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(2, len(hacking_materials["signals"]))
         self.assertTrue(any("`professional-development`" in signal["label"] for signal in hacking_materials["signals"]))
         self.assertEqual("unavailable", queries["high-mentorship-environments"]["status"])
+
+    def test_cplusplus_and_python_software_paths_are_explicit(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        self.assertEqual(
+            ["PROGRAMMING-LANGUAGE-CPP"],
+            records["SW-AFLOW"].metadata["programming_language_ids"],
+        )
+        self.assertEqual(
+            ["PROGRAMMING-LANGUAGE-PYTHON"],
+            records["SW-NOMAD"].metadata["programming_language_ids"],
+        )
+        self.assertEqual(
+            ["PROGRAMMING-LANGUAGE-PYTHON"],
+            records["SW-RADONPY"].metadata["programming_language_ids"],
+        )
+        cplusplus_groups = rl.discovery_group_candidates(
+            records, None, None, None, "PROGRAMMING-LANGUAGE-CPP"
+        )
+        self.assertEqual(["RG-CURTAROLO-GROUP"], [candidate["record"].id for candidate in cplusplus_groups])
+        self.assertTrue(any("SW-AFLOW" in signal["label"] for signal in cplusplus_groups[0]["signals"]))
 
     def test_programming_language_facet_requires_a_matching_relation(self) -> None:
         language = rl.Record(
@@ -226,7 +247,7 @@ class RepositoryHealthTests(unittest.TestCase):
             records, None, None, None, "PROGRAMMING-LANGUAGE-PYTHON"
         )
         self.assertEqual(
-            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-MATERIALYZE-AI", "RG-PSI-MSD", "RG-THEOS"],
+            ["RG-CEDER-GROUP", "RG-DTU-CAMD", "RG-MATERIALYZE-AI", "RG-PSI-MSD", "RG-RIKEN-POLYMEROMICS", "RG-THEOS"],
             sorted(candidate["record"].id for candidate in python_groups),
         )
         us_ai_groups = rl.discovery_group_candidates(
@@ -304,6 +325,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`COUNTRY-GB`", catalog)
         self.assertIn("`SW-MATGL`", catalog)
         self.assertIn("`PROGRAMMING-LANGUAGE-PYTHON`", catalog)
+        self.assertIn("`PROGRAMMING-LANGUAGE-CPP`", catalog)
         self.assertIn("contains no private profile", catalog)
 
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:

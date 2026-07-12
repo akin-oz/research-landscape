@@ -21,6 +21,7 @@ python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
 python3 scripts/research_landscape.py catalog
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
+python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-CPP
 python3 scripts/research_landscape.py discover-pis --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-MATERIALS --country COUNTRY-US

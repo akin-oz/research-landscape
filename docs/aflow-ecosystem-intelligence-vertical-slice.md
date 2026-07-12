@@ -36,7 +36,7 @@ flowchart LR
 | --- | --- | --- |
 | Purpose and scientific scope | AFLOW documentation describes high-throughput materials discovery using DFT and data informatics. | This does not establish every scientific application, algorithm, or database property. |
 | Architecture | The framework and web/data ecosystem remain separate canonical records; documentation exposes source, installation, generated-code documentation, data APIs, and application context. | Public interfaces and software components are not recast as an implementation, deployment, security, or dependency graph. |
-| Programming language | The key technical paper identifies `aflow++` as a C++ framework. | No `programming_language_ids` value is added: the vNext Language entity contract is absent. |
+| Programming language | The key technical paper identifies `aflow++` as a C++ framework; the later language-coverage increment records `SW-AFLOW → implemented_in → PROGRAMMING-LANGUAGE-CPP`. | This records the framework implementation language, not a group-wide language policy, individual skill, or training requirement. |
 | Maintainers and core contributors | Official framework documentation lists Stefano Curtarolo as a contributor, yielding a bounded `ECO-AFLOW → connects → PI-STEFANO-CURTAROLO` assertion. | The contributor listing is not an exhaustive current maintainer roster, maintenance assignment, reviewer role, or governance claim. |
 | Institutions and groups | Existing Curtarolo Group, Duke, and PI records preserve independently reviewed group development and host relations. | The group relation is not exclusive development, and the ecosystem link does not duplicate it. |
 | Key publication | `PUB-AFLOW-PLUS-PLUS-2023` has date, DOI, one reviewed author relation, and a direct framework description. | Other authors are not created simply to complete the paper’s author list. |
@@ -57,9 +57,10 @@ contribution.
 
 ## Deliberate omissions
 
-- No Programming Language, Community, API endpoint, data product, dependency,
-  database, workflow, package, external contributor, or detailed Maintainer node
-  is created without the required canonical entity and relationship contract.
+- No Community, API endpoint, data product, dependency, database, workflow,
+  package, external contributor, or detailed Maintainer node is created without
+  the required canonical entity and relationship contract. C++ is separately
+  canonicalized only for the supported AFLOW implementation path.
 - No complete author list, maintainer roster, contributor list, code-review
   role, consortium roster, or employment claim is inferred from a paper,
   documentation page, or source repository.
@@ -74,7 +75,7 @@ future traversals without copied facts:
 
 | View family | Traversal |
 | --- | --- |
-| Research software | `SW-AFLOW` ← `includes` ← `ECO-AFLOW`; `PUB-AFLOW-PLUS-PLUS-2023` → `describes` → software. |
+| Research software | `SW-AFLOW` ← `includes` ← `ECO-AFLOW`; `PUB-AFLOW-PLUS-PLUS-2023` → `describes` → software; `SW-AFLOW` → `implemented_in` → C++. |
 | Research ecosystem | `ECO-AFLOW` → `includes` → software; → `connects` → a documented contributor. |
 | Research group and University | `RG-CURTAROLO-GROUP` → `develops` → software; → `belongs_to` → `UNIVERSITY-DUKE`. |
 | Publication | `PUB-AFLOW-PLUS-PLUS-2023` → `authored_by` → `PI-STEFANO-CURTAROLO`; → `describes` → software. |
