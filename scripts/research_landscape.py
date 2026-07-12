@@ -485,6 +485,39 @@ def health_report(root: Path, records: dict[str, Record], results: Results, fing
         for assertion in record.metadata.get("relationship_assertions", []) or []
     )
     relationships = sum(predicates.values())
+    reviewed = [record for record in records.values() if record.metadata.get("status") in {"reviewed", "published"}]
+    records_with_sources = sum(bool(record.metadata.get("source_ids")) for record in reviewed)
+    records_with_last_review = sum(bool(record.metadata.get("last_review")) for record in reviewed)
+    sourced_relationships = sum(
+        bool(assertion.get("source_ids"))
+        for record in records.values()
+        for assertion in record.metadata.get("relationship_assertions", []) or []
+    )
+    reviewed_groups = [record for record in reviewed if record.entity_type == "research-group"]
+    valid_host_groups = sum(
+        len([field for field in ("institution_id", "organization_id") if field in record.metadata]) == 1
+        for record in reviewed_groups
+    )
+    incoming = Counter()
+    for record in records.values():
+        for target_id in relation_targets(record):
+            incoming[target_id] += 1
+        for field in REFERENCE_TYPES:
+            for target_id in as_ids(record.metadata.get(field, [])):
+                incoming[target_id] += 1
+    connected = sum(
+        bool(record.metadata.get("relationship_assertions")) or incoming[record.id] > 0
+        for record in records.values()
+    )
+    view_manifest = yaml.safe_load((root / "views/definitions.yaml").read_text(encoding="utf-8"))
+    view_definitions = view_manifest.get("views", [])
+    public_views = [view for view in view_definitions if view.get("visibility") == "public"]
+    private_views = [view for view in view_definitions if view.get("visibility") == "private"]
+    recommendation_model, recommendation_errors = validate_recommendation_model(root, records)
+    recommendation_queries = recommendation_model.get("queries", []) if not recommendation_errors else []
+    available_queries = [query for query in recommendation_queries if query.get("status") != "unavailable"]
+    unavailable_queries = [query for query in recommendation_queries if query.get("status") == "unavailable"]
+    broken_links = sum("broken local Markdown link" in error for error in results.errors)
     lines = [
         "<!-- GENERATED FILE: edit canonical inputs, then regenerate. -->",
         f"<!-- input-fingerprint: {fingerprint} -->",
@@ -514,6 +547,20 @@ def health_report(root: Path, records: dict[str, Record], results: Results, fing
         "",
         f"- Canonical v2 records in approved entity directories: **{len(records)}**",
         "- v2 frontmatter outside `entities/`: **0** when validation passes.",
+        "",
+        "## Quality coverage",
+        "",
+        "| Metric | Result |",
+        "| --- | ---: |",
+        f"| Reviewed/published records with source IDs | {records_with_sources}/{len(reviewed)} |",
+        f"| Reviewed/published records with last-review dates | {records_with_last_review}/{len(reviewed)} |",
+        f"| Typed relationships with source IDs | {sourced_relationships}/{relationships} |",
+        f"| Reviewed groups with exactly one direct-host field | {valid_host_groups}/{len(reviewed_groups)} |",
+        f"| Entities with an inbound or outbound graph connection | {connected}/{len(records)} |",
+        f"| Broken local Markdown links | {broken_links} |",
+        f"| Canonical view definitions (public/private) | {len(view_definitions)} ({len(public_views)}/{len(private_views)}) |",
+        f"| Generated public views | {len(PUBLIC_VIEW_FILES)}/{len(public_views)} |",
+        f"| Recommendation queries (available/unavailable) | {len(recommendation_queries)} ({len(available_queries)}/{len(unavailable_queries)}) |",
         "",
         "## Relationship predicates",
         "",

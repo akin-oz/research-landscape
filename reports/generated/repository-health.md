@@ -41,6 +41,20 @@
 - Canonical v2 records in approved entity directories: **67**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
+## Quality coverage
+
+| Metric | Result |
+| --- | ---: |
+| Reviewed/published records with source IDs | 67/67 |
+| Reviewed/published records with last-review dates | 67/67 |
+| Typed relationships with source IDs | 116/116 |
+| Reviewed groups with exactly one direct-host field | 11/11 |
+| Entities with an inbound or outbound graph connection | 67/67 |
+| Broken local Markdown links | 0 |
+| Canonical view definitions (public/private) | 13 (10/3) |
+| Generated public views | 10/10 |
+| Recommendation queries (available/unavailable) | 11 (9/2) |
+
 ## Relationship predicates
 
 | Predicate | Count |

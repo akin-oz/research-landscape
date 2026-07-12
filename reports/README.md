@@ -21,6 +21,7 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [Quality Gate 5 view-system review](quality-gate-5-view-system-review.md) — deterministic view definitions, public/private boundaries, and the deliberate handoff to generation automation.
 - [Quality Gate 6 automation review](quality-gate-6-automation-review.md) — validator, reproducible views, health metrics, and CI enforcement.
 - [Quality Gate 7 explainable recommendations review](quality-gate-7-explainable-recommendations-review.md) — evidence-discovery queries, unavailable-dimension handling, and deterministic explanation output.
+- [Quality Gate 8 knowledge-quality review](quality-gate-8-knowledge-quality-review.md) — complete canonical-cohort health audit, measurable gaps, and evidence-first improvement priorities.
 - [Persson Group intelligence review](persson-group-intelligence-vertical-slice-review.md) — first QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [Wolverton Group intelligence review](wolverton-group-intelligence-vertical-slice-review.md) — second QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [Curtarolo Group intelligence review](curtarolo-group-intelligence-vertical-slice-review.md) — third QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
