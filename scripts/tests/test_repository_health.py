@@ -143,6 +143,18 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(1, len(includes))
         self.assertEqual(["SRC-FAIRCHEM-DOCUMENTATION", "SRC-FAIRCHEM-REPOSITORY"], includes[0]["source_ids"])
 
+    def test_ceder_chgnet_development_path_is_sourced(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        group = records["RG-CEDER-GROUP"]
+        software = records["SW-CHGNET"]
+        self.assertEqual("yes", software.metadata["open_source"])
+        self.assertEqual("BSD-3-Clause", software.metadata["license"])
+        self.assertEqual(
+            ["SRC-CEDER-GROUP-CHGNET"],
+            rl.matching_assertions(group, "develops", {software.id})[0]["source_ids"],
+        )
+
     def test_recommendation_catalog_lists_available_and_unavailable_queries(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81 -->
+<!-- input-fingerprint: 8a87f545e39a67a13a6b4cefc8bc8da97dceeac5d351308fb35be37389c2fa3d -->
 # Repository health report
 
-**Input fingerprint:** `e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81`
+**Input fingerprint:** `8a87f545e39a67a13a6b4cefc8bc8da97dceeac5d351308fb35be37389c2fa3d`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **73**
-- Typed relationship assertions: **129**
+- Canonical v2 entities: **74**
+- Typed relationship assertions: **130**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -27,29 +27,29 @@
 | research-area | 3 |
 | research-ecosystem | 8 |
 | research-group | 12 |
-| research-software | 7 |
+| research-software | 8 |
 | university | 7 |
 
 ## Confidence coverage
 
 | Confidence | Count |
 | --- | ---: |
-| high | 73 |
+| high | 74 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **73**
+- Canonical v2 records in approved entity directories: **74**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 73/73 |
-| Reviewed/published records with last-review dates | 73/73 |
-| Typed relationships with source IDs | 129/129 |
+| Reviewed/published records with source IDs | 74/74 |
+| Reviewed/published records with last-review dates | 74/74 |
+| Typed relationships with source IDs | 130/130 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
-| Entities with an inbound or outbound graph connection | 73/73 |
+| Entities with an inbound or outbound graph connection | 74/74 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
@@ -66,7 +66,7 @@
 | connects | 19 |
 | covers | 1 |
 | describes | 5 |
-| develops | 7 |
+| develops | 8 |
 | funds | 1 |
 | includes | 7 |
 | involves | 1 |

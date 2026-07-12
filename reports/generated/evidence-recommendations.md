@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 904a6067823d10193ba1b5c7aede0c4588d28a2e54e519e860bbd4800c6eb486 -->
+<!-- input-fingerprint: 73bf218e8eeadd7d3189c17330e81a3cfc6c08a64cc2e5e5bb874ebed820c5dd -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `904a6067823d10193ba1b5c7aede0c4588d28a2e54e519e860bbd4800c6eb486`
+**Input fingerprint:** `73bf218e8eeadd7d3189c17330e81a3cfc6c08a64cc2e5e5bb874ebed820c5dd`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -19,6 +19,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) (`RG-CEDER-GROUP`) | develops `SW-CHGNET` (sources: SRC-CEDER-GROUP-CHGNET) | high | 1/1 documented criteria |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 1/1 documented criteria |
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW) | high | 1/1 documented criteria |
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
@@ -83,6 +84,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) (`RG-CEDER-GROUP`) | develops licensed open-source `SW-CHGNET` (sources: SRC-CEDER-GROUP-CHGNET) | high | 1/1 documented criteria |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops licensed open-source `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 1/1 documented criteria |
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops licensed open-source `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW) | high | 1/1 documented criteria |
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
@@ -99,6 +101,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) (`RG-CEDER-GROUP`) | develops `SW-CHGNET` (sources: SRC-CEDER-GROUP-CHGNET); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE) | high | 2/2 documented criteria |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CURTAROLO-GROUP-JOBS) | high | 2/2 documented criteria |
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |

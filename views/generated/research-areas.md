@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81 -->
+<!-- input-fingerprint: 8a87f545e39a67a13a6b4cefc8bc8da97dceeac5d351308fb35be37389c2fa3d -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81`
+**Input fingerprint:** `8a87f545e39a67a13a6b4cefc8bc8da97dceeac5d351308fb35be37389c2fa3d`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -15,6 +15,7 @@
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Hacking Materials](../../entities/research-groups/hacking-materials.md) | `RG-HACKING-MATERIALS` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) | `RG-MATERIALYZE-AI` | research-group | high | 2026-07-12 | COUNTRY-SG |
+| [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
 
 ## [Computational Materials Science](../../entities/research-areas/computational-materials-science.md)
@@ -41,6 +42,7 @@
 | [Persson Group](../../entities/research-groups/persson-group.md) | `RG-PERSSON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-12 | COUNTRY-DE |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
 
 ## [Materials Informatics](../../entities/research-areas/materials-informatics.md)
 

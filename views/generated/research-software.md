@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81 -->
+<!-- input-fingerprint: 8a87f545e39a67a13a6b4cefc8bc8da97dceeac5d351308fb35be37389c2fa3d -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `e84235132a2e17a73543b6b7fb49242a5d904ea1b83d2854add86d2bf3ee6b81`
+**Input fingerprint:** `8a87f545e39a67a13a6b4cefc8bc8da97dceeac5d351308fb35be37389c2fa3d`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/research-software/aflow.md)
@@ -34,6 +34,13 @@
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) | `ECO-ASE` | research-ecosystem | high | 2026-07-12 | — |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |
 | [Atomic Simulation Environment (ASE)](../../entities/research-software/ase.md) | `SW-ASE` | research-software | high | 2026-07-12 | — |
+
+## [CHGNet](../../entities/research-software/chgnet.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
 
 ## [FAIRChem](../../entities/research-software/fairchem.md)
 

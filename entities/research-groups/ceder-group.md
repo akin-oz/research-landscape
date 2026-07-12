@@ -11,10 +11,13 @@ confidence: high
 source_ids:
   - SRC-UC-BERKELEY-CEDER-PROFILE
   - SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION
+  - SRC-CEDER-GROUP-CHGNET
 institution_id: UNIVERSITY-UC-BERKELEY
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
   - AREA-AI-FOR-MATERIALS
+software_ids:
+  - SW-CHGNET
 website: https://ceder.berkeley.edu/
 relationship_assertions:
   - predicate: belongs_to
@@ -32,6 +35,12 @@ relationship_assertions:
     source_ids: [SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION]
     confidence: high
     evidence_window: 2026-07
+  - predicate: develops
+    target_id: SW-CHGNET
+    source_ids: [SRC-CEDER-GROUP-CHGNET]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The group states that it developed CHGNet; this does not establish an individual maintainer roster, ownership of every release, or a current contributor role.
 ---
 
 # CEDER Group
@@ -50,6 +59,7 @@ publication, or collaboration into a canonical record.
 | --- | --- |
 | `SRC-UC-BERKELEY-CEDER-PROFILE` | [UC Berkeley Research: Gerbrand Ceder](https://vcresearch.berkeley.edu/faculty/gerbrand-ceder) identifies the Computational and Experimental Design of Emerging Materials Research group as part of UC Berkeley's Materials Science and Engineering department, describes its computational/high-throughput materials work and Materials Project contribution, and states that it has built an AI-driven autonomous laboratory for materials synthesis and characterization. Accessed 2026-07-12. |
 | `SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION` | [CEDER Group: Autonomous experimentation for accelerated materials discovery](https://ceder.berkeley.edu/research-areas/autonomous-experimentation-for-accelerated-materials-discovery/) describes robotic synthesis/characterization, machine-learned interpretation, and AI-enabled decision making in the group's A-Lab work. Accessed 2026-07-12. |
+| `SRC-CEDER-GROUP-CHGNET` | [CEDER Group: Openings](https://ceder.berkeley.edu/contact-us/openings/) states that the group has developed CHGNet, a universal machine-learning potential, in its Modeling AI/ML description. The source also contains time-sensitive opportunity content, which is not used by this record. Accessed 2026-07-12. |
 
 ## Boundary and limitations
 
