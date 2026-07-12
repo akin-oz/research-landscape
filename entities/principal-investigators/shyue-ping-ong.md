@@ -20,6 +20,8 @@ research_group_ids:
 research_area_ids:
   - AREA-MATERIALS-INFORMATICS
   - AREA-MACHINE-LEARNED-POTENTIALS
+publication_ids:
+  - PUB-M3GNET-2022
 website: https://www.materialyze.ai/
 relationship_assertions:
   - predicate: affiliated_with
@@ -65,7 +67,7 @@ connection, and documented pymatgen stewardship.
 | `SRC-NUS-ONG-PROFILE` | [NUS Materials Science and Engineering: Shyue Ping Ong](https://cde.nus.edu.sg/mse/staff/shyue-ping-ong/) identifies him as a Provost's Chair Professor at NUS, leader of Materialyze.AI, founder and lead developer of pymatgen, and a core contributor to Materials Project. Accessed 2026-07-12. |
 | `SRC-MATERIALYZE-TEAM` | [Materialyze.AI: Team](https://www.materialyze.ai/team) records his 2026– NUS appointment and 2013–2025 UC San Diego appointments. Accessed 2026-07-12. |
 | `SRC-PYMATGEN-TEAM` | [pymatgen: Development Team](https://pymatgen.org/team.html) lists Shyue Ping Ong as a lead developer. The page's UCSD affiliation text is not used for the current affiliation; the NUS sources above supply that evidence. Accessed 2026-07-12. |
-| `SRC-M3GNET-PUBLICATION` | [Materialyze.AI: A universal graph deep learning interatomic potential for the periodic table](https://www.materialyze.ai/publications/10.1038%2Fs43588-022-00349-3) identifies Shyue Ping Ong as an author and describes M3GNet as a universal graph-neural-network interatomic potential for materials. It supports a research-topic relation, not a current MatGL maintainer, governance, or individual contribution claim. Accessed 2026-07-12. |
+| `SRC-M3GNET-PUBLICATION` | [Nature Computational Science: A universal graph deep learning interatomic potential for the periodic table](https://www.nature.com/articles/s43588-022-00349-3) identifies Shyue Ping Ong as an author and describes M3GNet as a universal graph-neural-network interatomic potential for materials. The canonical publication record is `PUB-M3GNET-2022`. This source supports a research-topic relation, not a current MatGL maintainer, governance, or individual contribution claim. Accessed 2026-07-12. |
 
 ## Boundary and limitations
 

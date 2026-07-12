@@ -352,6 +352,29 @@ class RepositoryHealthTests(unittest.TestCase):
         development = rl.matching_assertions(records["PI-GABOR-CSANYI"], "develops", {"SW-MACE"})
         self.assertEqual("group-attributed-development", development[0]["role"])
 
+    def test_m3gnet_publication_is_a_sourced_author_and_area_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        publication = records["PUB-M3GNET-2022"]
+        self.assertEqual("2022-11-28", publication.metadata["publication_date"])
+        self.assertEqual(
+            ["PI-SHYUE-PING-ONG"],
+            [assertion["target_id"] for assertion in rl.matching_assertions(publication, "authored_by")],
+        )
+        self.assertEqual(
+            ["AREA-MACHINE-LEARNED-POTENTIALS"],
+            [assertion["target_id"] for assertion in rl.matching_assertions(publication, "addresses")],
+        )
+        self.assertEqual([], rl.matching_assertions(publication, "describes"))
+        self.assertIn("PUB-M3GNET-2022", records["PI-SHYUE-PING-ONG"].metadata["publication_ids"])
+        research_area_view = rl.render_view(
+            next(view for view in rl.yaml.safe_load((ROOT / "views/definitions.yaml").read_text(encoding="utf-8"))["views"] if view["view_id"] == "research-areas"),
+            records,
+            ROOT / "reports/generated/views/research-areas.md",
+            "test-fingerprint",
+        )
+        self.assertIn("PUB-M3GNET-2022", research_area_view)
+
     def test_recommendation_catalog_lists_available_and_unavailable_queries(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

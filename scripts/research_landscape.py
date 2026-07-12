@@ -54,6 +54,7 @@ RELATION_TARGETS = {
     ("research-group", "works_on"): {"research-area"},
     ("research-group", "develops"): {"research-software"},
     ("publication", "authored_by"): {"principal-investigator"},
+    ("publication", "addresses"): {"research-area"},
     ("publication", "describes"): {"project", "research-software"},
     ("project", "involves"): {"principal-investigator", "research-group", "university", "organization"},
     ("project", "develops"): {"research-software"},
@@ -523,7 +524,12 @@ def render_view(view: dict[str, Any], records: dict[str, Record], output_path: P
             lines.append("")
     elif view_id == "research-areas":
         for area in sorted((r for r in selected if r.entity_type == "research-area"), key=lambda r: r.metadata["name"].casefold()):
-            members = [record for record in selected if area.id in metadata_or_relation_ids(record, "research_area_ids", "works_on", "research-area", records) or area.id in relation_targets(record, "covers")]
+            members = [
+                record for record in selected
+                if area.id in metadata_or_relation_ids(record, "research_area_ids", "works_on", "research-area", records)
+                or area.id in relation_targets(record, "covers")
+                or area.id in relation_targets(record, "addresses")
+            ]
             lines.extend([f"## {canonical_link(area, output_path)}", ""])
             lines.extend(rows(members, output_path, records))
             lines.append("")

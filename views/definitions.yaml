@@ -47,7 +47,7 @@ views:
     membership: {status_in: [reviewed, published], requires: research_area_ids_or_documented_area_relation}
     facets: [research_area_ids, entity_type, software_ids, resolved_country]
     ordering: [research_area_label, entity_type, name, id]
-    relationship_traversals: [research-group.works_on.research-area, principal-investigator.works_on.research-area, project.works_on.research-area, conference.covers.research-area]
+    relationship_traversals: [research-group.works_on.research-area, principal-investigator.works_on.research-area, project.works_on.research-area, publication.addresses.research-area, conference.covers.research-area]
     output_reason: "QG6 must distinguish direct metadata from typed topical assertions."
 
   - view_id: research-software

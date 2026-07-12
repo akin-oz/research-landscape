@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907 -->
+<!-- input-fingerprint: b75e3f5d99f58860b105632e84ed26df8d3d1244633b034e46f7bb3903fc7d16 -->
 # Repository health report
 
-**Input fingerprint:** `5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907`
+**Input fingerprint:** `b75e3f5d99f58860b105632e84ed26df8d3d1244633b034e46f7bb3903fc7d16`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **82**
-- Typed relationship assertions: **144**
+- Canonical v2 entities: **83**
+- Typed relationship assertions: **146**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -24,7 +24,7 @@
 | principal-investigator | 12 |
 | programming-language | 1 |
 | project | 1 |
-| publication | 7 |
+| publication | 8 |
 | research-area | 4 |
 | research-ecosystem | 9 |
 | research-group | 12 |
@@ -35,22 +35,22 @@
 
 | Confidence | Count |
 | --- | ---: |
-| high | 82 |
+| high | 83 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **82**
+- Canonical v2 records in approved entity directories: **83**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 82/82 |
-| Reviewed/published records with last-review dates | 82/82 |
-| Typed relationships with source IDs | 144/144 |
+| Reviewed/published records with source IDs | 83/83 |
+| Reviewed/published records with last-review dates | 83/83 |
+| Typed relationships with source IDs | 146/146 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
-| Entities with an inbound or outbound graph connection | 82/82 |
+| Entities with an inbound or outbound graph connection | 83/83 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
@@ -71,9 +71,10 @@ These are counts of direct, documented graph paths. They measure current corpus 
 
 | Predicate | Count |
 | --- | ---: |
+| addresses | 1 |
 | administers | 2 |
 | affiliated_with | 13 |
-| authored_by | 8 |
+| authored_by | 9 |
 | belongs_to | 14 |
 | connects | 19 |
 | covers | 1 |

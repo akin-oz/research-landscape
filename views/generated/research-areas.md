@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907 -->
+<!-- input-fingerprint: b75e3f5d99f58860b105632e84ed26df8d3d1244633b034e46f7bb3903fc7d16 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907`
+**Input fingerprint:** `b75e3f5d99f58860b105632e84ed26df8d3d1244633b034e46f7bb3903fc7d16`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -51,6 +51,7 @@
 | --- | --- | --- | --- | --- | --- |
 | [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) | `PI-GABOR-CSANYI` | principal-investigator | high | 2026-07-12 | COUNTRY-GB |
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) | `PI-SHYUE-PING-ONG` | principal-investigator | high | 2026-07-12 | COUNTRY-SG |
+| [A universal graph deep learning interatomic potential for the periodic table](../../entities/publications/m3gnet-2022.md) | `PUB-M3GNET-2022` | publication | high | 2026-07-12 | — |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) | `RG-MATERIALYZE-AI` | research-group | high | 2026-07-12 | COUNTRY-SG |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |

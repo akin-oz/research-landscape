@@ -61,8 +61,11 @@ flowchart LR
   for pymatgen or Materials Project.
 - No current opening, mentoring, admissions, funding, language, ranking, or
   applicant-fit conclusion is drawn from the current sources.
-- No Department, project, funding-programme, publication, or additional-person
-  record is created without separately reviewed evidence.
+- No Department, project, funding-programme, or additional-person record is
+  created without separately reviewed evidence. The later-reviewed
+  [`PUB-M3GNET-2022`](../entities/publications/m3gnet-2022.md) is a separate,
+  bounded publication extension rather than an implicit part of this anchor
+  chain.
 
 ## View reachability
 

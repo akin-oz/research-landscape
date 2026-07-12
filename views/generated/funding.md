@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907 -->
+<!-- input-fingerprint: b75e3f5d99f58860b105632e84ed26df8d3d1244633b034e46f7bb3903fc7d16 -->
 # Funding view
 
 **Definition:** `funding`
-**Input fingerprint:** `5370f43f24b83bdb47d9525dad1468d2e51e03da18752c0207686fdf0461b907`
+**Input fingerprint:** `b75e3f5d99f58860b105632e84ed26df8d3d1244633b034e46f7bb3903fc7d16`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Horizon 2020 — Research Infrastructures](../../entities/funding/horizon-2020-research-infrastructures.md)
