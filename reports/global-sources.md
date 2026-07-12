@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S118 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S121 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -126,6 +126,9 @@
 | S116 | [Wolverton Research Group](https://www.wolverton.northwestern.edu/) | Current group purpose, computational/AI research scope, OQMD stewardship, and high-throughput predictive-framework context. | High for stated group scope and OQMD relation; not a complete maintenance, funding, or collaboration record. |
 | S117 | [Wolverton Research Group research](https://www.wolverton.northwestern.edu/research) | Group research themes and DFT, ML, high-throughput, thermodynamic, kinetic, and multiscale method context. | High for stated methods; not a hardware, service, or universal member-skill claim. |
 | S118 | [Wolverton Research Group news](https://www.wolverton.northwestern.edu/news) | Dated group paper, joining, qualification, thesis, fellowship, hiring, and award announcements. | High for listed events; not a placement, mentoring, or opportunity metric. |
+| S119 | [Curtarolo Materials Group](https://materials.duke.edu/) | Group AFLOW/high-throughput DFT and materials-property scope, public database/API surfaces, and virtual seminar context. | High for stated public group/software surface; not a funding, attendance, instruction, or mentoring-outcome record. |
+| S120 | [Curtarolo Group research](https://materials.duke.edu/research.html) | High-entropy ceramics, phase stability, symmetry/prototyping, autonomous property prediction, metallic glasses, and DFT/thermodynamics/ML methods. | High for stated research scope; not a hardware, availability, or universal member-skill claim. |
+| S121 | [Curtarolo Group publications](https://materials.duke.edu/publications.html) | Chronological group publication surface with dated entries. | High for the visible publication record; not a productivity, quality, or individual-attribution metric. |
 
 ## Evidence protocol for new claims
 

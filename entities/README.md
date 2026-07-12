@@ -53,3 +53,5 @@ The Materials Cloud ecosystem-intelligence cluster adds the [2020 Materials Clou
 The first Research Group Intelligence cluster enriches the [Persson Group](research-groups/persson-group.md) with evidence-bounded themes, people categories, software practice, publication, role-specific guidance, and selected alumni-outcome context while reusing its existing LBNL, Materials Project, pymatgen, and Kristin Persson records.
 
 The second Research Group Intelligence cluster enriches the [Wolverton Research Group](research-groups/wolverton-research-group.md) with evidence-bounded themes, methods, OQMD stewardship, people categories, news, and selected alumni-outcome context while preserving its existing Northwestern, Department, OQMD, and Chris Wolverton records.
+
+The third Research Group Intelligence cluster enriches the [Curtarolo Group](research-groups/curtarolo-group.md) with evidence-bounded research programs, AFLOW’s public software surface, people categories, publication pattern, seminar context, and selected alumni-outcome examples while preserving its existing Duke, AFLOW, and Stefano Curtarolo records.
