@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S68 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S70 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -76,6 +76,8 @@
 | S66 | [Northwestern Engineering: Chris Wolverton](https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/wolverton-chris.html) | Wolverton's Materials Science and Engineering appointment and linked Wolverton Research Group site. | High for bounded administrative context; not a second direct group host. |
 | S67 | [European Commission: About](https://commission.europa.eu/about_en) | European Commission identity, executive role, and management of EU funding programmes. | High for funder-organization context; not evidence for an individual award decision. |
 | S68 | [European Commission: Horizon 2020](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en) | Horizon 2020 as the EU research and innovation funding programme for 2014–2020, now succeeded by Horizon Europe. | High for programme identity and duration; CORDIS supplies project-specific funding evidence. |
+| S69 | [FAIRmat Events: Eighth FAIRmat Users Meeting](https://events.fairmat-nfdi.eu/event/50/) | Completed June 2026 Berlin meeting, FAIRmat/NOMAD scope, and practical research-data-management sessions. | High for event identity and scope; not an attendance, speaker, or institution-host roster. |
+| S70 | [FAIRmat: Eighth FAIRmat Users Meeting](https://www.fair-di.eu/fairmat/events-fairmat) | FAIRmat event listing confirming the 2026 Users Meeting's dates, Berlin location, and FAIRmat/NOMAD focus. | High for event corroboration; not proof of all participant affiliations or future events. |
 
 ## Evidence protocol for new claims
 

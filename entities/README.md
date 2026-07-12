@@ -33,3 +33,5 @@ The NoMaD Laboratory project cluster adds the [Max Planck Society](organizations
 The Northwestern MSE department cluster adds the [Department of Materials Science and Engineering](departments/northwestern-materials-science-engineering.md) as administrative context for the existing [Wolverton Research Group](research-groups/wolverton-research-group.md), while preserving Northwestern University as that group's direct host.
 
 The Horizon 2020 funding cluster adds the [European Commission](organizations/european-commission.md) and [Horizon 2020 — Research Infrastructures](funding/horizon-2020-research-infrastructures.md), while connecting them to the existing completed [NoMaD Laboratory project](projects/nomad-laboratory-coe.md).
+
+The FAIRmat users-meeting cluster adds the [Eighth FAIRmat Users Meeting](conferences/fairmat-users-meeting-2026.md), while connecting it to the existing FAIRmat ecosystem, Computational Materials Science area, and Germany location endpoint.
