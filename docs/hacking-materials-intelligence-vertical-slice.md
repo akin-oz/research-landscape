@@ -49,7 +49,7 @@ the factual graph; the group record gains evidence-bounded context only.
 | Major projects | Materials Project, FORUM-AI, data-driven synthesis, DuraMAT, and AMSET appear in first-party material. | A named area or software mention does not automatically justify a new Project or Software record. |
 | International and experimental collaboration | The group says it collaborates with experimental and autonomous labs; AMSET documentation lists external contributors. | No complete collaborator, institution, international, industry, or partner graph is claimed. |
 | Publication patterns | The group routes readers to external publication profiles and publishes recent research updates. | No internal publication inventory, count, quality score, or productivity measure is made. |
-| Mentorship evidence | The linked handbook documents onboarding, communication, graduate-study guidance, presentation/writing practices, and a paper-development process. | It is process material, not a measured mentoring outcome, universal practice, current guarantee, or supervision-capacity claim. |
+| Mentorship evidence | The linked handbook documents onboarding, communication, graduate-study guidance, presentation/writing practices, and a paper-development process. It supplies separately displayed onboarding/training and professional-development process observations. | It is process material, not a measured mentoring outcome, universal practice, current guarantee, or supervision-capacity claim. |
 | Career outcomes | The public site has an alumni section and publishes a dated student achievement/update. | It provides no placement-rate, causal, typical-outcome, or outcome-guarantee evidence. |
 
 ## Evidence-bounded research environment

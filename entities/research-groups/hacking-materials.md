@@ -41,6 +41,12 @@ mentorship_process_evidence:
     evidence_window: "handbook reports last update approximately two years before review"
     confidence: medium
     limitation: "Documents stated onboarding and guidance only; it does not establish current practice, individual support quality, availability, or outcomes."
+  - category: professional-development
+    source_ids: [SRC-HACKING-MATERIALS-HANDBOOK]
+    scope: "Hacking Materials group handbook research-writing and presentation guidance"
+    evidence_window: "handbook reports last update approximately two years before review"
+    confidence: medium
+    limitation: "Documents stated writing and presentation guidance only; it does not establish current practice, individual development outcomes, mentoring quality, or career results."
 ---
 
 # Hacking Materials
@@ -73,7 +79,7 @@ funding ledger.
 | --- | --- |
 | `SRC-HACKING-MATERIALS-GROUP` | [Hacking Materials](https://hackingmaterials.lbl.gov/) labels the group “computational materials science at Berkeley Lab,” identifies Dr. Anubhav Jain as group lead, and describes theory, high-performance computing, AI, community data/software infrastructure, experimental/autonomous-lab collaboration, current research areas, role categories, participation routes, and an alumni section. It is not a complete personnel, funding, partner, or outcomes record. Accessed 2026-07-12. |
 | `SRC-LBNL-JAIN-PROFILE` | [Berkeley Lab Energy Technologies Area: Anubhav Jain](https://eta.lbl.gov/people/anubhav-jain) says Jain leads a research group studying new-materials design with theory, computing, and artificial intelligence. Accessed 2026-07-12. |
-| `SRC-HACKING-MATERIALS-HANDBOOK` | [Hacking Materials Handbook](https://hackingmaterials.gitbook.io/hm-handbook) describes group onboarding, communication channels, graduate-study and research-writing guidance, and computing-system context. The handbook says it was last updated two years ago, so it is time-bounded process evidence rather than a current mentoring, resource, or outcome guarantee. Accessed 2026-07-12. |
+| `SRC-HACKING-MATERIALS-HANDBOOK` | [Hacking Materials Handbook](https://hackingmaterials.gitbook.io/hm-handbook) describes group onboarding, communication channels, graduate-study, research-writing and presentation guidance, and computing-system context. The handbook says it was last updated two years ago, so it is time-bounded process evidence rather than a current mentoring, resource, or outcome guarantee. Accessed 2026-07-12. |
 | `SRC-HACKING-MATERIALS-AMSET` | [AMSET contributors](https://hackingmaterials.lbl.gov/amset/contributors/) says AMSET development is led by Hacking Materials and identifies a DOE Early Career funding context for that software. It does not establish group-wide funding, individual roles beyond those expressly listed, or a current award ledger. Accessed 2026-07-12. |
 
 ## Boundary and limitations

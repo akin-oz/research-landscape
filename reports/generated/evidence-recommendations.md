@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 41e029c7f794a6df81a5359dc0f3fa4fb0fd740df2a15c0b9ffe623379d82e26 -->
+<!-- input-fingerprint: 189944e72445f29a080063a3eab9d199e15d11771561a12300c8cf5888ae3044 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `41e029c7f794a6df81a5359dc0f3fa4fb0fd740df2a15c0b9ffe623379d82e26`
+**Input fingerprint:** `189944e72445f29a080063a3eab9d199e15d11771561a12300c8cf5888ae3044`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -319,7 +319,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [Hacking Materials](../../entities/research-groups/hacking-materials.md) (`RG-HACKING-MATERIALS`) | documents `onboarding-training` for Hacking Materials group handbook (sources: SRC-HACKING-MATERIALS-HANDBOOK) | medium | 1/1 documented criteria |
+| [Hacking Materials](../../entities/research-groups/hacking-materials.md) (`RG-HACKING-MATERIALS`) | documents `onboarding-training` for Hacking Materials group handbook (sources: SRC-HACKING-MATERIALS-HANDBOOK); documents `professional-development` for Hacking Materials group handbook research-writing and presentation guidance (sources: SRC-HACKING-MATERIALS-HANDBOOK) | medium | 1/1 documented criteria |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | documents `supervision-process` for Materialyze.AI Lab public postdoctoral/PhD application process (sources: SRC-MATERIALYZE-JOIN-US) | medium | 1/1 documented criteria |
 
 **Limitations:** This is a bounded public-process discovery path, not a mentorship-quality ranking, capacity claim, effectiveness finding, or prediction of an applicant’s experience. Categories are not numerically comparable.

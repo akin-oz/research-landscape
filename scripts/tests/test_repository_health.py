@@ -194,6 +194,9 @@ class RepositoryHealthTests(unittest.TestCase):
             sorted(candidate["record"].id for candidate in mentorship_candidates),
         )
         self.assertTrue(all(candidate["criteria"] == 1 for candidate in mentorship_candidates))
+        hacking_materials = next(candidate for candidate in mentorship_candidates if candidate["record"].id == "RG-HACKING-MATERIALS")
+        self.assertEqual(2, len(hacking_materials["signals"]))
+        self.assertTrue(any("`professional-development`" in signal["label"] for signal in hacking_materials["signals"]))
         self.assertEqual("unavailable", queries["high-mentorship-environments"]["status"])
 
     def test_programming_language_facet_requires_a_matching_relation(self) -> None:

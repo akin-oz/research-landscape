@@ -20,7 +20,7 @@ evidence.
 | --- | --- | --- |
 | Research, software, and collaboration modality | Hacking Materials group page | Supports stated theory/HPC/AI/data-software scope, named research areas, and collaboration with experimental/autonomous labs. |
 | People, alumni, and participation boundary | Hacking Materials group page | Supports displayed role categories, alumni section, and official live-page participation routes—not a current opening or eligibility decision. |
-| Process, mentorship, and computing context | Hacking Materials Handbook | Supports documented onboarding, communication, graduate-study/writing/presentation guidance, and compute-resource context; handbook age bounds these claims. |
+| Process, mentorship, and computing context | Hacking Materials Handbook | Supports separately displayed onboarding/training and professional-development observations for documented communication, graduate-study/writing/presentation guidance, plus compute-resource context; handbook age bounds these claims. |
 | Software-specific funding context | AMSET contributors documentation | Supports group-led AMSET development and the stated DOE Early Career context for that software, not a group funding ledger. |
 | Publication and career limits | Group page and handbook | Does not establish an internal publication inventory, mentoring outcome, placement rate, or career guarantee. |
 
