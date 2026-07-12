@@ -221,6 +221,26 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertTrue(any("direct host `UNIVERSITY-UC-BERKELEY`" in signal["label"] for signal in ceder_signals))
         self.assertTrue(any("located in `COUNTRY-US`" in signal["label"] for signal in ceder_signals))
 
+    def test_dynamic_pi_discovery_is_explainable_and_anded(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        pymatgen_developer = rl.discovery_pi_candidates(
+            records, None, None, "SW-PYMATGEN", "PROGRAMMING-LANGUAGE-PYTHON"
+        )
+        self.assertEqual(["PI-SHYUE-PING-ONG"], [candidate["record"].id for candidate in pymatgen_developer])
+        self.assertEqual(2, pymatgen_developer[0]["criteria"])
+        us_ai_pis = rl.discovery_pi_candidates(
+            records, "AREA-AI-FOR-MATERIALS", "COUNTRY-US", None, None
+        )
+        self.assertEqual(
+            ["PI-ANUBHAV-JAIN", "PI-GERBRAND-CEDER"],
+            sorted(candidate["record"].id for candidate in us_ai_pis),
+        )
+        self.assertTrue(all(candidate["criteria"] == 2 for candidate in us_ai_pis))
+        ceder_signals = next(candidate for candidate in us_ai_pis if candidate["record"].id == "PI-GERBRAND-CEDER")["signals"]
+        self.assertTrue(any("affiliated with `UNIVERSITY-UC-BERKELEY`" in signal["label"] for signal in ceder_signals))
+        self.assertTrue(any("located in `COUNTRY-US`" in signal["label"] for signal in ceder_signals))
+
     def test_recommendation_catalog_lists_available_and_unavailable_queries(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

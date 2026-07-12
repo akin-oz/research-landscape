@@ -20,6 +20,8 @@ python3 scripts/research_landscape.py recommend --list
 python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
+python3 scripts/research_landscape.py discover-pis --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
+python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 ```
 
@@ -54,6 +56,11 @@ that satisfied each criterion: country follows the group's ADR 0006 direct
 host, and language follows a documented group-development edge through a
 Research Software `implemented_in` assertion. It is alphabetically ordered and
 does not rank or infer fit.
+
+`discover-pis` uses the same filters for reviewed Principal Investigators.
+Country evidence follows an explicitly documented public `affiliated_with` path
+to a University, Department, or Organization and then its documented country;
+it does not infer employment, current availability, or supervision capacity.
 
 `freshness` produces a non-generated, reproducible maintenance audit from
 review dates and declared volatile-assertion deadlines. Pass `--as-of` for a

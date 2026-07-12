@@ -75,7 +75,10 @@ filter command:
 ```bash
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --software SW-CHGNET --language PROGRAMMING-LANGUAGE-PYTHON
+python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
 ```
 
 All supplied filters are required. The command exposes each documented path;
-it does not produce a score or rank.
+it does not produce a score or rank. `discover-pis` follows documented public
+affiliation paths for country filters and does not assert availability or
+supervision capacity.

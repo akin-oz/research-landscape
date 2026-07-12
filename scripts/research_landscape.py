@@ -1122,6 +1122,150 @@ def discover_groups(
     return 0
 
 
+def affiliation_country_signals(pi: Record, country_id: str, records: dict[str, Record]) -> list[dict[str, Any]]:
+    """Return an explicit PI affiliation-to-country path without inferring employment."""
+    signals = []
+    for affiliation_assertion in matching_assertions(pi, "affiliated_with"):
+        affiliation = records.get(affiliation_assertion.get("target_id"))
+        if affiliation is None or country_id not in resolved_countries(affiliation, records):
+            continue
+        signals.append(signal(f"is affiliated with `{affiliation.id}`", affiliation_assertion, pi))
+        location_assertions = matching_assertions(affiliation, "located_in", {country_id})
+        if location_assertions:
+            signals.extend(
+                signal(f"`{affiliation.id}` is located in `{country_id}`", assertion, affiliation)
+                for assertion in location_assertions
+            )
+        elif country_id in as_ids(affiliation.metadata.get("country_id", [])):
+            signals.append(metadata_signal(f"`{affiliation.id}` is classified in `{country_id}`", affiliation))
+    return signals
+
+
+def discovery_pi_candidates(
+    records: dict[str, Record],
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+) -> list[dict[str, Any]]:
+    """Apply ANDed, source-explainable filters to reviewed PIs."""
+    candidates = []
+    for pi in records.values():
+        if pi.entity_type != "principal-investigator" or not eligible(pi):
+            continue
+        signals = []
+        criteria = 0
+        developments = matching_assertions(pi, "develops")
+        if area_id:
+            area_signals = [signal(f"works on `{area_id}`", assertion, pi) for assertion in matching_assertions(pi, "works_on", {area_id})]
+            if not area_signals:
+                continue
+            signals.extend(area_signals)
+            criteria += 1
+        if country_id:
+            country_signals = affiliation_country_signals(pi, country_id, records)
+            if not country_signals:
+                continue
+            signals.extend(country_signals)
+            criteria += 1
+        if software_id:
+            developments = [assertion for assertion in developments if assertion.get("target_id") == software_id]
+            if not developments:
+                continue
+            signals.extend(signal(f"develops `{software_id}`", assertion, pi) for assertion in developments)
+            criteria += 1
+        if language_id:
+            language_signals = []
+            for development in developments:
+                software = records.get(development.get("target_id"))
+                if software is None or software.entity_type != "research-software":
+                    continue
+                for implementation in matching_assertions(software, "implemented_in", {language_id}):
+                    language_signals.append(signal(f"develops `{software.id}`", development, pi))
+                    language_signals.append(signal(f"`{software.id}` is implemented in `{language_id}`", implementation, software))
+            if not language_signals:
+                continue
+            signals.extend(language_signals)
+            criteria += 1
+        candidates.append({"record": pi, "signals": deduplicate_signals(signals), "criteria": criteria})
+    return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
+
+
+def render_pi_discovery(
+    records: dict[str, Record],
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+    output_path: Path,
+) -> str:
+    filters = [(name, value) for name, value in (
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id),
+    ) if value]
+    if not filters:
+        raise ValueError("provide at least one of --area, --country, --software, or --language")
+    candidates = discovery_pi_candidates(records, area_id, country_id, software_id, language_id)
+    lines = [
+        "# Principal-investigator discovery", "",
+        "**Status:** deterministic evidence-discovery result, not a ranking or availability finding.", "",
+        "**AND filters:** " + "; ".join(f"{name} `{value}`" for name, value in filters) + ".", "",
+        "| Principal investigator | Documented matching evidence | Confidence | Coverage |",
+        "| --- | --- | --- | --- |",
+    ]
+    total_criteria = len(filters)
+    for candidate in candidates:
+        signals = candidate["signals"]
+        rendered_signals = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in signals)
+        confidence = lowest_confidence([item["confidence"] for item in signals])
+        lines.append(
+            f"| {canonical_link(candidate['record'], output_path)} (`{candidate['record'].id}`) | {rendered_signals} | {confidence} | {candidate['criteria']}/{total_criteria} documented criteria |"
+        )
+    if not candidates:
+        lines.append("| — | No reviewed canonical PI matches every requested evidence criterion. | unavailable | 0 criteria |")
+    lines.extend([
+        "", "## Boundary", "",
+        "Results are alphabetically ordered and contain only PIs with every requested source-backed criterion. A country match follows a documented public affiliation and its documented location; a language match follows a documented PI-development edge and a software `implemented_in` assertion. This does not rank people or establish current openings, supervision capacity, mentorship quality, funding, admissions, or applicant fit.", "",
+    ])
+    return "\n".join(lines)
+
+
+def discover_pis(
+    root: Path,
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+    check: bool,
+    query_id: str | None,
+    list_queries: bool,
+    as_of: str | None,
+) -> int:
+    if check or query_id or list_queries or as_of:
+        print("ERROR: discover-pis accepts only --area, --country, --software, and --language")
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id}
+    for name, value in filters.items():
+        if not value:
+            continue
+        target = records.get(value)
+        if target is None or target.entity_type != DISCOVERY_FILTER_TYPES[name]:
+            print(f"ERROR: --{name} must reference a canonical {DISCOVERY_FILTER_TYPES[name]} ID, got {value!r}")
+            return 2
+    try:
+        print(render_pi_discovery(
+            records, area_id, country_id, software_id, language_id,
+            root / "reports/generated/evidence-recommendations.md",
+        ))
+    except ValueError as exc:
+        print(f"ERROR: {exc}")
+        return 2
+    return 0
+
+
 def write_or_check(path: Path, content: str, check: bool, drift: list[str]) -> None:
     if check:
         if not path.exists() or path.read_text(encoding="utf-8") != content:
@@ -1323,7 +1467,7 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "discover-groups", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "discover-groups", "discover-pis", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
@@ -1343,6 +1487,11 @@ def main() -> int:
         return recommend(root, args.check, args.query, args.list_queries)
     if args.command == "discover-groups":
         return discover_groups(
+            root, args.area, args.country, args.software, args.language,
+            args.check, args.query, args.list_queries, args.as_of,
+        )
+    if args.command == "discover-pis":
+        return discover_pis(
             root, args.area, args.country, args.software, args.language,
             args.check, args.query, args.list_queries, args.as_of,
         )
