@@ -14,3 +14,4 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [NOMAD ecosystem-intelligence review](nomad-ecosystem-intelligence-vertical-slice-review.md) — third QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
 - [AFLOW ecosystem-intelligence review](aflow-ecosystem-intelligence-vertical-slice-review.md) — fourth QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
 - [ASE ecosystem-intelligence review](ase-ecosystem-intelligence-vertical-slice-review.md) — fifth QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
+- [OQMD ecosystem-intelligence review](oqmd-ecosystem-intelligence-vertical-slice-review.md) — sixth QG3 data-ecosystem coverage matrix, evidence boundaries, and contract limitations.

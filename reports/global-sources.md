@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S100 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S106 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -108,6 +108,12 @@
 | S98 | [ASE documentation: Contact](https://wiki.fysik.dtu.dk/ase/contact.html) | ASE mailing-list, Matrix, forum, public GitLab issue, and merge-request contact surfaces. | High for public communication routes; not an individual support or response-time commitment. |
 | S99 | [Warwick Research Archive: The Atomic Simulation Environment](https://wrap.warwick.ac.uk/id/eprint/87141/) | Peer-reviewed 21 March 2017 ASE paper, DOI, and Python-library subject. | High for the historical technical reference; not proof of current authorship, roles, capabilities, or funding. |
 | S100 | [ASE documentation: Development proposal for calculators](https://wiki.fysik.dtu.dk/ase/development/proposals/calculators.html) | Calculator-interface design and testing expectations. | High for design guidance; proposal status and implementation coverage must be assessed separately. |
+| S101 | [OQMD API](https://oqmd.org/api/) | OQMD REST and OPTIMADE query/filter/download paths, no-credential access, and optional query-package context. | High for public data-access workflow; not a backend implementation, availability, or support guarantee. |
+| S102 | [OQMD download](https://www.oqmd.org/download/) | Versioned MySQL database downloads and qmpy API codebase context. | High for documented full-download route; data size, version, and local-operational requirements can change. |
+| S103 | [OQMD documentation: Structure sources](https://oqmd.org/documentation/structures) | Documented ICSD/prototype sources and CC-BY 4.0 data license context. | High for stated source and license context; not a complete data-provenance or quality claim. |
+| S104 | [OQMD documentation: Publications](https://oqmd.org/documentation/publications) | OQMD-recommended 2013 and 2015 citations and CC-BY 4.0 data-license statement. | High for project citation guidance; not proof of current funding or authorship roles. |
+| S105 | [npj Computational Materials: OQMD](https://www.nature.com/articles/npjcompumats201510) | Peer-reviewed 11 December 2015 OQMD paper, DOI, author list including Chris Wolverton, and database subject. | High for the historical technical reference; not proof of current content, roles, or capabilities. |
+| S106 | [OQMD documentation: Overview](https://oqmd.org/documentation/overview) | OQMD developer/maintainer group context. | High for the existing group relation; not an exhaustive contributor, ownership, or governance record. |
 
 ## Evidence protocol for new claims
 
