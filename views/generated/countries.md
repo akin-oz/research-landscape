@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
+<!-- input-fingerprint: 639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20 -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
+**Input fingerprint:** `639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)
@@ -73,6 +73,7 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [Lawrence Berkeley National Laboratory](../../entities/organizations/lawrence-berkeley-national-laboratory.md) | `ORG-LBNL` | organization | high | 2026-07-12 | COUNTRY-US |
+| [Sandia National Laboratories](../../entities/organizations/sandia-national-laboratories.md) | `ORG-SANDIA-NATIONAL-LABORATORIES` | organization | high | 2026-07-12 | COUNTRY-US |
 | [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) | `PI-ANUBHAV-JAIN` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) | `PI-CHRIS-WOLVERTON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |

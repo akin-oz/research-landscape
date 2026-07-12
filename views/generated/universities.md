@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
+<!-- input-fingerprint: 639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20 -->
 # Universities view
 
 **Definition:** `universities`
-**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
+**Input fingerprint:** `639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Duke University](../../entities/universities/duke-university.md)

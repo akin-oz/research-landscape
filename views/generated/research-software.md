@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
+<!-- input-fingerprint: 639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
+**Input fingerprint:** `639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/research-software/aflow.md)
@@ -50,6 +50,13 @@
 | --- | --- | --- | --- | --- | --- |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) | `ECO-FAIR-CHEM` | research-ecosystem | high | 2026-07-12 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
+
+## [LAMMPS](../../entities/research-software/lammps.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) | `ECO-LAMMPS` | research-ecosystem | high | 2026-07-12 | — |
+| [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |
 
 ## [M3GNet](../../entities/research-software/m3gnet.md)
 

@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A bounded LAMMPS ecosystem slice with distinct software, Sandia National Laboratories, and ecosystem records; it surfaces documented C++ implementation and public GitHub contribution paths without inventing a developer or maintainer roster.
 - A bounded Quantum ESPRESSO ecosystem slice with distinct software, Foundation, and ecosystem records; its documented Foundation representative links to Stefano Baroni and Nicola Marzari avoid inferring current maintenance, governance, or contribution-frequency roles.
 - A directly source-bounded Materials Informatics classification for RadonPy, based on RIKEN's published “polymer informatics” article listing; the record explicitly avoids generalizing that classification beyond the documented software context.
 - An AI for Materials controlled research area with direct, evidence-bounded group and PI links, plus FAIR Chemistry/FAIRChem and UC Berkeley/CEDER/Gerbrand Ceder/CHGNet vertical slices.

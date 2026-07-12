@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: a66da23afddd0e14bb73e8e798b3def6b5b231c1c57b70944c94efa2b41b93db -->
+<!-- input-fingerprint: 63e8fdc4ec971ec3cf324524da8b68fd6fac2e161cac4c168458be407306128f -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `a66da23afddd0e14bb73e8e798b3def6b5b231c1c57b70944c94efa2b41b93db`
+**Input fingerprint:** `63e8fdc4ec971ec3cf324524da8b68fd6fac2e161cac4c168458be407306128f`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -141,6 +141,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 documented criteria |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
 | [FAIRmat](../../entities/ecosystems/fairmat.md) (`ECO-FAIRMAT`) | connects `PI-CLAUDIA-DRAXL` (sources: SRC-FAIRMAT-TEAM); `PI-CLAUDIA-DRAXL` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 2/2 documented criteria |
+| [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) (`ECO-LAMMPS`) | includes `SW-LAMMPS` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY); `SW-LAMMPS` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY, SRC-LAMMPS-DEVELOPERS) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking.

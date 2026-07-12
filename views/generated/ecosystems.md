@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
+<!-- input-fingerprint: 639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20 -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
+**Input fingerprint:** `639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/ecosystems/aflow.md)
@@ -36,6 +36,12 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [FAIRmat](../../entities/ecosystems/fairmat.md) | `ECO-FAIRMAT` | research-ecosystem | high | 2026-07-12 | — |
+
+## [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) | `ECO-LAMMPS` | research-ecosystem | high | 2026-07-12 | — |
 
 ## [Materials Cloud](../../entities/ecosystems/materials-cloud.md)
 

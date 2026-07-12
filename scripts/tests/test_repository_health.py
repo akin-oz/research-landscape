@@ -74,7 +74,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["language"].id: item for item in rl.programming_language_coverage(records)}
         self.assertEqual(
-            {"software": 1, "groups": 1, "principal_investigators": 0, "universities": 1, "ecosystems": 1},
+            {"software": 2, "groups": 1, "principal_investigators": 0, "universities": 1, "ecosystems": 2},
             {key: coverage["PROGRAMMING-LANGUAGE-CPP"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -204,6 +204,22 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], rl.matching_assertions(baroni, "develops"))
         candidates = rl.discovery_ecosystem_candidates(records, None, "SW-QUANTUM-ESPRESSO")
         self.assertEqual(["ECO-QUANTUM-ESPRESSO"], [candidate["record"].id for candidate in candidates])
+
+    def test_lammps_slice_exposes_cplusplus_without_a_person_roster(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software = records["SW-LAMMPS"]
+        ecosystem = records["ECO-LAMMPS"]
+        self.assertEqual("yes", software.metadata["open_source"])
+        self.assertEqual("GPL-2.0-only", software.metadata["license"])
+        self.assertEqual(["PROGRAMMING-LANGUAGE-CPP"], software.metadata["programming_language_ids"])
+        self.assertEqual(["ORG-SANDIA-NATIONAL-LABORATORIES"], ecosystem.metadata["organization_ids"])
+        self.assertEqual([], ecosystem.metadata.get("principal_investigator_ids", []))
+        candidates = rl.discovery_software_candidates(
+            records, "AREA-COMPUTATIONAL-MATERIALS-SCIENCE", "PROGRAMMING-LANGUAGE-CPP", "ECO-LAMMPS"
+        )
+        self.assertEqual(["SW-LAMMPS"], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(3, candidates[0]["criteria"])
 
     def test_ceder_chgnet_development_path_is_sourced(self) -> None:
         records, results = rl.validate(ROOT)

@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc -->
+<!-- input-fingerprint: 639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20 -->
 # Repository health report
 
-**Input fingerprint:** `a6d9ea67ed6b76cca410e93de82ab2203cfe56db316f060f4899aeca2517d8fc`
+**Input fingerprint:** `639521587fd1aeaae7b75fd6e853c96acdd4f4f1e40727faa8fbf50a918bfa20`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **91**
-- Typed relationship assertions: **162**
+- Canonical v2 entities: **94**
+- Typed relationship assertions: **166**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -20,37 +20,37 @@
 | country | 8 |
 | department | 1 |
 | funding-program | 2 |
-| organization | 8 |
+| organization | 9 |
 | principal-investigator | 13 |
 | programming-language | 2 |
 | project | 1 |
 | publication | 8 |
 | research-area | 4 |
-| research-ecosystem | 10 |
+| research-ecosystem | 11 |
 | research-group | 12 |
-| research-software | 12 |
+| research-software | 13 |
 | university | 9 |
 
 ## Confidence coverage
 
 | Confidence | Count |
 | --- | ---: |
-| high | 91 |
+| high | 94 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **91**
+- Canonical v2 records in approved entity directories: **94**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 91/91 |
-| Reviewed/published records with last-review dates | 91/91 |
-| Typed relationships with source IDs | 162/162 |
+| Reviewed/published records with source IDs | 94/94 |
+| Reviewed/published records with last-review dates | 94/94 |
+| Typed relationships with source IDs | 166/166 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
-| Entities with an inbound or outbound graph connection | 91/91 |
+| Entities with an inbound or outbound graph connection | 94/94 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
@@ -63,7 +63,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | Research area | Groups | Principal Investigators | Research Software | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 3 | 2 | 3 |
-| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 8 | 2 | 6 | 8 |
+| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 8 | 3 | 6 | 9 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 5 | 2 | 3 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 2 |
 
@@ -73,7 +73,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 
 | Programming language | Research Software | Research Groups | Principal Investigators | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| [C++](../../entities/programming-languages/cpp.md) | 1 | 1 | 0 | 1 | 1 |
+| [C++](../../entities/programming-languages/cpp.md) | 2 | 1 | 0 | 1 | 2 |
 | [Python](../../entities/programming-languages/python.md) | 10 | 6 | 4 | 4 | 7 |
 
 ## Relationship predicates
@@ -85,16 +85,16 @@ These are counts of direct, documented implementation paths. They measure corpus
 | affiliated_with | 14 |
 | authored_by | 9 |
 | belongs_to | 14 |
-| connects | 22 |
+| connects | 23 |
 | covers | 1 |
 | describes | 6 |
 | develops | 12 |
 | funds | 1 |
-| implemented_in | 11 |
-| includes | 9 |
+| implemented_in | 12 |
+| includes | 10 |
 | involves | 1 |
 | leads | 11 |
-| located_in | 15 |
+| located_in | 16 |
 | works_on | 33 |
 
 ## Findings

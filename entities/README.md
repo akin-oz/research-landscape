@@ -28,6 +28,8 @@ The ASE cluster adds [Atomic Simulation Environment](research-software/ase.md), 
 
 The Quantum ESPRESSO cluster adds [Quantum ESPRESSO](research-software/quantum-espresso.md), the [Quantum ESPRESSO Ecosystem](ecosystems/quantum-espresso.md), [Quantum ESPRESSO Foundation](organizations/quantum-espresso-foundation.md), [Stefano Baroni](principal-investigators/stefano-baroni.md), [SISSA](universities/sissa.md), and [Italy](countries/italy.md), while reusing Nicola Marzari and Computational Materials Science.
 
+The LAMMPS cluster adds [LAMMPS](research-software/lammps.md), the [LAMMPS Ecosystem](ecosystems/lammps.md), and [Sandia National Laboratories](organizations/sandia-national-laboratories.md), while reusing the United States, Computational Materials Science, and C++ records.
+
 The NCCR MARVEL funding cluster adds the [Swiss National Science Foundation](organizations/swiss-national-science-foundation.md) and [NCCR MARVEL](funding/nccr-marvel.md), while adding only an evidence-bounded historical funding-program connection to the existing [Materials Cloud](ecosystems/materials-cloud.md) and reusing Switzerland.
 
 The NoMaD Laboratory project cluster adds the [Max Planck Society](organizations/max-planck-society.md) and [The Novel Materials Discovery Laboratory](projects/nomad-laboratory-coe.md), while reusing Germany, Computational Materials Science, and the historical [NOMAD](research-software/nomad.md) software connection.
