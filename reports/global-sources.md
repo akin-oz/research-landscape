@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S121 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S123 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -129,6 +129,8 @@
 | S119 | [Curtarolo Materials Group](https://materials.duke.edu/) | Group AFLOW/high-throughput DFT and materials-property scope, public database/API surfaces, and virtual seminar context. | High for stated public group/software surface; not a funding, attendance, instruction, or mentoring-outcome record. |
 | S120 | [Curtarolo Group research](https://materials.duke.edu/research.html) | High-entropy ceramics, phase stability, symmetry/prototyping, autonomous property prediction, metallic glasses, and DFT/thermodynamics/ML methods. | High for stated research scope; not a hardware, availability, or universal member-skill claim. |
 | S121 | [Curtarolo Group publications](https://materials.duke.edu/publications.html) | Chronological group publication surface with dated entries. | High for the visible publication record; not a productivity, quality, or individual-attribution metric. |
+| S122 | [Hacking Materials Handbook](https://hackingmaterials.gitbook.io/hm-handbook) | Public onboarding, communication, graduate-study, research-writing, and computing-system process material. | Medium for the documented process because the handbook says it was last updated two years ago; not a current mentoring, resource, or outcome guarantee. |
+| S123 | [AMSET contributors](https://hackingmaterials.lbl.gov/amset/contributors/) | Hacking Materials-led AMSET development and the documentation’s DOE Early Career funding context for that software. | High for the stated software-specific context; not a group-wide funding ledger, current award status, or complete contributor roster. |
 
 ## Evidence protocol for new claims
 

@@ -11,6 +11,8 @@ confidence: high
 source_ids:
   - SRC-HACKING-MATERIALS-GROUP
   - SRC-LBNL-JAIN-PROFILE
+  - SRC-HACKING-MATERIALS-HANDBOOK
+  - SRC-HACKING-MATERIALS-AMSET
 organization_id: ORG-LBNL
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
@@ -35,17 +37,36 @@ slice. Its public description supports a focused connection to Computational
 Materials Science without expanding its listed research themes into separate
 project, software, or funding records.
 
+The group’s public site describes theory, high-performance computing, AI,
+community data and software infrastructure, and work with experimental and
+autonomous labs on energy-relevant materials. It publicly identifies Materials
+Project, FORUM-AI, data-driven synthesis, DuraMAT data and analytics, and
+open-source high-throughput workflow and crystal-structure tools as current
+research areas, without treating each as a new canonical project or software
+record. The same page displays a small current roster and an alumni section;
+neither is a complete employment record or a placement statistic.
+
+The linked group handbook documents onboarding, communications, graduate-study
+guidance, writing/presentation practices, and computing-system context, but
+the handbook itself reports that it was last updated two years earlier. It is
+useful process evidence, not a current mentoring, resource-access, or outcome
+guarantee. Separately, AMSET documentation identifies group-led development
+and a DOE Early Career funding context for that software, not a group-wide
+funding ledger.
+
 ## Evidence
 
 | Source ID | Evidence |
 | --- | --- |
-| `SRC-HACKING-MATERIALS-GROUP` | [Hacking Materials](https://hackingmaterials.lbl.gov/) labels the group “computational materials science at Berkeley Lab,” identifies Dr. Anubhav Jain as group lead, and describes theory, high-performance computing, and AI work for energy-relevant materials. Accessed 2026-07-12. |
+| `SRC-HACKING-MATERIALS-GROUP` | [Hacking Materials](https://hackingmaterials.lbl.gov/) labels the group “computational materials science at Berkeley Lab,” identifies Dr. Anubhav Jain as group lead, and describes theory, high-performance computing, AI, community data/software infrastructure, experimental/autonomous-lab collaboration, current research areas, role categories, participation routes, and an alumni section. It is not a complete personnel, funding, partner, or outcomes record. Accessed 2026-07-12. |
 | `SRC-LBNL-JAIN-PROFILE` | [Berkeley Lab Energy Technologies Area: Anubhav Jain](https://eta.lbl.gov/people/anubhav-jain) says Jain leads a research group studying new-materials design with theory, computing, and artificial intelligence. Accessed 2026-07-12. |
+| `SRC-HACKING-MATERIALS-HANDBOOK` | [Hacking Materials Handbook](https://hackingmaterials.gitbook.io/hm-handbook) describes group onboarding, communication channels, graduate-study and research-writing guidance, and computing-system context. The handbook says it was last updated two years ago, so it is time-bounded process evidence rather than a current mentoring, resource, or outcome guarantee. Accessed 2026-07-12. |
+| `SRC-HACKING-MATERIALS-AMSET` | [AMSET contributors](https://hackingmaterials.lbl.gov/amset/contributors/) says AMSET development is led by Hacking Materials and identifies a DOE Early Career funding context for that software. It does not establish group-wide funding, individual roles beyond those expressly listed, or a current award ledger. Accessed 2026-07-12. |
 
 ## Boundary and limitations
 
 This record does not enumerate group personnel, infer that each named research
 theme is a separately governed project, or attribute Materials Project,
 FORUM-AI, or software ownership and maintenance to every group member. It makes
-no claim about openings, mentoring, admissions, funding, language, or
-applicant fit.
+no live-opening, admissions, group-wide funding, language, applicant-fit,
+mentoring-quality, or career-outcome claim.

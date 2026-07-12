@@ -20,3 +20,4 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [Persson Group intelligence review](persson-group-intelligence-vertical-slice-review.md) — first QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [Wolverton Group intelligence review](wolverton-group-intelligence-vertical-slice-review.md) — second QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [Curtarolo Group intelligence review](curtarolo-group-intelligence-vertical-slice-review.md) — third QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
+- [Hacking Materials intelligence review](hacking-materials-intelligence-vertical-slice-review.md) — fourth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.

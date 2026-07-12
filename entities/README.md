@@ -55,3 +55,5 @@ The first Research Group Intelligence cluster enriches the [Persson Group](resea
 The second Research Group Intelligence cluster enriches the [Wolverton Research Group](research-groups/wolverton-research-group.md) with evidence-bounded themes, methods, OQMD stewardship, people categories, news, and selected alumni-outcome context while preserving its existing Northwestern, Department, OQMD, and Chris Wolverton records.
 
 The third Research Group Intelligence cluster enriches the [Curtarolo Group](research-groups/curtarolo-group.md) with evidence-bounded research programs, AFLOW’s public software surface, people categories, publication pattern, seminar context, and selected alumni-outcome examples while preserving its existing Duke, AFLOW, and Stefano Curtarolo records.
+
+The fourth Research Group Intelligence cluster enriches [Hacking Materials](research-groups/hacking-materials.md) with evidence-bounded community-software, collaboration, people, process, computing, software-funding, and participation-route context while preserving its existing Berkeley Lab, Materials Project, and Anubhav Jain records.
