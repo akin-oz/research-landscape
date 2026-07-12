@@ -51,3 +51,5 @@ The OQMD ecosystem-intelligence cluster adds the [2015 OQMD publication](publica
 The Materials Cloud ecosystem-intelligence cluster adds the [2020 Materials Cloud publication](publications/materials-cloud-2020.md), enriches [Materials Cloud](ecosystems/materials-cloud.md) with source-backed research-cycle, moderated data-deposition, Archive-architecture, and historical-funding-boundary context, and reuses existing AiiDA, THEOS, Nicola Marzari, Giovanni Pizzi, and NCCR MARVEL records.
 
 The first Research Group Intelligence cluster enriches the [Persson Group](research-groups/persson-group.md) with evidence-bounded themes, people categories, software practice, publication, role-specific guidance, and selected alumni-outcome context while reusing its existing LBNL, Materials Project, pymatgen, and Kristin Persson records.
+
+The second Research Group Intelligence cluster enriches the [Wolverton Research Group](research-groups/wolverton-research-group.md) with evidence-bounded themes, methods, OQMD stewardship, people categories, news, and selected alumni-outcome context while preserving its existing Northwestern, Department, OQMD, and Chris Wolverton records.

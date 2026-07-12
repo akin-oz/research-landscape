@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S115 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S118 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -123,6 +123,9 @@
 | S113 | [Persson Group publications](https://perssongroup.lbl.gov/publications.html) | Chronological group publication surface, including current materials, computational, and data-driven work. | High for listed publications; not a productivity, quality, or attribution metric. |
 | S114 | [Persson Group open positions and projects](https://perssongroup.lbl.gov/open_positions.html) | Dated 2024 undergraduate Materials Project intern role, task/skill context, one-to-one guidance statement, and displayed postdoc/staff status. | High for the stated dated role; not a current-opening, group-wide mentoring, or supervision-capacity claim. |
 | S115 | [Persson Group news](https://perssongroup.lbl.gov/blog/) | Dated group-member awards and professional recognition. | High for listed historical announcements; not a group quality or career-outcome rating. |
+| S116 | [Wolverton Research Group](https://www.wolverton.northwestern.edu/) | Current group purpose, computational/AI research scope, OQMD stewardship, and high-throughput predictive-framework context. | High for stated group scope and OQMD relation; not a complete maintenance, funding, or collaboration record. |
+| S117 | [Wolverton Research Group research](https://www.wolverton.northwestern.edu/research) | Group research themes and DFT, ML, high-throughput, thermodynamic, kinetic, and multiscale method context. | High for stated methods; not a hardware, service, or universal member-skill claim. |
+| S118 | [Wolverton Research Group news](https://www.wolverton.northwestern.edu/news) | Dated group paper, joining, qualification, thesis, fellowship, hiring, and award announcements. | High for listed events; not a placement, mentoring, or opportunity metric. |
 
 ## Evidence protocol for new claims
 
