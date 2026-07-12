@@ -27,6 +27,13 @@ queries:
     area_id: AREA-MATERIALS-INFORMATICS
     limitations: "Membership reflects a sourced area relation, not exhaustive AI/data capability or quality."
 
+  - query_id: groups-ai-for-materials
+    aliases: [ai-for-materials-groups]
+    kind: groups-by-area
+    title: Research groups with documented AI for Materials work
+    area_id: AREA-AI-FOR-MATERIALS
+    limitations: "Membership reflects an explicit artificial-intelligence-and-materials relation, not exhaustive AI capability, model quality, hiring, or research quality."
+
   - query_id: groups-open-software
     aliases: [open-science-groups]
     kind: groups-with-open-source-software
@@ -54,6 +61,13 @@ queries:
     area_id: AREA-MATERIALS-INFORMATICS
     limitations: "A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking."
 
+  - query_id: ecosystems-ai-for-materials
+    aliases: [ai-for-materials-ecosystems]
+    kind: ecosystems-connected-to-area
+    title: Research ecosystems connected to AI for Materials entities
+    area_id: AREA-AI-FOR-MATERIALS
+    limitations: "A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, AI capability, or research-quality ranking."
+
   - query_id: principal-investigators-computational-materials
     aliases: [best-pis-for-computational-materials]
     kind: principal-investigators-by-area
@@ -67,6 +81,13 @@ queries:
     title: Principal Investigators with documented Materials Informatics work
     area_id: AREA-MATERIALS-INFORMATICS
     limitations: "Membership reflects an explicit area relation, not a researcher ranking or availability signal."
+
+  - query_id: principal-investigators-ai-for-materials
+    aliases: [ai-for-materials-principal-investigators]
+    kind: principal-investigators-by-area
+    title: Principal Investigators with documented AI for Materials work
+    area_id: AREA-AI-FOR-MATERIALS
+    limitations: "Membership reflects an explicit artificial-intelligence-and-materials relation, not a researcher ranking, model-quality claim, or availability signal."
 
   - query_id: principal-investigators-open-software
     aliases: [pis-with-open-source-software]

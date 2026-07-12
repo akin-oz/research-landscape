@@ -16,6 +16,7 @@ source_ids:
 institution_id: UNIVERSITY-NUS
 research_area_ids:
   - AREA-MATERIALS-INFORMATICS
+  - AREA-AI-FOR-MATERIALS
 website: https://www.materialyze.ai/
 relationship_assertions:
   - predicate: belongs_to
@@ -25,6 +26,11 @@ relationship_assertions:
     evidence_window: 2026-07
   - predicate: works_on
     target_id: AREA-MATERIALS-INFORMATICS
+    source_ids: [SRC-NUS-ONG-PROFILE]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-AI-FOR-MATERIALS
     source_ids: [SRC-NUS-ONG-PROFILE]
     confidence: high
     evidence_window: 2026-07

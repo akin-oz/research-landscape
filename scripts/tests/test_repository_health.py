@@ -42,8 +42,9 @@ class RepositoryHealthTests(unittest.TestCase):
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
         audit = rl.freshness_audit(records, dt.date(2026, 7, 12))
-        self.assertEqual(67, audit["reviewed_records"])
-        self.assertEqual(67, len(audit["buckets"]["current"]))
+        reviewed = [record for record in records.values() if record.metadata.get("status") in {"reviewed", "published"}]
+        self.assertEqual(len(reviewed), audit["reviewed_records"])
+        self.assertEqual(len(reviewed), len(audit["buckets"]["current"]))
         self.assertEqual([], audit["buckets"]["attention"])
         self.assertEqual([], audit["buckets"]["stale"])
         self.assertIn("does not measure research quality", rl.render_freshness_audit(audit))
@@ -60,6 +61,20 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertGreaterEqual(len(university_candidates), 1)
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in university_candidates))
         self.assertTrue(all(len(candidate["signals"]) >= 2 for candidate in university_candidates))
+
+    def test_ai_for_materials_slice_uses_explicit_area_evidence(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        queries = {query["query_id"]: query for query in model["queries"]}
+        group_candidates = rl.recommendation_candidates(queries["groups-ai-for-materials"], records)
+        self.assertEqual(
+            ["RG-HACKING-MATERIALS", "RG-MATERIALYZE-AI"],
+            sorted(candidate["record"].id for candidate in group_candidates),
+        )
+        pi_candidates = rl.recommendation_candidates(queries["principal-investigators-ai-for-materials"], records)
+        self.assertEqual(["PI-ANUBHAV-JAIN"], [candidate["record"].id for candidate in pi_candidates])
 
 
 if __name__ == "__main__":

@@ -16,6 +16,7 @@ source_ids:
 organization_id: ORG-LBNL
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-AI-FOR-MATERIALS
 website: https://hackingmaterials.lbl.gov/
 relationship_assertions:
   - predicate: belongs_to
@@ -26,6 +27,11 @@ relationship_assertions:
   - predicate: works_on
     target_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
     source_ids: [SRC-HACKING-MATERIALS-GROUP, SRC-LBNL-JAIN-PROFILE]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-AI-FOR-MATERIALS
+    source_ids: [SRC-HACKING-MATERIALS-GROUP]
     confidence: high
     evidence_window: 2026-07
 ---

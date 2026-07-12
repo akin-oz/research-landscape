@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: e8686d40314e61581ba1d6991b3fc733d837af4e43869147f578732ee330a053 -->
+<!-- input-fingerprint: cf59d150c1e56e3b0aa846898326b1d2abb5d8c7338a7108a85bea62cae0b074 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `e8686d40314e61581ba1d6991b3fc733d837af4e43869147f578732ee330a053`
+**Input fingerprint:** `cf59d150c1e56e3b0aa846898326b1d2abb5d8c7338a7108a85bea62cae0b074`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -59,6 +59,19 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects a sourced area relation, not exhaustive AI/data capability or quality.
+
+## Research groups with documented AI for Materials work
+
+**Query ID:** `groups-ai-for-materials`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Hacking Materials](../../entities/research-groups/hacking-materials.md) (`RG-HACKING-MATERIALS`) | works on `AREA-AI-FOR-MATERIALS` (sources: SRC-HACKING-MATERIALS-GROUP) | high | 1/1 documented criteria |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | works on `AREA-AI-FOR-MATERIALS` (sources: SRC-NUS-ONG-PROFILE) | high | 1/1 documented criteria |
+
+**Limitations:** Membership reflects an explicit artificial-intelligence-and-materials relation, not exhaustive AI capability, model quality, hiring, or research quality.
 
 ## Research groups with documented development links to licensed open-source software
 
@@ -122,6 +135,18 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 **Limitations:** A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking.
 
+## Research ecosystems connected to AI for Materials entities
+
+**Query ID:** `ecosystems-ai-for-materials`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP) | high | 2/2 documented criteria |
+
+**Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, AI capability, or research-quality ranking.
+
 ## Principal Investigators with documented Computational Materials Science work
 
 **Query ID:** `principal-investigators-computational-materials`
@@ -151,6 +176,18 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit area relation, not a researcher ranking or availability signal.
+
+## Principal Investigators with documented AI for Materials work
+
+**Query ID:** `principal-investigators-ai-for-materials`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) (`PI-ANUBHAV-JAIN`) | works on `AREA-AI-FOR-MATERIALS` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP) | high | 1/1 documented criteria |
+
+**Limitations:** Membership reflects an explicit artificial-intelligence-and-materials relation, not a researcher ranking, model-quality claim, or availability signal.
 
 ## Principal Investigators with documented development links to licensed open-source software
 

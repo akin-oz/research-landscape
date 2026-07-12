@@ -1,10 +1,18 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 83da2768a082aa5c012d1a0870647c5262b4a16790879084b7a9f9ee44426584 -->
+<!-- input-fingerprint: 8e5ff79ca42e1230ce921c8a635d0ee15e7df656fb62828e1a9fd1c6935f41a9 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `83da2768a082aa5c012d1a0870647c5262b4a16790879084b7a9f9ee44426584`
+**Input fingerprint:** `8e5ff79ca42e1230ce921c8a635d0ee15e7df656fb62828e1a9fd1c6935f41a9`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
+
+## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) | `PI-ANUBHAV-JAIN` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
+| [Hacking Materials](../../entities/research-groups/hacking-materials.md) | `RG-HACKING-MATERIALS` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) | `RG-MATERIALYZE-AI` | research-group | high | 2026-07-12 | COUNTRY-SG |
 
 ## [Computational Materials Science](../../entities/research-areas/computational-materials-science.md)
 

@@ -10,7 +10,8 @@ and query-specific limitations.
 ## What the engine can recommend now
 
 The initial model supports evidence-backed discovery for groups with software
-development, groups and PIs by controlled research area, PIs with licensed
+development, groups and PIs by controlled research area (including AI for
+Materials where explicitly evidenced), PIs with licensed
 open-source-software development evidence, universities directly hosting groups
 with documented target-area work, software-oriented environments, and
 ecosystems connected to a target area. Results are ordered by the count of
