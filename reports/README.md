@@ -15,3 +15,4 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [AFLOW ecosystem-intelligence review](aflow-ecosystem-intelligence-vertical-slice-review.md) — fourth QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
 - [ASE ecosystem-intelligence review](ase-ecosystem-intelligence-vertical-slice-review.md) — fifth QG3 software-ecosystem coverage matrix, evidence boundaries, and contract limitations.
 - [OQMD ecosystem-intelligence review](oqmd-ecosystem-intelligence-vertical-slice-review.md) — sixth QG3 data-ecosystem coverage matrix, evidence boundaries, and contract limitations.
+- [Materials Cloud ecosystem-intelligence review](materials-cloud-ecosystem-intelligence-vertical-slice-review.md) — seventh QG3 data-ecosystem coverage matrix, evidence boundaries, and contract limitations.

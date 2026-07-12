@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S106 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S111 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -114,6 +114,11 @@
 | S104 | [OQMD documentation: Publications](https://oqmd.org/documentation/publications) | OQMD-recommended 2013 and 2015 citations and CC-BY 4.0 data-license statement. | High for project citation guidance; not proof of current funding or authorship roles. |
 | S105 | [npj Computational Materials: OQMD](https://www.nature.com/articles/npjcompumats201510) | Peer-reviewed 11 December 2015 OQMD paper, DOI, author list including Chris Wolverton, and database subject. | High for the historical technical reference; not proof of current content, roles, or capabilities. |
 | S106 | [OQMD documentation: Overview](https://oqmd.org/documentation/overview) | OQMD developer/maintainer group context. | High for the existing group relation; not an exhaustive contributor, ownership, or governance record. |
+| S107 | [Materials Cloud Archive: About](https://archive.materialscloud.org/about) | Open Archive scope, registration/moderation/DOI workflow, current archive implementation, and operational context. | High for documented Archive behavior and technical context; not a security, availability, or governance guarantee. |
+| S108 | [Materials Cloud Archive: Submission instructions](https://archive.materialscloud.org/deposit/information) | Account-based data/metadata upload, moderation, DOI publication, versioning, and integration guidance. | High for public record-deposition route; not a contribution-acceptance, employment, or mentoring promise. |
+| S109 | [Scientific Data: Materials Cloud](https://www.nature.com/articles/s41597-020-00637-5) | Peer-reviewed 8 September 2020 platform paper, DOI, authors including Nicola Marzari and Giovanni Pizzi, and platform architecture/scope. | High for the historical technical reference; not proof of current roles, capabilities, or funding. |
+| S110 | [Materials Cloud](https://www.materialscloud.org/) | Current platform purpose and Learn/Work/Discover/Explore/Archive user journey. | High for public platform surfaces; hosted services and access may change. |
+| S111 | [Materials Cloud policies](https://www.materialscloud.org/policies) | Archive depositor scope and contributor license choices. | High for policy context; not a guarantee that a submission will be accepted. |
 
 ## Evidence protocol for new claims
 
