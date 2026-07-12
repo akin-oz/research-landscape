@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, and S38–S42 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35, and S38–S47 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -50,6 +50,11 @@
 | S40 | [Materials Cloud: Team & Contact](https://www.materialscloud.org/team) | Nicola Marzari's current EPFL and PSI roles and Materials Cloud project-leader listing. | High for listed roles; does not establish ownership of every Materials Cloud component. |
 | S41 | [PSI Laboratory for Materials Simulations: Research Groups](https://www.psi.ch/en/lms/groups) | Nicola Marzari's current Laboratory for Materials Simulations head role at PSI. | High for current PSI laboratory leadership. |
 | S42 | [EPFL, 6 November 2025: Nicola Marzari receives David Adler Award](https://actu.epfl.ch/news/nicola-marzari-receives-david-adler-award) | A Cambridge professorship scheduled to begin full time in September 2026. | High for the future-transition date; not evidence of a current Cambridge affiliation on the July 2026 review date. |
+| S43 | [SOLgroup](https://sol.physik.hu-berlin.de/) | Current group identity, Claudia Draxl leadership, and computational-materials scope at Humboldt-Universität zu Berlin. | High for the named group and stated methods; not evidence of group-wide NOMAD maintenance. |
+| S44 | [FAIRmat Team](https://www.fairmat-nfdi.eu/fairmat/about-fairmat/team-fairmat) | Claudia Draxl’s current FAIRmat spokesperson and area-leader roles. | High for the listed roles; not evidence of sole governance or ownership. |
+| S45 | [FAIRmat](https://www.fairmat-nfdi.eu/fairmat/) | FAIRmat’s current federated-infrastructure identity and relation to the NOMAD Laboratory. | High for ecosystem scope; does not make FAIRmat identical to the NOMAD software artifact. |
+| S46 | [FAIRmat: Our Story](https://fairmat-nfdi.eu/fairmat/projects-fairmat/story-fairmat) | The historical and organizational distinction among FAIRmat, NOMAD, FAIR-DI, and NOMAD CoE. | High for scope and historical context; participant and governance claims remain bounded to the page. |
+| S47 | [FAIRmat-NFDI/nomad](https://github.com/nomad-coe/nomad) | Current public NOMAD software repository, Apache-2.0 license, external contribution path, and research-data-management scope. | High for public software attributes; not an exhaustive governance or maintainer record. |
 
 ## Evidence protocol for new claims
 
