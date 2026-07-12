@@ -274,6 +274,24 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         self.assertEqual(["UNIVERSITY-UC-BERKELEY"], [candidate["record"].id for candidate in chgnet_universities])
 
+    def test_dynamic_ecosystem_discovery_is_path_explainable(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        area_candidates = rl.discovery_ecosystem_candidates(
+            records, "AREA-MACHINE-LEARNED-POTENTIALS", None
+        )
+        self.assertEqual(
+            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT"],
+            sorted(candidate["record"].id for candidate in area_candidates),
+        )
+        fair_chem = next(candidate for candidate in area_candidates if candidate["record"].id == "ECO-FAIR-CHEM")
+        self.assertTrue(any("includes `SW-FAIRCHEM`" in signal["label"] for signal in fair_chem["signals"]))
+        software_candidates = rl.discovery_ecosystem_candidates(
+            records, "AREA-MACHINE-LEARNED-POTENTIALS", "SW-FAIRCHEM"
+        )
+        self.assertEqual(["ECO-FAIR-CHEM"], [candidate["record"].id for candidate in software_candidates])
+        self.assertEqual(2, software_candidates[0]["criteria"])
+
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

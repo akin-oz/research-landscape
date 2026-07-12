@@ -1489,6 +1489,122 @@ def discover_universities(
     return 0
 
 
+def ecosystem_area_signals(ecosystem: Record, area_id: str, records: dict[str, Record]) -> list[dict[str, Any]]:
+    """Return explicit ecosystem paths to a controlled research area."""
+    signals = []
+    for connection in matching_assertions(ecosystem, "connects"):
+        target = records.get(connection.get("target_id"))
+        if target is None:
+            continue
+        for area_assertion in matching_assertions(target, "works_on", {area_id}):
+            signals.append(signal(f"connects `{target.id}`", connection, ecosystem))
+            signals.append(signal(f"`{target.id}` works on `{area_id}`", area_assertion, target))
+    for inclusion in matching_assertions(ecosystem, "includes"):
+        software = records.get(inclusion.get("target_id"))
+        if software is None or software.entity_type != "research-software":
+            continue
+        if area_id in as_ids(software.metadata.get("research_area_ids", [])):
+            signals.append(signal(f"includes `{software.id}`", inclusion, ecosystem))
+            signals.append(metadata_signal(f"`{software.id}` is classified in `{area_id}`", software))
+    return deduplicate_signals(signals)
+
+
+def discovery_ecosystem_candidates(
+    records: dict[str, Record], area_id: str | None, software_id: str | None
+) -> list[dict[str, Any]]:
+    """Apply ANDed, source-explainable filters to reviewed research ecosystems."""
+    candidates = []
+    for ecosystem in records.values():
+        if ecosystem.entity_type != "research-ecosystem" or not eligible(ecosystem):
+            continue
+        signals = []
+        criteria = 0
+        if area_id:
+            area_signals = ecosystem_area_signals(ecosystem, area_id, records)
+            if not area_signals:
+                continue
+            signals.extend(area_signals)
+            criteria += 1
+        if software_id:
+            software_signals = [
+                signal(f"includes `{software_id}`", assertion, ecosystem)
+                for assertion in matching_assertions(ecosystem, "includes", {software_id})
+            ]
+            if not software_signals:
+                continue
+            signals.extend(software_signals)
+            criteria += 1
+        candidates.append({"record": ecosystem, "signals": deduplicate_signals(signals), "criteria": criteria})
+    return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
+
+
+def render_ecosystem_discovery(
+    records: dict[str, Record], area_id: str | None, software_id: str | None, output_path: Path
+) -> str:
+    filters = [(name, value) for name, value in (("research area", area_id), ("research software", software_id)) if value]
+    if not filters:
+        raise ValueError("provide at least one of --area or --software")
+    candidates = discovery_ecosystem_candidates(records, area_id, software_id)
+    lines = [
+        "# Research-ecosystem discovery", "",
+        "**Status:** deterministic evidence-discovery result, not a ranking or ecosystem-dominance assessment.", "",
+        "**AND filters:** " + "; ".join(f"{name} `{value}`" for name, value in filters) + ".", "",
+        "| Research ecosystem | Documented matching evidence | Confidence | Coverage |",
+        "| --- | --- | --- | --- |",
+    ]
+    total_criteria = len(filters)
+    for candidate in candidates:
+        signals = candidate["signals"]
+        rendered_signals = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in signals)
+        confidence = lowest_confidence([item["confidence"] for item in signals])
+        lines.append(
+            f"| {canonical_link(candidate['record'], output_path)} (`{candidate['record'].id}`) | {rendered_signals} | {confidence} | {candidate['criteria']}/{total_criteria} documented criteria |"
+        )
+    if not candidates:
+        lines.append("| — | No reviewed canonical ecosystem matches every requested evidence criterion. | unavailable | 0 criteria |")
+    lines.extend([
+        "", "## Boundary", "",
+        "Results are alphabetically ordered and include only source-backed `connects` or `includes` paths. An area match may arise through a connected group or PI, or through included research software with a documented area classification; each path is displayed. This does not establish field dominance, ecosystem completeness, model performance, funding, hiring, support, or applicant fit.", "",
+    ])
+    return "\n".join(lines)
+
+
+def discover_ecosystems(
+    root: Path,
+    area_id: str | None,
+    software_id: str | None,
+    country_id: str | None,
+    language_id: str | None,
+    check: bool,
+    query_id: str | None,
+    list_queries: bool,
+    as_of: str | None,
+) -> int:
+    if country_id or language_id or check or query_id or list_queries or as_of:
+        print("ERROR: discover-ecosystems accepts only --area and --software")
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    filters = {"area": area_id, "software": software_id}
+    for name, value in filters.items():
+        if not value:
+            continue
+        target = records.get(value)
+        if target is None or target.entity_type != DISCOVERY_FILTER_TYPES[name]:
+            print(f"ERROR: --{name} must reference a canonical {DISCOVERY_FILTER_TYPES[name]} ID, got {value!r}")
+            return 2
+    try:
+        print(render_ecosystem_discovery(
+            records, area_id, software_id, root / "reports/generated/evidence-recommendations.md"
+        ))
+    except ValueError as exc:
+        print(f"ERROR: {exc}")
+        return 2
+    return 0
+
+
 def write_or_check(path: Path, content: str, check: bool, drift: list[str]) -> None:
     if check:
         if not path.exists() or path.read_text(encoding="utf-8") != content:
@@ -1690,7 +1806,7 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "discover-groups", "discover-pis", "discover-universities", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
@@ -1721,6 +1837,11 @@ def main() -> int:
     if args.command == "discover-universities":
         return discover_universities(
             root, args.area, args.country, args.software, args.language,
+            args.check, args.query, args.list_queries, args.as_of,
+        )
+    if args.command == "discover-ecosystems":
+        return discover_ecosystems(
+            root, args.area, args.software, args.country, args.language,
             args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "freshness":

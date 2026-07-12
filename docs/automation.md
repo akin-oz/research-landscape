@@ -23,6 +23,8 @@ python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LAN
 python3 scripts/research_landscape.py discover-pis --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
+python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS
+python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS --software SW-FAIRCHEM
 python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 ```
 
@@ -74,6 +76,13 @@ country and the ADR 0006 direct-host paths of reviewed Research Groups. Area,
 software, and language signals name the hosted group that supplied them. The
 result is an evidence-discovery view of documented paths, not a comparison of
 university strength, degree quality, ecosystem completeness, or admissions.
+
+`discover-ecosystems` is an interactive, non-generated AND filter over
+reviewed Research Ecosystems. It accepts canonical `--area` and `--software`
+IDs. Area paths are limited to sourced `connects` relations to an entity with a
+direct topic relation, or sourced `includes` relations to software with a
+documented area classification. The command is alphabetically ordered and does
+not assess ecosystem dominance, completeness, performance, or fit.
 
 `freshness` produces a non-generated, reproducible maintenance audit from
 review dates and declared volatile-assertion deadlines. Pass `--as-of` for a
