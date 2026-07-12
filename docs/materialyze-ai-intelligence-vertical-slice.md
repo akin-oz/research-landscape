@@ -32,6 +32,7 @@ flowchart LR
   PI -->|"works_on"| MLP
   PUB["PUB-M3GNET-2022\nM3GNet publication"] -->|"authored_by"| PI
   PUB -->|"addresses"| MLP
+  PUB -->|"describes"| M3G["SW-M3GNET\narchived M3GNet"]
   PI -->|"develops"| SW["SW-PYMATGEN\npymatgen"]
   ECO["ECO-MATERIALS-PROJECT\nMaterials Project Ecosystem"] -->|"connects"| PI
   ECO -->|"includes"| SW
@@ -39,8 +40,8 @@ flowchart LR
 
 The existing PI-level pymatgen relation remains deliberately distinct from a
 group-wide maintenance claim. [`PUB-M3GNET-2022`](../entities/publications/m3gnet-2022.md)
-records the public M3GNet article's author and Machine-Learned Potentials for
-Materials paths; it does not establish an individual MatGL role. A later
+records the public M3GNet article's author, topic, and distinct archived
+M3GNet software paths; it does not establish an individual MatGL role. A later
 repository-backed review promotes MatGL
 to the single supported group-level software path because the lab presents it
 as one of its open-source codes and its repository records a Materialyze.AI

@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 2740782cd49db0efdb318be30525f72f8b99b4b4a6d32588775817cb75e6d293 -->
+<!-- input-fingerprint: ddd78e4e9b6c7103b4ad7b0f2a2a5cec87e288c2487654d06bdfbb66c64fa038 -->
 # Repository health report
 
-**Input fingerprint:** `2740782cd49db0efdb318be30525f72f8b99b4b4a6d32588775817cb75e6d293`
+**Input fingerprint:** `ddd78e4e9b6c7103b4ad7b0f2a2a5cec87e288c2487654d06bdfbb66c64fa038`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **84**
-- Typed relationship assertions: **151**
+- Canonical v2 entities: **85**
+- Typed relationship assertions: **153**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -28,29 +28,29 @@
 | research-area | 4 |
 | research-ecosystem | 9 |
 | research-group | 12 |
-| research-software | 10 |
+| research-software | 11 |
 | university | 8 |
 
 ## Confidence coverage
 
 | Confidence | Count |
 | --- | ---: |
-| high | 84 |
+| high | 85 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **84**
+- Canonical v2 records in approved entity directories: **85**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 84/84 |
-| Reviewed/published records with last-review dates | 84/84 |
-| Typed relationships with source IDs | 151/151 |
+| Reviewed/published records with source IDs | 85/85 |
+| Reviewed/published records with last-review dates | 85/85 |
+| Typed relationships with source IDs | 153/153 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
-| Entities with an inbound or outbound graph connection | 84/84 |
+| Entities with an inbound or outbound graph connection | 85/85 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
@@ -64,7 +64,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 3 | 2 | 3 |
 | [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 7 | 1 | 6 | 7 |
-| [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 4 | 2 | 3 |
+| [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 5 | 2 | 3 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 1 | 1 | 2 |
 
 ## Programming-language discovery coverage
@@ -74,7 +74,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | Programming language | Research Software | Research Groups | Principal Investigators | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [C++](../../entities/programming-languages/cpp.md) | 1 | 1 | 0 | 1 | 1 |
-| [Python](../../entities/programming-languages/python.md) | 9 | 6 | 2 | 4 | 7 |
+| [Python](../../entities/programming-languages/python.md) | 10 | 6 | 2 | 4 | 7 |
 
 ## Relationship predicates
 
@@ -87,10 +87,10 @@ These are counts of direct, documented implementation paths. They measure corpus
 | belongs_to | 14 |
 | connects | 19 |
 | covers | 1 |
-| describes | 5 |
+| describes | 6 |
 | develops | 10 |
 | funds | 1 |
-| implemented_in | 10 |
+| implemented_in | 11 |
 | includes | 8 |
 | involves | 1 |
 | leads | 11 |

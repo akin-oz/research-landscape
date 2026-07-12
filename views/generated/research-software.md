@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 2740782cd49db0efdb318be30525f72f8b99b4b4a6d32588775817cb75e6d293 -->
+<!-- input-fingerprint: ddd78e4e9b6c7103b4ad7b0f2a2a5cec87e288c2487654d06bdfbb66c64fa038 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `2740782cd49db0efdb318be30525f72f8b99b4b4a6d32588775817cb75e6d293`
+**Input fingerprint:** `ddd78e4e9b6c7103b4ad7b0f2a2a5cec87e288c2487654d06bdfbb66c64fa038`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/research-software/aflow.md)
@@ -48,6 +48,13 @@
 | --- | --- | --- | --- | --- | --- |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) | `ECO-FAIR-CHEM` | research-ecosystem | high | 2026-07-12 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
+
+## [M3GNet](../../entities/research-software/m3gnet.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [A universal graph deep learning interatomic potential for the periodic table](../../entities/publications/m3gnet-2022.md) | `PUB-M3GNET-2022` | publication | high | 2026-07-12 | — |
+| [M3GNet](../../entities/research-software/m3gnet.md) | `SW-M3GNET` | research-software | high | 2026-07-12 | — |
 
 ## [MACE](../../entities/research-software/mace.md)
 

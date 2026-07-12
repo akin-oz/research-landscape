@@ -54,7 +54,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["area"].id: item for item in rl.research_area_coverage(records)}
         self.assertEqual(
-            {"groups": 2, "principal_investigators": 2, "software": 4, "universities": 2, "ecosystems": 3},
+            {"groups": 2, "principal_investigators": 2, "software": 5, "universities": 2, "ecosystems": 3},
             {key: coverage["AREA-MACHINE-LEARNED-POTENTIALS"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -74,7 +74,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"software": 9, "groups": 6, "principal_investigators": 2, "universities": 4, "ecosystems": 7},
+            {"software": 10, "groups": 6, "principal_investigators": 2, "universities": 4, "ecosystems": 7},
             {key: coverage["PROGRAMMING-LANGUAGE-PYTHON"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -384,7 +384,7 @@ class RepositoryHealthTests(unittest.TestCase):
             records, "AREA-MACHINE-LEARNED-POTENTIALS", "PROGRAMMING-LANGUAGE-PYTHON", None
         )
         self.assertEqual(
-            ["SW-CHGNET", "SW-FAIRCHEM", "SW-MACE", "SW-MATGL"],
+            ["SW-CHGNET", "SW-FAIRCHEM", "SW-M3GNET", "SW-MACE", "SW-MATGL"],
             sorted(candidate["record"].id for candidate in ml_python_candidates),
         )
 
@@ -460,7 +460,10 @@ class RepositoryHealthTests(unittest.TestCase):
             ["AREA-MACHINE-LEARNED-POTENTIALS"],
             [assertion["target_id"] for assertion in rl.matching_assertions(publication, "addresses")],
         )
-        self.assertEqual([], rl.matching_assertions(publication, "describes"))
+        self.assertEqual(
+            ["SW-M3GNET"],
+            [assertion["target_id"] for assertion in rl.matching_assertions(publication, "describes")],
+        )
         self.assertIn("PUB-M3GNET-2022", records["PI-SHYUE-PING-ONG"].metadata["publication_ids"])
         research_area_view = rl.render_view(
             next(view for view in rl.yaml.safe_load((ROOT / "views/definitions.yaml").read_text(encoding="utf-8"))["views"] if view["view_id"] == "research-areas"),
