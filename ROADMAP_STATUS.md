@@ -16,14 +16,16 @@ evidence and limits of this status.
 
 ## Post-v0.3 progress
 
-The current `main` branch extends the released cohort to 82 canonical entities
-and 144 evidence-bearing typed relationships. It adds AI-for-Materials,
-FAIR Chemistry/FAIRChem, UC Berkeley/CEDER/CHGNet vertical slices, the accepted
-Programming Language and bounded mentorship-process evidence contracts,
-explicit recommendation-query discovery, review-freshness auditing, and
-stricter Evidence-table provenance validation. These are ongoing improvements,
-not a retroactive change to the v0.3.0 release conclusion; see
-[CHANGELOG.md](CHANGELOG.md) for the untagged work.
+The current `main` branch extends the released cohort to 84 canonical entities
+and 151 evidence-bearing typed relationships. It adds AI-for-Materials,
+FAIR Chemistry/FAIRChem, UC Berkeley/CEDER/CHGNet, MACE/Cambridge,
+Materialyze/MatGL/MatML, and M3GNet publication-provenance slices; accepted
+Programming Language and bounded mentorship-process evidence contracts;
+explicit recommendation-query, interactive software, and ecosystem-path
+discovery; review-freshness auditing; and stricter Evidence-table provenance
+validation. These are ongoing improvements, not a retroactive change to the
+v0.3.0 release conclusion; see [CHANGELOG.md](CHANGELOG.md) for the untagged
+work.
 
 ## Ongoing roadmap
 

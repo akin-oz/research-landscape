@@ -316,6 +316,26 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(["ECO-FAIR-CHEM"], [candidate["record"].id for candidate in software_candidates])
         self.assertEqual(2, software_candidates[0]["criteria"])
 
+    def test_dynamic_ecosystem_filters_trace_software_paths_without_membership_claims(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        group_candidates = rl.discovery_group_candidates(
+            records, None, None, None, None, "ECO-MATML"
+        )
+        self.assertEqual(["RG-MATERIALYZE-AI"], [candidate["record"].id for candidate in group_candidates])
+        self.assertTrue(any("ECO-MATML` includes `SW-MATGL" in signal["label"] for signal in group_candidates[0]["signals"]))
+        pi_candidates = rl.discovery_pi_candidates(
+            records, None, None, None, None, "ECO-MATERIALS-PROJECT"
+        )
+        self.assertEqual(["PI-SHYUE-PING-ONG"], [candidate["record"].id for candidate in pi_candidates])
+        self.assertTrue(any("ECO-MATERIALS-PROJECT` includes `SW-PYMATGEN" in signal["label"] for signal in pi_candidates[0]["signals"]))
+        university_candidates = rl.discovery_university_candidates(
+            records, "AREA-MACHINE-LEARNED-POTENTIALS", None, None, None, "ECO-MATML"
+        )
+        self.assertEqual(["UNIVERSITY-NUS"], [candidate["record"].id for candidate in university_candidates])
+        self.assertEqual(2, university_candidates[0]["criteria"])
+        self.assertTrue(any("`RG-MATERIALYZE-AI`: `ECO-MATML` includes `SW-MATGL" in signal["label"] for signal in university_candidates[0]["signals"]))
+
     def test_dynamic_software_discovery_is_path_explainable_and_anded(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

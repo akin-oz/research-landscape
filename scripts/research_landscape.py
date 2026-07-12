@@ -1082,12 +1082,36 @@ def deduplicate_signals(signals: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return list(unique.values())
 
 
+def development_ecosystem_signals(
+    developer: Record, ecosystem_id: str, records: dict[str, Record], verb: str,
+) -> list[dict[str, Any]]:
+    """Return a developer-to-ecosystem path through reviewed software.
+
+    The function intentionally displays both source-bearing assertions instead
+    of claiming that the developer is itself an ecosystem member.
+    """
+    ecosystem = records.get(ecosystem_id)
+    if ecosystem is None or ecosystem.entity_type != "research-ecosystem":
+        return []
+    signals = []
+    for development in matching_assertions(developer, "develops"):
+        software = records.get(development.get("target_id"))
+        if software is None or software.entity_type != "research-software":
+            continue
+        inclusions = matching_assertions(ecosystem, "includes", {software.id})
+        for inclusion in inclusions:
+            signals.append(signal(f"{verb} `{software.id}`", development, developer))
+            signals.append(signal(f"`{ecosystem_id}` includes `{software.id}`", inclusion, ecosystem))
+    return deduplicate_signals(signals)
+
+
 def discovery_group_candidates(
     records: dict[str, Record],
     area_id: str | None,
     country_id: str | None,
     software_id: str | None,
     language_id: str | None,
+    ecosystem_id: str | None = None,
 ) -> list[dict[str, Any]]:
     """Apply ANDed, source-explainable filters to reviewed research groups."""
     candidates = []
@@ -1128,6 +1152,12 @@ def discovery_group_candidates(
                 continue
             signals.extend(language_signals)
             criteria += 1
+        if ecosystem_id:
+            ecosystem_signals = development_ecosystem_signals(group, ecosystem_id, records, "develops")
+            if not ecosystem_signals:
+                continue
+            signals.extend(ecosystem_signals)
+            criteria += 1
         candidates.append({"record": group, "signals": deduplicate_signals(signals), "criteria": criteria})
     return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
 
@@ -1138,14 +1168,15 @@ def render_group_discovery(
     country_id: str | None,
     software_id: str | None,
     language_id: str | None,
+    ecosystem_id: str | None,
     output_path: Path,
 ) -> str:
     filters = [(name, value) for name, value in (
-        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id),
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id),
     ) if value]
     if not filters:
-        raise ValueError("provide at least one of --area, --country, --software, or --language")
-    candidates = discovery_group_candidates(records, area_id, country_id, software_id, language_id)
+        raise ValueError("provide at least one of --area, --country, --software, --language, or --ecosystem")
+    candidates = discovery_group_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id)
     lines = [
         "# Research-group discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking.", "",
@@ -1165,7 +1196,7 @@ def render_group_discovery(
         lines.append("| — | No reviewed canonical research group matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and contain only reviewed groups with every requested source-backed criterion. A country match follows the group’s documented direct host; a language match follows a documented group-development edge and a software `implemented_in` assertion. This does not rank groups or establish openings, group-wide working language, individual skill, mentorship quality, funding, admissions, or applicant fit.", "",
+        "Results are alphabetically ordered and contain only reviewed groups with every requested source-backed criterion. A country match follows the group’s documented direct host; language and ecosystem matches follow a documented group-development edge through software `implemented_in` or ecosystem `includes` assertions. This does not assert that a group is an ecosystem member or establish openings, group-wide working language, individual skill, mentorship quality, funding, admissions, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1176,19 +1207,20 @@ def discover_groups(
     country_id: str | None,
     software_id: str | None,
     language_id: str | None,
+    ecosystem_id: str | None,
     check: bool,
     query_id: str | None,
     list_queries: bool,
     as_of: str | None,
 ) -> int:
     if check or query_id or list_queries or as_of:
-        print("ERROR: discover-groups accepts only --area, --country, --software, and --language")
+        print("ERROR: discover-groups accepts only --area, --country, --software, --language, and --ecosystem")
         return 2
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
         return 1
-    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id}
+    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id, "ecosystem": ecosystem_id}
     for name, value in filters.items():
         if not value:
             continue
@@ -1198,7 +1230,7 @@ def discover_groups(
             return 2
     try:
         print(render_group_discovery(
-            records, area_id, country_id, software_id, language_id,
+            records, area_id, country_id, software_id, language_id, ecosystem_id,
             root / "reports/generated/evidence-recommendations.md",
         ))
     except ValueError as exc:
@@ -1232,6 +1264,7 @@ def discovery_pi_candidates(
     country_id: str | None,
     software_id: str | None,
     language_id: str | None,
+    ecosystem_id: str | None = None,
 ) -> list[dict[str, Any]]:
     """Apply ANDed, source-explainable filters to reviewed PIs."""
     candidates = []
@@ -1272,6 +1305,12 @@ def discovery_pi_candidates(
                 continue
             signals.extend(language_signals)
             criteria += 1
+        if ecosystem_id:
+            ecosystem_signals = development_ecosystem_signals(pi, ecosystem_id, records, "develops")
+            if not ecosystem_signals:
+                continue
+            signals.extend(ecosystem_signals)
+            criteria += 1
         candidates.append({"record": pi, "signals": deduplicate_signals(signals), "criteria": criteria})
     return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
 
@@ -1282,14 +1321,15 @@ def render_pi_discovery(
     country_id: str | None,
     software_id: str | None,
     language_id: str | None,
+    ecosystem_id: str | None,
     output_path: Path,
 ) -> str:
     filters = [(name, value) for name, value in (
-        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id),
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id),
     ) if value]
     if not filters:
-        raise ValueError("provide at least one of --area, --country, --software, or --language")
-    candidates = discovery_pi_candidates(records, area_id, country_id, software_id, language_id)
+        raise ValueError("provide at least one of --area, --country, --software, --language, or --ecosystem")
+    candidates = discovery_pi_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id)
     lines = [
         "# Principal-investigator discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking or availability finding.", "",
@@ -1309,7 +1349,7 @@ def render_pi_discovery(
         lines.append("| — | No reviewed canonical PI matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and contain only PIs with every requested source-backed criterion. A country match follows a documented public affiliation and its documented location; a language match follows a documented PI-development edge and a software `implemented_in` assertion. This does not rank people or establish current openings, supervision capacity, mentorship quality, funding, admissions, or applicant fit.", "",
+        "Results are alphabetically ordered and contain only PIs with every requested source-backed criterion. A country match follows a documented public affiliation and its documented location; language and ecosystem matches follow a documented PI-development edge through software `implemented_in` or ecosystem `includes` assertions. This does not assert that a PI is an ecosystem member or establish current openings, supervision capacity, mentorship quality, funding, admissions, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1320,19 +1360,20 @@ def discover_pis(
     country_id: str | None,
     software_id: str | None,
     language_id: str | None,
+    ecosystem_id: str | None,
     check: bool,
     query_id: str | None,
     list_queries: bool,
     as_of: str | None,
 ) -> int:
     if check or query_id or list_queries or as_of:
-        print("ERROR: discover-pis accepts only --area, --country, --software, and --language")
+        print("ERROR: discover-pis accepts only --area, --country, --software, --language, and --ecosystem")
         return 2
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
         return 1
-    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id}
+    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id, "ecosystem": ecosystem_id}
     for name, value in filters.items():
         if not value:
             continue
@@ -1342,7 +1383,7 @@ def discover_pis(
             return 2
     try:
         print(render_pi_discovery(
-            records, area_id, country_id, software_id, language_id,
+            records, area_id, country_id, software_id, language_id, ecosystem_id,
             root / "reports/generated/evidence-recommendations.md",
         ))
     except ValueError as exc:
@@ -1380,10 +1421,11 @@ def discovery_university_candidates(
     country_id: str | None,
     software_id: str | None,
     language_id: str | None,
+    ecosystem_id: str | None = None,
 ) -> list[dict[str, Any]]:
     """Find universities through explicit, direct-host group evidence paths."""
-    group_filters_present = any((area_id, software_id, language_id))
-    eligible_groups = discovery_group_candidates(records, area_id, None, software_id, language_id)
+    group_filters_present = any((area_id, software_id, language_id, ecosystem_id))
+    eligible_groups = discovery_group_candidates(records, area_id, None, software_id, language_id, ecosystem_id)
     if not group_filters_present:
         eligible_groups = [
             {"record": group, "signals": [], "criteria": 0}
@@ -1412,7 +1454,7 @@ def discovery_university_candidates(
         if not hosted:
             continue
         if group_filters_present:
-            criteria += sum(bool(value) for value in (area_id, software_id, language_id))
+            criteria += sum(bool(value) for value in (area_id, software_id, language_id, ecosystem_id))
         for group, host_signals, group_signals in hosted:
             signals.extend(host_signals)
             for item in group_signals:
@@ -1427,14 +1469,15 @@ def render_university_discovery(
     country_id: str | None,
     software_id: str | None,
     language_id: str | None,
+    ecosystem_id: str | None,
     output_path: Path,
 ) -> str:
     filters = [(name, value) for name, value in (
-        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id),
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id),
     ) if value]
     if not filters:
-        raise ValueError("provide at least one of --area, --country, --software, or --language")
-    candidates = discovery_university_candidates(records, area_id, country_id, software_id, language_id)
+        raise ValueError("provide at least one of --area, --country, --software, --language, or --ecosystem")
+    candidates = discovery_university_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id)
     lines = [
         "# University environment discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking or university-strength assessment.", "",
@@ -1454,7 +1497,7 @@ def render_university_discovery(
         lines.append("| — | No reviewed canonical University has a directly hosted group path matching every requested criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and use only a University's documented country and the ADR 0006 direct-host paths of reviewed groups. Signals name the hosted group that supplied area, software, or language evidence; different signals may come from different directly hosted groups. This does not rank universities or establish ecosystem completeness, degree quality, funding, admissions, mentorship, or applicant fit.", "",
+        "Results are alphabetically ordered and use only a University's documented country and the ADR 0006 direct-host paths of reviewed groups. Signals name the hosted group that supplied area, software, language, or ecosystem traversal evidence; different signals may come from different directly hosted groups. This does not assert that a university is an ecosystem member or rank universities, establish ecosystem completeness, degree quality, funding, admissions, mentorship, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1465,19 +1508,20 @@ def discover_universities(
     country_id: str | None,
     software_id: str | None,
     language_id: str | None,
+    ecosystem_id: str | None,
     check: bool,
     query_id: str | None,
     list_queries: bool,
     as_of: str | None,
 ) -> int:
     if check or query_id or list_queries or as_of:
-        print("ERROR: discover-universities accepts only --area, --country, --software, and --language")
+        print("ERROR: discover-universities accepts only --area, --country, --software, --language, and --ecosystem")
         return 2
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
         return 1
-    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id}
+    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id, "ecosystem": ecosystem_id}
     for name, value in filters.items():
         if not value:
             continue
@@ -1487,7 +1531,7 @@ def discover_universities(
             return 2
     try:
         print(render_university_discovery(
-            records, area_id, country_id, software_id, language_id,
+            records, area_id, country_id, software_id, language_id, ecosystem_id,
             root / "reports/generated/evidence-recommendations.md",
         ))
     except ValueError as exc:
@@ -1993,12 +2037,12 @@ def main() -> int:
     parser.add_argument("--country", help="canonical Country ID for compatible discovery commands")
     parser.add_argument("--software", help="canonical Research Software ID for compatible discovery commands")
     parser.add_argument("--language", help="canonical Programming Language ID for compatible discovery commands")
-    parser.add_argument("--ecosystem", help="canonical Research Ecosystem ID for discover-software")
+    parser.add_argument("--ecosystem", help="canonical Research Ecosystem ID for compatible discovery commands")
     parser.add_argument("--as-of", help="ISO date for a reproducible freshness audit (defaults to today)")
     args = parser.parse_args()
     root = args.root.resolve()
-    if args.ecosystem and args.command != "discover-software":
-        print("ERROR: --ecosystem is only accepted by discover-software")
+    if args.ecosystem and args.command not in {"discover-groups", "discover-pis", "discover-universities", "discover-software"}:
+        print("ERROR: --ecosystem is accepted only by discover-groups, discover-pis, discover-universities, and discover-software")
         return 2
     if args.command == "validate":
         records, results = validate(root)
@@ -2013,17 +2057,17 @@ def main() -> int:
         )
     if args.command == "discover-groups":
         return discover_groups(
-            root, args.area, args.country, args.software, args.language,
+            root, args.area, args.country, args.software, args.language, args.ecosystem,
             args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "discover-pis":
         return discover_pis(
-            root, args.area, args.country, args.software, args.language,
+            root, args.area, args.country, args.software, args.language, args.ecosystem,
             args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "discover-universities":
         return discover_universities(
-            root, args.area, args.country, args.software, args.language,
+            root, args.area, args.country, args.software, args.language, args.ecosystem,
             args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "discover-ecosystems":

@@ -12,6 +12,7 @@ All notable changes are documented here. This project follows the principles of 
 - A reviewed MatGL/Materialyze.AI software path with a bounded NUS-hosted group-development relation and Python implementation evidence, expanding Machine-Learned Potentials discovery without asserting individual roles.
 - A named MatML ecosystem node with a single sourced MatGL inclusion, making its documented software-ecosystem context discoverable without inferring unreviewed components or contributors.
 - A source-bounded M3GNet publication relation that exposes Shyue Ping Ong's Machine-Learned Potentials for Materials work without inferring an individual MatGL maintenance role.
+- A controlled C++ programming-language entity and sourced implementation paths for AFLOW (C++), NOMAD, RadonPy, MACE, and FAIRChem (Python), with explicit implementation-only boundaries.
 - Accepted and implemented ADR 0007: a controlled Python programming-language entity, sourced Research Software `implemented_in` assertions, and an evidence-discovery path for groups with documented development links to Python software.
 - Extended the CEDER/CHGNet vertical slice with a sourced Python implementation link, exposing its already documented group-development path in the Python discovery query.
 - Accepted and implemented ADR 0008: a bounded public mentorship-process evidence field, two independently reviewed category slices, and a non-comparative discovery query that retains source limitations.
@@ -23,6 +24,8 @@ All notable changes are documented here. This project follows the principles of 
 - An interactive `discover-pis` command applying the same evidence-first filters to reviewed Principal Investigators, with country matches limited to documented public affiliation paths.
 - An interactive `discover-universities` command exposing documented country and direct-host group paths for academic-environment discovery without comparing institutions.
 - An interactive `discover-ecosystems` command for source-explainable ecosystem filtering by controlled research area and included research software, without dominance claims.
+- An interactive `discover-software` command for source-explainable AND filtering by research area, implementation language, and ecosystem inclusion.
+- Ecosystem-path filters for groups, PIs, and direct-host universities, showing the sourced developer → software → ecosystem route without inferring ecosystem membership, ownership, governance, or institutional strength.
 - A reproducible review-freshness audit based on canonical `last_review` dates and declared volatile-assertion deadlines.
 - A generated research-area discovery coverage matrix showing the current direct group, PI, software, direct-host University, and ecosystem path coverage for each controlled area.
 
