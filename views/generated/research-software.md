@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 03d4af678251e60e0bbc17d9f05f9149e77f29776ead74c9eb0829c2b8afc7bb -->
+<!-- input-fingerprint: cbdd657d5032e1562f7ea6338ffea16997b46a89a8d93b0e21b9985f8d729858 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `03d4af678251e60e0bbc17d9f05f9149e77f29776ead74c9eb0829c2b8afc7bb`
+**Input fingerprint:** `cbdd657d5032e1562f7ea6338ffea16997b46a89a8d93b0e21b9985f8d729858`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AFLOW](../../entities/research-software/aflow.md)
@@ -19,6 +19,7 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
+| [Giovanni Pizzi](../../entities/principal-investigators/giovanni-pizzi.md) | `PI-GIOVANNI-PIZZI` | principal-investigator | high | 2026-07-11 | COUNTRY-CH |
 | [AiiDA 1.0, a scalable computational infrastructure for automated reproducible workflows and data provenance](../../entities/publications/aiida-1-0.md) | `PUB-AIIDA-1-0` | publication | high | 2026-07-12 | — |
 | [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) | `ECO-AIIDA` | research-ecosystem | high | 2026-07-12 | — |
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) | `ECO-MATERIALS-CLOUD` | research-ecosystem | high | 2026-07-12 | — |

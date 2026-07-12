@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 0ad650c32f5217d69f151f018704f4842170d3ffa45982726645dbe7badbecc3 -->
+<!-- input-fingerprint: a26a5658aa1a6711383b26b80983ecf0bac0b141134cce3a3c159ca22d9d0508 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `0ad650c32f5217d69f151f018704f4842170d3ffa45982726645dbe7badbecc3`
+**Input fingerprint:** `a26a5658aa1a6711383b26b80983ecf0bac0b141134cce3a3c159ca22d9d0508`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -250,6 +250,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Giovanni Pizzi](../../entities/principal-investigators/giovanni-pizzi.md) (`PI-GIOVANNI-PIZZI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM) | high | 1/1 documented criteria |
 | [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) (`PI-GABOR-CSANYI`) | develops licensed open-source `SW-MACE` (sources: SRC-MACE-REPOSITORY) | high | 1/1 documented criteria |
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | develops licensed open-source `SW-PYMATGEN` (sources: SRC-NUS-ONG-PROFILE, SRC-PYMATGEN-TEAM) | high | 1/1 documented criteria |
 

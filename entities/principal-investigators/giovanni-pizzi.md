@@ -11,6 +11,7 @@ confidence: high
 source_ids:
   - SRC-PSI-PIZZI-PROFILE
   - SRC-PSI-MSD-GROUP
+  - SRC-AIIDA-DEVELOPMENT-TEAM
 affiliation_ids:
   - ORG-PSI
 research_group_ids:
@@ -29,13 +30,21 @@ relationship_assertions:
     source_ids: [SRC-PSI-PIZZI-PROFILE, SRC-PSI-MSD-GROUP]
     confidence: high
     evidence_window: 2026-07
+  - predicate: develops
+    target_id: SW-AIIDA-CORE
+    role: development-team-member
+    source_ids: [SRC-AIIDA-DEVELOPMENT-TEAM]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The official AiiDA Team page lists Pizzi in the AiiDA Development team. This does not establish exclusive ownership, a current maintainer assignment, code-review authority, or a guarantee of ongoing contribution.
 ---
 
 # Giovanni Pizzi
 
-Giovanni Pizzi is represented here only for the public, evidenced relationship
-chain needed by the AiiDA reference slice. This record makes no claim about
-current openings, supervision capacity, working language, or personal fit.
+Giovanni Pizzi is represented for the public, evidenced AiiDA development-team
+role and PSI group leadership needed by the AiiDA reference slice. This record
+makes no claim about current openings, supervision capacity, working language,
+or personal fit.
 
 ## Evidence
 
@@ -43,6 +52,7 @@ current openings, supervision capacity, working language, or personal fit.
 | --- | --- |
 | `SRC-PSI-PIZZI-PROFILE` | [PSI profile: Dr. Giovanni Pizzi](https://www.psi.ch/en/lms/people/giovanni-pizzi) identifies him as “Group leader MSD,” gives the PSI affiliation and publishes the ORCID recorded above. Accessed 2026-07-11. |
 | `SRC-PSI-MSD-GROUP` | [PSI Materials Software and Data Group](https://www.psi.ch/en/lms/msd-group) lists Giovanni Pizzi as the group's leader. Accessed 2026-07-11. |
+| `SRC-AIIDA-DEVELOPMENT-TEAM` | [AiiDA Team](https://aiida.net/team/) lists Giovanni Pizzi in “The AiiDA Development team” as Group Leader of the Materials Software and Data Group at PSI. It supports a bounded software-development-team role, not an exhaustive maintainer roster or current contribution-frequency claim. Accessed 2026-07-12. |
 
 ## Compatibility
 
