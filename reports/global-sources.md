@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S82 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S88 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -90,6 +90,12 @@
 | S80 | [Materials Project documentation: API getting started](https://docs.materialsproject.org/downloading-data/using-the-api/getting-started) | `mp-api`, `MPRester`, account/API-key path, and documented endpoint use. | High for upstream user journey; access and endpoints can change. |
 | S81 | [materialsproject/pymatgen](https://github.com/materialsproject/pymatgen) | Public pymatgen source, installation, examples, issue/PR/forum/discussion contribution routes, project relationship, and citation. | High for public software and contribution surfaces; not an exhaustive maintainer or governance roster. |
 | S82 | [UC Berkeley eScholarship: Python Materials Genomics (pymatgen)](https://escholarship.org/uc/item/30v0j6cc) | Peer-reviewed 1 February 2013 pymatgen paper, DOI, author list, and library subject. | High for the historical technical reference; not proof of current roles or capabilities. |
+| S83 | [NOMAD documentation: Architecture](https://nomad-lab.eu/prod/v1/docs/explanation/architecture.html) | NOMAD's documented container-oriented app/worker architecture, public surfaces, processing, and supporting-service context. | High for architecture documentation; not a complete deployment, security, ownership, or dependency graph. |
+| S84 | [NOMAD documentation: How-to overview](https://nomad-lab.eu/docs/howto/overview.html) | GUI/API data-management, upload/publication, plugin, Oasis, and core-development routes. | High for documented user and extension paths; not proof of access, acceptance, or support outcomes. |
+| S85 | [NOMAD documentation: How to contribute](https://nomad-lab.eu/prod/v1/docs/howto/develop/contrib.html) | Synchronized GitHub/GitLab project context, public GitHub issue route, and core contribution guidance. | High for contribution entry points; not an exhaustive governance or reviewer roster. |
+| S86 | [Journal of Open Source Software: NOMAD](https://joss.theoj.org/papers/10.21105/joss.05388) | Peer-reviewed 15 October 2023 NOMAD technical paper, DOI, author list including Claudia Draxl, and distributed-platform subject. | High for the historical technical reference; not proof of current roles or capabilities. |
+| S87 | [FAIRmat: Consortium](https://www.fairmat-nfdi.eu/fairmat/about-fairmat/consortium-fairmat) | FAIRmat's NFDI consortium context, operation/further development of the NOMAD Laboratory, and extension to experimental/sample-synthesis data. | High for stated FAIRmat–NOMAD and NFDI context; insufficient alone for a canonical funding-programme edge. |
+| S88 | [NOMAD: How to cite NOMAD](https://nomad-lab.eu/nomad-lab/cite.html) | Project-maintained citation page that identifies the JOSS paper as NOMAD's main publication and lists related references. | High for project citation guidance; JOSS is retained as the bibliographic source of record. |
 
 ## Evidence protocol for new claims
 
