@@ -25,4 +25,4 @@ No university-level aggregate should be treated as a prestige ranking. A persona
 
 ## Reference compatibility
 
-The reviewed [Northwestern University](../../entities/universities/northwestern-university.md) and [Duke University](../../entities/universities/duke-university.md) paths demonstrate a Research Group resolving directly to a University and then to [United States](../../entities/countries/united-states.md). They are canonical-link examples, not manually maintained university-view results.
+The reviewed [Northwestern University](../../entities/universities/northwestern-university.md), [Duke University](../../entities/universities/duke-university.md), and [National University of Singapore](../../entities/universities/national-university-of-singapore.md) paths demonstrate a Research Group resolving directly to a University and then to a Country record. They are canonical-link examples, not manually maintained university-view results.

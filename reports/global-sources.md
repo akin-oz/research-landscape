@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11  
+**Last reviewed:** 2026-07-11; **S30 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -37,7 +37,7 @@
 | S27 | [DeepModeling](https://deepmodeling.org/) | Open ecosystem for machine-learning potentials, workflows and materials simulation. | High for project scope. |
 | S28 | [Materials Data Facility](https://materialsdatafacility.org/) | Data publication/discovery infrastructure relevant to computational materials. | High for platform scope. |
 | S29 | [Berkeley Lab: Anubhav Jain](https://eta.lbl.gov/people/anubhav-jain) | Current group description, Materials Project leadership and theory/computing/AI scope. | High for role and research scope. |
-| S30 | [UC San Diego: Shyue Ping Ong](https://jacobsschool.ucsd.edu/people/profile/shyue-ping-ong) | Current faculty role and data-driven computational-materials research statement. | High for role and research scope. |
+| S30 | [NUS Materials Science and Engineering: Shyue Ping Ong](https://cde.nus.edu.sg/mse/staff/shyue-ping-ong/) | Current NUS role, Materialyze.AI leadership, pymatgen founder/lead-developer role, and Materials Project contributor statement. | High for current role and direct public software/ecosystem links. |
 | S31 | [Northwestern: Chris Wolverton](https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/wolverton-chris.html) | Current faculty profile and computational-materials/informatics statement. | High for role and research scope. |
 | S32 | [Duke: Stefano Curtarolo](https://mems.duke.edu/people/stefano-curtarolo/) | Current title, AI/autonomous design interests and selected research record. | High for role and research scope. |
 | S33 | [EPFL: Nicola Marzari](https://people.epfl.ch/nicola.marzari/?lang=en) | Current EPFL role and THEOS/MARVEL affiliations. | High for role. |

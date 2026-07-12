@@ -21,9 +21,9 @@ open_source: "yes"
 # pymatgen
 
 `pymatgen` is the distinct research-software artifact in the Materials Project
-slice. Its ecosystem relationship is recorded from the Materials Project node,
-so this software record does not copy the ecosystem's people, group, or host
-relationships.
+slice. Its ecosystem relationship is recorded from the Materials Project node;
+the PI-level lead-developer relation is recorded on the canonical PI record
+without copying ecosystem group or host relationships here.
 
 ## Evidence
 
@@ -39,5 +39,6 @@ The sources describe pymatgen as Python software, but no
 `programming_language_ids` value is added because vNext has no canonical
 Programming Language entity type or namespace. This record does not attribute
 current maintenance, development, or use to the Persson Group or Kristin
-Persson; the group software source identifies a maintainer other than the
-Persson Group or Kristin Persson.
+Persson. The PI-level lead-developer relation does not establish NUS or
+Materialyze.AI ownership, governance, or group-wide stewardship, and does not
+enumerate all pymatgen maintainers.

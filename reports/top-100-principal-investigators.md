@@ -1,7 +1,7 @@
 # Global discovery slate: 100 principal investigators and technical research leaders
 
 **This is not a ranking.** It is a deliberately international discovery slate for the declared software-engineering-to-computational-materials profile. Order is alphabetical within ecosystem clusters, not merit order.  
-**Last reviewed:** 2026-07-11.  
+**Last reviewed:** 2026-07-11; Shyue Ping Ong anchor row revalidated 2026-07-12.
 **Important evidence boundary:** `Anchor` means a current first-party source in [the source register](global-sources.md) directly supports a software/infrastructure or group claim. `Discovery` means a well-known candidate was selected from a project/community trail but their current role, recruitment status and lab evidence must be revalidated before use. Do not treat `Discovery` records as a claim of a current opening or a mentorship assessment.
 
 ## Anchor cohort — begin here
@@ -10,7 +10,7 @@
 | --- | --- | --- | --- | --- |
 | Kristin Persson | Berkeley–DOE / Materials Project (S01–S03) | DFT, HPC, ML and open Python/data infrastructure are visibly integrated. | High | [anchor dossier](../research-leaders/kristin-persson/) |
 | Anubhav Jain | Berkeley–DOE / Materials Project (S01–S03) | Theory, computing, AI and a large public materials platform. | High | [anchor dossier](../research-leaders/anubhav-jain/) |
-| Shyue Ping Ong | UC San Diego / pymatgen (S02, S25) | A rare direct bridge between Python library design, materials informatics and energy materials. | High | [anchor dossier](../research-leaders/shyue-ping-ong/) |
+| Shyue Ping Ong | NUS / Materialyze.AI / pymatgen (S25, S30) | A rare direct bridge between Python library design, materials informatics and energy materials. | High | [anchor dossier](../research-leaders/shyue-ping-ong/) |
 | Chris Wolverton | Northwestern / OQMD (S04–S05) | DFT, MD, ML, database stewardship and multiscale modelling. | High | [anchor dossier](../research-leaders/chris-wolverton/) |
 | Stefano Curtarolo | Duke / AFLOW (S06–S07) | High-throughput automation, databases, APIs and materials discovery. | High | [anchor dossier](../research-leaders/stefano-curtarolo/) |
 | Nicola Marzari | EPFL–PSI / MARVEL, Materials Cloud (S08–S10) | Research plus durable workflow/provenance/open-science infrastructure. | High | [anchor dossier](../research-leaders/nicola-marzari/) |
