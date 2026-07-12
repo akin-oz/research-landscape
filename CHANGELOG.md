@@ -19,6 +19,7 @@ All notable changes are documented here. This project follows the principles of 
 - An interactive `discover-pis` command applying the same evidence-first filters to reviewed Principal Investigators, with country matches limited to documented public affiliation paths.
 - An interactive `discover-universities` command exposing documented country and direct-host group paths for academic-environment discovery without comparing institutions.
 - A reproducible review-freshness audit based on canonical `last_review` dates and declared volatile-assertion deadlines.
+- A generated research-area discovery coverage matrix showing the current direct group, PI, software, direct-host University, and ecosystem path coverage for each controlled area.
 
 ### Changed
 

@@ -49,6 +49,20 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], audit["buckets"]["stale"])
         self.assertIn("does not measure research quality", rl.render_freshness_audit(audit))
 
+    def test_health_report_makes_research_area_coverage_explicit(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        coverage = {item["area"].id: item for item in rl.research_area_coverage(records)}
+        self.assertEqual(
+            {"groups": 2, "principal_investigators": 1, "software": 4, "universities": 2, "ecosystems": 2},
+            {key: coverage["AREA-MACHINE-LEARNED-POTENTIALS"][key] for key in (
+                "groups", "principal_investigators", "software", "universities", "ecosystems"
+            )},
+        )
+        report = rl.health_report(ROOT, records, results, rl.input_fingerprint(ROOT))
+        self.assertIn("## Research-area discovery coverage", report)
+        self.assertIn("These are counts of direct, documented graph paths.", report)
+
     def test_open_source_pi_and_university_host_queries_are_explainable(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

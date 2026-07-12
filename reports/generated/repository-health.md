@@ -56,6 +56,17 @@
 | Generated public views | 10/10 |
 | Recommendation queries (available/unavailable) | 22 (21/1) |
 
+## Research-area discovery coverage
+
+These are counts of direct, documented graph paths. They measure current corpus coverage, not research quality, prominence, or priority.
+
+| Research area | Groups | Principal Investigators | Research Software | Direct-host Universities | Ecosystems |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 3 | 2 | 2 |
+| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 7 | 1 | 6 | 7 |
+| [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 1 | 4 | 2 | 2 |
+| [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 1 | 1 | 1 |
+
 ## Relationship predicates
 
 | Predicate | Count |

@@ -586,6 +586,7 @@ def health_report(root: Path, records: dict[str, Record], results: Results, fing
     recommendation_queries = recommendation_model.get("queries", []) if not recommendation_errors else []
     available_queries = [query for query in recommendation_queries if query.get("status") != "unavailable"]
     unavailable_queries = [query for query in recommendation_queries if query.get("status") == "unavailable"]
+    area_coverage = research_area_coverage(records)
     broken_links = sum("broken local Markdown link" in error for error in results.errors)
     lines = [
         "<!-- GENERATED FILE: edit canonical inputs, then regenerate. -->",
@@ -630,6 +631,19 @@ def health_report(root: Path, records: dict[str, Record], results: Results, fing
         f"| Canonical view definitions (public/private) | {len(view_definitions)} ({len(public_views)}/{len(private_views)}) |",
         f"| Generated public views | {len(PUBLIC_VIEW_FILES)}/{len(public_views)} |",
         f"| Recommendation queries (available/unavailable) | {len(recommendation_queries)} ({len(available_queries)}/{len(unavailable_queries)}) |",
+        "",
+        "## Research-area discovery coverage",
+        "",
+        "These are counts of direct, documented graph paths. They measure current corpus coverage, not research quality, prominence, or priority.",
+        "",
+        "| Research area | Groups | Principal Investigators | Research Software | Direct-host Universities | Ecosystems |",
+        "| --- | ---: | ---: | ---: | ---: | ---: |",
+        *[
+            f"| {canonical_link(item['area'], root / 'reports/generated/repository-health.md')} | "
+            f"{item['groups']} | {item['principal_investigators']} | {item['software']} | "
+            f"{item['universities']} | {item['ecosystems']} |"
+            for item in area_coverage
+        ],
         "",
         "## Relationship predicates",
         "",
@@ -677,6 +691,70 @@ def matching_assertions(record: Record, predicate: str, target_ids: set[str] | N
             continue
         matches.append(assertion)
     return matches
+
+
+def research_area_coverage(records: dict[str, Record]) -> list[dict[str, Any]]:
+    """Summarize current direct discovery paths by controlled research area.
+
+    The counts intentionally distinguish canonical relation types instead of
+    collapsing them into a score. A zero is a coverage gap, not a negative
+    statement about the area or its research environments.
+    """
+    coverage = []
+    for area in sorted(
+        (record for record in records.values() if record.entity_type == "research-area" and eligible(record)),
+        key=lambda record: (record.metadata["name"].casefold(), record.id),
+    ):
+        groups = [
+            record for record in records.values()
+            if record.entity_type == "research-group" and eligible(record)
+            and matching_assertions(record, "works_on", {area.id})
+        ]
+        principal_investigators = [
+            record for record in records.values()
+            if record.entity_type == "principal-investigator" and eligible(record)
+            and matching_assertions(record, "works_on", {area.id})
+        ]
+        software = [
+            record for record in records.values()
+            if record.entity_type == "research-software" and eligible(record)
+            and area.id in as_ids(record.metadata.get("research_area_ids", []))
+        ]
+        universities = [
+            university for university in records.values()
+            if university.entity_type == "university" and eligible(university)
+            and any(
+                group.metadata.get("institution_id") == university.id
+                and matching_assertions(group, "works_on", {area.id})
+                for group in groups
+            )
+        ]
+        ecosystems = []
+        for ecosystem in records.values():
+            if ecosystem.entity_type != "research-ecosystem" or not eligible(ecosystem):
+                continue
+            connected_to_area = any(
+                (target := records.get(assertion.get("target_id"))) is not None
+                and bool(matching_assertions(target, "works_on", {area.id}))
+                for assertion in matching_assertions(ecosystem, "connects")
+            )
+            includes_area_software = any(
+                (software_record := records.get(assertion.get("target_id"))) is not None
+                and software_record.entity_type == "research-software"
+                and area.id in as_ids(software_record.metadata.get("research_area_ids", []))
+                for assertion in matching_assertions(ecosystem, "includes")
+            )
+            if connected_to_area or includes_area_software:
+                ecosystems.append(ecosystem)
+        coverage.append({
+            "area": area,
+            "groups": len(groups),
+            "principal_investigators": len(principal_investigators),
+            "software": len(software),
+            "universities": len(universities),
+            "ecosystems": len(ecosystems),
+        })
+    return coverage
 
 
 def signal(label: str, assertion: dict[str, Any], owner: Record) -> dict[str, Any]:
