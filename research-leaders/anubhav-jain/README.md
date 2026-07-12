@@ -18,6 +18,8 @@ conflicts_of_interest: []
 **Evidence basis:** [Berkeley Lab profile](https://eta.lbl.gov/people/anubhav-jain), [Materials Project](https://materialssciences.lbl.gov/research/research-programs/materials-project/), and [Materials Project software](https://perssongroup.lbl.gov/software.html) (S01–S03, S29).  
 **Confidence:** high for theory/computing/AI and platform fit; unavailable for current opening and mentorship conclusions.
 
+**Canonical public-fact record:** [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) is the separate vNext entity for reusable, current Berkeley Lab affiliation, Hacking Materials leadership, and Materials Project associate-director facts. This dossier remains the dated applicant-oriented analysis.
+
 ## Candidate fit
 
 Jain’s official profile explicitly joins new-materials design with theory, computing and artificial intelligence. That combination makes a proven engineer who can contribute reproducible data/ML/workflow tooling plausibly differentiated. It does **not** establish a vacancy or guarantee that a portfolio will be evaluated as an advantage.

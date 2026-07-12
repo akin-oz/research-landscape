@@ -14,6 +14,7 @@ source_ids:
   - SRC-PERSSON-GROUP-SOFTWARE
   - SRC-LBNL-PERSSON-NEWS-2026
   - SRC-NUS-ONG-PROFILE
+  - SRC-LBNL-JAIN-PROFILE
 ecosystem_kind: materials data and software ecosystem
 website: https://materialsproject.org/
 software_ids:
@@ -38,6 +39,12 @@ relationship_assertions:
     target_id: PI-SHYUE-PING-ONG
     role: core-contributor
     source_ids: [SRC-NUS-ONG-PROFILE]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: connects
+    target_id: PI-ANUBHAV-JAIN
+    role: associate-director
+    source_ids: [SRC-LBNL-JAIN-PROFILE]
     confidence: high
     evidence_window: 2026-07
   - predicate: connects
@@ -70,6 +77,7 @@ Lab context without treating that limited set as a complete roster.
 | `SRC-PERSSON-GROUP-SOFTWARE` | [Persson Group software](https://perssongroup.lbl.gov/software.html) lists Pymatgen among code used by Materials Project. Accessed 2026-07-12. |
 | `SRC-LBNL-PERSSON-NEWS-2026` | [Berkeley Lab, 8 May 2026: Kristin Persson elected to the American Academy of Arts and Sciences](https://newscenter.lbl.gov/2026/05/08/berkeley-labs-kristin-persson-elected-to-the-american-academy-of-arts-and-sciences/) identifies Persson as Materials Project's founder and director. Accessed 2026-07-12. |
 | `SRC-NUS-ONG-PROFILE` | [NUS Materials Science and Engineering: Shyue Ping Ong](https://cde.nus.edu.sg/mse/staff/shyue-ping-ong/) identifies Ong as a core contributor to Materials Project. Accessed 2026-07-12. |
+| `SRC-LBNL-JAIN-PROFILE` | [Berkeley Lab Energy Technologies Area: Anubhav Jain](https://eta.lbl.gov/people/anubhav-jain) identifies Jain as Associate Director of Berkeley Lab's Materials Project program. Accessed 2026-07-12. |
 
 ## Boundary and limitations
 

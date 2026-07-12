@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S30 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, and S38 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -45,6 +45,7 @@
 | S35 | [Humboldt University: Claudia Draxl](https://www.hu-berlin.de/personen/prof-dr-dr-hc-claudia-draxl) | Current project records including FAIRmat through 2026. | High for listed project facts; do not infer current openings. |
 | S36 | [RIKEN Computational Materials Science Team](https://www.r-ccs.riken.jp/en/research/labs/cmasrt/) | Seiji Yunoki’s team role, research, members and published results. | High for team scope. |
 | S37 | [RIKEN Polymeromics Team](https://www.riken.jp/en/research/labs/trip/agis/polymeromics/index.html) | Ryo Yoshida’s team role, research, members and selected outputs. | High for team scope. |
+| S38 | [Hacking Materials](https://hackingmaterials.lbl.gov/) | Anubhav Jain's Berkeley Lab-hosted Hacking Materials group, group leadership, and theory/HPC/AI research scope. | High for group identity, host, and stated methods; does not establish project funding or software-maintainer roles. |
 
 ## Evidence protocol for new claims
 
