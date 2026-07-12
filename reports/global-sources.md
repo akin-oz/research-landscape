@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S56 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S60 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -64,6 +64,10 @@
 | S54 | [DTU Physics: Atomic-scale Materials Design](https://physics.dtu.dk/research/sections/camd/research/atomic-scale-materials-design) | CAMD computational-materials scope and group-level development of ASE and GPAW. | High for documented group work; not evidence of exclusive development or individual maintenance. |
 | S55 | [DTU Physics: CAMD](https://physics.dtu.dk/research/sections/camd) | CAMD's current DTU Physics group identity. | High for group host context. |
 | S56 | [DTU Organization](https://dtu.dk/english/about/organization) | DTU's university identity and department-based research structure. | High for University identity; contact source is separately used for location. |
+| S57 | [SNSF: About us](https://www.snf.ch/en/kPRYnL3xxtTod01R/page/theSNSF) | SNSF identity as Switzerland's research funding organization and federal mandate. | High for funder identity; not evidence for any specific award recipient. |
+| S58 | [SNSF: National Centres of Competence in Research](https://www.snf.ch/en/FJBJ8XGQ1tjG8J8w/funding/programmes/national-centres-of-competence-in-research-nccr) | NCCR programme context, SNSF administration, and NCCR MARVEL listing. | High for programme context; not a complete record of co-funding or participants. |
+| S59 | [NCCR MARVEL: SNSF third-phase award](https://marvel-nccr.ch/news/communication/03-phase3) | Third and final MARVEL funding phase from May 2022 through April 2026 and overall SNSF funding context. | High for the cited phase and time boundary; not a current-funding claim after that phase. |
+| S60 | [NCCR MARVEL: Materials Cloud and Open Research Europe](https://marvel-nccr.ch/news/communication/materials-cloud-open-science-europe) | Historical 2021 statement that NCCR MARVEL developed Materials Cloud. | High for historical programme context; not evidence of current funding or exclusive ownership. |
 
 ## Evidence protocol for new claims
 
