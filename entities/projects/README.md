@@ -1,3 +1,3 @@
 # Projects
 
-This directory is reserved for canonical Project entity records. No existing project content has been migrated in this architecture-only phase.
+This directory is the canonical home for Project records. The reviewed record is [The Novel Materials Discovery Laboratory](nomad-laboratory-coe.md), a completed H2020 project added without migrating existing project content.

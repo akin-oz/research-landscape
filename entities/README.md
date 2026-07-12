@@ -27,3 +27,5 @@ The RIKEN Polymeromics cluster adds [Ryo Yoshida](principal-investigators/ryo-yo
 The ASE cluster adds [Atomic Simulation Environment](research-software/ase.md), the [ASE Ecosystem](ecosystems/ase.md), [Computational Atomic-scale Materials Design](research-groups/dtu-camd.md), [Technical University of Denmark](universities/technical-university-of-denmark.md), and [Denmark](countries/denmark.md), while reusing Computational Materials Science.
 
 The NCCR MARVEL funding cluster adds the [Swiss National Science Foundation](organizations/swiss-national-science-foundation.md) and [NCCR MARVEL](funding/nccr-marvel.md), while adding only an evidence-bounded historical funding-program connection to the existing [Materials Cloud](ecosystems/materials-cloud.md) and reusing Switzerland.
+
+The NoMaD Laboratory project cluster adds the [Max Planck Society](organizations/max-planck-society.md) and [The Novel Materials Discovery Laboratory](projects/nomad-laboratory-coe.md), while reusing Germany, Computational Materials Science, and the historical [NOMAD](research-software/nomad.md) software connection.
