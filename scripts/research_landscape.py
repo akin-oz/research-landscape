@@ -106,7 +106,8 @@ PUBLIC_VIEW_FILES = {
 RECOMMENDATION_KINDS = {
     "groups-with-software", "groups-by-area", "groups-with-open-source-software",
     "groups-with-software-and-area", "ecosystems-connected-to-area",
-    "principal-investigators-by-area",
+    "principal-investigators-by-area", "principal-investigators-with-open-source-software",
+    "universities-hosting-groups-by-area",
 }
 
 SOURCE_PATTERN = re.compile(r"`(SRC-[A-Z0-9-]+)`")
@@ -672,6 +673,34 @@ def recommendation_candidates(query: dict[str, Any], records: dict[str, Record])
             signals = [signal(f"works on `{a['target_id']}`", a, record) for a in matching_assertions(record, "works_on", area_ids)]
             if signals:
                 candidates.append({"record": record, "signals": signals, "criteria": 1})
+    elif kind == "principal-investigators-with-open-source-software":
+        for record in records.values():
+            if record.entity_type != "principal-investigator" or not eligible(record):
+                continue
+            signals = []
+            for assertion in matching_assertions(record, "develops"):
+                software = records.get(assertion["target_id"])
+                if software and software.metadata.get("open_source") == "yes" and software.metadata.get("license"):
+                    signals.append(signal(f"develops licensed open-source `{software.id}`", assertion, record))
+            if signals:
+                candidates.append({"record": record, "signals": signals, "criteria": 1})
+    elif kind == "universities-hosting-groups-by-area":
+        area_ids = {query["area_id"]}
+        for university in records.values():
+            if university.entity_type != "university" or not eligible(university):
+                continue
+            signals = []
+            for group in records.values():
+                if group.entity_type != "research-group" or not eligible(group):
+                    continue
+                host_assertions = matching_assertions(group, "belongs_to", {university.id})
+                area_assertions = matching_assertions(group, "works_on", area_ids)
+                for host_assertion in host_assertions:
+                    for area_assertion in area_assertions:
+                        signals.append(signal(f"hosts `{group.id}`", host_assertion, group))
+                        signals.append(signal(f"`{group.id}` works on `{area_assertion['target_id']}`", area_assertion, group))
+            if signals:
+                candidates.append({"record": university, "signals": signals, "criteria": 2})
     elif kind == "ecosystems-connected-to-area":
         area_ids = {query["area_id"]}
         for ecosystem in records.values():
@@ -738,7 +767,7 @@ def render_recommendation_query(query: dict[str, Any], records: dict[str, Record
     candidates = recommendation_candidates(query, records)
     lines.extend([
         "**Status:** available — evidence-discovery result, not a ranking.", "",
-        "| Candidate | Direct matching evidence | Confidence | Coverage |",
+        "| Candidate | Documented matching evidence | Confidence | Coverage |",
         "| --- | --- | --- | --- |",
     ])
     for candidate in candidates:
@@ -746,7 +775,7 @@ def render_recommendation_query(query: dict[str, Any], records: dict[str, Record
         signals = candidate["signals"]
         rendered_signals = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in signals)
         confidence = lowest_confidence([item["confidence"] for item in signals])
-        coverage = f"{candidate['criteria']}/{candidate['criteria']} direct criteria"
+        coverage = f"{candidate['criteria']}/{candidate['criteria']} documented criteria"
         lines.append(
             f"| {canonical_link(record, output_path)} (`{record.id}`) | {rendered_signals} | {confidence} | {coverage} |"
         )
@@ -770,7 +799,7 @@ def recommendation_report(root: Path, records: dict[str, Record], model: dict[st
         "## Ordering and boundary",
         "",
         f"Results use `{model['ordering']['primary']}` then `{', '.join(model['ordering']['tie_breakers'])}`. {model['ordering']['interpretation']}",
-        "Each row exposes only direct, source-backed matching signals. Unknown, private, volatile, or unsupported dimensions remain unavailable.",
+        "Each row exposes only source-backed matching signals; any traversal is displayed explicitly. Unknown, private, volatile, or unsupported dimensions remain unavailable.",
         "",
     ]
     for query in model["queries"]:

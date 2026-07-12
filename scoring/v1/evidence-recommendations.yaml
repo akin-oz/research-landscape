@@ -3,7 +3,7 @@
 version: 1
 model_id: evidence-recommendations-v1
 ordering:
-  primary: direct_evidence_signal_count_descending
+  primary: documented_evidence_signal_count_descending
   tie_breakers: [name, id]
   interpretation: "Discovery priority only; equal coverage does not imply equal research quality or fit."
 queries:
@@ -67,6 +67,19 @@ queries:
     title: Principal Investigators with documented Materials Informatics work
     area_id: AREA-MATERIALS-INFORMATICS
     limitations: "Membership reflects an explicit area relation, not a researcher ranking or availability signal."
+
+  - query_id: principal-investigators-open-software
+    aliases: [pis-with-open-source-software]
+    kind: principal-investigators-with-open-source-software
+    title: Principal Investigators with documented development links to licensed open-source software
+    limitations: "A documented development relationship is not a measure of open-science values, software quality, current maintenance activity, hiring, or mentorship."
+
+  - query_id: universities-hosting-computational-materials-groups
+    aliases: [universities-with-computational-materials-groups]
+    kind: universities-hosting-groups-by-area
+    title: Universities directly hosting research groups with documented Computational Materials Science work
+    area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+    limitations: "This is a sourced host-and-area discovery path, not a measure of university strength, ecosystem completeness, degree quality, funding, opportunities, or admissions fit."
 
   - query_id: python-heavy-research-groups
     aliases: [best-python-centric-research-groups]

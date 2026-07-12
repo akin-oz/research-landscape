@@ -1,15 +1,15 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: fec31d80292c4d8a61150c0911cea5d559c524df74e8ca36a00fd2ab32ec2b2b -->
+<!-- input-fingerprint: e8686d40314e61581ba1d6991b3fc733d837af4e43869147f578732ee330a053 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `fec31d80292c4d8a61150c0911cea5d559c524df74e8ca36a00fd2ab32ec2b2b`
+**Input fingerprint:** `e8686d40314e61581ba1d6991b3fc733d837af4e43869147f578732ee330a053`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
 
-Results use `direct_evidence_signal_count_descending` then `name, id`. Discovery priority only; equal coverage does not imply equal research quality or fit.
-Each row exposes only direct, source-backed matching signals. Unknown, private, volatile, or unsupported dimensions remain unavailable.
+Results use `documented_evidence_signal_count_descending` then `name, id`. Discovery priority only; equal coverage does not imply equal research quality or fit.
+Each row exposes only source-backed matching signals; any traversal is displayed explicitly. Unknown, private, volatile, or unsupported dimensions remain unavailable.
 
 ## Research groups with documented software development
 
@@ -17,13 +17,13 @@ Each row exposes only direct, source-backed matching signals. Unknown, private, 
 
 **Status:** available — evidence-discovery result, not a ranking.
 
-| Candidate | Direct matching evidence | Confidence | Coverage |
+| Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 1/1 direct criteria |
-| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW) | high | 1/1 direct criteria |
-| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 direct criteria |
-| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 1/1 direct criteria |
-| [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 direct criteria |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 1/1 documented criteria |
+| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW) | high | 1/1 documented criteria |
+| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
+| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 1/1 documented criteria |
+| [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** A documented group-to-software edge is not a software-quality, hiring, or mentorship claim.
 
@@ -33,17 +33,17 @@ Each row exposes only direct, source-backed matching signals. Unknown, private, 
 
 **Status:** available — evidence-discovery result, not a ranking.
 
-| Candidate | Direct matching evidence | Confidence | Coverage |
+| Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 1/1 direct criteria |
-| [Computational Materials Science Research Team](../../entities/research-groups/riken-computational-materials-science-team.md) (`RG-RIKEN-COMPUTATIONAL-MATERIALS-SCIENCE`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-RIKEN-CMS-TEAM) | high | 1/1 direct criteria |
-| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CURTAROLO-GROUP-JOBS) | high | 1/1 direct criteria |
-| [Hacking Materials](../../entities/research-groups/hacking-materials.md) (`RG-HACKING-MATERIALS`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-HACKING-MATERIALS-GROUP, SRC-LBNL-JAIN-PROFILE) | high | 1/1 direct criteria |
-| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 direct criteria |
-| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 1/1 direct criteria |
-| [Persson Group](../../entities/research-groups/persson-group.md) (`RG-PERSSON-GROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 1/1 direct criteria |
-| [SOLgroup](../../entities/research-groups/solgroup.md) (`RG-SOLGROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 1/1 direct criteria |
-| [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) (`RG-WOLVERTON-GROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 1/1 direct criteria |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 1/1 documented criteria |
+| [Computational Materials Science Research Team](../../entities/research-groups/riken-computational-materials-science-team.md) (`RG-RIKEN-COMPUTATIONAL-MATERIALS-SCIENCE`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-RIKEN-CMS-TEAM) | high | 1/1 documented criteria |
+| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CURTAROLO-GROUP-JOBS) | high | 1/1 documented criteria |
+| [Hacking Materials](../../entities/research-groups/hacking-materials.md) (`RG-HACKING-MATERIALS`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-HACKING-MATERIALS-GROUP, SRC-LBNL-JAIN-PROFILE) | high | 1/1 documented criteria |
+| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
+| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 1/1 documented criteria |
+| [Persson Group](../../entities/research-groups/persson-group.md) (`RG-PERSSON-GROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 1/1 documented criteria |
+| [SOLgroup](../../entities/research-groups/solgroup.md) (`RG-SOLGROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 1/1 documented criteria |
+| [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) (`RG-WOLVERTON-GROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects a sourced area relation, not exhaustive subject coverage or quality.
 
@@ -53,10 +53,10 @@ Each row exposes only direct, source-backed matching signals. Unknown, private, 
 
 **Status:** available — evidence-discovery result, not a ranking.
 
-| Candidate | Direct matching evidence | Confidence | Coverage |
+| Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 1/1 direct criteria |
-| [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 direct criteria |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 1/1 documented criteria |
+| [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects a sourced area relation, not exhaustive AI/data capability or quality.
 
@@ -66,13 +66,13 @@ Each row exposes only direct, source-backed matching signals. Unknown, private, 
 
 **Status:** available — evidence-discovery result, not a ranking.
 
-| Candidate | Direct matching evidence | Confidence | Coverage |
+| Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops licensed open-source `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 1/1 direct criteria |
-| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops licensed open-source `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW) | high | 1/1 direct criteria |
-| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 direct criteria |
-| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 1/1 direct criteria |
-| [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops licensed open-source `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 direct criteria |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops licensed open-source `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 1/1 documented criteria |
+| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops licensed open-source `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW) | high | 1/1 documented criteria |
+| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
+| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 1/1 documented criteria |
+| [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops licensed open-source `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** A licensed software connection is not a group-wide open-science or governance score.
 
@@ -82,13 +82,13 @@ Each row exposes only direct, source-backed matching signals. Unknown, private, 
 
 **Status:** available — evidence-discovery result, not a ranking.
 
-| Candidate | Direct matching evidence | Confidence | Coverage |
+| Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 direct criteria |
-| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CURTAROLO-GROUP-JOBS) | high | 2/2 direct criteria |
-| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 direct criteria |
-| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 2/2 direct criteria |
-| [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM); works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 2/2 direct criteria |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
+| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | develops `SW-AFLOW` (sources: SRC-CURTAROLO-GROUP-AFLOW); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CURTAROLO-GROUP-JOBS) | high | 2/2 documented criteria |
+| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
+| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026) | high | 2/2 documented criteria |
+| [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM); works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 2/2 documented criteria |
 
 **Limitations:** This is an evidence-match discovery query, not a claim about hiring, seniority recognition, supervision, or admissions.
 
@@ -98,15 +98,15 @@ Each row exposes only direct, source-backed matching signals. Unknown, private, 
 
 **Status:** available — evidence-discovery result, not a ranking.
 
-| Candidate | Direct matching evidence | Confidence | Coverage |
+| Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) (`ECO-AIIDA`) | connects `RG-PSI-MSD` (sources: SRC-AIIDA-TEAM); `RG-PSI-MSD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 direct criteria |
-| [Materials Cloud](../../entities/ecosystems/materials-cloud.md) (`ECO-MATERIALS-CLOUD`) | connects `PI-NICOLA-MARZARI` (sources: SRC-MATERIALS-CLOUD-TEAM); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 direct criteria |
-| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 2/2 direct criteria |
-| [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 direct criteria |
-| [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 direct criteria |
-| [FAIRmat](../../entities/ecosystems/fairmat.md) (`ECO-FAIRMAT`) | connects `PI-CLAUDIA-DRAXL` (sources: SRC-FAIRMAT-TEAM); `PI-CLAUDIA-DRAXL` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 2/2 direct criteria |
-| [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 direct criteria |
+| [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) (`ECO-AIIDA`) | connects `RG-PSI-MSD` (sources: SRC-AIIDA-TEAM); `RG-PSI-MSD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
+| [Materials Cloud](../../entities/ecosystems/materials-cloud.md) (`ECO-MATERIALS-CLOUD`) | connects `PI-NICOLA-MARZARI` (sources: SRC-MATERIALS-CLOUD-TEAM); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
+| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 2/2 documented criteria |
+| [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 documented criteria |
+| [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
+| [FAIRmat](../../entities/ecosystems/fairmat.md) (`ECO-FAIRMAT`) | connects `PI-CLAUDIA-DRAXL` (sources: SRC-FAIRMAT-TEAM); `PI-CLAUDIA-DRAXL` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 2/2 documented criteria |
+| [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking.
 
@@ -116,9 +116,9 @@ Each row exposes only direct, source-backed matching signals. Unknown, private, 
 
 **Status:** available — evidence-discovery result, not a ranking.
 
-| Candidate | Direct matching evidence | Confidence | Coverage |
+| Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-SHYUE-PING-ONG` (sources: SRC-NUS-ONG-PROFILE); `PI-SHYUE-PING-ONG` works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 2/2 direct criteria |
+| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-SHYUE-PING-ONG` (sources: SRC-NUS-ONG-PROFILE); `PI-SHYUE-PING-ONG` works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking.
 
@@ -128,14 +128,14 @@ Each row exposes only direct, source-backed matching signals. Unknown, private, 
 
 **Status:** available — evidence-discovery result, not a ranking.
 
-| Candidate | Direct matching evidence | Confidence | Coverage |
+| Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) (`PI-ANUBHAV-JAIN`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP) | high | 1/1 direct criteria |
-| [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) (`PI-CHRIS-WOLVERTON`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-NU-WOLVERTON-FACULTY) | high | 1/1 direct criteria |
-| [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) (`PI-CLAUDIA-DRAXL`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 1/1 direct criteria |
-| [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) (`PI-NICOLA-MARZARI`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 direct criteria |
-| [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) (`PI-SEIJI-YUNOKI`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-RIKEN-CMS-TEAM) | high | 1/1 direct criteria |
-| [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) (`PI-STEFANO-CURTAROLO`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 1/1 direct criteria |
+| [Anubhav Jain](../../entities/principal-investigators/anubhav-jain.md) (`PI-ANUBHAV-JAIN`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP) | high | 1/1 documented criteria |
+| [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) (`PI-CHRIS-WOLVERTON`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-NU-WOLVERTON-FACULTY) | high | 1/1 documented criteria |
+| [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) (`PI-CLAUDIA-DRAXL`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 1/1 documented criteria |
+| [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) (`PI-NICOLA-MARZARI`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 1/1 documented criteria |
+| [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) (`PI-SEIJI-YUNOKI`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-RIKEN-CMS-TEAM) | high | 1/1 documented criteria |
+| [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) (`PI-STEFANO-CURTAROLO`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit area relation, not a researcher ranking or availability signal.
 
@@ -145,12 +145,40 @@ Each row exposes only direct, source-backed matching signals. Unknown, private, 
 
 **Status:** available — evidence-discovery result, not a ranking.
 
-| Candidate | Direct matching evidence | Confidence | Coverage |
+| Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
-| [Ryo Yoshida](../../entities/principal-investigators/ryo-yoshida.md) (`PI-RYO-YOSHIDA`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 direct criteria |
-| [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 1/1 direct criteria |
+| [Ryo Yoshida](../../entities/principal-investigators/ryo-yoshida.md) (`PI-RYO-YOSHIDA`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 1/1 documented criteria |
+| [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit area relation, not a researcher ranking or availability signal.
+
+## Principal Investigators with documented development links to licensed open-source software
+
+**Query ID:** `principal-investigators-open-software`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | develops licensed open-source `SW-PYMATGEN` (sources: SRC-NUS-ONG-PROFILE, SRC-PYMATGEN-TEAM) | high | 1/1 documented criteria |
+
+**Limitations:** A documented development relationship is not a measure of open-science values, software quality, current maintenance activity, hiring, or mentorship.
+
+## Universities directly hosting research groups with documented Computational Materials Science work
+
+**Query ID:** `universities-hosting-computational-materials-groups`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Duke University](../../entities/universities/duke-university.md) (`UNIVERSITY-DUKE`) | hosts `RG-CURTAROLO-GROUP` (sources: SRC-CURTAROLO-GROUP-JOBS); `RG-CURTAROLO-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CURTAROLO-GROUP-JOBS) | high | 2/2 documented criteria |
+| [EPFL](../../entities/universities/epfl.md) (`UNIVERSITY-EPFL`) | hosts `RG-THEOS` (sources: SRC-EPFL-MARZARI-PROFILE); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
+| [Humboldt-Universität zu Berlin](../../entities/universities/humboldt-university-berlin.md) (`UNIVERSITY-HU-BERLIN`) | hosts `RG-SOLGROUP` (sources: SRC-SOLGROUP-HOME); `RG-SOLGROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 2/2 documented criteria |
+| [Northwestern University](../../entities/universities/northwestern-university.md) (`UNIVERSITY-NORTHWESTERN`) | hosts `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 documented criteria |
+| [Technical University of Denmark](../../entities/universities/technical-university-of-denmark.md) (`UNIVERSITY-DTU`) | hosts `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-OVERVIEW); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
+
+**Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
 
 ## Python-heavy research groups
 

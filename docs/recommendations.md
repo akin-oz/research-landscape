@@ -10,12 +10,15 @@ and query-specific limitations.
 ## What the engine can recommend now
 
 The initial model supports evidence-backed discovery for groups with software
-development, groups and PIs by controlled research area, open-source-software
-connections, software-oriented environments, and ecosystems connected to a
-target area. Results are ordered by the count of direct matching evidence
-signals, then stable name/ID. This is a reproducible discovery priority, never
-a claim of research quality, prestige, mentorship, availability, or applicant
-fit.
+development, groups and PIs by controlled research area, PIs with licensed
+open-source-software development evidence, universities directly hosting groups
+with documented target-area work, software-oriented environments, and
+ecosystems connected to a target area. Results are ordered by the count of
+matching evidence signals, then stable name/ID. A multi-hop university result
+shows both the documented host relationship and the group's direct area
+evidence; it is never a university-strength or ecosystem-completeness ranking.
+This is a reproducible discovery priority, never a claim of research quality,
+prestige, mentorship, availability, or applicant fit.
 
 ## What it refuses to recommend
 

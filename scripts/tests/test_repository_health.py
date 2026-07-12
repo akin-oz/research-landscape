@@ -48,6 +48,19 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], audit["buckets"]["stale"])
         self.assertIn("does not measure research quality", rl.render_freshness_audit(audit))
 
+    def test_open_source_pi_and_university_host_queries_are_explainable(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        queries = {query["query_id"]: query for query in model["queries"]}
+        pi_candidates = rl.recommendation_candidates(queries["principal-investigators-open-software"], records)
+        self.assertEqual(["PI-SHYUE-PING-ONG"], [candidate["record"].id for candidate in pi_candidates])
+        university_candidates = rl.recommendation_candidates(queries["universities-hosting-computational-materials-groups"], records)
+        self.assertGreaterEqual(len(university_candidates), 1)
+        self.assertTrue(all(candidate["criteria"] == 2 for candidate in university_candidates))
+        self.assertTrue(all(len(candidate["signals"]) >= 2 for candidate in university_candidates))
+
 
 if __name__ == "__main__":
     unittest.main()
