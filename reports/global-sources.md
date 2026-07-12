@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35, and S38–S47 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S36, and S38–S50 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -55,6 +55,9 @@
 | S45 | [FAIRmat](https://www.fairmat-nfdi.eu/fairmat/) | FAIRmat’s current federated-infrastructure identity and relation to the NOMAD Laboratory. | High for ecosystem scope; does not make FAIRmat identical to the NOMAD software artifact. |
 | S46 | [FAIRmat: Our Story](https://fairmat-nfdi.eu/fairmat/projects-fairmat/story-fairmat) | The historical and organizational distinction among FAIRmat, NOMAD, FAIR-DI, and NOMAD CoE. | High for scope and historical context; participant and governance claims remain bounded to the page. |
 | S47 | [FAIRmat-NFDI/nomad](https://github.com/nomad-coe/nomad) | Current public NOMAD software repository, Apache-2.0 license, external contribution path, and research-data-management scope. | High for public software attributes; not an exhaustive governance or maintainer record. |
+| S48 | [RIKEN Center for Computational Science](https://www.riken.jp/en/research/labs/r-ccs/index.html) | Current R-CCS identity, objectives, Computational Materials Science Research Team listing, and Kobe contact context. | High for the organization and team host; not evidence of every Yunoki affiliation. |
+| S49 | [RIKEN: Seiji Yunoki](https://www.r-ccs.riken.jp/labs/cms/people-post-en/seiji-yunoki/) | Current R-CCS Computational Materials Science Research Team affiliation and Team Principal title. | High for the listed R-CCS role; additional cross-RIKEN roles require separate modeling. |
+| S50 | [RIKEN Center for Computational Science: Access](https://www.r-ccs.riken.jp/access/) | Kobe campus address in Hyogo, Japan. | High for R-CCS geographic normalization. |
 
 ## Evidence protocol for new claims
 
