@@ -20,6 +20,12 @@ Applicants often make high-stakes decisions from incomplete information and repu
 - **Reproducible by default.** Inputs, transformations, scoring versions, and report revisions are reviewable in Git.
 - **Respectful and fair.** Reports describe public, relevant evidence; they avoid personal speculation and harmful inferences.
 
+## Start here
+
+- Explore the current canonical graph through the generated [global view](views/generated/global.md), [software view](views/generated/research-software.md), [ecosystem view](views/generated/ecosystems.md), and [evidence recommendations](reports/generated/evidence-recommendations.md).
+- Read [onboarding](docs/onboarding.md) to contribute, [entity authoring](docs/entity-authoring.md) before changing canonical knowledge, and [review process](docs/review-process.md) before opening a pull request.
+- Inspect the generated [repository-health report](reports/generated/repository-health.md) for current coverage and structural limits.
+
 ## Methodology
 
 The framework connects schema-validated entities and relationships to sourced observations, normalized metrics, dimension scores, and a use-case-specific compatibility calculation. Reports are views over this structured knowledge model and preserve evidence links and confidence at every layer. Read the [entity model](docs/data-model/entity-model.md), [frontmatter specification](docs/specifications/frontmatter.md), [methodology](docs/methodology.md), and [scoring model](docs/scoring-model.md) before contributing.
@@ -29,18 +35,21 @@ The framework connects schema-validated entities and relationships to sourced ob
 | Location | Purpose |
 | --- | --- |
 | `docs/` | Governance, method, quality, and ethical guidance |
+| `entities/` | Canonical, sourced public facts and typed relationships |
+| `views/` | Declarative view definitions and reproducible public navigation projections |
 | `framework/` | Reusable entity-report templates with standardized metadata |
 | `schemas/` | Versioned JSON Schemas for entity frontmatter |
 | `docs/data-model/` | Entity, relationship, and stable-ID contracts |
 | `methodology/metrics/` | Definitions and collection rules for each metric |
 | `scoring/` | Calculation contracts and default weight guidance |
 | `countries/` | Country-specific evidence reports, comparisons, and future geographical coverage |
-| `reports/` | Future published reports and comparisons |
+| `reports/` | Dated analyses, quality reviews, and generated health/recommendation projections |
 | `ecosystems/` | Ecosystem-level records; avoids treating countries as research-quality proxies |
 | `research-groups/` | Group-level dossiers and discovery queue |
 | `principal-investigators/` and `research-leaders/` | PI index and evidence-backed leader dossiers |
 | `relationships/` | Markdown-first Research Relationship Management records, templates, and lifecycle guidance |
 | `templates/` | Report and comparison starting points |
+| `scripts/` | Validation, generation, health, and recommendation automation |
 | `.github/` | Contribution forms and validation automation |
 
 ## Scoring principles
@@ -53,7 +62,7 @@ The project begins with repository infrastructure (`v0.0.1`), then the knowledge
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md), the [quality guidelines](docs/quality-guidelines.md), and [ethics policy](docs/ethics.md). Contributions should improve evidence, method, or tooling; they must not add unsourced reputational claims.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md), [onboarding](docs/onboarding.md), the [entity authoring guide](docs/entity-authoring.md), the [review process](docs/review-process.md), the [quality guidelines](docs/quality-guidelines.md), and [ethics policy](docs/ethics.md). Contributions should improve evidence, method, or tooling; they must not add unsourced reputational claims.
 
 ## Future vision
 
@@ -65,7 +74,7 @@ The repository now includes an evidence-bounded global starting point for a seni
 
 ## Status
 
-The core knowledge model is published. The repository includes an evidence-bounded Turkey advisor search, an Akdeniz University pilot, and an evidence-first due-diligence comparison of its narrowed three-advisor shortlist; these are compatibility analyses for a declared applicant profile, not university or prestige rankings. The [Research Relationship Management module](relationships/README.md) carries those evidence-backed findings into transparent, applicant-owned relationship records. Start with the [Turkey shortlist](countries/turkey/top-advisors-turkey.md) or the [advisor due-diligence dossiers](advisor-due-diligence/README.md).
+The core knowledge model, deterministic views, validation tooling, and explainable evidence recommendations are published. The current canonical cohort is intentionally bounded; generated reports display its coverage and limitations rather than claiming a complete global map. The repository also includes an evidence-bounded Turkey advisor search, an Akdeniz University pilot, and an evidence-first due-diligence comparison of its narrowed three-advisor shortlist; these are compatibility analyses for a declared applicant profile, not university or prestige rankings. The [Research Relationship Management module](relationships/README.md) carries those evidence-backed findings into transparent, applicant-owned relationship records. Start with the [Turkey shortlist](countries/turkey/top-advisors-turkey.md) or the [advisor due-diligence dossiers](advisor-due-diligence/README.md).
 
 ## License and citation
 
