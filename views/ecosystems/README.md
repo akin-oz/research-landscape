@@ -19,7 +19,7 @@ flowchart LR
   C --> PI
 ```
 
-The reviewed [AiiDA Ecosystem](../../entities/ecosystems/aiida.md), [Materials Project](../../entities/ecosystems/materials-project.md), and [OQMD](../../entities/ecosystems/oqmd.md) are reference canonical ecosystem nodes; [pymatgen](../../entities/research-software/pymatgen.md) is the distinct software node included by Materials Project. Materials Cloud, NOMAD, AFLOW, Open Catalyst Project, ASE, Quantum ESPRESSO, and LAMMPS remain examples that need their connection types documented before matching canonical records are created. Existing comparison and source-register material retains its separate, report-scoped evidence role.
+The reviewed [AiiDA Ecosystem](../../entities/ecosystems/aiida.md), [Materials Project](../../entities/ecosystems/materials-project.md), [OQMD](../../entities/ecosystems/oqmd.md), and [AFLOW](../../entities/ecosystems/aflow.md) are reference canonical ecosystem nodes; [pymatgen](../../entities/research-software/pymatgen.md) and the [AFLOW framework](../../entities/research-software/aflow.md) are distinct software nodes included by their respective ecosystems. Materials Cloud, NOMAD, Open Catalyst Project, ASE, Quantum ESPRESSO, and LAMMPS remain examples that need their connection types documented before matching canonical records are created. Existing comparison and source-register material retains its separate, report-scoped evidence role.
 
 ## View rules
 

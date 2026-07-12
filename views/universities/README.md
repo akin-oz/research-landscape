@@ -22,3 +22,7 @@ Each edge must be a typed, sourced relationship. A university view may display t
 Useful filters include Country/region, department, research area, program degree level, software connection, ecosystem, and record status. MSc/PhD eligibility must come from a current program or supervision source, not from the mere existence of a university record. A view can also expose evidence freshness so a reader can distinguish a current program page from an older research profile.
 
 No university-level aggregate should be treated as a prestige ranking. A personal score may compare an applicant's stated needs with documented programs and groups, while accessibility remains separate and never changes a public university result.
+
+## Reference compatibility
+
+The reviewed [Northwestern University](../../entities/universities/northwestern-university.md) and [Duke University](../../entities/universities/duke-university.md) paths demonstrate a Research Group resolving directly to a University and then to [United States](../../entities/countries/united-states.md). They are canonical-link examples, not manually maintained university-view results.
