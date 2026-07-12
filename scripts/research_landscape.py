@@ -1045,6 +1045,7 @@ DISCOVERY_FILTER_TYPES = {
     "country": "country",
     "software": "research-software",
     "language": "programming-language",
+    "ecosystem": "research-ecosystem",
 }
 
 
@@ -1611,11 +1612,127 @@ def discover_ecosystems(
     return 0
 
 
+def discovery_software_candidates(
+    records: dict[str, Record], area_id: str | None, language_id: str | None, ecosystem_id: str | None,
+) -> list[dict[str, Any]]:
+    """Apply ANDed, source-explainable filters to reviewed research software.
+
+    Area classification is record metadata with the software record's local
+    sources; language and ecosystem membership require their own typed,
+    source-bearing relationship paths.
+    """
+    candidates = []
+    for software in records.values():
+        if software.entity_type != "research-software" or not eligible(software):
+            continue
+        signals = []
+        criteria = 0
+        if area_id:
+            if area_id not in as_ids(software.metadata.get("research_area_ids", [])):
+                continue
+            signals.append(metadata_signal(f"is classified in `{area_id}`", software))
+            criteria += 1
+        if language_id:
+            implementations = matching_assertions(software, "implemented_in", {language_id})
+            if not implementations:
+                continue
+            signals.extend(
+                signal(f"is implemented in `{language_id}`", assertion, software)
+                for assertion in implementations
+            )
+            criteria += 1
+        if ecosystem_id:
+            ecosystem = records.get(ecosystem_id)
+            inclusions = matching_assertions(ecosystem, "includes", {software.id}) if ecosystem else []
+            if not inclusions:
+                continue
+            signals.extend(
+                signal(f"is included by `{ecosystem_id}`", assertion, ecosystem)
+                for assertion in inclusions
+            )
+            criteria += 1
+        candidates.append({"record": software, "signals": deduplicate_signals(signals), "criteria": criteria})
+    return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
+
+
+def render_software_discovery(
+    records: dict[str, Record], area_id: str | None, language_id: str | None,
+    ecosystem_id: str | None, output_path: Path,
+) -> str:
+    filters = [(name, value) for name, value in (
+        ("research area", area_id), ("programming language", language_id), ("research ecosystem", ecosystem_id),
+    ) if value]
+    if not filters:
+        raise ValueError("provide at least one of --area, --language, or --ecosystem")
+    candidates = discovery_software_candidates(records, area_id, language_id, ecosystem_id)
+    lines = [
+        "# Research-software discovery", "",
+        "**Status:** deterministic evidence-discovery result, not a ranking or software-quality assessment.", "",
+        "**AND filters:** " + "; ".join(f"{name} `{value}`" for name, value in filters) + ".", "",
+        "| Research software | Documented matching evidence | Confidence | Coverage |",
+        "| --- | --- | --- | --- |",
+    ]
+    total_criteria = len(filters)
+    for candidate in candidates:
+        signals = candidate["signals"]
+        rendered_signals = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in signals)
+        confidence = lowest_confidence([item["confidence"] for item in signals])
+        lines.append(
+            f"| {canonical_link(candidate['record'], output_path)} (`{candidate['record'].id}`) | {rendered_signals} | {confidence} | {candidate['criteria']}/{total_criteria} documented criteria |"
+        )
+    if not candidates:
+        lines.append("| — | No reviewed canonical research software matches every requested evidence criterion. | unavailable | 0 criteria |")
+    lines.extend([
+        "", "## Boundary", "",
+        "Results are alphabetically ordered and contain only reviewed software with every requested evidence criterion. Area classification is backed by the software record's local evidence; language and ecosystem matches use sourced `implemented_in` and `includes` assertions. This does not rank software, establish technical superiority, support, maintenance activity, adoption, funding, openings, mentorship, or applicant fit.", "",
+    ])
+    return "\n".join(lines)
+
+
+def discover_software(
+    root: Path,
+    area_id: str | None,
+    language_id: str | None,
+    ecosystem_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    check: bool,
+    query_id: str | None,
+    list_queries: bool,
+    as_of: str | None,
+) -> int:
+    if country_id or software_id or check or query_id or list_queries or as_of:
+        print("ERROR: discover-software accepts only --area, --language, and --ecosystem")
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    filters = {"area": area_id, "language": language_id, "ecosystem": ecosystem_id}
+    for name, value in filters.items():
+        if not value:
+            continue
+        target = records.get(value)
+        if target is None or target.entity_type != DISCOVERY_FILTER_TYPES[name]:
+            print(f"ERROR: --{name} must reference a canonical {DISCOVERY_FILTER_TYPES[name]} ID, got {value!r}")
+            return 2
+    try:
+        print(render_software_discovery(
+            records, area_id, language_id, ecosystem_id,
+            root / "reports/generated/evidence-recommendations.md",
+        ))
+    except ValueError as exc:
+        print(f"ERROR: {exc}")
+        return 2
+    return 0
+
+
 DISCOVERY_CATALOG_TYPES = (
     ("Research areas", "research-area"),
     ("Countries", "country"),
     ("Research software", "research-software"),
     ("Programming languages", "programming-language"),
+    ("Research ecosystems", "research-ecosystem"),
 )
 
 
@@ -1623,7 +1740,7 @@ def discovery_catalog(records: dict[str, Record]) -> str:
     """Render public, reviewed IDs accepted by the discovery commands."""
     lines = [
         "# Discovery filter catalog", "",
-        "Use these reviewed canonical IDs with `discover-groups`, `discover-pis`, `discover-universities`, and `discover-ecosystems`. The catalog contains no private profile, score, ranking, availability, or fit data.",
+        "Use these reviewed canonical IDs with `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, and `discover-software`. The catalog contains no private profile, score, ranking, availability, or fit data.",
         "",
     ]
     for title, entity_type in DISCOVERY_CATALOG_TYPES:
@@ -1867,18 +1984,22 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
     parser.add_argument("--list", action="store_true", dest="list_queries", help="list public recommendation query IDs and aliases")
-    parser.add_argument("--area", help="canonical Research Area ID for discover-groups")
-    parser.add_argument("--country", help="canonical Country ID for discover-groups")
-    parser.add_argument("--software", help="canonical Research Software ID for discover-groups")
-    parser.add_argument("--language", help="canonical Programming Language ID for discover-groups")
+    parser.add_argument("--area", help="canonical Research Area ID for compatible discovery commands")
+    parser.add_argument("--country", help="canonical Country ID for compatible discovery commands")
+    parser.add_argument("--software", help="canonical Research Software ID for compatible discovery commands")
+    parser.add_argument("--language", help="canonical Programming Language ID for compatible discovery commands")
+    parser.add_argument("--ecosystem", help="canonical Research Ecosystem ID for discover-software")
     parser.add_argument("--as-of", help="ISO date for a reproducible freshness audit (defaults to today)")
     args = parser.parse_args()
     root = args.root.resolve()
+    if args.ecosystem and args.command != "discover-software":
+        print("ERROR: --ecosystem is only accepted by discover-software")
+        return 2
     if args.command == "validate":
         records, results = validate(root)
         print_results(root, records, results)
@@ -1908,6 +2029,11 @@ def main() -> int:
     if args.command == "discover-ecosystems":
         return discover_ecosystems(
             root, args.area, args.software, args.country, args.language,
+            args.check, args.query, args.list_queries, args.as_of,
+        )
+    if args.command == "discover-software":
+        return discover_software(
+            root, args.area, args.language, args.ecosystem, args.country, args.software,
             args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "freshness":

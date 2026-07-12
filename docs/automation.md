@@ -27,6 +27,7 @@ python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --lang
 python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS --software SW-FAIRCHEM
+python3 scripts/research_landscape.py discover-software --area AREA-MACHINE-LEARNED-POTENTIALS --language PROGRAMMING-LANGUAGE-PYTHON --ecosystem ECO-MATML
 python3 scripts/research_landscape.py freshness --as-of 2026-07-12
 ```
 
@@ -90,6 +91,14 @@ IDs. Area paths are limited to sourced `connects` relations to an entity with a
 direct topic relation, or sourced `includes` relations to software with a
 documented area classification. The command is alphabetically ordered and does
 not assess ecosystem dominance, completeness, performance, or fit.
+
+`discover-software` is an interactive, non-generated AND filter over reviewed
+Research Software. It accepts canonical `--area`, `--language`, and
+`--ecosystem` IDs. An area match follows the software record's sourced direct
+classification, a language match follows its sourced `implemented_in`
+assertion, and an ecosystem match follows the ecosystem's sourced `includes`
+assertion. The command is alphabetically ordered and does not assess software
+quality, performance, adoption, maintenance, support, or fit.
 
 `freshness` produces a non-generated, reproducible maintenance audit from
 review dates and declared volatile-assertion deadlines. Pass `--as-of` for a

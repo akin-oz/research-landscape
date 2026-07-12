@@ -316,6 +316,31 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(["ECO-FAIR-CHEM"], [candidate["record"].id for candidate in software_candidates])
         self.assertEqual(2, software_candidates[0]["criteria"])
 
+    def test_dynamic_software_discovery_is_path_explainable_and_anded(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        candidates = rl.discovery_software_candidates(
+            records,
+            "AREA-MACHINE-LEARNED-POTENTIALS",
+            "PROGRAMMING-LANGUAGE-PYTHON",
+            "ECO-MATML",
+        )
+        self.assertEqual(["SW-MATGL"], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(3, candidates[0]["criteria"])
+        signals = candidates[0]["signals"]
+        self.assertTrue(any("classified in `AREA-MACHINE-LEARNED-POTENTIALS`" in signal["label"] for signal in signals))
+        self.assertTrue(any("implemented in `PROGRAMMING-LANGUAGE-PYTHON`" in signal["label"] for signal in signals))
+        self.assertTrue(any("included by `ECO-MATML`" in signal["label"] for signal in signals))
+        rendered = rl.render_software_discovery(
+            records,
+            "AREA-MACHINE-LEARNED-POTENTIALS",
+            "PROGRAMMING-LANGUAGE-PYTHON",
+            "ECO-MATML",
+            ROOT / "reports/generated/evidence-recommendations.md",
+        )
+        self.assertIn("# Research-software discovery", rendered)
+        self.assertIn("3/3 documented criteria", rendered)
+
     def test_discovery_catalog_lists_public_filter_ids(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
@@ -326,6 +351,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`SW-MATGL`", catalog)
         self.assertIn("`PROGRAMMING-LANGUAGE-PYTHON`", catalog)
         self.assertIn("`PROGRAMMING-LANGUAGE-CPP`", catalog)
+        self.assertIn("`ECO-MATML`", catalog)
         self.assertIn("contains no private profile", catalog)
 
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:
