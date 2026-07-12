@@ -22,3 +22,4 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [Curtarolo Group intelligence review](curtarolo-group-intelligence-vertical-slice-review.md) — third QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [Hacking Materials intelligence review](hacking-materials-intelligence-vertical-slice-review.md) — fourth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [THEOS intelligence review](theos-intelligence-vertical-slice-review.md) — fifth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
+- [SOLgroup intelligence review](solgroup-intelligence-vertical-slice-review.md) — sixth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.

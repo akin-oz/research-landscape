@@ -59,3 +59,5 @@ The third Research Group Intelligence cluster enriches the [Curtarolo Group](res
 The fourth Research Group Intelligence cluster enriches [Hacking Materials](research-groups/hacking-materials.md) with evidence-bounded community-software, collaboration, people, process, computing, software-funding, and participation-route context while preserving its existing Berkeley Lab, Materials Project, and Anubhav Jain records.
 
 The fifth Research Group Intelligence cluster enriches [THEOS](research-groups/theos.md) with evidence-bounded research programs, shared open-source infrastructure, education/outreach, and student-project discovery context while preserving its existing EPFL, AiiDA, Materials Cloud, and Nicola Marzari records.
+
+The sixth Research Group Intelligence cluster enriches [SOLgroup](research-groups/solgroup.md) with evidence-bounded research programs, `exciting`/CELL development, open-source context, people/archive, publication, student-topic, and GraFOx-partnership context while preserving its existing Humboldt, FAIRmat, NOMAD, and Claudia Draxl records.

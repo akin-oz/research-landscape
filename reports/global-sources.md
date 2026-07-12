@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S125 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S131 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -133,6 +133,12 @@
 | S123 | [AMSET contributors](https://hackingmaterials.lbl.gov/amset/contributors/) | Hacking Materials-led AMSET development and the documentation’s DOE Early Career funding context for that software. | High for the stated software-specific context; not a group-wide funding ledger, current award status, or complete contributor roster. |
 | S124 | [THEOS teaching](https://www.epfl.ch/labs/theos/page-94168-en-html/) | Public solid-state and atomistic/quantum-simulation offerings, including hands-on computational labs. | High for the stated public course surface; not individual supervision, admission, or current availability evidence. |
 | S125 | [THEOS student projects](https://www.epfl.ch/labs/theos/page-102234-en-html/) | Bachelor and master project-discovery routes managed through the lab’s linked current wiki. | High for the existence of public discovery routes; not a specific opening, eligibility, funding, or supervision-capacity claim. |
+| S126 | [SOLgroup publications](https://sol.physik.hu-berlin.de/index.php?page=publications) | Chronological peer-reviewed-publication surface with dated 2026 entries and selected linked DOI/data records. | High for the visible record; not a productivity, quality, or individual-attribution metric. |
+| S127 | [SOLgroup code development](https://sol.physik.hu-berlin.de/index.php?page=exciting-code) | Group-level DFT/beyond-DFT development and core developer-team statement for `exciting` and CELL. | High for the stated group software role; not individual roles, complete governance, or every associated codebase. |
+| S128 | [exciting: About](https://exciting-code.org/home/about/exciting) | `exciting` identity as GPL-licensed open-source all-electron electronic-structure software with source management, build, tests, and tutorials. | High for the project’s public software surface; not a general license or individual-role claim. |
+| S129 | [SOLgroup former members](https://sol.physik.hu-berlin.de/index.php?page=former-members) | Former member roles and time spans, alongside the group’s current roster on its home page. | High for displayed roster/history categories; not a complete employment record, headcount, or career-outcome statistic. |
+| S130 | [SOLgroup student topics](https://sol.physik.hu-berlin.de/index.php?page=job-opportunities) | Bachelor/master topic areas, including `exciting` method-development context. | High for the listed topics; not a live opening, eligibility, funding, or supervision-capacity claim. |
+| S131 | [SOLgroup GraFOx](https://sol.physik.hu-berlin.de/index.php?page=grafox) | SOLgroup’s stated main-partner role in GraFOx and oxide-research method context. | High for the stated partnership/research context; not a complete partner, funding, or governance graph. |
 
 ## Evidence protocol for new claims
 
