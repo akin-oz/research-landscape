@@ -14,6 +14,8 @@ Install the pinned development dependencies, then run:
 python3 scripts/research_landscape.py validate
 python3 scripts/research_landscape.py generate
 python3 scripts/research_landscape.py generate --check
+python3 scripts/research_landscape.py recommend
+python3 scripts/research_landscape.py recommend --check
 ```
 
 `validate` checks v2 schema/frontmatter, IDs, reference fields, relationship
@@ -26,6 +28,12 @@ repository-health report. It uses a content fingerprint of the view manifest,
 schema, and canonical entity corpus rather than a wall-clock timestamp, so the
 same inputs yield byte-identical outputs. `--check` fails if committed generated
 output is missing or stale.
+
+`recommend` validates the corpus and the versioned public recommendation model,
+then derives evidence-discovery results in `reports/generated/`. It exposes
+direct matching signals, confidence, coverage, and unavailable dimensions; it
+does not rank prestige, calculate private accessibility, or infer missing
+evidence.
 
 ## Generated-output boundary
 

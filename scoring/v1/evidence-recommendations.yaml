@@ -1,0 +1,83 @@
+# Public, evidence-availability recommendation model. It does not assign
+# prestige, quality, mentorship, or accessibility scores.
+version: 1
+model_id: evidence-recommendations-v1
+ordering:
+  primary: direct_evidence_signal_count_descending
+  tie_breakers: [name, id]
+  interpretation: "Discovery priority only; equal coverage does not imply equal research quality or fit."
+queries:
+  - query_id: groups-scientific-software
+    aliases: [best-labs-for-scientific-software]
+    kind: groups-with-software
+    title: Research groups with documented software development
+    limitations: "A documented group-to-software edge is not a software-quality, hiring, or mentorship claim."
+
+  - query_id: groups-computational-materials
+    aliases: [best-computational-materials-groups]
+    kind: groups-by-area
+    title: Research groups with documented Computational Materials Science work
+    area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+    limitations: "Membership reflects a sourced area relation, not exhaustive subject coverage or quality."
+
+  - query_id: groups-materials-informatics
+    aliases: [best-materials-informatics-groups]
+    kind: groups-by-area
+    title: Research groups with documented Materials Informatics work
+    area_id: AREA-MATERIALS-INFORMATICS
+    limitations: "Membership reflects a sourced area relation, not exhaustive AI/data capability or quality."
+
+  - query_id: groups-open-software
+    aliases: [open-science-groups]
+    kind: groups-with-open-source-software
+    title: Research groups with documented development links to licensed open-source software
+    limitations: "A licensed software connection is not a group-wide open-science or governance score."
+
+  - query_id: environments-for-experienced-software-engineers
+    aliases: [best-environments-for-experienced-software-engineers]
+    kind: groups-with-software-and-area
+    title: Research groups with direct software-development and target-area evidence
+    area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-MATERIALS-INFORMATICS]
+    limitations: "This is an evidence-match discovery query, not a claim about hiring, seniority recognition, supervision, or admissions."
+
+  - query_id: ecosystems-computational-materials
+    aliases: [best-ecosystems-for-computational-materials]
+    kind: ecosystems-connected-to-area
+    title: Research ecosystems connected to Computational Materials Science entities
+    area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+    limitations: "A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking."
+
+  - query_id: ecosystems-materials-informatics
+    aliases: [best-ecosystems-for-materials-informatics]
+    kind: ecosystems-connected-to-area
+    title: Research ecosystems connected to Materials Informatics entities
+    area_id: AREA-MATERIALS-INFORMATICS
+    limitations: "A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking."
+
+  - query_id: principal-investigators-computational-materials
+    aliases: [best-pis-for-computational-materials]
+    kind: principal-investigators-by-area
+    title: Principal Investigators with documented Computational Materials Science work
+    area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+    limitations: "Membership reflects an explicit area relation, not a researcher ranking or availability signal."
+
+  - query_id: principal-investigators-materials-informatics
+    aliases: [best-pis-for-materials-informatics]
+    kind: principal-investigators-by-area
+    title: Principal Investigators with documented Materials Informatics work
+    area_id: AREA-MATERIALS-INFORMATICS
+    limitations: "Membership reflects an explicit area relation, not a researcher ranking or availability signal."
+
+  - query_id: python-heavy-research-groups
+    aliases: [best-python-centric-research-groups]
+    status: unavailable
+    title: Python-heavy research groups
+    reason: "No canonical programming-language entity namespace or programming_language_ids evidence exists in the reviewed corpus. Prose mentions of Python cannot be promoted to a deterministic group-level filter."
+    required_evidence: "A governed Programming Language entity contract plus sourced software-to-language relations."
+
+  - query_id: high-mentorship-environments
+    aliases: [best-mentors, high-mentorship-environments]
+    status: unavailable
+    title: High-mentorship environments
+    reason: "The reviewed corpus contains bounded public process evidence but no validated, comparable mentorship metric with sufficient coverage."
+    required_evidence: "Ethically collected, current, aggregate supervision/process or outcome evidence under the mentorship metric contract."

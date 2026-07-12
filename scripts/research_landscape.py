@@ -102,6 +102,12 @@ PUBLIC_VIEW_FILES = {
     "research-groups": "research-groups.md", "conferences": "conferences.md", "funding": "funding.md",
 }
 
+RECOMMENDATION_KINDS = {
+    "groups-with-software", "groups-by-area", "groups-with-open-source-software",
+    "groups-with-software-and-area", "ecosystems-connected-to-area",
+    "principal-investigators-by-area",
+}
+
 SOURCE_PATTERN = re.compile(r"`(SRC-[A-Z0-9-]+)`")
 LINK_PATTERN = re.compile(r"\]\(([^)]+)\)")
 
@@ -327,6 +333,23 @@ def input_fingerprint(root: Path) -> str:
     return digest.hexdigest()
 
 
+def recommendation_fingerprint(root: Path) -> str:
+    digest = hashlib.sha256()
+    inputs = [
+        root / "scoring/v1/evidence-recommendations.yaml",
+        root / "schemas/entity-vnext.schema.json",
+    ]
+    inputs.extend(sorted((root / "entities").glob("*/*.md")))
+    for path in inputs:
+        if path.name == "README.md":
+            continue
+        digest.update(str(path.relative_to(root)).encode())
+        digest.update(b"\0")
+        digest.update(path.read_bytes())
+        digest.update(b"\0")
+    return digest.hexdigest()
+
+
 def eligible(record: Record) -> bool:
     return record.metadata.get("status") in {"reviewed", "published"} and record.metadata.get("confidence") in {"high", "medium"}
 
@@ -518,6 +541,195 @@ def health_report(root: Path, records: dict[str, Record], results: Results, fing
     return "\n".join(lines)
 
 
+def confidence_value(value: str | None) -> int:
+    return {"high": 3, "medium": 2, "low": 1, "unassessed": 0, "unavailable": 0}.get(value or "unassessed", 0)
+
+
+def lowest_confidence(values: list[str]) -> str:
+    labels = [value for value in values if value]
+    if not labels:
+        return "unavailable"
+    return min(labels, key=confidence_value)
+
+
+def matching_assertions(record: Record, predicate: str, target_ids: set[str] | None = None) -> list[dict[str, Any]]:
+    matches = []
+    for assertion in record.metadata.get("relationship_assertions", []) or []:
+        if assertion.get("predicate") != predicate:
+            continue
+        if target_ids is not None and assertion.get("target_id") not in target_ids:
+            continue
+        matches.append(assertion)
+    return matches
+
+
+def signal(label: str, assertion: dict[str, Any], owner: Record) -> dict[str, Any]:
+    sources = ", ".join(assertion.get("source_ids", [])) or "no-source-id"
+    return {
+        "label": label,
+        "sources": sources,
+        "confidence": lowest_confidence([owner.metadata.get("confidence"), assertion.get("confidence")]),
+    }
+
+
+def recommendation_candidates(query: dict[str, Any], records: dict[str, Record]) -> list[dict[str, Any]]:
+    kind = query.get("kind")
+    candidates: list[dict[str, Any]] = []
+    if kind == "groups-with-software":
+        for record in records.values():
+            if record.entity_type != "research-group" or not eligible(record):
+                continue
+            signals = [signal(f"develops `{a['target_id']}`", a, record) for a in matching_assertions(record, "develops")]
+            if signals:
+                candidates.append({"record": record, "signals": signals, "criteria": 1})
+    elif kind == "groups-by-area":
+        area_ids = {query["area_id"]}
+        for record in records.values():
+            if record.entity_type != "research-group" or not eligible(record):
+                continue
+            signals = [signal(f"works on `{a['target_id']}`", a, record) for a in matching_assertions(record, "works_on", area_ids)]
+            if signals:
+                candidates.append({"record": record, "signals": signals, "criteria": 1})
+    elif kind == "groups-with-open-source-software":
+        for record in records.values():
+            if record.entity_type != "research-group" or not eligible(record):
+                continue
+            signals = []
+            for assertion in matching_assertions(record, "develops"):
+                software = records.get(assertion["target_id"])
+                if software and software.metadata.get("open_source") == "yes" and software.metadata.get("license"):
+                    signals.append(signal(f"develops licensed open-source `{software.id}`", assertion, record))
+            if signals:
+                candidates.append({"record": record, "signals": signals, "criteria": 1})
+    elif kind == "groups-with-software-and-area":
+        area_ids = set(query["area_ids"])
+        for record in records.values():
+            if record.entity_type != "research-group" or not eligible(record):
+                continue
+            software_signals = [signal(f"develops `{a['target_id']}`", a, record) for a in matching_assertions(record, "develops")]
+            area_signals = [signal(f"works on `{a['target_id']}`", a, record) for a in matching_assertions(record, "works_on", area_ids)]
+            if software_signals and area_signals:
+                candidates.append({"record": record, "signals": software_signals + area_signals, "criteria": 2})
+    elif kind == "principal-investigators-by-area":
+        area_ids = {query["area_id"]}
+        for record in records.values():
+            if record.entity_type != "principal-investigator" or not eligible(record):
+                continue
+            signals = [signal(f"works on `{a['target_id']}`", a, record) for a in matching_assertions(record, "works_on", area_ids)]
+            if signals:
+                candidates.append({"record": record, "signals": signals, "criteria": 1})
+    elif kind == "ecosystems-connected-to-area":
+        area_ids = {query["area_id"]}
+        for ecosystem in records.values():
+            if ecosystem.entity_type != "research-ecosystem" or not eligible(ecosystem):
+                continue
+            signals = []
+            for connection in matching_assertions(ecosystem, "connects"):
+                target = records.get(connection["target_id"])
+                if not target:
+                    continue
+                for area_assertion in matching_assertions(target, "works_on", area_ids):
+                    signals.append(signal(f"connects `{target.id}`", connection, ecosystem))
+                    signals.append(signal(f"`{target.id}` works on `{area_assertion['target_id']}`", area_assertion, target))
+            if signals:
+                candidates.append({"record": ecosystem, "signals": signals, "criteria": 2})
+    else:
+        raise ValueError(f"unsupported recommendation kind {kind}")
+    return sorted(
+        candidates,
+        key=lambda item: (-len(item["signals"]), item["record"].metadata["name"].casefold(), item["record"].id),
+    )
+
+
+def validate_recommendation_model(root: Path, records: dict[str, Record]) -> tuple[dict[str, Any], list[str]]:
+    model = yaml.safe_load((root / "scoring/v1/evidence-recommendations.yaml").read_text(encoding="utf-8"))
+    errors = []
+    if model.get("version") != 1:
+        errors.append("recommendation model version must be 1")
+    query_ids = []
+    aliases = set()
+    for query in model.get("queries", []):
+        query_id = query.get("query_id")
+        query_ids.append(query_id)
+        if not query_id or not query.get("title"):
+            errors.append(f"recommendation query missing query_id or title: {query}")
+        if query.get("status") == "unavailable":
+            if not query.get("reason") or not query.get("required_evidence"):
+                errors.append(f"unavailable query {query_id} requires reason and required_evidence")
+            continue
+        if query.get("kind") not in RECOMMENDATION_KINDS:
+            errors.append(f"query {query_id} has unsupported kind {query.get('kind')}")
+        for area_id in as_ids(query.get("area_id", [])) + as_ids(query.get("area_ids", [])):
+            target = records.get(area_id)
+            if target is None or target.entity_type != "research-area":
+                errors.append(f"query {query_id} has invalid research-area ID {area_id}")
+        for alias in query.get("aliases", []):
+            if alias in aliases:
+                errors.append(f"recommendation alias is duplicated: {alias}")
+            aliases.add(alias)
+    if len(query_ids) != len(set(query_ids)):
+        errors.append("recommendation query IDs must be unique")
+    return model, errors
+
+
+def render_recommendation_query(query: dict[str, Any], records: dict[str, Record], output_path: Path) -> list[str]:
+    lines = [f"## {query['title']}", "", f"**Query ID:** `{query['query_id']}`", ""]
+    if query.get("status") == "unavailable":
+        lines.extend([
+            "**Status:** unavailable — no recommendation is emitted.", "",
+            f"**Why:** {query['reason']}", "",
+            f"**Required before enabling:** {query['required_evidence']}", "",
+        ])
+        return lines
+    candidates = recommendation_candidates(query, records)
+    lines.extend([
+        "**Status:** available — evidence-discovery result, not a ranking.", "",
+        "| Candidate | Direct matching evidence | Confidence | Coverage |",
+        "| --- | --- | --- | --- |",
+    ])
+    for candidate in candidates:
+        record = candidate["record"]
+        signals = candidate["signals"]
+        rendered_signals = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in signals)
+        confidence = lowest_confidence([item["confidence"] for item in signals])
+        coverage = f"{candidate['criteria']}/{candidate['criteria']} direct criteria"
+        lines.append(
+            f"| {canonical_link(record, output_path)} (`{record.id}`) | {rendered_signals} | {confidence} | {coverage} |"
+        )
+    if not candidates:
+        lines.append("| — | No reviewed canonical entity currently matches the direct query criteria. | unavailable | 0 criteria |")
+    lines.extend(["", f"**Limitations:** {query['limitations']}", ""])
+    return lines
+
+
+def recommendation_report(root: Path, records: dict[str, Record], model: dict[str, Any], fingerprint: str) -> str:
+    output_path = root / "reports/generated/evidence-recommendations.md"
+    lines = [
+        "<!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->",
+        f"<!-- input-fingerprint: {fingerprint} -->",
+        "# Evidence recommendations",
+        "",
+        f"**Model:** `{model['model_id']}`",
+        f"**Input fingerprint:** `{fingerprint}`",
+        "**Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.",
+        "",
+        "## Ordering and boundary",
+        "",
+        f"Results use `{model['ordering']['primary']}` then `{', '.join(model['ordering']['tie_breakers'])}`. {model['ordering']['interpretation']}",
+        "Each row exposes only direct, source-backed matching signals. Unknown, private, volatile, or unsupported dimensions remain unavailable.",
+        "",
+    ]
+    for query in model["queries"]:
+        lines.extend(render_recommendation_query(query, records, output_path))
+    lines.extend([
+        "## Repair workflow",
+        "",
+        "Correct evidence and relationships in canonical entities, rerun the generator, and review the diff. Do not edit this report manually or use it to infer admissions, funding, mentorship, language, immigration, or personal fit.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
 def write_or_check(path: Path, content: str, check: bool, drift: list[str]) -> None:
     if check:
         if not path.exists() or path.read_text(encoding="utf-8") != content:
@@ -562,6 +774,40 @@ def generate(root: Path, check: bool) -> int:
     return 0
 
 
+def recommend(root: Path, check: bool, query_id: str | None) -> int:
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    model, model_errors = validate_recommendation_model(root, records)
+    if model_errors:
+        for error in model_errors:
+            print(f"ERROR: {error}")
+        return 1
+    fingerprint = recommendation_fingerprint(root)
+    if query_id:
+        matching = [query for query in model["queries"] if query["query_id"] == query_id or query_id in query.get("aliases", [])]
+        if len(matching) != 1:
+            print(f"ERROR: unknown or ambiguous recommendation query '{query_id}'")
+            return 1
+        if check:
+            print("ERROR: --check is only valid for the full generated recommendation report")
+            return 1
+        output_path = root / "reports/generated/evidence-recommendations.md"
+        print("\n".join(render_recommendation_query(matching[0], records, output_path)))
+        return 0
+    drift: list[str] = []
+    output = root / "reports/generated/evidence-recommendations.md"
+    write_or_check(output, recommendation_report(root, records, model, fingerprint), check, drift)
+    if drift:
+        print("Generated recommendation output is stale or missing:")
+        print("\n".join(f"- {Path(path).relative_to(root)}" for path in drift))
+        return 1
+    print_results(root, records, results)
+    print("Generated recommendations are in sync." if check else "Generated recommendations.")
+    return 0
+
+
 def print_results(root: Path, records: dict[str, Record], results: Results) -> None:
     relationships = sum(len(record.metadata.get("relationship_assertions", []) or []) for record in records.values())
     print(f"Validated {len(records)} v2 entities and {relationships} typed relationship assertions.")
@@ -573,15 +819,18 @@ def print_results(root: Path, records: dict[str, Record], results: Results) -> N
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
+    parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
     args = parser.parse_args()
     root = args.root.resolve()
     if args.command == "validate":
         records, results = validate(root)
         print_results(root, records, results)
         return 1 if results.errors else 0
+    if args.command == "recommend":
+        return recommend(root, args.check, args.query)
     return generate(root, args.check)
 
 

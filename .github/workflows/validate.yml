@@ -21,5 +21,7 @@ jobs:
         run: python -m unittest discover -s scripts/tests
       - name: Verify generated views and health report
         run: python scripts/research_landscape.py generate --check
+      - name: Verify generated recommendations
+        run: python scripts/research_landscape.py recommend --check
       - name: Validate JSON Schema syntax
         run: node --input-type=module -e "import { readdir, readFile } from 'node:fs/promises'; for (const file of await readdir('schemas')) if (file.endsWith('.json')) JSON.parse(await readFile('schemas/' + file, 'utf8'));"

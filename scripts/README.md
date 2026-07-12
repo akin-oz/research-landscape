@@ -27,6 +27,8 @@ Verify that committed generated output is current without writing files:
 
 ```bash
 python3 scripts/research_landscape.py generate --check
+python3 scripts/research_landscape.py recommend
+python3 scripts/research_landscape.py recommend --check
 python3 -m unittest discover -s scripts/tests
 ```
 

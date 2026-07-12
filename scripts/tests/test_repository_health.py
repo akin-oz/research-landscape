@@ -34,6 +34,9 @@ class RepositoryHealthTests(unittest.TestCase):
     def test_committed_generated_output_is_current(self) -> None:
         self.assertEqual(0, rl.generate(ROOT, check=True))
 
+    def test_committed_recommendations_are_current(self) -> None:
+        self.assertEqual(0, rl.recommend(ROOT, check=True, query_id=None))
+
 
 if __name__ == "__main__":
     unittest.main()
