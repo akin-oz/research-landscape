@@ -43,6 +43,15 @@ current public description supports a Materials Informatics connection through
 integrated polymer databases, automated molecular-dynamics and first-principles
 simulation, and machine-learning research.
 
+RIKEN's current team page describes an automation-centered polymer-informatics
+environment: experimental and computational database development, foundation
+models, molecular-dynamics and first-principles computation, Sim2Real machine
+learning, and AI/robotics-driven autonomous discovery. It lists a named Team
+Director and a small core-member roster with research- and visiting-scientist
+roles, plus selected publications and a RadonPy link. This public page is not a
+complete employment record, a project/funding ledger, a career-outcome record,
+or evidence of current recruitment or degree supervision.
+
 ## Evidence
 
 | Source ID | Evidence |
@@ -52,7 +61,8 @@ simulation, and machine-learning research.
 
 ## Boundary and limitations
 
-This record does not enumerate all team personnel, claim that every output is
-group-maintained software, or infer exclusive ownership or governance of
-RadonPy. It makes no claim about openings, mentoring, admissions, funding,
-language, or applicant fit.
+This record does not convert its displayed people list into a complete
+employment roster, claim that every output is group-maintained software, or
+infer exclusive ownership or governance of RadonPy. It makes no live-opening,
+degree-route, mentoring-quality, admissions, funding, language, applicant-fit,
+or career-outcome claim.

@@ -25,3 +25,4 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [SOLgroup intelligence review](solgroup-intelligence-vertical-slice-review.md) — sixth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [DTU CAMD intelligence review](dtu-camd-intelligence-vertical-slice-review.md) — seventh QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [Materialyze.AI intelligence review](materialyze-ai-intelligence-vertical-slice-review.md) — eighth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
+- [RIKEN Polymeromics intelligence review](riken-polymeromics-intelligence-vertical-slice-review.md) — ninth QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.

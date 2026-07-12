@@ -65,3 +65,5 @@ The sixth Research Group Intelligence cluster enriches [SOLgroup](research-group
 The seventh Research Group Intelligence cluster enriches [DTU CAMD](research-groups/dtu-camd.md) with evidence-bounded section leadership, CAMPOS/ASE software, Python-interface/GPL context, technical programs, sub-group project routes, and limited funding context while preserving its existing DTU and ASE records.
 
 The eighth Research Group Intelligence cluster enriches [Materialyze.AI Lab](research-groups/materialyze-ai-lab.md) with evidence-bounded theory/data/AI themes, public software and open-science context, role categories, and a dated applicant/onboarding surface while preserving the distinct PI-level pymatgen and Materials Project records.
+
+The ninth Research Group Intelligence cluster enriches the [RIKEN Polymeromics Team](research-groups/riken-polymeromics-team.md) with evidence-bounded polymer data, automated MD/first-principles, foundation-model, Sim2Real, autonomous-discovery, people, and selected-publication context while preserving the shared RadonPy relationship and RIKEN TRIP direct host.
