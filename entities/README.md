@@ -61,3 +61,5 @@ The fourth Research Group Intelligence cluster enriches [Hacking Materials](rese
 The fifth Research Group Intelligence cluster enriches [THEOS](research-groups/theos.md) with evidence-bounded research programs, shared open-source infrastructure, education/outreach, and student-project discovery context while preserving its existing EPFL, AiiDA, Materials Cloud, and Nicola Marzari records.
 
 The sixth Research Group Intelligence cluster enriches [SOLgroup](research-groups/solgroup.md) with evidence-bounded research programs, `exciting`/CELL development, open-source context, people/archive, publication, student-topic, and GraFOx-partnership context while preserving its existing Humboldt, FAIRmat, NOMAD, and Claudia Draxl records.
+
+The seventh Research Group Intelligence cluster enriches [DTU CAMD](research-groups/dtu-camd.md) with evidence-bounded section leadership, CAMPOS/ASE software, Python-interface/GPL context, technical programs, sub-group project routes, and limited funding context while preserving its existing DTU and ASE records.

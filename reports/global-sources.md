@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S131 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S134 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -139,6 +139,9 @@
 | S129 | [SOLgroup former members](https://sol.physik.hu-berlin.de/index.php?page=former-members) | Former member roles and time spans, alongside the group’s current roster on its home page. | High for displayed roster/history categories; not a complete employment record, headcount, or career-outcome statistic. |
 | S130 | [SOLgroup student topics](https://sol.physik.hu-berlin.de/index.php?page=job-opportunities) | Bachelor/master topic areas, including `exciting` method-development context. | High for the listed topics; not a live opening, eligibility, funding, or supervision-capacity claim. |
 | S131 | [SOLgroup GraFOx](https://sol.physik.hu-berlin.de/index.php?page=grafox) | SOLgroup’s stated main-partner role in GraFOx and oxide-research method context. | High for the stated partnership/research context; not a complete partner, funding, or governance graph. |
+| S132 | [DTU CAMD software](https://physics.dtu.dk/research/sections/camd/about/software) | CAMPOS collection, Python interfaces, shared ASE tools, GNU GPL licensing, and public development-participation surface. | High for the stated software collection; not a group-wide language policy or individual maintenance roster. |
+| S133 | [DTU Atomic-scale Materials Design](https://physics.dtu.dk/research/sections/camd/research/Atomic-scale-Materials-Design) | ASE/GPAW development, low-dimensional-material databases, ML screening, global optimization, and DFT uncertainty work. | High for stated sub-group research scope; not a complete project/software inventory. |
+| S134 | [DTU Computational Quantum Materials](https://physics.dtu.dk/research/sections/camd/research/Computational-Quantum-Materials) | Sub-group research, open codes/databases, BSc/MSc project routes, and the named VILLUM-funded project. | High for stated sub-group context; not a CAMD-wide grant ledger, capacity, or complete project catalog. |
 
 ## Evidence protocol for new claims
 
