@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, and S38 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, and S38–S42 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -46,6 +46,10 @@
 | S36 | [RIKEN Computational Materials Science Team](https://www.r-ccs.riken.jp/en/research/labs/cmasrt/) | Seiji Yunoki’s team role, research, members and published results. | High for team scope. |
 | S37 | [RIKEN Polymeromics Team](https://www.riken.jp/en/research/labs/trip/agis/polymeromics/index.html) | Ryo Yoshida’s team role, research, members and selected outputs. | High for team scope. |
 | S38 | [Hacking Materials](https://hackingmaterials.lbl.gov/) | Anubhav Jain's Berkeley Lab-hosted Hacking Materials group, group leadership, and theory/HPC/AI research scope. | High for group identity, host, and stated methods; does not establish project funding or software-maintainer roles. |
+| S39 | [THEOS: Research overview](https://www.epfl.ch/labs/theos/page-89530-en-html/) | THEOS computational-materials scope, first-principles/high-throughput methods, and shared contribution to AiiDA and Materials Cloud. | High for stated group methods and shared infrastructure contribution; not evidence of exclusive ownership or individual maintainer roles. |
+| S40 | [Materials Cloud: Team & Contact](https://www.materialscloud.org/team) | Nicola Marzari's current EPFL and PSI roles and Materials Cloud project-leader listing. | High for listed roles; does not establish ownership of every Materials Cloud component. |
+| S41 | [PSI Laboratory for Materials Simulations: Research Groups](https://www.psi.ch/en/lms/groups) | Nicola Marzari's current Laboratory for Materials Simulations head role at PSI. | High for current PSI laboratory leadership. |
+| S42 | [EPFL, 6 November 2025: Nicola Marzari receives David Adler Award](https://actu.epfl.ch/news/nicola-marzari-receives-david-adler-award) | A Cambridge professorship scheduled to begin full time in September 2026. | High for the future-transition date; not evidence of a current Cambridge affiliation on the July 2026 review date. |
 
 ## Evidence protocol for new claims
 

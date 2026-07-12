@@ -15,3 +15,5 @@ The AFLOW cluster adds [AFLOW](ecosystems/aflow.md), the [AFLOW framework](resea
 The Materialyze.AI cluster adds [Shyue Ping Ong](principal-investigators/shyue-ping-ong.md), [Materialyze.AI Lab](research-groups/materialyze-ai-lab.md), [National University of Singapore](universities/national-university-of-singapore.md), [Singapore](countries/singapore.md), and [Materials Informatics](research-areas/materials-informatics.md), while linking to the existing [pymatgen](research-software/pymatgen.md) and Materials Project records.
 
 The Hacking Materials cluster adds [Anubhav Jain](principal-investigators/anubhav-jain.md) and [Hacking Materials](research-groups/hacking-materials.md), reusing the existing Lawrence Berkeley National Laboratory, United States, Computational Materials Science, and Materials Project records.
+
+The THEOS cluster adds [Nicola Marzari](principal-investigators/nicola-marzari.md), [THEOS](research-groups/theos.md), [EPFL](universities/epfl.md), and [Materials Cloud](ecosystems/materials-cloud.md), while reusing the Swiss, PSI, AiiDA, and Computational Materials Science records.

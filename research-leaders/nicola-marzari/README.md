@@ -18,4 +18,6 @@ conflicts_of_interest: []
 **Evidence basis:** [EPFL profile](https://people.epfl.ch/nicola.marzari/?lang=en), [Materials Cloud team](https://www.materialscloud.org/team), [MARVEL evidence](https://www.marvel-nccr.ch/de/news/awards/2022-06-prace), and [AiiDA](https://www.aiida.net/sections/team.html) (S08–S10, S33).  
 **Confidence:** high for computational-materials/open-workflow ecosystem fit; medium for individual-lab conclusions beyond the linked facts.
 
+**Canonical public-fact record:** [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) is the separate vNext entity for current EPFL and PSI affiliations, THEOS leadership, and bounded AiiDA/Materials Cloud ecosystem links. This dossier remains the dated applicant-oriented analysis.
+
 This ecosystem is valuable for a software engineer because provenance, workflow automation, HPC and data dissemination are treated as research infrastructure rather than peripheral tooling.
