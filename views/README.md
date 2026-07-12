@@ -2,7 +2,12 @@
 
 Views are reproducible navigation paths over canonical entity records. They let a reader explore the same principal investigators, research groups, universities, software, and ecosystems from several directions without creating several copies of those records.
 
-**This is architecture only.** A view defines a question, a metadata query, facets, and presentation rules; it does not add an inventory of entities or migrate existing reports.
+The canonical, machine-readable contracts live in
+[`definitions.yaml`](definitions.yaml). A view defines a question, a metadata
+query, facets, and presentation rules; it does not add an inventory of entities
+or migrate existing reports. Generated public indexes remain intentionally
+absent until Quality Gate 6 provides the generator and validator named in every
+definition's `output_reason`.
 
 ## Non-negotiable rules
 
@@ -28,7 +33,9 @@ flowchart LR
 
 ## What a view declares
 
-Every future view definition should declare the following, whether it is stored as a small YAML block, a generated index manifest, or prose that a validator can parse later.
+Every canonical view definition declares the following in `definitions.yaml`.
+The directory READMEs explain the question and boundary, while the manifest is
+the single authoritative declaration of membership and ordering.
 
 | Item | Meaning |
 | --- | --- |
@@ -75,8 +82,17 @@ Values resolve to controlled IDs, not display-name text. The vNext metadata cont
 | [Research areas](research-areas/README.md) | Which entities work on a controlled research topic? | Subject traversal. |
 | [Research software](research-software/README.md) | Who and what connects through a software artifact? | Software-centered navigation. |
 | [Ecosystems](ecosystems/README.md) | Which people, labs, institutions, funding, and communities form a network? | Ecosystem traversal. |
+| [Principal investigators](principal-investigators/README.md) | Which reviewed PIs are connected to documented groups, hosts, areas, and software? | Person-centered public traversal. |
+| [Research groups](research-groups/README.md) | Which reviewed groups have a valid direct host and documented research paths? | Group-centered public traversal. |
+| [Conferences](conferences/README.md) | Which reviewed events connect to research areas and ecosystems? | Date-aware public event traversal. |
+| [Funding](funding/README.md) | Which reviewed programmes and projects have documented time-bounded connections? | Funding/programme traversal. |
 | [My shortlist](my-shortlist/README.md) | Which entities fit one declared profile? | Private or explicitly shared personal overlay. |
-| [Current targets](current-targets/README.md) | Which shortlist entries have a current, dated next action? | Time-bounded personal overlay. |
+| [Current focus](current-focus/README.md) | Which private shortlist entries have an unexpired next action? | Time-bounded personal overlay. |
+| [Waiting list](waiting-list/README.md) | Which private entries are deferred until a documented revisit date? | Private deferred overlay. |
+
+[Current targets](current-targets/README.md) remains a compatibility guide for
+the pre-QG5 name; its behavior is defined by `current-focus` and does not own a
+separate result set.
 
 ## Present repository material
 

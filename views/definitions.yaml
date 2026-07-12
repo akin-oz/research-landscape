@@ -1,0 +1,129 @@
+# Canonical deterministic view definitions. These describe membership and
+# presentation only; generated results are deliberately absent until QG6 adds
+# the generator and validator.
+version: 1
+source_scope:
+  entity_root: entities
+  entity_schema: schemas/entity-vnext.schema.json
+  relationship_field: relationship_assertions
+defaults:
+  status_in: [reviewed, published]
+  minimum_confidence: medium
+  ordering: [entity_type, name, id]
+  display: [id, name, entity_type, confidence, last_review, canonical_link]
+  generated_output: none
+  unknown_handling: retain_as_unknown
+views:
+  - view_id: global
+    visibility: public
+    scope: [principal-investigator, research-group, university, research-software, research-ecosystem]
+    membership: {status_in: [reviewed, published]}
+    facets: [entity_type, research_area_ids, software_ids, ecosystem_ids, resolved_country]
+    ordering: [entity_type, name, id]
+    resolved_country: documented_location_or_host_path
+    output_reason: "QG6 must generate an index from canonical entities."
+
+  - view_id: countries
+    visibility: public
+    scope: [country, university, organization, research-group, principal-investigator, conference]
+    membership: {status_in: [reviewed, published], requires: documented_country_path}
+    facets: [country_code, region, entity_type, city]
+    ordering: [country_code, entity_type, name, id]
+    resolved_country: country_id_or_located_in_or_direct_host
+    output_reason: "QG6 must resolve dated geographic paths without copied country facts."
+
+  - view_id: universities
+    visibility: public
+    scope: [university, department, research-group, principal-investigator, research-software, project, research-ecosystem]
+    membership: {status_in: [reviewed, published], requires: university_id_or_documented_university_path}
+    facets: [country_id, research_area_ids, software_ids, entity_type]
+    ordering: [name, id]
+    relationship_traversals: [university.located_in.country, research-group.belongs_to.university, department.belongs_to.university, principal-investigator.affiliated_with.university]
+    output_reason: "QG6 must resolve declared edges without treating a department as a group direct host."
+
+  - view_id: research-areas
+    visibility: public
+    scope: [research-area, principal-investigator, research-group, research-software, project, publication, department, conference]
+    membership: {status_in: [reviewed, published], requires: research_area_ids_or_documented_area_relation}
+    facets: [research_area_ids, entity_type, software_ids, resolved_country]
+    ordering: [research_area_label, entity_type, name, id]
+    relationship_traversals: [research-group.works_on.research-area, principal-investigator.works_on.research-area, project.works_on.research-area, conference.covers.research-area]
+    output_reason: "QG6 must distinguish direct metadata from typed topical assertions."
+
+  - view_id: research-software
+    visibility: public
+    scope: [research-software, research-group, principal-investigator, project, research-ecosystem, publication]
+    membership: {status_in: [reviewed, published], requires: research-software_or_documented_software_relation}
+    facets: [license, open_source, ecosystem_ids, research_area_ids, resolved_country]
+    ordering: [name, id]
+    relationship_traversals: [research-group.develops.research-software, principal-investigator.develops.research-software, project.develops.research-software, research-ecosystem.includes.research-software, publication.describes.research-software]
+    output_reason: "QG6 must expose relation direction and evidence without fabricating inverse ownership."
+
+  - view_id: ecosystems
+    visibility: public
+    scope: [research-ecosystem, research-software, principal-investigator, research-group, organization, funding-program, conference, project]
+    membership: {status_in: [reviewed, published], requires: research-ecosystem_or_connects_relation}
+    facets: [ecosystem_kind, entity_type, software_ids, resolved_country]
+    ordering: [name, id]
+    relationship_traversals: [research-ecosystem.includes.research-software, research-ecosystem.connects.any]
+    output_reason: "QG6 must render one-way, evidence-bearing topology rather than copied ecosystem profiles."
+
+  - view_id: principal-investigators
+    visibility: public
+    scope: [principal-investigator]
+    membership: {status_in: [reviewed, published]}
+    facets: [affiliation_ids, research_group_ids, research_area_ids, software_ids, resolved_country]
+    ordering: [name, id]
+    relationship_traversals: [principal-investigator.affiliated_with.any, principal-investigator.leads.research-group, principal-investigator.develops.research-software, principal-investigator.works_on.research-area]
+    output_reason: "QG6 must resolve affiliations and roles as documented paths, not synthesized biographies."
+
+  - view_id: research-groups
+    visibility: public
+    scope: [research-group]
+    membership: {status_in: [reviewed, published], requires: exactly_one_direct_host}
+    facets: [institution_id, organization_id, department_id, research_area_ids, software_ids, resolved_country]
+    ordering: [name, id]
+    relationship_traversals: [research-group.belongs_to.direct_host, research-group.develops.research-software, research-group.works_on.research-area]
+    output_reason: "QG6 must enforce ADR 0006 before producing group membership."
+
+  - view_id: conferences
+    visibility: public
+    scope: [conference, research-ecosystem, research-area, organization, university]
+    membership: {status_in: [reviewed, published]}
+    facets: [conference_kind, event_start_date, country_id, research_area_ids, ecosystem_ids]
+    ordering: [event_start_date, name, id]
+    relationship_traversals: [conference.covers.research-area, conference.hosted_by.any, research-ecosystem.connects.conference]
+    output_reason: "QG6 must preserve dates and distinguish an event from a standing opportunity."
+
+  - view_id: funding
+    visibility: public
+    scope: [funding-program, project, organization, research-ecosystem]
+    membership: {status_in: [reviewed, published]}
+    facets: [funding_program_kind, funder_organization_id, project_status, start_date, end_date]
+    ordering: [name, id]
+    relationship_traversals: [organization.administers.funding-program, funding-program.funds.project, research-ecosystem.connects.funding-program]
+    output_reason: "QG6 must retain time windows and never infer current funding from an historical relation."
+
+  - view_id: my-shortlist
+    visibility: private
+    scope: [principal-investigator, research-group, university, research-software, research-ecosystem, project]
+    membership: {requires: declared_private_profile_and_versioned_personal_score}
+    facets: [research_area_ids, software_ids, resolved_country, accessibility_score]
+    ordering: [personal_score, name, id]
+    output_reason: "No public generated output: profiles and results are applicant-owned."
+
+  - view_id: current-focus
+    visibility: private
+    scope: [principal-investigator, research-group, university, research-software, research-ecosystem, project]
+    membership: {requires: private_shortlist_entry_with_unexpired_next_action}
+    facets: [review_by, next_action, resolved_country]
+    ordering: [review_by, name, id]
+    output_reason: "No public generated output: focus entries contain private, time-bounded actions."
+
+  - view_id: waiting-list
+    visibility: private
+    scope: [principal-investigator, research-group, university, research-software, research-ecosystem, project]
+    membership: {requires: private_deferred_entry_with_revisit_date}
+    facets: [revisit_date, deferral_reason, resolved_country]
+    ordering: [revisit_date, name, id]
+    output_reason: "No public generated output: deferral reasons and timings are applicant-owned."

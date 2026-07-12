@@ -18,6 +18,7 @@ Reviewed global research-intelligence reports live here. They are compatibility 
 - [Materials Cloud ecosystem-intelligence review](materials-cloud-ecosystem-intelligence-vertical-slice-review.md) — seventh QG3 data-ecosystem coverage matrix, evidence boundaries, and contract limitations.
 - [Quality Gate 3 software ecosystem intelligence review](quality-gate-3-software-ecosystem-intelligence-review.md) — formal closeout of the seven-ecosystem QG3 cohort and handoff to Research Group Intelligence.
 - [Quality Gate 4 research group intelligence review](quality-gate-4-research-group-intelligence-review.md) — formal closeout of the eleven-group QG4 cohort and handoff to deterministic views.
+- [Quality Gate 5 view-system review](quality-gate-5-view-system-review.md) — deterministic view definitions, public/private boundaries, and the deliberate handoff to generation automation.
 - [Persson Group intelligence review](persson-group-intelligence-vertical-slice-review.md) — first QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [Wolverton Group intelligence review](wolverton-group-intelligence-vertical-slice-review.md) — second QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
 - [Curtarolo Group intelligence review](curtarolo-group-intelligence-vertical-slice-review.md) — third QG4 research-group intelligence coverage matrix, evidence boundaries, and contract limitations.
