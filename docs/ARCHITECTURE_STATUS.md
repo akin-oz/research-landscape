@@ -7,8 +7,10 @@ content work. Canonical entity ownership, v2 metadata, stable IDs, typed
 relationships, view definitions, generated-output boundaries, and public/private
 separation are operational.
 
-The only execution-phase contract clarification is accepted ADR 0006, which
-resolves the direct University-versus-Organization host reference for reviewed
-Research Groups. New entity types, predicates, schema fields, canonical layers,
-or changes to these boundaries require an ADR and explicit review; they must not
-be introduced as a content workaround.
+Accepted ADR 0006 resolves the direct University-versus-Organization host
+reference for reviewed Research Groups. Accepted ADR 0007 adds the bounded
+Programming Language entity and Research Software `implemented_in` contract.
+Accepted ADR 0008 adds bounded public mentorship-process evidence without a
+score or comparative claim. New entity types, predicates, schema fields,
+canonical layers, or changes to these boundaries require an ADR and explicit
+review; they must not be introduced as a content workaround.

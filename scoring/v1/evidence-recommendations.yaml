@@ -111,10 +111,16 @@ queries:
 
   - query_id: python-heavy-research-groups
     aliases: [best-python-centric-research-groups]
-    status: unavailable
-    title: Python-heavy research groups
-    reason: "No canonical programming-language entity namespace or programming_language_ids evidence exists in the reviewed corpus. Prose mentions of Python cannot be promoted to a deterministic group-level filter."
-    required_evidence: "A governed Programming Language entity contract plus sourced software-to-language relations."
+    kind: groups-with-software-language
+    title: Research groups with documented development links to Python software
+    language_id: PROGRAMMING-LANGUAGE-PYTHON
+    limitations: "This exposes only a group’s sourced development link to software with a documented Python implementation. It does not establish a group-wide working language, individual proficiency, training requirement, hiring criterion, or applicant fit."
+
+  - query_id: entities-with-documented-mentorship-process-evidence
+    aliases: [mentorship-process-evidence, documented-mentorship-practices]
+    kind: entities-with-mentorship-process-evidence
+    title: Entities with documented mentorship-process evidence
+    limitations: "This is a bounded public-process discovery path, not a mentorship-quality ranking, capacity claim, effectiveness finding, or prediction of an applicant’s experience. Categories are not numerically comparable."
 
   - query_id: high-mentorship-environments
     aliases: [best-mentors, high-mentorship-environments]

@@ -18,6 +18,14 @@ source_ids:
   - SRC-ASE-CONTACT
   - SRC-ASE-PUBLICATION
 open_source: "yes"
+programming_language_ids:
+  - PROGRAMMING-LANGUAGE-PYTHON
+relationship_assertions:
+  - predicate: implemented_in
+    target_id: PROGRAMMING-LANGUAGE-PYTHON
+    source_ids: [SRC-ASE-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
 website: https://wiki.fysik.dtu.dk/ase/
 repository_url: https://gitlab.com/ase/ase
 license: LGPL-2.1-or-later

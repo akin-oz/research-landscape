@@ -1,6 +1,6 @@
 # ADR 0008: Decide whether to model public mentorship-process evidence in v2
 
-- **Status:** Proposed — awaiting explicit architecture approval
+- **Status:** Accepted — 2026-07-12
 - **Date:** 2026-07-12
 
 ## Context
@@ -19,9 +19,9 @@ privacy boundary in [Mentorship-process evidence](../../methodology/metrics/ment
 It does not authorize a score, a personality assessment, or a public claim
 that one environment is better than another.
 
-## Decision requested
+## Decision
 
-Approve or reject this minimal v2 extension:
+The approved minimal v2 extension is:
 
 1. Add an optional `mentorship_process_evidence` field for Research Group,
    Department, University, and Organization records. Each observation contains
@@ -78,9 +78,9 @@ or deterministic query semantics.
 
 ## Approval record
 
-No implementation may proceed while this ADR is Proposed. Approval must
-explicitly confirm the allowed entity scopes, categories, source/limitation
-requirements, prohibition on scoring, and vertical-slice threshold.
+The user approved this ADR on 2026-07-12, confirming the allowed entity
+scopes, categories, source/limitation requirements, prohibition on scoring,
+and vertical-slice threshold.
 
 ## References
 

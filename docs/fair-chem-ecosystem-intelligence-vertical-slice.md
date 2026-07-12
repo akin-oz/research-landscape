@@ -33,7 +33,8 @@ flowchart LR
 
 - No team-member, contributor, Meta/CMU, host, publication, model, dataset,
   benchmark, funding, or partner relation is inferred.
-- No programming-language entity is created; ADR 0007 remains the prerequisite
+- No additional programming-language entity is created in this slice; any
+  software-language relation must use the accepted ADR 0007 contract.
   for controlled language discovery.
 - No claim is made about model quality, support, access, review, employment,
   mentorship, openings, admissions, or personal fit.

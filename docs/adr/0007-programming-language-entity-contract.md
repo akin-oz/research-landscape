@@ -1,6 +1,6 @@
 # ADR 0007: Decide whether Programming Language becomes a v2 canonical entity
 
-- **Status:** Proposed — awaiting explicit architecture approval
+- **Status:** Accepted — 2026-07-12
 - **Date:** 2026-07-12
 
 ## Context
@@ -18,9 +18,9 @@ does not resolve that v2 gap. Adding a directory, an ad hoc free-text value, or
 an unsupported relationship would violate canonical ownership and the frozen
 architecture.
 
-## Decision requested
+## Decision
 
-Approve or reject this minimal v2 extension:
+The following minimal v2 extension is accepted:
 
 1. Add `programming-language` to the v2 entity-type contract, with canonical
    records in `entities/programming-languages/`.
@@ -72,14 +72,13 @@ needs its own source and confidence once v2 relationship assertions exist.
 - Existing records are not bulk-migrated. The first implementation must be a
   small evidence-bounded vertical slice, reviewed before any language-based
   recommendation is published.
-- `python-heavy-research-groups` remains unavailable until the required
-  evidence coverage exists; approval alone creates no recommendation.
+- Approval alone created no recommendation; the required coverage is enabled
+  only by separately reviewed sourced software-to-language vertical slices.
 
 ## Approval record
 
-No implementation may proceed from this ADR while its status is Proposed.
-Approval must explicitly confirm the entity type, canonical namespace,
-predicate, evidence rule, and vertical-slice threshold above.
+The user approved this ADR on 2026-07-12, confirming the entity type,
+canonical namespace, predicate, evidence rule, and vertical-slice threshold.
 
 ## References
 

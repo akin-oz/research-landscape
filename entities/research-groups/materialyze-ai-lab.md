@@ -34,6 +34,13 @@ relationship_assertions:
     source_ids: [SRC-NUS-ONG-PROFILE]
     confidence: high
     evidence_window: 2026-07
+mentorship_process_evidence:
+  - category: supervision-process
+    source_ids: [SRC-MATERIALYZE-JOIN-US]
+    scope: "Materialyze.AI Lab public postdoctoral/PhD application process"
+    evidence_window: "post dated 2025-10-10 and displayed as updated 2026-02-06"
+    confidence: medium
+    limitation: "States onboarding and mentorship practices in a public process post; it does not establish supervision capacity, current availability, effectiveness, or outcomes."
 ---
 
 # Materialyze.AI Lab

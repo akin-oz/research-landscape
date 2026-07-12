@@ -54,9 +54,11 @@ backed system journey, not an assertion about every user, plugin, or host.
 
 ## Deliberate omissions
 
-- No Programming Language, Community, dependency, Bosch, AiiDAlab, Quantum
-  Mobile, plugin, scheduler, external contributor, or detailed Maintainer node
-  is created without the required canonical entity and relationship contract.
+- No additional Programming Language, Community, dependency, Bosch, AiiDAlab,
+  Quantum Mobile, plugin, scheduler, external contributor, or detailed
+  Maintainer node is created without the required canonical entity and
+  relationship contract. The later ADR 0007 implementation separately adds
+  the sourced `aiida-core --implemented_in--> Python` assertion.
 - No complete author list, current AiiDA development-team roster, contributor
   list, code-review role, or employment claim is inferred from a publication or
   repository.

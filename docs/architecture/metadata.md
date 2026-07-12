@@ -86,6 +86,7 @@ The names below replace ambiguous text fields such as `country`, `institution`, 
 | `research_area_ids` | Any topical entity | IDs of controlled Research Area records. |
 | `software_ids` | Ecosystems, people, groups, projects, publications | IDs of related Research Software records; use a typed relationship to distinguish develops, maintains, uses, or studies. |
 | `programming_language_ids` | Software and other evidenced entities | IDs of controlled Programming Language records. |
+| `mentorship_process_evidence` | Research Groups, Departments, Universities, Organizations | Bounded public process observations with a controlled category, source IDs, exact scope, evidence window or review date, confidence, and limitation. Never a score, testimonial, capacity, or outcome claim. |
 | `ecosystem_ids` | Software, people, groups, organizations, projects | IDs of relevant Research Ecosystem records. |
 | `community_ids` | Universities, organizations, ecosystems, software | IDs of community-hosting Organization or Research Ecosystem records. |
 | `funding_program_ids` | Ecosystems, projects, groups, organizations | IDs of related Funding Program records. |

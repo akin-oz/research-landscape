@@ -16,18 +16,19 @@ evidence and limits of this status.
 
 ## Post-v0.3 progress
 
-The current `main` branch extends the released cohort to 74 canonical entities
-and 130 evidence-bearing typed relationships. It adds AI-for-Materials,
-FAIR Chemistry/FAIRChem, and UC Berkeley/CEDER/CHGNet vertical slices, explicit
-recommendation-query discovery, review-freshness auditing, and stricter
-Evidence-table provenance validation. These are ongoing improvements, not a
-retroactive change to the v0.3.0 release conclusion; see
+The current `main` branch extends the released cohort to 75 canonical entities
+and 133 evidence-bearing typed relationships. It adds AI-for-Materials,
+FAIR Chemistry/FAIRChem, UC Berkeley/CEDER/CHGNet vertical slices, the accepted
+Programming Language and bounded mentorship-process evidence contracts,
+explicit recommendation-query discovery, review-freshness auditing, and
+stricter Evidence-table provenance validation. These are ongoing improvements,
+not a retroactive change to the v0.3.0 release conclusion; see
 [CHANGELOG.md](CHANGELOG.md) for the untagged work.
 
 ## Ongoing roadmap
 
 The release does not close the long-term knowledge mission. Next work is
-evidence-bounded expansion, governed research-area/language/source contracts,
-ethical mentorship coverage, freshness policy, and continued quality review.
+evidence-bounded expansion, governed research-area/source contracts, broader
+ethical mentorship-process coverage, freshness policy, and continued quality review.
 Every addition must preserve canonical ownership, provenance, and deterministic
 regeneration.

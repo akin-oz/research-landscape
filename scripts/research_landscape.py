@@ -26,7 +26,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 ENTITY_TYPES = {
     "principal-investigator", "research-group", "university", "department",
     "country", "research-ecosystem", "research-software", "research-area",
-    "conference", "funding-program", "project", "publication", "organization",
+    "conference", "funding-program", "project", "publication", "organization", "programming-language",
 }
 
 ENTITY_DIRECTORIES = {
@@ -43,6 +43,7 @@ ENTITY_DIRECTORIES = {
     "project": "projects",
     "publication": "publications",
     "organization": "organizations",
+    "programming-language": "programming-languages",
 }
 
 RELATION_TARGETS = {
@@ -78,6 +79,7 @@ RELATION_TARGETS = {
     },
     ("research-area", "broader_than"): {"research-area"},
     ("research-software", "used_by"): {"research-group"},
+    ("research-software", "implemented_in"): {"programming-language"},
 }
 
 REFERENCE_TYPES = {
@@ -94,6 +96,7 @@ REFERENCE_TYPES = {
     "funder_organization_id": {"organization"}, "parent_id": {"research-area"},
     "participant_ids": {"principal-investigator", "research-group", "university", "organization"},
     "affiliation_ids": {"university", "department", "organization"},
+    "programming_language_ids": {"programming-language"},
 }
 
 PUBLIC_VIEW_FILES = {
@@ -108,6 +111,7 @@ RECOMMENDATION_KINDS = {
     "groups-with-software-and-area", "ecosystems-connected-to-area",
     "principal-investigators-by-area", "principal-investigators-with-open-source-software",
     "universities-hosting-groups-by-area",
+    "groups-with-software-language", "entities-with-mentorship-process-evidence",
 }
 
 LINK_PATTERN = re.compile(r"\]\(([^)]+)\)")
@@ -273,6 +277,23 @@ def validate_graph(root: Path, records: dict[str, Record], results: Results) -> 
                 if source_id not in source_keys:
                     results.error(
                         f"{record.path.relative_to(root)}: relationship source {source_id} missing from Evidence table"
+                    )
+        if record.entity_type == "research-software":
+            asserted_languages = {
+                assertion.get("target_id")
+                for assertion in record.metadata.get("relationship_assertions", []) or []
+                if assertion.get("predicate") == "implemented_in"
+            }
+            for language_id in as_ids(record.metadata.get("programming_language_ids", [])):
+                if language_id not in asserted_languages:
+                    results.error(
+                        f"{record.path.relative_to(root)}: programming_language_ids target {language_id} requires matching implemented_in assertion"
+                    )
+        for observation in record.metadata.get("mentorship_process_evidence", []) or []:
+            for source_id in as_ids(observation.get("source_ids", [])):
+                if source_id not in source_keys:
+                    results.error(
+                        f"{record.path.relative_to(root)}: mentorship-process source {source_id} missing from Evidence table"
                     )
         if record.entity_type == "research-group" and record.metadata.get("status") in {"reviewed", "published"}:
             direct_fields = [field for field in ("institution_id", "organization_id") if field in record.metadata]
@@ -715,6 +736,35 @@ def recommendation_candidates(query: dict[str, Any], records: dict[str, Record])
             area_signals = [signal(f"works on `{a['target_id']}`", a, record) for a in matching_assertions(record, "works_on", area_ids)]
             if software_signals and area_signals:
                 candidates.append({"record": record, "signals": software_signals + area_signals, "criteria": 2})
+    elif kind == "groups-with-software-language":
+        language_id = query["language_id"]
+        for record in records.values():
+            if record.entity_type != "research-group" or not eligible(record):
+                continue
+            signals = []
+            for development in matching_assertions(record, "develops"):
+                software = records.get(development["target_id"])
+                if software is None or software.entity_type != "research-software":
+                    continue
+                for implementation in matching_assertions(software, "implemented_in", {language_id}):
+                    signals.append(signal(f"develops `{software.id}`", development, record))
+                    signals.append(signal(f"`{software.id}` is implemented in `{language_id}`", implementation, software))
+            if signals:
+                candidates.append({"record": record, "signals": signals, "criteria": 2})
+    elif kind == "entities-with-mentorship-process-evidence":
+        for record in records.values():
+            if record.entity_type not in {"research-group", "department", "university", "organization"} or not eligible(record):
+                continue
+            signals = []
+            for observation in record.metadata.get("mentorship_process_evidence", []) or []:
+                sources = ", ".join(as_ids(observation.get("source_ids", [])))
+                signals.append({
+                    "label": f"documents `{observation['category']}` for {observation['scope']}",
+                    "sources": sources,
+                    "confidence": lowest_confidence([record.metadata.get("confidence"), observation.get("confidence")]),
+                })
+            if signals:
+                candidates.append({"record": record, "signals": signals, "criteria": 1})
     elif kind == "principal-investigators-by-area":
         area_ids = {query["area_id"]}
         for record in records.values():
@@ -804,6 +854,24 @@ def validate_recommendation_model(root: Path, records: dict[str, Record]) -> tup
             target = records.get(area_id)
             if target is None or target.entity_type != "research-area":
                 errors.append(f"query {query_id} has invalid research-area ID {area_id}")
+        for language_id in as_ids(query.get("language_id", [])):
+            target = records.get(language_id)
+            if target is None or target.entity_type != "programming-language":
+                errors.append(f"query {query_id} has invalid programming-language ID {language_id}")
+        if query.get("kind") == "entities-with-mentorship-process-evidence":
+            reviewed_observations = {
+                (record.id, observation.get("category"))
+                for record in records.values()
+                if record.entity_type in {"research-group", "department", "university", "organization"}
+                and eligible(record)
+                for observation in record.metadata.get("mentorship_process_evidence", []) or []
+            }
+            if len({record_id for record_id, _ in reviewed_observations}) < 2 or len(
+                {category for _, category in reviewed_observations}
+            ) < 2:
+                errors.append(
+                    f"query {query_id} requires two independently reviewed entities with evidence in at least two mentorship-process categories"
+                )
         for alias in query.get("aliases", []):
             if alias in aliases:
                 errors.append(f"recommendation alias is duplicated: {alias}")

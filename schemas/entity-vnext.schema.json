@@ -20,7 +20,8 @@
         "funding-program",
         "project",
         "publication",
-        "organization"
+        "organization",
+        "programming-language"
       ]
     },
     "id": { "$ref": "#/$defs/id" },
@@ -82,6 +83,11 @@
     "volatile_assertions": {
       "type": "array",
       "items": { "$ref": "#/$defs/volatileAssertion" },
+      "uniqueItems": true
+    },
+    "mentorship_process_evidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/mentorshipProcessEvidence" },
       "uniqueItems": true
     },
     "affiliation_ids": { "$ref": "#/$defs/nonEmptyIdArray" },
@@ -213,6 +219,20 @@
     {
       "if": { "properties": { "entity_type": { "const": "organization" } } },
       "then": { "required": ["organization_kind"] }
+    },
+    {
+      "if": { "properties": { "entity_type": { "const": "programming-language" } } },
+      "then": { "required": ["label"] }
+    },
+    {
+      "if": { "required": ["mentorship_process_evidence"] },
+      "then": {
+        "properties": {
+          "entity_type": {
+            "enum": ["research-group", "department", "university", "organization"]
+          }
+        }
+      }
     }
   ],
   "additionalProperties": false,
@@ -264,6 +284,32 @@
       "required": ["subject", "status", "checked_at", "review_by", "source_ids", "confidence"],
       "additionalProperties": false
     },
+    "mentorshipProcessEvidence": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "enum": [
+            "written-expectations",
+            "onboarding-training",
+            "supervision-process",
+            "professional-development",
+            "aggregate-outcomes"
+          ]
+        },
+        "source_ids": { "$ref": "#/$defs/nonEmptyIdArray" },
+        "scope": { "type": "string", "minLength": 1 },
+        "evidence_window": { "type": "string", "minLength": 1 },
+        "review_date": { "type": "string", "format": "date" },
+        "confidence": { "enum": ["high", "medium", "low", "unassessed"] },
+        "limitation": { "type": "string", "minLength": 1 }
+      },
+      "required": ["category", "source_ids", "scope", "confidence", "limitation"],
+      "anyOf": [
+        { "required": ["evidence_window"] },
+        { "required": ["review_date"] }
+      ],
+      "additionalProperties": false
+    },
     "relationship": {
       "type": "object",
       "properties": {
@@ -303,7 +349,8 @@
             "describes",
             "covers",
             "hosted_by",
-            "broader_than"
+            "broader_than",
+            "implemented_in"
           ]
         },
         "target_id": { "$ref": "#/$defs/id" },

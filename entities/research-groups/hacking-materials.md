@@ -34,6 +34,13 @@ relationship_assertions:
     source_ids: [SRC-HACKING-MATERIALS-GROUP]
     confidence: high
     evidence_window: 2026-07
+mentorship_process_evidence:
+  - category: onboarding-training
+    source_ids: [SRC-HACKING-MATERIALS-HANDBOOK]
+    scope: "Hacking Materials group handbook"
+    evidence_window: "handbook reports last update approximately two years before review"
+    confidence: medium
+    limitation: "Documents stated onboarding and guidance only; it does not establish current practice, individual support quality, availability, or outcomes."
 ---
 
 # Hacking Materials

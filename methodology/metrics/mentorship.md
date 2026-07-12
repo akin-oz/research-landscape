@@ -62,8 +62,8 @@ preference, an explicit missing-data rule, and human judgment.
 
 ## Current status
 
-The v2 graph has no approved structured field or predicate for these
-observations. Until [ADR 0008](../../docs/adr/0008-mentorship-process-evidence-contract.md)
-is approved and demonstrated by small reviewed vertical slices, retain bounded
-process evidence in a record's narrative and keep mentorship recommendations
-unavailable.
+The v2 graph permits the approved `mentorship_process_evidence` observation
+field under [ADR 0008](../../docs/adr/0008-mentorship-process-evidence-contract.md).
+The public discovery query requires at least two independently reviewed
+vertical slices with different categories, displays source limitations beside
+each result, and never enables a “high mentorship” ranking.

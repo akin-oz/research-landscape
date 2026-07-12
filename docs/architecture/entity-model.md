@@ -92,6 +92,7 @@ The target paths below establish an entity-oriented namespace. They are architec
 | Country | `entities/countries/` | `entities/countries/sweden.md` |
 | Research Ecosystem | `entities/ecosystems/` | `entities/ecosystems/materials-project.md` |
 | Research Software | `entities/research-software/` | `entities/research-software/pymatgen.md` |
+| Programming Language | `entities/programming-languages/` | `entities/programming-languages/python.md` |
 | Research Area | `entities/research-areas/` | `entities/research-areas/materials-informatics.md` |
 | Conference | `entities/conferences/` | `entities/conferences/materials-research-society.md` |
 | Funding Program | `entities/funding/` | `entities/funding/horizon-europe.md` |
@@ -180,6 +181,19 @@ ecosystems and projects; and produces publications.
 **Relationships.** Is developed or maintained by principal investigators, organizations, or groups; is used by research groups; is implemented in programming languages; supports research areas; appears in publications and projects; and may anchor a research ecosystem.
 
 **Example.** `SW-PYMATGEN` in `entities/research-software/pymatgen.md` can link maintainers and users separately, avoiding an unsupported assumption that every user is a maintainer.
+
+### Programming Language
+
+**Purpose.** A controlled language concept used only to connect documented
+Research Software implementation evidence.
+
+**Required metadata.** `label` and an identity source. A
+`programming_language_ids` convenience facet on Research Software is valid
+only when a matching sourced `implemented_in` assertion exists.
+
+**Relationships.** Receives `implemented_in` assertions from Research
+Software. The inverse is generated for navigation; it must not be stored as a
+second assertion.
 
 ### Research Area
 

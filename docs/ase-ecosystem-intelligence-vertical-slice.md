@@ -56,9 +56,11 @@ accepted.
 
 ## Deliberate omissions
 
-- No Programming Language, Community, calculator, external-code, dependency,
-  database, workflow, package, detailed Maintainer, or external contributor
-  node is created without a canonical entity and relationship contract.
+- No additional Programming Language, Community, calculator, external-code,
+  dependency, database, workflow, package, detailed Maintainer, or external
+  contributor node is created without a canonical entity and relationship
+  contract. The later ADR 0007 implementation separately adds the sourced
+  `ASE --implemented_in--> Python` assertion.
 - No publication author, complete maintainer roster, contributor list,
   code-review role, or employment claim is inferred from a bibliography,
   repository, or contribution guidance.

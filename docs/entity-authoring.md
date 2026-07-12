@@ -62,6 +62,14 @@ non-university Organization—and include exactly one matching `belongs_to`
 assertion. A Department may be administrative context only; it is not a second
 direct host.
 
+For Research Software, `programming_language_ids` is a convenience facet, not
+independent evidence: every listed language requires a matching sourced
+`implemented_in` assertion. Public mentorship-process observations belong only
+to a Research Group, Department, University, or Organization and require a
+controlled category, source IDs, exact scope, time boundary or review date,
+confidence, and a limitation. They are not scores, capacity claims, or
+testimonials.
+
 ## Evidence and unknowns
 
 - Prefer current, primary institutional, project, repository, funder, or

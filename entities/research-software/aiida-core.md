@@ -17,6 +17,14 @@ repository_url: https://github.com/aiidateam/aiida-core
 website: https://aiida.net/
 license: MIT
 open_source: "yes"
+programming_language_ids:
+  - PROGRAMMING-LANGUAGE-PYTHON
+relationship_assertions:
+  - predicate: implemented_in
+    target_id: PROGRAMMING-LANGUAGE-PYTHON
+    source_ids: [SRC-AIIDA-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
 ---
 
 # aiida-core
@@ -51,10 +59,6 @@ acceptance, mentorship, employment, or a particular maintainer role.
 
 ## Boundary and limitations
 
-The official ecosystem material describes `aiida-core` as a Python framework,
-but this record deliberately has no `programming_language_ids` value. The vNext
-metadata contract has no `programming-language` entity type or canonical
-namespace yet. See the reference implementation for the documented
-compatibility gap rather than treating prose as a substitute for a controlled
-language entity. It also does not name an exhaustive dependency or maintainer
-roster because those identities require separately reviewed canonical records.
+The official documentation supports the sourced Python implementation link. It
+does not name an exhaustive dependency or maintainer roster because those
+identities require separately reviewed canonical records.

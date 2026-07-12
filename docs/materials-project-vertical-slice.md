@@ -59,8 +59,9 @@ inside the entity that uses it, not a graph node or a replacement for
   project is created without a separately reviewed identity and relationship.
 - The evidence does not support a Pymatgen development, maintenance, or use
   edge for Kristin Persson or the Persson Group, so none is asserted.
-- The sources identify Python, but no `programming_language_ids` value is used
-  because the vNext canonical Programming Language contract is still absent.
+- This slice did not create a programming-language record. A later ADR 0007
+  implementation adds a separately sourced Python entity and a bounded
+  pymatgen `implemented_in` assertion without inferring group-wide language.
 - No claim is made about openings, supervision capacity, mentoring, funding,
   admission, working language, or applicant fit.
 

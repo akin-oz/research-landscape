@@ -155,6 +155,48 @@ class RepositoryHealthTests(unittest.TestCase):
             rl.matching_assertions(group, "develops", {software.id})[0]["source_ids"],
         )
 
+    def test_programming_language_and_mentorship_queries_are_bounded(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        queries = {query["query_id"]: query for query in model["queries"]}
+        python_candidates = rl.recommendation_candidates(queries["python-heavy-research-groups"], records)
+        self.assertEqual(
+            ["RG-DTU-CAMD", "RG-PSI-MSD", "RG-THEOS"],
+            sorted(candidate["record"].id for candidate in python_candidates),
+        )
+        self.assertTrue(all(candidate["criteria"] == 2 for candidate in python_candidates))
+        mentorship_candidates = rl.recommendation_candidates(
+            queries["entities-with-documented-mentorship-process-evidence"], records
+        )
+        self.assertEqual(
+            ["RG-HACKING-MATERIALS", "RG-MATERIALYZE-AI"],
+            sorted(candidate["record"].id for candidate in mentorship_candidates),
+        )
+        self.assertTrue(all(candidate["criteria"] == 1 for candidate in mentorship_candidates))
+        self.assertEqual("unavailable", queries["high-mentorship-environments"]["status"])
+
+    def test_programming_language_facet_requires_a_matching_relation(self) -> None:
+        language = rl.Record(
+            path=ROOT / "entities/programming-languages/python.md",
+            metadata={"id": "PROGRAMMING-LANGUAGE-PYTHON", "entity_type": "programming-language"},
+            body="",
+        )
+        software = rl.Record(
+            path=ROOT / "entities/research-software/test.md",
+            metadata={
+                "id": "SW-TEST",
+                "entity_type": "research-software",
+                "programming_language_ids": [language.id],
+                "relationship_assertions": [],
+            },
+            body="",
+        )
+        results = rl.Results([], [])
+        rl.validate_graph(ROOT, {language.id: language, software.id: software}, results)
+        self.assertTrue(any("requires matching implemented_in assertion" in error for error in results.errors))
+
     def test_recommendation_catalog_lists_available_and_unavailable_queries(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
@@ -162,7 +204,8 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], model_errors)
         catalog = rl.recommendation_catalog(model)
         self.assertIn("`groups-ai-for-materials` | available", catalog)
-        self.assertIn("`python-heavy-research-groups` | unavailable", catalog)
+        self.assertIn("`python-heavy-research-groups` | available", catalog)
+        self.assertIn("`high-mentorship-environments` | unavailable", catalog)
         self.assertIn("No private profiles", catalog)
 
 

@@ -17,6 +17,14 @@ repository_url: https://github.com/materialsproject/pymatgen
 website: https://pymatgen.org/
 license: MIT
 open_source: "yes"
+programming_language_ids:
+  - PROGRAMMING-LANGUAGE-PYTHON
+relationship_assertions:
+  - predicate: implemented_in
+    target_id: PROGRAMMING-LANGUAGE-PYTHON
+    source_ids: [SRC-PYMATGEN-PUBLICATION]
+    confidence: high
+    evidence_window: 2026-07
 ---
 
 # pymatgen
@@ -43,11 +51,9 @@ particular person will mentor or review it.
 
 ## Boundary and limitations
 
-The sources describe pymatgen as Python software, but no
-`programming_language_ids` value is added because vNext has no canonical
-Programming Language entity type or namespace. This record does not attribute
-current maintenance, development, or use to the Persson Group or Kristin
-Persson. The PI-level lead-developer relation does not establish NUS or
+The sources support the sourced Python implementation link. This record does
+not attribute current maintenance, development, or use to the Persson Group or
+Kristin Persson. The PI-level lead-developer relation does not establish NUS or
 Materialyze.AI ownership, governance, or group-wide stewardship, and does not
 enumerate all pymatgen maintainers. Public issues, pull requests, forum, and
 discussion links do not establish contributor status, review rights, acceptance,

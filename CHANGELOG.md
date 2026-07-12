@@ -7,10 +7,11 @@ All notable changes are documented here. This project follows the principles of 
 ### Added
 
 - An AI for Materials controlled research area with direct, evidence-bounded group and PI links, plus FAIR Chemistry/FAIRChem and UC Berkeley/CEDER/Gerbrand Ceder/CHGNet vertical slices.
+- Accepted and implemented ADR 0007: a controlled Python programming-language entity, sourced Research Software `implemented_in` assertions, and an evidence-discovery path for groups with documented development links to Python software.
+- Accepted and implemented ADR 0008: a bounded public mentorship-process evidence field, two independently reviewed category slices, and a non-comparative discovery query that retains source limitations.
 - New explainable discovery paths for AI-for-Materials groups, PIs, ecosystems, and direct-host universities; PIs with licensed open-source software development evidence; and universities directly hosting documented Computational Materials Science groups.
 - A `recommend --list` catalog for public query IDs, aliases, titles, and unavailable-dimension status, plus `recommend --query` interactive lookup.
 - A reproducible review-freshness audit based on canonical `last_review` dates and declared volatile-assertion deadlines.
-- ADR 0007 (Programming Language entity contract) and ADR 0008 (public mentorship-process evidence contract), both proposed and intentionally not implemented pending explicit approval.
 
 ### Changed
 
@@ -20,7 +21,7 @@ All notable changes are documented here. This project follows the principles of 
 ### Notes
 
 - This work is post-v0.3 and is not part of the `v0.3.0` release tag.
-- Programming-language and mentorship queries remain unavailable until their proposed architecture contracts are approved and evidence-coverage gates are met.
+- “High mentorship environments” remains unavailable; the new process-evidence query is explicitly non-comparative and does not measure quality or capacity.
 
 ## [0.3.0] - 2026-07-12
 

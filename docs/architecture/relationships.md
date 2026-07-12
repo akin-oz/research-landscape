@@ -92,6 +92,7 @@ The following relationships complete the first-class entity model.
 | Department | `belongs_to` | University | many-to-one at a point in time | `faculty_id` remains optional because institutions differ. |
 | Research Group | `belongs_to` | Department | many-to-one at a point in time | An evidenced Department may be retained as administrative context. It does not replace or duplicate the group's one direct University or Organization host. |
 | Research Group | `develops` | Research Software | many-to-many | Use only when a public group, project, or governance source credits group-level development or stewardship. It does not make every group member an individual maintainer. |
+| Research Software | `implemented_in` | Programming Language | many-to-many | Use only for an explicitly documented implementation language. It does not establish a group's working language, individual skill, training requirement, or applicant fit. |
 | Organization | `located_in` | Country | many-to-one or many-to-many | Use a dated relationship for multi-site organizations. |
 | Principal Investigator | `affiliated_with` | University, Department, or Organization | many-to-many over time | Broader than group membership; aligns with current `affiliation_ids`. |
 | Principal Investigator | `leads` | Research Group or Project | many-to-many over time | Use role-qualified evidence; not every group member is a leader. |

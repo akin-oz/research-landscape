@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 73bf218e8eeadd7d3189c17330e81a3cfc6c08a64cc2e5e5bb874ebed820c5dd -->
+<!-- input-fingerprint: d23e3a486b7eb345e36a4831410f8e9749e9f22bcc24411ce42be6765a666796 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `73bf218e8eeadd7d3189c17330e81a3cfc6c08a64cc2e5e5bb874ebed820c5dd`
+**Input fingerprint:** `d23e3a486b7eb345e36a4831410f8e9749e9f22bcc24411ce42be6765a666796`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -239,15 +239,32 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 **Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, AI capability, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
 
-## Python-heavy research groups
+## Research groups with documented development links to Python software
 
 **Query ID:** `python-heavy-research-groups`
 
-**Status:** unavailable — no recommendation is emitted.
+**Status:** available — evidence-discovery result, not a ranking.
 
-**Why:** No canonical programming-language entity namespace or programming_language_ids evidence exists in the reviewed corpus. Prose mentions of Python cannot be promoted to a deterministic group-level filter.
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | develops `SW-ASE` (sources: SRC-DTU-CAMD-RESEARCH); `SW-ASE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-ASE-DOCUMENTATION) | high | 2/2 documented criteria |
+| [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) (`RG-THEOS`) | develops `SW-AIIDA-CORE` (sources: SRC-THEOS-RESEARCH); `SW-AIIDA-CORE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-AIIDA-DOCUMENTATION) | high | 2/2 documented criteria |
+| [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) (`RG-PSI-MSD`) | develops `SW-AIIDA-CORE` (sources: SRC-PSI-MSD-GROUP, SRC-PSI-AIIDALAB-2026); `SW-AIIDA-CORE` is implemented in `PROGRAMMING-LANGUAGE-PYTHON` (sources: SRC-AIIDA-DOCUMENTATION) | high | 2/2 documented criteria |
 
-**Required before enabling:** A governed Programming Language entity contract plus sourced software-to-language relations.
+**Limitations:** This exposes only a group’s sourced development link to software with a documented Python implementation. It does not establish a group-wide working language, individual proficiency, training requirement, hiring criterion, or applicant fit.
+
+## Entities with documented mentorship-process evidence
+
+**Query ID:** `entities-with-documented-mentorship-process-evidence`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Hacking Materials](../../entities/research-groups/hacking-materials.md) (`RG-HACKING-MATERIALS`) | documents `onboarding-training` for Hacking Materials group handbook (sources: SRC-HACKING-MATERIALS-HANDBOOK) | medium | 1/1 documented criteria |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | documents `supervision-process` for Materialyze.AI Lab public postdoctoral/PhD application process (sources: SRC-MATERIALYZE-JOIN-US) | medium | 1/1 documented criteria |
+
+**Limitations:** This is a bounded public-process discovery path, not a mentorship-quality ranking, capacity claim, effectiveness finding, or prediction of an applicant’s experience. Categories are not numerically comparable.
 
 ## High-mentorship environments
 

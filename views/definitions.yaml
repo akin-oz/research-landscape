@@ -54,7 +54,7 @@ views:
     visibility: public
     scope: [research-software, research-group, principal-investigator, project, research-ecosystem, publication]
     membership: {status_in: [reviewed, published], requires: research-software_or_documented_software_relation}
-    facets: [license, open_source, ecosystem_ids, research_area_ids, resolved_country]
+    facets: [license, open_source, programming_language_ids, ecosystem_ids, research_area_ids, resolved_country]
     ordering: [name, id]
     relationship_traversals: [research-group.develops.research-software, principal-investigator.develops.research-software, project.develops.research-software, research-ecosystem.includes.research-software, publication.describes.research-software]
     output_reason: "QG6 must expose relation direction and evidence without fabricating inverse ownership."

@@ -23,13 +23,19 @@ is a university-strength or ecosystem-completeness ranking.
 This is a reproducible discovery priority, never a claim of research quality,
 prestige, mentorship, availability, or applicant fit.
 
+The current model also supports research groups with documented development
+links to software explicitly documented as implemented in Python. This is a
+software-path filter, not a statement about a group's working language or its
+members' skills. It separately exposes entities with bounded, sourced public
+mentorship-process evidence, including the evidence category and limitations.
+
 ## What it refuses to recommend
 
-Python-heavy groups and high-mentorship environments are reported as
-**unavailable**, with the missing evidence contract explained. Narrative Python
+“High-mentorship environments” remains **unavailable**. Narrative Python
 mentions, a public repository, group size, fame, awards, or citations cannot
 substitute for sourced controlled-language relations or a validated mentorship
-metric.
+metric. Documented process evidence is not a mentorship-quality score,
+comparison, capacity claim, or prediction of an applicant's experience.
 
 ## Output contract
 
