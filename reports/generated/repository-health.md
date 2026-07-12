@@ -67,6 +67,15 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 4 | 2 | 3 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 1 | 1 | 2 |
 
+## Programming-language discovery coverage
+
+These are counts of direct, documented implementation paths. They measure corpus coverage, not software quality, adoption, a group's universal language, an individual's skill, or a recommendation.
+
+| Programming language | Research Software | Research Groups | Principal Investigators | Direct-host Universities | Ecosystems |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [C++](../../entities/programming-languages/cpp.md) | 1 | 1 | 0 | 1 | 1 |
+| [Python](../../entities/programming-languages/python.md) | 9 | 6 | 2 | 4 | 7 |
+
 ## Relationship predicates
 
 | Predicate | Count |

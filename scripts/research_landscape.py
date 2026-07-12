@@ -593,6 +593,7 @@ def health_report(root: Path, records: dict[str, Record], results: Results, fing
     available_queries = [query for query in recommendation_queries if query.get("status") != "unavailable"]
     unavailable_queries = [query for query in recommendation_queries if query.get("status") == "unavailable"]
     area_coverage = research_area_coverage(records)
+    language_coverage = programming_language_coverage(records)
     broken_links = sum("broken local Markdown link" in error for error in results.errors)
     lines = [
         "<!-- GENERATED FILE: edit canonical inputs, then regenerate. -->",
@@ -649,6 +650,19 @@ def health_report(root: Path, records: dict[str, Record], results: Results, fing
             f"{item['groups']} | {item['principal_investigators']} | {item['software']} | "
             f"{item['universities']} | {item['ecosystems']} |"
             for item in area_coverage
+        ],
+        "",
+        "## Programming-language discovery coverage",
+        "",
+        "These are counts of direct, documented implementation paths. They measure corpus coverage, not software quality, adoption, a group's universal language, an individual's skill, or a recommendation.",
+        "",
+        "| Programming language | Research Software | Research Groups | Principal Investigators | Direct-host Universities | Ecosystems |",
+        "| --- | ---: | ---: | ---: | ---: | ---: |",
+        *[
+            f"| {canonical_link(item['language'], root / 'reports/generated/repository-health.md')} | "
+            f"{item['software']} | {item['groups']} | {item['principal_investigators']} | "
+            f"{item['universities']} | {item['ecosystems']} |"
+            for item in language_coverage
         ],
         "",
         "## Relationship predicates",
@@ -757,6 +771,60 @@ def research_area_coverage(records: dict[str, Record]) -> list[dict[str, Any]]:
             "groups": len(groups),
             "principal_investigators": len(principal_investigators),
             "software": len(software),
+            "universities": len(universities),
+            "ecosystems": len(ecosystems),
+        })
+    return coverage
+
+
+def programming_language_coverage(records: dict[str, Record]) -> list[dict[str, Any]]:
+    """Summarize direct, documented implementation-language discovery paths.
+
+    The table is a corpus-maintenance signal. It intentionally uses only
+    software `implemented_in` assertions and the source-bearing paths that
+    traverse those software records; it does not infer a person's skill or a
+    group's universal working language.
+    """
+    coverage = []
+    for language in sorted(
+        (record for record in records.values() if record.entity_type == "programming-language" and eligible(record)),
+        key=lambda record: (record.metadata["name"].casefold(), record.id),
+    ):
+        software = [
+            record for record in records.values()
+            if record.entity_type == "research-software" and eligible(record)
+            and matching_assertions(record, "implemented_in", {language.id})
+        ]
+        software_ids = {record.id for record in software}
+        groups = [
+            record for record in records.values()
+            if record.entity_type == "research-group" and eligible(record)
+            and matching_assertions(record, "develops", software_ids)
+        ]
+        principal_investigators = [
+            record for record in records.values()
+            if record.entity_type == "principal-investigator" and eligible(record)
+            and matching_assertions(record, "develops", software_ids)
+        ]
+        universities = [
+            university for university in records.values()
+            if university.entity_type == "university" and eligible(university)
+            and any(
+                group.metadata.get("institution_id") == university.id
+                and matching_assertions(group, "develops", software_ids)
+                for group in groups
+            )
+        ]
+        ecosystems = [
+            ecosystem for ecosystem in records.values()
+            if ecosystem.entity_type == "research-ecosystem" and eligible(ecosystem)
+            and matching_assertions(ecosystem, "includes", software_ids)
+        ]
+        coverage.append({
+            "language": language,
+            "software": len(software),
+            "groups": len(groups),
+            "principal_investigators": len(principal_investigators),
             "universities": len(universities),
             "ecosystems": len(ecosystems),
         })

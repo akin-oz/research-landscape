@@ -63,6 +63,26 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("## Research-area discovery coverage", report)
         self.assertIn("These are counts of direct, documented graph paths.", report)
 
+    def test_health_report_makes_programming_language_coverage_explicit(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        coverage = {item["language"].id: item for item in rl.programming_language_coverage(records)}
+        self.assertEqual(
+            {"software": 1, "groups": 1, "principal_investigators": 0, "universities": 1, "ecosystems": 1},
+            {key: coverage["PROGRAMMING-LANGUAGE-CPP"][key] for key in (
+                "software", "groups", "principal_investigators", "universities", "ecosystems"
+            )},
+        )
+        self.assertEqual(
+            {"software": 9, "groups": 6, "principal_investigators": 2, "universities": 4, "ecosystems": 7},
+            {key: coverage["PROGRAMMING-LANGUAGE-PYTHON"][key] for key in (
+                "software", "groups", "principal_investigators", "universities", "ecosystems"
+            )},
+        )
+        report = rl.health_report(ROOT, records, results, rl.input_fingerprint(ROOT))
+        self.assertIn("## Programming-language discovery coverage", report)
+        self.assertIn("These are counts of direct, documented implementation paths.", report)
+
     def test_open_source_pi_and_university_host_queries_are_explainable(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

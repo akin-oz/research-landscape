@@ -53,6 +53,12 @@ classification, direct-host Universities, and ecosystem paths for each
 controlled area. These are maintenance coverage counts, not a score or a
 statement about the importance or quality of an area.
 
+It also includes a programming-language discovery coverage matrix: source-backed
+software `implemented_in` assertions, plus direct group, PI, direct-host
+University, and ecosystem paths through those software records. These counts
+measure corpus coverage only; they do not claim software quality, adoption, a
+group-wide language policy, individual skill, or fit.
+
 `recommend` validates the corpus and the versioned public recommendation model,
 then derives evidence-discovery results in `reports/generated/`. It exposes
 documented matching signals, confidence, coverage, and unavailable dimensions;
