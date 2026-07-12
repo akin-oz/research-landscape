@@ -1,7 +1,7 @@
 # Global research intelligence: source register
 
 **Status:** reviewed seed register  
-**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S123 revalidated:** 2026-07-12
+**Last reviewed:** 2026-07-11; **S29, S30, S33, S35–S37, and S38–S125 revalidated:** 2026-07-12
 **Use:** this register anchors the global reports and first-wave dossiers. A link establishes only the claim stated beside it; it is not an endorsement of every person or programme associated with the host institution.
 
 ## Core evidence roots
@@ -131,6 +131,8 @@
 | S121 | [Curtarolo Group publications](https://materials.duke.edu/publications.html) | Chronological group publication surface with dated entries. | High for the visible publication record; not a productivity, quality, or individual-attribution metric. |
 | S122 | [Hacking Materials Handbook](https://hackingmaterials.gitbook.io/hm-handbook) | Public onboarding, communication, graduate-study, research-writing, and computing-system process material. | Medium for the documented process because the handbook says it was last updated two years ago; not a current mentoring, resource, or outcome guarantee. |
 | S123 | [AMSET contributors](https://hackingmaterials.lbl.gov/amset/contributors/) | Hacking Materials-led AMSET development and the documentation’s DOE Early Career funding context for that software. | High for the stated software-specific context; not a group-wide funding ledger, current award status, or complete contributor roster. |
+| S124 | [THEOS teaching](https://www.epfl.ch/labs/theos/page-94168-en-html/) | Public solid-state and atomistic/quantum-simulation offerings, including hands-on computational labs. | High for the stated public course surface; not individual supervision, admission, or current availability evidence. |
+| S125 | [THEOS student projects](https://www.epfl.ch/labs/theos/page-102234-en-html/) | Bachelor and master project-discovery routes managed through the lab’s linked current wiki. | High for the existence of public discovery routes; not a specific opening, eligibility, funding, or supervision-capacity claim. |
 
 ## Evidence protocol for new claims
 
