@@ -6,6 +6,9 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- Research Problem controlled-area classifications now require one matching,
+  source-backed typed `addresses` assertion in both directions, removing a
+  metadata-only gap from problem-to-topic discovery.
 - `discover-areas --problem` now exposes only the direct, source-backed
   controlled Research Area classifications on a reviewed Research Problem,
   making the inverse topic lookup discoverable without inferring a topic from

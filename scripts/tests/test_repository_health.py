@@ -1118,6 +1118,20 @@ class RepositoryHealthTests(unittest.TestCase):
         rl.validate_schema(ROOT, {record.id: record}, results)
         self.assertTrue(any("research_area_ids" in error for error in results.errors))
 
+    def test_research_problem_area_classifications_require_matching_addresses_assertions(self) -> None:
+        metadata = {
+            "schema_version": 2, "entity_type": "research-problem", "id": "PROBLEM-TEST",
+            "name": "Test Problem", "status": "reviewed", "created_at": "2026-07-13",
+            "updated_at": "2026-07-13", "last_review": "2026-07-13", "confidence": "high",
+            "source_ids": ["SRC-TEST"], "problem_kind": "test challenge",
+            "research_area_ids": ["AREA-COMPUTATIONAL-MATERIALS-SCIENCE"],
+            "relationship_assertions": [],
+        }
+        record = rl.Record(ROOT / "entities/research-problems/test.md", metadata, "")
+        results = rl.Results([], [])
+        rl.validate_graph(ROOT, {record.id: record}, results)
+        self.assertTrue(any("requires exactly one matching addresses assertion" in error for error in results.errors))
+
     def test_area_discovery_exposes_topic_coverage_without_ranking(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
@@ -1156,6 +1170,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`AREA-AI-FOR-MATERIALS`", rendered)
         self.assertIn("`AREA-MATERIALS-INFORMATICS`", rendered)
         self.assertNotIn("`AREA-MACHINE-LEARNED-POTENTIALS`", rendered)
+        self.assertIn("`PROBLEM-MATERIALS-PROPERTY-PREDICTION` addresses this area", rendered)
         self.assertIn("`SW-MATGL` is classified in this area", rendered)
 
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:

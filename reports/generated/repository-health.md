@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 3a3554000419131c28bbb02e24b1e9e3265e505b96a294737c1e4e64b0cddcf0 -->
+<!-- input-fingerprint: 535842e2346b633dabd0b58e0ab0327a65a8ecafebfa594d7ea4135d813feed5 -->
 # Repository health report
 
-**Input fingerprint:** `3a3554000419131c28bbb02e24b1e9e3265e505b96a294737c1e4e64b0cddcf0`
+**Input fingerprint:** `535842e2346b633dabd0b58e0ab0327a65a8ecafebfa594d7ea4135d813feed5`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
 - Canonical v2 entities: **148**
-- Typed relationship assertions: **257**
+- Typed relationship assertions: **262**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -49,7 +49,7 @@
 | --- | ---: |
 | Reviewed/published records with source IDs | 148/148 |
 | Reviewed/published records with last-review dates | 148/148 |
-| Typed relationships with source IDs | 257/257 |
+| Typed relationships with source IDs | 262/262 |
 | Reviewed groups with exactly one direct-host field | 13/13 |
 | Entities with an inbound or outbound graph connection | 148/148 |
 | Broken local Markdown links | 0 |
@@ -88,7 +88,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 
 | Predicate | Count |
 | --- | ---: |
-| addresses | 6 |
+| addresses | 11 |
 | administers | 2 |
 | affiliated_with | 17 |
 | authored_by | 9 |

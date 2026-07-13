@@ -14,6 +14,9 @@ problem discovery ambiguous and invite unsupported “best problem” rankings.
 
 `research-problem` is a first-class v2 entity type with a required
 `problem_kind`, record-local evidence, and typed links to research areas.
+Every `research_area_ids` classification must have exactly one matching sourced
+`addresses` assertion, and every such assertion must resolve back to that
+controlled classification.
 Research software may use a sourced `supports` relation to a Research Problem.
 The public generated problem view and `discover-problems` command show only
 reviewed problems and direct software support paths.

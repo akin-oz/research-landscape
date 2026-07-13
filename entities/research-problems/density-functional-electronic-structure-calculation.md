@@ -13,6 +13,11 @@ problem_kind: first-principles electronic-structure calculation challenge
 research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE]
 relationship_assertions:
   - predicate: addresses
+    target_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+    source_ids: [SRC-ABINIT-PRESENTATION, SRC-QE-HOME, SRC-GPAW-DOCUMENTATION, SRC-SIESTA-REFERENCE-MANUAL]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: addresses
     target_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
     source_ids: [SRC-ABINIT-PRESENTATION, SRC-QE-HOME, SRC-GPAW-DOCUMENTATION, SRC-SIESTA-REFERENCE-MANUAL]
     confidence: high

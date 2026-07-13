@@ -13,6 +13,11 @@ problem_kind: atomistic materials-property prediction challenge
 research_area_ids: [AREA-AI-FOR-MATERIALS, AREA-MATERIALS-INFORMATICS]
 relationship_assertions:
   - predicate: addresses
+    target_id: AREA-AI-FOR-MATERIALS
+    source_ids: [SRC-CHGNET-HOME, SRC-MATGL-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: addresses
     target_id: AREA-MATERIALS-INFORMATICS
     source_ids: [SRC-CHGNET-HOME, SRC-MATGL-DOCUMENTATION]
     confidence: high

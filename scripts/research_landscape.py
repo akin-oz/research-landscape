@@ -315,6 +315,23 @@ def validate_graph(root: Path, records: dict[str, Record], results: Results) -> 
                     results.error(
                         f"{record.path.relative_to(root)}: programming_language_ids target {language_id} requires matching implemented_in assertion"
                     )
+        if record.entity_type == "research-problem":
+            classified_areas = set(as_ids(record.metadata.get("research_area_ids", [])))
+            address_assertions = [
+                assertion for assertion in record.metadata.get("relationship_assertions", []) or []
+                if assertion.get("predicate") == "addresses"
+            ]
+            addressed_areas = {assertion.get("target_id") for assertion in address_assertions}
+            for area_id in sorted(classified_areas):
+                matches = [assertion for assertion in address_assertions if assertion.get("target_id") == area_id]
+                if len(matches) != 1:
+                    results.error(
+                        f"{record.path.relative_to(root)}: research_area_ids target {area_id} requires exactly one matching addresses assertion"
+                    )
+            for area_id in sorted(addressed_areas - classified_areas):
+                results.error(
+                    f"{record.path.relative_to(root)}: addresses target {area_id} must appear in research_area_ids"
+                )
         observations = record.metadata.get("mentorship_process_evidence", []) or []
         if observations and record.entity_type not in MENTORSHIP_PROCESS_ENTITY_TYPES:
             results.error(f"{record.path.relative_to(root)}: mentorship_process_evidence is not permitted for {record.entity_type}")
@@ -2037,7 +2054,7 @@ def render_area_discovery(
             if record.entity_type == "research-area" and eligible(record)
             and (
                 problem_id is None
-                or record.id in as_ids(records[problem_id].metadata.get("research_area_ids", []))
+                or bool(matching_assertions(records[problem_id], "addresses", {record.id}))
             )
             and (
                 software_id is None
@@ -2079,9 +2096,10 @@ def render_area_discovery(
         if classification_filters:
             signals = []
             if problem_id:
-                signals.append(metadata_signal(
-                    f"`{problem_id}` is classified in this area", records[problem_id],
-                ))
+                signals.extend(
+                    signal(f"`{problem_id}` addresses this area", assertion, records[problem_id])
+                    for assertion in matching_assertions(records[problem_id], "addresses", {area.id})
+                )
             if software_id:
                 signals.append(metadata_signal(
                     f"`{software_id}` is classified in this area", records[software_id],

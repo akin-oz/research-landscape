@@ -13,6 +13,11 @@ problem_kind: computational crystal-structure analysis challenge
 research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-CRYSTAL-SYMMETRY-ANALYSIS]
 relationship_assertions:
   - predicate: addresses
+    target_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+    source_ids: [SRC-SPGLIB-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: addresses
     target_id: AREA-CRYSTAL-SYMMETRY-ANALYSIS
     source_ids: [SRC-SPGLIB-DOCUMENTATION]
     confidence: high

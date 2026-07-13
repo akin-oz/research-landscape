@@ -13,6 +13,11 @@ problem_kind: atomistic machine-learning modeling challenge
 research_area_ids: [AREA-AI-FOR-MATERIALS, AREA-MACHINE-LEARNED-POTENTIALS]
 relationship_assertions:
   - predicate: addresses
+    target_id: AREA-AI-FOR-MATERIALS
+    source_ids: [SRC-MACE-DOCUMENTATION, SRC-NEQUIP-DOCUMENTATION, SRC-DEEPMD-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: addresses
     target_id: AREA-MACHINE-LEARNED-POTENTIALS
     source_ids: [SRC-MACE-DOCUMENTATION, SRC-NEQUIP-DOCUMENTATION, SRC-DEEPMD-DOCUMENTATION]
     confidence: high

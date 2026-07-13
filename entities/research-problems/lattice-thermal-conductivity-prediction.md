@@ -13,6 +13,11 @@ problem_kind: computational materials prediction challenge
 research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-COMPUTATIONAL-PHONON-CALCULATIONS]
 relationship_assertions:
   - predicate: addresses
+    target_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+    source_ids: [SRC-PHONO3PY-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: addresses
     target_id: AREA-COMPUTATIONAL-PHONON-CALCULATIONS
     source_ids: [SRC-PHONO3PY-DOCUMENTATION]
     confidence: high
