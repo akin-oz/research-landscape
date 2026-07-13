@@ -48,6 +48,7 @@ python3 scripts/research_landscape.py discover-pis --area AREA-AI-FOR-MATERIALS 
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-pis --ecosystem ECO-MATERIALS-PROJECT
 python3 scripts/research_landscape.py discover-pis --problem PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING
+python3 scripts/research_landscape.py discover-pis --open-source yes
 python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-universities --problem PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION
 python3 scripts/research_landscape.py discover-universities --area AREA-MACHINE-LEARNED-POTENTIALS --ecosystem ECO-MATML
@@ -171,6 +172,10 @@ ecosystem match follows a documented PI `develops` → software → ecosystem
 A problem match follows a documented PI `develops` → software `supports` →
 Research Problem path. It does not claim that the PI works on, owns, endorses,
 or supervises the problem.
+
+An open-source match follows a documented PI `develops` → software path and
+that software record's own documented openness state. It does not establish a
+PI's values, maintenance activity, governance, availability, or fit.
 
 `discover-universities` finds reviewed Universities through their documented
 country and the ADR 0006 direct-host paths of reviewed Research Groups. Area,

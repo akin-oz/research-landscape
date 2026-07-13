@@ -6,6 +6,9 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- `discover-pis --open-source` now exposes documented PI `develops` → software
+  paths plus each software record's documented openness state, without
+  inferring a PI's values, maintenance activity, governance, or availability.
 - `discover-ecosystems --language` now exposes only explicit ecosystem
   `includes` → software `implemented_in` → programming-language paths, without
   inferring ecosystem dominance, team-wide language practice, or individual

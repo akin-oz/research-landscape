@@ -1077,6 +1077,25 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`SW-MACE` supports `PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING` (sources: SRC-MACE-DOCUMENTATION)", rendered)
         self.assertIn("does not assert that the PI works on, endorses, or supervises the problem", rendered)
 
+    def test_pi_open_source_filter_requires_development_and_documented_state(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_pi_discovery(
+            records,
+            None,
+            None,
+            None,
+            None,
+            None,
+            ROOT / "reports/generated/evidence-recommendations.md",
+            open_source="yes",
+        )
+        self.assertIn("**AND filters:** open-source state `yes`.", rendered)
+        self.assertIn("`PI-GABOR-CSANYI`", rendered)
+        self.assertIn("develops `SW-MACE`", rendered)
+        self.assertIn("`SW-MACE` has documented open-source state `yes`", rendered)
+        self.assertIn("does not establish a PI's values, maintenance activity", rendered)
+
     def test_university_problem_filter_requires_direct_host_development_and_support_path(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

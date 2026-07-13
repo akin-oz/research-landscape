@@ -1267,6 +1267,27 @@ def development_problem_support_signals(
     return deduplicate_signals(signals)
 
 
+def development_open_source_signals(
+    developer: Record, open_source: str, records: dict[str, Record], verb: str,
+) -> list[dict[str, Any]]:
+    """Return documented development and software openness paths only."""
+    signals = []
+    for development in matching_assertions(developer, verb):
+        software = records.get(development.get("target_id"))
+        if (
+            software is None
+            or software.entity_type != "research-software"
+            or not eligible(software)
+            or software.metadata.get("open_source") != open_source
+        ):
+            continue
+        signals.append(signal(f"{verb} `{software.id}`", development, developer))
+        signals.append(metadata_signal(
+            f"`{software.id}` has documented open-source state `{open_source}`", software,
+        ))
+    return deduplicate_signals(signals)
+
+
 def discovery_group_candidates(
     records: dict[str, Record],
     area_id: str | None,
@@ -1437,6 +1458,7 @@ def discovery_pi_candidates(
     language_id: str | None,
     ecosystem_id: str | None = None,
     problem_id: str | None = None,
+    open_source: str | None = None,
 ) -> list[dict[str, Any]]:
     """Apply ANDed, source-explainable filters to reviewed PIs."""
     candidates = []
@@ -1489,6 +1511,12 @@ def discovery_pi_candidates(
                 continue
             signals.extend(problem_signals)
             criteria += 1
+        if open_source:
+            open_source_signals = development_open_source_signals(pi, open_source, records, "develops")
+            if not open_source_signals:
+                continue
+            signals.extend(open_source_signals)
+            criteria += 1
         candidates.append({"record": pi, "signals": deduplicate_signals(signals), "criteria": criteria})
     return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
 
@@ -1502,13 +1530,14 @@ def render_pi_discovery(
     ecosystem_id: str | None,
     output_path: Path,
     problem_id: str | None = None,
+    open_source: str | None = None,
 ) -> str:
     filters = [(name, value) for name, value in (
-        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id), ("research problem", problem_id),
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id), ("research problem", problem_id), ("open-source state", open_source),
     ) if value]
     if not filters:
-        raise ValueError("provide at least one of --area, --country, --software, --language, --ecosystem, or --problem")
-    candidates = discovery_pi_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id, problem_id)
+        raise ValueError("provide at least one of --area, --country, --software, --language, --ecosystem, --problem, or --open-source")
+    candidates = discovery_pi_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id, problem_id, open_source)
     lines = [
         "# Principal-investigator discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking or availability finding.", "",
@@ -1528,7 +1557,7 @@ def render_pi_discovery(
         lines.append("| — | No reviewed canonical PI matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and contain only PIs with every requested source-backed criterion. A country match follows a documented public affiliation and its documented location; language and ecosystem matches follow a documented PI-development edge through software `implemented_in` or ecosystem `includes` assertions. A problem match follows PI `develops` → software `supports` → problem and does not assert that the PI works on, endorses, or supervises the problem. This does not assert that a PI is an ecosystem member or establish current openings, supervision capacity, mentorship quality, funding, admissions, or applicant fit.", "",
+        "Results are alphabetically ordered and contain only PIs with every requested source-backed criterion. A country match follows a documented public affiliation and its documented location; language and ecosystem matches follow a documented PI-development edge through software `implemented_in` or ecosystem `includes` assertions. A problem match follows PI `develops` → software `supports` → problem and does not assert that the PI works on, endorses, or supervises the problem. An open-source match follows PI `develops` → software with its own documented open-source state. This does not establish a PI's values, maintenance activity, ecosystem membership, current openings, supervision capacity, mentorship quality, funding, admissions, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1541,13 +1570,17 @@ def discover_pis(
     language_id: str | None,
     ecosystem_id: str | None,
     problem_id: str | None,
+    open_source: str | None,
     check: bool,
     query_id: str | None,
     list_queries: bool,
     as_of: str | None,
 ) -> int:
     if check or query_id or list_queries or as_of:
-        print("ERROR: discover-pis accepts only --area, --country, --software, --language, --ecosystem, and --problem")
+        print("ERROR: discover-pis accepts only --area, --country, --software, --language, --ecosystem, --problem, and --open-source")
+        return 2
+    if open_source and open_source not in OPEN_SOURCE_FILTER_VALUES:
+        print("ERROR: --open-source must be one of yes, no, mixed, unknown, or not-applicable")
         return 2
     records, results = validate(root)
     if results.errors:
@@ -1564,7 +1597,7 @@ def discover_pis(
     try:
         print(render_pi_discovery(
             records, area_id, country_id, software_id, language_id, ecosystem_id,
-            root / "reports/generated/evidence-recommendations.md", problem_id,
+            root / "reports/generated/evidence-recommendations.md", problem_id, open_source,
         ))
     except ValueError as exc:
         print(f"ERROR: {exc}")
@@ -2763,8 +2796,8 @@ def main() -> int:
     if args.ecosystem and args.command not in {"discover-problems", "discover-groups", "discover-pis", "discover-universities", "discover-software"}:
         print("ERROR: --ecosystem is accepted only by discover-problems, discover-groups, discover-pis, discover-universities, and discover-software")
         return 2
-    if args.open_source and args.command not in {"discover-problems", "discover-software"}:
-        print("ERROR: --open-source is accepted only by discover-problems and discover-software")
+    if args.open_source and args.command not in {"discover-problems", "discover-pis", "discover-software"}:
+        print("ERROR: --open-source is accepted only by discover-problems, discover-pis, and discover-software")
         return 2
     if args.problem and args.command not in {"discover-areas", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software"}:
         print("ERROR: --problem is accepted only by discover-areas, discover-groups, discover-pis, discover-universities, discover-ecosystems, and discover-software")
@@ -2813,7 +2846,7 @@ def main() -> int:
     if args.command == "discover-pis":
         return discover_pis(
             root, args.area, args.country, args.software, args.language, args.ecosystem,
-            args.problem, args.check, args.query, args.list_queries, args.as_of,
+            args.problem, args.open_source, args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "discover-universities":
         return discover_universities(
