@@ -233,3 +233,10 @@ queries:
     title: Strongest academic environments
     reason: "The reviewed corpus can expose direct host-and-area paths, but contains no validated, comparable measure of university or academic-environment strength."
     required_evidence: "A versioned, ethically reviewed, reproducible environment metric contract with current comparable coverage, source governance, and explicit uncertainty handling."
+
+  - query_id: best-research-problems
+    aliases: [highest-priority-research-problems, research-problem-ranking]
+    status: unavailable
+    title: Best research problems
+    reason: "The reviewed corpus classifies bounded research areas but contains no validated, pluralistic, time-bounded comparison of problem importance, tractability, societal value, or individual fit."
+    required_evidence: "A versioned, ethically reviewed, reproducible problem-evaluation contract with explicit stakeholder scope, current evidence governance, uncertainty handling, and no universal-value claim."

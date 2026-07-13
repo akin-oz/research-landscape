@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 6f3cbf43721c10d2a22ad025cca28b4b295b8aacfba593c614d8e3ecf29e4d58 -->
+<!-- input-fingerprint: 6a466c72b816ca1da802401f5419c22c0ff288c5ea4e9b0757ea6393e77a403a -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `6f3cbf43721c10d2a22ad025cca28b4b295b8aacfba593c614d8e3ecf29e4d58`
+**Input fingerprint:** `6a466c72b816ca1da802401f5419c22c0ff288c5ea4e9b0757ea6393e77a403a`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -515,6 +515,16 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 **Why:** The reviewed corpus can expose direct host-and-area paths, but contains no validated, comparable measure of university or academic-environment strength.
 
 **Required before enabling:** A versioned, ethically reviewed, reproducible environment metric contract with current comparable coverage, source governance, and explicit uncertainty handling.
+
+## Best research problems
+
+**Query ID:** `best-research-problems`
+
+**Status:** unavailable — no recommendation is emitted.
+
+**Why:** The reviewed corpus classifies bounded research areas but contains no validated, pluralistic, time-bounded comparison of problem importance, tractability, societal value, or individual fit.
+
+**Required before enabling:** A versioned, ethically reviewed, reproducible problem-evaluation contract with explicit stakeholder scope, current evidence governance, uncertainty handling, and no universal-value claim.
 
 ## Repair workflow
 
