@@ -40,6 +40,16 @@ class RepositoryHealthTests(unittest.TestCase):
             missing = [path.name for path in records if path.name != "README.md" and f"]({path.name})" not in index]
             self.assertEqual([], missing, f"{directory.relative_to(ROOT)}/README.md omits canonical records: {missing}")
 
+    def test_entity_root_catalog_links_every_research_problem(self) -> None:
+        catalog = (ROOT / "entities/README.md").read_text(encoding="utf-8")
+        problem_records = sorted((ROOT / "entities/research-problems").glob("*.md"))
+        missing = [
+            path.name
+            for path in problem_records
+            if path.name != "README.md" and f"](research-problems/{path.name})" not in catalog
+        ]
+        self.assertEqual([], missing, f"entities/README.md omits Research Problem records: {missing}")
+
     def test_committed_generated_output_is_current(self) -> None:
         self.assertEqual(0, rl.generate(ROOT, check=True))
 
