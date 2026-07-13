@@ -62,6 +62,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Changed
 
+- Ecosystem-by-area discovery and generated area coverage now require either direct included-software classification or a connected research group's direct area relation; an individual PI's separate topic portfolio no longer classifies every connected ecosystem.
 - Evidence validation now resolves `SRC-*` claims only from unique `## Evidence` table rows and requires a public URL plus a valid ISO access date for each source.
 - Ecosystem-by-area recommendations now display both sourced ecosystem-to-entity paths and sourced ecosystem-to-software-to-area paths.
 

@@ -118,8 +118,8 @@ of university strength, degree quality, ecosystem completeness, or admissions.
 
 `discover-ecosystems` is an interactive, non-generated AND filter over
 reviewed Research Ecosystems. It accepts canonical `--area` and `--software`
-IDs. Area paths are limited to sourced `connects` relations to an entity with a
-direct topic relation, or sourced `includes` relations to software with a
+IDs. Area paths are limited to sourced `connects` relations to a research group
+with a direct topic relation, or sourced `includes` relations to software with a
 documented area classification. The command is alphabetically ordered and does
 not assess ecosystem dominance, completeness, performance, or fit.
 

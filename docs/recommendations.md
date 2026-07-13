@@ -97,8 +97,9 @@ it does not produce a score or rank. `discover-pis` follows documented public
 affiliation paths for country filters and does not assert availability or
 supervision capacity. `discover-universities` uses only direct-host group paths
 and does not compare institutions. `discover-ecosystems` exposes only explicit
-connection or inclusion paths; it does not determine which ecosystem dominates
-a field.
+research-group connection or software-inclusion paths; a PI's separate topic
+portfolio does not classify every connected ecosystem. It does not determine
+which ecosystem dominates a field.
 
 List valid public filter IDs first when needed:
 

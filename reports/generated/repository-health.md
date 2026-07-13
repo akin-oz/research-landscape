@@ -63,12 +63,12 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | Research area | Groups | Principal Investigators | Research Software | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 5 | 2 | 6 |
-| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 11 | 11 | 18 | 6 | 24 |
-| [Computational Phonon Calculations](../../entities/research-areas/computational-phonon-calculations.md) | 1 | 1 | 2 | 0 | 3 |
+| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 11 | 11 | 18 | 6 | 22 |
+| [Computational Phonon Calculations](../../entities/research-areas/computational-phonon-calculations.md) | 1 | 1 | 2 | 0 | 2 |
 | [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 5 | 1 | 12 | 4 | 15 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 7 | 2 | 6 |
-| [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 2 |
-| [Scientific Software Engineering](../../entities/research-areas/scientific-software-engineering.md) | 3 | 1 | 0 | 1 | 3 |
+| [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 1 |
+| [Scientific Software Engineering](../../entities/research-areas/scientific-software-engineering.md) | 3 | 1 | 0 | 1 | 2 |
 
 ## Programming-language discovery coverage
 

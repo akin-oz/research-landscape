@@ -794,6 +794,7 @@ def research_area_coverage(records: dict[str, Record]) -> list[dict[str, Any]]:
                 continue
             connected_to_area = any(
                 (target := records.get(assertion.get("target_id"))) is not None
+                and target.entity_type == "research-group"
                 and bool(matching_assertions(target, "works_on", {area.id}))
                 for assertion in matching_assertions(ecosystem, "connects")
             )
@@ -1656,7 +1657,7 @@ def ecosystem_area_signals(ecosystem: Record, area_id: str, records: dict[str, R
     signals = []
     for connection in matching_assertions(ecosystem, "connects"):
         target = records.get(connection.get("target_id"))
-        if target is None:
+        if target is None or target.entity_type != "research-group":
             continue
         for area_assertion in matching_assertions(target, "works_on", {area_id}):
             signals.append(signal(f"connects `{target.id}`", connection, ecosystem))
@@ -1726,7 +1727,7 @@ def render_ecosystem_discovery(
         lines.append("| — | No reviewed canonical ecosystem matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and include only source-backed `connects` or `includes` paths. An area match may arise through a connected group or PI, or through included research software with a documented area classification; each path is displayed. This does not establish field dominance, ecosystem completeness, model performance, funding, hiring, support, or applicant fit.", "",
+        "Results are alphabetically ordered and include only source-backed `connects` or `includes` paths. An area match may arise through a connected research group with a direct area relation, or through included research software with a documented area classification; a PI's separate topic portfolio does not classify every ecosystem they are connected to. Each path is displayed. This does not establish field dominance, ecosystem completeness, model performance, funding, hiring, support, or applicant fit.", "",
     ])
     return "\n".join(lines)
 

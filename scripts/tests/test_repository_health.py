@@ -62,7 +62,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["area"].id: item for item in rl.research_area_coverage(records)}
         self.assertEqual(
-            {"groups": 2, "principal_investigators": 2, "software": 2, "universities": 1, "ecosystems": 2},
+            {"groups": 2, "principal_investigators": 2, "software": 2, "universities": 1, "ecosystems": 1},
             {key: coverage["AREA-MATERIALS-INFORMATICS"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -80,7 +80,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 1, "principal_investigators": 1, "software": 2, "universities": 0, "ecosystems": 3},
+            {"groups": 1, "principal_investigators": 1, "software": 2, "universities": 0, "ecosystems": 2},
             {key: coverage["AREA-COMPUTATIONAL-PHONON-CALCULATIONS"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -806,6 +806,16 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         self.assertEqual(2, software_candidates[0]["criteria"])
 
+    def test_ecosystem_area_discovery_does_not_inherit_a_pi_topic_portfolio(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        phonon_ecosystems = rl.discovery_ecosystem_candidates(
+            records, "AREA-COMPUTATIONAL-PHONON-CALCULATIONS", None
+        )
+        self.assertEqual(["ECO-PHONO3PY", "ECO-PHONOPY"], [
+            candidate["record"].id for candidate in phonon_ecosystems
+        ])
+
     def test_dynamic_ecosystem_filters_trace_software_paths_without_membership_claims(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
@@ -885,7 +895,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("# Research-area discovery", rendered)
         self.assertIn("not a research-problem ranking", rendered)
         self.assertIn("`AREA-COMPUTATIONAL-PHONON-CALCULATIONS`", rendered)
-        self.assertIn("groups: 1; principal investigators: 1; software: 2; universities: 0; ecosystems: 3", rendered)
+        self.assertIn("groups: 1; principal investigators: 1; software: 2; universities: 0; ecosystems: 2", rendered)
         self.assertIn("sources: SRC-PHONOPY-DOCUMENTATION", rendered)
 
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:
