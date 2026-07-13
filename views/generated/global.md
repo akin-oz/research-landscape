@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: a2ea260aa50a6488dfadb7d380b6544393f2e1cef269fcb8fad0cb8ea7b3051d -->
+<!-- input-fingerprint: 8f0ae3e459ddf1e58e048ea9820383813651eaa5f691ee486a8650c87aff7ba3 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `a2ea260aa50a6488dfadb7d380b6544393f2e1cef269fcb8fad0cb8ea7b3051d`
+**Input fingerprint:** `8f0ae3e459ddf1e58e048ea9820383813651eaa5f691ee486a8650c87aff7ba3`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -66,6 +66,7 @@
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) | `RG-RIKEN-POLYMEROMICS` | research-group | high | 2026-07-12 | COUNTRY-JP |
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-13 | COUNTRY-DE |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
+| [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md) | `PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION` | research-problem | high | 2026-07-13 | — |
 | [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md) | `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION` | research-problem | high | 2026-07-13 | — |
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-12 | — |

@@ -908,13 +908,15 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`ECO-MATML`", catalog)
         self.assertIn("contains no private profile", catalog)
 
-    def test_problem_discovery_is_noncomparative_and_exposes_phono3py_support(self) -> None:
+    def test_problem_discovery_is_noncomparative_and_exposes_direct_support_paths(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
         rendered = rl.render_problem_discovery(records, ROOT / "reports/generated/evidence-recommendations.md")
         self.assertIn("not a problem-importance ranking", rendered)
         self.assertIn("`PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION`", rendered)
         self.assertIn("`SW-PHONO3PY` supports this problem", rendered)
+        self.assertIn("`PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION`", rendered)
+        self.assertIn("`SW-SPGLIB` supports this problem", rendered)
 
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
@@ -926,6 +928,12 @@ class RepositoryHealthTests(unittest.TestCase):
         generated = (ROOT / "views/generated/research-problems.md").read_text(encoding="utf-8")
         self.assertIn(problem.id, generated)
         self.assertIn("SW-PHONO3PY", generated)
+        symmetry_problem = records["PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION"]
+        symmetry_support = rl.matching_assertions(records["SW-SPGLIB"], "supports", {symmetry_problem.id})
+        self.assertEqual(1, len(symmetry_support))
+        self.assertEqual(["SRC-SPGLIB-DOCUMENTATION"], symmetry_support[0]["source_ids"])
+        self.assertIn(symmetry_problem.id, generated)
+        self.assertIn("SW-SPGLIB", generated)
 
     def test_research_problem_requires_a_controlled_area_link(self) -> None:
         metadata = {

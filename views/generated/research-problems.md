@@ -1,10 +1,17 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: a2ea260aa50a6488dfadb7d380b6544393f2e1cef269fcb8fad0cb8ea7b3051d -->
+<!-- input-fingerprint: 8f0ae3e459ddf1e58e048ea9820383813651eaa5f691ee486a8650c87aff7ba3 -->
 # Research Problems view
 
 **Definition:** `research-problems`
-**Input fingerprint:** `a2ea260aa50a6488dfadb7d380b6544393f2e1cef269fcb8fad0cb8ea7b3051d`
+**Input fingerprint:** `8f0ae3e459ddf1e58e048ea9820383813651eaa5f691ee486a8650c87aff7ba3`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
+
+## [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md) | `PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION` | research-problem | high | 2026-07-13 | — |
+| [Spglib](../../entities/research-software/spglib.md) | `SW-SPGLIB` | research-software | high | 2026-07-13 | — |
 
 ## [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md)
 

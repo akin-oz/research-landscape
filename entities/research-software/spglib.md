@@ -22,6 +22,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: Spglib documentation describes the library as written in C. Its documented Python, Fortran, Rust, and Ruby interfaces are not treated as implementation-language assertions in this record.
+  - predicate: supports
+    target_id: PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION
+    source_ids: [SRC-SPGLIB-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: Spglib documentation directly covers symmetry-operation search and space-group identification; this assertion is limited to support for the named computational challenge.
 ---
 
 # Spglib

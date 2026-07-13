@@ -68,7 +68,7 @@ The Spglib cluster adds [Spglib](research-software/spglib.md), the [Spglib Ecosy
 
 The Crystal Symmetry Analysis extension adds a controlled [research-area record](research-areas/crystal-symmetry-analysis.md) to expose Spglib and Atsushi Togo through a topic-first path without inferring a group-level, institutional, or research-problem ranking claim.
 
-The first Research Problem slice adds [Lattice Thermal Conductivity Prediction](research-problems/lattice-thermal-conductivity-prediction.md), linked to Computational Phonon Calculations and directly supported by Phono3py. It is a bounded computational challenge, not a project or importance ranking.
+The Research Problem extension adds [Lattice Thermal Conductivity Prediction](research-problems/lattice-thermal-conductivity-prediction.md), linked to Computational Phonon Calculations and directly supported by Phono3py, plus [Crystal Symmetry Determination](research-problems/crystal-symmetry-determination.md), linked to Crystal Symmetry Analysis and directly supported by Spglib. Both are bounded computational challenges, not projects or importance rankings.
 
 The Phonopy–NIMS extension adds [Atsushi Togo](principal-investigators/atsushi-togo.md), the [NIMS Computational Materials Science Group](research-groups/nims-computational-materials-science-group.md), and the [National Institute for Materials Science](organizations/national-institute-for-materials-science.md), while reusing Phonopy and Japan. It makes no university, degree-route, mentoring, admissions, or ranking claim.
 
