@@ -36,7 +36,8 @@ academic environments," "best research problems," and "best research advisors"
 remain **unavailable**. `discover-problems` can list reviewed, bounded
 computational challenges and direct software-support evidence, but does not
 compare their importance, novelty, tractability, or fit. The catalog names the evidence contract required before
-each comparison could be considered. Narrative Python mentions, a public
+each comparison could be considered; [ADR 0010](adr/0010-problem-evaluation-evidence-contract.md)
+defines the problem-comparison gate. Narrative Python mentions, a public
 repository, group size, fame, awards, or citations cannot substitute for
 sourced controlled-language relations, a validated mentorship metric, or a
 governed comparative model. Documented process evidence is not a

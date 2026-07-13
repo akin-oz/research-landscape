@@ -1217,6 +1217,23 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`best-research-advisors` | unavailable", catalog)
         self.assertIn("No private profiles", catalog)
 
+    def test_problem_comparison_remains_gated_by_an_explicit_evidence_contract(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        query = next(item for item in model["queries"] if item["query_id"] == "best-research-problems")
+        self.assertEqual("unavailable", query["status"])
+
+        adr = (ROOT / "docs/adr/0010-problem-evaluation-evidence-contract.md").read_text(encoding="utf-8")
+        self.assertIn("stakeholder scope and decision purpose", adr)
+        self.assertIn("missing-data handling, and uncertainty representation", adr)
+        self.assertIn("Versioned aggregation and sensitivity rules", adr)
+        self.assertIn("Ethics review", adr)
+
+        recommendations = (ROOT / "docs/recommendations.md").read_text(encoding="utf-8")
+        self.assertIn("adr/0010-problem-evaluation-evidence-contract.md", recommendations)
+
     def test_ai_materials_software_environment_query_is_explainable(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
