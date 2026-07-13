@@ -43,6 +43,7 @@ python3 scripts/research_landscape.py discover-universities --problem PROBLEM-DE
 python3 scripts/research_landscape.py discover-universities --area AREA-MACHINE-LEARNED-POTENTIALS --ecosystem ECO-MATML
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS --software SW-FAIRCHEM
+python3 scripts/research_landscape.py discover-ecosystems --problem PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION
 python3 scripts/research_landscape.py discover-software --area AREA-MACHINE-LEARNED-POTENTIALS --language PROGRAMMING-LANGUAGE-PYTHON --ecosystem ECO-MATML --open-source yes
 python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-CPP --ecosystem ECO-OPENKIM --open-source yes
 python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-FORTRAN --ecosystem ECO-CP2K --open-source yes
@@ -150,11 +151,13 @@ The result is an evidence-discovery view of documented paths, not a comparison
 of university strength, degree quality, ecosystem completeness, or admissions.
 
 `discover-ecosystems` is an interactive, non-generated AND filter over
-reviewed Research Ecosystems. It accepts canonical `--area` and `--software`
-IDs. Area paths are limited to sourced `connects` relations to a research group
+reviewed Research Ecosystems. It accepts canonical `--area`, `--software`, and
+`--problem` IDs. Area paths are limited to sourced `connects` relations to a research group
 with a direct topic relation, or sourced `includes` relations to software with a
-documented area classification. The command is alphabetically ordered and does
-not assess ecosystem dominance, completeness, performance, or fit.
+documented area classification. A problem match requires an explicit
+ecosystem `includes` → software `supports` → Research Problem path. The command
+is alphabetically ordered and does not assess ecosystem dominance, completeness,
+performance, or fit.
 
 `discover-software` is an interactive, non-generated AND filter over reviewed
 Research Software. It accepts canonical `--area`, `--language`, and

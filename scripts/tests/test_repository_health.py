@@ -1031,6 +1031,20 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`RG-DTU-CAMD`: `SW-GPAW` supports `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION` (sources: SRC-GPAW-DOCUMENTATION)", rendered)
         self.assertIn("does not assert that the University works on, owns, or endorses the problem", rendered)
 
+    def test_ecosystem_problem_filter_requires_inclusion_and_support_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_ecosystem_discovery(
+            records, None, None,
+            ROOT / "reports/generated/evidence-recommendations.md",
+            "PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION",
+        )
+        self.assertIn("**AND filters:** research problem `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION`.", rendered)
+        self.assertIn("`ECO-PHONO3PY`", rendered)
+        self.assertIn("`ECO-PHONO3PY` includes `SW-PHONO3PY` (sources: SRC-PHONO3PY-DOCUMENTATION, SRC-PHONO3PY-REPOSITORY)", rendered)
+        self.assertIn("`SW-PHONO3PY` supports this problem (sources: SRC-PHONO3PY-DOCUMENTATION)", rendered)
+        self.assertIn("ecosystem `includes` → software `supports` → problem", rendered)
+
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

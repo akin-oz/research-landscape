@@ -1718,7 +1718,8 @@ def ecosystem_area_signals(ecosystem: Record, area_id: str, records: dict[str, R
 
 
 def discovery_ecosystem_candidates(
-    records: dict[str, Record], area_id: str | None, software_id: str | None
+    records: dict[str, Record], area_id: str | None, software_id: str | None,
+    problem_id: str | None = None,
 ) -> list[dict[str, Any]]:
     """Apply ANDed, source-explainable filters to reviewed research ecosystems."""
     candidates = []
@@ -1742,17 +1743,24 @@ def discovery_ecosystem_candidates(
                 continue
             signals.extend(software_signals)
             criteria += 1
+        if problem_id:
+            problem_signals = ecosystem_problem_support_signals(ecosystem, problem_id, records)
+            if not problem_signals:
+                continue
+            signals.extend(problem_signals)
+            criteria += 1
         candidates.append({"record": ecosystem, "signals": deduplicate_signals(signals), "criteria": criteria})
     return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
 
 
 def render_ecosystem_discovery(
-    records: dict[str, Record], area_id: str | None, software_id: str | None, output_path: Path
+    records: dict[str, Record], area_id: str | None, software_id: str | None,
+    output_path: Path, problem_id: str | None = None,
 ) -> str:
-    filters = [(name, value) for name, value in (("research area", area_id), ("research software", software_id)) if value]
+    filters = [(name, value) for name, value in (("research area", area_id), ("research software", software_id), ("research problem", problem_id)) if value]
     if not filters:
-        raise ValueError("provide at least one of --area or --software")
-    candidates = discovery_ecosystem_candidates(records, area_id, software_id)
+        raise ValueError("provide at least one of --area, --software, or --problem")
+    candidates = discovery_ecosystem_candidates(records, area_id, software_id, problem_id)
     lines = [
         "# Research-ecosystem discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking or ecosystem-dominance assessment.", "",
@@ -1772,7 +1780,7 @@ def render_ecosystem_discovery(
         lines.append("| — | No reviewed canonical ecosystem matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and include only source-backed `connects` or `includes` paths. An area match may arise through a connected research group with a direct area relation, or through included research software with a documented area classification; a PI's separate topic portfolio does not classify every ecosystem they are connected to. Each path is displayed. This does not establish field dominance, ecosystem completeness, model performance, funding, hiring, support, or applicant fit.", "",
+        "Results are alphabetically ordered and include only source-backed `connects` or `includes` paths. An area match may arise through a connected research group with a direct area relation, or through included research software with a documented area classification; a PI's separate topic portfolio does not classify every ecosystem they are connected to. A problem match requires ecosystem `includes` → software `supports` → problem. Each path is displayed. This does not establish field dominance, ecosystem completeness, model performance, funding, hiring, support, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1783,19 +1791,20 @@ def discover_ecosystems(
     software_id: str | None,
     country_id: str | None,
     language_id: str | None,
+    problem_id: str | None,
     check: bool,
     query_id: str | None,
     list_queries: bool,
     as_of: str | None,
 ) -> int:
     if country_id or language_id or check or query_id or list_queries or as_of:
-        print("ERROR: discover-ecosystems accepts only --area and --software")
+        print("ERROR: discover-ecosystems accepts only --area, --software, and --problem")
         return 2
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
         return 1
-    filters = {"area": area_id, "software": software_id}
+    filters = {"area": area_id, "software": software_id, "problem": problem_id}
     for name, value in filters.items():
         if not value:
             continue
@@ -1805,7 +1814,7 @@ def discover_ecosystems(
             return 2
     try:
         print(render_ecosystem_discovery(
-            records, area_id, software_id, root / "reports/generated/evidence-recommendations.md"
+            records, area_id, software_id, root / "reports/generated/evidence-recommendations.md", problem_id,
         ))
     except ValueError as exc:
         print(f"ERROR: {exc}")
@@ -2417,8 +2426,8 @@ def main() -> int:
     if args.open_source and args.command != "discover-software":
         print("ERROR: --open-source is accepted only by discover-software")
         return 2
-    if args.problem and args.command not in {"discover-groups", "discover-pis", "discover-universities"}:
-        print("ERROR: --problem is accepted only by discover-groups, discover-pis, and discover-universities")
+    if args.problem and args.command not in {"discover-groups", "discover-pis", "discover-universities", "discover-ecosystems"}:
+        print("ERROR: --problem is accepted only by discover-groups, discover-pis, discover-universities, and discover-ecosystems")
         return 2
     if args.command == "validate":
         records, results = validate(root)
@@ -2456,7 +2465,7 @@ def main() -> int:
     if args.command == "discover-ecosystems":
         return discover_ecosystems(
             root, args.area, args.software, args.country, args.language,
-            args.check, args.query, args.list_queries, args.as_of,
+            args.problem, args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "discover-software":
         return discover_software(
