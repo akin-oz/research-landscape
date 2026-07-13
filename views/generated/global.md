@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: d83fb150e44d166c54238c73d12eba89148ddbb83aa9bbe9d704fab267bd8fd1 -->
+<!-- input-fingerprint: 0ff4dbd9c9701f6aa4050a0c20586b09497aab2550e43586cbe4e7c6b0074394 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `d83fb150e44d166c54238c73d12eba89148ddbb83aa9bbe9d704fab267bd8fd1`
+**Input fingerprint:** `0ff4dbd9c9701f6aa4050a0c20586b09497aab2550e43586cbe4e7c6b0074394`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -43,6 +43,7 @@
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) | `ECO-OPENKIM` | research-ecosystem | high | 2026-07-13 | — |
 | [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) | `ECO-QUANTUM-ESPRESSO` | research-ecosystem | high | 2026-07-12 | — |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) | `ECO-SIESTA` | research-ecosystem | high | 2026-07-13 | — |
+| [sisl Ecosystem](../../entities/ecosystems/sisl.md) | `ECO-SISL` | research-ecosystem | high | 2026-07-13 | — |
 | [Wannier90 Ecosystem](../../entities/ecosystems/wannier90.md) | `ECO-WANNIER90` | research-ecosystem | high | 2026-07-13 | — |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
@@ -77,6 +78,7 @@
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
 | [RadonPy](../../entities/research-software/radonpy.md) | `SW-RADONPY` | research-software | high | 2026-07-12 | — |
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |
+| [sisl](../../entities/research-software/sisl.md) | `SW-SISL` | research-software | high | 2026-07-13 | — |
 | [Wannier90](../../entities/research-software/wannier90.md) | `SW-WANNIER90` | research-software | high | 2026-07-13 | — |
 | [Duke University](../../entities/universities/duke-university.md) | `UNIVERSITY-DUKE` | university | high | 2026-07-12 | COUNTRY-US |
 | [EPFL](../../entities/universities/epfl.md) | `UNIVERSITY-EPFL` | university | high | 2026-07-12 | COUNTRY-CH |

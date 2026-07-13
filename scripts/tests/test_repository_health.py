@@ -66,7 +66,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 5, "principal_investigators": 1, "software": 7, "universities": 4, "ecosystems": 10},
+            {"groups": 5, "principal_investigators": 1, "software": 8, "universities": 4, "ecosystems": 11},
             {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -86,7 +86,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"software": 13, "groups": 6, "principal_investigators": 4, "universities": 4, "ecosystems": 11},
+            {"software": 14, "groups": 6, "principal_investigators": 4, "universities": 4, "ecosystems": 12},
             {key: coverage["PROGRAMMING-LANGUAGE-PYTHON"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -190,7 +190,7 @@ class RepositoryHealthTests(unittest.TestCase):
             queries["ecosystems-density-functional-theory-and-electronic-structure"], records
         )
         self.assertEqual(
-            ["ECO-ABINIT", "ECO-ASE", "ECO-CP2K", "ECO-FLEUR", "ECO-GPAW", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA", "ECO-WANNIER90"],
+            ["ECO-ABINIT", "ECO-ASE", "ECO-CP2K", "ECO-FLEUR", "ECO-GPAW", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA", "ECO-SISL", "ECO-WANNIER90"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         software_candidates = rl.discovery_software_candidates(
@@ -201,7 +201,7 @@ class RepositoryHealthTests(unittest.TestCase):
             "yes",
         )
         self.assertEqual(
-            ["SW-ABINIT", "SW-CP2K", "SW-FLEUR", "SW-GPAW", "SW-QUANTUM-ESPRESSO", "SW-SIESTA", "SW-WANNIER90"],
+            ["SW-ABINIT", "SW-CP2K", "SW-FLEUR", "SW-GPAW", "SW-QUANTUM-ESPRESSO", "SW-SIESTA", "SW-SISL", "SW-WANNIER90"],
             [candidate["record"].id for candidate in software_candidates],
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in software_candidates))

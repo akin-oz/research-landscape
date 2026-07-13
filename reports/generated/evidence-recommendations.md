@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 623552a467b407cbca8b41012c5de50721ff9c252934c2b5af14ce0d4faf8744 -->
+<!-- input-fingerprint: 3d7638bf2088b9e68d7e072c2fd6003abab94b1d83e46b0cffbbf6e5cb207612 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `623552a467b407cbca8b41012c5de50721ff9c252934c2b5af14ce0d4faf8744`
+**Input fingerprint:** `3d7638bf2088b9e68d7e072c2fd6003abab94b1d83e46b0cffbbf6e5cb207612`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -180,6 +180,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [FLEUR Ecosystem](../../entities/ecosystems/fleur.md) (`ECO-FLEUR`) | includes `SW-FLEUR` (sources: SRC-FLEUR-HOME, SRC-FLEUR-REPOSITORY); `SW-FLEUR` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-FLEUR-HOME, SRC-FLEUR-REPOSITORY, SRC-FLEUR-INSTALLATION) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 documented criteria |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) (`ECO-SIESTA`) | includes `SW-SIESTA` (sources: SRC-SIESTA-REPOSITORY); `SW-SIESTA` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SIESTA-REPOSITORY, SRC-SIESTA-REFERENCE-MANUAL, SRC-SIESTA-INSTALLATION) | high | 2/2 documented criteria |
+| [sisl Ecosystem](../../entities/ecosystems/sisl.md) (`ECO-SISL`) | includes `SW-SISL` (sources: SRC-SISL-REPOSITORY); `SW-SISL` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SISL-REPOSITORY) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking.
 
@@ -200,6 +201,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-WOLVERTON-GROUP-RESEARCH) | high | 2/2 documented criteria |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) (`ECO-SIESTA`) | includes `SW-SIESTA` (sources: SRC-SIESTA-REPOSITORY); `SW-SIESTA` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-SIESTA-REPOSITORY, SRC-SIESTA-REFERENCE-MANUAL, SRC-SIESTA-INSTALLATION) | high | 2/2 documented criteria |
+| [sisl Ecosystem](../../entities/ecosystems/sisl.md) (`ECO-SISL`) | includes `SW-SISL` (sources: SRC-SISL-REPOSITORY); `SW-SISL` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-SISL-REPOSITORY) | high | 2/2 documented criteria |
 | [Wannier90 Ecosystem](../../entities/ecosystems/wannier90.md) (`ECO-WANNIER90`) | includes `SW-WANNIER90` (sources: SRC-WANNIER90-REPOSITORY, SRC-WANNIER90-FEATURES); `SW-WANNIER90` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-WANNIER90-REPOSITORY, SRC-WANNIER90-FEATURES, SRC-WANNIER90-LIBRARY) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed DFT or electronic-structure path; it is not ecosystem completeness, method quality, performance, or fit.

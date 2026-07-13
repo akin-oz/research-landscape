@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: d83fb150e44d166c54238c73d12eba89148ddbb83aa9bbe9d704fab267bd8fd1 -->
+<!-- input-fingerprint: 0ff4dbd9c9701f6aa4050a0c20586b09497aab2550e43586cbe4e7c6b0074394 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `d83fb150e44d166c54238c73d12eba89148ddbb83aa9bbe9d704fab267bd8fd1`
+**Input fingerprint:** `0ff4dbd9c9701f6aa4050a0c20586b09497aab2550e43586cbe4e7c6b0074394`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -170,6 +170,13 @@
 | --- | --- | --- | --- | --- | --- |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) | `ECO-SIESTA` | research-ecosystem | high | 2026-07-13 | — |
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |
+
+## [sisl](../../entities/research-software/sisl.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [sisl Ecosystem](../../entities/ecosystems/sisl.md) | `ECO-SISL` | research-ecosystem | high | 2026-07-13 | — |
+| [sisl](../../entities/research-software/sisl.md) | `SW-SISL` | research-software | high | 2026-07-13 | — |
 
 ## [Wannier90](../../entities/research-software/wannier90.md)
 
