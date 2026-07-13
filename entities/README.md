@@ -48,6 +48,8 @@ The FLEUR cluster adds [FLEUR](research-software/fleur.md) and the [FLEUR Ecosys
 
 The DeePMD-kit cluster adds [DeePMD-kit](research-software/deepmd-kit.md) and the [DeePMD-kit Ecosystem](ecosystems/deepmd-kit.md), while reusing controlled Python, C++, AI for Materials, and Machine-Learned Potentials records. Its documented external interfaces remain prose context until a dependency relationship contract exists.
 
+The NequIP cluster adds [NequIP](research-software/nequip.md) and the [NequIP Ecosystem](ecosystems/nequip.md), while reusing controlled Python, AI for Materials, and Machine-Learned Potentials records. Its documented integrations remain prose context until a dependency relationship contract exists.
+
 The Density-Functional Theory and Electronic Structure area extension adds the controlled [area record](research-areas/density-functional-theory-and-electronic-structure.md) and directly classifies existing ABINIT, CP2K, Quantum ESPRESSO, CAMD, Curtarolo Group, Persson Group, SOLgroup, and Wolverton Research Group records. Their separately owned ecosystems and direct-host Universities become discoverable through existing evidence-bearing paths.
 
 The Temple–Kohlmeyer–LAMMPS extension adds [Axel Kohlmeyer](principal-investigators/axel-kohlmeyer.md) and [Temple University](universities/temple-university.md), while reusing the LAMMPS, United States, and Computational Materials Science records.

@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: a734c3c0b754edc1813c4ad6910e03de43d41f099ecbd13a0c5c5ab1d85ede09 -->
+<!-- input-fingerprint: d83fb150e44d166c54238c73d12eba89148ddbb83aa9bbe9d704fab267bd8fd1 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `a734c3c0b754edc1813c4ad6910e03de43d41f099ecbd13a0c5c5ab1d85ede09`
+**Input fingerprint:** `d83fb150e44d166c54238c73d12eba89148ddbb83aa9bbe9d704fab267bd8fd1`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -124,6 +124,13 @@
 | [MatML Ecosystem](../../entities/ecosystems/matml.md) | `ECO-MATML` | research-ecosystem | high | 2026-07-12 | — |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) | `RG-MATERIALYZE-AI` | research-group | high | 2026-07-12 | COUNTRY-SG |
 | [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |
+
+## [NequIP](../../entities/research-software/nequip.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [NequIP Ecosystem](../../entities/ecosystems/nequip.md) | `ECO-NEQUIP` | research-ecosystem | high | 2026-07-13 | — |
+| [NequIP](../../entities/research-software/nequip.md) | `SW-NEQUIP` | research-software | high | 2026-07-13 | — |
 
 ## [NOMAD](../../entities/research-software/nomad.md)
 

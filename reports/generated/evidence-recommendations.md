@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 03b2d3367bbf8779c9cf98faf843f8fc61c2466f770fec96bf166fc32d7036a9 -->
+<!-- input-fingerprint: 623552a467b407cbca8b41012c5de50721ff9c252934c2b5af14ce0d4faf8744 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `03b2d3367bbf8779c9cf98faf843f8fc61c2466f770fec96bf166fc32d7036a9`
+**Input fingerprint:** `623552a467b407cbca8b41012c5de50721ff9c252934c2b5af14ce0d4faf8744`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -243,6 +243,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [DeePMD-kit Ecosystem](../../entities/ecosystems/deepmd-kit.md) (`ECO-DEEPMD-KIT`) | includes `SW-DEEPMD-KIT` (sources: SRC-DEEPMD-REPOSITORY); `SW-DEEPMD-KIT` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-DEEPMD-REPOSITORY, SRC-DEEPMD-DOCUMENTATION) | high | 2/2 documented criteria |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
 | [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE) | high | 2/2 documented criteria |
+| [NequIP Ecosystem](../../entities/ecosystems/nequip.md) (`ECO-NEQUIP`) | includes `SW-NEQUIP` (sources: SRC-NEQUIP-REPOSITORY); `SW-NEQUIP` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-NEQUIP-REPOSITORY, SRC-NEQUIP-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md) (`ECO-OPEN-CATALYST-PROJECT`) | includes `SW-FAIRCHEM` (sources: SRC-OCP-MIGRATION); `SW-FAIRCHEM` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, AI capability, or research-quality ranking.
@@ -259,6 +260,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [DeePMD-kit Ecosystem](../../entities/ecosystems/deepmd-kit.md) (`ECO-DEEPMD-KIT`) | includes `SW-DEEPMD-KIT` (sources: SRC-DEEPMD-REPOSITORY); `SW-DEEPMD-KIT` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-DEEPMD-REPOSITORY, SRC-DEEPMD-DOCUMENTATION) | high | 2/2 documented criteria |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
 | [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE) | high | 2/2 documented criteria |
+| [NequIP Ecosystem](../../entities/ecosystems/nequip.md) (`ECO-NEQUIP`) | includes `SW-NEQUIP` (sources: SRC-NEQUIP-REPOSITORY); `SW-NEQUIP` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-NEQUIP-REPOSITORY, SRC-NEQUIP-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md) (`ECO-OPEN-CATALYST-PROJECT`) | includes `SW-FAIRCHEM` (sources: SRC-OCP-MIGRATION); `SW-FAIRCHEM` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed documented role and target-area evidence; it is not ecosystem completeness, model performance, funding, or research-quality ranking.

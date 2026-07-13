@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: a734c3c0b754edc1813c4ad6910e03de43d41f099ecbd13a0c5c5ab1d85ede09 -->
+<!-- input-fingerprint: d83fb150e44d166c54238c73d12eba89148ddbb83aa9bbe9d704fab267bd8fd1 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `a734c3c0b754edc1813c4ad6910e03de43d41f099ecbd13a0c5c5ab1d85ede09`
+**Input fingerprint:** `d83fb150e44d166c54238c73d12eba89148ddbb83aa9bbe9d704fab267bd8fd1`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -19,6 +19,7 @@
 | [DeePMD-kit](../../entities/research-software/deepmd-kit.md) | `SW-DEEPMD-KIT` | research-software | high | 2026-07-13 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
 | [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |
+| [NequIP](../../entities/research-software/nequip.md) | `SW-NEQUIP` | research-software | high | 2026-07-13 | — |
 
 ## [Computational Materials Science](../../entities/research-areas/computational-materials-science.md)
 
@@ -91,6 +92,7 @@
 | [M3GNet](../../entities/research-software/m3gnet.md) | `SW-M3GNET` | research-software | high | 2026-07-12 | — |
 | [MACE](../../entities/research-software/mace.md) | `SW-MACE` | research-software | high | 2026-07-12 | — |
 | [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |
+| [NequIP](../../entities/research-software/nequip.md) | `SW-NEQUIP` | research-software | high | 2026-07-13 | — |
 
 ## [Materials Informatics](../../entities/research-areas/materials-informatics.md)
 
