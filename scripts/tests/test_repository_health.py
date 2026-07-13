@@ -62,33 +62,33 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["area"].id: item for item in rl.research_area_coverage(records)}
         self.assertEqual(
-            {"groups": 2, "principal_investigators": 2, "software": 2, "universities": 1, "ecosystems": 1},
+            {"groups": 2, "principal_investigators": 2, "software": 2, "problems": 0, "universities": 1, "ecosystems": 1},
             {key: coverage["AREA-MATERIALS-INFORMATICS"][key] for key in (
-                "groups", "principal_investigators", "software", "universities", "ecosystems"
+                "groups", "principal_investigators", "software", "problems", "universities", "ecosystems"
             )},
         )
         self.assertEqual(
-            {"groups": 2, "principal_investigators": 2, "software": 7, "universities": 2, "ecosystems": 6},
+            {"groups": 2, "principal_investigators": 2, "software": 7, "problems": 1, "universities": 2, "ecosystems": 6},
             {key: coverage["AREA-MACHINE-LEARNED-POTENTIALS"][key] for key in (
-                "groups", "principal_investigators", "software", "universities", "ecosystems"
+                "groups", "principal_investigators", "software", "problems", "universities", "ecosystems"
             )},
         )
         self.assertEqual(
-            {"groups": 5, "principal_investigators": 1, "software": 12, "universities": 4, "ecosystems": 15},
+            {"groups": 5, "principal_investigators": 1, "software": 12, "problems": 1, "universities": 4, "ecosystems": 15},
             {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
-                "groups", "principal_investigators", "software", "universities", "ecosystems"
+                "groups", "principal_investigators", "software", "problems", "universities", "ecosystems"
             )},
         )
         self.assertEqual(
-            {"groups": 1, "principal_investigators": 1, "software": 2, "universities": 0, "ecosystems": 2},
+            {"groups": 1, "principal_investigators": 1, "software": 2, "problems": 1, "universities": 0, "ecosystems": 2},
             {key: coverage["AREA-COMPUTATIONAL-PHONON-CALCULATIONS"][key] for key in (
-                "groups", "principal_investigators", "software", "universities", "ecosystems"
+                "groups", "principal_investigators", "software", "problems", "universities", "ecosystems"
             )},
         )
         self.assertEqual(
-            {"groups": 0, "principal_investigators": 1, "software": 1, "universities": 0, "ecosystems": 1},
+            {"groups": 0, "principal_investigators": 1, "software": 1, "problems": 1, "universities": 0, "ecosystems": 1},
             {key: coverage["AREA-CRYSTAL-SYMMETRY-ANALYSIS"][key] for key in (
-                "groups", "principal_investigators", "software", "universities", "ecosystems"
+                "groups", "principal_investigators", "software", "problems", "universities", "ecosystems"
             )},
         )
         report = rl.health_report(ROOT, records, results, rl.input_fingerprint(ROOT))
@@ -1123,7 +1123,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("# Research-area discovery", rendered)
         self.assertIn("not a research-problem ranking", rendered)
         self.assertIn("`AREA-COMPUTATIONAL-PHONON-CALCULATIONS`", rendered)
-        self.assertIn("groups: 1; principal investigators: 1; software: 2; universities: 0; ecosystems: 2", rendered)
+        self.assertIn("groups: 1; principal investigators: 1; software: 2; problems: 1; universities: 0; ecosystems: 2", rendered)
         self.assertIn("sources: SRC-PHONOPY-DOCUMENTATION", rendered)
 
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:

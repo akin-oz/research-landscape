@@ -686,11 +686,11 @@ def health_report(root: Path, records: dict[str, Record], results: Results, fing
         "",
         "These are counts of direct, documented graph paths. They measure current corpus coverage, not research quality, prominence, or priority.",
         "",
-        "| Research area | Groups | Principal Investigators | Research Software | Direct-host Universities | Ecosystems |",
-        "| --- | ---: | ---: | ---: | ---: | ---: |",
+        "| Research area | Groups | Principal Investigators | Research Software | Research Problems | Direct-host Universities | Ecosystems |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
         *[
             f"| {canonical_link(item['area'], root / 'reports/generated/repository-health.md')} | "
-            f"{item['groups']} | {item['principal_investigators']} | {item['software']} | "
+            f"{item['groups']} | {item['principal_investigators']} | {item['software']} | {item['problems']} | "
             f"{item['universities']} | {item['ecosystems']} |"
             for item in area_coverage
         ],
@@ -783,6 +783,11 @@ def research_area_coverage(records: dict[str, Record]) -> list[dict[str, Any]]:
             if record.entity_type == "research-software" and eligible(record)
             and area.id in as_ids(record.metadata.get("research_area_ids", []))
         ]
+        problems = [
+            record for record in records.values()
+            if record.entity_type == "research-problem" and eligible(record)
+            and area.id in as_ids(record.metadata.get("research_area_ids", []))
+        ]
         universities = [
             university for university in records.values()
             if university.entity_type == "university" and eligible(university)
@@ -815,6 +820,7 @@ def research_area_coverage(records: dict[str, Record]) -> list[dict[str, Any]]:
             "groups": len(groups),
             "principal_investigators": len(principal_investigators),
             "software": len(software),
+            "problems": len(problems),
             "universities": len(universities),
             "ecosystems": len(ecosystems),
         })
@@ -2036,7 +2042,7 @@ def render_area_discovery(records: dict[str, Record], output_path: Path) -> str:
         item = coverage[area.id]
         reach = "; ".join(
             f"{key.replace('_', ' ')}: {item[key]}"
-            for key in ("groups", "principal_investigators", "software", "universities", "ecosystems")
+            for key in ("groups", "principal_investigators", "software", "problems", "universities", "ecosystems")
         )
         lines.append(
             f"| {canonical_link(area, output_path)} | `{area.id}` | {reach} | "
@@ -2046,7 +2052,7 @@ def render_area_discovery(records: dict[str, Record], output_path: Path) -> str:
         lines.append("| — | — | No reviewed canonical research areas currently available. | — | unavailable |")
     lines.extend([
         "", "## Boundary", "",
-        "This catalog does not select or compare research problems. A larger reach count can reflect only the current evidence coverage. Use an area ID with `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, or `discover-software` to inspect the underlying sourced paths. It does not establish problem importance, scientific novelty, funding, admissions, mentoring, availability, or applicant fit.", "",
+        "This catalog does not select or compare research problems. A larger reach count can reflect only the current evidence coverage. Use an area ID with `discover-problems`, `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, or `discover-software` to inspect the underlying sourced paths. It does not establish problem importance, scientific novelty, funding, admissions, mentoring, availability, or applicant fit.", "",
     ])
     return "\n".join(lines)
 

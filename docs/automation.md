@@ -67,8 +67,8 @@ same inputs yield byte-identical outputs. `--check` fails if committed generated
 output is missing or stale.
 
 The generated repository-health report also includes a research-area discovery
-coverage matrix: direct reviewed group and PI relations, software
-classification, direct-host Universities, and ecosystem paths for each
+coverage matrix: direct reviewed group and PI relations, software and Research
+Problem classifications, direct-host Universities, and ecosystem paths for each
 controlled area. These are maintenance coverage counts, not a score or a
 statement about the importance or quality of an area.
 

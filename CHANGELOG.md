@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- Research-area discovery coverage now reports reviewed Research Problem classifications alongside direct group, PI, software, University, and ecosystem reach; this is a maintenance-coverage count, not a problem-importance or opportunity signal.
 - `discover-software --problem` now exposes only direct sourced software `supports` → problem paths, allowing problem-to-tool discovery without indirect inference or ranking.
 - `discover-ecosystems --problem` now exposes only explicit ecosystem `includes` → software `supports` → problem paths, allowing related-ecosystem discovery without dominance or completeness claims.
 - `discover-universities --problem` now exposes only direct-host University → Group `develops` → Software `supports` → Problem paths, allowing environment discovery without claiming a University works on, owns, or endorses the problem.
