@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48 -->
+<!-- input-fingerprint: dcf3c7c218b206e8ea24edd6a6e33673cbf358d584c1615c8b8ef989a39d8068 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48`
+**Input fingerprint:** `dcf3c7c218b206e8ea24edd6a6e33673cbf358d584c1615c8b8ef989a39d8068`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -161,6 +161,13 @@
 | [NOMAD: A distributed web-based platform for managing materials science research data](../../entities/publications/nomad-joss-2023.md) | `PUB-NOMAD-JOSS-2023` | publication | high | 2026-07-12 | — |
 | [FAIRmat](../../entities/ecosystems/fairmat.md) | `ECO-FAIRMAT` | research-ecosystem | high | 2026-07-12 | — |
 | [NOMAD](../../entities/research-software/nomad.md) | `SW-NOMAD` | research-software | high | 2026-07-12 | — |
+
+## [Phonopy](../../entities/research-software/phonopy.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Phonopy Ecosystem](../../entities/ecosystems/phonopy.md) | `ECO-PHONOPY` | research-ecosystem | high | 2026-07-13 | — |
+| [Phonopy](../../entities/research-software/phonopy.md) | `SW-PHONOPY` | research-software | high | 2026-07-13 | — |
 
 ## [pymatgen](../../entities/research-software/pymatgen.md)
 

@@ -60,6 +60,8 @@ The JDFTx cluster adds [JDFTx](research-software/jdftx.md) and the [JDFTx Ecosys
 
 The Qbox cluster adds [Qbox](research-software/qbox.md) and the [Qbox Ecosystem](ecosystems/qbox.md), while reusing controlled C++, Computational Materials Science, and DFT/Electronic Structure records. It makes no contributor, dependency, institution, or complete-project-community claim.
 
+The Phonopy cluster adds [Phonopy](research-software/phonopy.md) and the [Phonopy Ecosystem](ecosystems/phonopy.md), while reusing controlled Python and Computational Materials Science records. It makes no contributor, dependency, institution, or complete-project-community claim.
+
 The Density-Functional Theory and Electronic Structure area extension adds the controlled [area record](research-areas/density-functional-theory-and-electronic-structure.md) and directly classifies existing ABINIT, CP2K, Quantum ESPRESSO, CAMD, Curtarolo Group, Persson Group, SOLgroup, and Wolverton Research Group records. Their separately owned ecosystems and direct-host Universities become discoverable through existing evidence-bearing paths.
 
 The Temple–Kohlmeyer–LAMMPS extension adds [Axel Kohlmeyer](principal-investigators/axel-kohlmeyer.md) and [Temple University](universities/temple-university.md), while reusing the LAMMPS, United States, and Computational Materials Science records.

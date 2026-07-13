@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: ad8abcb55aad40044e89402d542a5045cb5b68df58cbb756b2a7695ca867ee0e -->
+<!-- input-fingerprint: edb19c60b3b2844a865a577e6c6eabf8b6beb7f35a0269ed583ef411dedda1cb -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `ad8abcb55aad40044e89402d542a5045cb5b68df58cbb756b2a7695ca867ee0e`
+**Input fingerprint:** `edb19c60b3b2844a865a577e6c6eabf8b6beb7f35a0269ed583ef411dedda1cb`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -195,6 +195,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [FLEUR Ecosystem](../../entities/ecosystems/fleur.md) (`ECO-FLEUR`) | includes `SW-FLEUR` (sources: SRC-FLEUR-HOME, SRC-FLEUR-REPOSITORY); `SW-FLEUR` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-FLEUR-HOME, SRC-FLEUR-REPOSITORY, SRC-FLEUR-INSTALLATION) | high | 2/2 documented criteria |
 | [JDFTx Ecosystem](../../entities/ecosystems/jdftx.md) (`ECO-JDFTX`) | includes `SW-JDFTX` (sources: SRC-JDFTX-PROJECT); `SW-JDFTX` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-JDFTX-PROJECT) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 documented criteria |
+| [Phonopy Ecosystem](../../entities/ecosystems/phonopy.md) (`ECO-PHONOPY`) | includes `SW-PHONOPY` (sources: SRC-PHONOPY-DOCUMENTATION, SRC-PHONOPY-REPOSITORY); `SW-PHONOPY` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PHONOPY-DOCUMENTATION, SRC-PHONOPY-REPOSITORY) | high | 2/2 documented criteria |
 | [Qbox Ecosystem](../../entities/ecosystems/qbox.md) (`ECO-QBOX`) | includes `SW-QBOX` (sources: SRC-QBOX-REPOSITORY); `SW-QBOX` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-QBOX-REPOSITORY) | high | 2/2 documented criteria |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) (`ECO-SIESTA`) | includes `SW-SIESTA` (sources: SRC-SIESTA-REPOSITORY); `SW-SIESTA` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SIESTA-REPOSITORY, SRC-SIESTA-REFERENCE-MANUAL, SRC-SIESTA-INSTALLATION) | high | 2/2 documented criteria |
 | [sisl Ecosystem](../../entities/ecosystems/sisl.md) (`ECO-SISL`) | includes `SW-SISL` (sources: SRC-SISL-REPOSITORY); `SW-SISL` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SISL-REPOSITORY) | high | 2/2 documented criteria |

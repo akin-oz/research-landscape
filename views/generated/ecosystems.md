@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48 -->
+<!-- input-fingerprint: dcf3c7c218b206e8ea24edd6a6e33673cbf358d584c1615c8b8ef989a39d8068 -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48`
+**Input fingerprint:** `dcf3c7c218b206e8ea24edd6a6e33673cbf358d584c1615c8b8ef989a39d8068`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT Ecosystem](../../entities/ecosystems/abinit.md)
@@ -133,6 +133,12 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) | `ECO-OPENKIM` | research-ecosystem | high | 2026-07-13 | — |
+
+## [Phonopy Ecosystem](../../entities/ecosystems/phonopy.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Phonopy Ecosystem](../../entities/ecosystems/phonopy.md) | `ECO-PHONOPY` | research-ecosystem | high | 2026-07-13 | — |
 
 ## [Qbox Ecosystem](../../entities/ecosystems/qbox.md)
 

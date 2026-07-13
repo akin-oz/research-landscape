@@ -94,7 +94,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"software": 14, "groups": 6, "principal_investigators": 4, "universities": 4, "ecosystems": 12},
+            {"software": 15, "groups": 6, "principal_investigators": 4, "universities": 4, "ecosystems": 13},
             {key: coverage["PROGRAMMING-LANGUAGE-PYTHON"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -535,6 +535,16 @@ class RepositoryHealthTests(unittest.TestCase):
         software, ecosystem = records["SW-QBOX"], records["ECO-QBOX"]
         self.assertEqual(("yes", "GPL-2.0-or-later"), (software.metadata["open_source"], software.metadata["license"]))
         candidates = rl.discovery_software_candidates(records, "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE", "PROGRAMMING-LANGUAGE-CPP", ecosystem.id, "yes")
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
+    def test_phonopy_slice_exposes_computational_materials_python_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software, ecosystem = records["SW-PHONOPY"], records["ECO-PHONOPY"]
+        self.assertEqual(("yes", "BSD-3-Clause"), (software.metadata["open_source"], software.metadata["license"]))
+        self.assertEqual(["PROGRAMMING-LANGUAGE-PYTHON"], software.metadata["programming_language_ids"])
+        candidates = rl.discovery_software_candidates(records, "AREA-COMPUTATIONAL-MATERIALS-SCIENCE", "PROGRAMMING-LANGUAGE-PYTHON", ecosystem.id, "yes")
         self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
         self.assertEqual(4, candidates[0]["criteria"])
 
