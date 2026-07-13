@@ -2014,15 +2014,31 @@ def discover_areas(
     return 0
 
 
+def ecosystem_problem_support_signals(
+    ecosystem: Record, problem_id: str, records: dict[str, Record],
+) -> list[dict[str, Any]]:
+    """Return only documented ecosystem-inclusion-to-problem-support paths."""
+    signals = []
+    for inclusion in matching_assertions(ecosystem, "includes"):
+        software = records.get(inclusion.get("target_id"))
+        if software is None or software.entity_type != "research-software":
+            continue
+        for support in matching_assertions(software, "supports", {problem_id}):
+            signals.append(signal(f"`{ecosystem.id}` includes `{software.id}`", inclusion, ecosystem))
+            signals.append(signal(f"`{software.id}` supports this problem", support, software))
+    return deduplicate_signals(signals)
+
+
 def render_problem_discovery(
     records: dict[str, Record], output_path: Path, area_id: str | None = None,
-    software_id: str | None = None,
+    software_id: str | None = None, ecosystem_id: str | None = None,
 ) -> str:
     """Render reviewed computational challenges and their direct support paths.
 
     An area filter matches only a problem's own source-backed controlled-area
     classification. A software filter requires that software record's direct,
-    sourced ``supports`` assertion. Neither filter infers problem scope from
+    sourced ``supports`` assertion. An ecosystem filter requires a documented
+    ``includes → supports`` path. Neither filter infers problem scope from
     people, groups, ecosystems, or non-support software adjacency.
     """
     problems = sorted(
@@ -2034,11 +2050,15 @@ def render_problem_discovery(
                 software_id is None
                 or bool(matching_assertions(records[software_id], "supports", {record.id}))
             )
+            and (
+                ecosystem_id is None
+                or bool(ecosystem_problem_support_signals(records[ecosystem_id], record.id, records))
+            )
         ),
         key=lambda record: (record.metadata["name"].casefold(), record.id),
     )
     lines = ["# Research-problem discovery", "", "**Status:** deterministic evidence-discovery result, not a problem-importance ranking.", ""]
-    filters = [("research area", area_id), ("research software", software_id)]
+    filters = [("research area", area_id), ("research software", software_id), ("research ecosystem", ecosystem_id)]
     filters = [(name, value) for name, value in filters if value]
     if filters:
         lines.extend(["**AND filters:** " + "; ".join(f"{name} `{value}`" for name, value in filters) + ".", ""])
@@ -2057,9 +2077,13 @@ def render_problem_discovery(
             ]
             if software_id else []
         )
+        ecosystem_signals = (
+            ecosystem_problem_support_signals(records[ecosystem_id], problem.id, records)
+            if ecosystem_id else []
+        )
         rendered_matching = "; ".join(
             f"{item['label']} (sources: {item['sources']})"
-            for item in deduplicate_signals(area_signals + software_signals)
+            for item in deduplicate_signals(area_signals + software_signals + ecosystem_signals)
         ) or "—"
         support = []
         for software in records.values():
@@ -2069,13 +2093,13 @@ def render_problem_discovery(
         lines.append(f"| {canonical_link(problem, output_path)} | `{problem.id}` | {rendered_matching} | {rendered} | {problem.metadata['confidence']} |")
     if not problems:
         lines.append("| — | — | — | No reviewed canonical research problem matches the requested evidence criterion. | unavailable |")
-    lines.extend(["", "## Boundary", "", "Results list bounded computational challenges and direct evidence-bearing software support only. An area filter reads only the problem record's own source-backed controlled-area classification; a software filter requires that software record's direct sourced `supports` assertion. They do not rank importance, novelty, tractability, funding, methods, advisors, groups, or applicant fit.", ""])
+    lines.extend(["", "## Boundary", "", "Results list bounded computational challenges and direct evidence-bearing software support only. An area filter reads only the problem record's own source-backed controlled-area classification; a software filter requires that software record's direct sourced `supports` assertion; an ecosystem filter requires a documented ecosystem `includes` → software `supports` → problem path. They do not rank importance, novelty, tractability, funding, methods, advisors, groups, or applicant fit.", ""])
     return "\n".join(lines)
 
 
 def discover_problems(root: Path, check: bool, query_id: str | None, list_queries: bool, area_id: str | None, country_id: str | None, software_id: str | None, language_id: str | None, ecosystem_id: str | None, open_source: str | None, as_of: str | None) -> int:
-    if any((check, query_id, list_queries, country_id, language_id, ecosystem_id, open_source, as_of)):
-        print("ERROR: discover-problems accepts only --area and --software")
+    if any((check, query_id, list_queries, country_id, language_id, open_source, as_of)):
+        print("ERROR: discover-problems accepts only --area, --software, and --ecosystem")
         return 2
     records, results = validate(root)
     if results.errors:
@@ -2091,7 +2115,12 @@ def discover_problems(root: Path, check: bool, query_id: str | None, list_querie
         if target is None or target.entity_type != "research-software":
             print(f"ERROR: --software must reference a canonical research-software ID, got {software_id!r}")
             return 2
-    print(render_problem_discovery(records, root / "reports/generated/evidence-recommendations.md", area_id, software_id))
+    if ecosystem_id:
+        target = records.get(ecosystem_id)
+        if target is None or target.entity_type != "research-ecosystem":
+            print(f"ERROR: --ecosystem must reference a canonical research-ecosystem ID, got {ecosystem_id!r}")
+            return 2
+    print(render_problem_discovery(records, root / "reports/generated/evidence-recommendations.md", area_id, software_id, ecosystem_id))
     return 0
 
 
@@ -2310,8 +2339,8 @@ def main() -> int:
     parser.add_argument("--as-of", help="ISO date for a reproducible freshness audit (defaults to today)")
     args = parser.parse_args()
     root = args.root.resolve()
-    if args.ecosystem and args.command not in {"discover-groups", "discover-pis", "discover-universities", "discover-software"}:
-        print("ERROR: --ecosystem is accepted only by discover-groups, discover-pis, discover-universities, and discover-software")
+    if args.ecosystem and args.command not in {"discover-problems", "discover-groups", "discover-pis", "discover-universities", "discover-software"}:
+        print("ERROR: --ecosystem is accepted only by discover-problems, discover-groups, discover-pis, discover-universities, and discover-software")
         return 2
     if args.open_source and args.command != "discover-software":
         print("ERROR: --open-source is accepted only by discover-software")

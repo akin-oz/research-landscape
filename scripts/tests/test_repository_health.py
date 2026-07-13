@@ -960,6 +960,20 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("**AND filters:** research area `AREA-MACHINE-LEARNED-POTENTIALS`; research software `SW-MACE`.", combined)
         self.assertIn("`PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING`", combined)
 
+    def test_problem_discovery_ecosystem_filter_requires_inclusion_and_support_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_problem_discovery(
+            records, ROOT / "reports/generated/evidence-recommendations.md",
+            ecosystem_id="ECO-PHONO3PY",
+        )
+        self.assertIn("**AND filters:** research ecosystem `ECO-PHONO3PY`.", rendered)
+        self.assertIn("`PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION`", rendered)
+        self.assertIn("`ECO-PHONO3PY` includes `SW-PHONO3PY` (sources: SRC-PHONO3PY-DOCUMENTATION, SRC-PHONO3PY-REPOSITORY)", rendered)
+        self.assertIn("`SW-PHONO3PY` supports this problem (sources: SRC-PHONO3PY-DOCUMENTATION)", rendered)
+        self.assertNotIn("PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION", rendered)
+        self.assertIn("ecosystem `includes` → software `supports` → problem path", rendered)
+
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

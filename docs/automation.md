@@ -27,6 +27,7 @@ python3 scripts/research_landscape.py discover-problems
 python3 scripts/research_landscape.py discover-problems --area AREA-MACHINE-LEARNED-POTENTIALS
 python3 scripts/research_landscape.py discover-problems --software SW-PHONO3PY
 python3 scripts/research_landscape.py discover-problems --area AREA-MACHINE-LEARNED-POTENTIALS --software SW-MACE
+python3 scripts/research_landscape.py discover-problems --ecosystem ECO-PHONO3PY
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-CPP
@@ -95,11 +96,13 @@ problems, measure opportunity or novelty, or infer a user's fit.
 
 `discover-problems` is an interactive, non-generated catalog of reviewed,
 evidence-bounded computational challenges and their direct software `supports`
-paths. It accepts optional canonical `--area` and `--software` IDs, ANDed when
-both are supplied. `--area` matches only the problem record's own source-backed
-controlled-area classification; `--software` requires that software record's
-direct sourced `supports` assertion. Both matching evidence paths are exposed.
-It is not a problem-importance, novelty, tractability, funding, or fit ranking.
+paths. It accepts optional canonical `--area`, `--software`, and `--ecosystem`
+IDs, ANDed when more than one is supplied. `--area` matches only the problem
+record's own source-backed controlled-area classification; `--software` requires
+that software record's direct sourced `supports` assertion; `--ecosystem`
+requires a documented `includes → supports` path. Every matching evidence path
+is exposed. It is not a problem-importance, novelty, tractability, funding, or
+fit ranking.
 
 `discover-groups` is an interactive, non-generated AND filter over reviewed
 Research Groups. It accepts one or more canonical `--area`, `--country`,

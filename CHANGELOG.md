@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- `discover-problems --ecosystem` now narrows the reviewed problem catalog through an explicit ecosystem `includes` → software `supports` → problem path, exposing both sources without treating ecosystem adjacency as a problem relationship or ranking results.
 - `discover-problems --software` now narrows the reviewed problem catalog through a software record's direct sourced `supports` assertion; it can be ANDed with `--area` without inferring a problem relationship from software adjacency or ranking results.
 - `discover-problems --area` now narrows the reviewed problem catalog through each problem's own sourced controlled-area classification and shows that matching evidence, without inferring problem scope from adjacent graph entities or ranking the results.
 - A fourth evidence-bounded Research Problem record for Density-Functional Electronic-Structure Calculation, with independent direct support paths from ABINIT, Quantum ESPRESSO, GPAW, and SIESTA; the discovery path does not compare functionals, numerical methods, software, or problem importance.
