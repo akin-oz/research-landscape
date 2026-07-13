@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792 -->
+<!-- input-fingerprint: 70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792`
+**Input fingerprint:** `70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -65,6 +65,14 @@
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) | `ECO-FAIR-CHEM` | research-ecosystem | high | 2026-07-13 | — |
 | [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md) | `ECO-OPEN-CATALYST-PROJECT` | research-ecosystem | high | 2026-07-13 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
+
+## [GPAW](../../entities/research-software/gpaw.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [GPAW Ecosystem](../../entities/ecosystems/gpaw.md) | `ECO-GPAW` | research-ecosystem | high | 2026-07-13 | — |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
+| [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 
 ## [KIM API](../../entities/research-software/kim-api.md)
 

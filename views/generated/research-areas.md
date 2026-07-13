@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792 -->
+<!-- input-fingerprint: 70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792`
+**Input fingerprint:** `70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -49,6 +49,7 @@
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
 | [CP2K](../../entities/research-software/cp2k.md) | `SW-CP2K` | research-software | high | 2026-07-13 | — |
+| [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [KIM API](../../entities/research-software/kim-api.md) | `SW-KIM-API` | research-software | high | 2026-07-13 | — |
 | [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
@@ -64,6 +65,7 @@
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [CP2K](../../entities/research-software/cp2k.md) | `SW-CP2K` | research-software | high | 2026-07-13 | — |
+| [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
 
 ## [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md)

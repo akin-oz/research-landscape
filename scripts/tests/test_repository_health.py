@@ -66,7 +66,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 5, "principal_investigators": 0, "software": 3, "universities": 4, "ecosystems": 6},
+            {"groups": 5, "principal_investigators": 0, "software": 4, "universities": 4, "ecosystems": 7},
             {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -86,7 +86,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"software": 10, "groups": 6, "principal_investigators": 4, "universities": 4, "ecosystems": 8},
+            {"software": 11, "groups": 6, "principal_investigators": 4, "universities": 4, "ecosystems": 9},
             {key: coverage["PROGRAMMING-LANGUAGE-PYTHON"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -190,7 +190,7 @@ class RepositoryHealthTests(unittest.TestCase):
             queries["ecosystems-density-functional-theory-and-electronic-structure"], records
         )
         self.assertEqual(
-            ["ECO-ABINIT", "ECO-ASE", "ECO-CP2K", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO"],
+            ["ECO-ABINIT", "ECO-ASE", "ECO-CP2K", "ECO-GPAW", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         software_candidates = rl.discovery_software_candidates(
@@ -201,7 +201,7 @@ class RepositoryHealthTests(unittest.TestCase):
             "yes",
         )
         self.assertEqual(
-            ["SW-ABINIT", "SW-CP2K", "SW-QUANTUM-ESPRESSO"],
+            ["SW-ABINIT", "SW-CP2K", "SW-GPAW", "SW-QUANTUM-ESPRESSO"],
             [candidate["record"].id for candidate in software_candidates],
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in software_candidates))
@@ -383,6 +383,28 @@ class RepositoryHealthTests(unittest.TestCase):
             records,
             "AREA-COMPUTATIONAL-MATERIALS-SCIENCE",
             "PROGRAMMING-LANGUAGE-FORTRAN",
+            ecosystem.id,
+            "yes",
+        )
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
+    def test_gpaw_slice_preserves_distinct_ecosystem_and_camd_development_paths(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software = records["SW-GPAW"]
+        ecosystem = records["ECO-GPAW"]
+        camd = records["RG-DTU-CAMD"]
+        self.assertEqual("yes", software.metadata["open_source"])
+        self.assertEqual("GPL-3.0-or-later", software.metadata["license"])
+        self.assertEqual(["PROGRAMMING-LANGUAGE-PYTHON"], software.metadata["programming_language_ids"])
+        self.assertEqual(["SW-GPAW"], [assertion["target_id"] for assertion in rl.matching_assertions(ecosystem, "includes")])
+        self.assertEqual(["RG-DTU-CAMD"], [assertion["target_id"] for assertion in rl.matching_assertions(ecosystem, "connects")])
+        self.assertEqual(["SW-ASE", "SW-GPAW"], [assertion["target_id"] for assertion in rl.matching_assertions(camd, "develops")])
+        candidates = rl.discovery_software_candidates(
+            records,
+            "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE",
+            "PROGRAMMING-LANGUAGE-PYTHON",
             ecosystem.id,
             "yes",
         )

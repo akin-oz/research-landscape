@@ -20,6 +20,7 @@ research_area_ids:
   - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 software_ids:
   - SW-ASE
+  - SW-GPAW
 website: https://physics.dtu.dk/research/sections/camd
 relationship_assertions:
   - predicate: belongs_to
@@ -44,6 +45,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: CAMD publicly identifies ASE development as group work; this does not assert exclusive development or an individual maintainer roster.
+  - predicate: develops
+    target_id: SW-GPAW
+    source_ids: [SRC-DTU-CAMD-RESEARCH]
+    confidence: high
+    evidence_window: 2026-07
+    notes: CAMD publicly identifies GPAW development as group work; this does not assert exclusive development or an individual maintainer roster.
 ---
 
 # Computational Atomic-scale Materials Design (CAMD)
