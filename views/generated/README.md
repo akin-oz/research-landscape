@@ -1,5 +1,5 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c -->
+<!-- input-fingerprint: e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7 -->
 # Generated views
 
 These are reproducible public navigation projections from `entities/` and `views/definitions.yaml`. They contain concise metadata and canonical links only. Private views intentionally produce no output.

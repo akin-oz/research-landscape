@@ -5,8 +5,8 @@ id: SW-AFLOW
 name: AFLOW
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-AFLOW-DOCUMENTATION
@@ -18,6 +18,8 @@ repository_url: https://github.com/aflow-org/aflow
 website: https://aflow.org/
 license: GPL-3.0
 open_source: "yes"
+research_area_ids:
+  - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
 programming_language_ids:
   - PROGRAMMING-LANGUAGE-CPP
 relationship_assertions:
@@ -27,6 +29,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2023-01
     notes: The reviewed technical publication identifies aflow++ as a C++ framework. This records the framework implementation language, not a group-wide language policy or individual skill.
+  - predicate: supports
+    target_id: PROBLEM-HIGH-THROUGHPUT-MATERIALS-SCREENING
+    source_ids: [SRC-AFLOW-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: AFLOW documentation describes high-throughput materials discovery using DFT and data informatics as a screening strategy; this assertion is limited to direct support for the named screening challenge.
 ---
 
 # AFLOW framework
@@ -46,7 +54,7 @@ acceptance guarantees.
 
 | Source ID | Evidence |
 | --- | --- |
-| `SRC-AFLOW-DOCUMENTATION` | [AFLOW documentation](https://aflow.org/aflow-documentation/index.html) describes the Automatic-Flow framework as a collection of software tools for high-throughput materials discovery using DFT and data informatics, and links its source code. Accessed 2026-07-12. |
+| `SRC-AFLOW-DOCUMENTATION` | [AFLOW documentation](https://aflow.org/aflow-documentation/index.html) describes the Automatic-Flow framework as a collection of software tools for high-throughput materials discovery using DFT and data informatics, and links its source code. Accessed 2026-07-13. |
 | `SRC-AFLOW-REPOSITORY` | [aflow-org/aflow](https://github.com/aflow-org/aflow) is the source repository linked by the AFLOW documentation and states that the project is licensed under GNU GPL v3.0. Accessed 2026-07-12. |
 | `SRC-AFLOW-INSTALLATION` | [AFLOW: install and documentation](https://aflow.org/install-aflow/) documents source installation, Doxygen-based code documentation, and the project's recommended AFLOW literature including the 2023 `aflow++` paper. Accessed 2026-07-12. |
 | `SRC-AFLOW-API` | [AFLOW documentation: AFLUX Search API](https://aflow.org/documentation/) documents property-filtered queries and JSON outputs for searching and downloading AFLOW database results. Accessed 2026-07-12. |

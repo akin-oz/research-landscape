@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c -->
+<!-- input-fingerprint: e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7 -->
 # Principal Investigators view
 
 **Definition:** `principal-investigators`
-**Input fingerprint:** `71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c`
+**Input fingerprint:** `e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |

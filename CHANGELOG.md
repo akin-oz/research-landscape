@@ -6,6 +6,10 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A seventh evidence-bounded Research Problem record for High-Throughput
+  Materials Screening, with a direct AFLOW support path and connected C++ and
+  ecosystem discovery; it does not compare screening strategies, DFT setups,
+  data sources, workflows, software, or problem importance.
 - A sixth evidence-bounded Research Problem record for Atomistic Molecular
   Dynamics Simulation, with a direct LAMMPS support path and connected C++,
   ecosystem, and PI discovery; it does not compare potentials, simulations,

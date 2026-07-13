@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c -->
+<!-- input-fingerprint: e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c`
+**Input fingerprint:** `e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -20,7 +20,7 @@
 | [aflow++: A C++ framework for autonomous materials design](../../entities/publications/aflow-plus-plus-2023.md) | `PUB-AFLOW-PLUS-PLUS-2023` | publication | high | 2026-07-12 | — |
 | [AFLOW](../../entities/ecosystems/aflow.md) | `ECO-AFLOW` | research-ecosystem | high | 2026-07-12 | — |
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
-| [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-12 | — |
+| [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-13 | — |
 
 ## [aiida-core](../../entities/research-software/aiida-core.md)
 

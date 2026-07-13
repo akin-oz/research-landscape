@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c -->
+<!-- input-fingerprint: e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7 -->
 # Research Problems view
 
 **Definition:** `research-problems`
-**Input fingerprint:** `71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c`
+**Input fingerprint:** `e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Atomistic Molecular Dynamics Simulation](../../entities/research-problems/atomistic-molecular-dynamics-simulation.md)
@@ -29,6 +29,13 @@
 | [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |
+
+## [High-Throughput Materials Screening](../../entities/research-problems/high-throughput-materials-screening.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [High-Throughput Materials Screening](../../entities/research-problems/high-throughput-materials-screening.md) | `PROBLEM-HIGH-THROUGHPUT-MATERIALS-SCREENING` | research-problem | high | 2026-07-13 | — |
+| [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-13 | — |
 
 ## [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md)
 

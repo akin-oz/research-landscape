@@ -949,6 +949,26 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`ECO-LAMMPS`", ecosystem)
         self.assertIn("`SW-LAMMPS` supports this problem", ecosystem)
 
+    def test_high_throughput_screening_problem_has_a_bounded_aflow_support_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        problem_id = "PROBLEM-HIGH-THROUGHPUT-MATERIALS-SCREENING"
+        support = rl.matching_assertions(records["SW-AFLOW"], "supports", {problem_id})
+        self.assertEqual(1, len(support))
+        self.assertEqual(["SRC-AFLOW-DOCUMENTATION"], support[0]["source_ids"])
+
+        rendered = rl.render_problem_discovery(
+            records, ROOT / "reports/generated/evidence-recommendations.md", software_id="SW-AFLOW",
+        )
+        self.assertIn(f"`{problem_id}`", rendered)
+        self.assertIn("`SW-AFLOW` supports this problem", rendered)
+
+        ecosystem = rl.render_ecosystem_discovery(
+            records, None, None, ROOT / "reports/generated/evidence-recommendations.md", problem_id,
+        )
+        self.assertIn("`ECO-AFLOW`", ecosystem)
+        self.assertIn("`SW-AFLOW` supports this problem", ecosystem)
+
     def test_problem_discovery_area_filter_uses_only_problem_area_evidence(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

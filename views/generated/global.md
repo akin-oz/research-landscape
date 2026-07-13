@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c -->
+<!-- input-fingerprint: e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c`
+**Input fingerprint:** `e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -69,11 +69,12 @@
 | [Atomistic Molecular Dynamics Simulation](../../entities/research-problems/atomistic-molecular-dynamics-simulation.md) | `PROBLEM-ATOMISTIC-MOLECULAR-DYNAMICS-SIMULATION` | research-problem | high | 2026-07-13 | — |
 | [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md) | `PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION` | research-problem | high | 2026-07-13 | — |
 | [Density-Functional Electronic-Structure Calculation](../../entities/research-problems/density-functional-electronic-structure-calculation.md) | `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION` | research-problem | high | 2026-07-13 | — |
+| [High-Throughput Materials Screening](../../entities/research-problems/high-throughput-materials-screening.md) | `PROBLEM-HIGH-THROUGHPUT-MATERIALS-SCREENING` | research-problem | high | 2026-07-13 | — |
 | [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md) | `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION` | research-problem | high | 2026-07-13 | — |
 | [Machine-Learned Interatomic Potential Modeling](../../entities/research-problems/machine-learned-interatomic-potential-modeling.md) | `PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING` | research-problem | high | 2026-07-13 | — |
 | [Materials Property Prediction](../../entities/research-problems/materials-property-prediction.md) | `PROBLEM-MATERIALS-PROPERTY-PREDICTION` | research-problem | high | 2026-07-13 | — |
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
-| [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-12 | — |
+| [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-13 | — |
 | [aiida-core](../../entities/research-software/aiida-core.md) | `SW-AIIDA-CORE` | research-software | high | 2026-07-12 | — |
 | [Atomic Simulation Environment (ASE)](../../entities/research-software/ase.md) | `SW-ASE` | research-software | high | 2026-07-12 | — |
 | [BigDFT](../../entities/research-software/bigdft.md) | `SW-BIGDFT` | research-software | high | 2026-07-13 | — |
