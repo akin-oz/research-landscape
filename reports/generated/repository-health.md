@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 252b512059502f06f457f6a7569eb9acb2bb6d99b1825101ad336aff1d5b0836 -->
+<!-- input-fingerprint: d849360dcba59081be9fbd5971d1f7ab94c2665cce4bf01d42cc36f7c2f74f0a -->
 # Repository health report
 
-**Input fingerprint:** `252b512059502f06f457f6a7569eb9acb2bb6d99b1825101ad336aff1d5b0836`
+**Input fingerprint:** `d849360dcba59081be9fbd5971d1f7ab94c2665cce4bf01d42cc36f7c2f74f0a`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **143**
-- Typed relationship assertions: **241**
+- Canonical v2 entities: **144**
+- Typed relationship assertions: **243**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -28,6 +28,7 @@
 | research-area | 8 |
 | research-ecosystem | 29 |
 | research-group | 13 |
+| research-problem | 1 |
 | research-software | 30 |
 | university | 11 |
 
@@ -35,25 +36,25 @@
 
 | Confidence | Count |
 | --- | ---: |
-| high | 143 |
+| high | 144 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **143**
+- Canonical v2 records in approved entity directories: **144**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 143/143 |
-| Reviewed/published records with last-review dates | 143/143 |
-| Typed relationships with source IDs | 241/241 |
+| Reviewed/published records with source IDs | 144/144 |
+| Reviewed/published records with last-review dates | 144/144 |
+| Typed relationships with source IDs | 243/243 |
 | Reviewed groups with exactly one direct-host field | 13/13 |
-| Entities with an inbound or outbound graph connection | 143/143 |
+| Entities with an inbound or outbound graph connection | 144/144 |
 | Broken local Markdown links | 0 |
-| Canonical view definitions (public/private) | 13 (10/3) |
-| Generated public views | 10/10 |
+| Canonical view definitions (public/private) | 14 (11/3) |
+| Generated public views | 11/11 |
 | Recommendation queries (available/unavailable) | 35 (30/5) |
 
 ## Research-area discovery coverage
@@ -87,7 +88,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 
 | Predicate | Count |
 | --- | ---: |
-| addresses | 1 |
+| addresses | 2 |
 | administers | 2 |
 | affiliated_with | 17 |
 | authored_by | 9 |
@@ -102,6 +103,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | involves | 1 |
 | leads | 12 |
 | located_in | 19 |
+| supports | 1 |
 | works_on | 50 |
 
 ## Findings

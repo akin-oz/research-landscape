@@ -1,17 +1,17 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
 <!-- input-fingerprint: d849360dcba59081be9fbd5971d1f7ab94c2665cce4bf01d42cc36f7c2f74f0a -->
-# Conferences view
+# Research Problems view
 
-**Definition:** `conferences`
+**Definition:** `research-problems`
 **Input fingerprint:** `d849360dcba59081be9fbd5971d1f7ab94c2665cce4bf01d42cc36f7c2f74f0a`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
-## [Eighth FAIRmat Users Meeting](../../entities/conferences/fairmat-users-meeting-2026.md)
+## [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md)
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
-| [Eighth FAIRmat Users Meeting](../../entities/conferences/fairmat-users-meeting-2026.md) | `CONF-FAIRMAT-USERS-MEETING-2026` | conference | high | 2026-07-12 | COUNTRY-DE |
-| [FAIRmat](../../entities/ecosystems/fairmat.md) | `ECO-FAIRMAT` | research-ecosystem | high | 2026-07-12 | — |
+| [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md) | `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION` | research-problem | high | 2026-07-13 | — |
+| [Phono3py](../../entities/research-software/phono3py.md) | `SW-PHONO3PY` | research-software | high | 2026-07-13 | — |
 
 ## Boundary
 

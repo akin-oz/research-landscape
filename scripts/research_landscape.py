@@ -26,7 +26,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 ENTITY_TYPES = {
     "principal-investigator", "research-group", "university", "department",
     "country", "research-ecosystem", "research-software", "research-area",
-    "conference", "funding-program", "project", "publication", "organization", "programming-language",
+    "conference", "funding-program", "project", "publication", "organization", "programming-language", "research-problem",
 }
 
 ENTITY_DIRECTORIES = {
@@ -44,6 +44,7 @@ ENTITY_DIRECTORIES = {
     "publication": "publications",
     "organization": "organizations",
     "programming-language": "programming-languages",
+    "research-problem": "research-problems",
 }
 
 RELATION_TARGETS = {
@@ -81,6 +82,8 @@ RELATION_TARGETS = {
     ("research-area", "broader_than"): {"research-area"},
     ("research-software", "used_by"): {"research-group"},
     ("research-software", "implemented_in"): {"programming-language"},
+    ("research-software", "supports"): {"research-problem"},
+    ("research-problem", "addresses"): {"research-area"},
 }
 
 REFERENCE_TYPES = {
@@ -98,13 +101,14 @@ REFERENCE_TYPES = {
     "participant_ids": {"principal-investigator", "research-group", "university", "organization"},
     "affiliation_ids": {"university", "department", "organization"},
     "programming_language_ids": {"programming-language"},
+    "research_problem_ids": {"research-problem"},
 }
 
 PUBLIC_VIEW_FILES = {
     "global": "global.md", "countries": "countries.md", "universities": "universities.md",
     "research-areas": "research-areas.md", "research-software": "research-software.md",
     "ecosystems": "ecosystems.md", "principal-investigators": "principal-investigators.md",
-    "research-groups": "research-groups.md", "conferences": "conferences.md", "funding": "funding.md",
+    "research-groups": "research-groups.md", "research-problems": "research-problems.md", "conferences": "conferences.md", "funding": "funding.md",
 }
 
 RECOMMENDATION_KINDS = {
@@ -572,8 +576,8 @@ def render_view(view: dict[str, Any], records: dict[str, Record], output_path: P
             lines.extend([f"## {canonical_link(area, output_path)}", ""])
             lines.extend(rows(members, output_path, records))
             lines.append("")
-    elif view_id in {"universities", "research-software", "ecosystems", "conferences", "funding"}:
-        primary_type = {"universities": "university", "research-software": "research-software", "ecosystems": "research-ecosystem", "conferences": "conference", "funding": "funding-program"}[view_id]
+    elif view_id in {"universities", "research-software", "ecosystems", "research-problems", "conferences", "funding"}:
+        primary_type = {"universities": "university", "research-software": "research-software", "ecosystems": "research-ecosystem", "research-problems": "research-problem", "conferences": "conference", "funding": "funding-program"}[view_id]
         for primary in sorted((r for r in selected if r.entity_type == primary_type), key=lambda r: r.metadata["name"].casefold()):
             members = [primary, *related_to(primary.id, records)]
             unique = {record.id: record for record in members if eligible(record)}

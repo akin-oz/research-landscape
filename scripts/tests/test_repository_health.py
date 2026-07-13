@@ -26,7 +26,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(
             {
                 "global", "countries", "universities", "research-areas", "research-software",
-                "ecosystems", "principal-investigators", "research-groups", "conferences", "funding",
+                "ecosystems", "principal-investigators", "research-groups", "research-problems", "conferences", "funding",
                 "my-shortlist", "current-focus", "waiting-list",
             },
             ids,

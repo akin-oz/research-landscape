@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 252b512059502f06f457f6a7569eb9acb2bb6d99b1825101ad336aff1d5b0836 -->
+<!-- input-fingerprint: d849360dcba59081be9fbd5971d1f7ab94c2665cce4bf01d42cc36f7c2f74f0a -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `252b512059502f06f457f6a7569eb9acb2bb6d99b1825101ad336aff1d5b0836`
+**Input fingerprint:** `d849360dcba59081be9fbd5971d1f7ab94c2665cce4bf01d42cc36f7c2f74f0a`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -66,6 +66,7 @@
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) | `RG-RIKEN-POLYMEROMICS` | research-group | high | 2026-07-12 | COUNTRY-JP |
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-13 | COUNTRY-DE |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
+| [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md) | `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION` | research-problem | high | 2026-07-13 | — |
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-12 | — |
 | [aiida-core](../../entities/research-software/aiida-core.md) | `SW-AIIDA-CORE` | research-software | high | 2026-07-12 | — |

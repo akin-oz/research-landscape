@@ -16,7 +16,7 @@ defaults:
 views:
   - view_id: global
     visibility: public
-    scope: [principal-investigator, research-group, university, research-software, research-ecosystem]
+    scope: [principal-investigator, research-group, university, research-software, research-ecosystem, research-problem]
     membership: {status_in: [reviewed, published]}
     facets: [entity_type, research_area_ids, software_ids, ecosystem_ids, resolved_country]
     ordering: [entity_type, name, id]
@@ -85,6 +85,15 @@ views:
     ordering: [name, id]
     relationship_traversals: [research-group.belongs_to.direct_host, research-group.develops.research-software, research-group.works_on.research-area]
     output_reason: "QG6 must enforce ADR 0006 before producing group membership."
+
+  - view_id: research-problems
+    visibility: public
+    scope: [research-problem, research-software, research-area]
+    membership: {status_in: [reviewed, published]}
+    facets: [problem_kind, research_area_ids, entity_type]
+    ordering: [name, id]
+    relationship_traversals: [research-problem.addresses.research-area, research-software.supports.research-problem]
+    output_reason: "QG6 must expose evidence-bounded computational challenges without ranking importance or fit."
 
   - view_id: conferences
     visibility: public

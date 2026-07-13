@@ -22,6 +22,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: The upstream repository describes Phono3py as mainly written in Python. This does not model every backend language, contributor skill, or group-wide language policy.
+  - predicate: supports
+    target_id: PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION
+    source_ids: [SRC-PHONO3PY-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: Phono3py documentation explicitly lists lattice thermal conductivity among calculated values. This does not compare methods, establish accuracy, or imply that every use addresses this problem.
 ---
 
 # Phono3py
