@@ -516,6 +516,19 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
         self.assertEqual(4, candidates[0]["criteria"])
 
+    def test_jdftx_slice_exposes_dft_cpp_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software, ecosystem = records["SW-JDFTX"], records["ECO-JDFTX"]
+        self.assertEqual(("yes", "GPL-3.0-or-later"), (software.metadata["open_source"], software.metadata["license"]))
+        self.assertEqual(["PROGRAMMING-LANGUAGE-CPP"], software.metadata["programming_language_ids"])
+        candidates = rl.discovery_software_candidates(
+            records, "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE",
+            "PROGRAMMING-LANGUAGE-CPP", ecosystem.id, "yes",
+        )
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
     def test_deepmd_kit_slice_exposes_ai_and_mlp_paths(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
