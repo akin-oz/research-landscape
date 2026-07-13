@@ -2045,9 +2045,9 @@ def catalog(
 def render_entity_inspection(record: Record, records: dict[str, Record], output_path: Path) -> str:
     """Render one reviewed record's local evidence and direct typed graph edges.
 
-    This intentionally exposes only canonical record-local sources and outgoing
-    assertions. It is an evidence inspection surface, not a recommendation,
-    profile, completeness claim, or inference over adjacent entities.
+    This intentionally exposes only canonical record-local sources and one-hop
+    typed assertions. It is an evidence inspection surface, not a
+    recommendation, profile, completeness claim, or transitive inference.
     """
     lines = [
         "# Canonical entity inspection", "",
@@ -2061,7 +2061,7 @@ def render_entity_inspection(record: Record, records: dict[str, Record], output_
         f"| Confidence | `{record.metadata.get('confidence', 'not documented')}` |",
         f"| Last review | `{record.metadata.get('last_review', 'not documented')}` |",
         f"| Record-level source IDs | {', '.join(f'`{source_id}`' for source_id in as_ids(record.metadata.get('source_ids', []))) or '—'} |",
-        "", "## Direct typed relationships", "",
+        "", "## Outgoing typed relationships", "",
         "| Predicate | Target | Source IDs | Confidence | Evidence window |",
         "| --- | --- | --- | --- | --- |",
     ]
@@ -2080,6 +2080,33 @@ def render_entity_inspection(record: Record, records: dict[str, Record], output_
         )
     if not assertions:
         lines.append("| — | No direct typed relationship assertions on this canonical record. | — | — | — |")
+    lines.extend([
+        "", "## Incoming typed relationships", "",
+        "| Source entity | Predicate | Source IDs | Confidence | Evidence window |",
+        "| --- | --- | --- | --- | --- |",
+    ])
+    incoming = sorted(
+        (
+            (owner, assertion)
+            for owner in records.values()
+            if eligible(owner)
+            for assertion in owner.metadata.get("relationship_assertions", []) or []
+            if assertion.get("target_id") == record.id
+        ),
+        key=lambda item: (
+            item[0].metadata.get("name", "").casefold(), item[0].id,
+            str(item[1].get("predicate", "")),
+        ),
+    )
+    for owner, assertion in incoming:
+        lines.append(
+            f"| {canonical_link(owner, output_path)} | `{assertion.get('predicate', 'not documented')}` | "
+            f"{', '.join(f'`{source_id}`' for source_id in as_ids(assertion.get('source_ids', []))) or '—'} | "
+            f"`{assertion.get('confidence', 'not documented')}` | "
+            f"`{assertion.get('evidence_window', 'not documented')}` |"
+        )
+    if not incoming:
+        lines.append("| — | No reviewed canonical record has a direct typed relationship to this entity. | — | — | — |")
     lines.extend(["", "## Record-local evidence register", "", "| Source ID | Evidence |", "| --- | --- |"])
     evidence = evidence_table_sources(record.body)
     for source_id, detail in evidence:
@@ -2088,7 +2115,7 @@ def render_entity_inspection(record: Record, records: dict[str, Record], output_
         lines.append("| — | No Evidence-table rows on this canonical record. |")
     lines.extend([
         "", "## Boundary", "",
-        "This output reports only the selected record's own reviewed metadata, direct typed relationships, and local Evidence-table entries. It does not infer incoming relationships, coverage beyond this record, current availability, performance, quality, mentorship, prominence, or applicant fit.", "",
+        "This output reports only the selected record's own reviewed metadata, local Evidence-table entries, and one-hop typed relationships. Incoming rows are limited to reviewed canonical source records. It does not traverse beyond those direct edges or infer coverage, current availability, performance, quality, mentorship, prominence, or applicant fit.", "",
     ])
     return "\n".join(lines)
 

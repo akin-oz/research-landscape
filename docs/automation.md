@@ -100,9 +100,10 @@ private preferences or ranking data.
 
 `inspect --entity CANONICAL-ID` is an interactive, non-generated evidence
 inspection command for one reviewed canonical record. It displays only that
-record's reviewed metadata, direct typed relationships and their source IDs,
-and its local Evidence-table register. It does not infer incoming graph paths,
-coverage, quality, availability, mentorship, prominence, or fit.
+record's reviewed metadata, outgoing and reviewed incoming one-hop typed
+relationships and their source IDs, and its local Evidence-table register. It
+does not traverse beyond those direct graph paths or infer coverage, quality,
+availability, mentorship, prominence, or fit.
 
 `discover-areas` is an interactive, non-generated topic catalog. It lists
 reviewed controlled Research Areas with their area-source IDs and direct,

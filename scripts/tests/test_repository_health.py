@@ -1150,11 +1150,15 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         self.assertIn("# Canonical entity inspection", rendered)
         self.assertIn("not a ranking, recommendation, or completeness claim", rendered)
+        self.assertIn("## Outgoing typed relationships", rendered)
+        self.assertIn("## Incoming typed relationships", rendered)
         self.assertIn("`implemented_in`", rendered)
         self.assertIn("`supports`", rendered)
+        self.assertIn("Gábor Csányi", rendered)
+        self.assertIn("`develops`", rendered)
         self.assertIn("SRC-MACE-DOCUMENTATION", rendered)
         self.assertIn("MACE documentation: Introduction", rendered)
-        self.assertIn("does not infer incoming relationships", rendered)
+        self.assertIn("does not traverse beyond those direct edges", rendered)
 
     def test_area_discovery_filters_on_a_problem_own_sourced_classification(self) -> None:
         records, results = rl.validate(ROOT)
