@@ -249,6 +249,26 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("source SRC-TEST missing from Evidence table", results.errors[0])
         self.assertEqual([], rl.evidence_table_source_ids(record.body))
 
+    def test_mentorship_process_observations_require_the_adr_contract(self) -> None:
+        record = rl.Record(
+            path=ROOT / "entities/research-groups/test.md",
+            metadata={
+                "id": "RG-TEST", "entity_type": "research-group", "source_ids": ["SRC-TEST"],
+                "relationship_assertions": [],
+                "mentorship_process_evidence": [{
+                    "category": "unbounded-category", "source_ids": [], "scope": "", "confidence": "unassessed",
+                }],
+            },
+            body="## Evidence\n\n| Source ID | Evidence |\n| --- | --- |\n| `SRC-TEST` | https://example.org. Accessed 2026-07-13. |\n",
+        )
+        results = rl.Results([], [])
+        rl.validate_graph(ROOT, {record.id: record}, results)
+        self.assertTrue(any("category must be controlled" in error for error in results.errors))
+        self.assertTrue(any("requires source_ids" in error for error in results.errors))
+        self.assertTrue(any("requires non-empty scope" in error for error in results.errors))
+        self.assertTrue(any("evidence_window or review_date" in error for error in results.errors))
+        self.assertTrue(any("confidence must be high, medium, or low" in error for error in results.errors))
+
     def test_evidence_rows_require_a_public_url_and_valid_access_date(self) -> None:
         record = rl.Record(
             path=ROOT / "entities/research-areas/test.md",

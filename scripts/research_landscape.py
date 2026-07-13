@@ -115,6 +115,13 @@ RECOMMENDATION_KINDS = {
     "groups-with-software-language", "entities-with-mentorship-process-evidence",
 }
 
+MENTORSHIP_PROCESS_CATEGORIES = {
+    "written-expectations", "onboarding-training", "supervision-process",
+    "professional-development", "aggregate-outcomes",
+}
+MENTORSHIP_PROCESS_ENTITY_TYPES = {"research-group", "department", "university", "organization"}
+MENTORSHIP_PROCESS_CONFIDENCES = {"high", "medium", "low"}
+
 LINK_PATTERN = re.compile(r"\]\(([^)]+)\)")
 EVIDENCE_SECTION_PATTERN = re.compile(r"^## Evidence\s*$([\s\S]*?)(?=^## |\Z)", re.MULTILINE)
 EVIDENCE_SOURCE_ROW_PATTERN = re.compile(r"^\|\s*`(SRC-[A-Z0-9-]+)`\s*\|\s*(.*?)\s*\|\s*$", re.MULTILINE)
@@ -296,7 +303,25 @@ def validate_graph(root: Path, records: dict[str, Record], results: Results) -> 
                     results.error(
                         f"{record.path.relative_to(root)}: programming_language_ids target {language_id} requires matching implemented_in assertion"
                     )
-        for observation in record.metadata.get("mentorship_process_evidence", []) or []:
+        observations = record.metadata.get("mentorship_process_evidence", []) or []
+        if observations and record.entity_type not in MENTORSHIP_PROCESS_ENTITY_TYPES:
+            results.error(f"{record.path.relative_to(root)}: mentorship_process_evidence is not permitted for {record.entity_type}")
+        for observation in observations:
+            if not isinstance(observation, dict):
+                results.error(f"{record.path.relative_to(root)}: mentorship-process observation must be a mapping")
+                continue
+            category = observation.get("category")
+            if category not in MENTORSHIP_PROCESS_CATEGORIES:
+                results.error(f"{record.path.relative_to(root)}: mentorship-process category must be controlled: {category}")
+            if not as_ids(observation.get("source_ids", [])):
+                results.error(f"{record.path.relative_to(root)}: mentorship-process observation requires source_ids")
+            for field in ("scope", "limitation"):
+                if not isinstance(observation.get(field), str) or not observation[field].strip():
+                    results.error(f"{record.path.relative_to(root)}: mentorship-process observation requires non-empty {field}")
+            if not any(isinstance(observation.get(field), str) and observation[field].strip() for field in ("evidence_window", "review_date")):
+                results.error(f"{record.path.relative_to(root)}: mentorship-process observation requires evidence_window or review_date")
+            if observation.get("confidence") not in MENTORSHIP_PROCESS_CONFIDENCES:
+                results.error(f"{record.path.relative_to(root)}: mentorship-process confidence must be high, medium, or low")
             for source_id in as_ids(observation.get("source_ids", [])):
                 if source_id not in source_keys:
                     results.error(
