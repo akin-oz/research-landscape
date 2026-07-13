@@ -1162,6 +1162,7 @@ DISCOVERY_FILTER_TYPES = {
     "software": "research-software",
     "language": "programming-language",
     "ecosystem": "research-ecosystem",
+    "problem": "research-problem",
 }
 
 
@@ -1221,6 +1222,25 @@ def development_ecosystem_signals(
     return deduplicate_signals(signals)
 
 
+def development_problem_support_signals(
+    developer: Record, problem_id: str, records: dict[str, Record], verb: str,
+) -> list[dict[str, Any]]:
+    """Return a documented developer-to-problem path through direct support.
+
+    The path is evidence discovery only: a developer's work on a supporting
+    tool does not establish that it works on the problem itself.
+    """
+    signals = []
+    for development in matching_assertions(developer, "develops"):
+        software = records.get(development.get("target_id"))
+        if software is None or software.entity_type != "research-software":
+            continue
+        for support in matching_assertions(software, "supports", {problem_id}):
+            signals.append(signal(f"{verb} `{software.id}`", development, developer))
+            signals.append(signal(f"`{software.id}` supports `{problem_id}`", support, software))
+    return deduplicate_signals(signals)
+
+
 def discovery_group_candidates(
     records: dict[str, Record],
     area_id: str | None,
@@ -1228,6 +1248,7 @@ def discovery_group_candidates(
     software_id: str | None,
     language_id: str | None,
     ecosystem_id: str | None = None,
+    problem_id: str | None = None,
 ) -> list[dict[str, Any]]:
     """Apply ANDed, source-explainable filters to reviewed research groups."""
     candidates = []
@@ -1274,6 +1295,12 @@ def discovery_group_candidates(
                 continue
             signals.extend(ecosystem_signals)
             criteria += 1
+        if problem_id:
+            problem_signals = development_problem_support_signals(group, problem_id, records, "develops")
+            if not problem_signals:
+                continue
+            signals.extend(problem_signals)
+            criteria += 1
         candidates.append({"record": group, "signals": deduplicate_signals(signals), "criteria": criteria})
     return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
 
@@ -1286,13 +1313,14 @@ def render_group_discovery(
     language_id: str | None,
     ecosystem_id: str | None,
     output_path: Path,
+    problem_id: str | None = None,
 ) -> str:
     filters = [(name, value) for name, value in (
-        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id),
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id), ("research problem", problem_id),
     ) if value]
     if not filters:
-        raise ValueError("provide at least one of --area, --country, --software, --language, or --ecosystem")
-    candidates = discovery_group_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id)
+        raise ValueError("provide at least one of --area, --country, --software, --language, --ecosystem, or --problem")
+    candidates = discovery_group_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id, problem_id)
     lines = [
         "# Research-group discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking.", "",
@@ -1312,7 +1340,7 @@ def render_group_discovery(
         lines.append("| — | No reviewed canonical research group matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and contain only reviewed groups with every requested source-backed criterion. A country match follows the group’s documented direct host; language and ecosystem matches follow a documented group-development edge through software `implemented_in` or ecosystem `includes` assertions. This does not assert that a group is an ecosystem member or establish openings, group-wide working language, individual skill, mentorship quality, funding, admissions, or applicant fit.", "",
+        "Results are alphabetically ordered and contain only reviewed groups with every requested source-backed criterion. A country match follows the group’s documented direct host; language and ecosystem matches follow a documented group-development edge through software `implemented_in` or ecosystem `includes` assertions. A problem match follows group `develops` → software `supports` → problem and does not assert that the group works on the problem itself. This does not assert that a group is an ecosystem member or establish openings, group-wide working language, individual skill, mentorship quality, funding, admissions, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1324,19 +1352,20 @@ def discover_groups(
     software_id: str | None,
     language_id: str | None,
     ecosystem_id: str | None,
+    problem_id: str | None,
     check: bool,
     query_id: str | None,
     list_queries: bool,
     as_of: str | None,
 ) -> int:
     if check or query_id or list_queries or as_of:
-        print("ERROR: discover-groups accepts only --area, --country, --software, --language, and --ecosystem")
+        print("ERROR: discover-groups accepts only --area, --country, --software, --language, --ecosystem, and --problem")
         return 2
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
         return 1
-    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id, "ecosystem": ecosystem_id}
+    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id, "ecosystem": ecosystem_id, "problem": problem_id}
     for name, value in filters.items():
         if not value:
             continue
@@ -1347,7 +1376,7 @@ def discover_groups(
     try:
         print(render_group_discovery(
             records, area_id, country_id, software_id, language_id, ecosystem_id,
-            root / "reports/generated/evidence-recommendations.md",
+            root / "reports/generated/evidence-recommendations.md", problem_id,
         ))
     except ValueError as exc:
         print(f"ERROR: {exc}")
@@ -2365,6 +2394,7 @@ def main() -> int:
     parser.add_argument("--software", help="canonical Research Software ID for compatible discovery commands")
     parser.add_argument("--language", help="canonical Programming Language ID for compatible discovery commands")
     parser.add_argument("--ecosystem", help="canonical Research Ecosystem ID for compatible discovery commands")
+    parser.add_argument("--problem", help="canonical Research Problem ID for compatible discovery commands")
     parser.add_argument("--open-source", help="documented open-source state for discover-software")
     parser.add_argument("--as-of", help="ISO date for a reproducible freshness audit (defaults to today)")
     args = parser.parse_args()
@@ -2374,6 +2404,9 @@ def main() -> int:
         return 2
     if args.open_source and args.command != "discover-software":
         print("ERROR: --open-source is accepted only by discover-software")
+        return 2
+    if args.problem and args.command != "discover-groups":
+        print("ERROR: --problem is accepted only by discover-groups")
         return 2
     if args.command == "validate":
         records, results = validate(root)
@@ -2396,7 +2429,7 @@ def main() -> int:
     if args.command == "discover-groups":
         return discover_groups(
             root, args.area, args.country, args.software, args.language, args.ecosystem,
-            args.check, args.query, args.list_queries, args.as_of,
+            args.problem, args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "discover-pis":
         return discover_pis(

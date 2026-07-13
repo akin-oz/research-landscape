@@ -89,6 +89,7 @@ python3 scripts/research_landscape.py discover-problems --ecosystem ECO-PHONO3PY
 python3 scripts/research_landscape.py discover-problems --language PROGRAMMING-LANGUAGE-C
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --software SW-CHGNET --language PROGRAMMING-LANGUAGE-PYTHON
+python3 scripts/research_landscape.py discover-groups --problem PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS

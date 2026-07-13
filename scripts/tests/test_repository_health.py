@@ -988,6 +988,20 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertNotIn("PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION", rendered)
         self.assertIn("software `implemented_in` → `supports` → problem path", rendered)
 
+    def test_group_problem_filter_requires_development_and_direct_support_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_group_discovery(
+            records, None, None, None, None, None,
+            ROOT / "reports/generated/evidence-recommendations.md",
+            "PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION",
+        )
+        self.assertIn("**AND filters:** research problem `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION`.", rendered)
+        self.assertIn("`RG-DTU-CAMD`", rendered)
+        self.assertIn("develops `SW-GPAW` (sources: SRC-DTU-CAMD-RESEARCH)", rendered)
+        self.assertIn("`SW-GPAW` supports `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION` (sources: SRC-GPAW-DOCUMENTATION)", rendered)
+        self.assertIn("does not assert that the group works on the problem itself", rendered)
+
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

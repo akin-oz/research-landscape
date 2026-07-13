@@ -33,6 +33,7 @@ python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIA
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-CPP
 python3 scripts/research_landscape.py discover-groups --ecosystem ECO-MATML
+python3 scripts/research_landscape.py discover-groups --problem PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION
 python3 scripts/research_landscape.py discover-pis --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-pis --ecosystem ECO-MATERIALS-PROJECT
@@ -110,7 +111,7 @@ ranking.
 
 `discover-groups` is an interactive, non-generated AND filter over reviewed
 Research Groups. It accepts one or more canonical `--area`, `--country`,
-`--software`, `--language`, and `--ecosystem` IDs. The command shows the source-backed path
+`--software`, `--language`, `--ecosystem`, and `--problem` IDs. The command shows the source-backed path
 that satisfied each criterion: country follows the group's ADR 0006 direct
 host, and language follows a documented group-development edge through a
 Research Software `implemented_in` assertion. It is alphabetically ordered and
@@ -119,6 +120,10 @@ does not rank or infer fit.
 An ecosystem match follows a documented group `develops` → software → ecosystem
 `includes` path. It does not claim that the group belongs to, owns, or governs
 the ecosystem.
+
+A problem match follows a documented group `develops` → software `supports` →
+Research Problem path. It does not claim that the group itself works on, owns,
+or endorses the problem.
 
 `discover-pis` uses the same filters for reviewed Principal Investigators.
 Country evidence follows an explicitly documented public `affiliated_with` path
