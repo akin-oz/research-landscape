@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A bounded Phonopy–NIMS environment extension with direct developer-maintainer, group, research-institute, and Japan paths, without inventing a university route, mentorship, admissions, or ranking claims.
 - A bounded Phonopy ecosystem slice with distinct BSD-3-Clause Python software and ecosystem records, exposing direct computational-materials phonon-calculation paths without inventing contributor, dependency, people, or institutional relationships.
 - A bounded Qbox ecosystem slice with distinct GPL-2.0-or-later C++ software and ecosystem records, exposing direct computational-materials and DFT/electronic-structure paths without inventing contributor, dependency, people, or institutional relationships.
 - A bounded JDFTx ecosystem slice with distinct GPL-3.0-or-later C++ software and ecosystem records, exposing direct computational-materials and DFT/electronic-structure paths without inventing contributor, dependency, people, or institutional relationships.

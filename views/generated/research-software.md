@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: dcf3c7c218b206e8ea24edd6a6e33673cbf358d584c1615c8b8ef989a39d8068 -->
+<!-- input-fingerprint: b671659ebfe48d73208ed13cd7338b140ba08390976d4eb1f67a9187c7217a18 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `dcf3c7c218b206e8ea24edd6a6e33673cbf358d584c1615c8b8ef989a39d8068`
+**Input fingerprint:** `b671659ebfe48d73208ed13cd7338b140ba08390976d4eb1f67a9187c7217a18`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -166,6 +166,7 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
+| [Atsushi Togo](../../entities/principal-investigators/atsushi-togo.md) | `PI-ATSUSHI-TOGO` | principal-investigator | high | 2026-07-13 | COUNTRY-JP |
 | [Phonopy Ecosystem](../../entities/ecosystems/phonopy.md) | `ECO-PHONOPY` | research-ecosystem | high | 2026-07-13 | — |
 | [Phonopy](../../entities/research-software/phonopy.md) | `SW-PHONOPY` | research-software | high | 2026-07-13 | — |
 

@@ -62,6 +62,8 @@ The Qbox cluster adds [Qbox](research-software/qbox.md) and the [Qbox Ecosystem]
 
 The Phonopy cluster adds [Phonopy](research-software/phonopy.md) and the [Phonopy Ecosystem](ecosystems/phonopy.md), while reusing controlled Python and Computational Materials Science records. It makes no contributor, dependency, institution, or complete-project-community claim.
 
+The Phonopy–NIMS extension adds [Atsushi Togo](principal-investigators/atsushi-togo.md), the [NIMS Computational Materials Science Group](research-groups/nims-computational-materials-science-group.md), and the [National Institute for Materials Science](organizations/national-institute-for-materials-science.md), while reusing Phonopy and Japan. It makes no university, degree-route, mentoring, admissions, or ranking claim.
+
 The Density-Functional Theory and Electronic Structure area extension adds the controlled [area record](research-areas/density-functional-theory-and-electronic-structure.md) and directly classifies existing ABINIT, CP2K, Quantum ESPRESSO, CAMD, Curtarolo Group, Persson Group, SOLgroup, and Wolverton Research Group records. Their separately owned ecosystems and direct-host Universities become discoverable through existing evidence-bearing paths.
 
 The Temple–Kohlmeyer–LAMMPS extension adds [Axel Kohlmeyer](principal-investigators/axel-kohlmeyer.md) and [Temple University](universities/temple-university.md), while reusing the LAMMPS, United States, and Computational Materials Science records.

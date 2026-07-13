@@ -12,19 +12,27 @@ source_ids: [SRC-PHONOPY-DOCUMENTATION, SRC-PHONOPY-REPOSITORY]
 ecosystem_kind: open phonon-calculation software ecosystem
 website: https://phonopy.github.io/phonopy/
 software_ids: [SW-PHONOPY]
+principal_investigator_ids: [PI-ATSUSHI-TOGO]
 relationship_assertions:
   - predicate: includes
     target_id: SW-PHONOPY
     source_ids: [SRC-PHONOPY-DOCUMENTATION, SRC-PHONOPY-REPOSITORY]
     confidence: high
     evidence_window: 2026-07
+  - predicate: connects
+    target_id: PI-ATSUSHI-TOGO
+    role: contributor
+    source_ids: [SRC-PHONOPY-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: Phonopy documentation lists Atsushi Togo at NIMS as a contributor. This does not establish current maintenance, governance, review authority, or an exclusive contribution claim.
 ---
 
 # Phonopy Ecosystem
 
 The Phonopy ecosystem records public documentation, source, issue,
 pull-request, and mailing-list routes around the distinct `SW-PHONOPY`
-software artifact.
+software artifact, plus a bounded documented contributor connection.
 
 ## Evidence
 

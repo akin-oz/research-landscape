@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: dcf3c7c218b206e8ea24edd6a6e33673cbf358d584c1615c8b8ef989a39d8068 -->
+<!-- input-fingerprint: b671659ebfe48d73208ed13cd7338b140ba08390976d4eb1f67a9187c7217a18 -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `dcf3c7c218b206e8ea24edd6a6e33673cbf358d584c1615c8b8ef989a39d8068`
+**Input fingerprint:** `b671659ebfe48d73208ed13cd7338b140ba08390976d4eb1f67a9187c7217a18`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)
@@ -34,10 +34,13 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
+| [National Institute for Materials Science](../../entities/organizations/national-institute-for-materials-science.md) | `ORG-NIMS` | organization | high | 2026-07-13 | COUNTRY-JP |
 | [RIKEN Center for Computational Science](../../entities/organizations/riken-center-for-computational-science.md) | `ORG-RIKEN-CCS` | organization | high | 2026-07-12 | COUNTRY-JP |
 | [RIKEN TRIP Headquarters](../../entities/organizations/riken-trip-headquarters.md) | `ORG-RIKEN-TRIP` | organization | high | 2026-07-12 | COUNTRY-JP |
+| [Atsushi Togo](../../entities/principal-investigators/atsushi-togo.md) | `PI-ATSUSHI-TOGO` | principal-investigator | high | 2026-07-13 | COUNTRY-JP |
 | [Ryo Yoshida](../../entities/principal-investigators/ryo-yoshida.md) | `PI-RYO-YOSHIDA` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
 | [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) | `PI-SEIJI-YUNOKI` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
+| [Computational Materials Science Group](../../entities/research-groups/nims-computational-materials-science-group.md) | `RG-NIMS-COMPUTATIONAL-MATERIALS-SCIENCE` | research-group | high | 2026-07-13 | COUNTRY-JP |
 | [Computational Materials Science Research Team](../../entities/research-groups/riken-computational-materials-science-team.md) | `RG-RIKEN-COMPUTATIONAL-MATERIALS-SCIENCE` | research-group | high | 2026-07-12 | COUNTRY-JP |
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) | `RG-RIKEN-POLYMEROMICS` | research-group | high | 2026-07-12 | COUNTRY-JP |
 
