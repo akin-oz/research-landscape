@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 6a466c72b816ca1da802401f5419c22c0ff288c5ea4e9b0757ea6393e77a403a -->
+<!-- input-fingerprint: bf53d71c99924d878785b531d523680b01add06a0e765dc8c75731e99cf11a23 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `6a466c72b816ca1da802401f5419c22c0ff288c5ea4e9b0757ea6393e77a403a`
+**Input fingerprint:** `bf53d71c99924d878785b531d523680b01add06a0e765dc8c75731e99cf11a23`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -525,6 +525,16 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 **Why:** The reviewed corpus classifies bounded research areas but contains no validated, pluralistic, time-bounded comparison of problem importance, tractability, societal value, or individual fit.
 
 **Required before enabling:** A versioned, ethically reviewed, reproducible problem-evaluation contract with explicit stakeholder scope, current evidence governance, uncertainty handling, and no universal-value claim.
+
+## Best research advisors
+
+**Query ID:** `best-research-advisors`
+
+**Status:** unavailable — no recommendation is emitted.
+
+**Why:** The reviewed corpus exposes bounded PI research and software paths, but contains no ethical, current, comparable evidence for advising quality, capacity, availability, or an applicant's experience.
+
+**Required before enabling:** Ethically collected, current, aggregate advising-process or outcome evidence under a governance-reviewed contract that prohibits testimonial and capacity inference.
 
 ## Repair workflow
 

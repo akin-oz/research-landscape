@@ -240,3 +240,10 @@ queries:
     title: Best research problems
     reason: "The reviewed corpus classifies bounded research areas but contains no validated, pluralistic, time-bounded comparison of problem importance, tractability, societal value, or individual fit."
     required_evidence: "A versioned, ethically reviewed, reproducible problem-evaluation contract with explicit stakeholder scope, current evidence governance, uncertainty handling, and no universal-value claim."
+
+  - query_id: best-research-advisors
+    aliases: [best-advisors, advisor-ranking]
+    status: unavailable
+    title: Best research advisors
+    reason: "The reviewed corpus exposes bounded PI research and software paths, but contains no ethical, current, comparable evidence for advising quality, capacity, availability, or an applicant's experience."
+    required_evidence: "Ethically collected, current, aggregate advising-process or outcome evidence under a governance-reviewed contract that prohibits testimonial and capacity inference."
