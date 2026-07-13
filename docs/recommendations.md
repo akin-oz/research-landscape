@@ -27,7 +27,8 @@ The current model also supports research groups with documented development
 links to software explicitly documented as implemented in Python. This is a
 software-path filter, not a statement about a group's working language or its
 members' skills. It separately exposes entities with bounded, sourced public
-mentorship-process evidence, including the evidence category and limitations.
+mentorship-process evidence, including each observation's category, scope,
+source IDs, and required limitation.
 
 ## What it refuses to recommend
 

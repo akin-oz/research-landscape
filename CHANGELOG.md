@@ -6,6 +6,10 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- The public mentorship-process evidence query now renders each canonical
+  observation's required limitation alongside its category, scope, and source
+  IDs, preserving ADR 0008's non-comparative evidence contract in generated
+  output.
 - `discover-problems --open-source` now filters through a reviewed software
   record's documented open-source state and direct `supports` assertion,
   exposing both evidence paths without turning openness into a maintenance,

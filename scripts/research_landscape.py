@@ -978,7 +978,10 @@ def recommendation_candidates(query: dict[str, Any], records: dict[str, Record])
             for observation in record.metadata.get("mentorship_process_evidence", []) or []:
                 sources = ", ".join(as_ids(observation.get("source_ids", [])))
                 signals.append({
-                    "label": f"documents `{observation['category']}` for {observation['scope']}",
+                    "label": (
+                        f"documents `{observation['category']}` for {observation['scope']}; "
+                        f"limitation: {observation['limitation']}"
+                    ),
                     "sources": sources,
                     "confidence": lowest_confidence([record.metadata.get("confidence"), observation.get("confidence")]),
                 })

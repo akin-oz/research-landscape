@@ -696,6 +696,13 @@ class RepositoryHealthTests(unittest.TestCase):
         hacking_materials = next(candidate for candidate in mentorship_candidates if candidate["record"].id == "RG-HACKING-MATERIALS")
         self.assertEqual(2, len(hacking_materials["signals"]))
         self.assertTrue(any("`professional-development`" in signal["label"] for signal in hacking_materials["signals"]))
+        self.assertTrue(all("limitation:" in signal["label"] for signal in hacking_materials["signals"]))
+        rendered_mentorship = "\n".join(rl.render_recommendation_query(
+            queries["entities-with-documented-mentorship-process-evidence"],
+            records,
+            ROOT / "reports/generated/evidence-recommendations.md",
+        ))
+        self.assertIn("it does not establish current practice, individual support quality, availability, or outcomes", rendered_mentorship)
         self.assertEqual("unavailable", queries["high-mentorship-environments"]["status"])
 
     def test_cplusplus_and_python_software_paths_are_explicit(self) -> None:
