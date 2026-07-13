@@ -1576,10 +1576,11 @@ def discovery_university_candidates(
     software_id: str | None,
     language_id: str | None,
     ecosystem_id: str | None = None,
+    problem_id: str | None = None,
 ) -> list[dict[str, Any]]:
     """Find universities through explicit, direct-host group evidence paths."""
-    group_filters_present = any((area_id, software_id, language_id, ecosystem_id))
-    eligible_groups = discovery_group_candidates(records, area_id, None, software_id, language_id, ecosystem_id)
+    group_filters_present = any((area_id, software_id, language_id, ecosystem_id, problem_id))
+    eligible_groups = discovery_group_candidates(records, area_id, None, software_id, language_id, ecosystem_id, problem_id)
     if not group_filters_present:
         eligible_groups = [
             {"record": group, "signals": [], "criteria": 0}
@@ -1608,7 +1609,7 @@ def discovery_university_candidates(
         if not hosted:
             continue
         if group_filters_present:
-            criteria += sum(bool(value) for value in (area_id, software_id, language_id, ecosystem_id))
+            criteria += sum(bool(value) for value in (area_id, software_id, language_id, ecosystem_id, problem_id))
         for group, host_signals, group_signals in hosted:
             signals.extend(host_signals)
             for item in group_signals:
@@ -1625,13 +1626,14 @@ def render_university_discovery(
     language_id: str | None,
     ecosystem_id: str | None,
     output_path: Path,
+    problem_id: str | None = None,
 ) -> str:
     filters = [(name, value) for name, value in (
-        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id),
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id), ("research problem", problem_id),
     ) if value]
     if not filters:
-        raise ValueError("provide at least one of --area, --country, --software, --language, or --ecosystem")
-    candidates = discovery_university_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id)
+        raise ValueError("provide at least one of --area, --country, --software, --language, --ecosystem, or --problem")
+    candidates = discovery_university_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id, problem_id)
     lines = [
         "# University environment discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking or university-strength assessment.", "",
@@ -1651,7 +1653,7 @@ def render_university_discovery(
         lines.append("| — | No reviewed canonical University has a directly hosted group path matching every requested criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and use only a University's documented country and the ADR 0006 direct-host paths of reviewed groups. Signals name the hosted group that supplied area, software, language, or ecosystem traversal evidence; different signals may come from different directly hosted groups. This does not assert that a university is an ecosystem member or rank universities, establish ecosystem completeness, degree quality, funding, admissions, mentorship, or applicant fit.", "",
+        "Results are alphabetically ordered and use only a University's documented country and the ADR 0006 direct-host paths of reviewed groups. Signals name the hosted group that supplied area, software, language, ecosystem, or problem traversal evidence; different signals may come from different directly hosted groups. A problem path is University direct-host → Group `develops` → Software `supports` → Problem, and does not assert that the University works on, owns, or endorses the problem. This does not assert that a university is an ecosystem member or rank universities, establish ecosystem completeness, degree quality, funding, admissions, mentorship, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1663,19 +1665,20 @@ def discover_universities(
     software_id: str | None,
     language_id: str | None,
     ecosystem_id: str | None,
+    problem_id: str | None,
     check: bool,
     query_id: str | None,
     list_queries: bool,
     as_of: str | None,
 ) -> int:
     if check or query_id or list_queries or as_of:
-        print("ERROR: discover-universities accepts only --area, --country, --software, --language, and --ecosystem")
+        print("ERROR: discover-universities accepts only --area, --country, --software, --language, --ecosystem, and --problem")
         return 2
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
         return 1
-    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id, "ecosystem": ecosystem_id}
+    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id, "ecosystem": ecosystem_id, "problem": problem_id}
     for name, value in filters.items():
         if not value:
             continue
@@ -1686,7 +1689,7 @@ def discover_universities(
     try:
         print(render_university_discovery(
             records, area_id, country_id, software_id, language_id, ecosystem_id,
-            root / "reports/generated/evidence-recommendations.md",
+            root / "reports/generated/evidence-recommendations.md", problem_id,
         ))
     except ValueError as exc:
         print(f"ERROR: {exc}")
@@ -2414,8 +2417,8 @@ def main() -> int:
     if args.open_source and args.command != "discover-software":
         print("ERROR: --open-source is accepted only by discover-software")
         return 2
-    if args.problem and args.command not in {"discover-groups", "discover-pis"}:
-        print("ERROR: --problem is accepted only by discover-groups and discover-pis")
+    if args.problem and args.command not in {"discover-groups", "discover-pis", "discover-universities"}:
+        print("ERROR: --problem is accepted only by discover-groups, discover-pis, and discover-universities")
         return 2
     if args.command == "validate":
         records, results = validate(root)
@@ -2448,7 +2451,7 @@ def main() -> int:
     if args.command == "discover-universities":
         return discover_universities(
             root, args.area, args.country, args.software, args.language, args.ecosystem,
-            args.check, args.query, args.list_queries, args.as_of,
+            args.problem, args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "discover-ecosystems":
         return discover_ecosystems(

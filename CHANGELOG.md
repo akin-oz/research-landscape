@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- `discover-universities --problem` now exposes only direct-host University → Group `develops` → Software `supports` → Problem paths, allowing environment discovery without claiming a University works on, owns, or endorses the problem.
 - `discover-pis --problem` now exposes only documented PI `develops` → software `supports` → problem paths, allowing related-development discovery without claiming a PI works on, owns, endorses, or supervises the problem.
 - `discover-groups --problem` now exposes only documented group `develops` → software `supports` → problem paths, allowing related-development discovery without claiming a group works on, owns, or endorses the problem.
 - `discover-problems --language` now narrows the reviewed problem catalog through a documented software `implemented_in` → `supports` → problem path, exposing both sources without treating an implementation language as individual skill, group practice, research fit, or a ranking signal.

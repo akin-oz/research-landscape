@@ -1016,6 +1016,21 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`SW-MACE` supports `PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING` (sources: SRC-MACE-DOCUMENTATION)", rendered)
         self.assertIn("does not assert that the PI works on, endorses, or supervises the problem", rendered)
 
+    def test_university_problem_filter_requires_direct_host_development_and_support_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_university_discovery(
+            records, None, None, None, None, None,
+            ROOT / "reports/generated/evidence-recommendations.md",
+            "PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION",
+        )
+        self.assertIn("**AND filters:** research problem `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION`.", rendered)
+        self.assertIn("`UNIVERSITY-DTU`", rendered)
+        self.assertIn("directly hosts `RG-DTU-CAMD`", rendered)
+        self.assertIn("`RG-DTU-CAMD`: develops `SW-GPAW` (sources: SRC-DTU-CAMD-RESEARCH)", rendered)
+        self.assertIn("`RG-DTU-CAMD`: `SW-GPAW` supports `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION` (sources: SRC-GPAW-DOCUMENTATION)", rendered)
+        self.assertIn("does not assert that the University works on, owns, or endorses the problem", rendered)
+
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

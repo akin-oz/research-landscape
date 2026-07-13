@@ -39,6 +39,7 @@ python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --lang
 python3 scripts/research_landscape.py discover-pis --ecosystem ECO-MATERIALS-PROJECT
 python3 scripts/research_landscape.py discover-pis --problem PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING
 python3 scripts/research_landscape.py discover-universities --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
+python3 scripts/research_landscape.py discover-universities --problem PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION
 python3 scripts/research_landscape.py discover-universities --area AREA-MACHINE-LEARNED-POTENTIALS --ecosystem ECO-MATML
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS --software SW-FAIRCHEM
@@ -142,6 +143,9 @@ country and the ADR 0006 direct-host paths of reviewed Research Groups. Area,
 software, language, and ecosystem signals name the hosted group that supplied
 them. An ecosystem match displays the direct-host University → Group → Software
 → Ecosystem `includes` path; it does not assert university ecosystem membership.
+A problem match displays the direct-host University → Group → Software
+`supports` → Research Problem path; it does not claim that the University works
+on, owns, or endorses the problem.
 The result is an evidence-discovery view of documented paths, not a comparison
 of university strength, degree quality, ecosystem completeness, or admissions.
 
