@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 1ecec6b9f2c41ac38635ad39bd5297f1d5ab5b19da27de33d9293f1607e7ff37 -->
+<!-- input-fingerprint: 0900f571eb80949e79934e67cf2ae2f73ea5aed06099e53dfa5c7f04840db664 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `1ecec6b9f2c41ac38635ad39bd5297f1d5ab5b19da27de33d9293f1607e7ff37`
+**Input fingerprint:** `0900f571eb80949e79934e67cf2ae2f73ea5aed06099e53dfa5c7f04840db664`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -49,6 +49,7 @@
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
 | [CP2K](../../entities/research-software/cp2k.md) | `SW-CP2K` | research-software | high | 2026-07-13 | — |
+| [FLEUR](../../entities/research-software/fleur.md) | `SW-FLEUR` | research-software | high | 2026-07-13 | — |
 | [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [KIM API](../../entities/research-software/kim-api.md) | `SW-KIM-API` | research-software | high | 2026-07-13 | — |
 | [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |
@@ -68,6 +69,7 @@
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [CP2K](../../entities/research-software/cp2k.md) | `SW-CP2K` | research-software | high | 2026-07-13 | — |
+| [FLEUR](../../entities/research-software/fleur.md) | `SW-FLEUR` | research-software | high | 2026-07-13 | — |
 | [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |

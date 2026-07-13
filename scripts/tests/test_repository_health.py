@@ -66,7 +66,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 5, "principal_investigators": 1, "software": 6, "universities": 4, "ecosystems": 9},
+            {"groups": 5, "principal_investigators": 1, "software": 7, "universities": 4, "ecosystems": 10},
             {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -92,7 +92,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"software": 4, "groups": 0, "principal_investigators": 2, "universities": 0, "ecosystems": 4},
+            {"software": 5, "groups": 0, "principal_investigators": 2, "universities": 0, "ecosystems": 5},
             {key: coverage["PROGRAMMING-LANGUAGE-FORTRAN"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -190,7 +190,7 @@ class RepositoryHealthTests(unittest.TestCase):
             queries["ecosystems-density-functional-theory-and-electronic-structure"], records
         )
         self.assertEqual(
-            ["ECO-ABINIT", "ECO-ASE", "ECO-CP2K", "ECO-GPAW", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA", "ECO-WANNIER90"],
+            ["ECO-ABINIT", "ECO-ASE", "ECO-CP2K", "ECO-FLEUR", "ECO-GPAW", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA", "ECO-WANNIER90"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         software_candidates = rl.discovery_software_candidates(
@@ -201,7 +201,7 @@ class RepositoryHealthTests(unittest.TestCase):
             "yes",
         )
         self.assertEqual(
-            ["SW-ABINIT", "SW-CP2K", "SW-GPAW", "SW-QUANTUM-ESPRESSO", "SW-SIESTA", "SW-WANNIER90"],
+            ["SW-ABINIT", "SW-CP2K", "SW-FLEUR", "SW-GPAW", "SW-QUANTUM-ESPRESSO", "SW-SIESTA", "SW-WANNIER90"],
             [candidate["record"].id for candidate in software_candidates],
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in software_candidates))
@@ -462,6 +462,16 @@ class RepositoryHealthTests(unittest.TestCase):
             ecosystem.id,
             "yes",
         )
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
+    def test_fleur_slice_exposes_fortran_without_person_claims(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software, ecosystem = records["SW-FLEUR"], records["ECO-FLEUR"]
+        self.assertEqual(("yes", "MIT"), (software.metadata["open_source"], software.metadata["license"]))
+        self.assertEqual(["PROGRAMMING-LANGUAGE-FORTRAN"], software.metadata["programming_language_ids"])
+        candidates = rl.discovery_software_candidates(records, "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE", "PROGRAMMING-LANGUAGE-FORTRAN", ecosystem.id, "yes")
         self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
         self.assertEqual(4, candidates[0]["criteria"])
 

@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 96b9886326e4dcc793faf327f94bc1f626e374f42a195923bc1ecb4f8412fa45 -->
+<!-- input-fingerprint: 92345680fcf888b0d73b0ad3f9c97e0e216764d03c1b7e8bdb6097359574d797 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `96b9886326e4dcc793faf327f94bc1f626e374f42a195923bc1ecb4f8412fa45`
+**Input fingerprint:** `92345680fcf888b0d73b0ad3f9c97e0e216764d03c1b7e8bdb6097359574d797`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -177,6 +177,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
 | [CP2K Ecosystem](../../entities/ecosystems/cp2k.md) (`ECO-CP2K`) | includes `SW-CP2K` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD); `SW-CP2K` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD) | high | 2/2 documented criteria |
 | [FAIRmat](../../entities/ecosystems/fairmat.md) (`ECO-FAIRMAT`) | connects `PI-CLAUDIA-DRAXL` (sources: SRC-FAIRMAT-TEAM); `PI-CLAUDIA-DRAXL` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 2/2 documented criteria |
+| [FLEUR Ecosystem](../../entities/ecosystems/fleur.md) (`ECO-FLEUR`) | includes `SW-FLEUR` (sources: SRC-FLEUR-HOME, SRC-FLEUR-REPOSITORY); `SW-FLEUR` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-FLEUR-HOME, SRC-FLEUR-REPOSITORY, SRC-FLEUR-INSTALLATION) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 documented criteria |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) (`ECO-SIESTA`) | includes `SW-SIESTA` (sources: SRC-SIESTA-REPOSITORY); `SW-SIESTA` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SIESTA-REPOSITORY, SRC-SIESTA-REFERENCE-MANUAL, SRC-SIESTA-INSTALLATION) | high | 2/2 documented criteria |
 
@@ -195,6 +196,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [ABINIT Ecosystem](../../entities/ecosystems/abinit.md) (`ECO-ABINIT`) | includes `SW-ABINIT` (sources: SRC-ABINIT-HOME); `SW-ABINIT` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-ABINIT-PRESENTATION, SRC-ABINIT-LICENSE, SRC-ABINIT-DEVELOPMENT) | high | 2/2 documented criteria |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-DTU-CAMD-RESEARCH, SRC-DTU-CAMD-ATOMIC-DESIGN) | high | 2/2 documented criteria |
 | [CP2K Ecosystem](../../entities/ecosystems/cp2k.md) (`ECO-CP2K`) | includes `SW-CP2K` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD); `SW-CP2K` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD) | high | 2/2 documented criteria |
+| [FLEUR Ecosystem](../../entities/ecosystems/fleur.md) (`ECO-FLEUR`) | includes `SW-FLEUR` (sources: SRC-FLEUR-HOME, SRC-FLEUR-REPOSITORY); `SW-FLEUR` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-FLEUR-HOME, SRC-FLEUR-REPOSITORY, SRC-FLEUR-INSTALLATION) | high | 2/2 documented criteria |
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-WOLVERTON-GROUP-RESEARCH) | high | 2/2 documented criteria |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) (`ECO-SIESTA`) | includes `SW-SIESTA` (sources: SRC-SIESTA-REPOSITORY); `SW-SIESTA` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-SIESTA-REPOSITORY, SRC-SIESTA-REFERENCE-MANUAL, SRC-SIESTA-INSTALLATION) | high | 2/2 documented criteria |

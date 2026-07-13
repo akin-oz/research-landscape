@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 1ecec6b9f2c41ac38635ad39bd5297f1d5ab5b19da27de33d9293f1607e7ff37 -->
+<!-- input-fingerprint: 0900f571eb80949e79934e67cf2ae2f73ea5aed06099e53dfa5c7f04840db664 -->
 # Conferences view
 
 **Definition:** `conferences`
-**Input fingerprint:** `1ecec6b9f2c41ac38635ad39bd5297f1d5ab5b19da27de33d9293f1607e7ff37`
+**Input fingerprint:** `0900f571eb80949e79934e67cf2ae2f73ea5aed06099e53dfa5c7f04840db664`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Eighth FAIRmat Users Meeting](../../entities/conferences/fairmat-users-meeting-2026.md)
