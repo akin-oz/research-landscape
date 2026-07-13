@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 526fcc4cd981db057eb5a6181f26dcb5768d69885da1efaf6678fb7c43a5dc02 -->
+<!-- input-fingerprint: ec64d36800d328f64da02fdbec8ef89c57c0d2d71491183f6f59067d8943db05 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `526fcc4cd981db057eb5a6181f26dcb5768d69885da1efaf6678fb7c43a5dc02`
+**Input fingerprint:** `ec64d36800d328f64da02fdbec8ef89c57c0d2d71491183f6f59067d8943db05`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -71,6 +71,13 @@
 | --- | --- | --- | --- | --- | --- |
 | [DeePMD-kit Ecosystem](../../entities/ecosystems/deepmd-kit.md) | `ECO-DEEPMD-KIT` | research-ecosystem | high | 2026-07-13 | — |
 | [DeePMD-kit](../../entities/research-software/deepmd-kit.md) | `SW-DEEPMD-KIT` | research-software | high | 2026-07-13 | — |
+
+## [DFTK](../../entities/research-software/dftk.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [DFTK Ecosystem](../../entities/ecosystems/dftk.md) | `ECO-DFTK` | research-ecosystem | high | 2026-07-13 | — |
+| [DFTK](../../entities/research-software/dftk.md) | `SW-DFTK` | research-software | high | 2026-07-13 | — |
 
 ## [FAIRChem](../../entities/research-software/fairchem.md)
 

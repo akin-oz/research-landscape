@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 526fcc4cd981db057eb5a6181f26dcb5768d69885da1efaf6678fb7c43a5dc02 -->
+<!-- input-fingerprint: ec64d36800d328f64da02fdbec8ef89c57c0d2d71491183f6f59067d8943db05 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `526fcc4cd981db057eb5a6181f26dcb5768d69885da1efaf6678fb7c43a5dc02`
+**Input fingerprint:** `ec64d36800d328f64da02fdbec8ef89c57c0d2d71491183f6f59067d8943db05`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -52,6 +52,7 @@
 | [BigDFT](../../entities/research-software/bigdft.md) | `SW-BIGDFT` | research-software | high | 2026-07-13 | — |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
 | [CP2K](../../entities/research-software/cp2k.md) | `SW-CP2K` | research-software | high | 2026-07-13 | — |
+| [DFTK](../../entities/research-software/dftk.md) | `SW-DFTK` | research-software | high | 2026-07-13 | — |
 | [FLEUR](../../entities/research-software/fleur.md) | `SW-FLEUR` | research-software | high | 2026-07-13 | — |
 | [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [KIM API](../../entities/research-software/kim-api.md) | `SW-KIM-API` | research-software | high | 2026-07-13 | — |
@@ -74,6 +75,7 @@
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [BigDFT](../../entities/research-software/bigdft.md) | `SW-BIGDFT` | research-software | high | 2026-07-13 | — |
 | [CP2K](../../entities/research-software/cp2k.md) | `SW-CP2K` | research-software | high | 2026-07-13 | — |
+| [DFTK](../../entities/research-software/dftk.md) | `SW-DFTK` | research-software | high | 2026-07-13 | — |
 | [FLEUR](../../entities/research-software/fleur.md) | `SW-FLEUR` | research-software | high | 2026-07-13 | — |
 | [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |

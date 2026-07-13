@@ -73,7 +73,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 5, "principal_investigators": 1, "software": 9, "universities": 4, "ecosystems": 12},
+            {"groups": 5, "principal_investigators": 1, "software": 10, "universities": 4, "ecosystems": 13},
             {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -197,7 +197,7 @@ class RepositoryHealthTests(unittest.TestCase):
             queries["ecosystems-density-functional-theory-and-electronic-structure"], records
         )
         self.assertEqual(
-            ["ECO-ABINIT", "ECO-ASE", "ECO-BIGDFT", "ECO-CP2K", "ECO-FLEUR", "ECO-GPAW", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA", "ECO-SISL", "ECO-WANNIER90"],
+            ["ECO-ABINIT", "ECO-ASE", "ECO-BIGDFT", "ECO-CP2K", "ECO-DFTK", "ECO-FLEUR", "ECO-GPAW", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA", "ECO-SISL", "ECO-WANNIER90"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         software_candidates = rl.discovery_software_candidates(
@@ -208,7 +208,7 @@ class RepositoryHealthTests(unittest.TestCase):
             "yes",
         )
         self.assertEqual(
-            ["SW-ABINIT", "SW-BIGDFT", "SW-CP2K", "SW-FLEUR", "SW-GPAW", "SW-QUANTUM-ESPRESSO", "SW-SIESTA", "SW-SISL", "SW-WANNIER90"],
+            ["SW-ABINIT", "SW-BIGDFT", "SW-CP2K", "SW-DFTK", "SW-FLEUR", "SW-GPAW", "SW-QUANTUM-ESPRESSO", "SW-SIESTA", "SW-SISL", "SW-WANNIER90"],
             [candidate["record"].id for candidate in software_candidates],
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in software_candidates))
