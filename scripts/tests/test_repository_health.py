@@ -927,6 +927,19 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`SW-GPAW` supports this problem (sources: SRC-GPAW-DOCUMENTATION)", rendered)
         self.assertIn("`SW-SIESTA` supports this problem (sources: SRC-SIESTA-REFERENCE-MANUAL)", rendered)
 
+    def test_problem_discovery_area_filter_uses_only_problem_area_evidence(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_problem_discovery(
+            records, ROOT / "reports/generated/evidence-recommendations.md",
+            "AREA-MACHINE-LEARNED-POTENTIALS",
+        )
+        self.assertIn("**Filter:** research area `AREA-MACHINE-LEARNED-POTENTIALS`.", rendered)
+        self.assertIn("`PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING`", rendered)
+        self.assertIn("is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-MACE-DOCUMENTATION, SRC-NEQUIP-DOCUMENTATION, SRC-DEEPMD-DOCUMENTATION)", rendered)
+        self.assertNotIn("PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION", rendered)
+        self.assertIn("problem record's own source-backed controlled-area classification", rendered)
+
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

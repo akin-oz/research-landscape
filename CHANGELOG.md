@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- `discover-problems --area` now narrows the reviewed problem catalog through each problem's own sourced controlled-area classification and shows that matching evidence, without inferring problem scope from adjacent graph entities or ranking the results.
 - A fourth evidence-bounded Research Problem record for Density-Functional Electronic-Structure Calculation, with independent direct support paths from ABINIT, Quantum ESPRESSO, GPAW, and SIESTA; the discovery path does not compare functionals, numerical methods, software, or problem importance.
 - A third evidence-bounded Research Problem record for Machine-Learned Interatomic Potential Modeling, with independent direct support paths from MACE, NequIP, and DeePMD-kit; the discovery path does not compare architectures, training methods, datasets, software, or problem importance.
 - A second evidence-bounded Research Problem record for Crystal Symmetry Determination, with a direct Spglib support path, demonstrating independent non-comparative problem discovery without turning documented functionality into a method or importance ranking.

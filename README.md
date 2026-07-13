@@ -24,7 +24,7 @@ Applicants often make high-stakes decisions from incomplete information and repu
 
 - Explore the current canonical graph through the generated [global view](views/generated/global.md), [software view](views/generated/research-software.md), [ecosystem view](views/generated/ecosystems.md), and [evidence recommendations](reports/generated/evidence-recommendations.md).
 - Run `python3 scripts/research_landscape.py discover-areas` to explore reviewed research topics, their evidence sources, and direct discovery coverage before selecting a canonical area ID; this is not a research-problem ranking.
-- Run `python3 scripts/research_landscape.py discover-problems` to inspect reviewed computational challenges and their direct supporting-software evidence; this is not an importance or tractability ranking.
+- Run `python3 scripts/research_landscape.py discover-problems --area AREA-MACHINE-LEARNED-POTENTIALS` to inspect reviewed computational challenges in one controlled topic and their direct supporting-software evidence; this is not an importance or tractability ranking.
 - Run `python3 scripts/research_landscape.py catalog` to list reviewed public IDs for interactive discovery filters without reading canonical frontmatter.
 - Use `python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US` for an interactive, source-explainable group filter; see [automation](docs/automation.md) for the supported IDs and evidence paths.
 - Use `python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-CPP` to find documented group-to-software C++ paths; this is not a claim about a group's universal programming practice.
