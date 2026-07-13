@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 0900f571eb80949e79934e67cf2ae2f73ea5aed06099e53dfa5c7f04840db664 -->
+<!-- input-fingerprint: a734c3c0b754edc1813c4ad6910e03de43d41f099ecbd13a0c5c5ab1d85ede09 -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `0900f571eb80949e79934e67cf2ae2f73ea5aed06099e53dfa5c7f04840db664`
+**Input fingerprint:** `a734c3c0b754edc1813c4ad6910e03de43d41f099ecbd13a0c5c5ab1d85ede09`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT Ecosystem](../../entities/ecosystems/abinit.md)
@@ -35,6 +35,12 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [CP2K Ecosystem](../../entities/ecosystems/cp2k.md) | `ECO-CP2K` | research-ecosystem | high | 2026-07-13 | — |
+
+## [DeePMD-kit Ecosystem](../../entities/ecosystems/deepmd-kit.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [DeePMD-kit Ecosystem](../../entities/ecosystems/deepmd-kit.md) | `ECO-DEEPMD-KIT` | research-ecosystem | high | 2026-07-13 | — |
 
 ## [FAIR Chemistry](../../entities/ecosystems/fair-chem.md)
 

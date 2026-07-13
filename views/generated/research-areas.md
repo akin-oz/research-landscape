@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 0900f571eb80949e79934e67cf2ae2f73ea5aed06099e53dfa5c7f04840db664 -->
+<!-- input-fingerprint: a734c3c0b754edc1813c4ad6910e03de43d41f099ecbd13a0c5c5ab1d85ede09 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `0900f571eb80949e79934e67cf2ae2f73ea5aed06099e53dfa5c7f04840db664`
+**Input fingerprint:** `a734c3c0b754edc1813c4ad6910e03de43d41f099ecbd13a0c5c5ab1d85ede09`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -16,6 +16,7 @@
 | [Hacking Materials](../../entities/research-groups/hacking-materials.md) | `RG-HACKING-MATERIALS` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) | `RG-MATERIALYZE-AI` | research-group | high | 2026-07-12 | COUNTRY-SG |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
+| [DeePMD-kit](../../entities/research-software/deepmd-kit.md) | `SW-DEEPMD-KIT` | research-software | high | 2026-07-13 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
 | [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |
 
@@ -85,6 +86,7 @@
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) | `RG-MATERIALYZE-AI` | research-group | high | 2026-07-12 | COUNTRY-SG |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
+| [DeePMD-kit](../../entities/research-software/deepmd-kit.md) | `SW-DEEPMD-KIT` | research-software | high | 2026-07-13 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
 | [M3GNet](../../entities/research-software/m3gnet.md) | `SW-M3GNET` | research-software | high | 2026-07-12 | — |
 | [MACE](../../entities/research-software/mace.md) | `SW-MACE` | research-software | high | 2026-07-12 | — |

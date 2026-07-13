@@ -60,7 +60,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 2, "principal_investigators": 2, "software": 5, "universities": 2, "ecosystems": 4},
+            {"groups": 2, "principal_investigators": 2, "software": 6, "universities": 2, "ecosystems": 5},
             {key: coverage["AREA-MACHINE-LEARNED-POTENTIALS"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -80,13 +80,13 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["language"].id: item for item in rl.programming_language_coverage(records)}
         self.assertEqual(
-            {"software": 3, "groups": 1, "principal_investigators": 1, "universities": 1, "ecosystems": 3},
+            {"software": 4, "groups": 1, "principal_investigators": 1, "universities": 1, "ecosystems": 4},
             {key: coverage["PROGRAMMING-LANGUAGE-CPP"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
         )
         self.assertEqual(
-            {"software": 11, "groups": 6, "principal_investigators": 4, "universities": 4, "ecosystems": 9},
+            {"software": 12, "groups": 6, "principal_investigators": 4, "universities": 4, "ecosystems": 10},
             {key: coverage["PROGRAMMING-LANGUAGE-PYTHON"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -140,7 +140,7 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         ecosystem_candidates = rl.recommendation_candidates(queries["ecosystems-ai-for-materials"], records)
         self.assertEqual(
-            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT", "ECO-MATML", "ECO-OPEN-CATALYST-PROJECT"],
+            ["ECO-DEEPMD-KIT", "ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT", "ECO-MATML", "ECO-OPEN-CATALYST-PROJECT"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         fair_chem = next(candidate for candidate in ecosystem_candidates if candidate["record"].id == "ECO-FAIR-CHEM")
@@ -475,6 +475,16 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
         self.assertEqual(4, candidates[0]["criteria"])
 
+    def test_deepmd_kit_slice_exposes_ai_and_mlp_paths(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software, ecosystem = records["SW-DEEPMD-KIT"], records["ECO-DEEPMD-KIT"]
+        self.assertEqual("LGPL-3.0-only", software.metadata["license"])
+        self.assertEqual(["PROGRAMMING-LANGUAGE-PYTHON", "PROGRAMMING-LANGUAGE-CPP"], software.metadata["programming_language_ids"])
+        candidates = rl.discovery_software_candidates(records, "AREA-MACHINE-LEARNED-POTENTIALS", "PROGRAMMING-LANGUAGE-PYTHON", ecosystem.id, "yes")
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
     def test_abinit_slice_reuses_fortran_with_one_bounded_ecosystem_path(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
@@ -650,7 +660,7 @@ class RepositoryHealthTests(unittest.TestCase):
             records, "AREA-MACHINE-LEARNED-POTENTIALS", None
         )
         self.assertEqual(
-            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT", "ECO-MATML", "ECO-OPEN-CATALYST-PROJECT"],
+            ["ECO-DEEPMD-KIT", "ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT", "ECO-MATML", "ECO-OPEN-CATALYST-PROJECT"],
             sorted(candidate["record"].id for candidate in area_candidates),
         )
         fair_chem = next(candidate for candidate in area_candidates if candidate["record"].id == "ECO-FAIR-CHEM")
@@ -713,7 +723,7 @@ class RepositoryHealthTests(unittest.TestCase):
             records, "AREA-MACHINE-LEARNED-POTENTIALS", "PROGRAMMING-LANGUAGE-PYTHON", None
         )
         self.assertEqual(
-            ["SW-CHGNET", "SW-FAIRCHEM", "SW-M3GNET", "SW-MACE", "SW-MATGL"],
+            ["SW-CHGNET", "SW-DEEPMD-KIT", "SW-FAIRCHEM", "SW-M3GNET", "SW-MACE", "SW-MATGL"],
             sorted(candidate["record"].id for candidate in ml_python_candidates),
         )
         ml_python_rendered = rl.render_software_discovery(
@@ -749,7 +759,7 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         ecosystem_candidates = rl.recommendation_candidates(queries["ecosystems-machine-learned-potentials"], records)
         self.assertEqual(
-            ["ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT", "ECO-MATML", "ECO-OPEN-CATALYST-PROJECT"],
+            ["ECO-DEEPMD-KIT", "ECO-FAIR-CHEM", "ECO-MATERIALS-PROJECT", "ECO-MATML", "ECO-OPEN-CATALYST-PROJECT"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         university_candidates = rl.recommendation_candidates(
