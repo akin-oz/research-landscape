@@ -11,7 +11,7 @@ confidence: high
 source_ids: [SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE, SRC-PHONOPY-DOCUMENTATION]
 affiliation_ids: [ORG-NIMS]
 research_group_ids: [RG-NIMS-COMPUTATIONAL-MATERIALS-SCIENCE]
-research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE]
+research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-COMPUTATIONAL-PHONON-CALCULATIONS]
 website: https://samurai.nims.go.jp/profiles/togo_atsushi?locale=en
 relationship_assertions:
   - predicate: affiliated_with
@@ -27,6 +27,11 @@ relationship_assertions:
     evidence_window: 2026-07
   - predicate: works_on
     target_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+    source_ids: [SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-COMPUTATIONAL-PHONON-CALCULATIONS
     source_ids: [SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE]
     confidence: high
     evidence_window: 2026-07

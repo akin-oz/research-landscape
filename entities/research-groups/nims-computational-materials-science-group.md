@@ -10,7 +10,7 @@ last_review: "2026-07-13"
 confidence: high
 source_ids: [SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE]
 organization_id: ORG-NIMS
-research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE]
+research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-COMPUTATIONAL-PHONON-CALCULATIONS]
 website: https://samurai.nims.go.jp/profiles/togo_atsushi?locale=en
 relationship_assertions:
   - predicate: belongs_to
@@ -23,13 +23,18 @@ relationship_assertions:
     source_ids: [SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-COMPUTATIONAL-PHONON-CALCULATIONS
+    source_ids: [SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE]
+    confidence: high
+    evidence_window: 2026-07
 ---
 
 # Computational Materials Science Group at NIMS
 
 This record represents the named NIMS Computational Materials Science Group
 led by Atsushi Togo. Its public profile and NIMS feature support its narrowly
-modeled computational-materials and Phonopy context.
+modeled computational-materials and phonon-calculation context.
 
 ## Evidence
 

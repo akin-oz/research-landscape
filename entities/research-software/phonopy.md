@@ -9,7 +9,7 @@ updated_at: "2026-07-13"
 last_review: "2026-07-13"
 confidence: high
 source_ids: [SRC-PHONOPY-DOCUMENTATION, SRC-PHONOPY-REPOSITORY]
-research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE]
+research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-COMPUTATIONAL-PHONON-CALCULATIONS]
 open_source: "yes"
 website: https://phonopy.github.io/phonopy/
 repository_url: https://github.com/phonopy/phonopy

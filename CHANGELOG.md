@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A controlled Computational Phonon Calculations area with direct Phonopy, NIMS group, and Atsushi Togo links, exposing topic-first software, group, and PI discovery without making a research-problem ranking claim.
 - A bounded Phonopy–NIMS environment extension with direct developer-maintainer, group, research-institute, and Japan paths, without inventing a university route, mentorship, admissions, or ranking claims.
 - A bounded Phonopy ecosystem slice with distinct BSD-3-Clause Python software and ecosystem records, exposing direct computational-materials phonon-calculation paths without inventing contributor, dependency, people, or institutional relationships.
 - A bounded Qbox ecosystem slice with distinct GPL-2.0-or-later C++ software and ecosystem records, exposing direct computational-materials and DFT/electronic-structure paths without inventing contributor, dependency, people, or institutional relationships.

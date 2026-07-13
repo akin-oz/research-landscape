@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: b671659ebfe48d73208ed13cd7338b140ba08390976d4eb1f67a9187c7217a18 -->
+<!-- input-fingerprint: 2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `b671659ebfe48d73208ed13cd7338b140ba08390976d4eb1f67a9187c7217a18`
+**Input fingerprint:** `2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -66,6 +66,14 @@
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |
 | [sisl](../../entities/research-software/sisl.md) | `SW-SISL` | research-software | high | 2026-07-13 | — |
 | [Wannier90](../../entities/research-software/wannier90.md) | `SW-WANNIER90` | research-software | high | 2026-07-13 | — |
+
+## [Computational Phonon Calculations](../../entities/research-areas/computational-phonon-calculations.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Atsushi Togo](../../entities/principal-investigators/atsushi-togo.md) | `PI-ATSUSHI-TOGO` | principal-investigator | high | 2026-07-13 | COUNTRY-JP |
+| [Computational Materials Science Group](../../entities/research-groups/nims-computational-materials-science-group.md) | `RG-NIMS-COMPUTATIONAL-MATERIALS-SCIENCE` | research-group | high | 2026-07-13 | COUNTRY-JP |
+| [Phonopy](../../entities/research-software/phonopy.md) | `SW-PHONOPY` | research-software | high | 2026-07-13 | — |
 
 ## [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md)
 

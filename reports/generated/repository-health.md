@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: b671659ebfe48d73208ed13cd7338b140ba08390976d4eb1f67a9187c7217a18 -->
+<!-- input-fingerprint: 2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb -->
 # Repository health report
 
-**Input fingerprint:** `b671659ebfe48d73208ed13cd7338b140ba08390976d4eb1f67a9187c7217a18`
+**Input fingerprint:** `2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **136**
-- Typed relationship assertions: **231**
+- Canonical v2 entities: **137**
+- Typed relationship assertions: **233**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -25,7 +25,7 @@
 | programming-language | 4 |
 | project | 1 |
 | publication | 8 |
-| research-area | 6 |
+| research-area | 7 |
 | research-ecosystem | 27 |
 | research-group | 13 |
 | research-software | 28 |
@@ -35,22 +35,22 @@
 
 | Confidence | Count |
 | --- | ---: |
-| high | 136 |
+| high | 137 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **136**
+- Canonical v2 records in approved entity directories: **137**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 136/136 |
-| Reviewed/published records with last-review dates | 136/136 |
-| Typed relationships with source IDs | 231/231 |
+| Reviewed/published records with source IDs | 137/137 |
+| Reviewed/published records with last-review dates | 137/137 |
+| Typed relationships with source IDs | 233/233 |
 | Reviewed groups with exactly one direct-host field | 13/13 |
-| Entities with an inbound or outbound graph connection | 136/136 |
+| Entities with an inbound or outbound graph connection | 137/137 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
@@ -64,6 +64,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 5 | 2 | 6 |
 | [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 11 | 11 | 16 | 6 | 22 |
+| [Computational Phonon Calculations](../../entities/research-areas/computational-phonon-calculations.md) | 1 | 1 | 1 | 0 | 1 |
 | [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 5 | 1 | 12 | 4 | 15 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 7 | 2 | 6 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 2 |
@@ -99,7 +100,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | involves | 1 |
 | leads | 12 |
 | located_in | 19 |
-| works_on | 47 |
+| works_on | 49 |
 
 ## Findings
 

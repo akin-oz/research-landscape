@@ -79,6 +79,12 @@ class RepositoryHealthTests(unittest.TestCase):
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
         )
+        self.assertEqual(
+            {"groups": 1, "principal_investigators": 1, "software": 1, "universities": 0, "ecosystems": 1},
+            {key: coverage["AREA-COMPUTATIONAL-PHONON-CALCULATIONS"][key] for key in (
+                "groups", "principal_investigators", "software", "universities", "ecosystems"
+            )},
+        )
         report = rl.health_report(ROOT, records, results, rl.input_fingerprint(ROOT))
         self.assertIn("## Research-area discovery coverage", report)
         self.assertIn("These are counts of direct, documented graph paths.", report)
@@ -547,6 +553,23 @@ class RepositoryHealthTests(unittest.TestCase):
         candidates = rl.discovery_software_candidates(records, "AREA-COMPUTATIONAL-MATERIALS-SCIENCE", "PROGRAMMING-LANGUAGE-PYTHON", ecosystem.id, "yes")
         self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
         self.assertEqual(4, candidates[0]["criteria"])
+
+    def test_computational_phonon_calculations_are_discoverable_by_topic(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        area_id = "AREA-COMPUTATIONAL-PHONON-CALCULATIONS"
+        self.assertEqual(["RG-NIMS-COMPUTATIONAL-MATERIALS-SCIENCE"], [
+            candidate["record"].id
+            for candidate in rl.discovery_group_candidates(records, area_id, None, None, None)
+        ])
+        self.assertEqual(["PI-ATSUSHI-TOGO"], [
+            candidate["record"].id
+            for candidate in rl.discovery_pi_candidates(records, area_id, None, None, None)
+        ])
+        self.assertEqual(["SW-PHONOPY"], [
+            candidate["record"].id
+            for candidate in rl.discovery_software_candidates(records, area_id, None, None, "yes")
+        ])
 
     def test_deepmd_kit_slice_exposes_ai_and_mlp_paths(self) -> None:
         records, results = rl.validate(ROOT)
