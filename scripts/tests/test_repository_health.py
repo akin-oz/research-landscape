@@ -852,6 +852,16 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`ECO-MATML`", catalog)
         self.assertIn("contains no private profile", catalog)
 
+    def test_area_discovery_exposes_topic_coverage_without_ranking(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_area_discovery(records, ROOT / "reports/generated/evidence-recommendations.md")
+        self.assertIn("# Research-area discovery", rendered)
+        self.assertIn("not a research-problem ranking", rendered)
+        self.assertIn("`AREA-COMPUTATIONAL-PHONON-CALCULATIONS`", rendered)
+        self.assertIn("groups: 1; principal investigators: 1; software: 1; universities: 0; ecosystems: 1", rendered)
+        self.assertIn("sources: SRC-PHONOPY-DOCUMENTATION", rendered)
+
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

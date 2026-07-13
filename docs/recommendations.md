@@ -79,6 +79,7 @@ For ad hoc group discovery, use the same canonical IDs with the non-generated
 filter command:
 
 ```bash
+python3 scripts/research_landscape.py discover-areas
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --software SW-CHGNET --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
@@ -88,7 +89,10 @@ python3 scripts/research_landscape.py discover-software --area AREA-DENSITY-FUNC
 python3 scripts/research_landscape.py discover-software --area AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE --language PROGRAMMING-LANGUAGE-CPP
 ```
 
-All supplied filters are required. The command exposes each documented path;
+`discover-areas` lists reviewed controlled topics with their direct evidence
+reach and source IDs. It is a topic catalog, not a research-problem ranking.
+All supplied filters are required for the remaining discovery commands. Each
+command exposes documented paths;
 it does not produce a score or rank. `discover-pis` follows documented public
 affiliation paths for country filters and does not assert availability or
 supervision capacity. `discover-universities` uses only direct-host group paths

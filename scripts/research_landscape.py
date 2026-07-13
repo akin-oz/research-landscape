@@ -1952,6 +1952,63 @@ def catalog(
     return 0
 
 
+def render_area_discovery(records: dict[str, Record], output_path: Path) -> str:
+    """Render reviewed topic nodes and their bounded direct discovery reach."""
+    coverage = {item["area"].id: item for item in research_area_coverage(records)}
+    areas = sorted(
+        (record for record in records.values() if record.entity_type == "research-area" and eligible(record)),
+        key=lambda record: (record.metadata["name"].casefold(), record.id),
+    )
+    lines = [
+        "# Research-area discovery", "",
+        "**Status:** deterministic evidence-discovery result, not a research-problem ranking.", "",
+        "Each row is a reviewed controlled topic. Reach counts reflect direct documented graph paths only; they are not measures of importance, opportunity, maturity, or quality.", "",
+        "| Research area | Canonical ID | Direct discovery reach | Area evidence | Confidence |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for area in areas:
+        item = coverage[area.id]
+        reach = "; ".join(
+            f"{key.replace('_', ' ')}: {item[key]}"
+            for key in ("groups", "principal_investigators", "software", "universities", "ecosystems")
+        )
+        lines.append(
+            f"| {canonical_link(area, output_path)} | `{area.id}` | {reach} | "
+            f"sources: {', '.join(as_ids(area.metadata.get('source_ids', [])))} | {area.metadata['confidence']} |"
+        )
+    if not areas:
+        lines.append("| — | — | No reviewed canonical research areas currently available. | — | unavailable |")
+    lines.extend([
+        "", "## Boundary", "",
+        "This catalog does not select or compare research problems. A larger reach count can reflect only the current evidence coverage. Use an area ID with `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, or `discover-software` to inspect the underlying sourced paths. It does not establish problem importance, scientific novelty, funding, admissions, mentoring, availability, or applicant fit.", "",
+    ])
+    return "\n".join(lines)
+
+
+def discover_areas(
+    root: Path,
+    check: bool,
+    query_id: str | None,
+    list_queries: bool,
+    area_id: str | None,
+    country_id: str | None,
+    software_id: str | None,
+    language_id: str | None,
+    ecosystem_id: str | None,
+    open_source: str | None,
+    as_of: str | None,
+) -> int:
+    if any((check, query_id, list_queries, area_id, country_id, software_id, language_id, ecosystem_id, open_source, as_of)):
+        print("ERROR: discover-areas accepts no options")
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    print(render_area_discovery(records, root / "reports/generated/evidence-recommendations.md"))
+    return 0
+
+
 def write_or_check(path: Path, content: str, check: bool, drift: list[str]) -> None:
     if check:
         if not path.exists() or path.read_text(encoding="utf-8") != content:
@@ -2153,7 +2210,7 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "discover-areas", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
@@ -2183,6 +2240,11 @@ def main() -> int:
         return catalog(
             root, args.check, args.query, args.list_queries,
             args.area, args.country, args.software, args.language, args.as_of,
+        )
+    if args.command == "discover-areas":
+        return discover_areas(
+            root, args.check, args.query, args.list_queries, args.area, args.country,
+            args.software, args.language, args.ecosystem, args.open_source, args.as_of,
         )
     if args.command == "discover-groups":
         return discover_groups(

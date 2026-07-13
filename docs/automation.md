@@ -22,6 +22,7 @@ python3 scripts/research_landscape.py recommend --query ecosystems-density-funct
 python3 scripts/research_landscape.py recommend --query groups-density-functional-theory-and-electronic-structure
 python3 scripts/research_landscape.py recommend --query universities-hosting-density-functional-theory-and-electronic-structure-groups
 python3 scripts/research_landscape.py catalog
+python3 scripts/research_landscape.py discover-areas
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-CPP
@@ -81,6 +82,12 @@ interactive discovery; neither form writes generated output.
 Software, and Programming Language IDs accepted by the interactive discovery
 commands. It is public, deterministic, and non-generated; it contains no
 private preferences or ranking data.
+
+`discover-areas` is an interactive, non-generated topic catalog. It lists
+reviewed controlled Research Areas with their area-source IDs and direct,
+documented group, PI, software, direct-host University, and ecosystem reach.
+The counts expose current evidence coverage only; they do not rank research
+problems, measure opportunity or novelty, or infer a user's fit.
 
 `discover-groups` is an interactive, non-generated AND filter over reviewed
 Research Groups. It accepts one or more canonical `--area`, `--country`,
