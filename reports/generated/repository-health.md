@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7 -->
+<!-- input-fingerprint: 12b03ac84e60e07d095339d99703d32015bfda07d9bd3e27b0375dddca39754d -->
 # Repository health report
 
-**Input fingerprint:** `e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7`
+**Input fingerprint:** `12b03ac84e60e07d095339d99703d32015bfda07d9bd3e27b0375dddca39754d`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **150**
-- Typed relationship assertions: **266**
+- Canonical v2 entities: **151**
+- Typed relationship assertions: **268**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -28,7 +28,7 @@
 | research-area | 8 |
 | research-ecosystem | 29 |
 | research-group | 13 |
-| research-problem | 7 |
+| research-problem | 8 |
 | research-software | 30 |
 | university | 11 |
 
@@ -36,22 +36,22 @@
 
 | Confidence | Count |
 | --- | ---: |
-| high | 150 |
+| high | 151 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **150**
+- Canonical v2 records in approved entity directories: **151**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 150/150 |
-| Reviewed/published records with last-review dates | 150/150 |
-| Typed relationships with source IDs | 266/266 |
+| Reviewed/published records with source IDs | 151/151 |
+| Reviewed/published records with last-review dates | 151/151 |
+| Typed relationships with source IDs | 268/268 |
 | Reviewed groups with exactly one direct-host field | 13/13 |
-| Entities with an inbound or outbound graph connection | 150/150 |
+| Entities with an inbound or outbound graph connection | 151/151 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 14 (11/3) |
 | Generated public views | 11/11 |
@@ -64,7 +64,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | Research area | Groups | Principal Investigators | Research Software | Research Problems | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 5 | 2 | 2 | 6 |
-| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 11 | 11 | 19 | 5 | 6 | 23 |
+| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 11 | 11 | 19 | 6 | 6 | 23 |
 | [Computational Phonon Calculations](../../entities/research-areas/computational-phonon-calculations.md) | 1 | 1 | 2 | 1 | 0 | 2 |
 | [Crystal Symmetry Analysis](../../entities/research-areas/crystal-symmetry-analysis.md) | 0 | 1 | 1 | 1 | 0 | 1 |
 | [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 5 | 1 | 12 | 1 | 4 | 15 |
@@ -88,7 +88,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 
 | Predicate | Count |
 | --- | ---: |
-| addresses | 13 |
+| addresses | 14 |
 | administers | 2 |
 | affiliated_with | 17 |
 | authored_by | 9 |
@@ -103,7 +103,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | involves | 1 |
 | leads | 12 |
 | located_in | 19 |
-| supports | 13 |
+| supports | 14 |
 | works_on | 50 |
 
 ## Findings

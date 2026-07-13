@@ -6,6 +6,10 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- An eighth evidence-bounded Research Problem record for Atomistic Structure
+  Optimization, with a direct ASE support path and connected Python, ecosystem,
+  and group discovery; it does not compare optimizers, calculators, potentials,
+  workflows, software, researchers, or problem importance.
 - `discover-pis --open-source` now exposes documented PI `develops` → software
   paths plus each software record's documented openness state, without
   inferring a PI's values, maintenance activity, governance, or availability.

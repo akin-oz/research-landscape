@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7 -->
+<!-- input-fingerprint: 12b03ac84e60e07d095339d99703d32015bfda07d9bd3e27b0375dddca39754d -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7`
+**Input fingerprint:** `12b03ac84e60e07d095339d99703d32015bfda07d9bd3e27b0375dddca39754d`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -67,6 +67,7 @@
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-13 | COUNTRY-DE |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Atomistic Molecular Dynamics Simulation](../../entities/research-problems/atomistic-molecular-dynamics-simulation.md) | `PROBLEM-ATOMISTIC-MOLECULAR-DYNAMICS-SIMULATION` | research-problem | high | 2026-07-13 | — |
+| [Atomistic Structure Optimization](../../entities/research-problems/atomistic-structure-optimization.md) | `PROBLEM-ATOMISTIC-STRUCTURE-OPTIMIZATION` | research-problem | high | 2026-07-13 | — |
 | [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md) | `PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION` | research-problem | high | 2026-07-13 | — |
 | [Density-Functional Electronic-Structure Calculation](../../entities/research-problems/density-functional-electronic-structure-calculation.md) | `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION` | research-problem | high | 2026-07-13 | — |
 | [High-Throughput Materials Screening](../../entities/research-problems/high-throughput-materials-screening.md) | `PROBLEM-HIGH-THROUGHPUT-MATERIALS-SCREENING` | research-problem | high | 2026-07-13 | — |
@@ -76,7 +77,7 @@
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-13 | — |
 | [aiida-core](../../entities/research-software/aiida-core.md) | `SW-AIIDA-CORE` | research-software | high | 2026-07-12 | — |
-| [Atomic Simulation Environment (ASE)](../../entities/research-software/ase.md) | `SW-ASE` | research-software | high | 2026-07-12 | — |
+| [Atomic Simulation Environment (ASE)](../../entities/research-software/ase.md) | `SW-ASE` | research-software | high | 2026-07-13 | — |
 | [BigDFT](../../entities/research-software/bigdft.md) | `SW-BIGDFT` | research-software | high | 2026-07-13 | — |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
 | [CP2K](../../entities/research-software/cp2k.md) | `SW-CP2K` | research-software | high | 2026-07-13 | — |

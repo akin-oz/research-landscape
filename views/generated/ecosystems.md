@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7 -->
+<!-- input-fingerprint: 12b03ac84e60e07d095339d99703d32015bfda07d9bd3e27b0375dddca39754d -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `e579efc04690fdee42c7caabaed3bf4d7abf6d49ad72ee5de5efb261176bf1a7`
+**Input fingerprint:** `12b03ac84e60e07d095339d99703d32015bfda07d9bd3e27b0375dddca39754d`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT Ecosystem](../../entities/ecosystems/abinit.md)

@@ -956,6 +956,33 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`ECO-LAMMPS`", ecosystem)
         self.assertIn("`SW-LAMMPS` supports this problem", ecosystem)
 
+    def test_atomistic_structure_optimization_problem_has_a_bounded_ase_support_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        problem_id = "PROBLEM-ATOMISTIC-STRUCTURE-OPTIMIZATION"
+        support = rl.matching_assertions(records["SW-ASE"], "supports", {problem_id})
+        self.assertEqual(1, len(support))
+        self.assertEqual(["SRC-ASE-OPTIMIZATION"], support[0]["source_ids"])
+
+        rendered = rl.render_problem_discovery(
+            records, ROOT / "reports/generated/evidence-recommendations.md", software_id="SW-ASE",
+        )
+        self.assertIn(f"`{problem_id}`", rendered)
+        self.assertIn("`SW-ASE` supports this problem", rendered)
+
+        ecosystem = rl.render_ecosystem_discovery(
+            records, None, None, ROOT / "reports/generated/evidence-recommendations.md", problem_id,
+        )
+        self.assertIn("`ECO-ASE`", ecosystem)
+        self.assertIn("`SW-ASE` supports this problem", ecosystem)
+
+        groups = rl.render_group_discovery(
+            records, None, None, None, None, None,
+            ROOT / "reports/generated/evidence-recommendations.md", problem_id,
+        )
+        self.assertIn("`RG-DTU-CAMD`", groups)
+        self.assertIn("`SW-ASE` supports `PROBLEM-ATOMISTIC-STRUCTURE-OPTIMIZATION`", groups)
+
     def test_high_throughput_screening_problem_has_a_bounded_aflow_support_path(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

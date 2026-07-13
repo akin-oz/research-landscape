@@ -5,8 +5,8 @@ id: SW-ASE
 name: Atomic Simulation Environment (ASE)
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-ASE-DOCUMENTATION
@@ -17,6 +17,7 @@ source_ids:
   - SRC-ASE-DEVELOPMENT
   - SRC-ASE-CONTACT
   - SRC-ASE-PUBLICATION
+  - SRC-ASE-OPTIMIZATION
 open_source: "yes"
 programming_language_ids:
   - PROGRAMMING-LANGUAGE-PYTHON
@@ -26,6 +27,12 @@ relationship_assertions:
     source_ids: [SRC-ASE-DOCUMENTATION]
     confidence: high
     evidence_window: 2026-07
+  - predicate: supports
+    target_id: PROBLEM-ATOMISTIC-STRUCTURE-OPTIMIZATION
+    source_ids: [SRC-ASE-OPTIMIZATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: ASE documentation presents local and global structure-optimization algorithms and relaxation of atomic positions; this assertion is limited to direct support for the named atomistic structure-optimization challenge.
 website: https://wiki.fysik.dtu.dk/ase/
 repository_url: https://gitlab.com/ase/ase
 license: LGPL-2.1-or-later
@@ -56,6 +63,7 @@ acceptance, support, or a personal mentoring relationship.
 | `SRC-ASE-DEVELOPMENT` | [ASE documentation: Development](https://wiki.fysik.dtu.dk/ase/development/development.html) describes contribution, GitLab, code review, coding conventions, documentation, testing, and release-development guidance. Accessed 2026-07-12. |
 | `SRC-ASE-CONTACT` | [ASE documentation: Contact](https://wiki.fysik.dtu.dk/ase/contact.html) documents the mailing list, Matrix chat, community forum, and public GitLab issues/merge requests. Accessed 2026-07-12. |
 | `SRC-ASE-PUBLICATION` | [Warwick Research Archive: The Atomic Simulation Environment](https://wrap.warwick.ac.uk/id/eprint/87141/) identifies the 21 March 2017 article, DOI `10.1088/1361-648X/aa680e`, and ASE's Python-library subject. Accessed 2026-07-12. |
+| `SRC-ASE-OPTIMIZATION` | [ASE documentation: Structure optimization](https://ase-lib.org/ase/optimize.html) documents local and global optimization algorithms, structure-optimization classes that relax `Atoms` objects, and optional cell optimization through filters. Accessed 2026-07-13. |
 
 ## Boundary and limitations
 
