@@ -98,6 +98,7 @@ python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LE
 python3 scripts/research_landscape.py discover-ecosystems --problem PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION
 python3 scripts/research_landscape.py discover-software --area AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE --language PROGRAMMING-LANGUAGE-JULIA
 python3 scripts/research_landscape.py discover-software --area AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE --language PROGRAMMING-LANGUAGE-CPP
+python3 scripts/research_landscape.py discover-software --problem PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION
 ```
 
 `discover-areas` lists reviewed controlled topics with their direct evidence

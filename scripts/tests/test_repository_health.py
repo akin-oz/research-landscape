@@ -1045,6 +1045,20 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`SW-PHONO3PY` supports this problem (sources: SRC-PHONO3PY-DOCUMENTATION)", rendered)
         self.assertIn("ecosystem `includes` → software `supports` → problem", rendered)
 
+    def test_software_problem_filter_requires_direct_support_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_software_discovery(
+            records, None, None, None,
+            ROOT / "reports/generated/evidence-recommendations.md",
+            problem_id="PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION",
+        )
+        self.assertIn("**AND filters:** research problem `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION`.", rendered)
+        self.assertIn("`SW-PHONO3PY`", rendered)
+        self.assertIn("supports `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION` (sources: SRC-PHONO3PY-DOCUMENTATION)", rendered)
+        self.assertNotIn("`SW-SPGLIB`", rendered)
+        self.assertIn("software record's direct sourced `supports` assertion", rendered)
+
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

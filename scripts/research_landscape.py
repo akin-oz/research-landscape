@@ -1824,7 +1824,7 @@ def discover_ecosystems(
 
 def discovery_software_candidates(
     records: dict[str, Record], area_id: str | None, language_id: str | None, ecosystem_id: str | None,
-    open_source: str | None = None,
+    open_source: str | None = None, problem_id: str | None = None,
 ) -> list[dict[str, Any]]:
     """Apply ANDed, source-explainable filters to reviewed research software.
 
@@ -1867,6 +1867,15 @@ def discovery_software_candidates(
                 continue
             signals.append(metadata_signal(f"has documented open-source state `{open_source}`", software))
             criteria += 1
+        if problem_id:
+            support_signals = [
+                signal(f"supports `{problem_id}`", assertion, software)
+                for assertion in matching_assertions(software, "supports", {problem_id})
+            ]
+            if not support_signals:
+                continue
+            signals.extend(support_signals)
+            criteria += 1
         candidates.append({"record": software, "signals": deduplicate_signals(signals), "criteria": criteria})
     return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
 
@@ -1874,14 +1883,15 @@ def discovery_software_candidates(
 def render_software_discovery(
     records: dict[str, Record], area_id: str | None, language_id: str | None,
     ecosystem_id: str | None, output_path: Path, open_source: str | None = None,
+    problem_id: str | None = None,
 ) -> str:
     filters = [(name, value) for name, value in (
         ("research area", area_id), ("programming language", language_id), ("research ecosystem", ecosystem_id),
-        ("open-source state", open_source),
+        ("open-source state", open_source), ("research problem", problem_id),
     ) if value]
     if not filters:
-        raise ValueError("provide at least one of --area, --language, --ecosystem, or --open-source")
-    candidates = discovery_software_candidates(records, area_id, language_id, ecosystem_id, open_source)
+        raise ValueError("provide at least one of --area, --language, --ecosystem, --open-source, or --problem")
+    candidates = discovery_software_candidates(records, area_id, language_id, ecosystem_id, open_source, problem_id)
     lines = [
         "# Research-software discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking or software-quality assessment.", "",
@@ -1904,7 +1914,7 @@ def render_software_discovery(
         lines.append("| — | — | No reviewed canonical research software matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and contain only reviewed software with every requested evidence criterion. Lifecycle is shown only when the software record has its own cited lifecycle observation; “not documented” does not mean active or inactive. Area classification and an open-source state are backed by the software record's local evidence; language and ecosystem matches use sourced `implemented_in` and `includes` assertions. An open-source state is not a software-quality, activity, governance, support, or individual-value claim. This does not rank software, establish technical superiority, maintenance activity, adoption, funding, openings, mentorship, or applicant fit.", "",
+        "Results are alphabetically ordered and contain only reviewed software with every requested evidence criterion. Lifecycle is shown only when the software record has its own cited lifecycle observation; “not documented” does not mean active or inactive. Area classification and an open-source state are backed by the software record's local evidence; language and ecosystem matches use sourced `implemented_in` and `includes` assertions; a problem match requires the software record's direct sourced `supports` assertion. An open-source state is not a software-quality, activity, governance, support, or individual-value claim. This does not rank software, establish technical superiority, maintenance activity, adoption, funding, openings, mentorship, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1917,13 +1927,14 @@ def discover_software(
     open_source: str | None,
     country_id: str | None,
     software_id: str | None,
+    problem_id: str | None,
     check: bool,
     query_id: str | None,
     list_queries: bool,
     as_of: str | None,
 ) -> int:
     if country_id or software_id or check or query_id or list_queries or as_of:
-        print("ERROR: discover-software accepts only --area, --language, --ecosystem, and --open-source")
+        print("ERROR: discover-software accepts only --area, --language, --ecosystem, --open-source, and --problem")
         return 2
     if open_source and open_source not in OPEN_SOURCE_FILTER_VALUES:
         print("ERROR: --open-source must be one of yes, no, mixed, unknown, or not-applicable")
@@ -1932,7 +1943,7 @@ def discover_software(
     if results.errors:
         print_results(root, records, results)
         return 1
-    filters = {"area": area_id, "language": language_id, "ecosystem": ecosystem_id}
+    filters = {"area": area_id, "language": language_id, "ecosystem": ecosystem_id, "problem": problem_id}
     for name, value in filters.items():
         if not value:
             continue
@@ -1943,7 +1954,7 @@ def discover_software(
     try:
         print(render_software_discovery(
             records, area_id, language_id, ecosystem_id,
-            root / "reports/generated/evidence-recommendations.md", open_source,
+            root / "reports/generated/evidence-recommendations.md", open_source, problem_id,
         ))
     except ValueError as exc:
         print(f"ERROR: {exc}")
@@ -2426,8 +2437,8 @@ def main() -> int:
     if args.open_source and args.command != "discover-software":
         print("ERROR: --open-source is accepted only by discover-software")
         return 2
-    if args.problem and args.command not in {"discover-groups", "discover-pis", "discover-universities", "discover-ecosystems"}:
-        print("ERROR: --problem is accepted only by discover-groups, discover-pis, discover-universities, and discover-ecosystems")
+    if args.problem and args.command not in {"discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software"}:
+        print("ERROR: --problem is accepted only by discover-groups, discover-pis, discover-universities, discover-ecosystems, and discover-software")
         return 2
     if args.command == "validate":
         records, results = validate(root)
@@ -2470,7 +2481,7 @@ def main() -> int:
     if args.command == "discover-software":
         return discover_software(
             root, args.area, args.language, args.ecosystem, args.open_source, args.country, args.software,
-            args.check, args.query, args.list_queries, args.as_of,
+            args.problem, args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "freshness":
         try:
