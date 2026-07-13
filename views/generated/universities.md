@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc -->
+<!-- input-fingerprint: 62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792 -->
 # Universities view
 
 **Definition:** `universities`
-**Input fingerprint:** `8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc`
+**Input fingerprint:** `62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Duke University](../../entities/universities/duke-university.md)
@@ -11,7 +11,7 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) | `PI-STEFANO-CURTAROLO` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
-| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Duke University](../../entities/universities/duke-university.md) | `UNIVERSITY-DUKE` | university | high | 2026-07-12 | COUNTRY-US |
 
 ## [EPFL](../../entities/universities/epfl.md)
@@ -27,7 +27,7 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) | `PI-CLAUDIA-DRAXL` | principal-investigator | high | 2026-07-12 | COUNTRY-DE |
-| [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-12 | COUNTRY-DE |
+| [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-13 | COUNTRY-DE |
 | [Humboldt-Universität zu Berlin](../../entities/universities/humboldt-university-berlin.md) | `UNIVERSITY-HU-BERLIN` | university | high | 2026-07-12 | COUNTRY-DE |
 
 ## [National University of Singapore](../../entities/universities/national-university-of-singapore.md)
@@ -44,7 +44,7 @@
 | --- | --- | --- | --- | --- | --- |
 | [Department of Materials Science and Engineering](../../entities/departments/northwestern-materials-science-engineering.md) | `DEPARTMENT-NORTHWESTERN-MSE` | department | high | 2026-07-12 | COUNTRY-US |
 | [Chris Wolverton](../../entities/principal-investigators/chris-wolverton.md) | `PI-CHRIS-WOLVERTON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
-| [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Northwestern University](../../entities/universities/northwestern-university.md) | `UNIVERSITY-NORTHWESTERN` | university | high | 2026-07-12 | COUNTRY-US |
 
 ## [Scuola Internazionale Superiore di Studi Avanzati (SISSA)](../../entities/universities/sissa.md)
@@ -58,7 +58,7 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
-| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
 | [Technical University of Denmark](../../entities/universities/technical-university-of-denmark.md) | `UNIVERSITY-DTU` | university | high | 2026-07-12 | COUNTRY-DK |
 
 ## [Temple University](../../entities/universities/temple-university.md)

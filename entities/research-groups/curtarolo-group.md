@@ -5,8 +5,8 @@ id: RG-CURTAROLO-GROUP
 name: Curtarolo Group
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-CURTAROLO-GROUP-JOBS
@@ -18,6 +18,7 @@ source_ids:
 institution_id: UNIVERSITY-DUKE
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 software_ids:
   - SW-AFLOW
 website: https://materials.duke.edu/
@@ -38,6 +39,12 @@ relationship_assertions:
     source_ids: [SRC-CURTAROLO-GROUP-JOBS]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    source_ids: [SRC-CURTAROLO-GROUP-AFLOW, SRC-CURTAROLO-GROUP-RESEARCH]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The group describes AFLOW's autonomous DFT calculations and its own DFT research. This is a group-scope relation, not an individual software-maintenance or complete methodology claim.
 ---
 
 # Curtarolo Group

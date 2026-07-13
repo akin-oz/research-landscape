@@ -1,16 +1,16 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc -->
+<!-- input-fingerprint: 62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792 -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc`
+**Input fingerprint:** `62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
-| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
 | [Technical University of Denmark](../../entities/universities/technical-university-of-denmark.md) | `UNIVERSITY-DTU` | university | high | 2026-07-12 | COUNTRY-DK |
 
 ## [Germany](../../entities/countries/germany.md)
@@ -20,7 +20,7 @@
 | [Eighth FAIRmat Users Meeting](../../entities/conferences/fairmat-users-meeting-2026.md) | `CONF-FAIRMAT-USERS-MEETING-2026` | conference | high | 2026-07-12 | COUNTRY-DE |
 | [Max Planck Society for the Advancement of Science](../../entities/organizations/max-planck-society.md) | `ORG-MPG` | organization | high | 2026-07-12 | COUNTRY-DE |
 | [Claudia Draxl](../../entities/principal-investigators/claudia-draxl.md) | `PI-CLAUDIA-DRAXL` | principal-investigator | high | 2026-07-12 | COUNTRY-DE |
-| [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-12 | COUNTRY-DE |
+| [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-13 | COUNTRY-DE |
 | [Humboldt-Universität zu Berlin](../../entities/universities/humboldt-university-berlin.md) | `UNIVERSITY-HU-BERLIN` | university | high | 2026-07-12 | COUNTRY-DE |
 
 ## [Italy](../../entities/countries/italy.md)
@@ -82,10 +82,10 @@
 | [Kristin A. Persson](../../entities/principal-investigators/kristin-persson.md) | `PI-KRISTIN-PERSSON` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) | `PI-STEFANO-CURTAROLO` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
-| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Hacking Materials](../../entities/research-groups/hacking-materials.md) | `RG-HACKING-MATERIALS` | research-group | high | 2026-07-13 | COUNTRY-US |
-| [Persson Group](../../entities/research-groups/persson-group.md) | `RG-PERSSON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
-| [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [Persson Group](../../entities/research-groups/persson-group.md) | `RG-PERSSON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
+| [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Duke University](../../entities/universities/duke-university.md) | `UNIVERSITY-DUKE` | university | high | 2026-07-12 | COUNTRY-US |
 | [Northwestern University](../../entities/universities/northwestern-university.md) | `UNIVERSITY-NORTHWESTERN` | university | high | 2026-07-12 | COUNTRY-US |
 | [Temple University](../../entities/universities/temple-university.md) | `UNIVERSITY-TEMPLE` | university | high | 2026-07-13 | COUNTRY-US |

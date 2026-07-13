@@ -5,8 +5,8 @@ id: RG-SOLGROUP
 name: SOLgroup
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-SOLGROUP-HOME
@@ -20,6 +20,7 @@ source_ids:
 institution_id: UNIVERSITY-HU-BERLIN
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 website: https://sol.physik.hu-berlin.de/
 relationship_assertions:
   - predicate: belongs_to
@@ -32,6 +33,12 @@ relationship_assertions:
     source_ids: [SRC-SOLGROUP-HOME]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    source_ids: [SRC-SOLGROUP-CODE-DEVELOPMENT, SRC-SOLGROUP-GRAFOX]
+    confidence: high
+    evidence_window: 2026-07
+    notes: SOLgroup describes DFT/beyond-DFT code development and DFT research. This is a bounded group research-scope relation, not a complete method, software, or individual-role inventory.
 ---
 
 # SOLgroup

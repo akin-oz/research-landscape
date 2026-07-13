@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc -->
+<!-- input-fingerprint: 62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc`
+**Input fingerprint:** `62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -19,7 +19,7 @@
 | --- | --- | --- | --- | --- | --- |
 | [aflow++: A C++ framework for autonomous materials design](../../entities/publications/aflow-plus-plus-2023.md) | `PUB-AFLOW-PLUS-PLUS-2023` | publication | high | 2026-07-12 | — |
 | [AFLOW](../../entities/ecosystems/aflow.md) | `ECO-AFLOW` | research-ecosystem | high | 2026-07-12 | — |
-| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-12 | — |
 
 ## [aiida-core](../../entities/research-software/aiida-core.md)
@@ -41,7 +41,7 @@
 | --- | --- | --- | --- | --- | --- |
 | [The Atomic Simulation Environment: a Python library for working with atoms](../../entities/publications/ase-2017.md) | `PUB-ASE-2017` | publication | high | 2026-07-12 | — |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) | `ECO-ASE` | research-ecosystem | high | 2026-07-12 | — |
-| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
 | [Atomic Simulation Environment (ASE)](../../entities/research-software/ase.md) | `SW-ASE` | research-software | high | 2026-07-12 | — |
 
 ## [CHGNet](../../entities/research-software/chgnet.md)

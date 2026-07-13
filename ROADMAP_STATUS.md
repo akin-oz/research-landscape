@@ -20,8 +20,9 @@ The current `main` branch extends the released cohort to 108 canonical entities
 and 186 evidence-bearing typed relationships. It adds AI-for-Materials,
 FAIR Chemistry/FAIRChem, UC Berkeley/CEDER/CHGNet, MACE/Cambridge,
 Materialyze/MatGL/MatML, Open Catalyst Project/FAIRChem migration,
-Density-Functional Theory and Electronic Structure discovery, ABINIT/Fortran,
-CP2K/Fortran, Quantum ESPRESSO/Foundation, LAMMPS/Sandia,
+Density-Functional Theory and Electronic Structure software, group, and
+direct-host University discovery, ABINIT/Fortran, CP2K/Fortran,
+Quantum ESPRESSO/Foundation, LAMMPS/Sandia,
 OpenKIM/KIM API/University of Minnesota, Scientific Software Engineering, and M3GNet publication-provenance slices; accepted
 Programming Language and bounded mentorship-process evidence contracts;
 explicit recommendation-query, interactive software, and ecosystem-path

@@ -38,7 +38,7 @@ The CP2K cluster adds [CP2K](research-software/cp2k.md), the [CP2K Ecosystem](ec
 
 The ABINIT cluster adds [ABINIT](research-software/abinit.md) and the [ABINIT Ecosystem](ecosystems/abinit.md), while reusing the controlled Fortran and Computational Materials Science records. It makes no person, institution, consortium, or complete-project-community claim.
 
-The Density-Functional Theory and Electronic Structure area extension adds the controlled [area record](research-areas/density-functional-theory-and-electronic-structure.md) and directly classifies only the existing ABINIT, CP2K, and Quantum ESPRESSO software records. Their separately owned ecosystems become discoverable through existing inclusion paths.
+The Density-Functional Theory and Electronic Structure area extension adds the controlled [area record](research-areas/density-functional-theory-and-electronic-structure.md) and directly classifies existing ABINIT, CP2K, Quantum ESPRESSO, CAMD, Curtarolo Group, Persson Group, SOLgroup, and Wolverton Research Group records. Their separately owned ecosystems and direct-host Universities become discoverable through existing evidence-bearing paths.
 
 The Temple–Kohlmeyer–LAMMPS extension adds [Axel Kohlmeyer](principal-investigators/axel-kohlmeyer.md) and [Temple University](universities/temple-university.md), while reusing the LAMMPS, United States, and Computational Materials Science records.
 

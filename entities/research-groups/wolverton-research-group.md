@@ -5,8 +5,8 @@ id: RG-WOLVERTON-GROUP
 name: Wolverton Research Group
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-OQMD-OVERVIEW
@@ -19,6 +19,7 @@ institution_id: UNIVERSITY-NORTHWESTERN
 department_id: DEPARTMENT-NORTHWESTERN-MSE
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 website: https://www.wolverton.northwestern.edu/
 relationship_assertions:
   - predicate: belongs_to
@@ -37,6 +38,12 @@ relationship_assertions:
     source_ids: [SRC-WOLVERTON-GROUP-MEMBERS]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    source_ids: [SRC-WOLVERTON-GROUP-RESEARCH]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The group explicitly describes DFT and high-throughput DFT among its methods. This is a group research-scope relation, not a claim that all group work, OQMD records, or members use DFT.
 ---
 
 # Wolverton Research Group

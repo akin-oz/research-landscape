@@ -6,9 +6,11 @@
 
 This increment adds the controlled `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE`
 label to make a precise public discovery route across existing open
-electronic-structure software ecosystems. It classifies only ABINIT, CP2K,
-and Quantum ESPRESSO because each record's own reviewed source explicitly
-describes DFT or electronic-structure calculations in its documented scope.
+electronic-structure software ecosystems and directly documented research
+groups. It classifies only ABINIT, CP2K, Quantum ESPRESSO, CAMD, Curtarolo
+Group, Persson Group, SOLgroup, and Wolverton Research Group because each
+record's own reviewed source explicitly describes DFT or electronic-structure
+calculations in its documented scope.
 
 ## Canonical graph
 
@@ -21,6 +23,11 @@ flowchart LR
   E1["ECO-ABINIT"] -->|"includes"| AB
   E2["ECO-CP2K"] -->|"includes"| CP
   E3["ECO-QUANTUM-ESPRESSO"] -->|"includes"| QE
+  G1["RG-DTU-CAMD"] -->|"works_on"| AREA
+  G2["RG-CURTAROLO-GROUP"] -->|"works_on"| AREA
+  G3["RG-PERSSON-GROUP"] -->|"works_on"| AREA
+  G4["RG-SOLGROUP"] -->|"works_on"| AREA
+  G5["RG-WOLVERTON-GROUP"] -->|"works_on"| AREA
 ```
 
 ## Evidence boundaries
@@ -31,11 +38,20 @@ flowchart LR
 | CP2K | Official repository describes DFT methods in its quantum-chemistry and solid-state atomistic-simulation package. | No claim that every CP2K method is a DFT or electronic-structure workflow. |
 | Quantum ESPRESSO | Official project material describes electronic-structure calculations based on DFT, plane waves, and pseudopotentials. | No claim that every module, interface, or user has the same scope. |
 
+| Group | Direct basis for classification | Boundary |
+| --- | --- | --- |
+| CAMD | DTU describes development of electronic-structure methods and DFT uncertainty quantification. | No claim covers all CAMD projects or shared software. |
+| Curtarolo Group | Group evidence describes autonomous DFT calculations and DFT research. | No individual AFLOW-maintenance or universal-method claim. |
+| Persson Group | The group explicitly identifies DFT among its research methods. | No claim covers every project, member, or artifact. |
+| SOLgroup | Group sources identify DFT/beyond-DFT code and DFT research. | No complete method, software, or individual-role claim. |
+| Wolverton Group | Group research documentation describes DFT and high-throughput DFT. | No claim covers all OQMD work or members. |
+
 ## Deliberate omissions
 
-- No research group, PI, university, organization, dataset, publication, or
-  project is classified merely because it is adjacent to one of these software
-  ecosystems.
+- No PI, university, organization, dataset, publication, or project is
+  classified merely because it is adjacent to one of these software ecosystems
+  or groups. Direct-host universities are only surfaced through existing
+  evidence-bearing group-host paths.
 - No broader/narrower taxonomy relation is asserted between this controlled
   area and Computational Materials Science.
 - The label does not measure method quality, accuracy, performance, project
@@ -43,10 +59,14 @@ flowchart LR
 
 ## Discovery reachability
 
-The public recommendation query
-`ecosystems-density-functional-theory-and-electronic-structure` exposes the
-three included-software paths, with exact source identifiers. Software-first
-discovery is available through:
+The public recommendation queries
+`ecosystems-density-functional-theory-and-electronic-structure`,
+`groups-density-functional-theory-and-electronic-structure`, and
+`universities-hosting-density-functional-theory-and-electronic-structure-groups`
+expose exact source identifiers. The ecosystem query returns both the three
+software-inclusion paths and the existing ASE–CAMD, Materials Project–Persson
+Group, and OQMD–Wolverton Group paths; these are distinct relations, not a
+claim of shared ownership. Software-first discovery is available through:
 
 ```bash
 python3 scripts/research_landscape.py discover-software \

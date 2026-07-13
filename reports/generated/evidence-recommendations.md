@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 9a1b0cdfac975218becb37377ce881d32945814f494a14e64412b82d9aadd594 -->
+<!-- input-fingerprint: 074547088f86e381784d6306ac84404428f55cfc41fabe6c83ef3c941184d29b -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `9a1b0cdfac975218becb37377ce881d32945814f494a14e64412b82d9aadd594`
+**Input fingerprint:** `074547088f86e381784d6306ac84404428f55cfc41fabe6c83ef3c941184d29b`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -63,6 +63,22 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) (`RG-WOLVERTON-GROUP`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects a sourced area relation, not exhaustive subject coverage or quality.
+
+## Research groups with documented Density-Functional Theory and Electronic Structure work
+
+**Query ID:** `groups-density-functional-theory-and-electronic-structure`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) (`RG-DTU-CAMD`) | works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-DTU-CAMD-RESEARCH, SRC-DTU-CAMD-ATOMIC-DESIGN) | high | 1/1 documented criteria |
+| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) (`RG-CURTAROLO-GROUP`) | works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-CURTAROLO-GROUP-AFLOW, SRC-CURTAROLO-GROUP-RESEARCH) | high | 1/1 documented criteria |
+| [Persson Group](../../entities/research-groups/persson-group.md) (`RG-PERSSON-GROUP`) | works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 1/1 documented criteria |
+| [SOLgroup](../../entities/research-groups/solgroup.md) (`RG-SOLGROUP`) | works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-SOLGROUP-CODE-DEVELOPMENT, SRC-SOLGROUP-GRAFOX) | high | 1/1 documented criteria |
+| [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) (`RG-WOLVERTON-GROUP`) | works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-WOLVERTON-GROUP-RESEARCH) | high | 1/1 documented criteria |
+
+**Limitations:** Membership reflects each group's explicit DFT or electronic-structure evidence; it is not a method-quality, hiring, mentorship, or research-quality claim.
 
 ## Research groups with documented Materials Informatics work
 
@@ -172,7 +188,10 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [ABINIT Ecosystem](../../entities/ecosystems/abinit.md) (`ECO-ABINIT`) | includes `SW-ABINIT` (sources: SRC-ABINIT-HOME); `SW-ABINIT` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-ABINIT-PRESENTATION, SRC-ABINIT-LICENSE, SRC-ABINIT-DEVELOPMENT) | high | 2/2 documented criteria |
+| [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-DTU-CAMD-RESEARCH, SRC-DTU-CAMD-ATOMIC-DESIGN) | high | 2/2 documented criteria |
 | [CP2K Ecosystem](../../entities/ecosystems/cp2k.md) (`ECO-CP2K`) | includes `SW-CP2K` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD); `SW-CP2K` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD) | high | 2/2 documented criteria |
+| [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 2/2 documented criteria |
+| [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-WOLVERTON-GROUP-RESEARCH) | high | 2/2 documented criteria |
 | [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) (`ECO-QUANTUM-ESPRESSO`) | includes `SW-QUANTUM-ESPRESSO` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY); `SW-QUANTUM-ESPRESSO` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY, SRC-QE-USER-GUIDE) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed DFT or electronic-structure path; it is not ecosystem completeness, method quality, performance, or fit.
@@ -338,6 +357,21 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [University of California, Berkeley](../../entities/universities/university-of-california-berkeley.md) (`UNIVERSITY-UC-BERKELEY`) | hosts `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UC-BERKELEY-CEDER-PROFILE) | high | 2/2 documented criteria |
 
 **Limitations:** This is a sourced host-and-area discovery path, not a measure of university strength, ecosystem completeness, degree quality, funding, opportunities, or admissions fit.
+
+## Universities directly hosting groups with documented Density-Functional Theory and Electronic Structure work
+
+**Query ID:** `universities-hosting-density-functional-theory-and-electronic-structure-groups`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Duke University](../../entities/universities/duke-university.md) (`UNIVERSITY-DUKE`) | hosts `RG-CURTAROLO-GROUP` (sources: SRC-CURTAROLO-GROUP-JOBS); `RG-CURTAROLO-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-CURTAROLO-GROUP-AFLOW, SRC-CURTAROLO-GROUP-RESEARCH) | high | 2/2 documented criteria |
+| [Humboldt-Universität zu Berlin](../../entities/universities/humboldt-university-berlin.md) (`UNIVERSITY-HU-BERLIN`) | hosts `RG-SOLGROUP` (sources: SRC-SOLGROUP-HOME); `RG-SOLGROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-SOLGROUP-CODE-DEVELOPMENT, SRC-SOLGROUP-GRAFOX) | high | 2/2 documented criteria |
+| [Northwestern University](../../entities/universities/northwestern-university.md) (`UNIVERSITY-NORTHWESTERN`) | hosts `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-WOLVERTON-GROUP-RESEARCH) | high | 2/2 documented criteria |
+| [Technical University of Denmark](../../entities/universities/technical-university-of-denmark.md) (`UNIVERSITY-DTU`) | hosts `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-OVERVIEW); `RG-DTU-CAMD` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-DTU-CAMD-RESEARCH, SRC-DTU-CAMD-ATOMIC-DESIGN) | high | 2/2 documented criteria |
+
+**Limitations:** This is a sourced direct-host-and-group-area discovery path, not a measure of university strength, degree quality, funding, opportunities, or admissions fit.
 
 ## Universities directly hosting Scientific Software Engineering groups
 

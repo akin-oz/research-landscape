@@ -5,8 +5,8 @@ id: RG-PERSSON-GROUP
 name: Persson Group
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-PERSSON-GROUP-RESEARCH
@@ -18,6 +18,7 @@ source_ids:
 organization_id: ORG-LBNL
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 website: https://perssongroup.lbl.gov/
 relationship_assertions:
   - predicate: belongs_to
@@ -30,6 +31,12 @@ relationship_assertions:
     source_ids: [SRC-PERSSON-GROUP-RESEARCH]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    source_ids: [SRC-PERSSON-GROUP-RESEARCH]
+    confidence: high
+    evidence_window: 2026-07
+    notes: The group explicitly names DFT among its materials-research methods. This is a bounded research-scope relation, not a claim that every group project, member, or software artifact uses DFT.
 ---
 
 # Persson Group

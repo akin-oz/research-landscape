@@ -66,7 +66,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 0, "principal_investigators": 0, "software": 3, "universities": 0, "ecosystems": 3},
+            {"groups": 5, "principal_investigators": 0, "software": 3, "universities": 4, "ecosystems": 6},
             {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -190,7 +190,7 @@ class RepositoryHealthTests(unittest.TestCase):
             queries["ecosystems-density-functional-theory-and-electronic-structure"], records
         )
         self.assertEqual(
-            ["ECO-ABINIT", "ECO-CP2K", "ECO-QUANTUM-ESPRESSO"],
+            ["ECO-ABINIT", "ECO-ASE", "ECO-CP2K", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         software_candidates = rl.discovery_software_candidates(
@@ -205,6 +205,21 @@ class RepositoryHealthTests(unittest.TestCase):
             [candidate["record"].id for candidate in software_candidates],
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in software_candidates))
+        group_candidates = rl.recommendation_candidates(
+            queries["groups-density-functional-theory-and-electronic-structure"], records
+        )
+        self.assertEqual(
+            ["RG-CURTAROLO-GROUP", "RG-DTU-CAMD", "RG-PERSSON-GROUP", "RG-SOLGROUP", "RG-WOLVERTON-GROUP"],
+            sorted(candidate["record"].id for candidate in group_candidates),
+        )
+        university_candidates = rl.recommendation_candidates(
+            queries["universities-hosting-density-functional-theory-and-electronic-structure-groups"], records
+        )
+        self.assertEqual(
+            ["UNIVERSITY-DTU", "UNIVERSITY-DUKE", "UNIVERSITY-HU-BERLIN", "UNIVERSITY-NORTHWESTERN"],
+            sorted(candidate["record"].id for candidate in university_candidates),
+        )
+        self.assertTrue(all(candidate["criteria"] == 2 for candidate in university_candidates))
 
     def test_source_identifier_must_be_in_the_evidence_table(self) -> None:
         record = rl.Record(

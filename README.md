@@ -36,6 +36,7 @@ Applicants often make high-stakes decisions from incomplete information and repu
 - Use `python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-FORTRAN --ecosystem ECO-CP2K --open-source yes` to inspect CP2K's sourced implementation and ecosystem route without inferring individual programming skill or project support.
 - Use `python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-FORTRAN --ecosystem ECO-ABINIT --open-source yes` for the same bounded ABINIT path; it is not a current-maintainer, review, or institutional-access claim.
 - Use `python3 scripts/research_landscape.py recommend --query ecosystems-density-functional-theory-and-electronic-structure` to inspect exact ABINIT, CP2K, and Quantum ESPRESSO DFT/electronic-structure paths without treating them as comparable or complete.
+- Use `python3 scripts/research_landscape.py recommend --query groups-density-functional-theory-and-electronic-structure` to find directly evidenced lab paths; use the matching University query to inspect direct hosts without ranking institutions.
 - Read [onboarding](docs/onboarding.md) to contribute, [entity authoring](docs/entity-authoring.md) before changing canonical knowledge, and [review process](docs/review-process.md) before opening a pull request.
 - Inspect the generated [repository-health report](reports/generated/repository-health.md) for current coverage and structural limits.
 

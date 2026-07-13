@@ -27,6 +27,13 @@ queries:
     area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
     limitations: "Membership reflects a sourced area relation, not exhaustive subject coverage or quality."
 
+  - query_id: groups-density-functional-theory-and-electronic-structure
+    aliases: [density-functional-theory-groups, electronic-structure-groups]
+    kind: groups-by-area
+    title: Research groups with documented Density-Functional Theory and Electronic Structure work
+    area_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    limitations: "Membership reflects each group's explicit DFT or electronic-structure evidence; it is not a method-quality, hiring, mentorship, or research-quality claim."
+
   - query_id: groups-materials-informatics
     aliases: [best-materials-informatics-groups]
     kind: groups-by-area
@@ -150,6 +157,13 @@ queries:
     title: Universities directly hosting research groups with documented Computational Materials Science work
     area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
     limitations: "This is a sourced host-and-area discovery path, not a measure of university strength, ecosystem completeness, degree quality, funding, opportunities, or admissions fit."
+
+  - query_id: universities-hosting-density-functional-theory-and-electronic-structure-groups
+    aliases: [density-functional-theory-host-universities, electronic-structure-host-universities]
+    kind: universities-hosting-groups-by-area
+    title: Universities directly hosting groups with documented Density-Functional Theory and Electronic Structure work
+    area_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    limitations: "This is a sourced direct-host-and-group-area discovery path, not a measure of university strength, degree quality, funding, opportunities, or admissions fit."
 
   - query_id: universities-hosting-scientific-software-engineering-groups
     aliases: [universities-with-scientific-software-engineering-groups]

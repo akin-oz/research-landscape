@@ -5,8 +5,8 @@ id: RG-DTU-CAMD
 name: Computational Atomic-scale Materials Design (CAMD)
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-DTU-CAMD-RESEARCH
@@ -17,6 +17,7 @@ source_ids:
 institution_id: UNIVERSITY-DTU
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 software_ids:
   - SW-ASE
 website: https://physics.dtu.dk/research/sections/camd
@@ -31,6 +32,12 @@ relationship_assertions:
     source_ids: [SRC-DTU-CAMD-RESEARCH]
     confidence: high
     evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    source_ids: [SRC-DTU-CAMD-RESEARCH, SRC-DTU-CAMD-ATOMIC-DESIGN]
+    confidence: high
+    evidence_window: 2026-07
+    notes: CAMD describes electronic-structure methods and DFT uncertainty quantification. This is a group research-scope relation, not a claim that every CAMD project, member, or shared tool uses DFT.
   - predicate: develops
     target_id: SW-ASE
     source_ids: [SRC-DTU-CAMD-RESEARCH]

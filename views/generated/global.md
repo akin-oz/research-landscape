@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc -->
+<!-- input-fingerprint: 62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc`
+**Input fingerprint:** `62fe6fb4ffdd9ecb7afde3eda7ff8199a0103ff16e8d2601e122e9f09acc2792`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -39,17 +39,17 @@
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) | `ECO-OPENKIM` | research-ecosystem | high | 2026-07-13 | — |
 | [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) | `ECO-QUANTUM-ESPRESSO` | research-ecosystem | high | 2026-07-12 | — |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
-| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-12 | COUNTRY-DK |
+| [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
 | [Computational Materials Science Research Team](../../entities/research-groups/riken-computational-materials-science-team.md) | `RG-RIKEN-COMPUTATIONAL-MATERIALS-SCIENCE` | research-group | high | 2026-07-12 | COUNTRY-JP |
-| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Hacking Materials](../../entities/research-groups/hacking-materials.md) | `RG-HACKING-MATERIALS` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Laboratory of Theory and Simulation of Materials (THEOS)](../../entities/research-groups/theos.md) | `RG-THEOS` | research-group | high | 2026-07-13 | COUNTRY-CH |
 | [Materials Software and Data Group](../../entities/research-groups/materials-software-and-data-group.md) | `RG-PSI-MSD` | research-group | high | 2026-07-13 | COUNTRY-CH |
 | [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) | `RG-MATERIALYZE-AI` | research-group | high | 2026-07-12 | COUNTRY-SG |
-| [Persson Group](../../entities/research-groups/persson-group.md) | `RG-PERSSON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [Persson Group](../../entities/research-groups/persson-group.md) | `RG-PERSSON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) | `RG-RIKEN-POLYMEROMICS` | research-group | high | 2026-07-12 | COUNTRY-JP |
-| [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-12 | COUNTRY-DE |
-| [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
+| [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-13 | COUNTRY-DE |
+| [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-12 | — |
 | [aiida-core](../../entities/research-software/aiida-core.md) | `SW-AIIDA-CORE` | research-software | high | 2026-07-12 | — |
