@@ -974,6 +974,20 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertNotIn("PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION", rendered)
         self.assertIn("ecosystem `includes` → software `supports` → problem path", rendered)
 
+    def test_problem_discovery_language_filter_requires_implementation_and_support_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_problem_discovery(
+            records, ROOT / "reports/generated/evidence-recommendations.md",
+            language_id="PROGRAMMING-LANGUAGE-C",
+        )
+        self.assertIn("**AND filters:** programming language `PROGRAMMING-LANGUAGE-C`.", rendered)
+        self.assertIn("`PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION`", rendered)
+        self.assertIn("`SW-SPGLIB` is implemented in `PROGRAMMING-LANGUAGE-C` (sources: SRC-SPGLIB-DOCUMENTATION)", rendered)
+        self.assertIn("`SW-SPGLIB` supports this problem (sources: SRC-SPGLIB-DOCUMENTATION)", rendered)
+        self.assertNotIn("PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION", rendered)
+        self.assertIn("software `implemented_in` → `supports` → problem path", rendered)
+
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

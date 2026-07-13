@@ -2029,17 +2029,34 @@ def ecosystem_problem_support_signals(
     return deduplicate_signals(signals)
 
 
+def language_problem_support_signals(
+    language: Record, problem_id: str, records: dict[str, Record],
+) -> list[dict[str, Any]]:
+    """Return only documented implementation-language-to-problem-support paths."""
+    signals = []
+    for software in records.values():
+        if software.entity_type != "research-software" or not eligible(software):
+            continue
+        for implementation in matching_assertions(software, "implemented_in", {language.id}):
+            for support in matching_assertions(software, "supports", {problem_id}):
+                signals.append(signal(f"`{software.id}` is implemented in `{language.id}`", implementation, software))
+                signals.append(signal(f"`{software.id}` supports this problem", support, software))
+    return deduplicate_signals(signals)
+
+
 def render_problem_discovery(
     records: dict[str, Record], output_path: Path, area_id: str | None = None,
     software_id: str | None = None, ecosystem_id: str | None = None,
+    language_id: str | None = None,
 ) -> str:
     """Render reviewed computational challenges and their direct support paths.
 
     An area filter matches only a problem's own source-backed controlled-area
     classification. A software filter requires that software record's direct,
     sourced ``supports`` assertion. An ecosystem filter requires a documented
-    ``includes → supports`` path. Neither filter infers problem scope from
-    people, groups, ecosystems, or non-support software adjacency.
+    ``includes → supports`` path. A language filter requires a documented
+    ``implemented_in → supports`` path. Neither filter infers problem scope
+    from people, groups, ecosystems, or non-support software adjacency.
     """
     problems = sorted(
         (
@@ -2054,11 +2071,15 @@ def render_problem_discovery(
                 ecosystem_id is None
                 or bool(ecosystem_problem_support_signals(records[ecosystem_id], record.id, records))
             )
+            and (
+                language_id is None
+                or bool(language_problem_support_signals(records[language_id], record.id, records))
+            )
         ),
         key=lambda record: (record.metadata["name"].casefold(), record.id),
     )
     lines = ["# Research-problem discovery", "", "**Status:** deterministic evidence-discovery result, not a problem-importance ranking.", ""]
-    filters = [("research area", area_id), ("research software", software_id), ("research ecosystem", ecosystem_id)]
+    filters = [("research area", area_id), ("research software", software_id), ("research ecosystem", ecosystem_id), ("programming language", language_id)]
     filters = [(name, value) for name, value in filters if value]
     if filters:
         lines.extend(["**AND filters:** " + "; ".join(f"{name} `{value}`" for name, value in filters) + ".", ""])
@@ -2081,9 +2102,13 @@ def render_problem_discovery(
             ecosystem_problem_support_signals(records[ecosystem_id], problem.id, records)
             if ecosystem_id else []
         )
+        language_signals = (
+            language_problem_support_signals(records[language_id], problem.id, records)
+            if language_id else []
+        )
         rendered_matching = "; ".join(
             f"{item['label']} (sources: {item['sources']})"
-            for item in deduplicate_signals(area_signals + software_signals + ecosystem_signals)
+            for item in deduplicate_signals(area_signals + software_signals + ecosystem_signals + language_signals)
         ) or "—"
         support = []
         for software in records.values():
@@ -2093,13 +2118,13 @@ def render_problem_discovery(
         lines.append(f"| {canonical_link(problem, output_path)} | `{problem.id}` | {rendered_matching} | {rendered} | {problem.metadata['confidence']} |")
     if not problems:
         lines.append("| — | — | — | No reviewed canonical research problem matches the requested evidence criterion. | unavailable |")
-    lines.extend(["", "## Boundary", "", "Results list bounded computational challenges and direct evidence-bearing software support only. An area filter reads only the problem record's own source-backed controlled-area classification; a software filter requires that software record's direct sourced `supports` assertion; an ecosystem filter requires a documented ecosystem `includes` → software `supports` → problem path. They do not rank importance, novelty, tractability, funding, methods, advisors, groups, or applicant fit.", ""])
+    lines.extend(["", "## Boundary", "", "Results list bounded computational challenges and direct evidence-bearing software support only. An area filter reads only the problem record's own source-backed controlled-area classification; a software filter requires that software record's direct sourced `supports` assertion; an ecosystem filter requires a documented ecosystem `includes` → software `supports` → problem path; and a language filter requires a documented software `implemented_in` → `supports` → problem path. An implementation-language path is not a claim about individual skill, group-wide practice, research fit, or software quality. Results do not rank importance, novelty, tractability, funding, methods, advisors, groups, or applicant fit.", ""])
     return "\n".join(lines)
 
 
 def discover_problems(root: Path, check: bool, query_id: str | None, list_queries: bool, area_id: str | None, country_id: str | None, software_id: str | None, language_id: str | None, ecosystem_id: str | None, open_source: str | None, as_of: str | None) -> int:
-    if any((check, query_id, list_queries, country_id, language_id, open_source, as_of)):
-        print("ERROR: discover-problems accepts only --area, --software, and --ecosystem")
+    if any((check, query_id, list_queries, country_id, open_source, as_of)):
+        print("ERROR: discover-problems accepts only --area, --software, --ecosystem, and --language")
         return 2
     records, results = validate(root)
     if results.errors:
@@ -2120,7 +2145,12 @@ def discover_problems(root: Path, check: bool, query_id: str | None, list_querie
         if target is None or target.entity_type != "research-ecosystem":
             print(f"ERROR: --ecosystem must reference a canonical research-ecosystem ID, got {ecosystem_id!r}")
             return 2
-    print(render_problem_discovery(records, root / "reports/generated/evidence-recommendations.md", area_id, software_id, ecosystem_id))
+    if language_id:
+        target = records.get(language_id)
+        if target is None or target.entity_type != "programming-language":
+            print(f"ERROR: --language must reference a canonical programming-language ID, got {language_id!r}")
+            return 2
+    print(render_problem_discovery(records, root / "reports/generated/evidence-recommendations.md", area_id, software_id, ecosystem_id, language_id))
     return 0
 
 

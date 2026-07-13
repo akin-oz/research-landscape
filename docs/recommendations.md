@@ -86,6 +86,7 @@ python3 scripts/research_landscape.py discover-problems
 python3 scripts/research_landscape.py discover-problems --area AREA-MACHINE-LEARNED-POTENTIALS
 python3 scripts/research_landscape.py discover-problems --software SW-PHONO3PY
 python3 scripts/research_landscape.py discover-problems --ecosystem ECO-PHONO3PY
+python3 scripts/research_landscape.py discover-problems --language PROGRAMMING-LANGUAGE-C
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --software SW-CHGNET --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
@@ -101,8 +102,10 @@ reach and source IDs. It is a topic catalog, not a research-problem ranking.
 classification; `discover-problems --software` requires a direct sourced
 software `supports` assertion; and `discover-problems --ecosystem` requires an
 explicit ecosystem `includes` → software `supports` → problem path. All display
-their sources and are ANDed when combined. All supplied filters are required
-for the remaining discovery commands. Each
+their sources and are ANDed when combined. `discover-problems --language`
+requires a documented software `implemented_in` → `supports` → problem path;
+it is not an individual-skill, group-practice, or fit signal. All supplied
+filters are required for the remaining discovery commands. Each
 command exposes documented paths;
 it does not produce a score or rank. `discover-pis` follows documented public
 affiliation paths for country filters and does not assert availability or
