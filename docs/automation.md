@@ -35,6 +35,7 @@ python3 scripts/research_landscape.py discover-problems --ecosystem ECO-PHONO3PY
 python3 scripts/research_landscape.py discover-problems --language PROGRAMMING-LANGUAGE-C
 python3 scripts/research_landscape.py discover-problems --software SW-LAMMPS
 python3 scripts/research_landscape.py discover-problems --software SW-AFLOW
+python3 scripts/research_landscape.py discover-problems --open-source yes
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-CPP
@@ -120,15 +121,18 @@ user's fit.
 `discover-problems` is an interactive, non-generated catalog of reviewed,
 evidence-bounded computational challenges and their direct software `supports`
 paths. It accepts optional canonical `--area`, `--software`, `--ecosystem`, and
-`--language` IDs, ANDed when more than one is supplied. `--area` matches only
+`--language` IDs plus an optional `--open-source` state, ANDed when more than
+one is supplied. `--area` matches only
 the problem record's own source-backed controlled-area classification;
 `--software` requires that software record's direct sourced `supports`
 assertion; `--ecosystem` requires a documented `includes → supports` path; and
 `--language` requires a documented `implemented_in → supports` path. Every
-matching evidence path is exposed. An implementation-language path is not a
-claim about individual skill, group-wide practice, research fit, or software
-quality. It is not a problem-importance, novelty, tractability, funding, or fit
-ranking.
+matching evidence path is exposed. `--open-source` requires a reviewed
+software record's own documented state plus its direct `supports` path. An
+implementation-language or open-source path is not a claim about individual
+skill, group-wide practice, research fit, software quality, maintenance,
+governance, or support. It is not a problem-importance, novelty, tractability,
+funding, or fit ranking.
 
 `discover-groups` is an interactive, non-generated AND filter over reviewed
 Research Groups. It accepts one or more canonical `--area`, `--country`,

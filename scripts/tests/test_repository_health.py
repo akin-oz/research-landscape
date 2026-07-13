@@ -995,6 +995,18 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertNotIn("PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION", rendered)
         self.assertIn("software record's direct sourced `supports` assertion", rendered)
 
+    def test_problem_discovery_open_source_filter_requires_direct_support_and_state(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_problem_discovery(
+            records, ROOT / "reports/generated/evidence-recommendations.md", open_source="yes",
+        )
+        self.assertIn("**AND filters:** open-source state `yes`.", rendered)
+        self.assertIn("`PROBLEM-HIGH-THROUGHPUT-MATERIALS-SCREENING`", rendered)
+        self.assertIn("`SW-AFLOW` has documented open-source state `yes`", rendered)
+        self.assertIn("`SW-AFLOW` supports this problem", rendered)
+        self.assertIn("documented state plus its direct sourced `supports` assertion", rendered)
+
         combined = rl.render_problem_discovery(
             records, ROOT / "reports/generated/evidence-recommendations.md",
             "AREA-MACHINE-LEARNED-POTENTIALS", "SW-MACE",

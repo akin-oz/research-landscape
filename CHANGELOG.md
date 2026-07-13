@@ -6,6 +6,10 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- `discover-problems --open-source` now filters through a reviewed software
+  record's documented open-source state and direct `supports` assertion,
+  exposing both evidence paths without turning openness into a maintenance,
+  quality, governance, support, or fit signal.
 - A seventh evidence-bounded Research Problem record for High-Throughput
   Materials Screening, with a direct AFLOW support path and connected C++ and
   ecosystem discovery; it does not compare screening strategies, DFT setups,
