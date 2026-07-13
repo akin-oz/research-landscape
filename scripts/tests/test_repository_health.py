@@ -927,6 +927,18 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn(problem.id, generated)
         self.assertIn("SW-PHONO3PY", generated)
 
+    def test_research_problem_requires_a_controlled_area_link(self) -> None:
+        metadata = {
+            "schema_version": 2, "entity_type": "research-problem", "id": "PROBLEM-TEST",
+            "name": "Test Problem", "status": "reviewed", "created_at": "2026-07-13",
+            "updated_at": "2026-07-13", "last_review": "2026-07-13", "confidence": "high",
+            "source_ids": ["SRC-TEST"], "problem_kind": "test challenge",
+        }
+        record = rl.Record(ROOT / "entities/research-problems/test.md", metadata, "")
+        results = rl.Results([], [])
+        rl.validate_schema(ROOT, {record.id: record}, results)
+        self.assertTrue(any("research_area_ids" in error for error in results.errors))
+
     def test_area_discovery_exposes_topic_coverage_without_ranking(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

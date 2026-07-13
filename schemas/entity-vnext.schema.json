@@ -242,7 +242,7 @@
     },
     {
       "if": { "properties": { "entity_type": { "const": "research-problem" } } },
-      "then": { "required": ["problem_kind"] }
+      "then": { "required": ["problem_kind", "research_area_ids"] }
     },
     {
       "if": { "required": ["mentorship_process_evidence"] },
