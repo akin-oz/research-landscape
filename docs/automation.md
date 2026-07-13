@@ -23,6 +23,7 @@ python3 scripts/research_landscape.py recommend --query groups-density-functiona
 python3 scripts/research_landscape.py recommend --query universities-hosting-density-functional-theory-and-electronic-structure-groups
 python3 scripts/research_landscape.py catalog
 python3 scripts/research_landscape.py discover-areas
+python3 scripts/research_landscape.py discover-problems
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-CPP
@@ -88,6 +89,11 @@ reviewed controlled Research Areas with their area-source IDs and direct,
 documented group, PI, software, direct-host University, and ecosystem reach.
 The counts expose current evidence coverage only; they do not rank research
 problems, measure opportunity or novelty, or infer a user's fit.
+
+`discover-problems` is an interactive, non-generated catalog of reviewed,
+evidence-bounded computational challenges and their direct software `supports`
+paths. It is not a problem-importance, novelty, tractability, funding, or fit
+ranking.
 
 `discover-groups` is an interactive, non-generated AND filter over reviewed
 Research Groups. It accepts one or more canonical `--area`, `--country`,
