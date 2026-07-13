@@ -916,6 +916,17 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION`", rendered)
         self.assertIn("`SW-PHONO3PY` supports this problem", rendered)
 
+    def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        problem = records["PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION"]
+        support = rl.matching_assertions(records["SW-PHONO3PY"], "supports", {problem.id})
+        self.assertEqual(1, len(support))
+        self.assertEqual(["SRC-PHONO3PY-DOCUMENTATION"], support[0]["source_ids"])
+        generated = (ROOT / "views/generated/research-problems.md").read_text(encoding="utf-8")
+        self.assertIn(problem.id, generated)
+        self.assertIn("SW-PHONO3PY", generated)
+
     def test_area_discovery_exposes_topic_coverage_without_ranking(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
