@@ -1,1 +1,4 @@
-# Review Checklist
+- Evidence
+- Canonical owner
+- No duplication
+- Architecture respected

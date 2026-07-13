@@ -1,1 +1,4 @@
-# Release Checklist
+- CHANGELOG
+- ROADMAP
+- FINAL REVIEW
+- Tag release
