@@ -24,6 +24,8 @@ python3 scripts/research_landscape.py recommend --query universities-hosting-den
 python3 scripts/research_landscape.py catalog
 python3 scripts/research_landscape.py discover-areas
 python3 scripts/research_landscape.py discover-areas --problem PROBLEM-MATERIALS-PROPERTY-PREDICTION
+python3 scripts/research_landscape.py discover-areas --software SW-MATGL
+python3 scripts/research_landscape.py discover-areas --problem PROBLEM-MATERIALS-PROPERTY-PREDICTION --software SW-MATGL
 python3 scripts/research_landscape.py discover-problems
 python3 scripts/research_landscape.py discover-problems --area AREA-MACHINE-LEARNED-POTENTIALS
 python3 scripts/research_landscape.py discover-problems --software SW-PHONO3PY
@@ -98,9 +100,10 @@ private preferences or ranking data.
 `discover-areas` is an interactive, non-generated topic catalog. It lists
 reviewed controlled Research Areas with their area-source IDs and direct,
 documented group, PI, software, direct-host University, and ecosystem reach.
-It accepts an optional canonical `--problem` ID, which filters only on that
-problem record's own source-backed controlled-area classification and displays
-the problem's source IDs. The counts expose current evidence coverage only;
+It accepts optional canonical `--problem` and `--software` IDs, which filter
+only on those records' own source-backed controlled-area classifications and
+display their source IDs. When both are supplied, they are ANDed. The counts
+expose current evidence coverage only;
 they do not rank research problems, measure opportunity or novelty, or infer a
 user's fit.
 

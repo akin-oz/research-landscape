@@ -2027,6 +2027,7 @@ def catalog(
 
 def render_area_discovery(
     records: dict[str, Record], output_path: Path, problem_id: str | None = None,
+    software_id: str | None = None,
 ) -> str:
     """Render reviewed topic nodes and their bounded direct discovery reach."""
     coverage = {item["area"].id: item for item in research_area_coverage(records)}
@@ -2038,6 +2039,10 @@ def render_area_discovery(
                 problem_id is None
                 or record.id in as_ids(records[problem_id].metadata.get("research_area_ids", []))
             )
+            and (
+                software_id is None
+                or record.id in as_ids(records[software_id].metadata.get("research_area_ids", []))
+            )
         ),
         key=lambda record: (record.metadata["name"].casefold(), record.id),
     )
@@ -2046,10 +2051,17 @@ def render_area_discovery(
         "**Status:** deterministic evidence-discovery result, not a research-problem ranking.", "",
         "Each row is a reviewed controlled topic. Reach counts reflect direct documented graph paths only; they are not measures of importance, opportunity, maturity, or quality.", "",
     ]
-    if problem_id:
+    classification_filters = [
+        ("research problem", problem_id),
+        ("research software", software_id),
+    ]
+    classification_filters = [(name, value) for name, value in classification_filters if value]
+    if classification_filters:
         lines.extend([
-            f"**Problem filter:** research problem `{problem_id}`.", "",
-            "| Research area | Canonical ID | Documented problem classification | Direct discovery reach | Area evidence | Confidence |",
+            "**AND filters:** " + "; ".join(
+                f"{name} `{value}`" for name, value in classification_filters
+            ) + ".", "",
+            "| Research area | Canonical ID | Documented matching classifications | Direct discovery reach | Area evidence | Confidence |",
             "| --- | --- | --- | --- | --- | --- |",
         ])
     else:
@@ -2064,23 +2076,31 @@ def render_area_discovery(
             for key in ("groups", "principal_investigators", "software", "problems", "universities", "ecosystems")
         )
         row = f"| {canonical_link(area, output_path)} | `{area.id}` |"
-        if problem_id:
-            problem_signal = metadata_signal(
-                f"`{problem_id}` is classified in this area", records[problem_id],
-            )
-            row += f" {problem_signal['label']} (sources: {problem_signal['sources']}) |"
+        if classification_filters:
+            signals = []
+            if problem_id:
+                signals.append(metadata_signal(
+                    f"`{problem_id}` is classified in this area", records[problem_id],
+                ))
+            if software_id:
+                signals.append(metadata_signal(
+                    f"`{software_id}` is classified in this area", records[software_id],
+                ))
+            row += " " + "; ".join(
+                f"{item['label']} (sources: {item['sources']})" for item in signals
+            ) + " |"
         lines.append(
             f"{row} {reach} | sources: {', '.join(as_ids(area.metadata.get('source_ids', [])))} | "
             f"{area.metadata['confidence']} |"
         )
     if not areas:
-        if problem_id:
-            lines.append("| — | — | — | No reviewed canonical research area has the requested problem classification. | — | unavailable |")
+        if classification_filters:
+            lines.append("| — | — | — | No reviewed canonical research area has every requested classification. | — | unavailable |")
         else:
             lines.append("| — | — | No reviewed canonical research areas currently available. | — | unavailable |")
     lines.extend([
         "", "## Boundary", "",
-        "This catalog does not select or compare research problems. A larger reach count can reflect only the current evidence coverage. A problem filter reads only that problem record's source-backed controlled-area classification; it does not infer a topic from software, people, institutions, or graph adjacency. Use an area ID with `discover-problems`, `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, or `discover-software` to inspect the underlying sourced paths. It does not establish problem importance, scientific novelty, funding, admissions, mentoring, availability, or applicant fit.", "",
+        "This catalog does not select or compare research problems. A larger reach count can reflect only the current evidence coverage. Problem and software filters read only their own source-backed controlled-area classifications and are ANDed when both are supplied; they do not infer a topic from people, institutions, or graph adjacency. Use an area ID with `discover-problems`, `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, or `discover-software` to inspect the underlying sourced paths. It does not establish problem importance, scientific novelty, funding, admissions, mentoring, availability, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -2099,8 +2119,8 @@ def discover_areas(
     open_source: str | None,
     as_of: str | None,
 ) -> int:
-    if any((check, query_id, list_queries, area_id, country_id, software_id, language_id, ecosystem_id, open_source, as_of)):
-        print("ERROR: discover-areas accepts only --problem")
+    if any((check, query_id, list_queries, area_id, country_id, language_id, ecosystem_id, open_source, as_of)):
+        print("ERROR: discover-areas accepts only --problem and --software")
         return 2
     records, results = validate(root)
     if results.errors:
@@ -2111,7 +2131,14 @@ def discover_areas(
         if target is None or target.entity_type != "research-problem":
             print(f"ERROR: --problem must reference a canonical research-problem ID, got {problem_id!r}")
             return 2
-    print(render_area_discovery(records, root / "reports/generated/evidence-recommendations.md", problem_id))
+    if software_id:
+        target = records.get(software_id)
+        if target is None or target.entity_type != "research-software":
+            print(f"ERROR: --software must reference a canonical research-software ID, got {software_id!r}")
+            return 2
+    print(render_area_discovery(
+        records, root / "reports/generated/evidence-recommendations.md", problem_id, software_id,
+    ))
     return 0
 
 

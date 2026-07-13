@@ -10,6 +10,9 @@ All notable changes are documented here. This project follows the principles of 
   controlled Research Area classifications on a reviewed Research Problem,
   making the inverse topic lookup discoverable without inferring a topic from
   software, people, institutions, or graph adjacency.
+- `discover-areas --software` now exposes the equivalent direct software
+  classification path; when paired with `--problem`, the two cited
+  classifications are ANDed rather than inferred through graph adjacency.
 - Accepted ADR 0010: comparative research-problem outputs remain unavailable
   until a versioned, stakeholder-scoped, evidence- and ethics-governed
   evaluation model is accepted.

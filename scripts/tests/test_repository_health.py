@@ -1136,12 +1136,27 @@ class RepositoryHealthTests(unittest.TestCase):
             ROOT / "reports/generated/evidence-recommendations.md",
             "PROBLEM-MATERIALS-PROPERTY-PREDICTION",
         )
-        self.assertIn("**Problem filter:** research problem `PROBLEM-MATERIALS-PROPERTY-PREDICTION`.", rendered)
+        self.assertIn("**AND filters:** research problem `PROBLEM-MATERIALS-PROPERTY-PREDICTION`.", rendered)
         self.assertIn("`AREA-AI-FOR-MATERIALS`", rendered)
         self.assertIn("`AREA-MATERIALS-INFORMATICS`", rendered)
         self.assertNotIn("`AREA-MACHINE-LEARNED-POTENTIALS`", rendered)
         self.assertIn("SRC-CHGNET-HOME, SRC-MATGL-DOCUMENTATION", rendered)
-        self.assertIn("does not infer a topic from software, people, institutions, or graph adjacency", rendered)
+        self.assertIn("do not infer a topic from people, institutions, or graph adjacency", rendered)
+
+    def test_area_discovery_ands_direct_problem_and_software_classifications(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_area_discovery(
+            records,
+            ROOT / "reports/generated/evidence-recommendations.md",
+            "PROBLEM-MATERIALS-PROPERTY-PREDICTION",
+            "SW-MATGL",
+        )
+        self.assertIn("research problem `PROBLEM-MATERIALS-PROPERTY-PREDICTION`; research software `SW-MATGL`", rendered)
+        self.assertIn("`AREA-AI-FOR-MATERIALS`", rendered)
+        self.assertIn("`AREA-MATERIALS-INFORMATICS`", rendered)
+        self.assertNotIn("`AREA-MACHINE-LEARNED-POTENTIALS`", rendered)
+        self.assertIn("`SW-MATGL` is classified in this area", rendered)
 
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:
         records, results = rl.validate(ROOT)
