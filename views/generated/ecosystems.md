@@ -1,10 +1,16 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 0e0a687e5e7ac656fa3d215e733e21d5c3af68f8b7d237ea6aecb070684c6d16 -->
+<!-- input-fingerprint: 6d43cb3020eaff7ae7264722cbf6ceec46bde087477d906d5069a953607e60eb -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `0e0a687e5e7ac656fa3d215e733e21d5c3af68f8b7d237ea6aecb070684c6d16`
+**Input fingerprint:** `6d43cb3020eaff7ae7264722cbf6ceec46bde087477d906d5069a953607e60eb`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
+
+## [ABINIT Ecosystem](../../entities/ecosystems/abinit.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [ABINIT Ecosystem](../../entities/ecosystems/abinit.md) | `ECO-ABINIT` | research-ecosystem | high | 2026-07-13 | — |
 
 ## [AFLOW](../../entities/ecosystems/aflow.md)
 

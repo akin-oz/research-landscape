@@ -36,6 +36,8 @@ The Open Catalyst Project extension adds the distinct [Open Catalyst Project](ec
 
 The CP2K cluster adds [CP2K](research-software/cp2k.md), the [CP2K Ecosystem](ecosystems/cp2k.md), and the controlled [Fortran](programming-languages/fortran.md) language record. It makes no person, institution, or complete-project-community claim.
 
+The ABINIT cluster adds [ABINIT](research-software/abinit.md) and the [ABINIT Ecosystem](ecosystems/abinit.md), while reusing the controlled Fortran and Computational Materials Science records. It makes no person, institution, consortium, or complete-project-community claim.
+
 The Temple–Kohlmeyer–LAMMPS extension adds [Axel Kohlmeyer](principal-investigators/axel-kohlmeyer.md) and [Temple University](universities/temple-university.md), while reusing the LAMMPS, United States, and Computational Materials Science records.
 
 The Scientific Software Engineering area extension adds the controlled [Scientific Software Engineering](research-areas/scientific-software-engineering.md) record and directly classifies the existing Materials Software and Data Group, Hacking Materials, THEOS, and Axel Kohlmeyer records without duplicating their software or host facts.

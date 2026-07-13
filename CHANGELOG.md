@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A bounded ABINIT ecosystem slice with distinct GPLv3 software and ecosystem records, reusing the controlled Fortran path to expose only documented DFT/materials, source-control, and learning/contribution surfaces.
 - A bounded CP2K ecosystem slice with separate CP2K software and ecosystem records plus a controlled Fortran language entity; it exposes a source-backed GPL/Fortran contribution route without constructing a people, institution, or complete-community graph.
 - A distinct Open Catalyst Project ecosystem record with its official, time-bounded code migration to FAIRChem; AI-for-Materials and machine-learned-potential discovery now exposes that route without conflating legacy OCP and current FAIRChem ownership or maintenance.
 - A bounded OpenKIM/University of Minnesota vertical slice with distinct KIM API, ecosystem, PI, and University records; it documents C++ and LGPL-2.1-or-later software evidence while retaining Ellad Tadmor's founding-director context as historical rather than a current development claim.

@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 17f311e2954327e0195a0a460db16b1dc47d4b87c59da63f4ce041240e2add25 -->
+<!-- input-fingerprint: 64c09b819a9a1f744e98c7bb9a124224760ed34d54a3379e811074c52cce7850 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `17f311e2954327e0195a0a460db16b1dc47d4b87c59da63f4ce041240e2add25`
+**Input fingerprint:** `64c09b819a9a1f744e98c7bb9a124224760ed34d54a3379e811074c52cce7850`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -154,6 +154,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) (`ECO-LAMMPS`) | connects `PI-AXEL-KOHLMEYER` (sources: SRC-LAMMPS-AUTHORS, SRC-TEMPLE-KOHLMEYER); `PI-AXEL-KOHLMEYER` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-TEMPLE-KOHLMEYER, SRC-LAMMPS-AUTHORS); includes `SW-LAMMPS` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY); `SW-LAMMPS` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY, SRC-LAMMPS-DEVELOPERS) | high | 2/2 documented criteria |
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) (`ECO-MATERIALS-CLOUD`) | connects `PI-NICOLA-MARZARI` (sources: SRC-MATERIALS-CLOUD-TEAM); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) (`ECO-OPENKIM`) | connects `PI-ELLAD-TADMOR` (sources: SRC-UMN-TADMOR-CV); `PI-ELLAD-TADMOR` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UMN-TADMOR-PROFILE); includes `SW-KIM-API` (sources: SRC-KIM-API-REPOSITORY); `SW-KIM-API` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-KIM-API-REPOSITORY) | high | 2/2 documented criteria |
+| [ABINIT Ecosystem](../../entities/ecosystems/abinit.md) (`ECO-ABINIT`) | includes `SW-ABINIT` (sources: SRC-ABINIT-HOME); `SW-ABINIT` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-ABINIT-PRESENTATION, SRC-ABINIT-LICENSE, SRC-ABINIT-DEVELOPMENT) | high | 2/2 documented criteria |
 | [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 documented criteria |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
 | [CP2K Ecosystem](../../entities/ecosystems/cp2k.md) (`ECO-CP2K`) | includes `SW-CP2K` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD); `SW-CP2K` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD) | high | 2/2 documented criteria |

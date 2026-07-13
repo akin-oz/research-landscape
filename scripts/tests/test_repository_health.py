@@ -86,7 +86,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"software": 1, "groups": 0, "principal_investigators": 0, "universities": 0, "ecosystems": 1},
+            {"software": 2, "groups": 0, "principal_investigators": 0, "universities": 0, "ecosystems": 2},
             {key: coverage["PROGRAMMING-LANGUAGE-FORTRAN"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -324,6 +324,28 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(["PROGRAMMING-LANGUAGE-FORTRAN"], software.metadata["programming_language_ids"])
         self.assertEqual(
             ["SW-CP2K"],
+            [assertion["target_id"] for assertion in rl.matching_assertions(ecosystem, "includes")],
+        )
+        candidates = rl.discovery_software_candidates(
+            records,
+            "AREA-COMPUTATIONAL-MATERIALS-SCIENCE",
+            "PROGRAMMING-LANGUAGE-FORTRAN",
+            ecosystem.id,
+            "yes",
+        )
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
+    def test_abinit_slice_reuses_fortran_with_one_bounded_ecosystem_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software = records["SW-ABINIT"]
+        ecosystem = records["ECO-ABINIT"]
+        self.assertEqual("yes", software.metadata["open_source"])
+        self.assertEqual("GPL-3.0-only", software.metadata["license"])
+        self.assertEqual(["PROGRAMMING-LANGUAGE-FORTRAN"], software.metadata["programming_language_ids"])
+        self.assertEqual(
+            ["SW-ABINIT"],
             [assertion["target_id"] for assertion in rl.matching_assertions(ecosystem, "includes")],
         )
         candidates = rl.discovery_software_candidates(
