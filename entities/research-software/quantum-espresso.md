@@ -19,6 +19,13 @@ open_source: "yes"
 website: https://www.quantum-espresso.org/
 repository_url: https://gitlab.com/QEF/q-e
 license: GPL-2.0-or-later
+relationship_assertions:
+  - predicate: supports
+    target_id: PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION
+    source_ids: [SRC-QE-HOME]
+    confidence: high
+    evidence_window: 2026-07
+    notes: Quantum ESPRESSO's official site describes DFT electronic-structure calculations for materials; this assertion is limited to support for the named computational challenge.
 ---
 
 # Quantum ESPRESSO
@@ -33,7 +40,7 @@ an exhaustive maintainer, contributor, or partner roster.
 
 | Source ID | Evidence |
 | --- | --- |
-| `SRC-QE-HOME` | [Quantum ESPRESSO](https://www.quantum-espresso.org/) describes an integrated suite of open-source computer codes for electronic-structure calculations and materials modelling at the nanoscale, based on density-functional theory, plane waves, and pseudopotentials. Accessed 2026-07-12. |
+| `SRC-QE-HOME` | [Quantum ESPRESSO](https://www.quantum-espresso.org/) describes an integrated suite of open-source computer codes for electronic-structure calculations and materials modelling at the nanoscale, based on density-functional theory, plane waves, and pseudopotentials. Accessed 2026-07-13. |
 | `SRC-QE-REPOSITORY` | [QEF/q-e](https://gitlab.com/QEF/q-e) is the public source repository. Its README identifies the distribution as the Quantum ESPRESSO suite and states that the included material is free software under GPL version 2 or later. Accessed 2026-07-12. |
 | `SRC-QE-USER-GUIDE` | [Quantum ESPRESSO User's Guide](https://www.quantum-espresso.org/Doc/user_guide/) documents source distribution, build paths, and user/developer communication routes. Accessed 2026-07-12. |
 

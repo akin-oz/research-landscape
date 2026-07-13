@@ -28,6 +28,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: ABINIT's official developer overview identifies Fortran90 among the project's development languages and tools. This is a bounded software implementation relation, not a claim about every auxiliary artifact, group practice, or individual skill.
+  - predicate: supports
+    target_id: PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION
+    source_ids: [SRC-ABINIT-PRESENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: ABINIT's presentation describes DFT electronic-structure calculations; this assertion is limited to support for the named computational challenge.
 ---
 
 # ABINIT

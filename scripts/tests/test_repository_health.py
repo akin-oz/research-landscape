@@ -921,6 +921,11 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`SW-MACE` supports this problem (sources: SRC-MACE-DOCUMENTATION)", rendered)
         self.assertIn("`SW-NEQUIP` supports this problem (sources: SRC-NEQUIP-DOCUMENTATION)", rendered)
         self.assertIn("`SW-DEEPMD-KIT` supports this problem (sources: SRC-DEEPMD-DOCUMENTATION)", rendered)
+        self.assertIn("`PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION`", rendered)
+        self.assertIn("`SW-ABINIT` supports this problem (sources: SRC-ABINIT-PRESENTATION)", rendered)
+        self.assertIn("`SW-QUANTUM-ESPRESSO` supports this problem (sources: SRC-QE-HOME)", rendered)
+        self.assertIn("`SW-GPAW` supports this problem (sources: SRC-GPAW-DOCUMENTATION)", rendered)
+        self.assertIn("`SW-SIESTA` supports this problem (sources: SRC-SIESTA-REFERENCE-MANUAL)", rendered)
 
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
@@ -951,6 +956,21 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("SW-MACE", generated)
         self.assertIn("SW-NEQUIP", generated)
         self.assertIn("SW-DEEPMD-KIT", generated)
+        dft_problem = records["PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION"]
+        for software_id, source_id in {
+            "SW-ABINIT": "SRC-ABINIT-PRESENTATION",
+            "SW-QUANTUM-ESPRESSO": "SRC-QE-HOME",
+            "SW-GPAW": "SRC-GPAW-DOCUMENTATION",
+            "SW-SIESTA": "SRC-SIESTA-REFERENCE-MANUAL",
+        }.items():
+            support = rl.matching_assertions(records[software_id], "supports", {dft_problem.id})
+            self.assertEqual(1, len(support))
+            self.assertEqual([source_id], support[0]["source_ids"])
+        self.assertIn(dft_problem.id, generated)
+        self.assertIn("SW-ABINIT", generated)
+        self.assertIn("SW-QUANTUM-ESPRESSO", generated)
+        self.assertIn("SW-GPAW", generated)
+        self.assertIn("SW-SIESTA", generated)
 
     def test_research_problem_requires_a_controlled_area_link(self) -> None:
         metadata = {

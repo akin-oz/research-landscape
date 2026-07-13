@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: b9509bf871af22ce4c311208a381cd461e2a2b073ae32a6d4e418c39dd7747dc -->
+<!-- input-fingerprint: e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389 -->
 # Research Problems view
 
 **Definition:** `research-problems`
-**Input fingerprint:** `b9509bf871af22ce4c311208a381cd461e2a2b073ae32a6d4e418c39dd7747dc`
+**Input fingerprint:** `e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md)
@@ -12,6 +12,16 @@
 | --- | --- | --- | --- | --- | --- |
 | [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md) | `PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION` | research-problem | high | 2026-07-13 | — |
 | [Spglib](../../entities/research-software/spglib.md) | `SW-SPGLIB` | research-software | high | 2026-07-13 | — |
+
+## [Density-Functional Electronic-Structure Calculation](../../entities/research-problems/density-functional-electronic-structure-calculation.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Density-Functional Electronic-Structure Calculation](../../entities/research-problems/density-functional-electronic-structure-calculation.md) | `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION` | research-problem | high | 2026-07-13 | — |
+| [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
+| [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
+| [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
+| [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |
 
 ## [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md)
 

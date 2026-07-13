@@ -72,6 +72,8 @@ The Research Problem extension adds [Lattice Thermal Conductivity Prediction](re
 
 The machine-learned-potential problem extension adds [Machine-Learned Interatomic Potential Modeling](research-problems/machine-learned-interatomic-potential-modeling.md), linked to Machine-Learned Potentials for Materials with separate direct support paths from MACE, NequIP, and DeePMD-kit. It records a bounded modeling challenge, not an architecture, tool, dataset, or importance ranking.
 
+The density-functional problem extension adds [Density-Functional Electronic-Structure Calculation](research-problems/density-functional-electronic-structure-calculation.md), linked to Density-Functional Theory and Electronic Structure with separate direct support paths from ABINIT, Quantum ESPRESSO, GPAW, and SIESTA. It records a bounded calculation challenge, not a comparison of functionals, basis choices, methods, software, or importance.
+
 The Phonopy–NIMS extension adds [Atsushi Togo](principal-investigators/atsushi-togo.md), the [NIMS Computational Materials Science Group](research-groups/nims-computational-materials-science-group.md), and the [National Institute for Materials Science](organizations/national-institute-for-materials-science.md), while reusing Phonopy and Japan. It makes no university, degree-route, mentoring, admissions, or ranking claim.
 
 The Computational Phonon Calculations extension adds a controlled [research-area record](research-areas/computational-phonon-calculations.md) to expose Phonopy, Atsushi Togo, and the NIMS Computational Materials Science Group through topic-first discovery without ranking research problems or inferring institutional scope.

@@ -28,6 +28,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: GPAW's official documentation identifies it as a Python DFT code, with mostly Python implementation and performance-critical C code. This records a documented implementation path, not a group-wide language policy or individual skill claim.
+  - predicate: supports
+    target_id: PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION
+    source_ids: [SRC-GPAW-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: GPAW documentation describes a DFT code and electronic-structure calculation tutorials; this assertion is limited to support for the named computational challenge.
 ---
 
 # GPAW

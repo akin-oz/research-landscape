@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: b9509bf871af22ce4c311208a381cd461e2a2b073ae32a6d4e418c39dd7747dc -->
+<!-- input-fingerprint: e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `b9509bf871af22ce4c311208a381cd461e2a2b073ae32a6d4e418c39dd7747dc`
+**Input fingerprint:** `e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)

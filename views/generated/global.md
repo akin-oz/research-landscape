@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: b9509bf871af22ce4c311208a381cd461e2a2b073ae32a6d4e418c39dd7747dc -->
+<!-- input-fingerprint: e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `b9509bf871af22ce4c311208a381cd461e2a2b073ae32a6d4e418c39dd7747dc`
+**Input fingerprint:** `e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -67,6 +67,7 @@
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-13 | COUNTRY-DE |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md) | `PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION` | research-problem | high | 2026-07-13 | — |
+| [Density-Functional Electronic-Structure Calculation](../../entities/research-problems/density-functional-electronic-structure-calculation.md) | `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION` | research-problem | high | 2026-07-13 | — |
 | [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md) | `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION` | research-problem | high | 2026-07-13 | — |
 | [Machine-Learned Interatomic Potential Modeling](../../entities/research-problems/machine-learned-interatomic-potential-modeling.md) | `PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING` | research-problem | high | 2026-07-13 | — |
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |

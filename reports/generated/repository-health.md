@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: b9509bf871af22ce4c311208a381cd461e2a2b073ae32a6d4e418c39dd7747dc -->
+<!-- input-fingerprint: e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389 -->
 # Repository health report
 
-**Input fingerprint:** `b9509bf871af22ce4c311208a381cd461e2a2b073ae32a6d4e418c39dd7747dc`
+**Input fingerprint:** `e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **146**
-- Typed relationship assertions: **249**
+- Canonical v2 entities: **147**
+- Typed relationship assertions: **254**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -28,7 +28,7 @@
 | research-area | 8 |
 | research-ecosystem | 29 |
 | research-group | 13 |
-| research-problem | 3 |
+| research-problem | 4 |
 | research-software | 30 |
 | university | 11 |
 
@@ -36,22 +36,22 @@
 
 | Confidence | Count |
 | --- | ---: |
-| high | 146 |
+| high | 147 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **146**
+- Canonical v2 records in approved entity directories: **147**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 146/146 |
-| Reviewed/published records with last-review dates | 146/146 |
-| Typed relationships with source IDs | 249/249 |
+| Reviewed/published records with source IDs | 147/147 |
+| Reviewed/published records with last-review dates | 147/147 |
+| Typed relationships with source IDs | 254/254 |
 | Reviewed groups with exactly one direct-host field | 13/13 |
-| Entities with an inbound or outbound graph connection | 146/146 |
+| Entities with an inbound or outbound graph connection | 147/147 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 14 (11/3) |
 | Generated public views | 11/11 |
@@ -88,7 +88,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 
 | Predicate | Count |
 | --- | ---: |
-| addresses | 4 |
+| addresses | 5 |
 | administers | 2 |
 | affiliated_with | 17 |
 | authored_by | 9 |
@@ -103,7 +103,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | involves | 1 |
 | leads | 12 |
 | located_in | 19 |
-| supports | 5 |
+| supports | 9 |
 | works_on | 50 |
 
 ## Findings

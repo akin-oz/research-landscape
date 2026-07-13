@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A fourth evidence-bounded Research Problem record for Density-Functional Electronic-Structure Calculation, with independent direct support paths from ABINIT, Quantum ESPRESSO, GPAW, and SIESTA; the discovery path does not compare functionals, numerical methods, software, or problem importance.
 - A third evidence-bounded Research Problem record for Machine-Learned Interatomic Potential Modeling, with independent direct support paths from MACE, NequIP, and DeePMD-kit; the discovery path does not compare architectures, training methods, datasets, software, or problem importance.
 - A second evidence-bounded Research Problem record for Crystal Symmetry Determination, with a direct Spglib support path, demonstrating independent non-comparative problem discovery without turning documented functionality into a method or importance ranking.
 - A first-class, evidence-bounded Research Problem entity contract and Lattice Thermal Conductivity Prediction slice, with a generated public problem index and direct Phono3py support path; it does not rank problem importance or convert a problem into a project.

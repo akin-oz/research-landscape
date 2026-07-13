@@ -28,6 +28,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: The official SIESTA reference manual explicitly describes the program as written in Fortran 2003. This is a software implementation relation, not a claim about every auxiliary component, contributor, or user skill.
+  - predicate: supports
+    target_id: PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION
+    source_ids: [SRC-SIESTA-REFERENCE-MANUAL]
+    confidence: high
+    evidence_window: 2026-07
+    notes: SIESTA's reference manual describes Kohn-Sham DFT electronic-structure calculations for molecules and solids; this assertion is limited to support for the named computational challenge.
 ---
 
 # SIESTA
