@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 22fb872dcf27984bba28427d7b00e0e34e236245c3a7fc833bc39dfee8453ce2 -->
+<!-- input-fingerprint: 1ecec6b9f2c41ac38635ad39bd5297f1d5ab5b19da27de33d9293f1607e7ff37 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `22fb872dcf27984bba28427d7b00e0e34e236245c3a7fc833bc39dfee8453ce2`
+**Input fingerprint:** `1ecec6b9f2c41ac38635ad39bd5297f1d5ab5b19da27de33d9293f1607e7ff37`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -54,6 +54,7 @@
 | [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |
+| [Wannier90](../../entities/research-software/wannier90.md) | `SW-WANNIER90` | research-software | high | 2026-07-13 | — |
 
 ## [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md)
 
@@ -70,6 +71,7 @@
 | [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |
+| [Wannier90](../../entities/research-software/wannier90.md) | `SW-WANNIER90` | research-software | high | 2026-07-13 | — |
 
 ## [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md)
 

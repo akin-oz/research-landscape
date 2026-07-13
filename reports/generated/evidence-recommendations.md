@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 2466bb659af9a124bdbb02706a6e08efc82141df78427fc0ffebaee864b94ab7 -->
+<!-- input-fingerprint: 96b9886326e4dcc793faf327f94bc1f626e374f42a195923bc1ecb4f8412fa45 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `2466bb659af9a124bdbb02706a6e08efc82141df78427fc0ffebaee864b94ab7`
+**Input fingerprint:** `96b9886326e4dcc793faf327f94bc1f626e374f42a195923bc1ecb4f8412fa45`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -171,6 +171,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) (`ECO-LAMMPS`) | connects `PI-AXEL-KOHLMEYER` (sources: SRC-LAMMPS-AUTHORS, SRC-TEMPLE-KOHLMEYER); `PI-AXEL-KOHLMEYER` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-TEMPLE-KOHLMEYER, SRC-LAMMPS-AUTHORS); includes `SW-LAMMPS` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY); `SW-LAMMPS` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-LAMMPS-DOCUMENTATION, SRC-LAMMPS-REPOSITORY, SRC-LAMMPS-DEVELOPERS) | high | 2/2 documented criteria |
 | [Materials Cloud](../../entities/ecosystems/materials-cloud.md) (`ECO-MATERIALS-CLOUD`) | connects `PI-NICOLA-MARZARI` (sources: SRC-MATERIALS-CLOUD-TEAM); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); connects `RG-THEOS` (sources: SRC-THEOS-RESEARCH); `RG-THEOS` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH) | high | 2/2 documented criteria |
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) (`ECO-OPENKIM`) | connects `PI-ELLAD-TADMOR` (sources: SRC-UMN-TADMOR-CV); `PI-ELLAD-TADMOR` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UMN-TADMOR-PROFILE); includes `SW-KIM-API` (sources: SRC-KIM-API-REPOSITORY); `SW-KIM-API` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-KIM-API-REPOSITORY) | high | 2/2 documented criteria |
+| [Wannier90 Ecosystem](../../entities/ecosystems/wannier90.md) (`ECO-WANNIER90`) | connects `PI-NICOLA-MARZARI` (sources: SRC-WANNIER90-REPOSITORY); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); includes `SW-WANNIER90` (sources: SRC-WANNIER90-REPOSITORY, SRC-WANNIER90-FEATURES); `SW-WANNIER90` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WANNIER90-REPOSITORY, SRC-WANNIER90-FEATURES, SRC-WANNIER90-LIBRARY) | high | 2/2 documented criteria |
 | [ABINIT Ecosystem](../../entities/ecosystems/abinit.md) (`ECO-ABINIT`) | includes `SW-ABINIT` (sources: SRC-ABINIT-HOME); `SW-ABINIT` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-ABINIT-PRESENTATION, SRC-ABINIT-LICENSE, SRC-ABINIT-DEVELOPMENT) | high | 2/2 documented criteria |
 | [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 documented criteria |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
@@ -197,6 +198,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-WOLVERTON-GROUP-RESEARCH) | high | 2/2 documented criteria |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) (`ECO-SIESTA`) | includes `SW-SIESTA` (sources: SRC-SIESTA-REPOSITORY); `SW-SIESTA` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-SIESTA-REPOSITORY, SRC-SIESTA-REFERENCE-MANUAL, SRC-SIESTA-INSTALLATION) | high | 2/2 documented criteria |
+| [Wannier90 Ecosystem](../../entities/ecosystems/wannier90.md) (`ECO-WANNIER90`) | includes `SW-WANNIER90` (sources: SRC-WANNIER90-REPOSITORY, SRC-WANNIER90-FEATURES); `SW-WANNIER90` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-WANNIER90-REPOSITORY, SRC-WANNIER90-FEATURES, SRC-WANNIER90-LIBRARY) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed DFT or electronic-structure path; it is not ecosystem completeness, method quality, performance, or fit.
 
@@ -349,10 +351,10 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Giovanni Pizzi](../../entities/principal-investigators/giovanni-pizzi.md) (`PI-GIOVANNI-PIZZI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM); develops licensed open-source `SW-WANNIER90` (sources: SRC-WANNIER90-REPOSITORY) | high | 1/1 documented criteria |
+| [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) (`PI-NICOLA-MARZARI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM); develops licensed open-source `SW-WANNIER90` (sources: SRC-WANNIER90-REPOSITORY) | high | 1/1 documented criteria |
 | [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) (`PI-AXEL-KOHLMEYER`) | develops licensed open-source `SW-LAMMPS` (sources: SRC-TEMPLE-KOHLMEYER, SRC-LAMMPS-AUTHORS) | high | 1/1 documented criteria |
-| [Giovanni Pizzi](../../entities/principal-investigators/giovanni-pizzi.md) (`PI-GIOVANNI-PIZZI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM) | high | 1/1 documented criteria |
 | [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) (`PI-GABOR-CSANYI`) | develops licensed open-source `SW-MACE` (sources: SRC-MACE-REPOSITORY) | high | 1/1 documented criteria |
-| [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) (`PI-NICOLA-MARZARI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM) | high | 1/1 documented criteria |
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | develops licensed open-source `SW-PYMATGEN` (sources: SRC-NUS-ONG-PROFILE, SRC-PYMATGEN-TEAM) | high | 1/1 documented criteria |
 
 **Limitations:** A documented development relationship is not a measure of open-science values, software quality, current maintenance activity, hiring, or mentorship.

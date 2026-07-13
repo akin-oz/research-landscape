@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 22fb872dcf27984bba28427d7b00e0e34e236245c3a7fc833bc39dfee8453ce2 -->
+<!-- input-fingerprint: 1ecec6b9f2c41ac38635ad39bd5297f1d5ab5b19da27de33d9293f1607e7ff37 -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `22fb872dcf27984bba28427d7b00e0e34e236245c3a7fc833bc39dfee8453ce2`
+**Input fingerprint:** `1ecec6b9f2c41ac38635ad39bd5297f1d5ab5b19da27de33d9293f1607e7ff37`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT Ecosystem](../../entities/ecosystems/abinit.md)
@@ -109,6 +109,12 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) | `ECO-SIESTA` | research-ecosystem | high | 2026-07-13 | — |
+
+## [Wannier90 Ecosystem](../../entities/ecosystems/wannier90.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Wannier90 Ecosystem](../../entities/ecosystems/wannier90.md) | `ECO-WANNIER90` | research-ecosystem | high | 2026-07-13 | — |
 
 ## Boundary
 

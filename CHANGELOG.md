@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A bounded Wannier90 ecosystem slice with distinct LGPL-2.1-or-later Fortran software and ecosystem records, plus direct official developer-group evidence for Giovanni Pizzi and Nicola Marzari without inferring maintenance, ownership, or institutional control.
 - A bounded SIESTA ecosystem slice with distinct GPL-3.0-only Fortran software and ecosystem records, exposing direct DFT/electronic-structure, installation, and GitLab contribution evidence without inventing people or institutional ownership.
 - A direct, SISSA-CV-backed DFT/electronic-structure classification for Stefano Baroni, with a non-comparative PI discovery query; no other PI is inferred from group or ecosystem adjacency.
 - A bounded GPAW ecosystem slice with distinct GPL-3.0-or-later Python software and ecosystem records, directly linking documented CAMD development and ASE-based DFT workflow context without asserting ownership or individual maintenance.

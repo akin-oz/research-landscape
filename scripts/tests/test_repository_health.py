@@ -66,7 +66,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 5, "principal_investigators": 1, "software": 5, "universities": 4, "ecosystems": 8},
+            {"groups": 5, "principal_investigators": 1, "software": 6, "universities": 4, "ecosystems": 9},
             {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -92,7 +92,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"software": 3, "groups": 0, "principal_investigators": 0, "universities": 0, "ecosystems": 3},
+            {"software": 4, "groups": 0, "principal_investigators": 2, "universities": 0, "ecosystems": 4},
             {key: coverage["PROGRAMMING-LANGUAGE-FORTRAN"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -190,7 +190,7 @@ class RepositoryHealthTests(unittest.TestCase):
             queries["ecosystems-density-functional-theory-and-electronic-structure"], records
         )
         self.assertEqual(
-            ["ECO-ABINIT", "ECO-ASE", "ECO-CP2K", "ECO-GPAW", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA"],
+            ["ECO-ABINIT", "ECO-ASE", "ECO-CP2K", "ECO-GPAW", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA", "ECO-WANNIER90"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         software_candidates = rl.discovery_software_candidates(
@@ -201,7 +201,7 @@ class RepositoryHealthTests(unittest.TestCase):
             "yes",
         )
         self.assertEqual(
-            ["SW-ABINIT", "SW-CP2K", "SW-GPAW", "SW-QUANTUM-ESPRESSO", "SW-SIESTA"],
+            ["SW-ABINIT", "SW-CP2K", "SW-GPAW", "SW-QUANTUM-ESPRESSO", "SW-SIESTA", "SW-WANNIER90"],
             [candidate["record"].id for candidate in software_candidates],
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in software_candidates))
@@ -428,6 +428,33 @@ class RepositoryHealthTests(unittest.TestCase):
             ["SW-SIESTA"],
             [assertion["target_id"] for assertion in rl.matching_assertions(ecosystem, "includes")],
         )
+        candidates = rl.discovery_software_candidates(
+            records,
+            "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE",
+            "PROGRAMMING-LANGUAGE-FORTRAN",
+            ecosystem.id,
+            "yes",
+        )
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
+    def test_wannier90_slice_has_bounded_developer_group_paths(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software = records["SW-WANNIER90"]
+        ecosystem = records["ECO-WANNIER90"]
+        self.assertEqual("yes", software.metadata["open_source"])
+        self.assertEqual("LGPL-2.1-or-later", software.metadata["license"])
+        self.assertEqual(["PROGRAMMING-LANGUAGE-FORTRAN"], software.metadata["programming_language_ids"])
+        self.assertEqual(["SW-WANNIER90"], [item["target_id"] for item in rl.matching_assertions(ecosystem, "includes")])
+        self.assertEqual(
+            ["PI-GIOVANNI-PIZZI", "PI-NICOLA-MARZARI"],
+            [item["target_id"] for item in rl.matching_assertions(ecosystem, "connects")],
+        )
+        for pi_id in ("PI-GIOVANNI-PIZZI", "PI-NICOLA-MARZARI"):
+            develops = rl.matching_assertions(records[pi_id], "develops", {software.id})
+            self.assertEqual(1, len(develops))
+            self.assertEqual("developer-group-member", develops[0]["role"])
         candidates = rl.discovery_software_candidates(
             records,
             "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE",

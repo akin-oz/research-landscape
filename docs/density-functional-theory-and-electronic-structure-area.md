@@ -8,9 +8,9 @@ This increment adds the controlled `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONI
 label to make a precise public discovery route across existing open
 electronic-structure software ecosystems and directly documented research
 groups and PIs. It classifies only ABINIT, CP2K, GPAW, Quantum ESPRESSO, SIESTA,
-CAMD, Curtarolo Group, Persson Group, SOLgroup, Wolverton Research Group, and
-Stefano Baroni because each record's own reviewed source explicitly describes
-DFT or electronic-structure calculations in its documented scope.
+Wannier90, CAMD, Curtarolo Group, Persson Group, SOLgroup, Wolverton Research
+Group, and Stefano Baroni because each record's own reviewed source explicitly
+describes DFT or electronic-structure calculations in its documented scope.
 
 ## Canonical graph
 
@@ -22,11 +22,13 @@ flowchart LR
   GP["SW-GPAW\nGPAW"] -->|"classified in"| AREA
   QE["SW-QUANTUM-ESPRESSO\nQuantum ESPRESSO"] -->|"classified in"| AREA
   SI["SW-SIESTA\nSIESTA"] -->|"classified in"| AREA
+  W["SW-WANNIER90\nWannier90"] -->|"classified in"| AREA
   E1["ECO-ABINIT"] -->|"includes"| AB
   E2["ECO-CP2K"] -->|"includes"| CP
   E3["ECO-GPAW"] -->|"includes"| GP
   E4["ECO-QUANTUM-ESPRESSO"] -->|"includes"| QE
   E5["ECO-SIESTA"] -->|"includes"| SI
+  E6["ECO-WANNIER90"] -->|"includes"| W
   G1["RG-DTU-CAMD"] -->|"works_on"| AREA
   G2["RG-CURTAROLO-GROUP"] -->|"works_on"| AREA
   G3["RG-PERSSON-GROUP"] -->|"works_on"| AREA
@@ -44,6 +46,7 @@ flowchart LR
 | GPAW | Official documentation describes a DFT Python code based on PAW and ASE. | No claim that every GPAW feature, configuration, or workflow has the same scope. |
 | Quantum ESPRESSO | Official project material describes electronic-structure calculations based on DFT, plane waves, and pseudopotentials. | No claim that every module, interface, or user has the same scope. |
 | SIESTA | Official source and reference material describe first-principles electronic-structure calculations using DFT. | No claim that every SIESTA component, extension, or workflow has the same scope. |
+| Wannier90 | Official project material describes Wannier-function generation and electronic properties of materials. | No claim that every interface, related code, or workflow has the same scope. |
 
 | Group | Direct basis for classification | Boundary |
 | --- | --- | --- |
@@ -75,7 +78,7 @@ The public recommendation queries
 `groups-density-functional-theory-and-electronic-structure`,
 `principal-investigators-density-functional-theory-and-electronic-structure`,
 and `universities-hosting-density-functional-theory-and-electronic-structure-groups`
-expose exact source identifiers. The ecosystem query returns five
+expose exact source identifiers. The ecosystem query returns six
 software-inclusion paths and the existing ASE–CAMD, Materials Project–Persson
 Group, and OQMD–Wolverton Group paths; these are distinct relations, not a
 claim of shared ownership. Software-first discovery is available through:

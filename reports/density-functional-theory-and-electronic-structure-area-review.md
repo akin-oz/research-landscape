@@ -3,14 +3,14 @@
 **Review date:** 2026-07-13
 
 **Scope:** a controlled research-area increment connecting only existing
-ABINIT, CP2K, GPAW, Quantum ESPRESSO, SIESTA, CAMD, Curtarolo Group, Persson
-Group, SOLgroup, Wolverton Research Group, and Stefano Baroni records where
-their own sources explicitly describe DFT or electronic-structure calculations.
+ABINIT, CP2K, GPAW, Quantum ESPRESSO, SIESTA, Wannier90, CAMD, Curtarolo Group,
+Persson Group, SOLgroup, Wolverton Research Group, and Stefano Baroni records
+where their own sources explicitly describe DFT or electronic-structure calculations.
 
-**Outcome:** the increment adds one canonical area entity, five direct software
+**Outcome:** the increment adds one canonical area entity, six direct software
 classifications, five direct group classifications, and one direct PI
 classification. Existing ecosystem inclusion, ecosystem-to-group, and
-direct-host paths make the area discoverable through eight ecosystems and four
+direct-host paths make the area discoverable through nine ecosystems and four
 Universities without adding institutional relationships.
 
 ## Evidence coverage
@@ -23,6 +23,7 @@ Universities without adding institutional relationships.
 | GPAW classification | GPAW official documentation | Supports DFT Python-code scope based on PAW and ASE. |
 | Quantum ESPRESSO classification | Quantum ESPRESSO public home | Supports electronic-structure and DFT scope for nanoscale materials modelling. |
 | SIESTA classification | Official SIESTA source and reference manual | Supports first-principles DFT/electronic-structure code scope. |
+| Wannier90 classification | Official project features page | Supports Wannier-function and electronic-properties-of-materials scope. |
 | Group classifications | Five first-party group research/development pages | Support record-local DFT or electronic-structure scope for CAMD, Curtarolo, Persson, SOLgroup, and Wolverton. |
 | PI classification | Stefano Baroni's SISSA CV | Supports a person-level DFT/electronic-structure scope relation. |
 
@@ -31,7 +32,7 @@ Universities without adding institutional relationships.
 | Check | Result |
 | --- | --- |
 | Direct ownership | Each classification remains software-record metadata supported by that software record's own evidence. |
-| Ecosystem traversal | Existing `includes` relations yield `ECO-ABINIT`, `ECO-CP2K`, `ECO-GPAW`, `ECO-QUANTUM-ESPRESSO`, and `ECO-SIESTA`; existing `connects` relations yield ASE via CAMD, Materials Project via Persson Group, and OQMD via Wolverton Group. Every route displays its source identifiers. |
+| Ecosystem traversal | Existing `includes` relations yield `ECO-ABINIT`, `ECO-CP2K`, `ECO-GPAW`, `ECO-QUANTUM-ESPRESSO`, `ECO-SIESTA`, and `ECO-WANNIER90`; existing `connects` relations yield ASE via CAMD, Materials Project via Persson Group, and OQMD via Wolverton Group. Every route displays its source identifiers. |
 | Group and direct-host traversal | Five sourced group `works_on` relations and four existing direct-host University paths yield non-comparative group and University queries. Persson Group remains visible only at group level because its direct host is an Organization. |
 | PI traversal | Baroni's direct `works_on` relation yields a non-comparative PI query. No other PI is inferred from a group, ecosystem, publication, or adjacent software record. |
 | Public query | Source-explainable ecosystem, group, PI, and University recommendation queries plus dynamic software discovery expose the area. |
