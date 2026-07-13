@@ -8,7 +8,7 @@ created_at: "2026-07-13"
 updated_at: "2026-07-13"
 last_review: "2026-07-13"
 confidence: high
-source_ids: [SRC-BIGDFT-PROJECT, SRC-BIGDFT-PACKAGE]
+source_ids: [SRC-BIGDFT-PROJECT, SRC-BIGDFT-PACKAGE, SRC-BIGDFT-DEVELOPER-GUIDE]
 ecosystem_kind: open density-functional-theory software ecosystem
 website: https://bigdft.org/
 software_ids: [SW-BIGDFT]
@@ -32,6 +32,7 @@ funding, maintainer, or support graph.
 | --- | --- |
 | `SRC-BIGDFT-PROJECT` | [BigDFT project site](https://bigdft.org/index.html) links downloads, user/developer resources, tutorials, and a user guide for the public DFT project. Accessed 2026-07-13. |
 | `SRC-BIGDFT-PACKAGE` | [BigDFT-suite package documentation](https://bigdft-suite.readthedocs.io/en/latest/overview/package.html) states that suite programs are maintained on its GitLab page. Accessed 2026-07-13. |
+| `SRC-BIGDFT-DEVELOPER-GUIDE` | [BigDFT-suite developer guide](https://bigdft-suite.readthedocs.io/en/latest/devel/developers.html) documents Git branching, merge-request, test, and continuous-integration routes. Accessed 2026-07-13. |
 
 ## Boundary and limitations
 
