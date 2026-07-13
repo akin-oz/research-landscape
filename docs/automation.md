@@ -33,6 +33,7 @@ python3 scripts/research_landscape.py discover-problems --software SW-PHONO3PY
 python3 scripts/research_landscape.py discover-problems --area AREA-MACHINE-LEARNED-POTENTIALS --software SW-MACE
 python3 scripts/research_landscape.py discover-problems --ecosystem ECO-PHONO3PY
 python3 scripts/research_landscape.py discover-problems --language PROGRAMMING-LANGUAGE-C
+python3 scripts/research_landscape.py discover-problems --software SW-LAMMPS
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-CPP

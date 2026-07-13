@@ -929,6 +929,26 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`SW-GPAW` supports this problem (sources: SRC-GPAW-DOCUMENTATION)", rendered)
         self.assertIn("`SW-SIESTA` supports this problem (sources: SRC-SIESTA-REFERENCE-MANUAL)", rendered)
 
+    def test_atomistic_molecular_dynamics_problem_has_a_bounded_lammps_support_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        problem_id = "PROBLEM-ATOMISTIC-MOLECULAR-DYNAMICS-SIMULATION"
+        support = rl.matching_assertions(records["SW-LAMMPS"], "supports", {problem_id})
+        self.assertEqual(1, len(support))
+        self.assertEqual(["SRC-LAMMPS-DOCUMENTATION"], support[0]["source_ids"])
+
+        rendered = rl.render_problem_discovery(
+            records, ROOT / "reports/generated/evidence-recommendations.md", software_id="SW-LAMMPS",
+        )
+        self.assertIn(f"`{problem_id}`", rendered)
+        self.assertIn("`SW-LAMMPS` supports this problem", rendered)
+
+        ecosystem = rl.render_ecosystem_discovery(
+            records, None, None, ROOT / "reports/generated/evidence-recommendations.md", problem_id,
+        )
+        self.assertIn("`ECO-LAMMPS`", ecosystem)
+        self.assertIn("`SW-LAMMPS` supports this problem", ecosystem)
+
     def test_problem_discovery_area_filter_uses_only_problem_area_evidence(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

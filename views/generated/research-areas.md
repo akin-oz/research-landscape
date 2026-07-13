@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 535842e2346b633dabd0b58e0ab0327a65a8ecafebfa594d7ea4135d813feed5 -->
+<!-- input-fingerprint: 71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `535842e2346b633dabd0b58e0ab0327a65a8ecafebfa594d7ea4135d813feed5`
+**Input fingerprint:** `71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -59,7 +59,7 @@
 | [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [JDFTx](../../entities/research-software/jdftx.md) | `SW-JDFTX` | research-software | high | 2026-07-13 | — |
 | [KIM API](../../entities/research-software/kim-api.md) | `SW-KIM-API` | research-software | high | 2026-07-13 | — |
-| [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |
+| [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-13 | — |
 | [Phono3py](../../entities/research-software/phono3py.md) | `SW-PHONO3PY` | research-software | high | 2026-07-13 | — |
 | [Phonopy](../../entities/research-software/phonopy.md) | `SW-PHONOPY` | research-software | high | 2026-07-13 | — |
 | [Qbox](../../entities/research-software/qbox.md) | `SW-QBOX` | research-software | high | 2026-07-13 | — |

@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 535842e2346b633dabd0b58e0ab0327a65a8ecafebfa594d7ea4135d813feed5 -->
+<!-- input-fingerprint: 71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `535842e2346b633dabd0b58e0ab0327a65a8ecafebfa594d7ea4135d813feed5`
+**Input fingerprint:** `71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -66,6 +66,7 @@
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) | `RG-RIKEN-POLYMEROMICS` | research-group | high | 2026-07-12 | COUNTRY-JP |
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-13 | COUNTRY-DE |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
+| [Atomistic Molecular Dynamics Simulation](../../entities/research-problems/atomistic-molecular-dynamics-simulation.md) | `PROBLEM-ATOMISTIC-MOLECULAR-DYNAMICS-SIMULATION` | research-problem | high | 2026-07-13 | — |
 | [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md) | `PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION` | research-problem | high | 2026-07-13 | — |
 | [Density-Functional Electronic-Structure Calculation](../../entities/research-problems/density-functional-electronic-structure-calculation.md) | `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION` | research-problem | high | 2026-07-13 | — |
 | [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md) | `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION` | research-problem | high | 2026-07-13 | — |
@@ -85,7 +86,7 @@
 | [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
 | [JDFTx](../../entities/research-software/jdftx.md) | `SW-JDFTX` | research-software | high | 2026-07-13 | — |
 | [KIM API](../../entities/research-software/kim-api.md) | `SW-KIM-API` | research-software | high | 2026-07-13 | — |
-| [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |
+| [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-13 | — |
 | [M3GNet](../../entities/research-software/m3gnet.md) | `SW-M3GNET` | research-software | high | 2026-07-12 | — |
 | [MACE](../../entities/research-software/mace.md) | `SW-MACE` | research-software | high | 2026-07-13 | — |
 | [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |

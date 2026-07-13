@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 535842e2346b633dabd0b58e0ab0327a65a8ecafebfa594d7ea4135d813feed5 -->
+<!-- input-fingerprint: 71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c -->
 # Research Groups view
 
 **Definition:** `research-groups`
-**Input fingerprint:** `535842e2346b633dabd0b58e0ab0327a65a8ecafebfa594d7ea4135d813feed5`
+**Input fingerprint:** `71b56691159b02361f752569664e0717b677b5f2c65656253d79de16124d896c`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |

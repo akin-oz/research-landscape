@@ -5,8 +5,8 @@ id: SW-LAMMPS
 name: LAMMPS
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-LAMMPS-DOCUMENTATION
@@ -27,6 +27,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: The public repository identifies C++ as the primary language and the official developer documentation describes C++ base classes. This is a software implementation relation, not a group-wide language policy or an individual skill claim.
+  - predicate: supports
+    target_id: PROBLEM-ATOMISTIC-MOLECULAR-DYNAMICS-SIMULATION
+    source_ids: [SRC-LAMMPS-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: LAMMPS documentation describes a classical molecular-dynamics simulation code focused on materials modelling; this assertion is limited to direct support for the named atomistic simulation challenge.
 ---
 
 # LAMMPS
@@ -41,7 +47,7 @@ funding, or user graph.
 
 | Source ID | Evidence |
 | --- | --- |
-| `SRC-LAMMPS-DOCUMENTATION` | [LAMMPS documentation](https://docs.lammps.org/stable/) describes LAMMPS as a classical molecular-dynamics simulation code focused on materials modelling, designed for parallel computers and extensibility, and distributed under GPLv2. Accessed 2026-07-12. |
+| `SRC-LAMMPS-DOCUMENTATION` | [LAMMPS documentation](https://docs.lammps.org/stable/) describes LAMMPS as a classical molecular-dynamics simulation code focused on materials modelling, designed for parallel computers and extensibility, and distributed under GPLv2. Accessed 2026-07-13. |
 | `SRC-LAMMPS-REPOSITORY` | [lammps/lammps](https://github.com/lammps/lammps) is the public development repository. Its README identifies LAMMPS as a classical molecular-dynamics code developed at Sandia, maintained by the LAMMPS development team, and distributed under GPL version 2; GitHub identifies C++ as the repository's primary language. Accessed 2026-07-12. |
 | `SRC-LAMMPS-DEVELOPERS` | [LAMMPS Developer documentation](https://docs.lammps.org/Developer.html) documents C++ base classes and developer/maintainer guidance. Accessed 2026-07-12. |
 

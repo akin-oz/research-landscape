@@ -6,6 +6,10 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A sixth evidence-bounded Research Problem record for Atomistic Molecular
+  Dynamics Simulation, with a direct LAMMPS support path and connected C++,
+  ecosystem, and PI discovery; it does not compare potentials, simulations,
+  workflows, software, researchers, or problem importance.
 - `inspect --entity CANONICAL-ID` now renders one reviewed canonical record's
   outgoing and reviewed incoming one-hop typed relationships plus its
   record-local Evidence-table register, making graph evidence inspectable
