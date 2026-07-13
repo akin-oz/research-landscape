@@ -1970,6 +1970,7 @@ def discover_software(
 
 DISCOVERY_CATALOG_TYPES = (
     ("Research areas", "research-area"),
+    ("Research problems", "research-problem"),
     ("Countries", "country"),
     ("Research software", "research-software"),
     ("Programming languages", "programming-language"),
@@ -1981,7 +1982,7 @@ def discovery_catalog(records: dict[str, Record]) -> str:
     """Render public, reviewed IDs accepted by the discovery commands."""
     lines = [
         "# Discovery filter catalog", "",
-        "Use these reviewed canonical IDs with `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, and `discover-software`. The catalog contains no private profile, score, ranking, availability, or fit data.",
+        "Use these reviewed canonical IDs with `discover-problems`, `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, and `discover-software`. The catalog contains no private profile, score, ranking, availability, or fit data.",
         "",
     ]
     for title, entity_type in DISCOVERY_CATALOG_TYPES:

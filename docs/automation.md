@@ -89,8 +89,8 @@ aliases, and available/unavailable status. It reads no private profile or
 shortlist data. `recommend --query <id-or-alias>` renders one listed query for
 interactive discovery; neither form writes generated output.
 
-`catalog` lists the reviewed canonical Research Area, Country, Research
-Software, and Programming Language IDs accepted by the interactive discovery
+`catalog` lists the reviewed canonical Research Area, Research Problem, Country,
+Research Software, and Programming Language IDs accepted by the interactive discovery
 commands. It is public, deterministic, and non-generated; it contains no
 private preferences or ranking data.
 
