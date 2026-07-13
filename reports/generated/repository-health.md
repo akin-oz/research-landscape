@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5 -->
+<!-- input-fingerprint: 0e0a687e5e7ac656fa3d215e733e21d5c3af68f8b7d237ea6aecb070684c6d16 -->
 # Repository health report
 
-**Input fingerprint:** `ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5`
+**Input fingerprint:** `0e0a687e5e7ac656fa3d215e733e21d5c3af68f8b7d237ea6aecb070684c6d16`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **102**
-- Typed relationship assertions: **182**
+- Canonical v2 entities: **105**
+- Typed relationship assertions: **184**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -22,35 +22,35 @@
 | funding-program | 2 |
 | organization | 9 |
 | principal-investigator | 15 |
-| programming-language | 2 |
+| programming-language | 3 |
 | project | 1 |
 | publication | 8 |
 | research-area | 5 |
-| research-ecosystem | 13 |
+| research-ecosystem | 14 |
 | research-group | 12 |
-| research-software | 14 |
+| research-software | 15 |
 | university | 11 |
 
 ## Confidence coverage
 
 | Confidence | Count |
 | --- | ---: |
-| high | 102 |
+| high | 105 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **102**
+- Canonical v2 records in approved entity directories: **105**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 102/102 |
-| Reviewed/published records with last-review dates | 102/102 |
-| Typed relationships with source IDs | 182/182 |
+| Reviewed/published records with source IDs | 105/105 |
+| Reviewed/published records with last-review dates | 105/105 |
+| Typed relationships with source IDs | 184/184 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
-| Entities with an inbound or outbound graph connection | 102/102 |
+| Entities with an inbound or outbound graph connection | 105/105 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
@@ -63,7 +63,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | Research area | Groups | Principal Investigators | Research Software | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 3 | 2 | 4 |
-| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 10 | 4 | 6 | 10 |
+| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 10 | 5 | 6 | 11 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 5 | 2 | 4 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 2 |
 | [Scientific Software Engineering](../../entities/research-areas/scientific-software-engineering.md) | 3 | 1 | 0 | 1 | 3 |
@@ -75,6 +75,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | Programming language | Research Software | Research Groups | Principal Investigators | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [C++](../../entities/programming-languages/cpp.md) | 3 | 1 | 1 | 1 | 3 |
+| [Fortran](../../entities/programming-languages/fortran.md) | 1 | 0 | 0 | 0 | 1 |
 | [Python](../../entities/programming-languages/python.md) | 10 | 6 | 4 | 4 | 8 |
 
 ## Relationship predicates
@@ -91,8 +92,8 @@ These are counts of direct, documented implementation paths. They measure corpus
 | describes | 6 |
 | develops | 13 |
 | funds | 1 |
-| implemented_in | 13 |
-| includes | 12 |
+| implemented_in | 14 |
+| includes | 13 |
 | involves | 1 |
 | leads | 11 |
 | located_in | 18 |

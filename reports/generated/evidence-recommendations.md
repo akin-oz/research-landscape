@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 986477ff8d715fe10bf668ed10e232eb577e9af987e2aeb7bf2c906f7eb21eb5 -->
+<!-- input-fingerprint: 17f311e2954327e0195a0a460db16b1dc47d4b87c59da63f4ce041240e2add25 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `986477ff8d715fe10bf668ed10e232eb577e9af987e2aeb7bf2c906f7eb21eb5`
+**Input fingerprint:** `17f311e2954327e0195a0a460db16b1dc47d4b87c59da63f4ce041240e2add25`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -156,6 +156,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) (`ECO-OPENKIM`) | connects `PI-ELLAD-TADMOR` (sources: SRC-UMN-TADMOR-CV); `PI-ELLAD-TADMOR` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UMN-TADMOR-PROFILE); includes `SW-KIM-API` (sources: SRC-KIM-API-REPOSITORY); `SW-KIM-API` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-KIM-API-REPOSITORY) | high | 2/2 documented criteria |
 | [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 documented criteria |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DTU-CAMD-RESEARCH) | high | 2/2 documented criteria |
+| [CP2K Ecosystem](../../entities/ecosystems/cp2k.md) (`ECO-CP2K`) | includes `SW-CP2K` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD); `SW-CP2K` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD) | high | 2/2 documented criteria |
 | [FAIRmat](../../entities/ecosystems/fairmat.md) (`ECO-FAIRMAT`) | connects `PI-CLAUDIA-DRAXL` (sources: SRC-FAIRMAT-TEAM); `PI-CLAUDIA-DRAXL` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SOLGROUP-HOME) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WOLVERTON-GROUP-MEMBERS) | high | 2/2 documented criteria |
 

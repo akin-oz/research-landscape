@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5 -->
+<!-- input-fingerprint: 0e0a687e5e7ac656fa3d215e733e21d5c3af68f8b7d237ea6aecb070684c6d16 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5`
+**Input fingerprint:** `0e0a687e5e7ac656fa3d215e733e21d5c3af68f8b7d237ea6aecb070684c6d16`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -47,6 +47,7 @@
 | [SOLgroup](../../entities/research-groups/solgroup.md) | `RG-SOLGROUP` | research-group | high | 2026-07-12 | COUNTRY-DE |
 | [Wolverton Research Group](../../entities/research-groups/wolverton-research-group.md) | `RG-WOLVERTON-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
+| [CP2K](../../entities/research-software/cp2k.md) | `SW-CP2K` | research-software | high | 2026-07-13 | — |
 | [KIM API](../../entities/research-software/kim-api.md) | `SW-KIM-API` | research-software | high | 2026-07-13 | — |
 | [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-12 | — |

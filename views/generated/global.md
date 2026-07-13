@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5 -->
+<!-- input-fingerprint: 0e0a687e5e7ac656fa3d215e733e21d5c3af68f8b7d237ea6aecb070684c6d16 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `ead6d56c04db56fd0b571fa0741d138f8e8c7d1a7de646162ba6a1b1b4d78aa5`
+**Input fingerprint:** `0e0a687e5e7ac656fa3d215e733e21d5c3af68f8b7d237ea6aecb070684c6d16`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -26,6 +26,7 @@
 | [AFLOW](../../entities/ecosystems/aflow.md) | `ECO-AFLOW` | research-ecosystem | high | 2026-07-12 | — |
 | [AiiDA Ecosystem](../../entities/ecosystems/aiida.md) | `ECO-AIIDA` | research-ecosystem | high | 2026-07-12 | — |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) | `ECO-ASE` | research-ecosystem | high | 2026-07-12 | — |
+| [CP2K Ecosystem](../../entities/ecosystems/cp2k.md) | `ECO-CP2K` | research-ecosystem | high | 2026-07-13 | — |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) | `ECO-FAIR-CHEM` | research-ecosystem | high | 2026-07-13 | — |
 | [FAIRmat](../../entities/ecosystems/fairmat.md) | `ECO-FAIRMAT` | research-ecosystem | high | 2026-07-12 | — |
 | [LAMMPS Ecosystem](../../entities/ecosystems/lammps.md) | `ECO-LAMMPS` | research-ecosystem | high | 2026-07-12 | — |
@@ -52,6 +53,7 @@
 | [aiida-core](../../entities/research-software/aiida-core.md) | `SW-AIIDA-CORE` | research-software | high | 2026-07-12 | — |
 | [Atomic Simulation Environment (ASE)](../../entities/research-software/ase.md) | `SW-ASE` | research-software | high | 2026-07-12 | — |
 | [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
+| [CP2K](../../entities/research-software/cp2k.md) | `SW-CP2K` | research-software | high | 2026-07-13 | — |
 | [FAIRChem](../../entities/research-software/fairchem.md) | `SW-FAIRCHEM` | research-software | high | 2026-07-12 | — |
 | [KIM API](../../entities/research-software/kim-api.md) | `SW-KIM-API` | research-software | high | 2026-07-13 | — |
 | [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |

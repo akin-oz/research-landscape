@@ -32,6 +32,7 @@ python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LE
 python3 scripts/research_landscape.py discover-ecosystems --area AREA-MACHINE-LEARNED-POTENTIALS --software SW-FAIRCHEM
 python3 scripts/research_landscape.py discover-software --area AREA-MACHINE-LEARNED-POTENTIALS --language PROGRAMMING-LANGUAGE-PYTHON --ecosystem ECO-MATML --open-source yes
 python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-CPP --ecosystem ECO-OPENKIM --open-source yes
+python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-FORTRAN --ecosystem ECO-CP2K --open-source yes
 python3 scripts/research_landscape.py freshness --as-of 2026-07-13
 ```
 

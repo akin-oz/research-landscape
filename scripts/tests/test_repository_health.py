@@ -85,6 +85,12 @@ class RepositoryHealthTests(unittest.TestCase):
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
         )
+        self.assertEqual(
+            {"software": 1, "groups": 0, "principal_investigators": 0, "universities": 0, "ecosystems": 1},
+            {key: coverage["PROGRAMMING-LANGUAGE-FORTRAN"][key] for key in (
+                "software", "groups", "principal_investigators", "universities", "ecosystems"
+            )},
+        )
         report = rl.health_report(ROOT, records, results, rl.input_fingerprint(ROOT))
         self.assertIn("## Programming-language discovery coverage", report)
         self.assertIn("These are counts of direct, documented implementation paths.", report)
@@ -307,6 +313,28 @@ class RepositoryHealthTests(unittest.TestCase):
         open_catalyst = next(candidate for candidate in candidates if candidate["record"].id == ecosystem.id)
         self.assertEqual(2, open_catalyst["criteria"])
         self.assertTrue(any("SRC-OCP-MIGRATION" in signal["sources"] for signal in open_catalyst["signals"]))
+
+    def test_cp2k_slice_exposes_fortran_without_person_claims(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software = records["SW-CP2K"]
+        ecosystem = records["ECO-CP2K"]
+        self.assertEqual("yes", software.metadata["open_source"])
+        self.assertEqual("GPL-2.0-only", software.metadata["license"])
+        self.assertEqual(["PROGRAMMING-LANGUAGE-FORTRAN"], software.metadata["programming_language_ids"])
+        self.assertEqual(
+            ["SW-CP2K"],
+            [assertion["target_id"] for assertion in rl.matching_assertions(ecosystem, "includes")],
+        )
+        candidates = rl.discovery_software_candidates(
+            records,
+            "AREA-COMPUTATIONAL-MATERIALS-SCIENCE",
+            "PROGRAMMING-LANGUAGE-FORTRAN",
+            ecosystem.id,
+            "yes",
+        )
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
 
     def test_ceder_chgnet_development_path_is_sourced(self) -> None:
         records, results = rl.validate(ROOT)
