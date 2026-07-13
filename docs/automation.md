@@ -18,6 +18,7 @@ python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
 python3 scripts/research_landscape.py recommend --list
 python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
+python3 scripts/research_landscape.py recommend --query ecosystems-density-functional-theory-and-electronic-structure
 python3 scripts/research_landscape.py catalog
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
@@ -34,6 +35,7 @@ python3 scripts/research_landscape.py discover-software --area AREA-MACHINE-LEAR
 python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-CPP --ecosystem ECO-OPENKIM --open-source yes
 python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-FORTRAN --ecosystem ECO-CP2K --open-source yes
 python3 scripts/research_landscape.py discover-software --area AREA-COMPUTATIONAL-MATERIALS-SCIENCE --language PROGRAMMING-LANGUAGE-FORTRAN --ecosystem ECO-ABINIT --open-source yes
+python3 scripts/research_landscape.py discover-software --area AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE --open-source yes
 python3 scripts/research_landscape.py freshness --as-of 2026-07-13
 ```
 

@@ -65,6 +65,12 @@ class RepositoryHealthTests(unittest.TestCase):
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
         )
+        self.assertEqual(
+            {"groups": 0, "principal_investigators": 0, "software": 3, "universities": 0, "ecosystems": 3},
+            {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
+                "groups", "principal_investigators", "software", "universities", "ecosystems"
+            )},
+        )
         report = rl.health_report(ROOT, records, results, rl.input_fingerprint(ROOT))
         self.assertIn("## Research-area discovery coverage", report)
         self.assertIn("These are counts of direct, documented graph paths.", report)
@@ -174,6 +180,32 @@ class RepositoryHealthTests(unittest.TestCase):
         )
         self.assertEqual(["UNIVERSITY-EPFL"], [candidate["record"].id for candidate in university_candidates])
 
+    def test_density_functional_theory_area_is_software_and_ecosystem_queryable(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        queries = {query["query_id"]: query for query in model["queries"]}
+        ecosystem_candidates = rl.recommendation_candidates(
+            queries["ecosystems-density-functional-theory-and-electronic-structure"], records
+        )
+        self.assertEqual(
+            ["ECO-ABINIT", "ECO-CP2K", "ECO-QUANTUM-ESPRESSO"],
+            sorted(candidate["record"].id for candidate in ecosystem_candidates),
+        )
+        software_candidates = rl.discovery_software_candidates(
+            records,
+            "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE",
+            None,
+            None,
+            "yes",
+        )
+        self.assertEqual(
+            ["SW-ABINIT", "SW-CP2K", "SW-QUANTUM-ESPRESSO"],
+            [candidate["record"].id for candidate in software_candidates],
+        )
+        self.assertTrue(all(candidate["criteria"] == 2 for candidate in software_candidates))
+
     def test_source_identifier_must_be_in_the_evidence_table(self) -> None:
         record = rl.Record(
             path=ROOT / "entities/research-areas/test.md",
@@ -230,7 +262,13 @@ class RepositoryHealthTests(unittest.TestCase):
         baroni = records["PI-STEFANO-BARONI"]
         self.assertEqual("yes", software.metadata["open_source"])
         self.assertEqual("GPL-2.0-or-later", software.metadata["license"])
-        self.assertEqual(["AREA-COMPUTATIONAL-MATERIALS-SCIENCE"], software.metadata["research_area_ids"])
+        self.assertEqual(
+            [
+                "AREA-COMPUTATIONAL-MATERIALS-SCIENCE",
+                "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE",
+            ],
+            software.metadata["research_area_ids"],
+        )
         self.assertEqual(["ORG-QUANTUM-ESPRESSO-FOUNDATION"], ecosystem.metadata["organization_ids"])
         self.assertEqual(
             ["SW-QUANTUM-ESPRESSO"],

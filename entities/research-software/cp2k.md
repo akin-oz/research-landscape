@@ -13,6 +13,7 @@ source_ids:
   - SRC-CP2K-DOWNLOAD
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 open_source: "yes"
 website: https://www.cp2k.org/
 repository_url: https://github.com/cp2k/cp2k

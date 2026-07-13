@@ -68,6 +68,13 @@ queries:
     area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
     limitations: "A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking."
 
+  - query_id: ecosystems-density-functional-theory-and-electronic-structure
+    aliases: [density-functional-theory-ecosystems, electronic-structure-ecosystems]
+    kind: ecosystems-connected-to-area
+    title: Research ecosystems connected to Density-Functional Theory and Electronic Structure entities
+    area_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    limitations: "A connection proves only the displayed DFT or electronic-structure path; it is not ecosystem completeness, method quality, performance, or fit."
+
   - query_id: ecosystems-scientific-software-engineering
     aliases: [scientific-software-engineering-ecosystems]
     kind: ecosystems-connected-to-area

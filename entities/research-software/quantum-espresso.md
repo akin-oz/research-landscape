@@ -5,8 +5,8 @@ id: SW-QUANTUM-ESPRESSO
 name: Quantum ESPRESSO
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-QE-HOME
@@ -14,6 +14,7 @@ source_ids:
   - SRC-QE-USER-GUIDE
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 open_source: "yes"
 website: https://www.quantum-espresso.org/
 repository_url: https://gitlab.com/QEF/q-e

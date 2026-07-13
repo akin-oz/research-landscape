@@ -14,6 +14,7 @@ source_ids:
   - SRC-ABINIT-DEVELOPMENT
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 open_source: "yes"
 website: https://www.abinit.org/
 repository_url: https://github.com/abinit/abinit

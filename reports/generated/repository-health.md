@@ -1,13 +1,13 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 6d43cb3020eaff7ae7264722cbf6ceec46bde087477d906d5069a953607e60eb -->
+<!-- input-fingerprint: 8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc -->
 # Repository health report
 
-**Input fingerprint:** `6d43cb3020eaff7ae7264722cbf6ceec46bde087477d906d5069a953607e60eb`
+**Input fingerprint:** `8cd16e96558494d7c76c7793315aeef82c624a8d7eb130e801062f8541b64fbc`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **107**
+- Canonical v2 entities: **108**
 - Typed relationship assertions: **186**
 - Validation errors: **0**
 - Health warnings: **0**
@@ -25,7 +25,7 @@
 | programming-language | 3 |
 | project | 1 |
 | publication | 8 |
-| research-area | 5 |
+| research-area | 6 |
 | research-ecosystem | 15 |
 | research-group | 12 |
 | research-software | 16 |
@@ -35,26 +35,26 @@
 
 | Confidence | Count |
 | --- | ---: |
-| high | 107 |
+| high | 108 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **107**
+- Canonical v2 records in approved entity directories: **108**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 107/107 |
-| Reviewed/published records with last-review dates | 107/107 |
+| Reviewed/published records with source IDs | 108/108 |
+| Reviewed/published records with last-review dates | 108/108 |
 | Typed relationships with source IDs | 186/186 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
-| Entities with an inbound or outbound graph connection | 107/107 |
+| Entities with an inbound or outbound graph connection | 108/108 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
-| Recommendation queries (available/unavailable) | 26 (25/1) |
+| Recommendation queries (available/unavailable) | 27 (26/1) |
 
 ## Research-area discovery coverage
 
@@ -64,6 +64,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 3 | 2 | 4 |
 | [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 10 | 6 | 6 | 12 |
+| [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 0 | 0 | 3 | 0 | 3 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 5 | 2 | 4 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 2 |
 | [Scientific Software Engineering](../../entities/research-areas/scientific-software-engineering.md) | 3 | 1 | 0 | 1 | 3 |
