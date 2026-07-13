@@ -879,6 +879,17 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in candidates))
         self.assertTrue(all(any("develops `SW-" in signal["label"] for signal in candidate["signals"]) for candidate in candidates))
 
+    def test_recommendation_kind_filter_contract_is_satisfied(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        for query in model["queries"]:
+            if query.get("status") == "unavailable":
+                continue
+            for field in rl.RECOMMENDATION_REQUIRED_FILTERS.get(query["kind"], ()):
+                self.assertTrue(rl.as_ids(query.get(field)), f"{query['query_id']} requires {field}")
+
 
 if __name__ == "__main__":
     unittest.main()

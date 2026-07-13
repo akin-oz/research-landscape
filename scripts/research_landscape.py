@@ -114,6 +114,14 @@ RECOMMENDATION_KINDS = {
     "universities-hosting-groups-by-area",
     "groups-with-software-language", "entities-with-mentorship-process-evidence",
 }
+RECOMMENDATION_REQUIRED_FILTERS = {
+    "groups-by-area": ("area_id",),
+    "ecosystems-connected-to-area": ("area_id",),
+    "principal-investigators-by-area": ("area_id",),
+    "universities-hosting-groups-by-area": ("area_id",),
+    "groups-with-software-and-area": ("area_ids",),
+    "groups-with-software-language": ("language_id",),
+}
 
 MENTORSHIP_PROCESS_CATEGORIES = {
     "written-expectations", "onboarding-training", "supervision-process",
@@ -1033,6 +1041,10 @@ def validate_recommendation_model(root: Path, records: dict[str, Record]) -> tup
             continue
         if query.get("kind") not in RECOMMENDATION_KINDS:
             errors.append(f"query {query_id} has unsupported kind {query.get('kind')}")
+        for field in RECOMMENDATION_REQUIRED_FILTERS.get(query.get("kind"), ()):
+            value = query.get(field)
+            if not as_ids(value):
+                errors.append(f"query {query_id} of kind {query.get('kind')} requires {field}")
         for area_id in as_ids(query.get("area_id", [])) + as_ids(query.get("area_ids", [])):
             target = records.get(area_id)
             if target is None or target.entity_type != "research-area":
