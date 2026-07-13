@@ -70,6 +70,8 @@ The Crystal Symmetry Analysis extension adds a controlled [research-area record]
 
 The Research Problem extension adds [Lattice Thermal Conductivity Prediction](research-problems/lattice-thermal-conductivity-prediction.md), linked to Computational Phonon Calculations and directly supported by Phono3py, plus [Crystal Symmetry Determination](research-problems/crystal-symmetry-determination.md), linked to Crystal Symmetry Analysis and directly supported by Spglib. Both are bounded computational challenges, not projects or importance rankings.
 
+The machine-learned-potential problem extension adds [Machine-Learned Interatomic Potential Modeling](research-problems/machine-learned-interatomic-potential-modeling.md), linked to Machine-Learned Potentials for Materials with separate direct support paths from MACE, NequIP, and DeePMD-kit. It records a bounded modeling challenge, not an architecture, tool, dataset, or importance ranking.
+
 The Phonopy–NIMS extension adds [Atsushi Togo](principal-investigators/atsushi-togo.md), the [NIMS Computational Materials Science Group](research-groups/nims-computational-materials-science-group.md), and the [National Institute for Materials Science](organizations/national-institute-for-materials-science.md), while reusing Phonopy and Japan. It makes no university, degree-route, mentoring, admissions, or ranking claim.
 
 The Computational Phonon Calculations extension adds a controlled [research-area record](research-areas/computational-phonon-calculations.md) to expose Phonopy, Atsushi Togo, and the NIMS Computational Materials Science Group through topic-first discovery without ranking research problems or inferring institutional scope.

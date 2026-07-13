@@ -21,6 +21,12 @@ relationship_assertions:
     source_ids: [SRC-NEQUIP-DOCUMENTATION]
     confidence: high
     evidence_window: 2026-07
+  - predicate: supports
+    target_id: PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING
+    source_ids: [SRC-NEQUIP-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: NequIP documentation describes E(3)-equivariant interatomic potentials and training techniques; this assertion is limited to support for the named modeling challenge.
 ---
 
 # NequIP
@@ -35,7 +41,7 @@ every extension, pretrained model, external package, developer, or user.
 | Source ID | Evidence |
 | --- | --- |
 | `SRC-NEQUIP-REPOSITORY` | [mir-group/nequip](https://github.com/mir-group/nequip) identifies NequIP as open-source E(3)-equivariant interatomic-potential code, displays MIT licensing, and provides issue, discussion, tutorial, and contribution routes. Accessed 2026-07-13. |
-| `SRC-NEQUIP-DOCUMENTATION` | [NequIP documentation](https://nequip.readthedocs.io/en/latest/introduction/intro.html) describes an open-source code for machine learning on atomic systems, its Python API, and developer contribution guidance. Accessed 2026-07-13. |
+| `SRC-NEQUIP-DOCUMENTATION` | [NequIP documentation](https://nequip.readthedocs.io/en/latest/introduction/intro.html) describes E(3)-equivariant interatomic potentials, an open-source code for machine learning on atomic systems, configuration and training techniques, its Python API, and developer contribution guidance. Accessed 2026-07-13. |
 
 ## Boundary and limitations
 

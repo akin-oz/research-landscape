@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A third evidence-bounded Research Problem record for Machine-Learned Interatomic Potential Modeling, with independent direct support paths from MACE, NequIP, and DeePMD-kit; the discovery path does not compare architectures, training methods, datasets, software, or problem importance.
 - A second evidence-bounded Research Problem record for Crystal Symmetry Determination, with a direct Spglib support path, demonstrating independent non-comparative problem discovery without turning documented functionality into a method or importance ranking.
 - A first-class, evidence-bounded Research Problem entity contract and Lattice Thermal Conductivity Prediction slice, with a generated public problem index and direct Phono3py support path; it does not rank problem importance or convert a problem into a project.
 - A controlled Crystal Symmetry Analysis area with direct Spglib and Atsushi Togo links, exposing topic-first software and PI discovery without inferring group scope or ranking research problems.

@@ -917,6 +917,10 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`SW-PHONO3PY` supports this problem", rendered)
         self.assertIn("`PROBLEM-CRYSTAL-SYMMETRY-DETERMINATION`", rendered)
         self.assertIn("`SW-SPGLIB` supports this problem", rendered)
+        self.assertIn("`PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING`", rendered)
+        self.assertIn("`SW-MACE` supports this problem (sources: SRC-MACE-DOCUMENTATION)", rendered)
+        self.assertIn("`SW-NEQUIP` supports this problem (sources: SRC-NEQUIP-DOCUMENTATION)", rendered)
+        self.assertIn("`SW-DEEPMD-KIT` supports this problem (sources: SRC-DEEPMD-DOCUMENTATION)", rendered)
 
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)
@@ -934,6 +938,19 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(["SRC-SPGLIB-DOCUMENTATION"], symmetry_support[0]["source_ids"])
         self.assertIn(symmetry_problem.id, generated)
         self.assertIn("SW-SPGLIB", generated)
+        mlip_problem = records["PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING"]
+        for software_id, source_id in {
+            "SW-MACE": "SRC-MACE-DOCUMENTATION",
+            "SW-NEQUIP": "SRC-NEQUIP-DOCUMENTATION",
+            "SW-DEEPMD-KIT": "SRC-DEEPMD-DOCUMENTATION",
+        }.items():
+            support = rl.matching_assertions(records[software_id], "supports", {mlip_problem.id})
+            self.assertEqual(1, len(support))
+            self.assertEqual([source_id], support[0]["source_ids"])
+        self.assertIn(mlip_problem.id, generated)
+        self.assertIn("SW-MACE", generated)
+        self.assertIn("SW-NEQUIP", generated)
+        self.assertIn("SW-DEEPMD-KIT", generated)
 
     def test_research_problem_requires_a_controlled_area_link(self) -> None:
         metadata = {

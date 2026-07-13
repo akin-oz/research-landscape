@@ -26,6 +26,12 @@ relationship_assertions:
     source_ids: [SRC-DEEPMD-REPOSITORY]
     confidence: high
     evidence_window: 2026-07
+  - predicate: supports
+    target_id: PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING
+    source_ids: [SRC-DEEPMD-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: DeePMD-kit documentation covers preparing data and training a deep-potential model; this assertion is limited to support for the named modeling challenge.
 ---
 
 # DeePMD-kit
@@ -40,7 +46,7 @@ record does not model every backend, interface, package, model, user, or result.
 | Source ID | Evidence |
 | --- | --- |
 | `SRC-DEEPMD-REPOSITORY` | [deepmodeling/deepmd-kit](https://github.com/deepmodeling/deepmd-kit) describes a Python/C++ package for deep-learning interatomic potential-energy/force-field models and molecular dynamics, identifies GNU LGPLv3 licensing, and links contribution guidance. Accessed 2026-07-13. |
-| `SRC-DEEPMD-DOCUMENTATION` | [DeePMD-kit documentation](https://deepmd-kit.readthedocs.io/en/stable/) provides public installation and Python/C++ interface documentation. Accessed 2026-07-13. |
+| `SRC-DEEPMD-DOCUMENTATION` | [DeePMD-kit documentation](https://deepmd-kit.readthedocs.io/en/stable/) documents preparing data, training and testing a model, model inference, and public Python/C++ interfaces. Accessed 2026-07-13. |
 
 ## Boundary and limitations
 

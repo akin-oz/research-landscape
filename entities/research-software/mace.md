@@ -5,8 +5,8 @@ id: SW-MACE
 name: MACE
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-MACE-REPOSITORY
@@ -26,6 +26,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: The project-owned repository documents Python >= 3.9, pip installation, and Python entry points for the MACE reference implementation. This does not classify the separately named JAX implementation or establish a group-wide language policy or individual skill.
+  - predicate: supports
+    target_id: PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING
+    source_ids: [SRC-MACE-DOCUMENTATION]
+    confidence: high
+    evidence_window: 2026-07
+    notes: MACE documentation describes machine-learning interatomic potentials and its training workflow; this assertion is limited to support for the named modeling challenge.
 ---
 
 # MACE
@@ -41,7 +47,7 @@ evidence recorded on the PI node.
 | Source ID | Evidence |
 | --- | --- |
 | `SRC-MACE-REPOSITORY` | [ACEsuit/mace](https://github.com/ACEsuit/mace) describes MACE as fast and accurate machine-learning interatomic potentials with higher-order equivariant message passing, identifies the reference implementation as developed by named contributors and the group of Gábor Csányi, and states that the code is distributed under the MIT License. Accessed 2026-07-12. |
-| `SRC-MACE-DOCUMENTATION` | [MACE documentation: Introduction](https://mace-docs.readthedocs.io/en/latest/guide/intro.html) describes MACE as machine-learning interatomic potentials with higher-order equivariant message passing. Accessed 2026-07-12. |
+| `SRC-MACE-DOCUMENTATION` | [MACE documentation: Introduction](https://mace-docs.readthedocs.io/en/latest/guide/intro.html) describes MACE as machine-learning interatomic potentials with higher-order equivariant message passing and links its training workflow. Accessed 2026-07-13. |
 
 ## Boundary and limitations
 
