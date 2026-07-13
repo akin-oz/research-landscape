@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb -->
+<!-- input-fingerprint: 38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb`
+**Input fingerprint:** `38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -45,6 +45,7 @@
 | [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md) | `ECO-OPEN-CATALYST-PROJECT` | research-ecosystem | high | 2026-07-13 | — |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) | `ECO-OQMD` | research-ecosystem | high | 2026-07-12 | — |
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) | `ECO-OPENKIM` | research-ecosystem | high | 2026-07-13 | — |
+| [Phono3py Ecosystem](../../entities/ecosystems/phono3py.md) | `ECO-PHONO3PY` | research-ecosystem | high | 2026-07-13 | — |
 | [Phonopy Ecosystem](../../entities/ecosystems/phonopy.md) | `ECO-PHONOPY` | research-ecosystem | high | 2026-07-13 | — |
 | [Qbox Ecosystem](../../entities/ecosystems/qbox.md) | `ECO-QBOX` | research-ecosystem | high | 2026-07-13 | — |
 | [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) | `ECO-QUANTUM-ESPRESSO` | research-ecosystem | high | 2026-07-12 | — |
@@ -84,6 +85,7 @@
 | [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |
 | [NequIP](../../entities/research-software/nequip.md) | `SW-NEQUIP` | research-software | high | 2026-07-13 | — |
 | [NOMAD](../../entities/research-software/nomad.md) | `SW-NOMAD` | research-software | high | 2026-07-12 | — |
+| [Phono3py](../../entities/research-software/phono3py.md) | `SW-PHONO3PY` | research-software | high | 2026-07-13 | — |
 | [Phonopy](../../entities/research-software/phonopy.md) | `SW-PHONOPY` | research-software | high | 2026-07-13 | — |
 | [pymatgen](../../entities/research-software/pymatgen.md) | `SW-PYMATGEN` | research-software | high | 2026-07-12 | — |
 | [Qbox](../../entities/research-software/qbox.md) | `SW-QBOX` | research-software | high | 2026-07-13 | — |

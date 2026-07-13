@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb -->
+<!-- input-fingerprint: 38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb`
+**Input fingerprint:** `38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -60,6 +60,7 @@
 | [JDFTx](../../entities/research-software/jdftx.md) | `SW-JDFTX` | research-software | high | 2026-07-13 | — |
 | [KIM API](../../entities/research-software/kim-api.md) | `SW-KIM-API` | research-software | high | 2026-07-13 | — |
 | [LAMMPS](../../entities/research-software/lammps.md) | `SW-LAMMPS` | research-software | high | 2026-07-12 | — |
+| [Phono3py](../../entities/research-software/phono3py.md) | `SW-PHONO3PY` | research-software | high | 2026-07-13 | — |
 | [Phonopy](../../entities/research-software/phonopy.md) | `SW-PHONOPY` | research-software | high | 2026-07-13 | — |
 | [Qbox](../../entities/research-software/qbox.md) | `SW-QBOX` | research-software | high | 2026-07-13 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
@@ -73,6 +74,7 @@
 | --- | --- | --- | --- | --- | --- |
 | [Atsushi Togo](../../entities/principal-investigators/atsushi-togo.md) | `PI-ATSUSHI-TOGO` | principal-investigator | high | 2026-07-13 | COUNTRY-JP |
 | [Computational Materials Science Group](../../entities/research-groups/nims-computational-materials-science-group.md) | `RG-NIMS-COMPUTATIONAL-MATERIALS-SCIENCE` | research-group | high | 2026-07-13 | COUNTRY-JP |
+| [Phono3py](../../entities/research-software/phono3py.md) | `SW-PHONO3PY` | research-software | high | 2026-07-13 | — |
 | [Phonopy](../../entities/research-software/phonopy.md) | `SW-PHONOPY` | research-software | high | 2026-07-13 | — |
 
 ## [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md)

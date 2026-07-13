@@ -62,6 +62,8 @@ The Qbox cluster adds [Qbox](research-software/qbox.md) and the [Qbox Ecosystem]
 
 The Phonopy cluster adds [Phonopy](research-software/phonopy.md) and the [Phonopy Ecosystem](ecosystems/phonopy.md), while reusing controlled Python and Computational Materials Science records. It makes no contributor, dependency, institution, or complete-project-community claim.
 
+The Phono3py cluster adds [Phono3py](research-software/phono3py.md) and the [Phono3py Ecosystem](ecosystems/phono3py.md), while reusing controlled Python, Computational Materials Science, Computational Phonon Calculations, and Atsushi Togo records. It makes no dependency, institution, or complete-project-community claim.
+
 The Phonopy–NIMS extension adds [Atsushi Togo](principal-investigators/atsushi-togo.md), the [NIMS Computational Materials Science Group](research-groups/nims-computational-materials-science-group.md), and the [National Institute for Materials Science](organizations/national-institute-for-materials-science.md), while reusing Phonopy and Japan. It makes no university, degree-route, mentoring, admissions, or ranking claim.
 
 The Computational Phonon Calculations extension adds a controlled [research-area record](research-areas/computational-phonon-calculations.md) to expose Phonopy, Atsushi Togo, and the NIMS Computational Materials Science Group through topic-first discovery without ranking research problems or inferring institutional scope.

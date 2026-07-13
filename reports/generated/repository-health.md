@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb -->
+<!-- input-fingerprint: 38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088 -->
 # Repository health report
 
-**Input fingerprint:** `2b8891c71ecbc3c59132c5805e1e0a94d433d287c9c99682e7fbfc6903d8f1fb`
+**Input fingerprint:** `38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **137**
-- Typed relationship assertions: **233**
+- Canonical v2 entities: **139**
+- Typed relationship assertions: **236**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -26,31 +26,31 @@
 | project | 1 |
 | publication | 8 |
 | research-area | 7 |
-| research-ecosystem | 27 |
+| research-ecosystem | 28 |
 | research-group | 13 |
-| research-software | 28 |
+| research-software | 29 |
 | university | 11 |
 
 ## Confidence coverage
 
 | Confidence | Count |
 | --- | ---: |
-| high | 137 |
+| high | 139 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **137**
+- Canonical v2 records in approved entity directories: **139**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 137/137 |
-| Reviewed/published records with last-review dates | 137/137 |
-| Typed relationships with source IDs | 233/233 |
+| Reviewed/published records with source IDs | 139/139 |
+| Reviewed/published records with last-review dates | 139/139 |
+| Typed relationships with source IDs | 236/236 |
 | Reviewed groups with exactly one direct-host field | 13/13 |
-| Entities with an inbound or outbound graph connection | 137/137 |
+| Entities with an inbound or outbound graph connection | 139/139 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
@@ -63,8 +63,8 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | Research area | Groups | Principal Investigators | Research Software | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 5 | 2 | 6 |
-| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 11 | 11 | 16 | 6 | 22 |
-| [Computational Phonon Calculations](../../entities/research-areas/computational-phonon-calculations.md) | 1 | 1 | 1 | 0 | 1 |
+| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 11 | 11 | 17 | 6 | 23 |
+| [Computational Phonon Calculations](../../entities/research-areas/computational-phonon-calculations.md) | 1 | 1 | 2 | 0 | 2 |
 | [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 5 | 1 | 12 | 4 | 15 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 7 | 2 | 6 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 2 |
@@ -79,7 +79,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | [C++](../../entities/programming-languages/cpp.md) | 6 | 1 | 1 | 1 | 6 |
 | [Fortran](../../entities/programming-languages/fortran.md) | 6 | 0 | 2 | 0 | 6 |
 | [Julia](../../entities/programming-languages/julia.md) | 1 | 0 | 0 | 0 | 1 |
-| [Python](../../entities/programming-languages/python.md) | 15 | 6 | 5 | 4 | 13 |
+| [Python](../../entities/programming-languages/python.md) | 16 | 6 | 5 | 4 | 14 |
 
 ## Relationship predicates
 
@@ -90,13 +90,13 @@ These are counts of direct, documented implementation paths. They measure corpus
 | affiliated_with | 17 |
 | authored_by | 9 |
 | belongs_to | 15 |
-| connects | 29 |
+| connects | 30 |
 | covers | 1 |
 | describes | 6 |
 | develops | 17 |
 | funds | 1 |
-| implemented_in | 28 |
-| includes | 26 |
+| implemented_in | 29 |
+| includes | 27 |
 | involves | 1 |
 | leads | 12 |
 | located_in | 19 |

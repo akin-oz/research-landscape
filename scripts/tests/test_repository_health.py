@@ -80,7 +80,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 1, "principal_investigators": 1, "software": 1, "universities": 0, "ecosystems": 1},
+            {"groups": 1, "principal_investigators": 1, "software": 2, "universities": 0, "ecosystems": 2},
             {key: coverage["AREA-COMPUTATIONAL-PHONON-CALCULATIONS"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -100,7 +100,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"software": 15, "groups": 6, "principal_investigators": 5, "universities": 4, "ecosystems": 13},
+            {"software": 16, "groups": 6, "principal_investigators": 5, "universities": 4, "ecosystems": 14},
             {key: coverage["PROGRAMMING-LANGUAGE-PYTHON"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -554,6 +554,16 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
         self.assertEqual(4, candidates[0]["criteria"])
 
+    def test_phono3py_slice_exposes_computational_phonon_python_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software, ecosystem = records["SW-PHONO3PY"], records["ECO-PHONO3PY"]
+        self.assertEqual(("yes", "BSD-3-Clause"), (software.metadata["open_source"], software.metadata["license"]))
+        self.assertEqual(["PROGRAMMING-LANGUAGE-PYTHON"], software.metadata["programming_language_ids"])
+        candidates = rl.discovery_software_candidates(records, "AREA-COMPUTATIONAL-PHONON-CALCULATIONS", "PROGRAMMING-LANGUAGE-PYTHON", ecosystem.id, "yes")
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
     def test_computational_phonon_calculations_are_discoverable_by_topic(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
@@ -566,7 +576,7 @@ class RepositoryHealthTests(unittest.TestCase):
             candidate["record"].id
             for candidate in rl.discovery_pi_candidates(records, area_id, None, None, None)
         ])
-        self.assertEqual(["SW-PHONOPY"], [
+        self.assertEqual(["SW-PHONO3PY", "SW-PHONOPY"], [
             candidate["record"].id
             for candidate in rl.discovery_software_candidates(records, area_id, None, None, "yes")
         ])
@@ -859,7 +869,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("# Research-area discovery", rendered)
         self.assertIn("not a research-problem ranking", rendered)
         self.assertIn("`AREA-COMPUTATIONAL-PHONON-CALCULATIONS`", rendered)
-        self.assertIn("groups: 1; principal investigators: 1; software: 1; universities: 0; ecosystems: 1", rendered)
+        self.assertIn("groups: 1; principal investigators: 1; software: 2; universities: 0; ecosystems: 2", rendered)
         self.assertIn("sources: SRC-PHONOPY-DOCUMENTATION", rendered)
 
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:
