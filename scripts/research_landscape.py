@@ -1410,6 +1410,7 @@ def discovery_pi_candidates(
     software_id: str | None,
     language_id: str | None,
     ecosystem_id: str | None = None,
+    problem_id: str | None = None,
 ) -> list[dict[str, Any]]:
     """Apply ANDed, source-explainable filters to reviewed PIs."""
     candidates = []
@@ -1456,6 +1457,12 @@ def discovery_pi_candidates(
                 continue
             signals.extend(ecosystem_signals)
             criteria += 1
+        if problem_id:
+            problem_signals = development_problem_support_signals(pi, problem_id, records, "develops")
+            if not problem_signals:
+                continue
+            signals.extend(problem_signals)
+            criteria += 1
         candidates.append({"record": pi, "signals": deduplicate_signals(signals), "criteria": criteria})
     return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
 
@@ -1468,13 +1475,14 @@ def render_pi_discovery(
     language_id: str | None,
     ecosystem_id: str | None,
     output_path: Path,
+    problem_id: str | None = None,
 ) -> str:
     filters = [(name, value) for name, value in (
-        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id),
+        ("research area", area_id), ("country", country_id), ("research software", software_id), ("programming language", language_id), ("research ecosystem", ecosystem_id), ("research problem", problem_id),
     ) if value]
     if not filters:
-        raise ValueError("provide at least one of --area, --country, --software, --language, or --ecosystem")
-    candidates = discovery_pi_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id)
+        raise ValueError("provide at least one of --area, --country, --software, --language, --ecosystem, or --problem")
+    candidates = discovery_pi_candidates(records, area_id, country_id, software_id, language_id, ecosystem_id, problem_id)
     lines = [
         "# Principal-investigator discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking or availability finding.", "",
@@ -1494,7 +1502,7 @@ def render_pi_discovery(
         lines.append("| — | No reviewed canonical PI matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and contain only PIs with every requested source-backed criterion. A country match follows a documented public affiliation and its documented location; language and ecosystem matches follow a documented PI-development edge through software `implemented_in` or ecosystem `includes` assertions. This does not assert that a PI is an ecosystem member or establish current openings, supervision capacity, mentorship quality, funding, admissions, or applicant fit.", "",
+        "Results are alphabetically ordered and contain only PIs with every requested source-backed criterion. A country match follows a documented public affiliation and its documented location; language and ecosystem matches follow a documented PI-development edge through software `implemented_in` or ecosystem `includes` assertions. A problem match follows PI `develops` → software `supports` → problem and does not assert that the PI works on, endorses, or supervises the problem. This does not assert that a PI is an ecosystem member or establish current openings, supervision capacity, mentorship quality, funding, admissions, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1506,19 +1514,20 @@ def discover_pis(
     software_id: str | None,
     language_id: str | None,
     ecosystem_id: str | None,
+    problem_id: str | None,
     check: bool,
     query_id: str | None,
     list_queries: bool,
     as_of: str | None,
 ) -> int:
     if check or query_id or list_queries or as_of:
-        print("ERROR: discover-pis accepts only --area, --country, --software, --language, and --ecosystem")
+        print("ERROR: discover-pis accepts only --area, --country, --software, --language, --ecosystem, and --problem")
         return 2
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
         return 1
-    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id, "ecosystem": ecosystem_id}
+    filters = {"area": area_id, "country": country_id, "software": software_id, "language": language_id, "ecosystem": ecosystem_id, "problem": problem_id}
     for name, value in filters.items():
         if not value:
             continue
@@ -1529,7 +1538,7 @@ def discover_pis(
     try:
         print(render_pi_discovery(
             records, area_id, country_id, software_id, language_id, ecosystem_id,
-            root / "reports/generated/evidence-recommendations.md",
+            root / "reports/generated/evidence-recommendations.md", problem_id,
         ))
     except ValueError as exc:
         print(f"ERROR: {exc}")
@@ -2405,8 +2414,8 @@ def main() -> int:
     if args.open_source and args.command != "discover-software":
         print("ERROR: --open-source is accepted only by discover-software")
         return 2
-    if args.problem and args.command != "discover-groups":
-        print("ERROR: --problem is accepted only by discover-groups")
+    if args.problem and args.command not in {"discover-groups", "discover-pis"}:
+        print("ERROR: --problem is accepted only by discover-groups and discover-pis")
         return 2
     if args.command == "validate":
         records, results = validate(root)
@@ -2434,7 +2443,7 @@ def main() -> int:
     if args.command == "discover-pis":
         return discover_pis(
             root, args.area, args.country, args.software, args.language, args.ecosystem,
-            args.check, args.query, args.list_queries, args.as_of,
+            args.problem, args.check, args.query, args.list_queries, args.as_of,
         )
     if args.command == "discover-universities":
         return discover_universities(

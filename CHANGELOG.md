@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- `discover-pis --problem` now exposes only documented PI `develops` → software `supports` → problem paths, allowing related-development discovery without claiming a PI works on, owns, endorses, or supervises the problem.
 - `discover-groups --problem` now exposes only documented group `develops` → software `supports` → problem paths, allowing related-development discovery without claiming a group works on, owns, or endorses the problem.
 - `discover-problems --language` now narrows the reviewed problem catalog through a documented software `implemented_in` → `supports` → problem path, exposing both sources without treating an implementation language as individual skill, group practice, research fit, or a ranking signal.
 - `discover-problems --ecosystem` now narrows the reviewed problem catalog through an explicit ecosystem `includes` → software `supports` → problem path, exposing both sources without treating ecosystem adjacency as a problem relationship or ranking results.
