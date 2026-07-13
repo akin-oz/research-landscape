@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 0bb1bb907bfb12e7bab9d066b82f478d3bab8d4ed02ad9b786d249b88793c0d3 -->
+<!-- input-fingerprint: 99c112d39e3f13e2870007dbb9829b29991e0c81c23888044f1cba1028ce50dc -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `0bb1bb907bfb12e7bab9d066b82f478d3bab8d4ed02ad9b786d249b88793c0d3`
+**Input fingerprint:** `99c112d39e3f13e2870007dbb9829b29991e0c81c23888044f1cba1028ce50dc`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -187,6 +187,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) (`ECO-OPENKIM`) | connects `PI-ELLAD-TADMOR` (sources: SRC-UMN-TADMOR-CV); `PI-ELLAD-TADMOR` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-UMN-TADMOR-PROFILE); includes `SW-KIM-API` (sources: SRC-KIM-API-REPOSITORY); `SW-KIM-API` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-KIM-API-REPOSITORY) | high | 2/2 documented criteria |
 | [Phono3py Ecosystem](../../entities/ecosystems/phono3py.md) (`ECO-PHONO3PY`) | connects `PI-ATSUSHI-TOGO` (sources: SRC-PHONO3PY-DOCUMENTATION); `PI-ATSUSHI-TOGO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE); includes `SW-PHONO3PY` (sources: SRC-PHONO3PY-DOCUMENTATION, SRC-PHONO3PY-REPOSITORY); `SW-PHONO3PY` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PHONO3PY-DOCUMENTATION, SRC-PHONO3PY-REPOSITORY) | high | 2/2 documented criteria |
 | [Phonopy Ecosystem](../../entities/ecosystems/phonopy.md) (`ECO-PHONOPY`) | connects `PI-ATSUSHI-TOGO` (sources: SRC-PHONOPY-DOCUMENTATION); `PI-ATSUSHI-TOGO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE); includes `SW-PHONOPY` (sources: SRC-PHONOPY-DOCUMENTATION, SRC-PHONOPY-REPOSITORY); `SW-PHONOPY` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-PHONOPY-DOCUMENTATION, SRC-PHONOPY-REPOSITORY) | high | 2/2 documented criteria |
+| [Spglib Ecosystem](../../entities/ecosystems/spglib.md) (`ECO-SPGLIB`) | connects `PI-ATSUSHI-TOGO` (sources: SRC-SPGLIB-DOCUMENTATION); `PI-ATSUSHI-TOGO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE); includes `SW-SPGLIB` (sources: SRC-SPGLIB-DOCUMENTATION, SRC-SPGLIB-REPOSITORY); `SW-SPGLIB` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-SPGLIB-DOCUMENTATION, SRC-SPGLIB-REPOSITORY) | high | 2/2 documented criteria |
 | [Wannier90 Ecosystem](../../entities/ecosystems/wannier90.md) (`ECO-WANNIER90`) | connects `PI-NICOLA-MARZARI` (sources: SRC-WANNIER90-REPOSITORY); `PI-NICOLA-MARZARI` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-THEOS-RESEARCH); includes `SW-WANNIER90` (sources: SRC-WANNIER90-REPOSITORY, SRC-WANNIER90-FEATURES); `SW-WANNIER90` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-WANNIER90-REPOSITORY, SRC-WANNIER90-FEATURES, SRC-WANNIER90-LIBRARY) | high | 2/2 documented criteria |
 | [ABINIT Ecosystem](../../entities/ecosystems/abinit.md) (`ECO-ABINIT`) | includes `SW-ABINIT` (sources: SRC-ABINIT-HOME); `SW-ABINIT` is classified in `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-ABINIT-PRESENTATION, SRC-ABINIT-LICENSE, SRC-ABINIT-DEVELOPMENT) | high | 2/2 documented criteria |
 | [AFLOW](../../entities/ecosystems/aflow.md) (`ECO-AFLOW`) | connects `PI-STEFANO-CURTAROLO` (sources: SRC-AFLOW-DOCUMENTATION); `PI-STEFANO-CURTAROLO` works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 2/2 documented criteria |
@@ -384,9 +385,9 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
+| [Atsushi Togo](../../entities/principal-investigators/atsushi-togo.md) (`PI-ATSUSHI-TOGO`) | develops licensed open-source `SW-PHONOPY` (sources: SRC-NIMS-PHONOPY-FEATURE); develops licensed open-source `SW-SPGLIB` (sources: SRC-SPGLIB-DOCUMENTATION) | high | 1/1 documented criteria |
 | [Giovanni Pizzi](../../entities/principal-investigators/giovanni-pizzi.md) (`PI-GIOVANNI-PIZZI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM); develops licensed open-source `SW-WANNIER90` (sources: SRC-WANNIER90-REPOSITORY) | high | 1/1 documented criteria |
 | [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) (`PI-NICOLA-MARZARI`) | develops licensed open-source `SW-AIIDA-CORE` (sources: SRC-AIIDA-DEVELOPMENT-TEAM); develops licensed open-source `SW-WANNIER90` (sources: SRC-WANNIER90-REPOSITORY) | high | 1/1 documented criteria |
-| [Atsushi Togo](../../entities/principal-investigators/atsushi-togo.md) (`PI-ATSUSHI-TOGO`) | develops licensed open-source `SW-PHONOPY` (sources: SRC-NIMS-PHONOPY-FEATURE) | high | 1/1 documented criteria |
 | [Axel Kohlmeyer](../../entities/principal-investigators/axel-kohlmeyer.md) (`PI-AXEL-KOHLMEYER`) | develops licensed open-source `SW-LAMMPS` (sources: SRC-TEMPLE-KOHLMEYER, SRC-LAMMPS-AUTHORS) | high | 1/1 documented criteria |
 | [Gábor Csányi](../../entities/principal-investigators/gabor-csanyi.md) (`PI-GABOR-CSANYI`) | develops licensed open-source `SW-MACE` (sources: SRC-MACE-REPOSITORY) | high | 1/1 documented criteria |
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) (`PI-SHYUE-PING-ONG`) | develops licensed open-source `SW-PYMATGEN` (sources: SRC-NUS-ONG-PROFILE, SRC-PYMATGEN-TEAM) | high | 1/1 documented criteria |

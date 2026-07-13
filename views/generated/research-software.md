@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088 -->
+<!-- input-fingerprint: 8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088`
+**Input fingerprint:** `8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -220,6 +220,14 @@
 | --- | --- | --- | --- | --- | --- |
 | [sisl Ecosystem](../../entities/ecosystems/sisl.md) | `ECO-SISL` | research-ecosystem | high | 2026-07-13 | — |
 | [sisl](../../entities/research-software/sisl.md) | `SW-SISL` | research-software | high | 2026-07-13 | — |
+
+## [Spglib](../../entities/research-software/spglib.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Atsushi Togo](../../entities/principal-investigators/atsushi-togo.md) | `PI-ATSUSHI-TOGO` | principal-investigator | high | 2026-07-13 | COUNTRY-JP |
+| [Spglib Ecosystem](../../entities/ecosystems/spglib.md) | `ECO-SPGLIB` | research-ecosystem | high | 2026-07-13 | — |
+| [Spglib](../../entities/research-software/spglib.md) | `SW-SPGLIB` | research-software | high | 2026-07-13 | — |
 
 ## [Wannier90](../../entities/research-software/wannier90.md)
 

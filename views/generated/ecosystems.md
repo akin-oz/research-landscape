@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088 -->
+<!-- input-fingerprint: 8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710 -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088`
+**Input fingerprint:** `8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT Ecosystem](../../entities/ecosystems/abinit.md)
@@ -169,6 +169,12 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [sisl Ecosystem](../../entities/ecosystems/sisl.md) | `ECO-SISL` | research-ecosystem | high | 2026-07-13 | — |
+
+## [Spglib Ecosystem](../../entities/ecosystems/spglib.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Spglib Ecosystem](../../entities/ecosystems/spglib.md) | `ECO-SPGLIB` | research-ecosystem | high | 2026-07-13 | — |
 
 ## [Wannier90 Ecosystem](../../entities/ecosystems/wannier90.md)
 

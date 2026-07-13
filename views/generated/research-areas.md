@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088 -->
+<!-- input-fingerprint: 8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088`
+**Input fingerprint:** `8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -66,6 +66,7 @@
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |
 | [sisl](../../entities/research-software/sisl.md) | `SW-SISL` | research-software | high | 2026-07-13 | — |
+| [Spglib](../../entities/research-software/spglib.md) | `SW-SPGLIB` | research-software | high | 2026-07-13 | — |
 | [Wannier90](../../entities/research-software/wannier90.md) | `SW-WANNIER90` | research-software | high | 2026-07-13 | — |
 
 ## [Computational Phonon Calculations](../../entities/research-areas/computational-phonon-calculations.md)

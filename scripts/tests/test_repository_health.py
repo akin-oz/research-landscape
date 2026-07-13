@@ -80,7 +80,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 1, "principal_investigators": 1, "software": 2, "universities": 0, "ecosystems": 2},
+            {"groups": 1, "principal_investigators": 1, "software": 2, "universities": 0, "ecosystems": 3},
             {key: coverage["AREA-COMPUTATIONAL-PHONON-CALCULATIONS"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -108,6 +108,12 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual(
             {"software": 6, "groups": 0, "principal_investigators": 2, "universities": 0, "ecosystems": 6},
             {key: coverage["PROGRAMMING-LANGUAGE-FORTRAN"][key] for key in (
+                "software", "groups", "principal_investigators", "universities", "ecosystems"
+            )},
+        )
+        self.assertEqual(
+            {"software": 1, "groups": 0, "principal_investigators": 1, "universities": 0, "ecosystems": 1},
+            {key: coverage["PROGRAMMING-LANGUAGE-C"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
         )
@@ -564,6 +570,16 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
         self.assertEqual(4, candidates[0]["criteria"])
 
+    def test_spglib_slice_exposes_computational_materials_c_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software, ecosystem = records["SW-SPGLIB"], records["ECO-SPGLIB"]
+        self.assertEqual(("yes", "BSD-3-Clause"), (software.metadata["open_source"], software.metadata["license"]))
+        self.assertEqual(["PROGRAMMING-LANGUAGE-C"], software.metadata["programming_language_ids"])
+        candidates = rl.discovery_software_candidates(records, "AREA-COMPUTATIONAL-MATERIALS-SCIENCE", "PROGRAMMING-LANGUAGE-C", ecosystem.id, "yes")
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
     def test_computational_phonon_calculations_are_discoverable_by_topic(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
@@ -869,7 +885,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("# Research-area discovery", rendered)
         self.assertIn("not a research-problem ranking", rendered)
         self.assertIn("`AREA-COMPUTATIONAL-PHONON-CALCULATIONS`", rendered)
-        self.assertIn("groups: 1; principal investigators: 1; software: 2; universities: 0; ecosystems: 2", rendered)
+        self.assertIn("groups: 1; principal investigators: 1; software: 2; universities: 0; ecosystems: 3", rendered)
         self.assertIn("sources: SRC-PHONOPY-DOCUMENTATION", rendered)
 
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:

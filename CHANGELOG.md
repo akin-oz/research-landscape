@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A bounded Spglib ecosystem slice with distinct BSD-3-Clause C software, ecosystem, and language records, exposing a documented current main-developer path without inventing interface dependencies, group-wide language practice, or institutional relationships.
 - A bounded Phono3py ecosystem slice with distinct BSD-3-Clause Python software and ecosystem records, exposing direct computational-materials and computational-phonon paths without inventing external-software dependencies, people beyond a contributor listing, or institutional relationships.
 - A controlled Computational Phonon Calculations area with direct Phonopy, NIMS group, and Atsushi Togo links, exposing topic-first software, group, and PI discovery without making a research-problem ranking claim.
 - A bounded Phonopy–NIMS environment extension with direct developer-maintainer, group, research-institute, and Japan paths, without inventing a university route, mentorship, admissions, or ranking claims.

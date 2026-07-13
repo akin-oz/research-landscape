@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088 -->
+<!-- input-fingerprint: 8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `38a099c140faec0a6ecdf124bc0c55b5c7eb5dd9b84abd8c075f6e903fcba088`
+**Input fingerprint:** `8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -51,6 +51,7 @@
 | [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) | `ECO-QUANTUM-ESPRESSO` | research-ecosystem | high | 2026-07-12 | — |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) | `ECO-SIESTA` | research-ecosystem | high | 2026-07-13 | — |
 | [sisl Ecosystem](../../entities/ecosystems/sisl.md) | `ECO-SISL` | research-ecosystem | high | 2026-07-13 | — |
+| [Spglib Ecosystem](../../entities/ecosystems/spglib.md) | `ECO-SPGLIB` | research-ecosystem | high | 2026-07-13 | — |
 | [Wannier90 Ecosystem](../../entities/ecosystems/wannier90.md) | `ECO-WANNIER90` | research-ecosystem | high | 2026-07-13 | — |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
@@ -93,6 +94,7 @@
 | [RadonPy](../../entities/research-software/radonpy.md) | `SW-RADONPY` | research-software | high | 2026-07-12 | — |
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |
 | [sisl](../../entities/research-software/sisl.md) | `SW-SISL` | research-software | high | 2026-07-13 | — |
+| [Spglib](../../entities/research-software/spglib.md) | `SW-SPGLIB` | research-software | high | 2026-07-13 | — |
 | [Wannier90](../../entities/research-software/wannier90.md) | `SW-WANNIER90` | research-software | high | 2026-07-13 | — |
 | [Duke University](../../entities/universities/duke-university.md) | `UNIVERSITY-DUKE` | university | high | 2026-07-12 | COUNTRY-US |
 | [EPFL](../../entities/universities/epfl.md) | `UNIVERSITY-EPFL` | university | high | 2026-07-12 | COUNTRY-CH |
