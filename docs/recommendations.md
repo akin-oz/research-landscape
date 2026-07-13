@@ -31,9 +31,11 @@ mentorship-process evidence, including the evidence category and limitations.
 
 ## What it refuses to recommend
 
-“High-mentorship environments,” “dominant research ecosystems,” “strongest
-academic environments,” “best research problems,” and “best research advisors”
-remain **unavailable**. The catalog names the evidence contract required before
+"High-mentorship environments," "dominant research ecosystems," "strongest
+academic environments," "best research problems," and "best research advisors"
+remain **unavailable**. `discover-problems` can list reviewed, bounded
+computational challenges and direct software-support evidence, but does not
+compare their importance, novelty, tractability, or fit. The catalog names the evidence contract required before
 each comparison could be considered. Narrative Python mentions, a public
 repository, group size, fame, awards, or citations cannot substitute for
 sourced controlled-language relations, a validated mentorship metric, or a
@@ -80,6 +82,7 @@ filter command:
 
 ```bash
 python3 scripts/research_landscape.py discover-areas
+python3 scripts/research_landscape.py discover-problems
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --software SW-CHGNET --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
