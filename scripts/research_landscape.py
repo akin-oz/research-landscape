@@ -2014,6 +2014,38 @@ def discover_areas(
     return 0
 
 
+def render_problem_discovery(records: dict[str, Record], output_path: Path) -> str:
+    """Render reviewed computational challenges and their direct support paths."""
+    problems = sorted(
+        (record for record in records.values() if record.entity_type == "research-problem" and eligible(record)),
+        key=lambda record: (record.metadata["name"].casefold(), record.id),
+    )
+    lines = ["# Research-problem discovery", "", "**Status:** deterministic evidence-discovery result, not a problem-importance ranking.", "", "| Research problem | Canonical ID | Direct software support | Confidence |", "| --- | --- | --- | --- |"]
+    for problem in problems:
+        support = []
+        for software in records.values():
+            if software.entity_type == "research-software" and eligible(software):
+                support.extend(signal(f"`{software.id}` supports this problem", assertion, software) for assertion in matching_assertions(software, "supports", {problem.id}))
+        rendered = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in deduplicate_signals(support)) or "No reviewed direct software-support path."
+        lines.append(f"| {canonical_link(problem, output_path)} | `{problem.id}` | {rendered} | {problem.metadata['confidence']} |")
+    if not problems:
+        lines.append("| — | — | No reviewed research problems currently available. | unavailable |")
+    lines.extend(["", "## Boundary", "", "Results list bounded computational challenges and direct evidence-bearing software support only. They do not rank importance, novelty, tractability, funding, methods, advisors, groups, or applicant fit.", ""])
+    return "\n".join(lines)
+
+
+def discover_problems(root: Path, check: bool, query_id: str | None, list_queries: bool, area_id: str | None, country_id: str | None, software_id: str | None, language_id: str | None, ecosystem_id: str | None, open_source: str | None, as_of: str | None) -> int:
+    if any((check, query_id, list_queries, area_id, country_id, software_id, language_id, ecosystem_id, open_source, as_of)):
+        print("ERROR: discover-problems accepts no options")
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    print(render_problem_discovery(records, root / "reports/generated/evidence-recommendations.md"))
+    return 0
+
+
 def write_or_check(path: Path, content: str, check: bool, drift: list[str]) -> None:
     if check:
         if not path.exists() or path.read_text(encoding="utf-8") != content:
@@ -2215,7 +2247,7 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "discover-areas", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "discover-areas", "discover-problems", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
@@ -2251,6 +2283,8 @@ def main() -> int:
             root, args.check, args.query, args.list_queries, args.area, args.country,
             args.software, args.language, args.ecosystem, args.open_source, args.as_of,
         )
+    if args.command == "discover-problems":
+        return discover_problems(root, args.check, args.query, args.list_queries, args.area, args.country, args.software, args.language, args.ecosystem, args.open_source, args.as_of)
     if args.command == "discover-groups":
         return discover_groups(
             root, args.area, args.country, args.software, args.language, args.ecosystem,

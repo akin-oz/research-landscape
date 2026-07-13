@@ -908,6 +908,14 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`ECO-MATML`", catalog)
         self.assertIn("contains no private profile", catalog)
 
+    def test_problem_discovery_is_noncomparative_and_exposes_phono3py_support(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_problem_discovery(records, ROOT / "reports/generated/evidence-recommendations.md")
+        self.assertIn("not a problem-importance ranking", rendered)
+        self.assertIn("`PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION`", rendered)
+        self.assertIn("`SW-PHONO3PY` supports this problem", rendered)
+
     def test_area_discovery_exposes_topic_coverage_without_ranking(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
