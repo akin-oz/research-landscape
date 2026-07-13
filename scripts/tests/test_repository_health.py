@@ -934,11 +934,31 @@ class RepositoryHealthTests(unittest.TestCase):
             records, ROOT / "reports/generated/evidence-recommendations.md",
             "AREA-MACHINE-LEARNED-POTENTIALS",
         )
-        self.assertIn("**Filter:** research area `AREA-MACHINE-LEARNED-POTENTIALS`.", rendered)
+        self.assertIn("**AND filters:** research area `AREA-MACHINE-LEARNED-POTENTIALS`.", rendered)
         self.assertIn("`PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING`", rendered)
         self.assertIn("is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-MACE-DOCUMENTATION, SRC-NEQUIP-DOCUMENTATION, SRC-DEEPMD-DOCUMENTATION)", rendered)
         self.assertNotIn("PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION", rendered)
         self.assertIn("problem record's own source-backed controlled-area classification", rendered)
+
+    def test_problem_discovery_software_filter_requires_direct_support(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_problem_discovery(
+            records, ROOT / "reports/generated/evidence-recommendations.md",
+            software_id="SW-MACE",
+        )
+        self.assertIn("**AND filters:** research software `SW-MACE`.", rendered)
+        self.assertIn("`PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING`", rendered)
+        self.assertIn("`SW-MACE` supports this problem (sources: SRC-MACE-DOCUMENTATION)", rendered)
+        self.assertNotIn("PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION", rendered)
+        self.assertIn("software record's direct sourced `supports` assertion", rendered)
+
+        combined = rl.render_problem_discovery(
+            records, ROOT / "reports/generated/evidence-recommendations.md",
+            "AREA-MACHINE-LEARNED-POTENTIALS", "SW-MACE",
+        )
+        self.assertIn("**AND filters:** research area `AREA-MACHINE-LEARNED-POTENTIALS`; research software `SW-MACE`.", combined)
+        self.assertIn("`PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING`", combined)
 
     def test_research_problem_view_and_typed_support_path_are_present(self) -> None:
         records, results = rl.validate(ROOT)

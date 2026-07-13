@@ -2016,24 +2016,32 @@ def discover_areas(
 
 def render_problem_discovery(
     records: dict[str, Record], output_path: Path, area_id: str | None = None,
+    software_id: str | None = None,
 ) -> str:
     """Render reviewed computational challenges and their direct support paths.
 
     An area filter matches only a problem's own source-backed controlled-area
-    classification. It never infers problem scope from adjacent software,
-    people, groups, or ecosystems.
+    classification. A software filter requires that software record's direct,
+    sourced ``supports`` assertion. Neither filter infers problem scope from
+    people, groups, ecosystems, or non-support software adjacency.
     """
     problems = sorted(
         (
             record for record in records.values()
             if record.entity_type == "research-problem" and eligible(record)
             and (area_id is None or area_id in as_ids(record.metadata.get("research_area_ids", [])))
+            and (
+                software_id is None
+                or bool(matching_assertions(records[software_id], "supports", {record.id}))
+            )
         ),
         key=lambda record: (record.metadata["name"].casefold(), record.id),
     )
     lines = ["# Research-problem discovery", "", "**Status:** deterministic evidence-discovery result, not a problem-importance ranking.", ""]
-    if area_id:
-        lines.extend([f"**Filter:** research area `{area_id}`.", ""])
+    filters = [("research area", area_id), ("research software", software_id)]
+    filters = [(name, value) for name, value in filters if value]
+    if filters:
+        lines.extend(["**AND filters:** " + "; ".join(f"{name} `{value}`" for name, value in filters) + ".", ""])
     lines.extend([
         "| Research problem | Canonical ID | Documented matching evidence | Direct software support | Confidence |",
         "| --- | --- | --- | --- | --- |",
@@ -2042,25 +2050,32 @@ def render_problem_discovery(
         area_signals = (
             [metadata_signal(f"is classified in `{area_id}`", problem)] if area_id else []
         )
-        rendered_area = "; ".join(
+        software_signals = (
+            [
+                signal(f"`{software_id}` supports this problem", assertion, records[software_id])
+                for assertion in matching_assertions(records[software_id], "supports", {problem.id})
+            ]
+            if software_id else []
+        )
+        rendered_matching = "; ".join(
             f"{item['label']} (sources: {item['sources']})"
-            for item in deduplicate_signals(area_signals)
+            for item in deduplicate_signals(area_signals + software_signals)
         ) or "—"
         support = []
         for software in records.values():
             if software.entity_type == "research-software" and eligible(software):
                 support.extend(signal(f"`{software.id}` supports this problem", assertion, software) for assertion in matching_assertions(software, "supports", {problem.id}))
         rendered = "; ".join(f"{item['label']} (sources: {item['sources']})" for item in deduplicate_signals(support)) or "No reviewed direct software-support path."
-        lines.append(f"| {canonical_link(problem, output_path)} | `{problem.id}` | {rendered_area} | {rendered} | {problem.metadata['confidence']} |")
+        lines.append(f"| {canonical_link(problem, output_path)} | `{problem.id}` | {rendered_matching} | {rendered} | {problem.metadata['confidence']} |")
     if not problems:
         lines.append("| — | — | — | No reviewed canonical research problem matches the requested evidence criterion. | unavailable |")
-    lines.extend(["", "## Boundary", "", "Results list bounded computational challenges and direct evidence-bearing software support only. An area filter reads only the problem record's own source-backed controlled-area classification. They do not rank importance, novelty, tractability, funding, methods, advisors, groups, or applicant fit.", ""])
+    lines.extend(["", "## Boundary", "", "Results list bounded computational challenges and direct evidence-bearing software support only. An area filter reads only the problem record's own source-backed controlled-area classification; a software filter requires that software record's direct sourced `supports` assertion. They do not rank importance, novelty, tractability, funding, methods, advisors, groups, or applicant fit.", ""])
     return "\n".join(lines)
 
 
 def discover_problems(root: Path, check: bool, query_id: str | None, list_queries: bool, area_id: str | None, country_id: str | None, software_id: str | None, language_id: str | None, ecosystem_id: str | None, open_source: str | None, as_of: str | None) -> int:
-    if any((check, query_id, list_queries, country_id, software_id, language_id, ecosystem_id, open_source, as_of)):
-        print("ERROR: discover-problems accepts only --area")
+    if any((check, query_id, list_queries, country_id, language_id, ecosystem_id, open_source, as_of)):
+        print("ERROR: discover-problems accepts only --area and --software")
         return 2
     records, results = validate(root)
     if results.errors:
@@ -2071,7 +2086,12 @@ def discover_problems(root: Path, check: bool, query_id: str | None, list_querie
         if target is None or target.entity_type != "research-area":
             print(f"ERROR: --area must reference a canonical research-area ID, got {area_id!r}")
             return 2
-    print(render_problem_discovery(records, root / "reports/generated/evidence-recommendations.md", area_id))
+    if software_id:
+        target = records.get(software_id)
+        if target is None or target.entity_type != "research-software":
+            print(f"ERROR: --software must reference a canonical research-software ID, got {software_id!r}")
+            return 2
+    print(render_problem_discovery(records, root / "reports/generated/evidence-recommendations.md", area_id, software_id))
     return 0
 
 

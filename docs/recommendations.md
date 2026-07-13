@@ -84,6 +84,7 @@ filter command:
 python3 scripts/research_landscape.py discover-areas
 python3 scripts/research_landscape.py discover-problems
 python3 scripts/research_landscape.py discover-problems --area AREA-MACHINE-LEARNED-POTENTIALS
+python3 scripts/research_landscape.py discover-problems --software SW-PHONO3PY
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --software SW-CHGNET --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-pis --software SW-PYMATGEN --language PROGRAMMING-LANGUAGE-PYTHON
@@ -96,8 +97,10 @@ python3 scripts/research_landscape.py discover-software --area AREA-DENSITY-FUNC
 `discover-areas` lists reviewed controlled topics with their direct evidence
 reach and source IDs. It is a topic catalog, not a research-problem ranking.
 `discover-problems --area` filters only a problem's own controlled area
-classification and displays its sources. All supplied filters are required for
-the remaining discovery commands. Each
+classification; `discover-problems --software` requires a direct sourced
+software `supports` assertion. Both display their sources and are ANDed when
+combined. All supplied filters are required for the remaining discovery
+commands. Each
 command exposes documented paths;
 it does not produce a score or rank. `discover-pis` follows documented public
 affiliation paths for country filters and does not assert availability or
