@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A bounded Qbox ecosystem slice with distinct GPL-2.0-or-later C++ software and ecosystem records, exposing direct computational-materials and DFT/electronic-structure paths without inventing contributor, dependency, people, or institutional relationships.
 - A bounded JDFTx ecosystem slice with distinct GPL-3.0-or-later C++ software and ecosystem records, exposing direct computational-materials and DFT/electronic-structure paths without inventing contributor, dependency, people, or institutional relationships.
 - A bounded DFTK/Julia ecosystem slice with distinct MIT-licensed Julia software, ecosystem, and language records, exposing direct computational-materials and DFT/electronic-structure paths without inventing contributor, dependency, people, or institutional relationships.
 - A bounded BigDFT ecosystem slice with distinct GPL-2.0-only Fortran software and ecosystem records, exposing direct computational-materials and DFT/electronic-structure paths without inventing suite-dependency, people, or institutional relationships.
