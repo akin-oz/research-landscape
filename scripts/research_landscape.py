@@ -1743,9 +1743,24 @@ def ecosystem_area_signals(ecosystem: Record, area_id: str, records: dict[str, R
     return deduplicate_signals(signals)
 
 
+def ecosystem_language_signals(
+    ecosystem: Record, language_id: str, records: dict[str, Record],
+) -> list[dict[str, Any]]:
+    """Return explicit ecosystem-inclusion-to-software-language paths."""
+    signals = []
+    for inclusion in matching_assertions(ecosystem, "includes"):
+        software = records.get(inclusion.get("target_id"))
+        if software is None or software.entity_type != "research-software":
+            continue
+        for implementation in matching_assertions(software, "implemented_in", {language_id}):
+            signals.append(signal(f"includes `{software.id}`", inclusion, ecosystem))
+            signals.append(signal(f"`{software.id}` is implemented in `{language_id}`", implementation, software))
+    return deduplicate_signals(signals)
+
+
 def discovery_ecosystem_candidates(
     records: dict[str, Record], area_id: str | None, software_id: str | None,
-    problem_id: str | None = None,
+    problem_id: str | None = None, language_id: str | None = None,
 ) -> list[dict[str, Any]]:
     """Apply ANDed, source-explainable filters to reviewed research ecosystems."""
     candidates = []
@@ -1775,18 +1790,29 @@ def discovery_ecosystem_candidates(
                 continue
             signals.extend(problem_signals)
             criteria += 1
+        if language_id:
+            language_signals = ecosystem_language_signals(ecosystem, language_id, records)
+            if not language_signals:
+                continue
+            signals.extend(language_signals)
+            criteria += 1
         candidates.append({"record": ecosystem, "signals": deduplicate_signals(signals), "criteria": criteria})
     return sorted(candidates, key=lambda item: (item["record"].metadata["name"].casefold(), item["record"].id))
 
 
 def render_ecosystem_discovery(
     records: dict[str, Record], area_id: str | None, software_id: str | None,
-    output_path: Path, problem_id: str | None = None,
+    output_path: Path, problem_id: str | None = None, language_id: str | None = None,
 ) -> str:
-    filters = [(name, value) for name, value in (("research area", area_id), ("research software", software_id), ("research problem", problem_id)) if value]
+    filters = [
+        (name, value) for name, value in (
+            ("research area", area_id), ("research software", software_id),
+            ("research problem", problem_id), ("programming language", language_id),
+        ) if value
+    ]
     if not filters:
-        raise ValueError("provide at least one of --area, --software, or --problem")
-    candidates = discovery_ecosystem_candidates(records, area_id, software_id, problem_id)
+        raise ValueError("provide at least one of --area, --software, --problem, or --language")
+    candidates = discovery_ecosystem_candidates(records, area_id, software_id, problem_id, language_id)
     lines = [
         "# Research-ecosystem discovery", "",
         "**Status:** deterministic evidence-discovery result, not a ranking or ecosystem-dominance assessment.", "",
@@ -1806,7 +1832,7 @@ def render_ecosystem_discovery(
         lines.append("| — | No reviewed canonical ecosystem matches every requested evidence criterion. | unavailable | 0 criteria |")
     lines.extend([
         "", "## Boundary", "",
-        "Results are alphabetically ordered and include only source-backed `connects` or `includes` paths. An area match may arise through a connected research group with a direct area relation, or through included research software with a documented area classification; a PI's separate topic portfolio does not classify every ecosystem they are connected to. A problem match requires ecosystem `includes` → software `supports` → problem. Each path is displayed. This does not establish field dominance, ecosystem completeness, model performance, funding, hiring, support, or applicant fit.", "",
+        "Results are alphabetically ordered and include only source-backed `connects` or `includes` paths. An area match may arise through a connected research group with a direct area relation, or through included research software with a documented area classification; a PI's separate topic portfolio does not classify every ecosystem they are connected to. A problem match requires ecosystem `includes` → software `supports` → problem. A language match requires ecosystem `includes` → software `implemented_in` → language. Each path is displayed. This does not establish field dominance, ecosystem completeness, group-wide language practice, individual skill, model performance, funding, hiring, support, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -1823,14 +1849,14 @@ def discover_ecosystems(
     list_queries: bool,
     as_of: str | None,
 ) -> int:
-    if country_id or language_id or check or query_id or list_queries or as_of:
-        print("ERROR: discover-ecosystems accepts only --area, --software, and --problem")
+    if country_id or check or query_id or list_queries or as_of:
+        print("ERROR: discover-ecosystems accepts only --area, --software, --problem, and --language")
         return 2
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
         return 1
-    filters = {"area": area_id, "software": software_id, "problem": problem_id}
+    filters = {"area": area_id, "software": software_id, "problem": problem_id, "language": language_id}
     for name, value in filters.items():
         if not value:
             continue
@@ -1840,7 +1866,7 @@ def discover_ecosystems(
             return 2
     try:
         print(render_ecosystem_discovery(
-            records, area_id, software_id, root / "reports/generated/evidence-recommendations.md", problem_id,
+            records, area_id, software_id, root / "reports/generated/evidence-recommendations.md", problem_id, language_id,
         ))
     except ValueError as exc:
         print(f"ERROR: {exc}")

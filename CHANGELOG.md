@@ -6,6 +6,10 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- `discover-ecosystems --language` now exposes only explicit ecosystem
+  `includes` → software `implemented_in` → programming-language paths, without
+  inferring ecosystem dominance, team-wide language practice, or individual
+  skill.
 - `discover-mentorship` now exposes reviewed public mentorship-process
   observations, with optional controlled-category filtering and every
   observation's scope, source IDs, confidence, and limitation; it does not

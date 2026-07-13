@@ -38,6 +38,7 @@ python3 scripts/research_landscape.py discover-problems --language PROGRAMMING-L
 python3 scripts/research_landscape.py discover-problems --software SW-LAMMPS
 python3 scripts/research_landscape.py discover-problems --software SW-AFLOW
 python3 scripts/research_landscape.py discover-problems --open-source yes
+python3 scripts/research_landscape.py discover-ecosystems --language PROGRAMMING-LANGUAGE-CPP
 python3 scripts/research_landscape.py discover-groups --area AREA-AI-FOR-MATERIALS --country COUNTRY-US
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-PYTHON
 python3 scripts/research_landscape.py discover-groups --language PROGRAMMING-LANGUAGE-CPP
@@ -183,12 +184,14 @@ The result is an evidence-discovery view of documented paths, not a comparison
 of university strength, degree quality, ecosystem completeness, or admissions.
 
 `discover-ecosystems` is an interactive, non-generated AND filter over
-reviewed Research Ecosystems. It accepts canonical `--area`, `--software`, and
-`--problem` IDs. Area paths are limited to sourced `connects` relations to a research group
+reviewed Research Ecosystems. It accepts canonical `--area`, `--software`,
+`--problem`, and `--language` IDs. Area paths are limited to sourced `connects` relations to a research group
 with a direct topic relation, or sourced `includes` relations to software with a
 documented area classification. A problem match requires an explicit
-ecosystem `includes` → software `supports` → Research Problem path. The command
-is alphabetically ordered and does not assess ecosystem dominance, completeness,
+ecosystem `includes` → software `supports` → Research Problem path. A language
+match requires ecosystem `includes` → software `implemented_in` → Programming
+Language. The command is alphabetically ordered and does not assess ecosystem
+dominance, completeness, group-wide language practice, individual skill,
 performance, or fit.
 
 `discover-software` is an interactive, non-generated AND filter over reviewed

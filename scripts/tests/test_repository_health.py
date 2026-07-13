@@ -1106,6 +1106,24 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`SW-PHONO3PY` supports this problem (sources: SRC-PHONO3PY-DOCUMENTATION)", rendered)
         self.assertIn("ecosystem `includes` → software `supports` → problem", rendered)
 
+    def test_ecosystem_language_filter_requires_inclusion_and_implementation_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_ecosystem_discovery(
+            records,
+            None,
+            None,
+            ROOT / "reports/generated/evidence-recommendations.md",
+            language_id="PROGRAMMING-LANGUAGE-CPP",
+        )
+        self.assertIn("**AND filters:** programming language `PROGRAMMING-LANGUAGE-CPP`.", rendered)
+        self.assertIn("`ECO-AFLOW`", rendered)
+        self.assertIn("`ECO-LAMMPS`", rendered)
+        self.assertIn("includes `SW-AFLOW`", rendered)
+        self.assertIn("`SW-AFLOW` is implemented in `PROGRAMMING-LANGUAGE-CPP`", rendered)
+        self.assertIn("ecosystem `includes` → software `implemented_in` → language", rendered)
+        self.assertIn("does not establish field dominance", rendered)
+
     def test_software_problem_filter_requires_direct_support_path(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
