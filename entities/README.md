@@ -66,6 +66,8 @@ The Phono3py cluster adds [Phono3py](research-software/phono3py.md) and the [Pho
 
 The Spglib cluster adds [Spglib](research-software/spglib.md), the [Spglib Ecosystem](ecosystems/spglib.md), and controlled [C](programming-languages/c.md), while reusing Atsushi Togo and Computational Materials Science. It makes no interface-dependency, group-wide-language, or complete-project-community claim.
 
+The Crystal Symmetry Analysis extension adds a controlled [research-area record](research-areas/crystal-symmetry-analysis.md) to expose Spglib and Atsushi Togo through a topic-first path without inferring a group-level, institutional, or research-problem ranking claim.
+
 The Phonopy–NIMS extension adds [Atsushi Togo](principal-investigators/atsushi-togo.md), the [NIMS Computational Materials Science Group](research-groups/nims-computational-materials-science-group.md), and the [National Institute for Materials Science](organizations/national-institute-for-materials-science.md), while reusing Phonopy and Japan. It makes no university, degree-route, mentoring, admissions, or ranking claim.
 
 The Computational Phonon Calculations extension adds a controlled [research-area record](research-areas/computational-phonon-calculations.md) to expose Phonopy, Atsushi Togo, and the NIMS Computational Materials Science Group through topic-first discovery without ranking research problems or inferring institutional scope.

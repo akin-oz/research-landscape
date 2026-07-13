@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710 -->
+<!-- input-fingerprint: 252b512059502f06f457f6a7569eb9acb2bb6d99b1825101ad336aff1d5b0836 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `8bfd022fd2e85abac1e38d0ac3f111056d5d0b2000fa962894f003e57bd77710`
+**Input fingerprint:** `252b512059502f06f457f6a7569eb9acb2bb6d99b1825101ad336aff1d5b0836`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -77,6 +77,13 @@
 | [Computational Materials Science Group](../../entities/research-groups/nims-computational-materials-science-group.md) | `RG-NIMS-COMPUTATIONAL-MATERIALS-SCIENCE` | research-group | high | 2026-07-13 | COUNTRY-JP |
 | [Phono3py](../../entities/research-software/phono3py.md) | `SW-PHONO3PY` | research-software | high | 2026-07-13 | — |
 | [Phonopy](../../entities/research-software/phonopy.md) | `SW-PHONOPY` | research-software | high | 2026-07-13 | — |
+
+## [Crystal Symmetry Analysis](../../entities/research-areas/crystal-symmetry-analysis.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Atsushi Togo](../../entities/principal-investigators/atsushi-togo.md) | `PI-ATSUSHI-TOGO` | principal-investigator | high | 2026-07-13 | COUNTRY-JP |
+| [Spglib](../../entities/research-software/spglib.md) | `SW-SPGLIB` | research-software | high | 2026-07-13 | — |
 
 ## [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md)
 

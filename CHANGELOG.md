@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A controlled Crystal Symmetry Analysis area with direct Spglib and Atsushi Togo links, exposing topic-first software and PI discovery without inferring group scope or ranking research problems.
 - A bounded Spglib ecosystem slice with distinct BSD-3-Clause C software, ecosystem, and language records, exposing a documented current main-developer path without inventing interface dependencies, group-wide language practice, or institutional relationships.
 - A bounded Phono3py ecosystem slice with distinct BSD-3-Clause Python software and ecosystem records, exposing direct computational-materials and computational-phonon paths without inventing external-software dependencies, people beyond a contributor listing, or institutional relationships.
 - A controlled Computational Phonon Calculations area with direct Phonopy, NIMS group, and Atsushi Togo links, exposing topic-first software, group, and PI discovery without making a research-problem ranking claim.

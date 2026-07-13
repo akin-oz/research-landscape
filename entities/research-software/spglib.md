@@ -9,7 +9,7 @@ updated_at: "2026-07-13"
 last_review: "2026-07-13"
 confidence: high
 source_ids: [SRC-SPGLIB-DOCUMENTATION, SRC-SPGLIB-REPOSITORY]
-research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE]
+research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-CRYSTAL-SYMMETRY-ANALYSIS]
 open_source: "yes"
 website: https://spglib.readthedocs.io/en/stable/
 repository_url: https://github.com/spglib/spglib

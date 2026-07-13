@@ -85,6 +85,12 @@ class RepositoryHealthTests(unittest.TestCase):
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
         )
+        self.assertEqual(
+            {"groups": 0, "principal_investigators": 1, "software": 1, "universities": 0, "ecosystems": 1},
+            {key: coverage["AREA-CRYSTAL-SYMMETRY-ANALYSIS"][key] for key in (
+                "groups", "principal_investigators", "software", "universities", "ecosystems"
+            )},
+        )
         report = rl.health_report(ROOT, records, results, rl.input_fingerprint(ROOT))
         self.assertIn("## Research-area discovery coverage", report)
         self.assertIn("These are counts of direct, documented graph paths.", report)
@@ -579,6 +585,20 @@ class RepositoryHealthTests(unittest.TestCase):
         candidates = rl.discovery_software_candidates(records, "AREA-COMPUTATIONAL-MATERIALS-SCIENCE", "PROGRAMMING-LANGUAGE-C", ecosystem.id, "yes")
         self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
         self.assertEqual(4, candidates[0]["criteria"])
+
+    def test_crystal_symmetry_analysis_is_discoverable_without_group_inference(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        area_id = "AREA-CRYSTAL-SYMMETRY-ANALYSIS"
+        self.assertEqual([], rl.discovery_group_candidates(records, area_id, None, None, None))
+        self.assertEqual(["PI-ATSUSHI-TOGO"], [
+            candidate["record"].id
+            for candidate in rl.discovery_pi_candidates(records, area_id, None, None, None)
+        ])
+        self.assertEqual(["SW-SPGLIB"], [
+            candidate["record"].id
+            for candidate in rl.discovery_software_candidates(records, area_id, None, None, "yes")
+        ])
 
     def test_computational_phonon_calculations_are_discoverable_by_topic(self) -> None:
         records, results = rl.validate(ROOT)

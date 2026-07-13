@@ -11,7 +11,7 @@ confidence: high
 source_ids: [SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE, SRC-PHONOPY-DOCUMENTATION, SRC-SPGLIB-DOCUMENTATION]
 affiliation_ids: [ORG-NIMS]
 research_group_ids: [RG-NIMS-COMPUTATIONAL-MATERIALS-SCIENCE]
-research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-COMPUTATIONAL-PHONON-CALCULATIONS]
+research_area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-COMPUTATIONAL-PHONON-CALCULATIONS, AREA-CRYSTAL-SYMMETRY-ANALYSIS]
 website: https://samurai.nims.go.jp/profiles/togo_atsushi?locale=en
 relationship_assertions:
   - predicate: affiliated_with
@@ -33,6 +33,11 @@ relationship_assertions:
   - predicate: works_on
     target_id: AREA-COMPUTATIONAL-PHONON-CALCULATIONS
     source_ids: [SRC-NIMS-TOGO-PROFILE, SRC-NIMS-PHONOPY-FEATURE]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: works_on
+    target_id: AREA-CRYSTAL-SYMMETRY-ANALYSIS
+    source_ids: [SRC-SPGLIB-DOCUMENTATION]
     confidence: high
     evidence_window: 2026-07
   - predicate: develops
