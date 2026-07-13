@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A bounded BigDFT ecosystem slice with distinct GPL-2.0-only Fortran software and ecosystem records, exposing direct computational-materials and DFT/electronic-structure paths without inventing suite-dependency, people, or institutional relationships.
 - A bounded sisl ecosystem slice with distinct MPL-2.0 Python software and ecosystem records, exposing direct computational-materials and DFT/electronic-structure paths without inventing external-software dependency, people, or institutional relationships.
 - A bounded NequIP ecosystem slice with distinct MIT-licensed Python software and ecosystem records, exposing direct AI-for-Materials and machine-learned-potential paths without inventing external-software dependency, people, or institutional relationships.
 - A bounded DeePMD-kit ecosystem slice with distinct LGPL-3.0-only Python/C++ software and ecosystem records, exposing direct machine-learned-potential and AI-for-Materials paths without inventing external-software dependency, people, or institutional relationships.

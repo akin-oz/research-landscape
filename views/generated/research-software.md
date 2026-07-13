@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 0ff4dbd9c9701f6aa4050a0c20586b09497aab2550e43586cbe4e7c6b0074394 -->
+<!-- input-fingerprint: 7918a43d07b0a6de1c7db2b52cd2d5f24ecaf727c167448aa84fe3e77dedd2a9 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `0ff4dbd9c9701f6aa4050a0c20586b09497aab2550e43586cbe4e7c6b0074394`
+**Input fingerprint:** `7918a43d07b0a6de1c7db2b52cd2d5f24ecaf727c167448aa84fe3e77dedd2a9`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -43,6 +43,13 @@
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) | `ECO-ASE` | research-ecosystem | high | 2026-07-12 | — |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
 | [Atomic Simulation Environment (ASE)](../../entities/research-software/ase.md) | `SW-ASE` | research-software | high | 2026-07-12 | — |
+
+## [BigDFT](../../entities/research-software/bigdft.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [BigDFT Ecosystem](../../entities/ecosystems/bigdft.md) | `ECO-BIGDFT` | research-ecosystem | high | 2026-07-13 | — |
+| [BigDFT](../../entities/research-software/bigdft.md) | `SW-BIGDFT` | research-software | high | 2026-07-13 | — |
 
 ## [CHGNet](../../entities/research-software/chgnet.md)
 

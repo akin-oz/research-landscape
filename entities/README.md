@@ -52,6 +52,8 @@ The NequIP cluster adds [NequIP](research-software/nequip.md) and the [NequIP Ec
 
 The sisl cluster adds [sisl](research-software/sisl.md) and the [sisl Ecosystem](ecosystems/sisl.md), while reusing controlled Python, Computational Materials Science, and DFT/Electronic Structure records. Its documented interoperability remains prose context until a dependency relationship contract exists.
 
+The BigDFT cluster adds [BigDFT](research-software/bigdft.md) and the [BigDFT Ecosystem](ecosystems/bigdft.md), while reusing controlled Fortran, Computational Materials Science, and DFT/Electronic Structure records. Its documented suite composition remains prose context until a dependency relationship contract exists.
+
 The Density-Functional Theory and Electronic Structure area extension adds the controlled [area record](research-areas/density-functional-theory-and-electronic-structure.md) and directly classifies existing ABINIT, CP2K, Quantum ESPRESSO, CAMD, Curtarolo Group, Persson Group, SOLgroup, and Wolverton Research Group records. Their separately owned ecosystems and direct-host Universities become discoverable through existing evidence-bearing paths.
 
 The Temple–Kohlmeyer–LAMMPS extension adds [Axel Kohlmeyer](principal-investigators/axel-kohlmeyer.md) and [Temple University](universities/temple-university.md), while reusing the LAMMPS, United States, and Computational Materials Science records.

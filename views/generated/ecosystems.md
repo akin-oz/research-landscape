@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 0ff4dbd9c9701f6aa4050a0c20586b09497aab2550e43586cbe4e7c6b0074394 -->
+<!-- input-fingerprint: 7918a43d07b0a6de1c7db2b52cd2d5f24ecaf727c167448aa84fe3e77dedd2a9 -->
 # Ecosystems view
 
 **Definition:** `ecosystems`
-**Input fingerprint:** `0ff4dbd9c9701f6aa4050a0c20586b09497aab2550e43586cbe4e7c6b0074394`
+**Input fingerprint:** `7918a43d07b0a6de1c7db2b52cd2d5f24ecaf727c167448aa84fe3e77dedd2a9`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT Ecosystem](../../entities/ecosystems/abinit.md)
@@ -29,6 +29,12 @@
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) | `ECO-ASE` | research-ecosystem | high | 2026-07-12 | — |
+
+## [BigDFT Ecosystem](../../entities/ecosystems/bigdft.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [BigDFT Ecosystem](../../entities/ecosystems/bigdft.md) | `ECO-BIGDFT` | research-ecosystem | high | 2026-07-13 | — |
 
 ## [CP2K Ecosystem](../../entities/ecosystems/cp2k.md)
 
