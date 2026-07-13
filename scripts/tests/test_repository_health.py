@@ -1142,6 +1142,20 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("groups: 1; principal investigators: 1; software: 2; problems: 1; universities: 0; ecosystems: 2", rendered)
         self.assertIn("sources: SRC-PHONOPY-DOCUMENTATION", rendered)
 
+    def test_entity_inspection_exposes_only_direct_local_evidence(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_entity_inspection(
+            records["SW-MACE"], records, ROOT / "reports/generated/evidence-recommendations.md",
+        )
+        self.assertIn("# Canonical entity inspection", rendered)
+        self.assertIn("not a ranking, recommendation, or completeness claim", rendered)
+        self.assertIn("`implemented_in`", rendered)
+        self.assertIn("`supports`", rendered)
+        self.assertIn("SRC-MACE-DOCUMENTATION", rendered)
+        self.assertIn("MACE documentation: Introduction", rendered)
+        self.assertIn("does not infer incoming relationships", rendered)
+
     def test_area_discovery_filters_on_a_problem_own_sourced_classification(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

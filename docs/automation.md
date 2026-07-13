@@ -22,6 +22,7 @@ python3 scripts/research_landscape.py recommend --query ecosystems-density-funct
 python3 scripts/research_landscape.py recommend --query groups-density-functional-theory-and-electronic-structure
 python3 scripts/research_landscape.py recommend --query universities-hosting-density-functional-theory-and-electronic-structure-groups
 python3 scripts/research_landscape.py catalog
+python3 scripts/research_landscape.py inspect --entity SW-MACE
 python3 scripts/research_landscape.py discover-areas
 python3 scripts/research_landscape.py discover-areas --problem PROBLEM-MATERIALS-PROPERTY-PREDICTION
 python3 scripts/research_landscape.py discover-areas --software SW-MATGL
@@ -96,6 +97,12 @@ interactive discovery; neither form writes generated output.
 Research Software, and Programming Language IDs accepted by the interactive discovery
 commands. It is public, deterministic, and non-generated; it contains no
 private preferences or ranking data.
+
+`inspect --entity CANONICAL-ID` is an interactive, non-generated evidence
+inspection command for one reviewed canonical record. It displays only that
+record's reviewed metadata, direct typed relationships and their source IDs,
+and its local Evidence-table register. It does not infer incoming graph paths,
+coverage, quality, availability, mentorship, prominence, or fit.
 
 `discover-areas` is an interactive, non-generated topic catalog. It lists
 reviewed controlled Research Areas with their area-source IDs and direct,

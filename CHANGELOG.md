@@ -6,6 +6,10 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- `inspect --entity CANONICAL-ID` now renders one reviewed canonical record's
+  direct typed relationships and record-local Evidence-table register, making
+  graph evidence inspectable without turning a record into a ranking or
+  inferred profile.
 - Research Problem controlled-area classifications now require one matching,
   source-backed typed `addresses` assertion in both directions, removing a
   metadata-only gap from problem-to-topic discovery.

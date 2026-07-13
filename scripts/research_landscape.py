@@ -2042,6 +2042,81 @@ def catalog(
     return 0
 
 
+def render_entity_inspection(record: Record, records: dict[str, Record], output_path: Path) -> str:
+    """Render one reviewed record's local evidence and direct typed graph edges.
+
+    This intentionally exposes only canonical record-local sources and outgoing
+    assertions. It is an evidence inspection surface, not a recommendation,
+    profile, completeness claim, or inference over adjacent entities.
+    """
+    lines = [
+        "# Canonical entity inspection", "",
+        "**Status:** direct canonical evidence inspection, not a ranking, recommendation, or completeness claim.", "",
+        "| Field | Value |",
+        "| --- | --- |",
+        f"| Entity | {canonical_link(record, output_path)} |",
+        f"| Canonical ID | `{record.id}` |",
+        f"| Entity type | `{record.entity_type}` |",
+        f"| Review status | `{record.metadata.get('status', 'not documented')}` |",
+        f"| Confidence | `{record.metadata.get('confidence', 'not documented')}` |",
+        f"| Last review | `{record.metadata.get('last_review', 'not documented')}` |",
+        f"| Record-level source IDs | {', '.join(f'`{source_id}`' for source_id in as_ids(record.metadata.get('source_ids', []))) or '—'} |",
+        "", "## Direct typed relationships", "",
+        "| Predicate | Target | Source IDs | Confidence | Evidence window |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    assertions = sorted(
+        record.metadata.get("relationship_assertions", []) or [],
+        key=lambda item: (str(item.get("predicate", "")), str(item.get("target_id", ""))),
+    )
+    for assertion in assertions:
+        target = records.get(assertion.get("target_id"))
+        target_label = canonical_link(target, output_path) if target else f"`{assertion.get('target_id', 'unresolved')}`"
+        lines.append(
+            f"| `{assertion.get('predicate', 'not documented')}` | {target_label} | "
+            f"{', '.join(f'`{source_id}`' for source_id in as_ids(assertion.get('source_ids', []))) or '—'} | "
+            f"`{assertion.get('confidence', 'not documented')}` | "
+            f"`{assertion.get('evidence_window', 'not documented')}` |"
+        )
+    if not assertions:
+        lines.append("| — | No direct typed relationship assertions on this canonical record. | — | — | — |")
+    lines.extend(["", "## Record-local evidence register", "", "| Source ID | Evidence |", "| --- | --- |"])
+    evidence = evidence_table_sources(record.body)
+    for source_id, detail in evidence:
+        lines.append(f"| `{source_id}` | {detail} |")
+    if not evidence:
+        lines.append("| — | No Evidence-table rows on this canonical record. |")
+    lines.extend([
+        "", "## Boundary", "",
+        "This output reports only the selected record's own reviewed metadata, direct typed relationships, and local Evidence-table entries. It does not infer incoming relationships, coverage beyond this record, current availability, performance, quality, mentorship, prominence, or applicant fit.", "",
+    ])
+    return "\n".join(lines)
+
+
+def inspect_entity(
+    root: Path, entity_id: str | None, check: bool, query_id: str | None,
+    list_queries: bool, area_id: str | None, country_id: str | None,
+    software_id: str | None, language_id: str | None, ecosystem_id: str | None,
+    problem_id: str | None, open_source: str | None, as_of: str | None,
+) -> int:
+    if not entity_id:
+        print("ERROR: inspect requires --entity CANONICAL-ID")
+        return 2
+    if any((check, query_id, list_queries, area_id, country_id, software_id, language_id, ecosystem_id, problem_id, open_source, as_of)):
+        print("ERROR: inspect accepts only --entity")
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    record = records.get(entity_id)
+    if record is None or not eligible(record):
+        print(f"ERROR: --entity must reference a reviewed canonical entity ID, got {entity_id!r}")
+        return 2
+    print(render_entity_inspection(record, records, root / "reports/generated/evidence-recommendations.md"))
+    return 0
+
+
 def render_area_discovery(
     records: dict[str, Record], output_path: Path, problem_id: str | None = None,
     software_id: str | None = None,
@@ -2501,7 +2576,7 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "discover-areas", "discover-problems", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "inspect", "discover-areas", "discover-problems", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
@@ -2512,6 +2587,7 @@ def main() -> int:
     parser.add_argument("--language", help="canonical Programming Language ID for compatible discovery commands")
     parser.add_argument("--ecosystem", help="canonical Research Ecosystem ID for compatible discovery commands")
     parser.add_argument("--problem", help="canonical Research Problem ID for compatible discovery commands")
+    parser.add_argument("--entity", help="canonical reviewed entity ID for inspect")
     parser.add_argument("--open-source", help="documented open-source state for discover-software")
     parser.add_argument("--as-of", help="ISO date for a reproducible freshness audit (defaults to today)")
     args = parser.parse_args()
@@ -2525,6 +2601,9 @@ def main() -> int:
     if args.problem and args.command not in {"discover-areas", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software"}:
         print("ERROR: --problem is accepted only by discover-areas, discover-groups, discover-pis, discover-universities, discover-ecosystems, and discover-software")
         return 2
+    if args.entity and args.command != "inspect":
+        print("ERROR: --entity is accepted only by inspect")
+        return 2
     if args.command == "validate":
         records, results = validate(root)
         print_results(root, records, results)
@@ -2535,6 +2614,12 @@ def main() -> int:
         return catalog(
             root, args.check, args.query, args.list_queries,
             args.area, args.country, args.software, args.language, args.as_of,
+        )
+    if args.command == "inspect":
+        return inspect_entity(
+            root, args.entity, args.check, args.query, args.list_queries, args.area,
+            args.country, args.software, args.language, args.ecosystem, args.problem,
+            args.open_source, args.as_of,
         )
     if args.command == "discover-areas":
         return discover_areas(
