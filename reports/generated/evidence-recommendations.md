@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 808b9a2aa1423dc52972d8946b329f15c3134140b2a4c102e0cb3836b11d445b -->
+<!-- input-fingerprint: 6f3cbf43721c10d2a22ad025cca28b4b295b8aacfba593c614d8e3ecf29e4d58 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `808b9a2aa1423dc52972d8946b329f15c3134140b2a4c102e0cb3836b11d445b`
+**Input fingerprint:** `6f3cbf43721c10d2a22ad025cca28b4b295b8aacfba593c614d8e3ecf29e4d58`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -505,6 +505,16 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 **Why:** The reviewed corpus records source-bounded graph connections, not a validated, comparable measure of ecosystem dominance, adoption, activity, or scientific influence.
 
 **Required before enabling:** A versioned, ethically reviewed, reproducible metric contract with current comparable coverage, source governance, and explicit uncertainty handling.
+
+## Strongest academic environments
+
+**Query ID:** `strongest-academic-environments`
+
+**Status:** unavailable — no recommendation is emitted.
+
+**Why:** The reviewed corpus can expose direct host-and-area paths, but contains no validated, comparable measure of university or academic-environment strength.
+
+**Required before enabling:** A versioned, ethically reviewed, reproducible environment metric contract with current comparable coverage, source governance, and explicit uncertainty handling.
 
 ## Repair workflow
 

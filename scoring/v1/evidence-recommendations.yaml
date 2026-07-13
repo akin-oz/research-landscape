@@ -226,3 +226,10 @@ queries:
     title: Dominant research ecosystems
     reason: "The reviewed corpus records source-bounded graph connections, not a validated, comparable measure of ecosystem dominance, adoption, activity, or scientific influence."
     required_evidence: "A versioned, ethically reviewed, reproducible metric contract with current comparable coverage, source governance, and explicit uncertainty handling."
+
+  - query_id: strongest-academic-environments
+    aliases: [strongest-universities, academic-environment-strength]
+    status: unavailable
+    title: Strongest academic environments
+    reason: "The reviewed corpus can expose direct host-and-area paths, but contains no validated, comparable measure of university or academic-environment strength."
+    required_evidence: "A versioned, ethically reviewed, reproducible environment metric contract with current comparable coverage, source governance, and explicit uncertainty handling."

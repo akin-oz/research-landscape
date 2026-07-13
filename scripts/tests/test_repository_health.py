@@ -894,6 +894,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`python-heavy-research-groups` | available", catalog)
         self.assertIn("`high-mentorship-environments` | unavailable", catalog)
         self.assertIn("`dominant-research-ecosystems` | unavailable", catalog)
+        self.assertIn("`strongest-academic-environments` | unavailable", catalog)
         self.assertIn("No private profiles", catalog)
 
     def test_ai_materials_software_environment_query_is_explainable(self) -> None:
