@@ -1128,6 +1128,21 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("groups: 1; principal investigators: 1; software: 2; problems: 1; universities: 0; ecosystems: 2", rendered)
         self.assertIn("sources: SRC-PHONOPY-DOCUMENTATION", rendered)
 
+    def test_area_discovery_filters_on_a_problem_own_sourced_classification(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_area_discovery(
+            records,
+            ROOT / "reports/generated/evidence-recommendations.md",
+            "PROBLEM-MATERIALS-PROPERTY-PREDICTION",
+        )
+        self.assertIn("**Problem filter:** research problem `PROBLEM-MATERIALS-PROPERTY-PREDICTION`.", rendered)
+        self.assertIn("`AREA-AI-FOR-MATERIALS`", rendered)
+        self.assertIn("`AREA-MATERIALS-INFORMATICS`", rendered)
+        self.assertNotIn("`AREA-MACHINE-LEARNED-POTENTIALS`", rendered)
+        self.assertIn("SRC-CHGNET-HOME, SRC-MATGL-DOCUMENTATION", rendered)
+        self.assertIn("does not infer a topic from software, people, institutions, or graph adjacency", rendered)
+
     def test_machine_learned_potentials_area_is_explicitly_traversable(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

@@ -24,6 +24,7 @@ Applicants often make high-stakes decisions from incomplete information and repu
 
 - Explore the current canonical graph through the generated [global view](views/generated/global.md), [software view](views/generated/research-software.md), [ecosystem view](views/generated/ecosystems.md), and [evidence recommendations](reports/generated/evidence-recommendations.md).
 - Run `python3 scripts/research_landscape.py discover-areas` to explore reviewed research topics, their evidence sources, and direct discovery coverage before selecting a canonical area ID; this is not a research-problem ranking.
+- Run `python3 scripts/research_landscape.py discover-areas --problem PROBLEM-MATERIALS-PROPERTY-PREDICTION` to inspect only the controlled topics directly classified on a reviewed problem record, with its source IDs; this is not a comparison of topics or problems.
 - Run `python3 scripts/research_landscape.py discover-problems --area AREA-MACHINE-LEARNED-POTENTIALS` to inspect reviewed computational challenges in one controlled topic and their direct supporting-software evidence; this is not an importance or tractability ranking.
 - Run `python3 scripts/research_landscape.py discover-problems --software SW-PHONO3PY` to find problems with a direct, sourced support assertion from a specific reviewed software record.
 - Run `python3 scripts/research_landscape.py discover-problems --ecosystem ECO-PHONO3PY` to find problems through a documented ecosystem-inclusion and software-support path.

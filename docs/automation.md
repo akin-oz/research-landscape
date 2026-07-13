@@ -23,6 +23,7 @@ python3 scripts/research_landscape.py recommend --query groups-density-functiona
 python3 scripts/research_landscape.py recommend --query universities-hosting-density-functional-theory-and-electronic-structure-groups
 python3 scripts/research_landscape.py catalog
 python3 scripts/research_landscape.py discover-areas
+python3 scripts/research_landscape.py discover-areas --problem PROBLEM-MATERIALS-PROPERTY-PREDICTION
 python3 scripts/research_landscape.py discover-problems
 python3 scripts/research_landscape.py discover-problems --area AREA-MACHINE-LEARNED-POTENTIALS
 python3 scripts/research_landscape.py discover-problems --software SW-PHONO3PY
@@ -97,8 +98,11 @@ private preferences or ranking data.
 `discover-areas` is an interactive, non-generated topic catalog. It lists
 reviewed controlled Research Areas with their area-source IDs and direct,
 documented group, PI, software, direct-host University, and ecosystem reach.
-The counts expose current evidence coverage only; they do not rank research
-problems, measure opportunity or novelty, or infer a user's fit.
+It accepts an optional canonical `--problem` ID, which filters only on that
+problem record's own source-backed controlled-area classification and displays
+the problem's source IDs. The counts expose current evidence coverage only;
+they do not rank research problems, measure opportunity or novelty, or infer a
+user's fit.
 
 `discover-problems` is an interactive, non-generated catalog of reviewed,
 evidence-bounded computational challenges and their direct software `supports`

@@ -2025,35 +2025,62 @@ def catalog(
     return 0
 
 
-def render_area_discovery(records: dict[str, Record], output_path: Path) -> str:
+def render_area_discovery(
+    records: dict[str, Record], output_path: Path, problem_id: str | None = None,
+) -> str:
     """Render reviewed topic nodes and their bounded direct discovery reach."""
     coverage = {item["area"].id: item for item in research_area_coverage(records)}
     areas = sorted(
-        (record for record in records.values() if record.entity_type == "research-area" and eligible(record)),
+        (
+            record for record in records.values()
+            if record.entity_type == "research-area" and eligible(record)
+            and (
+                problem_id is None
+                or record.id in as_ids(records[problem_id].metadata.get("research_area_ids", []))
+            )
+        ),
         key=lambda record: (record.metadata["name"].casefold(), record.id),
     )
     lines = [
         "# Research-area discovery", "",
         "**Status:** deterministic evidence-discovery result, not a research-problem ranking.", "",
         "Each row is a reviewed controlled topic. Reach counts reflect direct documented graph paths only; they are not measures of importance, opportunity, maturity, or quality.", "",
-        "| Research area | Canonical ID | Direct discovery reach | Area evidence | Confidence |",
-        "| --- | --- | --- | --- | --- |",
     ]
+    if problem_id:
+        lines.extend([
+            f"**Problem filter:** research problem `{problem_id}`.", "",
+            "| Research area | Canonical ID | Documented problem classification | Direct discovery reach | Area evidence | Confidence |",
+            "| --- | --- | --- | --- | --- | --- |",
+        ])
+    else:
+        lines.extend([
+            "| Research area | Canonical ID | Direct discovery reach | Area evidence | Confidence |",
+            "| --- | --- | --- | --- | --- |",
+        ])
     for area in areas:
         item = coverage[area.id]
         reach = "; ".join(
             f"{key.replace('_', ' ')}: {item[key]}"
             for key in ("groups", "principal_investigators", "software", "problems", "universities", "ecosystems")
         )
+        row = f"| {canonical_link(area, output_path)} | `{area.id}` |"
+        if problem_id:
+            problem_signal = metadata_signal(
+                f"`{problem_id}` is classified in this area", records[problem_id],
+            )
+            row += f" {problem_signal['label']} (sources: {problem_signal['sources']}) |"
         lines.append(
-            f"| {canonical_link(area, output_path)} | `{area.id}` | {reach} | "
-            f"sources: {', '.join(as_ids(area.metadata.get('source_ids', [])))} | {area.metadata['confidence']} |"
+            f"{row} {reach} | sources: {', '.join(as_ids(area.metadata.get('source_ids', [])))} | "
+            f"{area.metadata['confidence']} |"
         )
     if not areas:
-        lines.append("| — | — | No reviewed canonical research areas currently available. | — | unavailable |")
+        if problem_id:
+            lines.append("| — | — | — | No reviewed canonical research area has the requested problem classification. | — | unavailable |")
+        else:
+            lines.append("| — | — | No reviewed canonical research areas currently available. | — | unavailable |")
     lines.extend([
         "", "## Boundary", "",
-        "This catalog does not select or compare research problems. A larger reach count can reflect only the current evidence coverage. Use an area ID with `discover-problems`, `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, or `discover-software` to inspect the underlying sourced paths. It does not establish problem importance, scientific novelty, funding, admissions, mentoring, availability, or applicant fit.", "",
+        "This catalog does not select or compare research problems. A larger reach count can reflect only the current evidence coverage. A problem filter reads only that problem record's source-backed controlled-area classification; it does not infer a topic from software, people, institutions, or graph adjacency. Use an area ID with `discover-problems`, `discover-groups`, `discover-pis`, `discover-universities`, `discover-ecosystems`, or `discover-software` to inspect the underlying sourced paths. It does not establish problem importance, scientific novelty, funding, admissions, mentoring, availability, or applicant fit.", "",
     ])
     return "\n".join(lines)
 
@@ -2068,17 +2095,23 @@ def discover_areas(
     software_id: str | None,
     language_id: str | None,
     ecosystem_id: str | None,
+    problem_id: str | None,
     open_source: str | None,
     as_of: str | None,
 ) -> int:
     if any((check, query_id, list_queries, area_id, country_id, software_id, language_id, ecosystem_id, open_source, as_of)):
-        print("ERROR: discover-areas accepts no options")
+        print("ERROR: discover-areas accepts only --problem")
         return 2
     records, results = validate(root)
     if results.errors:
         print_results(root, records, results)
         return 1
-    print(render_area_discovery(records, root / "reports/generated/evidence-recommendations.md"))
+    if problem_id:
+        target = records.get(problem_id)
+        if target is None or target.entity_type != "research-problem":
+            print(f"ERROR: --problem must reference a canonical research-problem ID, got {problem_id!r}")
+            return 2
+    print(render_area_discovery(records, root / "reports/generated/evidence-recommendations.md", problem_id))
     return 0
 
 
@@ -2444,8 +2477,8 @@ def main() -> int:
     if args.open_source and args.command != "discover-software":
         print("ERROR: --open-source is accepted only by discover-software")
         return 2
-    if args.problem and args.command not in {"discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software"}:
-        print("ERROR: --problem is accepted only by discover-groups, discover-pis, discover-universities, discover-ecosystems, and discover-software")
+    if args.problem and args.command not in {"discover-areas", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software"}:
+        print("ERROR: --problem is accepted only by discover-areas, discover-groups, discover-pis, discover-universities, discover-ecosystems, and discover-software")
         return 2
     if args.command == "validate":
         records, results = validate(root)
@@ -2461,7 +2494,7 @@ def main() -> int:
     if args.command == "discover-areas":
         return discover_areas(
             root, args.check, args.query, args.list_queries, args.area, args.country,
-            args.software, args.language, args.ecosystem, args.open_source, args.as_of,
+            args.software, args.language, args.ecosystem, args.problem, args.open_source, args.as_of,
         )
     if args.command == "discover-problems":
         return discover_problems(root, args.check, args.query, args.list_queries, args.area, args.country, args.software, args.language, args.ecosystem, args.open_source, args.as_of)
