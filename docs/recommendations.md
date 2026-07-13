@@ -65,6 +65,7 @@ Run:
 python3 scripts/research_landscape.py recommend --list
 python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
 python3 scripts/research_landscape.py recommend --query environments-for-ai-materials-software-engineers
+python3 scripts/research_landscape.py recommend --query principal-investigators-open-software
 python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
 ```
