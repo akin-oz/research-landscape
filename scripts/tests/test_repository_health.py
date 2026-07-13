@@ -32,6 +32,13 @@ class RepositoryHealthTests(unittest.TestCase):
             ids,
         )
 
+    def test_canonical_software_and_ecosystem_indexes_link_every_record(self) -> None:
+        for directory in ("research-software", "ecosystems"):
+            index = (ROOT / "entities" / directory / "README.md").read_text(encoding="utf-8")
+            records = sorted((ROOT / "entities" / directory).glob("*.md"))
+            missing = [path.name for path in records if path.name != "README.md" and f"]({path.name})" not in index]
+            self.assertEqual([], missing, f"{directory}/README.md omits canonical records: {missing}")
+
     def test_committed_generated_output_is_current(self) -> None:
         self.assertEqual(0, rl.generate(ROOT, check=True))
 
