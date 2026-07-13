@@ -1234,6 +1234,23 @@ class RepositoryHealthTests(unittest.TestCase):
         recommendations = (ROOT / "docs/recommendations.md").read_text(encoding="utf-8")
         self.assertIn("adr/0010-problem-evaluation-evidence-contract.md", recommendations)
 
+    def test_public_status_documents_match_the_current_graph_contract(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        assertion_count = sum(
+            len(record.metadata.get("relationship_assertions", []) or [])
+            for record in records.values()
+        )
+
+        roadmap = (ROOT / "ROADMAP_STATUS.md").read_text(encoding="utf-8")
+        self.assertIn(f"{len(records)} canonical entities", roadmap)
+        self.assertIn(f"{assertion_count} evidence-bearing typed relationships", roadmap)
+        self.assertIn("comparative\nproblem-evaluation evidence contracts", roadmap)
+
+        architecture = (ROOT / "docs/ARCHITECTURE_STATUS.md").read_text(encoding="utf-8")
+        self.assertIn("Accepted ADR 0009", architecture)
+        self.assertIn("Accepted ADR 0010", architecture)
+
     def test_ai_materials_software_environment_query_is_explainable(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)
