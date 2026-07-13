@@ -31,11 +31,15 @@ mentorship-process evidence, including the evidence category and limitations.
 
 ## What it refuses to recommend
 
-“High-mentorship environments” remains **unavailable**. Narrative Python
-mentions, a public repository, group size, fame, awards, or citations cannot
-substitute for sourced controlled-language relations or a validated mentorship
-metric. Documented process evidence is not a mentorship-quality score,
-comparison, capacity claim, or prediction of an applicant's experience.
+“High-mentorship environments,” “dominant research ecosystems,” “strongest
+academic environments,” “best research problems,” and “best research advisors”
+remain **unavailable**. The catalog names the evidence contract required before
+each comparison could be considered. Narrative Python mentions, a public
+repository, group size, fame, awards, or citations cannot substitute for
+sourced controlled-language relations, a validated mentorship metric, or a
+governed comparative model. Documented process evidence is not a
+mentorship-quality score, comparison, capacity claim, or prediction of an
+applicant's experience.
 
 ## Output contract
 
@@ -60,6 +64,7 @@ Run:
 ```bash
 python3 scripts/research_landscape.py recommend --list
 python3 scripts/research_landscape.py recommend --query groups-ai-for-materials
+python3 scripts/research_landscape.py recommend --query environments-for-ai-materials-software-engineers
 python3 scripts/research_landscape.py recommend
 python3 scripts/research_landscape.py recommend --check
 ```
