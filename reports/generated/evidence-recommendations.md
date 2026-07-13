@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 7e9784c609edf5cdbff017f3904c0478d91109a0de54aa055c1a53daf64d9b41 -->
+<!-- input-fingerprint: 396ab53578a12f8a843b00f8864dcff9d30c88b3c449164b0c81a466123e51fc -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `7e9784c609edf5cdbff017f3904c0478d91109a0de54aa055c1a53daf64d9b41`
+**Input fingerprint:** `396ab53578a12f8a843b00f8864dcff9d30c88b3c449164b0c81a466123e51fc`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -155,6 +155,19 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Polymeromics Team](../../entities/research-groups/riken-polymeromics-team.md) (`RG-RIKEN-POLYMEROMICS`) | develops `SW-RADONPY` (sources: SRC-RIKEN-POLYMEROMICS-TEAM); works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-RIKEN-POLYMEROMICS-TEAM) | high | 2/2 documented criteria |
 
 **Limitations:** This is an evidence-match discovery query, not a claim about hiring, seniority recognition, supervision, or admissions.
+
+## Research groups with direct software-development and AI-for-Materials evidence
+
+**Query ID:** `environments-for-ai-materials-software-engineers`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) (`RG-CEDER-GROUP`) | develops `SW-CHGNET` (sources: SRC-CEDER-GROUP-CHGNET); works on `AREA-AI-FOR-MATERIALS` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION) | high | 2/2 documented criteria |
+| [Materialyze.AI Lab](../../entities/research-groups/materialyze-ai-lab.md) (`RG-MATERIALYZE-AI`) | develops `SW-MATGL` (sources: SRC-MATERIALYZE-HOME, SRC-MATGL-REPOSITORY); works on `AREA-AI-FOR-MATERIALS` (sources: SRC-NUS-ONG-PROFILE) | high | 2/2 documented criteria |
+
+**Limitations:** This is a transparent intersection of documented group software-development and AI-for-Materials evidence, not a claim about engineering seniority, research quality, hiring, supervision, admissions, or personal fit.
 
 ## Research ecosystems connected to Computational Materials Science entities
 

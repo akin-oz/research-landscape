@@ -68,6 +68,13 @@ queries:
     area_ids: [AREA-COMPUTATIONAL-MATERIALS-SCIENCE, AREA-MATERIALS-INFORMATICS]
     limitations: "This is an evidence-match discovery query, not a claim about hiring, seniority recognition, supervision, or admissions."
 
+  - query_id: environments-for-ai-materials-software-engineers
+    aliases: [ai-materials-software-environments, ai-materials-engineering-paths]
+    kind: groups-with-software-and-area
+    title: Research groups with direct software-development and AI-for-Materials evidence
+    area_ids: [AREA-AI-FOR-MATERIALS]
+    limitations: "This is a transparent intersection of documented group software-development and AI-for-Materials evidence, not a claim about engineering seniority, research quality, hiring, supervision, admissions, or personal fit."
+
   - query_id: ecosystems-computational-materials
     aliases: [best-ecosystems-for-computational-materials]
     kind: ecosystems-connected-to-area

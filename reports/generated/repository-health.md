@@ -54,7 +54,7 @@
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
-| Recommendation queries (available/unavailable) | 30 (29/1) |
+| Recommendation queries (available/unavailable) | 31 (30/1) |
 
 ## Research-area discovery coverage
 

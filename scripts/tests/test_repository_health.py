@@ -868,6 +868,17 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("`high-mentorship-environments` | unavailable", catalog)
         self.assertIn("No private profiles", catalog)
 
+    def test_ai_materials_software_environment_query_is_explainable(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        model, model_errors = rl.validate_recommendation_model(ROOT, records)
+        self.assertEqual([], model_errors)
+        query = next(item for item in model["queries"] if item["query_id"] == "environments-for-ai-materials-software-engineers")
+        candidates = rl.recommendation_candidates(query, records)
+        self.assertEqual(["RG-CEDER-GROUP", "RG-MATERIALYZE-AI"], sorted(candidate["record"].id for candidate in candidates))
+        self.assertTrue(all(candidate["criteria"] == 2 for candidate in candidates))
+        self.assertTrue(all(any("develops `SW-" in signal["label"] for signal in candidate["signals"]) for candidate in candidates))
+
 
 if __name__ == "__main__":
     unittest.main()
