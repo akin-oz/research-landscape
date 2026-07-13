@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: b6b91bfb1640fd123519badb34eabe6e980e4ea26d59409e3218ac9f2a708ee7 -->
+<!-- input-fingerprint: 808b9a2aa1423dc52972d8946b329f15c3134140b2a4c102e0cb3836b11d445b -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `b6b91bfb1640fd123519badb34eabe6e980e4ea26d59409e3218ac9f2a708ee7`
+**Input fingerprint:** `808b9a2aa1423dc52972d8946b329f15c3134140b2a4c102e0cb3836b11d445b`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -495,6 +495,16 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 **Why:** The reviewed corpus contains bounded public process evidence but no validated, comparable mentorship metric with sufficient coverage.
 
 **Required before enabling:** Ethically collected, current, aggregate supervision/process or outcome evidence under the mentorship metric contract.
+
+## Dominant research ecosystems
+
+**Query ID:** `dominant-research-ecosystems`
+
+**Status:** unavailable — no recommendation is emitted.
+
+**Why:** The reviewed corpus records source-bounded graph connections, not a validated, comparable measure of ecosystem dominance, adoption, activity, or scientific influence.
+
+**Required before enabling:** A versioned, ethically reviewed, reproducible metric contract with current comparable coverage, source governance, and explicit uncertainty handling.
 
 ## Repair workflow
 

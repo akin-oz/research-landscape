@@ -219,3 +219,10 @@ queries:
     title: High-mentorship environments
     reason: "The reviewed corpus contains bounded public process evidence but no validated, comparable mentorship metric with sufficient coverage."
     required_evidence: "Ethically collected, current, aggregate supervision/process or outcome evidence under the mentorship metric contract."
+
+  - query_id: dominant-research-ecosystems
+    aliases: [ecosystem-dominance, dominant-ecosystems]
+    status: unavailable
+    title: Dominant research ecosystems
+    reason: "The reviewed corpus records source-bounded graph connections, not a validated, comparable measure of ecosystem dominance, adoption, activity, or scientific influence."
+    required_evidence: "A versioned, ethically reviewed, reproducible metric contract with current comparable coverage, source governance, and explicit uncertainty handling."
