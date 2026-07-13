@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: 2ba7349490a45a595223cebbefce690e24fdeeffcb629a55a154d70a905ba46c -->
+<!-- input-fingerprint: f123fadcfccc3db68ccf331e5261596a8ee1364a1d1a45454de26b99570cc3b7 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `2ba7349490a45a595223cebbefce690e24fdeeffcb629a55a154d70a905ba46c`
+**Input fingerprint:** `f123fadcfccc3db68ccf331e5261596a8ee1364a1d1a45454de26b99570cc3b7`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -254,7 +254,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-SHYUE-PING-ONG` (sources: SRC-NUS-ONG-PROFILE); `PI-SHYUE-PING-ONG` works on `AREA-MATERIALS-INFORMATICS` (sources: SRC-NUS-ONG-PROFILE) | high | 2/2 documented criteria |
-| [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-MATERIALS-INFORMATICS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE) | high | 2/2 documented criteria |
+| [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-MATERIALS-INFORMATICS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE, SRC-MATGL-DOCUMENTATION) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the documented role; it is not ecosystem completeness or research-quality ranking.
 
@@ -269,7 +269,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-ANUBHAV-JAIN` (sources: SRC-LBNL-JAIN-PROFILE); `PI-ANUBHAV-JAIN` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-LBNL-JAIN-PROFILE, SRC-HACKING-MATERIALS-GROUP); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-AI-FOR-MATERIALS` (sources: SRC-UC-BERKELEY-CEDER-PROFILE, SRC-CEDER-GROUP-AUTONOMOUS-EXPERIMENTATION) | high | 2/2 documented criteria |
 | [DeePMD-kit Ecosystem](../../entities/ecosystems/deepmd-kit.md) (`ECO-DEEPMD-KIT`) | includes `SW-DEEPMD-KIT` (sources: SRC-DEEPMD-REPOSITORY); `SW-DEEPMD-KIT` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-DEEPMD-REPOSITORY, SRC-DEEPMD-DOCUMENTATION) | high | 2/2 documented criteria |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
-| [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE) | high | 2/2 documented criteria |
+| [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE, SRC-MATGL-DOCUMENTATION) | high | 2/2 documented criteria |
 | [NequIP Ecosystem](../../entities/ecosystems/nequip.md) (`ECO-NEQUIP`) | includes `SW-NEQUIP` (sources: SRC-NEQUIP-REPOSITORY); `SW-NEQUIP` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-NEQUIP-REPOSITORY, SRC-NEQUIP-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md) (`ECO-OPEN-CATALYST-PROJECT`) | includes `SW-FAIRCHEM` (sources: SRC-OCP-MIGRATION); `SW-FAIRCHEM` is classified in `AREA-AI-FOR-MATERIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
 
@@ -286,7 +286,7 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `PI-SHYUE-PING-ONG` (sources: SRC-NUS-ONG-PROFILE); `PI-SHYUE-PING-ONG` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-M3GNET-PUBLICATION); connects `RG-CEDER-GROUP` (sources: SRC-UC-BERKELEY-CEDER-PROFILE); `RG-CEDER-GROUP` works on `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-CEDER-GROUP-CHGNET) | high | 2/2 documented criteria |
 | [DeePMD-kit Ecosystem](../../entities/ecosystems/deepmd-kit.md) (`ECO-DEEPMD-KIT`) | includes `SW-DEEPMD-KIT` (sources: SRC-DEEPMD-REPOSITORY); `SW-DEEPMD-KIT` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-DEEPMD-REPOSITORY, SRC-DEEPMD-DOCUMENTATION) | high | 2/2 documented criteria |
 | [FAIR Chemistry](../../entities/ecosystems/fair-chem.md) (`ECO-FAIR-CHEM`) | includes `SW-FAIRCHEM` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY); `SW-FAIRCHEM` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
-| [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE) | high | 2/2 documented criteria |
+| [MatML Ecosystem](../../entities/ecosystems/matml.md) (`ECO-MATML`) | includes `SW-MATGL` (sources: SRC-MATGL-REPOSITORY); `SW-MATGL` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-MATGL-REPOSITORY, SRC-MATERIALYZE-SOFTWARE, SRC-MATGL-DOCUMENTATION) | high | 2/2 documented criteria |
 | [NequIP Ecosystem](../../entities/ecosystems/nequip.md) (`ECO-NEQUIP`) | includes `SW-NEQUIP` (sources: SRC-NEQUIP-REPOSITORY); `SW-NEQUIP` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-NEQUIP-REPOSITORY, SRC-NEQUIP-DOCUMENTATION) | high | 2/2 documented criteria |
 | [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md) (`ECO-OPEN-CATALYST-PROJECT`) | includes `SW-FAIRCHEM` (sources: SRC-OCP-MIGRATION); `SW-FAIRCHEM` is classified in `AREA-MACHINE-LEARNED-POTENTIALS` (sources: SRC-FAIRCHEM-DOCUMENTATION, SRC-FAIRCHEM-REPOSITORY, SRC-FAIRCHEM-INTRODUCTION) | high | 2/2 documented criteria |
 

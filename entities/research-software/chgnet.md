@@ -12,6 +12,7 @@ source_ids:
   - SRC-CHGNET-REPOSITORY
   - SRC-CHGNET-PYPI
   - SRC-CHGNET-CONDA-FORGE
+  - SRC-CHGNET-HOME
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
   - AREA-AI-FOR-MATERIALS
@@ -23,6 +24,11 @@ relationship_assertions:
   - predicate: implemented_in
     target_id: PROGRAMMING-LANGUAGE-PYTHON
     source_ids: [SRC-CHGNET-REPOSITORY]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: supports
+    target_id: PROBLEM-MATERIALS-PROPERTY-PREDICTION
+    source_ids: [SRC-CHGNET-HOME]
     confidence: high
     evidence_window: 2026-07
 website: https://chgnet.lbl.gov/
@@ -45,6 +51,7 @@ group record rather than copied here as an individual-maintainer claim.
 | `SRC-CHGNET-REPOSITORY` | [CederGroupHub/chgnet](https://github.com/CederGroupHub/chgnet) describes CHGNet as a pretrained universal neural-network potential for charge-informed atomistic modeling, with public source code and installation guidance; its repository metadata identifies Python as the implementation language. Accessed 2026-07-12. |
 | `SRC-CHGNET-PYPI` | [CHGNet on PyPI](https://pypi.org/project/chgnet/) identifies the public package as a pretrained universal neural-network potential for charge-informed atomistic modeling, links the CederGroupHub repository, and lists a modified BSD license. Accessed 2026-07-12. |
 | `SRC-CHGNET-CONDA-FORGE` | [CHGNet on conda-forge](https://anaconda.org/conda-forge/chgnet) identifies the package's current license metadata as BSD-3-Clause and links the public CederGroupHub repository. Accessed 2026-07-12. |
+| `SRC-CHGNET-HOME` | [CHGNet](https://chgnet.lbl.gov/) documents predicting energy, forces, stress, and magnetic moments from a structure, plus structure optimization and model fine-tuning. Accessed 2026-07-13. |
 
 ## Boundary and limitations
 

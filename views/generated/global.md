@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389 -->
+<!-- input-fingerprint: 3a3554000419131c28bbb02e24b1e9e3265e505b96a294737c1e4e64b0cddcf0 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389`
+**Input fingerprint:** `3a3554000419131c28bbb02e24b1e9e3265e505b96a294737c1e4e64b0cddcf0`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -70,6 +70,7 @@
 | [Density-Functional Electronic-Structure Calculation](../../entities/research-problems/density-functional-electronic-structure-calculation.md) | `PROBLEM-DENSITY-FUNCTIONAL-ELECTRONIC-STRUCTURE-CALCULATION` | research-problem | high | 2026-07-13 | — |
 | [Lattice Thermal Conductivity Prediction](../../entities/research-problems/lattice-thermal-conductivity-prediction.md) | `PROBLEM-LATTICE-THERMAL-CONDUCTIVITY-PREDICTION` | research-problem | high | 2026-07-13 | — |
 | [Machine-Learned Interatomic Potential Modeling](../../entities/research-problems/machine-learned-interatomic-potential-modeling.md) | `PROBLEM-MACHINE-LEARNED-INTERATOMIC-POTENTIAL-MODELING` | research-problem | high | 2026-07-13 | — |
+| [Materials Property Prediction](../../entities/research-problems/materials-property-prediction.md) | `PROBLEM-MATERIALS-PROPERTY-PREDICTION` | research-problem | high | 2026-07-13 | — |
 | [ABINIT](../../entities/research-software/abinit.md) | `SW-ABINIT` | research-software | high | 2026-07-13 | — |
 | [AFLOW](../../entities/research-software/aflow.md) | `SW-AFLOW` | research-software | high | 2026-07-12 | — |
 | [aiida-core](../../entities/research-software/aiida-core.md) | `SW-AIIDA-CORE` | research-software | high | 2026-07-12 | — |

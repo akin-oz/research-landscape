@@ -11,6 +11,7 @@ confidence: high
 source_ids:
   - SRC-MATGL-REPOSITORY
   - SRC-MATERIALYZE-SOFTWARE
+  - SRC-MATGL-DOCUMENTATION
 research_area_ids:
   - AREA-MATERIALS-INFORMATICS
   - AREA-AI-FOR-MATERIALS
@@ -24,6 +25,11 @@ relationship_assertions:
   - predicate: implemented_in
     target_id: PROGRAMMING-LANGUAGE-PYTHON
     source_ids: [SRC-MATGL-REPOSITORY]
+    confidence: high
+    evidence_window: 2026-07
+  - predicate: supports
+    target_id: PROBLEM-MATERIALS-PROPERTY-PREDICTION
+    source_ids: [SRC-MATGL-DOCUMENTATION]
     confidence: high
     evidence_window: 2026-07
 website: https://matgl.ai/
@@ -45,6 +51,7 @@ dataset, contributor, or application into a separate graph entity.
 | --- | --- |
 | `SRC-MATGL-REPOSITORY` | [materialyzeai/matgl](https://github.com/materialyzeai/matgl) describes MatGL as a graph deep-learning library for materials science, identifies its first version as a Materialyze.AI and Intel Labs collaboration, documents M3GNet/CHGNet and interatomic-potential development context, reports a BSD-3-Clause license, and shows Python as the primary repository language. Accessed 2026-07-12. |
 | `SRC-MATERIALYZE-SOFTWARE` | [Materialyze.AI: Home](https://www.materialyze.ai/) presents MatGL among the lab's open-source codes and describes it as a materials-science graph deep-learning library implementing foundation-potential architectures including TensorNet, CHGNet, and M3GNet. Accessed 2026-07-12. |
+| `SRC-MATGL-DOCUMENTATION` | [MatGL documentation](https://matgl.ai/) describes graph deep-learning surrogate models for predicting materials properties, pretrained formation-energy and band-gap models, and property-model usage. Accessed 2026-07-13. |
 
 ## Boundary and limitations
 

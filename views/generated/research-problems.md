@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389 -->
+<!-- input-fingerprint: 3a3554000419131c28bbb02e24b1e9e3265e505b96a294737c1e4e64b0cddcf0 -->
 # Research Problems view
 
 **Definition:** `research-problems`
-**Input fingerprint:** `e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389`
+**Input fingerprint:** `3a3554000419131c28bbb02e24b1e9e3265e505b96a294737c1e4e64b0cddcf0`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Crystal Symmetry Determination](../../entities/research-problems/crystal-symmetry-determination.md)
@@ -38,6 +38,14 @@
 | [DeePMD-kit](../../entities/research-software/deepmd-kit.md) | `SW-DEEPMD-KIT` | research-software | high | 2026-07-13 | — |
 | [MACE](../../entities/research-software/mace.md) | `SW-MACE` | research-software | high | 2026-07-13 | — |
 | [NequIP](../../entities/research-software/nequip.md) | `SW-NEQUIP` | research-software | high | 2026-07-13 | — |
+
+## [Materials Property Prediction](../../entities/research-problems/materials-property-prediction.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Materials Property Prediction](../../entities/research-problems/materials-property-prediction.md) | `PROBLEM-MATERIALS-PROPERTY-PREDICTION` | research-problem | high | 2026-07-13 | — |
+| [CHGNet](../../entities/research-software/chgnet.md) | `SW-CHGNET` | research-software | high | 2026-07-12 | — |
+| [Materials Graph Library (MatGL)](../../entities/research-software/matgl.md) | `SW-MATGL` | research-software | high | 2026-07-12 | — |
 
 ## Boundary
 

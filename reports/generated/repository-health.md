@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389 -->
+<!-- input-fingerprint: 3a3554000419131c28bbb02e24b1e9e3265e505b96a294737c1e4e64b0cddcf0 -->
 # Repository health report
 
-**Input fingerprint:** `e66340c7e33b8514dbaa20171ae2bcc9cbdc71109cb5200b68d6833e88b93389`
+**Input fingerprint:** `3a3554000419131c28bbb02e24b1e9e3265e505b96a294737c1e4e64b0cddcf0`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **147**
-- Typed relationship assertions: **254**
+- Canonical v2 entities: **148**
+- Typed relationship assertions: **257**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -28,7 +28,7 @@
 | research-area | 8 |
 | research-ecosystem | 29 |
 | research-group | 13 |
-| research-problem | 4 |
+| research-problem | 5 |
 | research-software | 30 |
 | university | 11 |
 
@@ -36,22 +36,22 @@
 
 | Confidence | Count |
 | --- | ---: |
-| high | 147 |
+| high | 148 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **147**
+- Canonical v2 records in approved entity directories: **148**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 147/147 |
-| Reviewed/published records with last-review dates | 147/147 |
-| Typed relationships with source IDs | 254/254 |
+| Reviewed/published records with source IDs | 148/148 |
+| Reviewed/published records with last-review dates | 148/148 |
+| Typed relationships with source IDs | 257/257 |
 | Reviewed groups with exactly one direct-host field | 13/13 |
-| Entities with an inbound or outbound graph connection | 147/147 |
+| Entities with an inbound or outbound graph connection | 148/148 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 14 (11/3) |
 | Generated public views | 11/11 |
@@ -63,13 +63,13 @@ These are counts of direct, documented graph paths. They measure current corpus 
 
 | Research area | Groups | Principal Investigators | Research Software | Research Problems | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 5 | 1 | 2 | 6 |
+| [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 5 | 2 | 2 | 6 |
 | [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 11 | 11 | 18 | 3 | 6 | 22 |
 | [Computational Phonon Calculations](../../entities/research-areas/computational-phonon-calculations.md) | 1 | 1 | 2 | 1 | 0 | 2 |
 | [Crystal Symmetry Analysis](../../entities/research-areas/crystal-symmetry-analysis.md) | 0 | 1 | 1 | 1 | 0 | 1 |
 | [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 5 | 1 | 12 | 1 | 4 | 15 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 7 | 1 | 2 | 6 |
-| [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 0 | 1 | 1 |
+| [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 1 | 1 |
 | [Scientific Software Engineering](../../entities/research-areas/scientific-software-engineering.md) | 3 | 1 | 0 | 0 | 1 | 2 |
 
 ## Programming-language discovery coverage
@@ -88,7 +88,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 
 | Predicate | Count |
 | --- | ---: |
-| addresses | 5 |
+| addresses | 6 |
 | administers | 2 |
 | affiliated_with | 17 |
 | authored_by | 9 |
@@ -103,7 +103,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | involves | 1 |
 | leads | 12 |
 | located_in | 19 |
-| supports | 9 |
+| supports | 11 |
 | works_on | 50 |
 
 ## Findings

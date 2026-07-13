@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A fifth evidence-bounded Research Problem record for Materials Property Prediction, with independent direct support paths from CHGNet and MatGL; it does not compare models, property targets, datasets, workflows, or problem importance.
 - Research-area discovery coverage now reports reviewed Research Problem classifications alongside direct group, PI, software, University, and ecosystem reach; this is a maintenance-coverage count, not a problem-importance or opportunity signal.
 - `discover-software --problem` now exposes only direct sourced software `supports` → problem paths, allowing problem-to-tool discovery without indirect inference or ranking.
 - `discover-ecosystems --problem` now exposes only explicit ecosystem `includes` → software `supports` → problem paths, allowing related-ecosystem discovery without dominance or completeness claims.
