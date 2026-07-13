@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b -->
+<!-- input-fingerprint: cd8a124841ef37c284948ada9e26a024ecfa31c96548524ac2f9645946fa5730 -->
 # Countries view
 
 **Definition:** `countries`
-**Input fingerprint:** `70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b`
+**Input fingerprint:** `cd8a124841ef37c284948ada9e26a024ecfa31c96548524ac2f9645946fa5730`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [Denmark](../../entities/countries/denmark.md)
@@ -27,7 +27,7 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
-| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-12 | COUNTRY-IT |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-13 | COUNTRY-IT |
 | [Scuola Internazionale Superiore di Studi Avanzati (SISSA)](../../entities/universities/sissa.md) | `UNIVERSITY-SISSA` | university | high | 2026-07-12 | COUNTRY-IT |
 
 ## [Japan](../../entities/countries/japan.md)

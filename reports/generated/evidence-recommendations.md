@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit canonical inputs or scoring/v1/evidence-recommendations.yaml, then regenerate. -->
-<!-- input-fingerprint: a5dc714237d83ad6e793e0d2fd48f3befefbe8f196d7f40c4a93582ee0d9b00e -->
+<!-- input-fingerprint: 0004a6a1bdb9e29cfb6cd674a4b8060556e14ee970280e2136d690ed7398bf46 -->
 # Evidence recommendations
 
 **Model:** `evidence-recommendations-v1`
-**Input fingerprint:** `a5dc714237d83ad6e793e0d2fd48f3befefbe8f196d7f40c4a93582ee0d9b00e`
+**Input fingerprint:** `0004a6a1bdb9e29cfb6cd674a4b8060556e14ee970280e2136d690ed7398bf46`
 **Status:** deterministic evidence-discovery projection; not a prestige, quality, or availability ranking.
 
 ## Ordering and boundary
@@ -189,12 +189,12 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | Candidate | Documented matching evidence | Confidence | Coverage |
 | --- | --- | --- | --- |
 | [GPAW Ecosystem](../../entities/ecosystems/gpaw.md) (`ECO-GPAW`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-DTU-CAMD-RESEARCH, SRC-DTU-CAMD-ATOMIC-DESIGN); includes `SW-GPAW` (sources: SRC-GPAW-DOCUMENTATION); `SW-GPAW` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-GPAW-DOCUMENTATION, SRC-GPAW-INSTALLATION, SRC-GPAW-LICENSE) | high | 2/2 documented criteria |
+| [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) (`ECO-QUANTUM-ESPRESSO`) | connects `PI-STEFANO-BARONI` (sources: SRC-QEF-ABOUT, SRC-SISSA-BARONI-CV); `PI-STEFANO-BARONI` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-SISSA-BARONI-CV); includes `SW-QUANTUM-ESPRESSO` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY); `SW-QUANTUM-ESPRESSO` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY, SRC-QE-USER-GUIDE) | high | 2/2 documented criteria |
 | [ABINIT Ecosystem](../../entities/ecosystems/abinit.md) (`ECO-ABINIT`) | includes `SW-ABINIT` (sources: SRC-ABINIT-HOME); `SW-ABINIT` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-ABINIT-PRESENTATION, SRC-ABINIT-LICENSE, SRC-ABINIT-DEVELOPMENT) | high | 2/2 documented criteria |
 | [Atomic Simulation Environment Ecosystem](../../entities/ecosystems/ase.md) (`ECO-ASE`) | connects `RG-DTU-CAMD` (sources: SRC-DTU-CAMD-RESEARCH); `RG-DTU-CAMD` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-DTU-CAMD-RESEARCH, SRC-DTU-CAMD-ATOMIC-DESIGN) | high | 2/2 documented criteria |
 | [CP2K Ecosystem](../../entities/ecosystems/cp2k.md) (`ECO-CP2K`) | includes `SW-CP2K` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD); `SW-CP2K` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-CP2K-REPOSITORY, SRC-CP2K-DOWNLOAD) | high | 2/2 documented criteria |
 | [Materials Project](../../entities/ecosystems/materials-project.md) (`ECO-MATERIALS-PROJECT`) | connects `RG-PERSSON-GROUP` (sources: SRC-PERSSON-GROUP-RESEARCH); `RG-PERSSON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-PERSSON-GROUP-RESEARCH) | high | 2/2 documented criteria |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) (`ECO-OQMD`) | connects `RG-WOLVERTON-GROUP` (sources: SRC-OQMD-OVERVIEW); `RG-WOLVERTON-GROUP` works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-WOLVERTON-GROUP-RESEARCH) | high | 2/2 documented criteria |
-| [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) (`ECO-QUANTUM-ESPRESSO`) | includes `SW-QUANTUM-ESPRESSO` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY); `SW-QUANTUM-ESPRESSO` is classified in `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-QE-HOME, SRC-QE-REPOSITORY, SRC-QE-USER-GUIDE) | high | 2/2 documented criteria |
 
 **Limitations:** A connection proves only the displayed DFT or electronic-structure path; it is not ecosystem completeness, method quality, performance, or fit.
 
@@ -275,6 +275,18 @@ Each row exposes only source-backed matching signals; any traversal is displayed
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) (`PI-STEFANO-CURTAROLO`) | works on `AREA-COMPUTATIONAL-MATERIALS-SCIENCE` (sources: SRC-DUKE-CURTAROLO-PROFILE) | high | 1/1 documented criteria |
 
 **Limitations:** Membership reflects an explicit area relation, not a researcher ranking or availability signal.
+
+## Principal Investigators with documented Density-Functional Theory and Electronic Structure work
+
+**Query ID:** `principal-investigators-density-functional-theory-and-electronic-structure`
+
+**Status:** available — evidence-discovery result, not a ranking.
+
+| Candidate | Documented matching evidence | Confidence | Coverage |
+| --- | --- | --- | --- |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) (`PI-STEFANO-BARONI`) | works on `AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE` (sources: SRC-SISSA-BARONI-CV) | high | 1/1 documented criteria |
+
+**Limitations:** Membership reflects each PI's explicit DFT or electronic-structure evidence; it is not a researcher ranking, maintenance assignment, mentoring signal, or availability claim.
 
 ## Principal Investigators with documented Scientific Software Engineering work
 

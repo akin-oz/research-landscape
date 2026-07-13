@@ -117,6 +117,13 @@ queries:
     area_id: AREA-COMPUTATIONAL-MATERIALS-SCIENCE
     limitations: "Membership reflects an explicit area relation, not a researcher ranking or availability signal."
 
+  - query_id: principal-investigators-density-functional-theory-and-electronic-structure
+    aliases: [density-functional-theory-principal-investigators, electronic-structure-principal-investigators]
+    kind: principal-investigators-by-area
+    title: Principal Investigators with documented Density-Functional Theory and Electronic Structure work
+    area_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    limitations: "Membership reflects each PI's explicit DFT or electronic-structure evidence; it is not a researcher ranking, maintenance assignment, mentoring signal, or availability claim."
+
   - query_id: principal-investigators-scientific-software-engineering
     aliases: [scientific-software-engineering-principal-investigators]
     kind: principal-investigators-by-area

@@ -6,6 +6,7 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- A direct, SISSA-CV-backed DFT/electronic-structure classification for Stefano Baroni, with a non-comparative PI discovery query; no other PI is inferred from group or ecosystem adjacency.
 - A bounded GPAW ecosystem slice with distinct GPL-3.0-or-later Python software and ecosystem records, directly linking documented CAMD development and ASE-based DFT workflow context without asserting ownership or individual maintenance.
 - A controlled Density-Functional Theory and Electronic Structure area, directly classifying ABINIT, CP2K, Quantum ESPRESSO, CAMD, Curtarolo Group, Persson Group, SOLgroup, and Wolverton Group; source-explainable ecosystem, group, and direct-host University queries expose only those paths without defining a universal subject taxonomy or method ranking.
 - A bounded ABINIT ecosystem slice with distinct GPLv3 software and ecosystem records, reusing the controlled Fortran path to expose only documented DFT/materials, source-control, and learning/contribution surfaces.

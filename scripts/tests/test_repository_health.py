@@ -66,7 +66,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 5, "principal_investigators": 0, "software": 4, "universities": 4, "ecosystems": 7},
+            {"groups": 5, "principal_investigators": 1, "software": 4, "universities": 4, "ecosystems": 7},
             {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -212,6 +212,11 @@ class RepositoryHealthTests(unittest.TestCase):
             ["RG-CURTAROLO-GROUP", "RG-DTU-CAMD", "RG-PERSSON-GROUP", "RG-SOLGROUP", "RG-WOLVERTON-GROUP"],
             sorted(candidate["record"].id for candidate in group_candidates),
         )
+        pi_candidates = rl.recommendation_candidates(
+            queries["principal-investigators-density-functional-theory-and-electronic-structure"], records
+        )
+        self.assertEqual(["PI-STEFANO-BARONI"], [candidate["record"].id for candidate in pi_candidates])
+        self.assertTrue(all(candidate["criteria"] == 1 for candidate in pi_candidates))
         university_candidates = rl.recommendation_candidates(
             queries["universities-hosting-density-functional-theory-and-electronic-structure-groups"], records
         )

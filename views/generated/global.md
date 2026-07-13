@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b -->
+<!-- input-fingerprint: cd8a124841ef37c284948ada9e26a024ecfa31c96548524ac2f9645946fa5730 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b`
+**Input fingerprint:** `cd8a124841ef37c284948ada9e26a024ecfa31c96548524ac2f9645946fa5730`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -21,7 +21,7 @@
 | [Ryo Yoshida](../../entities/principal-investigators/ryo-yoshida.md) | `PI-RYO-YOSHIDA` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
 | [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) | `PI-SEIJI-YUNOKI` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
 | [Shyue Ping Ong](../../entities/principal-investigators/shyue-ping-ong.md) | `PI-SHYUE-PING-ONG` | principal-investigator | high | 2026-07-12 | COUNTRY-SG |
-| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-12 | COUNTRY-IT |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-13 | COUNTRY-IT |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) | `PI-STEFANO-CURTAROLO` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [ABINIT Ecosystem](../../entities/ecosystems/abinit.md) | `ECO-ABINIT` | research-ecosystem | high | 2026-07-13 | — |
 | [AFLOW](../../entities/ecosystems/aflow.md) | `ECO-AFLOW` | research-ecosystem | high | 2026-07-12 | — |

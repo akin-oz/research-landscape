@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: 70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b -->
+<!-- input-fingerprint: cd8a124841ef37c284948ada9e26a024ecfa31c96548524ac2f9645946fa5730 -->
 # Research Areas view
 
 **Definition:** `research-areas`
-**Input fingerprint:** `70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b`
+**Input fingerprint:** `cd8a124841ef37c284948ada9e26a024ecfa31c96548524ac2f9645946fa5730`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [AI for Materials](../../entities/research-areas/ai-for-materials.md)
@@ -33,7 +33,7 @@
 | [Gerbrand Ceder](../../entities/principal-investigators/gerbrand-ceder.md) | `PI-GERBRAND-CEDER` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [Nicola Marzari](../../entities/principal-investigators/nicola-marzari.md) | `PI-NICOLA-MARZARI` | principal-investigator | high | 2026-07-12 | COUNTRY-CH |
 | [Seiji Yunoki](../../entities/principal-investigators/seiji-yunoki.md) | `PI-SEIJI-YUNOKI` | principal-investigator | high | 2026-07-12 | COUNTRY-JP |
-| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-12 | COUNTRY-IT |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-13 | COUNTRY-IT |
 | [Stefano Curtarolo](../../entities/principal-investigators/stefano-curtarolo.md) | `PI-STEFANO-CURTAROLO` | principal-investigator | high | 2026-07-12 | COUNTRY-US |
 | [The Novel Materials Discovery Laboratory](../../entities/projects/nomad-laboratory-coe.md) | `PROJ-NOMAD-LABORATORY-COE` | project | high | 2026-07-12 | — |
 | [Computational and Experimental Design of Emerging Materials Research Group (CEDER)](../../entities/research-groups/ceder-group.md) | `RG-CEDER-GROUP` | research-group | high | 2026-07-12 | COUNTRY-US |
@@ -58,6 +58,7 @@
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
 | --- | --- | --- | --- | --- | --- |
+| [Stefano Baroni](../../entities/principal-investigators/stefano-baroni.md) | `PI-STEFANO-BARONI` | principal-investigator | high | 2026-07-13 | COUNTRY-IT |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
 | [Curtarolo Group](../../entities/research-groups/curtarolo-group.md) | `RG-CURTAROLO-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |
 | [Persson Group](../../entities/research-groups/persson-group.md) | `RG-PERSSON-GROUP` | research-group | high | 2026-07-13 | COUNTRY-US |

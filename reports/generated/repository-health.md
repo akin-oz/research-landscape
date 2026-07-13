@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: 70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b -->
+<!-- input-fingerprint: cd8a124841ef37c284948ada9e26a024ecfa31c96548524ac2f9645946fa5730 -->
 # Repository health report
 
-**Input fingerprint:** `70a6d6cac90a05f27078689221e29d72f6ff7fc86cdb65399ec89df23e0af25b`
+**Input fingerprint:** `cd8a124841ef37c284948ada9e26a024ecfa31c96548524ac2f9645946fa5730`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
 - Canonical v2 entities: **110**
-- Typed relationship assertions: **195**
+- Typed relationship assertions: **196**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -48,13 +48,13 @@
 | --- | ---: |
 | Reviewed/published records with source IDs | 110/110 |
 | Reviewed/published records with last-review dates | 110/110 |
-| Typed relationships with source IDs | 195/195 |
+| Typed relationships with source IDs | 196/196 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
 | Entities with an inbound or outbound graph connection | 110/110 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
-| Recommendation queries (available/unavailable) | 29 (28/1) |
+| Recommendation queries (available/unavailable) | 30 (29/1) |
 
 ## Research-area discovery coverage
 
@@ -64,7 +64,7 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 3 | 2 | 4 |
 | [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 10 | 7 | 6 | 13 |
-| [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 5 | 0 | 4 | 4 | 7 |
+| [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 5 | 1 | 4 | 4 | 7 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 5 | 2 | 4 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 2 |
 | [Scientific Software Engineering](../../entities/research-areas/scientific-software-engineering.md) | 3 | 1 | 0 | 1 | 3 |
@@ -98,7 +98,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 | involves | 1 |
 | leads | 11 |
 | located_in | 18 |
-| works_on | 44 |
+| works_on | 45 |
 
 ## Findings
 

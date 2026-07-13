@@ -5,8 +5,8 @@ id: PI-STEFANO-BARONI
 name: Stefano Baroni
 status: reviewed
 created_at: "2026-07-12"
-updated_at: "2026-07-12"
-last_review: "2026-07-12"
+updated_at: "2026-07-13"
+last_review: "2026-07-13"
 confidence: high
 source_ids:
   - SRC-SISSA-BARONI-CV
@@ -16,6 +16,7 @@ affiliation_ids:
   - UNIVERSITY-SISSA
 research_area_ids:
   - AREA-COMPUTATIONAL-MATERIALS-SCIENCE
+  - AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
 website: https://people.sissa.it/~baroni/
 relationship_assertions:
   - predicate: affiliated_with
@@ -29,6 +30,12 @@ relationship_assertions:
     confidence: high
     evidence_window: 2026-07
     notes: The public SISSA CV describes Baroni's theoretical-condensed-matter and quantum-simulation work. This is an area connection, not a complete research, affiliation, supervision, or availability profile.
+  - predicate: works_on
+    target_id: AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE
+    source_ids: [SRC-SISSA-BARONI-CV]
+    confidence: high
+    evidence_window: 2026-07
+    notes: Baroni's public SISSA CV identifies his scientific interests as including density-functional theory. This is a person-level research-scope relation, not a claim that every project, publication, course, or Quantum ESPRESSO contribution has that scope.
 ---
 
 # Stefano Baroni
@@ -42,7 +49,7 @@ maintainer assignment or contribution-frequency claim.
 
 | Source ID | Evidence |
 | --- | --- |
-| `SRC-SISSA-BARONI-CV` | [SISSA: Stefano Baroni curriculum vitae](https://people.sissa.it/~baroni/CV%20GG.pdf) describes his theoretical condensed-matter and quantum-simulation profile, identifies him as the initiator of the Quantum ESPRESSO project and founding director of the Quantum ESPRESSO Foundation, and notes that the document was updated in April 2024. Accessed 2026-07-12. |
+| `SRC-SISSA-BARONI-CV` | [SISSA: Stefano Baroni curriculum vitae](https://people.sissa.it/~baroni/CV%20GG.pdf) describes his theoretical condensed-matter and quantum-simulation profile, identifies density-functional theory among his scientific interests, identifies him as the initiator of the Quantum ESPRESSO project and founding director of the Quantum ESPRESSO Foundation, and notes that the document was updated in April 2024. Accessed 2026-07-12. |
 | `SRC-SISSA-BARONI-PROFILE` | [SISSA Condensed Matter Theory: Stefano Baroni](https://cm.sissa.it/people/stefano-baroni) identifies him as a Full Professor with SISSA Condensed Matter Theory and describes quantum-simulation methods and materials-related research interests. Accessed 2026-07-12. |
 | `SRC-QEF-ABOUT` | [Quantum ESPRESSO Foundation: About](https://foundation.quantum-espresso.org/about/) lists SISSA (Stefano Baroni) among representative members. Accessed 2026-07-12. |
 
