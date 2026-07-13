@@ -23,6 +23,8 @@ python3 scripts/research_landscape.py recommend --query groups-density-functiona
 python3 scripts/research_landscape.py recommend --query universities-hosting-density-functional-theory-and-electronic-structure-groups
 python3 scripts/research_landscape.py catalog
 python3 scripts/research_landscape.py inspect --entity SW-MACE
+python3 scripts/research_landscape.py discover-mentorship
+python3 scripts/research_landscape.py discover-mentorship --mentorship-category onboarding-training
 python3 scripts/research_landscape.py discover-areas
 python3 scripts/research_landscape.py discover-areas --problem PROBLEM-MATERIALS-PROPERTY-PREDICTION
 python3 scripts/research_landscape.py discover-areas --software SW-MATGL
@@ -107,6 +109,14 @@ record's reviewed metadata, outgoing and reviewed incoming one-hop typed
 relationships and their source IDs, and its local Evidence-table register. It
 does not traverse beyond those direct graph paths or infer coverage, quality,
 availability, mentorship, prominence, or fit.
+
+`discover-mentorship` is an interactive, non-generated catalog of reviewed,
+bounded public mentorship-process observations. It accepts an optional
+`--mentorship-category` from `written-expectations`, `onboarding-training`,
+`supervision-process`, `professional-development`, and `aggregate-outcomes`.
+Each row exposes the category, scope, source IDs, confidence, and required
+limitation. It does not rank mentorship, claim capacity or effectiveness, or
+predict an applicant's experience.
 
 `discover-areas` is an interactive, non-generated topic catalog. It lists
 reviewed controlled Research Areas with their area-source IDs and direct,

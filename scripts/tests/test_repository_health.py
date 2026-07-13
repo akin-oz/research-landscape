@@ -1219,6 +1219,22 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertIn("MACE documentation: Introduction", rendered)
         self.assertIn("does not traverse beyond those direct edges", rendered)
 
+    def test_mentorship_discovery_filters_controlled_public_process_observations(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        rendered = rl.render_mentorship_discovery(
+            records,
+            "onboarding-training",
+            ROOT / "reports/generated/evidence-recommendations.md",
+        )
+        self.assertIn("# Mentorship-process evidence discovery", rendered)
+        self.assertIn("**Category filter:** `onboarding-training`.", rendered)
+        self.assertIn("`RG-HACKING-MATERIALS`", rendered)
+        self.assertIn("SRC-HACKING-MATERIALS-HANDBOOK", rendered)
+        self.assertIn("it does not establish current practice, individual support quality, availability, or outcomes", rendered)
+        self.assertNotIn("`RG-MATERIALYZE-AI`", rendered)
+        self.assertIn("not a mentorship-quality ranking", rendered)
+
     def test_area_discovery_filters_on_a_problem_own_sourced_classification(self) -> None:
         records, results = rl.validate(ROOT)
         self.assertEqual([], results.errors)

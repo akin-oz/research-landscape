@@ -6,6 +6,10 @@ All notable changes are documented here. This project follows the principles of 
 
 ### Added
 
+- `discover-mentorship` now exposes reviewed public mentorship-process
+  observations, with optional controlled-category filtering and every
+  observation's scope, source IDs, confidence, and limitation; it does not
+  rank mentorship or claim effectiveness, capacity, or applicant fit.
 - The public mentorship-process evidence query now renders each canonical
   observation's required limitation alongside its category, scope, and source
   IDs, preserving ADR 0008's non-comparative evidence contract in generated

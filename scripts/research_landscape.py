@@ -2147,6 +2147,75 @@ def inspect_entity(
     return 0
 
 
+def render_mentorship_discovery(
+    records: dict[str, Record], category: str | None, output_path: Path,
+) -> str:
+    """Render bounded public mentorship-process observations without scoring."""
+    observations = sorted(
+        (
+            (record, observation)
+            for record in records.values()
+            if record.entity_type in MENTORSHIP_PROCESS_ENTITY_TYPES and eligible(record)
+            for observation in record.metadata.get("mentorship_process_evidence", []) or []
+            if category is None or observation.get("category") == category
+        ),
+        key=lambda item: (
+            item[0].metadata.get("name", "").casefold(), item[0].id,
+            str(item[1].get("category", "")),
+        ),
+    )
+    lines = [
+        "# Mentorship-process evidence discovery", "",
+        "**Status:** deterministic public-process evidence discovery, not a mentorship-quality ranking, capacity claim, or prediction of an applicant's experience.", "",
+    ]
+    if category:
+        lines.extend([f"**Category filter:** `{category}`.", ""])
+    lines.extend([
+        "| Entity | Canonical ID | Entity type | Process category | Documented scope and limitation | Source IDs | Confidence |",
+        "| --- | --- | --- | --- | --- | --- | --- |",
+    ])
+    for record, observation in observations:
+        confidence = lowest_confidence([record.metadata.get("confidence"), observation.get("confidence")])
+        lines.append(
+            f"| {canonical_link(record, output_path)} | `{record.id}` | `{record.entity_type}` | "
+            f"`{observation.get('category', 'not documented')}` | {observation.get('scope', 'not documented')}; "
+            f"limitation: {observation.get('limitation', 'not documented')} | "
+            f"{', '.join(f'`{source_id}`' for source_id in as_ids(observation.get('source_ids', []))) or '—'} | "
+            f"{confidence} |"
+        )
+    if not observations:
+        lines.append("| — | — | — | — | No reviewed canonical observation matches this category. | — | unavailable |")
+    lines.extend([
+        "", "## Boundary", "",
+        "Rows are alphabetically ordered observations of public process material only. A category is not a score and observations are not numerically comparable. This output does not establish current practice, effectiveness, supervision capacity, availability, outcomes, culture, or applicant fit. Missing evidence is not negative evidence.", "",
+    ])
+    return "\n".join(lines)
+
+
+def discover_mentorship(
+    root: Path, category: str | None, check: bool, query_id: str | None,
+    list_queries: bool, area_id: str | None, country_id: str | None,
+    software_id: str | None, language_id: str | None, ecosystem_id: str | None,
+    problem_id: str | None, open_source: str | None, entity_id: str | None,
+    as_of: str | None,
+) -> int:
+    if any((check, query_id, list_queries, area_id, country_id, software_id,
+            language_id, ecosystem_id, problem_id, open_source, entity_id, as_of)):
+        print("ERROR: discover-mentorship accepts only --mentorship-category")
+        return 2
+    if category and category not in MENTORSHIP_PROCESS_CATEGORIES:
+        print("ERROR: --mentorship-category must be one of " + ", ".join(sorted(MENTORSHIP_PROCESS_CATEGORIES)))
+        return 2
+    records, results = validate(root)
+    if results.errors:
+        print_results(root, records, results)
+        return 1
+    print(render_mentorship_discovery(
+        records, category, root / "reports/generated/evidence-recommendations.md",
+    ))
+    return 0
+
+
 def render_area_discovery(
     records: dict[str, Record], output_path: Path, problem_id: str | None = None,
     software_id: str | None = None,
@@ -2648,7 +2717,7 @@ def freshness(root: Path, as_of: dt.date) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "inspect", "discover-areas", "discover-problems", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software", "freshness"))
+    parser.add_argument("command", choices=("validate", "generate", "health", "recommend", "catalog", "inspect", "discover-mentorship", "discover-areas", "discover-problems", "discover-groups", "discover-pis", "discover-universities", "discover-ecosystems", "discover-software", "freshness"))
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--check", action="store_true", help="fail if generated output differs from canonical inputs")
     parser.add_argument("--query", help="print one recommendation query by stable ID or alias")
@@ -2660,6 +2729,7 @@ def main() -> int:
     parser.add_argument("--ecosystem", help="canonical Research Ecosystem ID for compatible discovery commands")
     parser.add_argument("--problem", help="canonical Research Problem ID for compatible discovery commands")
     parser.add_argument("--entity", help="canonical reviewed entity ID for inspect")
+    parser.add_argument("--mentorship-category", help="controlled public mentorship-process category for discover-mentorship")
     parser.add_argument("--open-source", help="documented open-source state for discover-software")
     parser.add_argument("--as-of", help="ISO date for a reproducible freshness audit (defaults to today)")
     args = parser.parse_args()
@@ -2675,6 +2745,9 @@ def main() -> int:
         return 2
     if args.entity and args.command != "inspect":
         print("ERROR: --entity is accepted only by inspect")
+        return 2
+    if args.mentorship_category and args.command != "discover-mentorship":
+        print("ERROR: --mentorship-category is accepted only by discover-mentorship")
         return 2
     if args.command == "validate":
         records, results = validate(root)
@@ -2692,6 +2765,12 @@ def main() -> int:
             root, args.entity, args.check, args.query, args.list_queries, args.area,
             args.country, args.software, args.language, args.ecosystem, args.problem,
             args.open_source, args.as_of,
+        )
+    if args.command == "discover-mentorship":
+        return discover_mentorship(
+            root, args.mentorship_category, args.check, args.query, args.list_queries,
+            args.area, args.country, args.software, args.language, args.ecosystem,
+            args.problem, args.open_source, args.entity, args.as_of,
         )
     if args.command == "discover-areas":
         return discover_areas(
