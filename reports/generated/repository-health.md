@@ -1,14 +1,14 @@
 <!-- GENERATED FILE: edit canonical inputs, then regenerate. -->
-<!-- input-fingerprint: e044960e227aec06ef1f87e128c10487c0659cc4ff9a888dffef0fc91f459ad0 -->
+<!-- input-fingerprint: d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48 -->
 # Repository health report
 
-**Input fingerprint:** `e044960e227aec06ef1f87e128c10487c0659cc4ff9a888dffef0fc91f459ad0`
+**Input fingerprint:** `d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48`
 **Status:** deterministic generated projection; this report owns no entity facts.
 
 ## Summary
 
-- Canonical v2 entities: **129**
-- Typed relationship assertions: **219**
+- Canonical v2 entities: **131**
+- Typed relationship assertions: **221**
 - Validation errors: **0**
 - Health warnings: **0**
 
@@ -26,31 +26,31 @@
 | project | 1 |
 | publication | 8 |
 | research-area | 6 |
-| research-ecosystem | 25 |
+| research-ecosystem | 26 |
 | research-group | 12 |
-| research-software | 26 |
+| research-software | 27 |
 | university | 11 |
 
 ## Confidence coverage
 
 | Confidence | Count |
 | --- | ---: |
-| high | 129 |
+| high | 131 |
 
 ## Migration integrity
 
-- Canonical v2 records in approved entity directories: **129**
+- Canonical v2 records in approved entity directories: **131**
 - v2 frontmatter outside `entities/`: **0** when validation passes.
 
 ## Quality coverage
 
 | Metric | Result |
 | --- | ---: |
-| Reviewed/published records with source IDs | 129/129 |
-| Reviewed/published records with last-review dates | 129/129 |
-| Typed relationships with source IDs | 219/219 |
+| Reviewed/published records with source IDs | 131/131 |
+| Reviewed/published records with last-review dates | 131/131 |
+| Typed relationships with source IDs | 221/221 |
 | Reviewed groups with exactly one direct-host field | 12/12 |
-| Entities with an inbound or outbound graph connection | 129/129 |
+| Entities with an inbound or outbound graph connection | 131/131 |
 | Broken local Markdown links | 0 |
 | Canonical view definitions (public/private) | 13 (10/3) |
 | Generated public views | 10/10 |
@@ -63,8 +63,8 @@ These are counts of direct, documented graph paths. They measure current corpus 
 | Research area | Groups | Principal Investigators | Research Software | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [AI for Materials](../../entities/research-areas/ai-for-materials.md) | 3 | 2 | 5 | 2 | 6 |
-| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 10 | 14 | 6 | 20 |
-| [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 5 | 1 | 11 | 4 | 14 |
+| [Computational Materials Science](../../entities/research-areas/computational-materials-science.md) | 10 | 10 | 15 | 6 | 21 |
+| [Density-Functional Theory and Electronic Structure](../../entities/research-areas/density-functional-theory-and-electronic-structure.md) | 5 | 1 | 12 | 4 | 15 |
 | [Machine-Learned Potentials for Materials](../../entities/research-areas/machine-learned-potentials-for-materials.md) | 2 | 2 | 7 | 2 | 6 |
 | [Materials Informatics](../../entities/research-areas/materials-informatics.md) | 2 | 2 | 2 | 1 | 2 |
 | [Scientific Software Engineering](../../entities/research-areas/scientific-software-engineering.md) | 3 | 1 | 0 | 1 | 3 |
@@ -75,7 +75,7 @@ These are counts of direct, documented implementation paths. They measure corpus
 
 | Programming language | Research Software | Research Groups | Principal Investigators | Direct-host Universities | Ecosystems |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| [C++](../../entities/programming-languages/cpp.md) | 5 | 1 | 1 | 1 | 5 |
+| [C++](../../entities/programming-languages/cpp.md) | 6 | 1 | 1 | 1 | 6 |
 | [Fortran](../../entities/programming-languages/fortran.md) | 6 | 0 | 2 | 0 | 6 |
 | [Julia](../../entities/programming-languages/julia.md) | 1 | 0 | 0 | 0 | 1 |
 | [Python](../../entities/programming-languages/python.md) | 14 | 6 | 4 | 4 | 12 |
@@ -94,8 +94,8 @@ These are counts of direct, documented implementation paths. They measure corpus
 | describes | 6 |
 | develops | 16 |
 | funds | 1 |
-| implemented_in | 26 |
-| includes | 24 |
+| implemented_in | 27 |
+| includes | 25 |
 | involves | 1 |
 | leads | 11 |
 | located_in | 18 |

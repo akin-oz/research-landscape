@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: e044960e227aec06ef1f87e128c10487c0659cc4ff9a888dffef0fc91f459ad0 -->
+<!-- input-fingerprint: d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `e044960e227aec06ef1f87e128c10487c0659cc4ff9a888dffef0fc91f459ad0`
+**Input fingerprint:** `d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -170,6 +170,13 @@
 | [Python Materials Genomics (pymatgen): A robust, open-source Python library for materials analysis](../../entities/publications/pymatgen-2013.md) | `PUB-PYMATGEN-2013` | publication | high | 2026-07-12 | — |
 | [Materials Project](../../entities/ecosystems/materials-project.md) | `ECO-MATERIALS-PROJECT` | research-ecosystem | high | 2026-07-12 | — |
 | [pymatgen](../../entities/research-software/pymatgen.md) | `SW-PYMATGEN` | research-software | high | 2026-07-12 | — |
+
+## [Qbox](../../entities/research-software/qbox.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [Qbox Ecosystem](../../entities/ecosystems/qbox.md) | `ECO-QBOX` | research-ecosystem | high | 2026-07-13 | — |
+| [Qbox](../../entities/research-software/qbox.md) | `SW-QBOX` | research-software | high | 2026-07-13 | — |
 
 ## [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md)
 

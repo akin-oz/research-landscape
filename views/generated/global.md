@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: e044960e227aec06ef1f87e128c10487c0659cc4ff9a888dffef0fc91f459ad0 -->
+<!-- input-fingerprint: d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48 -->
 # Global view
 
 **Definition:** `global`
-**Input fingerprint:** `e044960e227aec06ef1f87e128c10487c0659cc4ff9a888dffef0fc91f459ad0`
+**Input fingerprint:** `d5fdc992c2840ee62b9282d1958be9a5d6033eb5c23c6123424abd55db723d48`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 | Entity | ID | Type | Confidence | Last review | Resolved country |
@@ -44,6 +44,7 @@
 | [Open Catalyst Project](../../entities/ecosystems/open-catalyst-project.md) | `ECO-OPEN-CATALYST-PROJECT` | research-ecosystem | high | 2026-07-13 | — |
 | [Open Quantum Materials Database](../../entities/ecosystems/oqmd.md) | `ECO-OQMD` | research-ecosystem | high | 2026-07-12 | — |
 | [OpenKIM Ecosystem](../../entities/ecosystems/openkim.md) | `ECO-OPENKIM` | research-ecosystem | high | 2026-07-13 | — |
+| [Qbox Ecosystem](../../entities/ecosystems/qbox.md) | `ECO-QBOX` | research-ecosystem | high | 2026-07-13 | — |
 | [Quantum ESPRESSO Ecosystem](../../entities/ecosystems/quantum-espresso.md) | `ECO-QUANTUM-ESPRESSO` | research-ecosystem | high | 2026-07-12 | — |
 | [SIESTA Ecosystem](../../entities/ecosystems/siesta.md) | `ECO-SIESTA` | research-ecosystem | high | 2026-07-13 | — |
 | [sisl Ecosystem](../../entities/ecosystems/sisl.md) | `ECO-SISL` | research-ecosystem | high | 2026-07-13 | — |
@@ -81,6 +82,7 @@
 | [NequIP](../../entities/research-software/nequip.md) | `SW-NEQUIP` | research-software | high | 2026-07-13 | — |
 | [NOMAD](../../entities/research-software/nomad.md) | `SW-NOMAD` | research-software | high | 2026-07-12 | — |
 | [pymatgen](../../entities/research-software/pymatgen.md) | `SW-PYMATGEN` | research-software | high | 2026-07-12 | — |
+| [Qbox](../../entities/research-software/qbox.md) | `SW-QBOX` | research-software | high | 2026-07-13 | — |
 | [Quantum ESPRESSO](../../entities/research-software/quantum-espresso.md) | `SW-QUANTUM-ESPRESSO` | research-software | high | 2026-07-13 | — |
 | [RadonPy](../../entities/research-software/radonpy.md) | `SW-RADONPY` | research-software | high | 2026-07-12 | — |
 | [SIESTA](../../entities/research-software/siesta.md) | `SW-SIESTA` | research-software | high | 2026-07-13 | — |

@@ -74,7 +74,7 @@ class RepositoryHealthTests(unittest.TestCase):
             )},
         )
         self.assertEqual(
-            {"groups": 5, "principal_investigators": 1, "software": 11, "universities": 4, "ecosystems": 14},
+            {"groups": 5, "principal_investigators": 1, "software": 12, "universities": 4, "ecosystems": 15},
             {key: coverage["AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE"][key] for key in (
                 "groups", "principal_investigators", "software", "universities", "ecosystems"
             )},
@@ -88,7 +88,7 @@ class RepositoryHealthTests(unittest.TestCase):
         self.assertEqual([], results.errors)
         coverage = {item["language"].id: item for item in rl.programming_language_coverage(records)}
         self.assertEqual(
-            {"software": 5, "groups": 1, "principal_investigators": 1, "universities": 1, "ecosystems": 5},
+            {"software": 6, "groups": 1, "principal_investigators": 1, "universities": 1, "ecosystems": 6},
             {key: coverage["PROGRAMMING-LANGUAGE-CPP"][key] for key in (
                 "software", "groups", "principal_investigators", "universities", "ecosystems"
             )},
@@ -198,7 +198,7 @@ class RepositoryHealthTests(unittest.TestCase):
             queries["ecosystems-density-functional-theory-and-electronic-structure"], records
         )
         self.assertEqual(
-            ["ECO-ABINIT", "ECO-ASE", "ECO-BIGDFT", "ECO-CP2K", "ECO-DFTK", "ECO-FLEUR", "ECO-GPAW", "ECO-JDFTX", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA", "ECO-SISL", "ECO-WANNIER90"],
+            ["ECO-ABINIT", "ECO-ASE", "ECO-BIGDFT", "ECO-CP2K", "ECO-DFTK", "ECO-FLEUR", "ECO-GPAW", "ECO-JDFTX", "ECO-MATERIALS-PROJECT", "ECO-OQMD", "ECO-QBOX", "ECO-QUANTUM-ESPRESSO", "ECO-SIESTA", "ECO-SISL", "ECO-WANNIER90"],
             sorted(candidate["record"].id for candidate in ecosystem_candidates),
         )
         software_candidates = rl.discovery_software_candidates(
@@ -209,7 +209,7 @@ class RepositoryHealthTests(unittest.TestCase):
             "yes",
         )
         self.assertEqual(
-            ["SW-ABINIT", "SW-BIGDFT", "SW-CP2K", "SW-DFTK", "SW-FLEUR", "SW-GPAW", "SW-JDFTX", "SW-QUANTUM-ESPRESSO", "SW-SIESTA", "SW-SISL", "SW-WANNIER90"],
+            ["SW-ABINIT", "SW-BIGDFT", "SW-CP2K", "SW-DFTK", "SW-FLEUR", "SW-GPAW", "SW-JDFTX", "SW-QBOX", "SW-QUANTUM-ESPRESSO", "SW-SIESTA", "SW-SISL", "SW-WANNIER90"],
             [candidate["record"].id for candidate in software_candidates],
         )
         self.assertTrue(all(candidate["criteria"] == 2 for candidate in software_candidates))
@@ -526,6 +526,15 @@ class RepositoryHealthTests(unittest.TestCase):
             records, "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE",
             "PROGRAMMING-LANGUAGE-CPP", ecosystem.id, "yes",
         )
+        self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
+        self.assertEqual(4, candidates[0]["criteria"])
+
+    def test_qbox_slice_exposes_dft_cpp_path(self) -> None:
+        records, results = rl.validate(ROOT)
+        self.assertEqual([], results.errors)
+        software, ecosystem = records["SW-QBOX"], records["ECO-QBOX"]
+        self.assertEqual(("yes", "GPL-2.0-or-later"), (software.metadata["open_source"], software.metadata["license"]))
+        candidates = rl.discovery_software_candidates(records, "AREA-DENSITY-FUNCTIONAL-THEORY-AND-ELECTRONIC-STRUCTURE", "PROGRAMMING-LANGUAGE-CPP", ecosystem.id, "yes")
         self.assertEqual([software.id], [candidate["record"].id for candidate in candidates])
         self.assertEqual(4, candidates[0]["criteria"])
 

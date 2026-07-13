@@ -5,3 +5,5 @@ This directory is the canonical home for Research Software records. The reviewed
 The reviewed records also include [DFTK](dftk.md).
 
 The reviewed records also include [JDFTx](jdftx.md).
+
+The reviewed records also include [Qbox](qbox.md).

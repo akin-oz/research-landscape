@@ -5,3 +5,5 @@ This directory is the canonical home for Research Ecosystem records, connecting 
 The reviewed records also include [DFTK Ecosystem](dftk.md).
 
 The reviewed records also include [JDFTx Ecosystem](jdftx.md).
+
+The reviewed records also include [Qbox Ecosystem](qbox.md).
