@@ -1,9 +1,9 @@
 <!-- GENERATED FILE: edit entities or views/definitions.yaml, then regenerate. -->
-<!-- input-fingerprint: ec64d36800d328f64da02fdbec8ef89c57c0d2d71491183f6f59067d8943db05 -->
+<!-- input-fingerprint: e044960e227aec06ef1f87e128c10487c0659cc4ff9a888dffef0fc91f459ad0 -->
 # Research Software view
 
 **Definition:** `research-software`
-**Input fingerprint:** `ec64d36800d328f64da02fdbec8ef89c57c0d2d71491183f6f59067d8943db05`
+**Input fingerprint:** `e044960e227aec06ef1f87e128c10487c0659cc4ff9a888dffef0fc91f459ad0`
 **Status:** deterministic generated projection; canonical facts and evidence remain in `entities/`.
 
 ## [ABINIT](../../entities/research-software/abinit.md)
@@ -101,6 +101,13 @@
 | [GPAW Ecosystem](../../entities/ecosystems/gpaw.md) | `ECO-GPAW` | research-ecosystem | high | 2026-07-13 | — |
 | [Computational Atomic-scale Materials Design (CAMD)](../../entities/research-groups/dtu-camd.md) | `RG-DTU-CAMD` | research-group | high | 2026-07-13 | COUNTRY-DK |
 | [GPAW](../../entities/research-software/gpaw.md) | `SW-GPAW` | research-software | high | 2026-07-13 | — |
+
+## [JDFTx](../../entities/research-software/jdftx.md)
+
+| Entity | ID | Type | Confidence | Last review | Resolved country |
+| --- | --- | --- | --- | --- | --- |
+| [JDFTx Ecosystem](../../entities/ecosystems/jdftx.md) | `ECO-JDFTX` | research-ecosystem | high | 2026-07-13 | — |
+| [JDFTx](../../entities/research-software/jdftx.md) | `SW-JDFTX` | research-software | high | 2026-07-13 | — |
 
 ## [KIM API](../../entities/research-software/kim-api.md)
 
